@@ -15,6 +15,9 @@ namespace PathfinderTactics.Core
         [SerializeField]
         private LayerMask unitLayerMask;
 
+        [SerializeField]
+        private LayerMask groundLayerMask;
+
         private PlayerInputActions playerInputActions;
         private Unit selectedUnit;
         private GamePhase currentPhase;
@@ -42,6 +45,7 @@ namespace PathfinderTactics.Core
             playerInputActions.Player.Select.performed += OnSelectPerformed;
             playerInputActions.Player.Confirm.performed += OnConfirmPerformed;
             playerInputActions.Player.Cancel.performed += OnCancelPerformed;
+            playerInputActions.Player.Jump.performed += OnJumpPerformed;
         }
 
         private void OnDisable()
@@ -50,6 +54,7 @@ namespace PathfinderTactics.Core
             playerInputActions.Player.Select.performed -= OnSelectPerformed;
             playerInputActions.Player.Confirm.performed -= OnConfirmPerformed;
             playerInputActions.Player.Cancel.performed -= OnCancelPerformed;
+            playerInputActions.Player.Jump.performed -= OnJumpPerformed;
         }
 
         private void Update()
@@ -77,9 +82,13 @@ namespace PathfinderTactics.Core
             {
                 // TODO:::: Big todo. Add terrain, climbing, other unit interactions, etc
                 // Lock in the unit's position and move to the next phase
-                Debug.Log("Movement Confirmed. Transitioning to Action Selection.");
+                // Debug.Log("Movement Confirmed. Transitioning to Action Selection.");
                 if (currentPhase == GamePhase.FreeMovement)
                 {
+                    // COST: Moving costs 1 Action Point, depending on distance.
+                    // TODO: This'll be figured out and polished later
+                    selectedUnit.SpendActionPoint();
+
                     // Find the final grid position based on the unit's current free-floating transform.
                     GridPosition finalGridPosition = GridSystem.Instance.GetGridPosition(
                         selectedUnit.transform.position
@@ -113,9 +122,21 @@ namespace PathfinderTactics.Core
                         $"Movement Confirmed at {finalGridPosition}. Transitioning to Action Selection."
                     );
                     SetPhase(GamePhase.ActionSelection);
+
+                    // Update UI
+                    OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
                 }
                 // TODO: hide the movement range visuals here, action selection stuff, figure out
                 // All the transisions and whatnot.
+            }
+        }
+
+        public void EndTurn()
+        {
+            if (selectedUnit != null)
+            {
+                Debug.Log($"{selectedUnit.name} ends their turn.");
+                ClearSelectedUnit(); // Deselect the unit and return to the UnitSelection phase
             }
         }
 
@@ -151,13 +172,14 @@ namespace PathfinderTactics.Core
 
         private void SetSelectedUnit(Unit unit)
         {
-            Debug.Log(
-                $"SetSelectedUnit: Setting selected unit to '{unit.gameObject.name}'. Invoking OnSelectedUnitChanged event."
-            );
+            // Debug.Log(
+            //     $"SetSelectedUnit: Setting selected unit to '{unit.gameObject.name}'. Invoking OnSelectedUnitChanged event."
+            // );
             selectedUnit = unit;
+            selectedUnit.StartTurn();
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
 
-            selectedUnit.StartMoveAction();
+            // selectedUnit.StartMoveAction();
             CameraController.Instance.SetFollowTarget(unit.transform);
 
             // Calculate and store the entire movement area for this unit
@@ -191,14 +213,8 @@ namespace PathfinderTactics.Core
 
         private void HandleFreeMovement()
         {
-            Debug.Log($"HandleFreeMovement: In Free Movement state for '{selectedUnit.name}'.");
-            // Read Input
+            // Read input and move based on camera
             Vector2 inputMoveDir = playerInputActions.Player.Move.ReadValue<Vector2>();
-            if (inputMoveDir == Vector2.zero)
-                return;
-
-            // Calculate World-Space Movement Vector (relative to camera)
-            // TODO: maybe make more dynamic based on unit stats
             float moveSpeed = 5f;
             var cameraTransform = Camera.main.transform;
             Vector3 forward = cameraTransform.forward;
@@ -207,34 +223,29 @@ namespace PathfinderTactics.Core
             right.y = 0;
             forward.Normalize();
             right.Normalize();
+            Vector3 moveDirection =
+                (forward * inputMoveDir.y + right * inputMoveDir.x).normalized * moveSpeed;
 
-            Vector3 moveDirection = (forward * inputMoveDir.y + right * inputMoveDir.x).normalized;
-            Vector3 moveVector = moveDirection * moveSpeed * Time.deltaTime;
-
-            // Calculate the proposed next position
-            Vector3 proposedPosition = selectedUnit.transform.position + moveVector;
-
-            // Check if the proposed position is within the valid move area.
+            // Check if the proposed move is within the valid area
+            Vector3 proposedPosition =
+                selectedUnit.transform.position + moveDirection * Time.deltaTime;
             GridPosition proposedGridPos = GridSystem.Instance.GetGridPosition(proposedPosition);
 
-            if (validMovePositions.Contains(proposedGridPos))
+            if (!validMovePositions.Contains(proposedGridPos))
             {
-                // The move is valid.
-                selectedUnit.transform.position = proposedPosition;
-
-                // Make the unit face the direction of movement
-                // Will debug when we have a better model than the bean lol
-                if (moveDirection != Vector3.zero)
-                {
-                    selectedUnit.transform.forward = Vector3.Slerp(
-                        selectedUnit.transform.forward,
-                        moveDirection,
-                        Time.deltaTime * 15f
-                    );
-                }
+                // If outside the valid zone, stop horizontal movement.
+                moveDirection = Vector3.zero;
             }
-            // If the proposed position is NOT in the valid area, we do nothing.
-            // This creates a wall at the boundary of the movement zone.
+
+            selectedUnit.HandleMovement(moveDirection);
+        }
+
+        private void OnJumpPerformed(InputAction.CallbackContext context)
+        {
+            if (currentPhase == GamePhase.FreeMovement)
+            {
+                selectedUnit.HandleJump();
+            }
         }
 
         public void SetPhase(GamePhase newPhase)

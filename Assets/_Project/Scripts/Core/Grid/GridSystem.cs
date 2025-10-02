@@ -1,4 +1,5 @@
 using PathfinderTactics.Characters;
+using PathfinderTactics.Grid;
 using UnityEngine;
 
 namespace PathfinderTactics.Grid
@@ -21,6 +22,10 @@ namespace PathfinderTactics.Grid
 
         [SerializeField]
         private float cellSize = 2f;
+
+        [Header("Layer Masks")]
+        [SerializeField]
+        private LayerMask groundLayerMask;
         public int Width => width;
         public int Height => height;
         public float CellSize => cellSize;
@@ -196,6 +201,21 @@ namespace PathfinderTactics.Grid
                     );
                 }
             }
+        }
+
+        public float GetGroundHeight(GridPosition gridPosition)
+        {
+            Vector3 rayStart = new Vector3(
+                gridPosition.x * cellSize,
+                100f,
+                gridPosition.z * cellSize
+            );
+            if (Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit, 150f, groundLayerMask))
+            {
+                return hit.point.y;
+            }
+            // If no ground is found, return 0 as a default.
+            return 0f;
         }
     }
 }
