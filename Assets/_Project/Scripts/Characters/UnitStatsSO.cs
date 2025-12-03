@@ -46,6 +46,24 @@ namespace PathfinderTactics.Characters
         [Tooltip("Character level (minimum 1).")]
         public int level = 1;
 
+        [Header("List of Skills")]
+        public int Acrobatics = 0;
+        public int Arcana = 0;
+        public int Athletics = 0;
+        public int Crafting = 0;
+        public int Deception = 0;
+        public int Diplomacy = 0;
+        public int Intimidation = 0;
+        public int Lore = 0;
+        public int Medicine = 0;
+        public int Nature = 0;
+        public int Occultism = 0;
+        public int Performance = 0;
+        public int Religion = 0;
+        public int Society = 0;
+        public int Stealth = 0;
+        public int Survival = 0;
+        public int Thievery = 0;
         /// <summary>
         /// Ancestry HP value read from the ancestry JSON (or 0 if unavailable).
         /// </summary>
