@@ -23,6 +23,9 @@ namespace PathfinderTactics.Grid
                 for (int z = 0; z < height; z++)
                 {
                     pathNodeGrid[x, z] = new PathNode(new GridPosition(x, z));
+                    pathNodeGrid[x, z].isWalkable = gridSystem
+                        .GetCell(new GridPosition(x, z))
+                        .isWalkable;
                 }
             }
 
@@ -54,6 +57,12 @@ namespace PathfinderTactics.Grid
                 {
                     if (closedList.Contains(neighbourNode))
                         continue;
+
+                    if (!neighbourNode.isWalkable)
+                    {
+                        closedList.Add(neighbourNode);
+                        continue;
+                    }
 
                     // TODO: Check if the neighbour is walkable.
 
@@ -190,8 +199,11 @@ namespace PathfinderTactics.Grid
                     )
                 )
                 {
-                    // TODO: Add logic here to check if the cell is walkable (e.g., not blocked by another unit or obstacle)
-                    // Very important TODO
+                    // logic here to check if the cell is walkable (not blocked by another unit or obstacle)
+                    // TODO: unit check
+                    if (!GridSystem.Instance.GetCell(neighbourNode.GridPosition).isWalkable)
+                        continue;
+
                     int tentativeGCost =
                         currentNode.gCost
                         + CalculateDistance(currentNode.GridPosition, neighbourNode.GridPosition);
@@ -262,6 +274,12 @@ namespace PathfinderTactics.Grid
                     GridPosition neighbourPos = new GridPosition(pos.x + x, pos.z + z);
                     if (gridSystem.IsValidGridPosition(neighbourPos))
                     {
+                        GridCell cell = gridSystem.GetCell(neighbourPos);
+
+                        // If a cell isn't walkable, dont move to it.
+                        if (!cell.isWalkable)
+                            continue;
+
                         // If we already have a node for this position, use it. Otherwise, create a new one.
                         if (!pathNodeMap.TryGetValue(neighbourPos, out PathNode neighbourNode))
                         {

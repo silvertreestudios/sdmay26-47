@@ -150,5 +150,26 @@ namespace PathfinderTactics.Characters
         }
 
         #endregion
+
+        public float GetUnitRadius()
+        {
+            if (characterController != null)
+                return characterController.radius;
+            return 0.25f;
+        }
+
+        public void SnapToGrid(Vector3 newPosition)
+        {
+            if (characterController != null)
+            {
+                characterController.enabled = false;
+                transform.position = newPosition;
+                characterController.enabled = true;
+            }
+            else
+            {
+                transform.position = newPosition;
+            }
+        }
     }
 }

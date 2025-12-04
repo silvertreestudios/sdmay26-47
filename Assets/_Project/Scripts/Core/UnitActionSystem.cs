@@ -10,7 +10,10 @@ namespace PathfinderTactics.Core
     public class UnitActionSystem : MonoBehaviour
     {
         public static UnitActionSystem Instance { get; private set; }
+
         public event EventHandler OnSelectedUnitChanged;
+        public event EventHandler OnActionStarted;
+        public event EventHandler OnActionCompleted;
 
         [SerializeField]
         private LayerMask unitLayerMask;
@@ -20,7 +23,7 @@ namespace PathfinderTactics.Core
 
         private PlayerInputActions playerInputActions;
         private Unit selectedUnit;
-        private GamePhase currentPhase;
+        public GamePhase currentPhase;
 
         // TODO: update valid move positions to actually work properly.
         private List<GridPosition> validMovePositions;
@@ -46,6 +49,7 @@ namespace PathfinderTactics.Core
             playerInputActions.Player.Confirm.performed += OnConfirmPerformed;
             playerInputActions.Player.Cancel.performed += OnCancelPerformed;
             playerInputActions.Player.Jump.performed += OnJumpPerformed;
+            playerInputActions.Player.OpenMenu.performed += OnOpenMenuPerformed;
         }
 
         private void OnDisable()
@@ -55,6 +59,7 @@ namespace PathfinderTactics.Core
             playerInputActions.Player.Confirm.performed -= OnConfirmPerformed;
             playerInputActions.Player.Cancel.performed -= OnCancelPerformed;
             playerInputActions.Player.Jump.performed -= OnJumpPerformed;
+            playerInputActions.Player.OpenMenu.performed -= OnOpenMenuPerformed;
         }
 
         private void Update()
@@ -83,51 +88,44 @@ namespace PathfinderTactics.Core
                 // TODO:::: Big todo. Add terrain, climbing, other unit interactions, etc
                 // Lock in the unit's position and move to the next phase
                 // Debug.Log("Movement Confirmed. Transitioning to Action Selection.");
-                if (currentPhase == GamePhase.FreeMovement)
+
+                // Check if we actually moved from the last point
+                GridPosition currentPos = GridSystem.Instance.GetGridPosition(
+                    selectedUnit.transform.position
+                );
+
+                // If we haven't moved, treat Confirm as open menu
+                if (currentPos == selectedUnit.CurrentGridPosition)
                 {
-                    // COST: Moving costs 1 Action Point, depending on distance.
-                    // TODO: This'll be figured out and polished later
-                    selectedUnit.SpendActionPoint();
-
-                    // Find the final grid position based on the unit's current free-floating transform.
-                    GridPosition finalGridPosition = GridSystem.Instance.GetGridPosition(
-                        selectedUnit.transform.position
-                    );
-
-                    // Calculate the cost to this final position from the starting point.
-                    List<GridPosition> pathToFinalPos = Pathfinding.FindPath(
-                        selectedUnit.CurrentGridPosition,
-                        finalGridPosition
-                    );
-                    // int moveCost = 0;
-                    if (pathToFinalPos != null)
-                    {
-                        // A simple way to get path cost is to recalculate it. We can optimize later if needed.
-                        // AKA its probably never going to get optimized lmao cuz if if works it works lol
-                        PathNode finalNode = new PathNode(finalGridPosition); // Placeholder
-                        // TODO: This part of the logic needs to be fleshed out, for now we assume it's valid.
-                    }
-
-                    // Snap the unit to the center of the final cell. Will probably animate this later
-                    selectedUnit.transform.position = GridSystem.Instance.GetWorldPosition(
-                        finalGridPosition
-                    );
-
-                    // Update the unit's data in the grid.
-                    selectedUnit.FinalizeMove(finalGridPosition);
-
-                    // Hide movement visuals and transition state.
-                    validMovePositions?.Clear();
-                    Debug.Log(
-                        $"Movement Confirmed at {finalGridPosition}. Transitioning to Action Selection."
-                    );
                     SetPhase(GamePhase.ActionSelection);
-
-                    // Update UI
-                    OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
+                    return;
                 }
-                // TODO: hide the movement range visuals here, action selection stuff, figure out
-                // All the transisions and whatnot.
+
+                // Otherwise, commit the move as an action
+                CommitMoveAction();
+            }
+            // TODO: hide the movement range visuals here, action selection stuff, figure out
+            // All the transisions and whatnot.
+        }
+
+        private void OnOpenMenuPerformed(InputAction.CallbackContext context)
+        {
+            if (selectedUnit == null)
+                return;
+
+            if (currentPhase == GamePhase.FreeMovement)
+            {
+                selectedUnit.SnapToGrid(
+                    GridSystem.Instance.GetWorldPosition(selectedUnit.CurrentGridPosition)
+                );
+
+                // Stop moving, open menu
+                SetPhase(GamePhase.ActionSelection);
+            }
+            else if (currentPhase == GamePhase.ActionSelection)
+            {
+                // Close menu, return to moving
+                SetPhase(GamePhase.FreeMovement);
             }
         }
 
@@ -191,10 +189,61 @@ namespace PathfinderTactics.Core
 
         private void OnCancelPerformed(InputAction.CallbackContext context)
         {
-            // If we are in a state where a unit is selected, cancel returns to the main selection state.
-            if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.ActionSelection)
+            if (currentPhase == GamePhase.ActionSelection)
             {
+                // Go back to moving
+                SetPhase(GamePhase.FreeMovement);
+            }
+            else if (currentPhase == GamePhase.FreeMovement)
+            {
+                // Deselect unit
                 ClearSelectedUnit();
+            }
+        }
+
+        private void CommitMoveAction()
+        {
+            SetPhase(GamePhase.Busy);
+
+            // Finalize Position
+            GridPosition finalGridPosition = GridSystem.Instance.GetGridPosition(
+                selectedUnit.transform.position
+            );
+
+            selectedUnit.SnapToGrid(GridSystem.Instance.GetWorldPosition(finalGridPosition));
+
+            selectedUnit.FinalizeMove(finalGridPosition);
+
+            // Spend AP
+            SpendActionAndContinue(1);
+        }
+
+        public void SpendActionAndContinue(int cost)
+        {
+            if (selectedUnit == null)
+                return;
+
+            selectedUnit.SpendActionPoints(cost);
+
+            if (selectedUnit.GetActionPointsRemaining() > 0)
+            {
+                // The main turn loop
+                // We still have AP. Recalculate range from new spot and go back to FreeMovement.
+                validMovePositions = Pathfinding.GetReachableGridPositions(
+                    selectedUnit.CurrentGridPosition,
+                    selectedUnit.GetMaxMoveCost()
+                );
+
+                // UI updates, Range Visualizer updates
+                OnActionCompleted?.Invoke(this, EventArgs.Empty);
+                OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
+
+                SetPhase(GamePhase.FreeMovement);
+            }
+            else
+            {
+                // Out of AP
+                EndTurn();
             }
         }
 
@@ -215,6 +264,14 @@ namespace PathfinderTactics.Core
         {
             // Read input and move based on camera
             Vector2 inputMoveDir = playerInputActions.Player.Move.ReadValue<Vector2>();
+
+            // If no input, let physics update (gravity etc)
+            if (inputMoveDir == Vector2.zero)
+            {
+                selectedUnit.HandleMovement(Vector3.zero);
+                return;
+            }
+
             float moveSpeed = 5f;
             var cameraTransform = Camera.main.transform;
             Vector3 forward = cameraTransform.forward;
@@ -223,21 +280,87 @@ namespace PathfinderTactics.Core
             right.y = 0;
             forward.Normalize();
             right.Normalize();
+
             Vector3 moveDirection =
                 (forward * inputMoveDir.y + right * inputMoveDir.x).normalized * moveSpeed;
-
-            // Check if the proposed move is within the valid area
             Vector3 proposedPosition =
                 selectedUnit.transform.position + moveDirection * Time.deltaTime;
-            GridPosition proposedGridPos = GridSystem.Instance.GetGridPosition(proposedPosition);
 
-            if (!validMovePositions.Contains(proposedGridPos))
+            GridSystem gridSystem = GridSystem.Instance;
+            GridPosition currentGridPos = gridSystem.GetGridPosition(
+                selectedUnit.transform.position
+            );
+            Vector3 cellCenterWorld = gridSystem.GetWorldPosition(currentGridPos);
+            float cellSize = gridSystem.CellSize;
+            float unitRadius = selectedUnit.GetUnitRadius();
+
+            GridPosition northPos = new GridPosition(currentGridPos.x, currentGridPos.z + 1);
+            if (!IsValidMovePosition(northPos))
             {
-                // If outside the valid zone, stop horizontal movement.
-                moveDirection = Vector3.zero;
+                float maxZ = cellCenterWorld.z + (cellSize * 0.5f) - unitRadius;
+                if (proposedPosition.z > maxZ)
+                {
+                    proposedPosition.z = maxZ;
+                }
             }
 
-            selectedUnit.HandleMovement(moveDirection);
+            GridPosition southPos = new GridPosition(currentGridPos.x, currentGridPos.z - 1);
+            if (!IsValidMovePosition(southPos))
+            {
+                float minZ = cellCenterWorld.z - (cellSize * 0.5f) + unitRadius;
+                if (proposedPosition.z < minZ)
+                {
+                    proposedPosition.z = minZ;
+                }
+            }
+
+            GridPosition eastPos = new GridPosition(currentGridPos.x + 1, currentGridPos.z);
+            if (!IsValidMovePosition(eastPos))
+            {
+                float maxX = cellCenterWorld.x + (cellSize * 0.5f) - unitRadius;
+                if (proposedPosition.x > maxX)
+                {
+                    proposedPosition.x = maxX;
+                }
+            }
+
+            GridPosition westPos = new GridPosition(currentGridPos.x - 1, currentGridPos.z);
+            if (!IsValidMovePosition(westPos))
+            {
+                float minX = cellCenterWorld.x - (cellSize * 0.5f) + unitRadius;
+                if (proposedPosition.x < minX)
+                {
+                    proposedPosition.x = minX;
+                }
+            }
+
+            GridPosition targetGridPos = gridSystem.GetGridPosition(proposedPosition);
+            if (!validMovePositions.Contains(targetGridPos))
+            {
+                selectedUnit.HandleMovement(Vector3.zero);
+                return;
+            }
+
+            // Execute Move
+            Vector3 clampedMoveDir =
+                (proposedPosition - selectedUnit.transform.position).normalized * moveSpeed;
+
+            if (Vector3.Distance(proposedPosition, selectedUnit.transform.position) < 0.001f)
+            {
+                selectedUnit.HandleMovement(Vector3.zero);
+            }
+            else
+            {
+                Vector3 moveDelta = proposedPosition - selectedUnit.transform.position;
+                Vector3 finalVelocity = moveDelta / Time.deltaTime;
+                selectedUnit.HandleMovement(finalVelocity);
+            }
+        }
+
+        // Helper method to keep code clean
+        private bool IsValidMovePosition(GridPosition pos)
+        {
+            return validMovePositions != null && validMovePositions.Contains(pos);
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext context)

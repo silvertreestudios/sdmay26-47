@@ -20,6 +20,9 @@ namespace PathfinderTactics.Grid
         // A reference to the node that led to this one, used to reconstruct the path
         public PathNode cameFromNode;
 
+        // If a node is walkable
+        public bool isWalkable = true;
+
         public PathNode(GridPosition gridPosition)
         {
             this.GridPosition = gridPosition;

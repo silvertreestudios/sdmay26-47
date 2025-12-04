@@ -26,6 +26,10 @@ namespace PathfinderTactics.Grid
         [Header("Layer Masks")]
         [SerializeField]
         private LayerMask groundLayerMask;
+
+        [SerializeField]
+        private LayerMask obstacleLayerMask;
+
         public int Width => width;
         public int Height => height;
         public float CellSize => cellSize;
@@ -61,7 +65,20 @@ namespace PathfinderTactics.Grid
                 {
                     GridPosition gridPosition = new GridPosition(x, z);
                     Vector3 worldPosition = GetWorldPosition(gridPosition);
-                    gridCells[x, z] = new GridCell(gridPosition, worldPosition);
+
+                    // Create gridcell
+                    GridCell cell = new GridCell(gridPosition, worldPosition);
+
+                    // Check for obstacles
+                    bool isBlocked = Physics.CheckBox(
+                        worldPosition + Vector3.up * 0.5f, // Center of check
+                        new Vector3(cellSize, 1f, cellSize) * 0.4f,
+                        Quaternion.identity,
+                        obstacleLayerMask
+                    );
+
+                    cell.isWalkable = !isBlocked;
+                    gridCells[x, z] = cell;
                 }
             }
         }
@@ -103,6 +120,13 @@ namespace PathfinderTactics.Grid
             if (IsValidGridPosition(gridPosition))
             {
                 GridCell cell = GetCell(gridPosition);
+                if (!cell.isWalkable)
+                {
+                    Debug.LogError(
+                        $"Trying to spawn unit {unit.name} inside a wall at {gridPosition}!"
+                    );
+                    return;
+                }
                 if (cell.occupyingUnit == null)
                 {
                     cell.occupyingUnit = unit;
