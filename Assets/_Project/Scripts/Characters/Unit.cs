@@ -171,5 +171,21 @@ namespace PathfinderTactics.Characters
                 transform.position = newPosition;
             }
         }
+
+        public int getArmorClass()
+        {
+            if (stats == null)
+                return 10; // Default AC
+
+            return stats.armorClass;
+        }
+
+        public int getTotalHP()
+        {
+            if (stats == null)
+                return 0;
+
+            return stats.TotalHP;
+        }
     }
 }
