@@ -1,5 +1,6 @@
 using System;
 using PathfinderTactics.Core;
+using PathfinderTactics.Characters;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,9 +32,25 @@ namespace PathfinderTactics.UI
             // Setup simple buttons
             attackButton.onClick.AddListener(() =>
             {
-                // TODO: Implement actual attack logic later.
-                // For now, simulate spending an action to attack.
+                //Implementing actual attack logic NOW!
+
+                var unit = UnitActionSystem.Instance.SelectedUnit;
+
+                foreach (Unit other in UnitManager.AllUnits)
+                {
+                    if (other == unit) continue;
+                    //TODO: Make range equal to weapon range. Range is in tiles.
+                    if (unit.IsUnitInRange(other, 1))
+                    {
+                        unit.Attack(other);
+                        Debug.Log("Unit is within 1 tile range");
+                    }
+                }
+
+
                 Debug.Log("Attack Selected!");
+
+
                 UnitActionSystem.Instance.SpendActionAndContinue(1);
             });
 

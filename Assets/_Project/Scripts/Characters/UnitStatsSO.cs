@@ -1,5 +1,19 @@
 using UnityEngine;
 
+public class ClassData
+{
+    public DefenseValues defenses;
+}
+
+[System.Serializable]
+public class DefenseValues
+{
+    public int heavy;
+    public int light;
+    public int medium;
+    public int unarmored;
+}
+
 namespace PathfinderTactics.Characters
 {
     [CreateAssetMenu(fileName = "NewUnitStats", menuName = "PathfinderTactics/Unit Stats")]
@@ -32,9 +46,11 @@ namespace PathfinderTactics.Characters
         [Header("Core Stats (Pathfinder 2e)")]
         [Tooltip("Speed in feet. Standard is 25 or 30 for most humanoids.")]
         public int speedInFeet = 30;
+       
+
 
         [Tooltip("Armor Class (AC). Standard is 10 + Dexterity modifier + armor bonus.")]
-        public int armorClass => 10 + dexterity; // TODO: add armor bonus
+        public int armorClass => 10 + dexterity + 3; // TODO: change based on what armor is equipped (3 is unarmored prof atl lvl 1)
 
         [Header("Ancestry & Class (Resources)")]
         [Tooltip("Resource path (relative to Resources/) to the ancestry JSON. Example: JSON/ancestries/human")]
@@ -42,6 +58,7 @@ namespace PathfinderTactics.Characters
 
         [Tooltip("Resource path (relative to Resources/) to the class JSON. Example: JSON/classes/fighter")]
         public string classResourcePath = "JSON/classes/fighter";
+
 
         [Tooltip("Character level (minimum 1).")]
         public int level = 1;
