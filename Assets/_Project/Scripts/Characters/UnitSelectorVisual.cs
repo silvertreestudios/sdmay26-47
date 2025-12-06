@@ -36,9 +36,9 @@ namespace PathfinderTactics.Characters
 
         private void UnitActionSystem_OnSelectedUnitChanged(object sender, System.EventArgs e)
         {
-            Debug.Log(
-                $"{gameObject.name}'s visual script RECEIVED the OnSelectedUnitChanged event."
-            );
+            //Debug.Log(
+            //    $"{gameObject.name}'s visual script RECEIVED the OnSelectedUnitChanged event."
+            //);
             UpdateVisual();
         }
 

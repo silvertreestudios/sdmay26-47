@@ -210,6 +210,20 @@ namespace PathfinderTactics.Core
                 selectedUnit.transform.position
             );
 
+            foreach (Unit other in UnitManager.AllUnits)
+            {
+                if (other == this)
+                    continue;
+
+                if (other.CurrentGridPosition.x == finalGridPosition.x &&
+                    other.CurrentGridPosition.z == finalGridPosition.z)
+                {
+                    SetPhase(GamePhase.FreeMovement);
+                    return;
+                }
+            }
+
+
             selectedUnit.SnapToGrid(GridSystem.Instance.GetWorldPosition(finalGridPosition));
 
             selectedUnit.FinalizeMove(finalGridPosition);

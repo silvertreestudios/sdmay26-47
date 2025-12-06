@@ -12,7 +12,7 @@ namespace PathfinderTactics.Characters
         [Header("Configuration")]
         [SerializeField]
         private UnitStatsSO stats;
-
+        private int currentHP;
         // Public Properties
         public GridPosition CurrentGridPosition { get; private set; }
 
@@ -57,7 +57,9 @@ namespace PathfinderTactics.Characters
 
         private void Awake()
         {
+            UnitManager.AllUnits.Add(this);
             characterController = GetComponent<CharacterController>();
+            currentHP = getTotalHP();
         }
 
         #region Movement Budget
@@ -187,5 +189,68 @@ namespace PathfinderTactics.Characters
 
             return stats.TotalHP;
         }
+
+
+        public bool IsUnitInRange(Unit other, int range)
+        {
+            int dx = Mathf.Abs(other.CurrentGridPosition.x - CurrentGridPosition.x);
+            int dz = Mathf.Abs(other.CurrentGridPosition.z - CurrentGridPosition.z);
+
+            int distance = dx + dz;
+
+            return distance <= range;
+        }
+
+        public void Attack(Unit target)
+        {
+            // Simple attack logic: deal fixed damage
+            int roll = UnityEngine.Random.Range(1, 21);
+            int strength = stats.strength;
+            // Profcienciey is expertise for now (Fighter level 1) expertise = 4 + lvl,
+            int proficiency = 5;
+            int penalty = 0;
+            int attackValue = roll + strength + proficiency + penalty;
+
+            if (roll != 20) {
+                if (target.defend_against_attack(attackValue)) {
+                    Debug.Log($"{gameObject.name} attacked {target.gameObject.name} but was blocked!");
+                    return;
+                } else
+                {
+                    int targetHealth = target.currentHP;
+                    if (targetHealth != null)
+                    {
+                        //TODO: damage change based on weapon (right now hardCoded longsword damage)
+                        int damage = UnityEngine.Random.Range(1, 9) + 4;
+                        targetHealth -= damage;
+                        Debug.Log($"{gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
+                    }
+                }
+            }else
+            {
+                int targetHealth = target.currentHP;
+                
+                int damage = 2 * (UnityEngine.Random.Range(1, 9) + 4);
+                targetHealth -= damage;
+                Debug.Log($"CRIT! {gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
+                
+            }
+            Debug.Log("{target.gameObject.name} has {target.currentHP} health!");
+
+
+        }
+
+        public bool defend_against_attack(int attackValue)
+        {
+            int ac = stats.armorClass;
+            return attackValue >= ac;
+        }
+
+
+        private void OnDestroy()
+        {
+            UnitManager.AllUnits.Remove(this);
+        }
     }
-}
+    
+   }
