@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: Player_Level1_Pawn
   m_EditorClassIdentifier: 
   unitName: Unit
-  speedInFeet: 30
+  strength: 4
+  dexterity: 2
+  constitution: 2
+  intelligence: 0
+  wisdom: 1
+  charisma: 0
+  speedInFeet: 25
+  ancestryResourcePath: JSON/ancestries/human
+  classResourcePath: JSON/ancestries/human
+  level: 1

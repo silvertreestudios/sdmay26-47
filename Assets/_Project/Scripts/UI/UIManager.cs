@@ -18,11 +18,16 @@ namespace PathfinderTactics.UI
         [SerializeField]
         private GameObject actionPanel;
 
+        [SerializeField]
+        private GameObject statusPanel;
+
         private void Start()
         {
             // Subscribe to game events
             UnitActionSystem.Instance.OnSelectedUnitChanged +=
                 UnitActionSystem_OnSelectedUnitChanged;
+
+            UnitActionSystem.Instance.OnActionCompleted += onActionCompleted;
 
             // Set up button listener
             endTurnButton.onClick.AddListener(() =>
@@ -31,6 +36,7 @@ namespace PathfinderTactics.UI
                 UnitActionSystem.Instance.EndTurn();
             });
 
+            UpdateStatus();
             UpdateActionUI(); // Initial update
         }
 
@@ -43,6 +49,10 @@ namespace PathfinderTactics.UI
         private void UnitActionSystem_OnSelectedUnitChanged(object sender, System.EventArgs e)
         {
             UpdateActionUI();
+        }
+        private void onActionCompleted(object sender, System.EventArgs e)
+        {
+            UpdateStatus();
         }
 
         private void UpdateActionUI()
@@ -61,5 +71,15 @@ namespace PathfinderTactics.UI
                 actionPanel.SetActive(false);
             }
         }
+
+        private void UpdateStatus()
+        {
+            int p1Health = UnitManager.AllUnits[0].GetCurrentHP();
+            int p2Health = UnitManager.AllUnits[1].GetCurrentHP();
+
+            statusPanel.transform.Find("Player_one_health").GetComponent<TextMeshProUGUI>().text = $"Player one health \n {p1Health}";
+            statusPanel.transform.Find("Player_two_health").GetComponent<TextMeshProUGUI>().text = $"Player two health \n {p2Health}";
+        }
+
     }
 }
