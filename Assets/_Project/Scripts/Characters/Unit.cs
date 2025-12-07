@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using UnityEngine;
+using TMPro;
 
 namespace PathfinderTactics.Characters
 {
@@ -32,6 +33,8 @@ namespace PathfinderTactics.Characters
         // Useful for debugging
         private int totalActionPointsPerTurn = 3;
 
+        private bool selected = false;
+
         #region Action Economy
         public void StartTurn()
         {
@@ -60,6 +63,44 @@ namespace PathfinderTactics.Characters
             UnitManager.AllUnits.Add(this);
             characterController = GetComponent<CharacterController>();
             currentHP = getTotalHP();
+
+
+        }
+
+        private void Start()
+        {
+            UnitActionSystem.Instance.OnSelectedUnitChanged +=
+                Select_unit;
+        }
+
+        void Update()
+        {
+            if (!selected) return;
+            //Search for units in range
+            foreach (Unit other in UnitManager.AllUnits)
+            {
+                if (other == this) continue;
+                //TODO: Make range equal to weapon range. Range is in tiles.
+                if (IsUnitInRange(other, 1))
+                {
+                    Renderer[] renderers = other.GetComponentsInChildren<Renderer>();
+
+                    foreach (Renderer r in renderers)
+                    {
+                        r.material.color = Color.red;
+                    }
+                }
+                else
+                {
+                    // Reset to white if NOT in range
+                    Renderer[] renderers = other.GetComponentsInChildren<Renderer>();
+
+                    foreach (Renderer r in renderers)
+                    {
+                        r.material.color = Color.white;
+                    }
+                }
+            }
         }
 
         #region Movement Budget
@@ -203,6 +244,8 @@ namespace PathfinderTactics.Characters
 
         public void Attack(Unit target)
         {
+            TextMeshProUGUI rollText = GameObject.Find("Roll_results").GetComponent<TextMeshProUGUI>();
+
             // Simple attack logic: deal fixed damage
             int roll = UnityEngine.Random.Range(1, 21);
             int strength = stats.strength;
@@ -211,39 +254,46 @@ namespace PathfinderTactics.Characters
             int penalty = 0;
             int attackValue = roll + strength + proficiency + penalty;
 
-            if (roll != 20) {
-                if (target.defend_against_attack(attackValue)) {
+            AppendRoll(rollText, $"Attack Roll d20: {roll}: total: {attackValue}");
+
+            if (roll != 20)
+            {
+                if (target.Defend_against_attack(attackValue))
+                {
                     Debug.Log($"{gameObject.name} attacked {target.gameObject.name} but was blocked!");
                     return;
-                } else
-                {
-                    int targetHealth = target.currentHP;
-                    if (targetHealth != null)
-                    {
-                        //TODO: damage change based on weapon (right now hardCoded longsword damage)
-                        int damage = UnityEngine.Random.Range(1, 9) + 4;
-                        targetHealth -= damage;
-                        Debug.Log($"{gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
-                    }
                 }
-            }else
-            {
-                int targetHealth = target.currentHP;
-                
-                int damage = 2 * (UnityEngine.Random.Range(1, 9) + 4);
-                targetHealth -= damage;
-                Debug.Log($"CRIT! {gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
-                
+                else
+                {
+                   
+                    //TODO: damage change based on weapon (right now hardCoded longsword damage)
+                    int damage = UnityEngine.Random.Range(1, 9) + 4;
+                    AppendRoll(rollText, $"Damage Roll d8: {damage - 4} total : {damage}");
+                    target.currentHP -= damage;
+                    target.currentHP = Math.Max(0, target.currentHP);
+                    Debug.Log($"{gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
+                    
+                }
             }
-            Debug.Log("{target.gameObject.name} has {target.currentHP} health!");
+            else
+            {
+
+                int damage = 2 * (UnityEngine.Random.Range(1, 9) + 4);
+                AppendRoll(rollText, $"CRIT Damage Roll d8: {damage / 2 - 4} total : {damage}");
+                target.currentHP -= damage;
+                target.currentHP = Math.Max(0, target.currentHP);
+                Debug.Log($"CRIT! {gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
+
+            }
+            Debug.Log("${target.gameObject.name} has {target.currentHP} health!");
 
 
         }
 
-        public bool defend_against_attack(int attackValue)
+        public bool Defend_against_attack(int attackValue)
         {
             int ac = stats.armorClass;
-            return attackValue >= ac;
+            return attackValue <= ac;
         }
 
 
@@ -251,6 +301,46 @@ namespace PathfinderTactics.Characters
         {
             UnitManager.AllUnits.Remove(this);
         }
+
+        public int GetCurrentHP()
+        {
+            return currentHP;
+        }
+
+        private void Select_unit(object sender, EventArgs e)
+        {
+            if (UnitActionSystem.Instance.SelectedUnit == this)
+            {
+                selected = true;
+            }
+            else
+            {
+                foreach (Unit other in UnitManager.AllUnits)
+                {
+                    if (other == this) continue;
+                    
+                    Renderer[] renderers = other.GetComponentsInChildren<Renderer>();
+
+                    foreach (Renderer r in renderers)
+                    {
+                        r.material.color = Color.white;
+                    }
+                    
+                }
+                selected = false;
+            }
+        }
+
+        //Its here im realizing I am adding way too much to the unit class that does not need to be here. I will fix it later and move some methods elsewhere.
+        private void AppendRoll(TextMeshProUGUI textBox, string message)
+        {
+            textBox.text += message + "\n";
+            // Trim old text if too long
+            if (textBox.text.Length > 100)
+            {
+                textBox.text = textBox.text.Substring(textBox.text.Length - 100);
+            }
+        }
+
     }
-    
-   }
+}

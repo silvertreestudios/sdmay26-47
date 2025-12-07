@@ -32,10 +32,10 @@ namespace PathfinderTactics.UI
             // Setup simple buttons
             attackButton.onClick.AddListener(() =>
             {
-                //Implementing actual attack logic NOW!
-
+                
                 var unit = UnitActionSystem.Instance.SelectedUnit;
 
+                //Search for units in range
                 foreach (Unit other in UnitManager.AllUnits)
                 {
                     if (other == unit) continue;

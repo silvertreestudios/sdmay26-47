@@ -257,6 +257,7 @@ namespace PathfinderTactics.Core
             else
             {
                 // Out of AP
+                OnActionCompleted?.Invoke(this, EventArgs.Empty);
                 EndTurn();
             }
         }
