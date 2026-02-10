@@ -1,0 +1,57 @@
+{
+    "_id": "YMQr577asquZIP65",
+    "img": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
+    "name": "Scale Mail",
+    "system": {
+        "acBonus": 3,
+        "baseItem": "scale-mail",
+        "bulk": {
+            "value": 2
+        },
+        "category": "medium",
+        "checkPenalty": -2,
+        "containerId": null,
+        "description": {
+            "value": "<p>Scale mail consists of many metal scales sewn onto a reinforced leather backing, often in the form of a long shirt that protects the torso, arms, and legs.</p>"
+        },
+        "dexCap": 2,
+        "group": "composite",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 4
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": -5,
+        "strength": 2,
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "armor"
+}
