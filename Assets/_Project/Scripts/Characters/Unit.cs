@@ -23,11 +23,18 @@ namespace PathfinderTactics.Characters
         private float gravity = -9.81f;
         private float jumpHeight = 1.5f;
 
+        //Contains all feats (exacting strike for now)
+        [SerializeField]
+        private FeatLoadoutSO featLoadout;
+
         // Budget is used to track how far a unit can move
         private int movementBudgetRemaining;
 
         // 3 actions per turn. Here is where it begins to get messy :P
         private int actionPointsRemaining;
+
+        // Used to track how many attacks have been made for the multiple attack penalty (MAP). Resets at the start of each turn.
+        private int attack_count = 0; 
 
         // Honestly theres no way we need this to be anything other than 3 but
         // Useful for debugging
@@ -39,6 +46,7 @@ namespace PathfinderTactics.Characters
         public void StartTurn()
         {
             actionPointsRemaining = totalActionPointsPerTurn;
+            attack_count = 0; 
         }
 
         public void SpendActionPoint()
@@ -246,15 +254,17 @@ namespace PathfinderTactics.Characters
         {
             TextMeshProUGUI rollText = GameObject.Find("Roll_results").GetComponent<TextMeshProUGUI>();
 
-            // Simple attack logic: deal fixed damage
+            // Simple attack logic
             int roll = UnityEngine.Random.Range(1, 21);
             int strength = stats.strength;
             // Profcienciey is expertise for now (Fighter level 1) expertise = 4 + lvl,
             int proficiency = 5;
-            int penalty = 0;
+            int penalty = -1 * (attack_count * 5);
             int attackValue = roll + strength + proficiency + penalty;
 
             AppendRoll(rollText, $"Attack Roll d20: {roll}: total: {attackValue}");
+
+            attack_count++; // Increment attack count regardless of hit or miss
 
             if (roll != 20)
             {
@@ -306,6 +316,23 @@ namespace PathfinderTactics.Characters
         {
             return currentHP;
         }
+        public int ReduceCurrentHP(int amount)
+        {
+            currentHP -= amount;
+            currentHP = Math.Max(0, currentHP);
+            return currentHP;
+        }
+
+        public int GetAttackCount()
+        {
+            return attack_count;
+        }
+
+        public int ReduceAttackCount(int amount)
+        {
+            attack_count -= amount;
+            return attack_count;
+        }
 
         private void Select_unit(object sender, EventArgs e)
         {
@@ -329,6 +356,16 @@ namespace PathfinderTactics.Characters
                 }
                 selected = false;
             }
+        }
+
+        public FeatLoadoutSO GetFeatLoadout()
+        {
+            return featLoadout;
+        }
+
+        public UnitStatsSO GetUnitStats()
+        {
+            return stats;
         }
 
         //Its here im realizing I am adding way too much to the unit class that does not need to be here. I will fix it later and move some methods elsewhere.

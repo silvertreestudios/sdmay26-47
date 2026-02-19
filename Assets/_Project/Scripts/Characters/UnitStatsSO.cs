@@ -23,6 +23,7 @@ namespace PathfinderTactics.Characters
         public string unitName = "Unit";
 
         //All of these will be hardcoded for now this is the basic fighter I built here: https://pathbuilder2e.com/launch.html?build=1381561, where I am getting these from. Should all be read from other places later
+        //When we make new classes or add different starting values,change/ add them to the scriptable objects folder. This is base case
         [Header("Ability Modifiers")]
         [Tooltip("Strength: physical power.")]
         public int strength = 4;

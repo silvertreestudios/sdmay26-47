@@ -22,4 +22,5 @@ MonoBehaviour:
   speedInFeet: 25
   ancestryResourcePath: JSON/ancestries/human
   classResourcePath: JSON/ancestries/human
+  armorResourcePath: JSON/eqiupment/scale-mail
   level: 1
