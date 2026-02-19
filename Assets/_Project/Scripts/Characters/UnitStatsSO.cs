@@ -22,22 +22,22 @@ namespace PathfinderTactics.Characters
         [Header("Identity")]
         public string unitName = "Unit";
 
-
+        //All of these will be hardcoded for now this is the basic fighter I built here: https://pathbuilder2e.com/launch.html?build=1381561, where I am getting these from. Should all be read from other places later
         [Header("Ability Modifiers")]
         [Tooltip("Strength: physical power.")]
-        public int strength = 0;
+        public int strength = 4;
 
         [Tooltip("Dexterity: agility, reflexes, and fine motor control.")]
-        public int dexterity = 0;
+        public int dexterity = 2;
 
         [Tooltip("Constitution: health and stamina.")]
-        public int constitution = 0;
+        public int constitution = 2;
 
         [Tooltip("Intelligence: reasoning, memory, and knowledge.")]
         public int intelligence = 0;
 
         [Tooltip("Wisdom: perception and willpower.")]
-        public int wisdom = 0;
+        public int wisdom = 1;
 
         [Tooltip("Charisma: presence and force of personality.")]
         public int charisma = 0;
@@ -45,12 +45,12 @@ namespace PathfinderTactics.Characters
 
         [Header("Core Stats (Pathfinder 2e)")]
         [Tooltip("Speed in feet. Standard is 25 or 30 for most humanoids.")]
-        public int speedInFeet = 30;
+        public int speedInFeet = 25;
        
 
 
         [Tooltip("Armor Class (AC). Standard is 10 + Dexterity modifier + armor bonus.")]
-        public int armorClass => 10 + dexterity + 3; // TODO: change based on what armor is equipped (3 is unarmored prof atl lvl 1)
+        public int armorClass => GetAC();
 
         [Header("Ancestry & Class (Resources)")]
         [Tooltip("Resource path (relative to Resources/) to the ancestry JSON. Example: JSON/ancestries/human")]
@@ -58,6 +58,8 @@ namespace PathfinderTactics.Characters
 
         [Tooltip("Resource path (relative to Resources/) to the class JSON. Example: JSON/classes/fighter")]
         public string classResourcePath = "JSON/classes/fighter";
+
+        public string armorResourcePath = "JSON/eqiupment/scale-mail";
 
 
         [Tooltip("Character level (minimum 1).")]
@@ -128,6 +130,36 @@ namespace PathfinderTactics.Characters
             }
         }
 
+        private int GetAC()
+        {
+            if (string.IsNullOrEmpty(armorResourcePath)) return 0;
+            var ta = Resources.Load<TextAsset>(armorResourcePath);
+            if (ta == null) return 0;
+            try
+            {
+                var data = JsonUtility.FromJson<ArmorJson>(ta.text);
+                if (data != null && data.system != null)
+                {
+                    int acBonus = data.system.acBonus;
+                    int dexCap = data.system.dexCap;
+                    int dexBonus = Mathf.Min(dexterity, dexCap);
+                    string category = data.system.category.ToLower();
+                    // Check category for armor type (heavy, medium, light, unarmored) and apply appropriate profcienecy bonus if needed (TODO: implement proficiency bonuses later)
+                    int fighter_lvl1_trained_bonus = 3; // Placeholder for now, should be based on class and level
+                    return 10 + acBonus + dexBonus + fighter_lvl1_trained_bonus;
+                }
+                else
+                {
+                    return 0;
+
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
         [System.Serializable]
         private class AncestryJson
         {
@@ -151,7 +183,23 @@ namespace PathfinderTactics.Characters
         {
             public int hp;
         }
+        [System.Serializable]
+        private class ArmorJson
+        {
+            public ArmorSystem system;
+        }
 
+        [System.Serializable]
+        private class ArmorSystem
+        {
+            public int acBonus;
+            public int dexCap;
+            public int checkPenalty;
+            public int speedPenalty;
+            public int strength;
+            public int bulk;
+            public string category;
+        }
         private void OnValidate()
         {
             if (level < 1) level = 1;
