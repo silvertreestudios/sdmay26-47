@@ -55,12 +55,19 @@ namespace PathfinderTactics.Characters
 
         public int AttacksThisTurn { get; private set; } = 0;
 
+        public bool HasReactionAvailable { get; private set; } = true;
+
         #region Action Economy
         public void StartTurn()
         {
             actionPointsRemaining = totalActionPointsPerTurn;
             AttacksThisTurn = 0;
+            HasReactionAvailable = true;
         }
+
+        public void SpendReaction() => HasReactionAvailable = false;
+
+        public void RestoreReaction() => HasReactionAvailable = true;
 
         public void IncrementAttacksThisTurn()
         {

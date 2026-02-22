@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PathfinderTactics.Actions;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Grid;
+using PathfinderTactics.Reactions;
 using PathfinderTactics.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -196,25 +197,26 @@ namespace PathfinderTactics.Core
         {
             if (currentPhase == GamePhase.FreeMovement)
             {
-                if (CommitMoveAction())
+                // Commit the move, and IF they survive, open the menu!
+                CommitMoveAction(() =>
                 {
-                    // SUCCESS: We snapped. Now go to Menu.
                     if (selectedUnit.GetActionPointsRemaining() > 0)
                     {
                         Debug.Log("Opening Menu...");
-                        SetPhase(GamePhase.ActionSelection); // Trigger the UI show
+                        SetPhase(GamePhase.ActionSelection);
                     }
                     else
                     {
                         EndTurn();
                     }
-                }
+                });
+                return;
             }
             else if (currentPhase == GamePhase.ActionSelection)
             {
-                // Toggle off
                 Debug.Log("Closing Menu...");
                 SetPhase(GamePhase.FreeMovement);
+                return;
             }
         }
 
@@ -452,10 +454,10 @@ namespace PathfinderTactics.Core
             );
         }
 
-        private bool CommitMoveAction()
+        private void CommitMoveAction(Action onComplete = null)
         {
             if (selectedUnit == null)
-                return false;
+                return;
 
             GridPosition currentPos = GridSystem.Instance.GetGridPosition(
                 selectedUnit.transform.position
@@ -469,23 +471,67 @@ namespace PathfinderTactics.Core
                     selectedUnit.SnapToGrid(
                         GridSystem.Instance.GetWorldPosition(selectedUnit.CurrentGridPosition)
                     );
-                    return false;
+                    return;
                 }
-                selectedUnit.SpendActionPoints(1);
+
+                // Lock the game state
+                SetPhase(GamePhase.Busy);
+
+                // Package the event
+                BeforeMoveEvent moveEvent = new BeforeMoveEvent(
+                    selectedUnit,
+                    selectedUnit.CurrentGridPosition,
+                    currentPos
+                );
+
+                // Hand it to the Reaction Manager
+                ReactionManager.Instance.EvaluateEvent(
+                    moveEvent,
+                    (resolvedEvent) =>
+                    {
+                        // This block executes AFTER all reactions are totally finished
+
+                        if (resolvedEvent.IsCancelled)
+                        {
+                            // A reaction killed the unit or rooted them in place. Snap them back
+                            selectedUnit.SnapToGrid(
+                                GridSystem.Instance.GetWorldPosition(
+                                    selectedUnit.CurrentGridPosition
+                                )
+                            );
+                        }
+                        else
+                        {
+                            // Safe to move Apply the AP cost and finalize grid position.
+                            selectedUnit.SpendActionPoints(1);
+                            GridSystem.Instance.MoveUnit(
+                                selectedUnit,
+                                selectedUnit.CurrentGridPosition,
+                                currentPos
+                            );
+                            selectedUnit.FinalizeMove(currentPos);
+                            selectedUnit.SnapToGrid(
+                                GridSystem.Instance.GetWorldPosition(currentPos)
+                            );
+                        }
+
+                        OnActionCompleted?.Invoke(this, EventArgs.Empty);
+
+                        onComplete?.Invoke();
+
+                        // Only drop back to FreeMovement if a menu isn't opening
+                        if (currentPhase != GamePhase.ActionSelection)
+                        {
+                            CheckTurnEnd();
+                        }
+                    }
+                );
             }
-
-            SetPhase(GamePhase.Busy);
-            GridSystem.Instance.MoveUnit(
-                selectedUnit,
-                selectedUnit.CurrentGridPosition,
-                currentPos
-            );
-            selectedUnit.FinalizeMove(currentPos);
-            selectedUnit.SnapToGrid(GridSystem.Instance.GetWorldPosition(currentPos));
-
-            OnActionCompleted?.Invoke(this, EventArgs.Empty);
-            CheckTurnEnd();
-            return true;
+            else
+            {
+                // If they didn't actually move anywhere, just run the callback immediately
+                onComplete?.Invoke();
+            }
         }
 
         private void CheckTurnEnd()

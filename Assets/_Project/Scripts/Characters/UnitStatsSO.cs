@@ -58,6 +58,8 @@ namespace PathfinderTactics.Characters
         )]
         public string ancestryResourcePath = "JSON/ancestries/human";
 
+        public string armorResourcePath = "JSON/eqiupment/scale-mail";
+
         [Tooltip(
             "Resource path (relative to Resources/) to the class JSON. Example: JSON/classes/fighter"
         )]
@@ -137,9 +139,11 @@ namespace PathfinderTactics.Characters
 
         private int GetAC()
         {
-            if (string.IsNullOrEmpty(armorResourcePath)) return 0;
+            if (string.IsNullOrEmpty(armorResourcePath))
+                return 0;
             var ta = Resources.Load<TextAsset>(armorResourcePath);
-            if (ta == null) return 0;
+            if (ta == null)
+                return 0;
             try
             {
                 var data = JsonUtility.FromJson<ArmorJson>(ta.text);
@@ -156,7 +160,6 @@ namespace PathfinderTactics.Characters
                 else
                 {
                     return 0;
-
                 }
             }
             catch
@@ -188,6 +191,7 @@ namespace PathfinderTactics.Characters
         {
             public int hp;
         }
+
         [System.Serializable]
         private class ArmorJson
         {
@@ -205,6 +209,7 @@ namespace PathfinderTactics.Characters
             public int bulk;
             public string category;
         }
+
         private void OnValidate()
         {
             if (level < 1)
