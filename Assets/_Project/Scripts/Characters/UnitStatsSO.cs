@@ -22,6 +22,9 @@ namespace PathfinderTactics.Characters
         [Header("Identity")]
         public string unitName = "Unit";
 
+        [Header("Skills & Senses")]
+        [Tooltip("Perception modifier for Initiative rolls.")]
+        public int perception = 0;
 
         [Header("Ability Modifiers")]
         [Tooltip("Strength: physical power.")]
@@ -42,23 +45,23 @@ namespace PathfinderTactics.Characters
         [Tooltip("Charisma: presence and force of personality.")]
         public int charisma = 0;
 
-
         [Header("Core Stats (Pathfinder 2e)")]
         [Tooltip("Speed in feet. Standard is 25 or 30 for most humanoids.")]
         public int speedInFeet = 30;
-       
-
 
         [Tooltip("Armor Class (AC). Standard is 10 + Dexterity modifier + armor bonus.")]
         public int armorClass => 10 + dexterity + 3; // TODO: change based on what armor is equipped (3 is unarmored prof atl lvl 1)
 
         [Header("Ancestry & Class (Resources)")]
-        [Tooltip("Resource path (relative to Resources/) to the ancestry JSON. Example: JSON/ancestries/human")]
+        [Tooltip(
+            "Resource path (relative to Resources/) to the ancestry JSON. Example: JSON/ancestries/human"
+        )]
         public string ancestryResourcePath = "JSON/ancestries/human";
 
-        [Tooltip("Resource path (relative to Resources/) to the class JSON. Example: JSON/classes/fighter")]
+        [Tooltip(
+            "Resource path (relative to Resources/) to the class JSON. Example: JSON/classes/fighter"
+        )]
         public string classResourcePath = "JSON/classes/fighter";
-
 
         [Tooltip("Character level (minimum 1).")]
         public int level = 1;
@@ -98,9 +101,11 @@ namespace PathfinderTactics.Characters
 
         private int GetAncestryHp()
         {
-            if (string.IsNullOrEmpty(ancestryResourcePath)) return 0;
+            if (string.IsNullOrEmpty(ancestryResourcePath))
+                return 0;
             var ta = Resources.Load<TextAsset>(ancestryResourcePath);
-            if (ta == null) return 0;
+            if (ta == null)
+                return 0;
             try
             {
                 var data = JsonUtility.FromJson<AncestryJson>(ta.text);
@@ -114,9 +119,11 @@ namespace PathfinderTactics.Characters
 
         private int GetClassHp()
         {
-            if (string.IsNullOrEmpty(classResourcePath)) return 0;
+            if (string.IsNullOrEmpty(classResourcePath))
+                return 0;
             var ta = Resources.Load<TextAsset>(classResourcePath);
-            if (ta == null) return 0;
+            if (ta == null)
+                return 0;
             try
             {
                 var data = JsonUtility.FromJson<ClassJson>(ta.text);
@@ -154,12 +161,11 @@ namespace PathfinderTactics.Characters
 
         private void OnValidate()
         {
-            if (level < 1) level = 1;
+            if (level < 1)
+                level = 1;
         }
 
         // TODO: Add many more stats here later (Dying Level, Wounded Level,
         // Resistances, Weaknesses, Immunities, etc.)
-
-
     }
 }

@@ -1,11 +1,8 @@
 using PathfinderTactics.Characters;
-using PathfinderTactics.Grid;
 using UnityEngine;
 
 namespace PathfinderTactics.Grid
 {
-    // TODO: add colisions and whatnot
-
     /// <summary>
     /// Manages the game grid, including its creation, data storage, and utility functions.
     /// </summary>
@@ -25,18 +22,11 @@ namespace PathfinderTactics.Grid
 
         [Header("Layer Masks")]
         [SerializeField]
-        private LayerMask groundLayerMask;
-
-        [SerializeField]
         private LayerMask obstacleLayerMask;
 
         public int Width => width;
         public int Height => height;
         public float CellSize => cellSize;
-
-        [Header("Debug")]
-        [SerializeField]
-        private Transform debugTransform;
 
         private GridCell[,] gridCells;
 
@@ -49,41 +39,34 @@ namespace PathfinderTactics.Grid
                 return;
             }
             Instance = this;
-
             CreateGrid();
         }
-
-        private void Start() { }
 
         private void CreateGrid()
         {
             gridCells = new GridCell[width, height];
-
             for (int x = 0; x < width; x++)
             {
                 for (int z = 0; z < height; z++)
                 {
-                    GridPosition gridPosition = new GridPosition(x, z);
-                    Vector3 worldPosition = GetWorldPosition(gridPosition);
+                    GridPosition gridPos = new GridPosition(x, z);
+                    Vector3 worldPos = GetWorldPosition(gridPos);
+                    GridCell cell = new GridCell(gridPos, worldPos);
 
-                    // Create gridcell
-                    GridCell cell = new GridCell(gridPosition, worldPosition);
-
-                    // Check for obstacles
+                    // Obstacle check (Walls)
                     bool isBlocked = Physics.CheckBox(
-                        worldPosition + Vector3.up * 0.5f, // Center of check
+                        worldPos + Vector3.up * 0.5f,
                         new Vector3(cellSize, 1f, cellSize) * 0.4f,
                         Quaternion.identity,
                         obstacleLayerMask
                     );
-
                     cell.isWalkable = !isBlocked;
                     gridCells[x, z] = cell;
                 }
             }
         }
 
-        #region Public API
+        // PUBLIC API
 
         public Vector3 GetWorldPosition(GridPosition gridPosition)
         {
@@ -92,9 +75,17 @@ namespace PathfinderTactics.Grid
 
         public GridPosition GetGridPosition(Vector3 worldPosition)
         {
-            int x = Mathf.RoundToInt(worldPosition.x / cellSize);
-            int z = Mathf.RoundToInt(worldPosition.z / cellSize);
-            return new GridPosition(x, z);
+            return new GridPosition(
+                Mathf.RoundToInt(worldPosition.x / cellSize),
+                Mathf.RoundToInt(worldPosition.z / cellSize)
+            );
+        }
+
+        public GridCell GetCell(GridPosition gridPosition)
+        {
+            if (!IsValidGridPosition(gridPosition))
+                return null;
+            return gridCells[gridPosition.x, gridPosition.z];
         }
 
         public bool IsValidGridPosition(GridPosition gridPosition)
@@ -105,141 +96,42 @@ namespace PathfinderTactics.Grid
                 && gridPosition.z < height;
         }
 
-        public GridCell GetCell(GridPosition gridPosition)
-        {
-            if (!IsValidGridPosition(gridPosition))
-            {
-                Debug.LogError($"Invalid GridPosition requested: {gridPosition}");
-                return null;
-            }
-            return gridCells[gridPosition.x, gridPosition.z];
-        }
+        // Unit registration
 
         public void AddUnitAt(Unit unit, GridPosition gridPosition)
         {
-            if (IsValidGridPosition(gridPosition))
+            GridCell cell = GetCell(gridPosition);
+            if (cell != null)
             {
-                GridCell cell = GetCell(gridPosition);
-                if (!cell.isWalkable)
-                {
-                    Debug.LogError(
-                        $"Trying to spawn unit {unit.name} inside a wall at {gridPosition}!"
-                    );
-                    return;
-                }
-                if (cell.occupyingUnit == null)
-                {
-                    cell.occupyingUnit = unit;
-                    unit.SetInitialPosition(gridPosition);
-                }
-                else
-                {
-                    Debug.LogError(
-                        $"Cell {gridPosition} is already occupied by {cell.occupyingUnit.name}!"
-                    );
-                }
+                cell.occupyingUnit = unit;
             }
         }
 
         public void RemoveUnitAt(GridPosition gridPosition)
         {
-            if (IsValidGridPosition(gridPosition))
+            GridCell cell = GetCell(gridPosition);
+            if (cell != null)
             {
-                var cell = GetCell(gridPosition);
-                if (cell.occupyingUnit != null)
-                {
-                    cell.occupyingUnit = null;
-                }
+                cell.occupyingUnit = null;
             }
         }
 
-        public void MoveUnit(Unit unit, GridPosition newGridPosition)
+        public void MoveUnit(Unit unit, GridPosition fromPos, GridPosition toPos)
         {
-            RemoveUnitAt(unit.CurrentGridPosition);
-
-            GridCell newCell = GetCell(newGridPosition);
-            if (newCell != null && newCell.occupyingUnit == null)
-            {
-                newCell.occupyingUnit = unit;
-            }
-            else
-            {
-                Debug.LogError(
-                    $"Cannot move unit to {newGridPosition}, cell might be invalid or already occupied!"
-                );
-            }
+            RemoveUnitAt(fromPos);
+            AddUnitAt(unit, toPos);
         }
 
         public Unit GetUnitAt(GridPosition gridPosition)
         {
-            if (!IsValidGridPosition(gridPosition))
-                return null;
-            return GetCell(gridPosition).occupyingUnit;
+            GridCell cell = GetCell(gridPosition);
+            return cell?.occupyingUnit;
         }
 
-        #endregion
-
-        private void OnDrawGizmos()
+        public bool IsPositionOccupied(GridPosition gridPosition)
         {
-            // This ensures the grid data exists for drawing in the editor.
-            if (gridCells == null)
-            {
-                CreateGrid();
-            }
-
-            int segments = 24;
-            float radius = cellSize * 0.15f;
-
-            for (int x = 0; x < width; x++)
-            {
-                for (int z = 0; z < height; z++)
-                {
-                    Vector3 center = GetWorldPosition(new GridPosition(x, z));
-
-                    Gizmos.color = Color.white;
-                    Gizmos.DrawWireCube(center, new Vector3(cellSize, 0, cellSize));
-
-                    Gizmos.color = Color.red;
-                    Vector3 previousPoint = center + new Vector3(radius, 0, 0);
-                    for (int i = 1; i <= segments; i++)
-                    {
-                        float angle = i * 2 * Mathf.PI / segments;
-                        Vector3 nextPoint =
-                            center
-                            + new Vector3(Mathf.Cos(angle) * radius, 0, Mathf.Sin(angle) * radius);
-                        Gizmos.DrawLine(previousPoint, nextPoint);
-                        previousPoint = nextPoint;
-                    }
-                }
-            }
-
-            if (debugTransform != null)
-            {
-                GridPosition gridPosition = GetGridPosition(debugTransform.position);
-                if (IsValidGridPosition(gridPosition))
-                {
-                    Gizmos.color = Color.cyan;
-                    Gizmos.DrawCube(
-                        GetWorldPosition(gridPosition),
-                        new Vector3(cellSize, 0.1f, cellSize) * 0.95f
-                    );
-                }
-            }
-        }
-
-        public float GetGroundHeight(GridPosition gridPosition)
-        {
-            Vector3 rayStart = new Vector3(
-                gridPosition.x * cellSize,
-                100f,
-                gridPosition.z * cellSize
-            );
-            if (Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit, 150f, groundLayerMask))
-            {
-                return hit.point.y;
-            }
-            // If no ground is found, return 0 as a default.
-            return 0f;
+            GridCell cell = GetCell(gridPosition);
+            return cell != null && cell.occupyingUnit != null;
         }
     }
 }

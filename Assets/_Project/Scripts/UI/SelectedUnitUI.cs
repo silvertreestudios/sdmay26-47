@@ -1,7 +1,7 @@
 using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 namespace PathfinderTactics.UI
 {
@@ -12,11 +12,11 @@ namespace PathfinderTactics.UI
     public class SelectedUnitUI : MonoBehaviour
     {
         [Header("UI References")]
-    [SerializeField]
-    private TextMeshProUGUI nameText;
+        [SerializeField]
+        private TextMeshProUGUI nameText;
 
-    [SerializeField]
-    private TextMeshProUGUI hpText;
+        [SerializeField]
+        private TextMeshProUGUI hpText;
 
         [SerializeField]
         private GameObject panelRoot;
@@ -28,7 +28,8 @@ namespace PathfinderTactics.UI
         {
             if (UnitActionSystem.Instance != null)
             {
-                UnitActionSystem.Instance.OnSelectedUnitChanged += UnitActionSystem_OnSelectedUnitChanged;
+                UnitActionSystem.Instance.OnSelectedUnitChanged +=
+                    UnitActionSystem_OnSelectedUnitChanged;
             }
 
             UpdateVisibility();
@@ -38,7 +39,8 @@ namespace PathfinderTactics.UI
         {
             if (UnitActionSystem.Instance != null)
             {
-                UnitActionSystem.Instance.OnSelectedUnitChanged -= UnitActionSystem_OnSelectedUnitChanged;
+                UnitActionSystem.Instance.OnSelectedUnitChanged -=
+                    UnitActionSystem_OnSelectedUnitChanged;
             }
 
             UnsubscribeFromUnitHealth();
@@ -69,7 +71,7 @@ namespace PathfinderTactics.UI
             currentUnitHealth = currentSelectedUnit.GetComponent<UnitHealth>();
             if (currentUnitHealth != null)
             {
-                currentUnitHealth.OnHpChanged += UnitHealth_OnHpChanged;
+                currentUnitHealth.OnHealthChanged += UnitHealth_OnHpChanged;
             }
 
             // Update HP display immediately
@@ -82,7 +84,7 @@ namespace PathfinderTactics.UI
         {
             if (currentUnitHealth != null)
             {
-                currentUnitHealth.OnHpChanged -= UnitHealth_OnHpChanged;
+                currentUnitHealth.OnHealthChanged -= UnitHealth_OnHpChanged;
                 currentUnitHealth = null;
             }
         }
@@ -94,7 +96,8 @@ namespace PathfinderTactics.UI
 
         private void RefreshHpText()
         {
-            if (hpText == null) return;
+            if (hpText == null)
+                return;
 
             if (currentSelectedUnit == null)
             {
@@ -111,13 +114,14 @@ namespace PathfinderTactics.UI
             }
             else
             {
-                hpText.text = $"{health.GetCurrentHP()} / {health.GetMaxHP()}";
+                hpText.text = $"{health.GetCurrentHealth()} / {health.GetMaxHealth()}";
             }
         }
 
         private void UpdateVisibility()
         {
-            if (panelRoot == null) return;
+            if (panelRoot == null)
+                return;
             panelRoot.SetActive(currentSelectedUnit != null);
         }
     }

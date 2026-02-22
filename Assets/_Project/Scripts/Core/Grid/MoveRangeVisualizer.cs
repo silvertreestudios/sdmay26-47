@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PathfinderTactics.Actions;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
 using UnityEngine;
@@ -7,37 +8,62 @@ namespace PathfinderTactics.Grid
 {
     public class MoveRangeVisualizer : MonoBehaviour
     {
+        [Header("Prefabs")]
         [SerializeField]
-        private GameObject moveTilePrefab;
+        private GameObject moveTilePrefab; // Blue
+
+        [SerializeField]
+        private GameObject attackRangeTilePrefab; // Soft Red (Bounds)
+
+        [SerializeField]
+        private GameObject attackTargetTilePrefab; // Bright Red (Valid Targets)
 
         private List<GameObject> activeVisuals = new List<GameObject>();
         private Transform visualParent;
 
         private void Start()
         {
-            UnitActionSystem.Instance.OnSelectedUnitChanged +=
-                UnitActionSystem_OnSelectedUnitChanged;
-            visualParent = new GameObject("MoveRangeVisuals").transform;
+            // This event fires whenever SetPhase() is called in UnitActionSystem
+            UnitActionSystem.Instance.OnSelectedUnitChanged += UnitActionSystem_OnStateChanged;
+            visualParent = new GameObject("ActionRangeVisuals").transform;
         }
 
         private void OnDestroy()
         {
-            UnitActionSystem.Instance.OnSelectedUnitChanged -=
-                UnitActionSystem_OnSelectedUnitChanged;
+            if (UnitActionSystem.Instance != null)
+            {
+                UnitActionSystem.Instance.OnSelectedUnitChanged -= UnitActionSystem_OnStateChanged;
+            }
         }
 
-        private void UnitActionSystem_OnSelectedUnitChanged(object sender, System.EventArgs e)
+        private void UnitActionSystem_OnStateChanged(object sender, System.EventArgs e)
+        {
+            UpdateVisuals();
+        }
+
+        private void UpdateVisuals()
         {
             ClearVisuals();
 
             Unit selectedUnit = UnitActionSystem.Instance.SelectedUnit;
-            if (selectedUnit != null)
+            if (selectedUnit == null)
+                return;
+
+            GamePhase currentPhase = UnitActionSystem.Instance.currentPhase;
+
+            // If moving, Show Blue Tiles
+            if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.ActionSelection)
             {
-                ShowVisualsForUnit(selectedUnit);
+                ShowMoveRange(selectedUnit);
+            }
+            // If targeting, Show Red Tiles
+            else if (currentPhase == GamePhase.ActionTargeting)
+            {
+                ShowActionRange();
             }
         }
 
-        private void ShowVisualsForUnit(Unit unit)
+        private void ShowMoveRange(Unit unit)
         {
             GridPosition startPos = unit.CurrentGridPosition;
             int maxMoveCost = unit.GetMaxMoveCost();
@@ -46,21 +72,51 @@ namespace PathfinderTactics.Grid
                 maxMoveCost
             );
 
-            float cellSize = GridSystem.Instance.CellSize;
-            float tileScale = cellSize; // Scale it to cell size.
+            SpawnTiles(reachablePositions, moveTilePrefab);
+        }
 
-            foreach (GridPosition pos in reachablePositions)
+        private void ShowActionRange()
+        {
+            BaseAction selectedAction = UnitActionSystem.Instance.GetSelectedAction();
+            if (selectedAction == null)
+                return;
+
+            List<GridPosition> rangeBounds = selectedAction.GetActionRangeGridPositions();
+            List<GridPosition> validTargets = selectedAction.GetValidActionGridPositions();
+
+            // Prevent Z-fighting by removing valid targets from the general range list
+            foreach (var target in validTargets)
+            {
+                rangeBounds.Remove(target);
+            }
+
+            // Spawn soft red for empty reachable tiles
+            SpawnTiles(rangeBounds, attackRangeTilePrefab);
+
+            // Spawn bright red for tiles containing enemies
+            SpawnTiles(validTargets, attackTargetTilePrefab);
+        }
+
+        private void SpawnTiles(List<GridPosition> positions, GameObject prefab)
+        {
+            if (prefab == null)
+                return;
+
+            float tileScale = GridSystem.Instance.CellSize;
+
+            foreach (GridPosition pos in positions)
             {
                 Vector3 worldPos = GridSystem.Instance.GetWorldPosition(pos);
-                Vector3 visualPos = worldPos + new Vector3(0, 0.01f, 0);
+                // Lift slightly to prevent clipping into the floor
+                Vector3 visualPos = worldPos + new Vector3(0, 0.02f, 0);
+
                 GameObject tile = Instantiate(
-                    moveTilePrefab,
+                    prefab,
                     visualPos,
                     Quaternion.Euler(90, 0, 0),
                     visualParent
                 );
                 tile.transform.localScale = new Vector3(tileScale, tileScale, tileScale);
-                tile.transform.SetParent(visualParent);
                 activeVisuals.Add(tile);
             }
         }
