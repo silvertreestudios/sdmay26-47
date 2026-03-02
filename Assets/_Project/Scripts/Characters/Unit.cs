@@ -292,8 +292,8 @@ namespace PathfinderTactics.Characters
                     //TODO: damage change based on weapon (right now hardCoded longsword damage)
                     int damage = UnityEngine.Random.Range(1, 9) + 4;
                     AppendRoll(rollText, $"Damage Roll d8: {damage - 4} total : {damage}");
-                    target.currentHP -= damage;
-                    target.currentHP = Math.Max(0, target.currentHP);
+                    var targetHealth = target.GetComponent<UnitHealth>();
+                    targetHealth.ApplyDamage(damage);
                     Debug.Log($"{gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
                     
                 }
@@ -303,12 +303,12 @@ namespace PathfinderTactics.Characters
 
                 int damage = 2 * (UnityEngine.Random.Range(1, 9) + 4);
                 AppendRoll(rollText, $"CRIT Damage Roll d8: {damage / 2 - 4} total : {damage}");
-                target.currentHP -= damage;
-                target.currentHP = Math.Max(0, target.currentHP);
+                var targetHealth = target.GetComponent<UnitHealth>();
+                targetHealth.ApplyDamage(damage);
                 Debug.Log($"CRIT! {gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
 
             }
-            Debug.Log("${target.gameObject.name} has {target.currentHP} health!");
+            Debug.Log("${target.gameObject.name} has {} health!");
 
 
         }
@@ -323,11 +323,6 @@ namespace PathfinderTactics.Characters
         private void OnDestroy()
         {
             UnitManager.AllUnits.Remove(this);
-        }
-
-        public int GetCurrentHP()
-        {
-            return currentHP;
         }
 
         private void Select_unit(object sender, EventArgs e)

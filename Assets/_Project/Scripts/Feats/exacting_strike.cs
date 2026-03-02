@@ -11,7 +11,7 @@ namespace PathfinderTactics.Feats
 
             Debug.Log($"Exacting Strike!");
             //Press type feat, so check if we have attacked already
-            if (parent.GetActionPointsRemaining() < 1 && parent.GetAttackCount() > 0)
+            if (parent.GetActionPointsRemaining() < 1 && parent.AttacksThisTurn > 0)
             {
                 Debug.Log("Not enough actions.");
                 return false; 
@@ -28,7 +28,7 @@ namespace PathfinderTactics.Feats
             int strength = parent.GetUnitStats().strength;
             // Profcienciey is expertise for now (Fighter level 1) expertise = 4 + lvl,
             int proficiency = 5;
-            int penalty = -1 * (parent.GetAttackCount() * 5);
+            int penalty = -1 * (parent.AttacksThisTurn * 5);
             int attackValue = roll + strength + proficiency + penalty;
 
 
@@ -43,20 +43,22 @@ namespace PathfinderTactics.Feats
                 {
                     //TODO: damage change based on weapon (right now hardCoded longsword damage)
                     int damage = UnityEngine.Random.Range(1, 9) + 4;
-                    target.ReduceCurrentHP(damage);
+                    var targetHealth = target.GetComponent<UnitHealth>();
+                    targetHealth.ApplyDamage(damage);
 
                     //Only reduce on succesful hit
                     rollText.text = "Exacting Strike HIT! MAP increased!";
-                    parent.ReduceAttackCount(-1);
+                    parent.IncrementAttacksThisTurn();
                 }
             }
             else
             {
 
                 int damage = 2 * (UnityEngine.Random.Range(1, 9) + 4);
-                target.ReduceCurrentHP(damage);
+                var targetHealth = target.GetComponent<UnitHealth>();
+                targetHealth.ApplyDamage(damage);
 
-                parent.ReduceAttackCount(-1);
+                parent.IncrementAttacksThisTurn();
                 rollText.text = "Exacting Strike CRIT! MAP increased!";
             }
 
