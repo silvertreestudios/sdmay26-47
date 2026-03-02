@@ -38,6 +38,10 @@ namespace PathfinderTactics.Characters
         private float gravity = -9.81f;
         private float jumpHeight = 1.5f;
 
+        //Contains all feats (exacting strike for now)
+        [SerializeField]
+        private FeatLoadoutSO featLoadout;
+
         // Budget is used to track how far a unit can move
         private int movementBudgetRemaining;
 
@@ -250,14 +254,126 @@ namespace PathfinderTactics.Characters
             return stats.TotalHP;
         }
 
+
+        public bool IsUnitInRange(Unit other, int range)
+        {
+            int dx = Mathf.Abs(other.CurrentGridPosition.x - CurrentGridPosition.x);
+            int dz = Mathf.Abs(other.CurrentGridPosition.z - CurrentGridPosition.z);
+
+            int distance = dx + dz;
+
+            return distance <= range;
+        }
+
+        public void Attack(Unit target)
+        {
+            TextMeshProUGUI rollText = GameObject.Find("Roll_results").GetComponent<TextMeshProUGUI>();
+
+            // Simple attack logic: deal fixed damage
+            int roll = UnityEngine.Random.Range(1, 21);
+            int strength = stats.strength;
+            // Profcienciey is expertise for now (Fighter level 1) expertise = 4 + lvl,
+            int proficiency = 5;
+            int penalty = 0;
+            int attackValue = roll + strength + proficiency + penalty;
+
+            AppendRoll(rollText, $"Attack Roll d20: {roll}: total: {attackValue}");
+
+            if (roll != 20)
+            {
+                if (target.Defend_against_attack(attackValue))
+                {
+                    Debug.Log($"{gameObject.name} attacked {target.gameObject.name} but was blocked!");
+                    return;
+                }
+                else
+                {
+                   
+                    //TODO: damage change based on weapon (right now hardCoded longsword damage)
+                    int damage = UnityEngine.Random.Range(1, 9) + 4;
+                    AppendRoll(rollText, $"Damage Roll d8: {damage - 4} total : {damage}");
+                    target.currentHP -= damage;
+                    target.currentHP = Math.Max(0, target.currentHP);
+                    Debug.Log($"{gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
+                    
+                }
+            }
+            else
+            {
+
+                int damage = 2 * (UnityEngine.Random.Range(1, 9) + 4);
+                AppendRoll(rollText, $"CRIT Damage Roll d8: {damage / 2 - 4} total : {damage}");
+                target.currentHP -= damage;
+                target.currentHP = Math.Max(0, target.currentHP);
+                Debug.Log($"CRIT! {gameObject.name} attacked {target.gameObject.name} for {damage} damage!");
+
+            }
+            Debug.Log("${target.gameObject.name} has {target.currentHP} health!");
+
+
+        }
+
+        public bool Defend_against_attack(int attackValue)
+        {
+            int ac = stats.armorClass;
+            return attackValue <= ac;
+        }
+
+
         private void OnDestroy()
         {
             UnitManager.AllUnits.Remove(this);
         }
 
+        public int GetCurrentHP()
+        {
+            return currentHP;
+        }
+
         private void Select_unit(object sender, EventArgs e)
         {
-            selected = (UnitActionSystem.Instance.SelectedUnit == this);
+            if (UnitActionSystem.Instance.SelectedUnit == this)
+            {
+                selected = true;
+            }
+            else
+            {
+                foreach (Unit other in UnitManager.AllUnits)
+                {
+                    if (other == this) continue;
+                    
+                    Renderer[] renderers = other.GetComponentsInChildren<Renderer>();
+
+                    foreach (Renderer r in renderers)
+                    {
+                        r.material.color = Color.white;
+                    }
+                    
+                }
+                selected = false;
+            }
         }
+
+        public FeatLoadoutSO GetFeatLoadout()
+        {
+            return featLoadout;
+        }
+
+        public UnitStatsSO GetUnitStats()
+        {
+            return stats;
+        }
+
+        //Its here im realizing I am adding way too much to the unit class that does not need to be here. I will fix it later and move some methods elsewhere.
+        private void AppendRoll(TextMeshProUGUI textBox, string message)
+        {
+            textBox.text += message + "\n";
+            // Trim old text if too long
+            if (textBox.text.Length > 100)
+            {
+                textBox.text = textBox.text.Substring(textBox.text.Length - 100);
+            }
+        }
+
     }
 }
