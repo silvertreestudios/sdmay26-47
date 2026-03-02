@@ -42,14 +42,18 @@ namespace PathfinderTactics.UI
 
         private void OnDestroy()
         {
-            UnitActionSystem.Instance.OnSelectedUnitChanged -=
-                UnitActionSystem_OnSelectedUnitChanged;
+            if (UnitActionSystem.Instance != null)
+            {
+                UnitActionSystem.Instance.OnSelectedUnitChanged -=
+                    UnitActionSystem_OnSelectedUnitChanged;
+            }
         }
 
         private void UnitActionSystem_OnSelectedUnitChanged(object sender, System.EventArgs e)
         {
             UpdateActionUI();
         }
+
         private void onActionCompleted(object sender, System.EventArgs e)
         {
             UpdateStatus();
@@ -72,14 +76,39 @@ namespace PathfinderTactics.UI
             }
         }
 
+        // TODO: Remove this as its kinda not needed and not scalable and replaced.
+        // useful for quickly looking at health for now ig.
         private void UpdateStatus()
         {
-            int p1Health = UnitManager.AllUnits[0].GetCurrentHP();
-            int p2Health = UnitManager.AllUnits[1].GetCurrentHP();
+            // Ensure units exist
+            if (UnitManager.AllUnits.Count <= 0)
+                return;
 
-            statusPanel.transform.Find("Player_one_health").GetComponent<TextMeshProUGUI>().text = $"Player one health \n {p1Health}";
-            statusPanel.transform.Find("Player_two_health").GetComponent<TextMeshProUGUI>().text = $"Player two health \n {p2Health}";
+            // Player 1 (Index 0)
+            if (UnitManager.AllUnits.Count > 0)
+            {
+                Unit unit1 = UnitManager.AllUnits[0];
+                UnitHealth health1 = unit1.GetComponent<UnitHealth>();
+                int p1Health = (health1 != null) ? health1.GetCurrentHealth() : 0;
+
+                var p1Text = statusPanel.transform.Find("Player_one_health");
+                if (p1Text != null)
+                    p1Text.GetComponent<TextMeshProUGUI>().text =
+                        $"Player one health \n {p1Health}";
+            }
+
+            // Player 2 (Index 1) - Only if we have at least 2 units
+            if (UnitManager.AllUnits.Count > 1)
+            {
+                Unit unit2 = UnitManager.AllUnits[1];
+                UnitHealth health2 = unit2.GetComponent<UnitHealth>();
+                int p2Health = (health2 != null) ? health2.GetCurrentHealth() : 0;
+
+                var p2Text = statusPanel.transform.Find("Player_two_health");
+                if (p2Text != null)
+                    p2Text.GetComponent<TextMeshProUGUI>().text =
+                        $"Player two health \n {p2Health}";
+            }
         }
-
     }
 }

@@ -1,106 +1,136 @@
 using System;
+using PathfinderTactics.Core;
 using UnityEngine;
 
 namespace PathfinderTactics.Characters
 {
     /// <summary>
     /// Component that tracks a Unit's current and maximum HP at runtime.
-    /// Initializes max HP from the Unit's stats (via Unit.getTotalHP()).
+    /// Initializes max HP from the Unit's stats (via Unit.getTotalHealth()).
     /// Raises an OnHpChanged event whenever current HP changes.
     /// </summary>
     public class UnitHealth : MonoBehaviour
     {
-        public event EventHandler OnHpChanged;
-
-        private Unit unit;
-
-        [SerializeField]
-        private int currentHP = 0;
+        public event EventHandler OnDeath;
+        public event EventHandler OnHealthChanged;
+        public event EventHandler<string> OnStatusMessage; // For popping up "Dying 1!" text later
 
         [SerializeField]
-        private int maxHP = 0;
+        private int maxHealth = 20;
+        private int currentHealth;
+
+        // PF2E Conditions
+        public int DyingValue { get; private set; } = 0;
+        public int WoundedValue { get; private set; } = 0;
+        public bool IsUnconscious => currentHealth <= 0;
+        public bool IsDead { get; private set; } = false;
 
         private void Awake()
         {
-            unit = GetComponent<Unit>();
-            if (unit != null)
-            {
-                // Initialize maxHP from the Unit's stats if not explicitly set in the inspector.
-                int derivedMax = unit.getTotalHP();
-                if (maxHP <= 0)
-                    maxHP = derivedMax;
+            currentHealth = maxHealth;
+        }
 
-                // If currentHP was left as 0 in the inspector, assume full health on Awake.
-                if (currentHP <= 0)
-                    currentHP = maxHP;
-                else
-                    currentHP = Mathf.Clamp(currentHP, 0, maxHP);
+        public void ApplyDamage(int amount, bool isCriticalHit = false)
+        {
+            if (IsDead)
+                return;
+
+            currentHealth -= amount;
+            currentHealth = Mathf.Max(0, currentHealth);
+            OnHealthChanged?.Invoke(this, EventArgs.Empty);
+
+            if (currentHealth == 0 && DyingValue == 0)
+            {
+                // Drop to 0 HP logic
+                int initialDying = 1 + WoundedValue;
+                if (isCriticalHit)
+                    initialDying += 1; // Crits cause Dying 2
+
+                SetDying(initialDying);
+            }
+            else if (currentHealth == 0 && DyingValue > 0)
+            {
+                // Taking damage while already dying increases dying value
+                SetDying(DyingValue + (isCriticalHit ? 2 : 1));
             }
         }
 
-        public int GetCurrentHP() => currentHP;
-        public int GetMaxHP() => maxHP;
-
-        public void SetCurrentHP(int hp)
+        public void ApplyHealing(int amount)
         {
-            int clamped = Mathf.Clamp(hp, 0, maxHP);
-            if (clamped == currentHP) return;
-            currentHP = clamped;
-            OnHpChanged?.Invoke(this, EventArgs.Empty);
-        }
+            if (IsDead)
+                return;
 
-        public void ApplyDamage(int amount)
-        {
-            if (amount <= 0) return;
-            SetCurrentHP(currentHP - amount);
-        }
-
-        public void Heal(int amount)
-        {
-            if (amount <= 0) return;
-            SetCurrentHP(currentHP + amount);
-        }
-
-        public void SetMaxHP(int hp)
-        {
-            maxHP = Mathf.Max(1, hp);
-            currentHP = Mathf.Clamp(currentHP, 0, maxHP);
-            OnHpChanged?.Invoke(this, EventArgs.Empty);
-        }
-
-        // -------------------------
-        // Debug helpers (editor-only)
-        // -------------------------
-
-        [Header("Debug (Editor only)")]
-        [Tooltip("Enable debug key to apply damage in Play mode (editor only).")]
-        public bool enableDebugKey = false;
-
-        [Tooltip("Key to press to apply debug damage (editor only).")]
-        public KeyCode debugDamageKey = KeyCode.H;
-
-        [Tooltip("Damage amount applied when pressing the debug key.")]
-        public int debugDamageAmount = 10;
-
-        /// <summary>
-        /// Context menu helper — apply 10 damage from the inspector's context menu.
-        /// </summary>
-        [ContextMenu("Debug: Take 10 Damage")]
-        public void DebugTake10()
-        {
-            ApplyDamage(10);
-        }
-
-#if UNITY_EDITOR
-        private void Update()
-        {
-            if (!enableDebugKey) return;
-            if (UnityEngine.Input.GetKeyDown(debugDamageKey))
+            if (IsUnconscious && amount > 0)
             {
-                ApplyDamage(debugDamageAmount);
-                UnityEngine.Debug.Log($"UnitHealth Debug: Applied {debugDamageAmount} damage to {gameObject.name}");
+                // Waking up resets Dying and increases Wounded
+                DyingValue = 0;
+                WoundedValue++;
+                OnStatusMessage?.Invoke(this, $"Woke Up! Wounded {WoundedValue}");
+            }
+
+            currentHealth += amount;
+            currentHealth = Mathf.Min(currentHealth, maxHealth);
+            OnHealthChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void SetDying(int newValue)
+        {
+            DyingValue = newValue;
+
+            if (DyingValue >= 4) // Standard death threshold
+            {
+                IsDead = true;
+                OnStatusMessage?.Invoke(this, "DEAD");
+                OnDeath?.Invoke(this, EventArgs.Empty);
+                // TODO: Play death animations, disable colliders, etc.
+            }
+            else
+            {
+                OnStatusMessage?.Invoke(this, $"Dying {DyingValue}");
             }
         }
-#endif
+
+        public void RollRecoveryCheck()
+        {
+            if (!IsUnconscious || IsDead)
+                return;
+
+            int d20 = UnityEngine.Random.Range(1, 21);
+            int dc = 10 + DyingValue; // Recovery DC is usually 10 + current dying value (unless forced by an effect)
+
+            // Calculate degrees of success
+            Degree result = PF2E_Core.CheckResult(d20, 0, dc);
+
+            Debug.Log($"[Recovery Check] Rolled {d20} vs DC {dc}. Result: {result}");
+
+            switch (result)
+            {
+                case Degree.CriticalSuccess:
+                    SetDying(DyingValue - 2);
+                    break;
+                case Degree.Success:
+                    SetDying(DyingValue - 1);
+                    break;
+                case Degree.Failure:
+                    SetDying(DyingValue + 1);
+                    break;
+                case Degree.CriticalFailure:
+                    SetDying(DyingValue + 2);
+                    break;
+            }
+
+            // If dying drops below 1, they stabilize (but remain at 0 HP / unconscious)
+            if (DyingValue <= 0 && !IsDead)
+            {
+                DyingValue = 0;
+                WoundedValue++;
+                OnStatusMessage?.Invoke(this, $"Stabilized! Wounded {WoundedValue}");
+            }
+        }
+
+        // Getters for UI
+        public int GetCurrentHealth() => currentHealth;
+
+        public int GetMaxHealth() => maxHealth;
     }
 }

@@ -22,8 +22,10 @@ namespace PathfinderTactics.Characters
         [Header("Identity")]
         public string unitName = "Unit";
 
-        //All of these will be hardcoded for now this is the basic fighter I built here: https://pathbuilder2e.com/launch.html?build=1381561, where I am getting these from. Should all be read from other places later
-        //When we make new classes or add different starting values,change/ add them to the scriptable objects folder. This is base case
+        [Header("Skills & Senses")]
+        [Tooltip("Perception modifier for Initiative rolls.")]
+        public int perception = 0;
+
         [Header("Ability Modifiers")]
         [Tooltip("Strength: physical power.")]
         public int strength = 4;
@@ -43,25 +45,25 @@ namespace PathfinderTactics.Characters
         [Tooltip("Charisma: presence and force of personality.")]
         public int charisma = 0;
 
-
         [Header("Core Stats (Pathfinder 2e)")]
         [Tooltip("Speed in feet. Standard is 25 or 30 for most humanoids.")]
-        public int speedInFeet = 25;
-       
-
+        public int speedInFeet = 30;
 
         [Tooltip("Armor Class (AC). Standard is 10 + Dexterity modifier + armor bonus.")]
         public int armorClass => GetAC();
 
         [Header("Ancestry & Class (Resources)")]
-        [Tooltip("Resource path (relative to Resources/) to the ancestry JSON. Example: JSON/ancestries/human")]
+        [Tooltip(
+            "Resource path (relative to Resources/) to the ancestry JSON. Example: JSON/ancestries/human"
+        )]
         public string ancestryResourcePath = "JSON/ancestries/human";
-
-        [Tooltip("Resource path (relative to Resources/) to the class JSON. Example: JSON/classes/fighter")]
-        public string classResourcePath = "JSON/classes/fighter";
 
         public string armorResourcePath = "JSON/eqiupment/scale-mail";
 
+        [Tooltip(
+            "Resource path (relative to Resources/) to the class JSON. Example: JSON/classes/fighter"
+        )]
+        public string classResourcePath = "JSON/classes/fighter";
 
         [Tooltip("Character level (minimum 1).")]
         public int level = 1;
@@ -101,9 +103,11 @@ namespace PathfinderTactics.Characters
 
         private int GetAncestryHp()
         {
-            if (string.IsNullOrEmpty(ancestryResourcePath)) return 0;
+            if (string.IsNullOrEmpty(ancestryResourcePath))
+                return 0;
             var ta = Resources.Load<TextAsset>(ancestryResourcePath);
-            if (ta == null) return 0;
+            if (ta == null)
+                return 0;
             try
             {
                 var data = JsonUtility.FromJson<AncestryJson>(ta.text);
@@ -117,9 +121,11 @@ namespace PathfinderTactics.Characters
 
         private int GetClassHp()
         {
-            if (string.IsNullOrEmpty(classResourcePath)) return 0;
+            if (string.IsNullOrEmpty(classResourcePath))
+                return 0;
             var ta = Resources.Load<TextAsset>(classResourcePath);
-            if (ta == null) return 0;
+            if (ta == null)
+                return 0;
             try
             {
                 var data = JsonUtility.FromJson<ClassJson>(ta.text);
@@ -133,9 +139,11 @@ namespace PathfinderTactics.Characters
 
         private int GetAC()
         {
-            if (string.IsNullOrEmpty(armorResourcePath)) return 0;
+            if (string.IsNullOrEmpty(armorResourcePath))
+                return 0;
             var ta = Resources.Load<TextAsset>(armorResourcePath);
-            if (ta == null) return 0;
+            if (ta == null)
+                return 0;
             try
             {
                 var data = JsonUtility.FromJson<ArmorJson>(ta.text);
@@ -152,7 +160,6 @@ namespace PathfinderTactics.Characters
                 else
                 {
                     return 0;
-
                 }
             }
             catch
@@ -184,6 +191,7 @@ namespace PathfinderTactics.Characters
         {
             public int hp;
         }
+
         [System.Serializable]
         private class ArmorJson
         {
@@ -201,14 +209,14 @@ namespace PathfinderTactics.Characters
             public int bulk;
             public string category;
         }
+
         private void OnValidate()
         {
-            if (level < 1) level = 1;
+            if (level < 1)
+                level = 1;
         }
 
         // TODO: Add many more stats here later (Dying Level, Wounded Level,
         // Resistances, Weaknesses, Immunities, etc.)
-
-
     }
 }

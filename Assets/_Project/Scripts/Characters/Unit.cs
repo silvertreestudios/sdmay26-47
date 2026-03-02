@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using PathfinderTactics.Actions;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 namespace PathfinderTactics.Characters
 {
@@ -12,8 +13,22 @@ namespace PathfinderTactics.Characters
     {
         [Header("Configuration")]
         [SerializeField]
+        private Faction faction = Faction.Player; // Default to Player
+
+        public Faction GetFaction() => faction;
+
+        /// <summary>
+        /// Returns true if the other unit is on a different team.
+        /// </summary>
+        public bool IsEnemy(Unit otherUnit)
+        {
+            return otherUnit.GetFaction() != this.faction;
+        }
+
+        [Header("Configuration")]
+        [SerializeField]
         private UnitStatsSO stats;
-        private int currentHP;
+
         // Public Properties
         public GridPosition CurrentGridPosition { get; private set; }
 
@@ -30,11 +45,8 @@ namespace PathfinderTactics.Characters
         // Budget is used to track how far a unit can move
         private int movementBudgetRemaining;
 
-        // 3 actions per turn. Here is where it begins to get messy :P
+        // 3 actions per turn
         private int actionPointsRemaining;
-
-        // Used to track how many attacks have been made for the multiple attack penalty (MAP). Resets at the start of each turn.
-        private int attack_count = 0; 
 
         // Honestly theres no way we need this to be anything other than 3 but
         // Useful for debugging
@@ -42,16 +54,28 @@ namespace PathfinderTactics.Characters
 
         private bool selected = false;
 
+        // Modular Actions
+        private BaseAction[] baseActionArray;
+
+        public int AttacksThisTurn { get; private set; } = 0;
+
+        public bool HasReactionAvailable { get; private set; } = true;
+
         #region Action Economy
         public void StartTurn()
         {
             actionPointsRemaining = totalActionPointsPerTurn;
-            attack_count = 0; 
+            AttacksThisTurn = 0;
+            HasReactionAvailable = true;
         }
 
-        public void SpendActionPoint()
+        public void SpendReaction() => HasReactionAvailable = false;
+
+        public void RestoreReaction() => HasReactionAvailable = true;
+
+        public void IncrementAttacksThisTurn()
         {
-            actionPointsRemaining--;
+            AttacksThisTurn++;
         }
 
         public void SpendActionPoints(int amount)
@@ -64,70 +88,64 @@ namespace PathfinderTactics.Characters
             return actionPointsRemaining;
         }
 
+        public BaseAction[] GetBaseActionArray()
+        {
+            return baseActionArray;
+        }
         #endregion
 
         private void Awake()
         {
             UnitManager.AllUnits.Add(this);
             characterController = GetComponent<CharacterController>();
-            currentHP = getTotalHP();
 
+            // Auto-discover actions
+            baseActionArray = GetComponents<BaseAction>();
 
+            Debug.Log($"[UNIT BOOTUP] {gameObject.name} found {baseActionArray.Length} actions.");
+            foreach (var action in baseActionArray)
+            {
+                Debug.Log($"   -> Action loaded: {action.GetActionName()}");
+            }
         }
 
         private void Start()
         {
-            UnitActionSystem.Instance.OnSelectedUnitChanged +=
-                Select_unit;
+            UnitActionSystem.Instance.OnSelectedUnitChanged += Select_unit;
+
+            // Register self on grid at start
+            CurrentGridPosition = GridSystem.Instance.GetGridPosition(transform.position);
+            GridSystem.Instance.AddUnitAt(this, CurrentGridPosition);
+
+            // Snap to ensure alignment
+            SnapToGrid(GridSystem.Instance.GetWorldPosition(CurrentGridPosition));
+
+            // Temporary Debug: Color units based on faction
+            var meshRenderer = GetComponentInChildren<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                if (faction == Faction.Player)
+                    meshRenderer.material.color = Color.blue;
+                else if (faction == Faction.Enemy)
+                    meshRenderer.material.color = Color.red;
+            }
         }
 
         void Update()
         {
-            if (!selected) return;
-            //Search for units in range
-            foreach (Unit other in UnitManager.AllUnits)
-            {
-                if (other == this) continue;
-                //TODO: Make range equal to weapon range. Range is in tiles.
-                if (IsUnitInRange(other, 1))
-                {
-                    Renderer[] renderers = other.GetComponentsInChildren<Renderer>();
-
-                    foreach (Renderer r in renderers)
-                    {
-                        r.material.color = Color.red;
-                    }
-                }
-                else
-                {
-                    // Reset to white if NOT in range
-                    Renderer[] renderers = other.GetComponentsInChildren<Renderer>();
-
-                    foreach (Renderer r in renderers)
-                    {
-                        r.material.color = Color.white;
-                    }
-                }
-            }
+            if (!selected)
+                return;
         }
 
         #region Movement Budget
-        // Called when a unit's turn begins or when it's selected for movement.
         public void StartMoveAction()
         {
-            // Reset the budget to the maximum allowed for this unit.
             movementBudgetRemaining = GetMaxMoveCost();
         }
 
-        // Call this to spend budget when moving.
         public void SpendMovement(int amount)
         {
             movementBudgetRemaining -= amount;
-        }
-
-        public int GetMovementBudgetRemaining()
-        {
-            return movementBudgetRemaining;
         }
         #endregion
 
@@ -139,7 +157,7 @@ namespace PathfinderTactics.Characters
             if (characterController.isGrounded && verticalVelocity < 0)
             {
                 // Small downward force to keep the character stuck to the ground
-                verticalVelocity = -2f;
+                verticalVelocity = -5f;
             }
 
             // Apply gravity over time
@@ -163,7 +181,6 @@ namespace PathfinderTactics.Characters
 
         public void HandleJump()
         {
-            // Only allow jumping if the character is on the ground
             if (characterController.isGrounded)
             {
                 // Calculate the upward velocity needed to reach a specific height
@@ -188,7 +205,6 @@ namespace PathfinderTactics.Characters
         public void SetInitialPosition(GridPosition gridPosition)
         {
             CurrentGridPosition = gridPosition;
-            // The CharacterController must be temporarily disabled to teleport it.
             characterController.enabled = false;
             transform.position = GridSystem.Instance.GetWorldPosition(gridPosition);
             characterController.enabled = true;
@@ -196,10 +212,9 @@ namespace PathfinderTactics.Characters
 
         public void FinalizeMove(GridPosition finalPosition)
         {
-            GridSystem.Instance.MoveUnit(this, finalPosition);
+            GridSystem.Instance.MoveUnit(this, CurrentGridPosition, finalPosition);
             CurrentGridPosition = finalPosition;
         }
-
         #endregion
 
         public float GetUnitRadius()
@@ -223,11 +238,12 @@ namespace PathfinderTactics.Characters
             }
         }
 
+        public UnitStatsSO GetStats() => stats;
+
         public int getArmorClass()
         {
             if (stats == null)
-                return 10; // Default AC
-
+                return 10;
             return stats.armorClass;
         }
 
@@ -235,7 +251,6 @@ namespace PathfinderTactics.Characters
         {
             if (stats == null)
                 return 0;
-
             return stats.TotalHP;
         }
 
@@ -254,17 +269,15 @@ namespace PathfinderTactics.Characters
         {
             TextMeshProUGUI rollText = GameObject.Find("Roll_results").GetComponent<TextMeshProUGUI>();
 
-            // Simple attack logic
+            // Simple attack logic: deal fixed damage
             int roll = UnityEngine.Random.Range(1, 21);
             int strength = stats.strength;
             // Profcienciey is expertise for now (Fighter level 1) expertise = 4 + lvl,
             int proficiency = 5;
-            int penalty = -1 * (attack_count * 5);
+            int penalty = 0;
             int attackValue = roll + strength + proficiency + penalty;
 
             AppendRoll(rollText, $"Attack Roll d20: {roll}: total: {attackValue}");
-
-            attack_count++; // Increment attack count regardless of hit or miss
 
             if (roll != 20)
             {
@@ -315,23 +328,6 @@ namespace PathfinderTactics.Characters
         public int GetCurrentHP()
         {
             return currentHP;
-        }
-        public int ReduceCurrentHP(int amount)
-        {
-            currentHP -= amount;
-            currentHP = Math.Max(0, currentHP);
-            return currentHP;
-        }
-
-        public int GetAttackCount()
-        {
-            return attack_count;
-        }
-
-        public int ReduceAttackCount(int amount)
-        {
-            attack_count -= amount;
-            return attack_count;
         }
 
         private void Select_unit(object sender, EventArgs e)

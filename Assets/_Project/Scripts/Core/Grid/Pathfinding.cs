@@ -172,25 +172,19 @@ namespace PathfinderTactics.Grid
             // Using a dictionary for fast lookups of nodes we've already processed
             Dictionary<GridPosition, PathNode> pathNodeMap =
                 new Dictionary<GridPosition, PathNode>();
-
             List<PathNode> openList = new List<PathNode>();
 
             PathNode startNode = new PathNode(startPosition);
             startNode.gCost = 0;
-
             openList.Add(startNode);
             pathNodeMap[startPosition] = startNode;
 
             while (openList.Count > 0)
             {
-                PathNode currentNode = GetLowestGCostNode(openList); // Similar to A*, but we only care about gCost
+                PathNode currentNode = GetLowestGCostNode(openList);
                 openList.Remove(currentNode);
-
                 // We've found a valid reachable node
                 reachablePositions.Add(currentNode.GridPosition);
-
-                GridSystem gridSystem = GridSystem.Instance;
-                PathNode[,] tempGrid = new PathNode[gridSystem.Width, gridSystem.Height]; // A dummy grid for GetNeighbourList
 
                 foreach (
                     PathNode neighbourNode in GetNeighbourListForReachability(
@@ -199,10 +193,18 @@ namespace PathfinderTactics.Grid
                     )
                 )
                 {
-                    // logic here to check if the cell is walkable (not blocked by another unit or obstacle)
-                    // TODO: unit check
+                    // Wall Check
                     if (!GridSystem.Instance.GetCell(neighbourNode.GridPosition).isWalkable)
                         continue;
+
+                    // Unit Check
+                    // If the cell is occupied by someone else, we cannot walk there.
+                    if (GridSystem.Instance.IsPositionOccupied(neighbourNode.GridPosition))
+                    {
+                        // If it's the unit itself (start pos), it's fine.
+                        if (neighbourNode.GridPosition != startPosition)
+                            continue;
+                    }
 
                     int tentativeGCost =
                         currentNode.gCost
@@ -219,7 +221,6 @@ namespace PathfinderTactics.Grid
                         {
                             neighbourNode.cameFromNode = currentNode;
                             neighbourNode.gCost = tentativeGCost;
-
                             pathNodeMap[neighbourNode.GridPosition] = neighbourNode;
 
                             if (!openList.Contains(neighbourNode))

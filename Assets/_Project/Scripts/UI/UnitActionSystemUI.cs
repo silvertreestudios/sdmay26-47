@@ -1,8 +1,11 @@
 using System;
-using PathfinderTactics.Core;
+using System.Collections.Generic;
+using PathfinderTactics.Actions;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace PathfinderTactics.UI
@@ -14,102 +17,140 @@ namespace PathfinderTactics.UI
         private GameObject actionMenuContainer;
 
         [SerializeField]
-        private Button attackButton; // Placeholder for now
+        private Transform actionButtonContainer;
 
         [SerializeField]
-        private Button waitButton;
+        private GameObject actionButtonPrefab;
 
         [SerializeField]
         private TextMeshProUGUI actionPointsText;
 
+        private List<Button> actionButtons = new List<Button>();
+
         private void Start()
         {
-            UnitActionSystem.Instance.OnSelectedUnitChanged +=
-                UnitActionSystem_OnSelectedUnitChanged;
-            UnitActionSystem.Instance.OnActionStarted += UnitActionSystem_OnActionStarted;
-            UnitActionSystem.Instance.OnActionCompleted += UnitActionSystem_OnActionCompleted;
+            // Subscribe to the State Change Event
+            UnitActionSystem.Instance.OnSelectedUnitChanged += UnitActionSystem_OnStateChanged;
+            UnitActionSystem.Instance.OnActionStarted += UnitActionSystem_OnDataChanged;
+            UnitActionSystem.Instance.OnActionCompleted += UnitActionSystem_OnDataChanged;
 
-            // Setup simple buttons
-            attackButton.onClick.AddListener(() =>
-            {
-                
-                var unit = UnitActionSystem.Instance.SelectedUnit;
+            // Force menu off at start
+            if (actionMenuContainer != null)
+                actionMenuContainer.SetActive(false);
 
-                //Search for units in range
-                foreach (Unit other in UnitManager.AllUnits)
-                {
-                    if (other == unit) continue;
-                    //TODO: Make range equal to weapon range. Range is in tiles.
-                    if (unit.IsUnitInRange(other, 1))
-                    {
-                        unit.Attack(other);
-                        Debug.Log("Unit is within 1 tile range");
-                    }
-                }
-
-
-                Debug.Log("Attack Selected!");
-
-
-                UnitActionSystem.Instance.SpendActionAndContinue(1);
-            });
-
-            waitButton.onClick.AddListener(() =>
-            {
-                UnitActionSystem.Instance.EndTurn();
-            });
-
-            HideMenu();
+            UpdateVisuals();
         }
 
-        private void Update()
+        private void UnitActionSystem_OnStateChanged(object sender, EventArgs e)
+        {
+            var currentPhase = UnitActionSystem.Instance.currentPhase;
+            bool shouldShowMenu = (currentPhase == GamePhase.ActionSelection);
+
+            // Debug.Log($"[UI MANAGER] State Change Detected: {currentPhase}. Menu Should Show: {shouldShowMenu}");
+
+            // Update menu visibility
+            if (actionMenuContainer.activeSelf != shouldShowMenu)
+            {
+                actionMenuContainer.SetActive(shouldShowMenu);
+            }
+
+            // Create/refresh buttons when entering ActionSelection
+            if (shouldShowMenu)
+            {
+                Debug.Log("[UI MANAGER] Menu opened! Building buttons...");
+                CreateUnitActionButtons();
+            }
+            else
+            {
+                // Clean up buttons when leaving ActionSelection
+                ClearActionButtons();
+            }
+
+            UpdateVisuals(); // Update AP text too
+        }
+
+        private void ClearActionButtons()
+        {
+            foreach (Transform buttonTransform in actionButtonContainer)
+            {
+                Destroy(buttonTransform.gameObject);
+            }
+            actionButtons.Clear();
+        }
+
+        private void CreateUnitActionButtons()
+        {
+            // destroy old buttons
+            foreach (Transform buttonTransform in actionButtonContainer)
+            {
+                DestroyImmediate(buttonTransform.gameObject);
+            }
+            actionButtons.Clear();
+
+            Unit selectedUnit = UnitActionSystem.Instance.SelectedUnit;
+            if (selectedUnit == null)
+            {
+                Debug.LogWarning(
+                    "[UI MANAGER] No unit selected when trying to create action buttons!"
+                );
+                return;
+            }
+
+            if (actionButtonPrefab == null)
+            {
+                Debug.LogError("[UI MANAGER] Action button prefab is not assigned!");
+                return;
+            }
+
+            BaseAction[] actions = selectedUnit.GetBaseActionArray();
+            Debug.Log($"[UI MANAGER] Creating {actions.Length} action buttons");
+
+            foreach (BaseAction baseAction in actions)
+            {
+                GameObject buttonObj = Instantiate(actionButtonPrefab, actionButtonContainer);
+                ActionButtonUI actionButtonUI = buttonObj.GetComponent<ActionButtonUI>();
+
+                if (actionButtonUI == null)
+                {
+                    Debug.LogError($"[UI MANAGER] Button prefab missing ActionButtonUI component!");
+                    continue;
+                }
+
+                actionButtonUI.SetBaseAction(baseAction);
+                Button button = buttonObj.GetComponent<Button>();
+                if (button != null)
+                {
+                    actionButtons.Add(button);
+                }
+            }
+
+            // Select first button if available
+            if (actionButtons.Count > 0)
+            {
+                Debug.Log($"[UI MANAGER] Forcing EventSystem to select: {actionButtons[0].name}");
+
+                // Clear and re-select to force the UI highlight
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(actionButtons[0].gameObject);
+            }
+            else
+            {
+                Debug.LogWarning("[UI MANAGER] No action buttons were created!");
+            }
+        }
+
+        private void UnitActionSystem_OnDataChanged(object sender, EventArgs e)
         {
             UpdateVisuals();
         }
 
         private void UpdateVisuals()
         {
-            var unit = UnitActionSystem.Instance.SelectedUnit;
-            if (unit != null)
+            Unit selectedUnit = UnitActionSystem.Instance.SelectedUnit;
+            if (selectedUnit != null && actionPointsText != null)
             {
-                actionPointsText.text = $"AP: {unit.GetActionPointsRemaining()}";
+                actionPointsText.text = $"AP: {selectedUnit.GetActionPointsRemaining()}";
             }
-            else
-            {
-                actionPointsText.text = "";
-            }
-
-            // Show menu if we are in the ActionSelection phase
-            if (UnitActionSystem.Instance.currentPhase == GamePhase.ActionSelection)
-            {
-                if (!actionMenuContainer.activeSelf)
-                    actionMenuContainer.SetActive(true);
-            }
-            else
-            {
-                if (actionMenuContainer.activeSelf)
-                    actionMenuContainer.SetActive(false);
-            }
-        }
-
-        private void HideMenu()
-        {
-            actionMenuContainer.SetActive(false);
-        }
-
-        private void UnitActionSystem_OnSelectedUnitChanged(object sender, EventArgs e)
-        {
-            UpdateVisuals();
-        }
-
-        private void UnitActionSystem_OnActionStarted(object sender, EventArgs e)
-        {
-            UpdateVisuals();
-        }
-
-        private void UnitActionSystem_OnActionCompleted(object sender, EventArgs e)
-        {
-            UpdateVisuals();
         }
     }
 }
