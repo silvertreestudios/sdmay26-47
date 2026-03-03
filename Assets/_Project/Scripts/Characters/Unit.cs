@@ -38,10 +38,6 @@ namespace PathfinderTactics.Characters
         private float gravity = -9.81f;
         private float jumpHeight = 1.5f;
 
-        //Contains all feats (exacting strike for now)
-        [SerializeField]
-        private FeatLoadoutSO featLoadout;
-
         // Budget is used to track how far a unit can move
         private int movementBudgetRemaining;
 
@@ -254,6 +250,7 @@ namespace PathfinderTactics.Characters
             return stats.TotalHP;
         }
 
+<<<<<<< HEAD
 
         public bool IsUnitInRange(Unit other, int range)
         {
@@ -320,6 +317,8 @@ namespace PathfinderTactics.Characters
         }
 
 
+=======
+>>>>>>> parent of d122621 (Merge branch '12-exacting-strike-feat-implementation' into 'main')
         private void OnDestroy()
         {
             UnitManager.AllUnits.Remove(this);
@@ -327,48 +326,7 @@ namespace PathfinderTactics.Characters
 
         private void Select_unit(object sender, EventArgs e)
         {
-            if (UnitActionSystem.Instance.SelectedUnit == this)
-            {
-                selected = true;
-            }
-            else
-            {
-                foreach (Unit other in UnitManager.AllUnits)
-                {
-                    if (other == this) continue;
-                    
-                    Renderer[] renderers = other.GetComponentsInChildren<Renderer>();
-
-                    foreach (Renderer r in renderers)
-                    {
-                        r.material.color = Color.white;
-                    }
-                    
-                }
-                selected = false;
-            }
+            selected = (UnitActionSystem.Instance.SelectedUnit == this);
         }
-
-        public FeatLoadoutSO GetFeatLoadout()
-        {
-            return featLoadout;
-        }
-
-        public UnitStatsSO GetUnitStats()
-        {
-            return stats;
-        }
-
-        //Its here im realizing I am adding way too much to the unit class that does not need to be here. I will fix it later and move some methods elsewhere.
-        private void AppendRoll(TextMeshProUGUI textBox, string message)
-        {
-            textBox.text += message + "\n";
-            // Trim old text if too long
-            if (textBox.text.Length > 100)
-            {
-                textBox.text = textBox.text.Substring(textBox.text.Length - 100);
-            }
-        }
-
     }
 }
