@@ -29,6 +29,11 @@ namespace PathfinderTactics.Characters
         [SerializeField]
         private UnitStatsSO stats;
 
+
+        //Contains all feats (exacting strike for now)
+        [SerializeField]
+        private FeatLoadoutSO featLoadout;
+
         // Public Properties
         public GridPosition CurrentGridPosition { get; private set; }
 
