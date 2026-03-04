@@ -187,7 +187,7 @@ namespace PathfinderTactics.Actions
                 var targetHealth = targetUnit.GetComponent<UnitHealth>();
                 if (targetHealth != null)
                 {
-                    targetHealth.ApplyDamage(damage);
+                    targetHealth.ApplyDamage(unit, damage, result == Degree.CriticalSuccess);
                     Debug.Log($"Dealt {damage} Damage to {targetUnit.name}!");
                 }
                 else

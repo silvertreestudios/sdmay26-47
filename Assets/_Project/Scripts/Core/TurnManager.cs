@@ -130,5 +130,13 @@ namespace PathfinderTactics.Core
         {
             return isCombatActive && CurrentUnit == unit;
         }
+
+        public bool IsPlayerTurn()
+        {
+            if (CurrentUnit == null)
+                return false;
+
+            return CurrentUnit.GetFaction() == Faction.Player;
+        }
     }
 }

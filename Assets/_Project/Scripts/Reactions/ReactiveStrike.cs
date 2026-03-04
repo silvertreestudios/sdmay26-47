@@ -55,8 +55,8 @@ namespace PathfinderTactics.Reactions
                 UnitHealth targetHealth = target.GetComponent<UnitHealth>();
                 if (targetHealth != null)
                 {
-                    targetHealth.ApplyDamage(damage);
-
+                    // TODO: Add critical hit logic later
+                    targetHealth.ApplyDamage(unit, damage, false);
                     // PF2e Rule: If the reaction kills them, they don't finish moving!
                     if (targetHealth.IsDead || targetHealth.IsUnconscious)
                     {

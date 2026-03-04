@@ -11,7 +11,7 @@ namespace PathfinderTactics.Characters
     [RequireComponent(typeof(CharacterController))]
     public class Unit : MonoBehaviour
     {
-        [Header("Configuration")]
+        [Header("Team Configuration")]
         [SerializeField]
         private Faction faction = Faction.Player; // Default to Player
 
@@ -37,6 +37,18 @@ namespace PathfinderTactics.Characters
         private float verticalVelocity;
         private float gravity = -9.81f;
         private float jumpHeight = 1.5f;
+
+        [Header("Movement Settings")]
+        [SerializeField]
+        private float moveSpeed = 7f;
+
+        [SerializeField]
+        private float rotateSpeed = 15f;
+
+        private List<Vector3> positionList;
+        private int currentPositionIndex;
+        private Action onMoveComplete;
+        private bool isMoving = false;
 
         // Budget is used to track how far a unit can move
         private int movementBudgetRemaining;
@@ -129,8 +141,59 @@ namespace PathfinderTactics.Characters
 
         void Update()
         {
-            if (!selected)
+            if (!isMoving)
                 return;
+
+            Vector3 targetPosition = positionList[currentPositionIndex];
+            Vector3 moveDirection = (targetPosition - transform.position).normalized;
+
+            // Rotate towards the target
+            if (moveDirection != Vector3.zero)
+            {
+                transform.forward = Vector3.Lerp(
+                    transform.forward,
+                    moveDirection,
+                    Time.deltaTime * rotateSpeed
+                );
+            }
+
+            // Move smoothly towards the target
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                targetPosition,
+                moveSpeed * Time.deltaTime
+            );
+
+            // Check if we reached the current waypoint
+            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+            {
+                currentPositionIndex++;
+
+                // Check if we reached the final destination
+                if (currentPositionIndex >= positionList.Count)
+                {
+                    isMoving = false;
+                    transform.position = targetPosition; // Snap precisely to the end
+                    onMoveComplete?.Invoke(); // Tell the system we finished walking
+                }
+            }
+        }
+
+        public void MoveAlongPath(List<GridPosition> path, Action onComplete)
+        {
+            positionList = new List<Vector3>();
+
+            // Convert grid coordinates to actual 3D world coordinates
+            foreach (GridPosition pos in path)
+            {
+                positionList.Add(GridSystem.Instance.GetWorldPosition(pos));
+            }
+
+            currentPositionIndex = 0;
+            onMoveComplete = onComplete;
+            isMoving = true;
+
+            // TODO: add animation here.
         }
 
         #region Movement Budget

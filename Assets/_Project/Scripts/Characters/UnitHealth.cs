@@ -1,5 +1,6 @@
 using System;
 using PathfinderTactics.Core;
+using PathfinderTactics.Reactions;
 using UnityEngine;
 
 namespace PathfinderTactics.Characters
@@ -30,29 +31,66 @@ namespace PathfinderTactics.Characters
             currentHealth = maxHealth;
         }
 
-        public void ApplyDamage(int amount, bool isCriticalHit = false)
+        public void ApplyDamage(Unit source, int amount, bool isCriticalHit = false)
         {
             if (IsDead)
                 return;
 
-            currentHealth -= amount;
-            currentHealth = Mathf.Max(0, currentHealth);
-            OnHealthChanged?.Invoke(this, EventArgs.Empty);
+            Unit thisUnit = GetComponent<Unit>();
 
-            if (currentHealth == 0 && DyingValue == 0)
-            {
-                // Drop to 0 HP logic
-                int initialDying = 1 + WoundedValue;
-                if (isCriticalHit)
-                    initialDying += 1; // Crits cause Dying 2
+            // Package the intended damage
+            BeforeDamageEvent damageEvent = new BeforeDamageEvent(
+                source,
+                thisUnit,
+                amount,
+                isCriticalHit
+            );
 
-                SetDying(initialDying);
-            }
-            else if (currentHealth == 0 && DyingValue > 0)
-            {
-                // Taking damage while already dying increases dying value
-                SetDying(DyingValue + (isCriticalHit ? 2 : 1));
-            }
+            // Send it through the Reaction Manager
+            ReactionManager.Instance.EvaluateEvent(
+                damageEvent,
+                (resolvedEvent) =>
+                {
+                    BeforeDamageEvent finalDamageEvent = resolvedEvent as BeforeDamageEvent;
+
+                    // Did a reaction completely cancel the attack (e.g., a total miss reaction)
+                    // or reduce the damage to 0 or below?
+                    if (finalDamageEvent.IsCancelled || finalDamageEvent.DamageAmount <= 0)
+                    {
+                        Debug.Log(
+                            $"<color=green>Damage to {thisUnit.name} was fully mitigated!</color>"
+                        );
+                        return;
+                    }
+
+                    // Actually apply the modified damage to the HP pool
+                    currentHealth -= finalDamageEvent.DamageAmount;
+                    currentHealth = Mathf.Max(0, currentHealth);
+                    OnHealthChanged?.Invoke(this, EventArgs.Empty);
+
+                    Debug.Log(
+                        $"<color=red>[HEALTH]</color> {thisUnit.name} took {finalDamageEvent.DamageAmount} final damage. HP: {currentHealth}/{maxHealth}"
+                    );
+
+                    // Handle PF2e Dying rules
+                    if (currentHealth == 0 && DyingValue == 0)
+                    {
+                        // Drop to 0 HP logic
+                        int initialDying = 1 + WoundedValue;
+                        if (finalDamageEvent.IsCriticalHit)
+                            initialDying += 1; // Crits cause Dying 2
+                        SetDying(initialDying);
+                    }
+                    else if (currentHealth == 0 && DyingValue > 0)
+                    {
+                        // Taking damage while already dying increases dying value
+                        SetDying(DyingValue + (finalDamageEvent.IsCriticalHit ? 2 : 1));
+                    }
+
+                    // TODO: Fire the AfterDamageEvent if we add Spiky Armor/Retaliation
+                    // ReactionManager.Instance.EvaluateEvent(new AfterDamageEvent(source, thisUnit, finalDamageEvent.DamageAmount), (_) => {});
+                }
+            );
         }
 
         public void ApplyHealing(int amount)

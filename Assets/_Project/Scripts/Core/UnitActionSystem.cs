@@ -118,11 +118,9 @@ namespace PathfinderTactics.Core
             {
                 // It's the AI's turn
                 // Lock Player Input (Set phase to Busy or maybe an 'AI' phase)
-                // SetPhase(GamePhase.Busy);
-
-                // TODOL Trigger AI (will implement this in next)
-                Debug.Log($"AI Turn Started for {unit.name}. Waiting for AI logic...");
-
+                SetPhase(GamePhase.Busy);
+                // TODO: Trigger AI (will implement this in next)
+                Debug.Log("AI Turn Started. Player controls locked.");
                 // For now, since there is no AI, just automatically end their turn
             }
             else
@@ -180,6 +178,8 @@ namespace PathfinderTactics.Core
 
         private void OnConfirmPerformed(InputAction.CallbackContext context)
         {
+            if (!TurnManager.Instance.IsPlayerTurn())
+                return;
             // Case 1: Moving
             if (currentPhase == GamePhase.FreeMovement)
             {
@@ -195,6 +195,8 @@ namespace PathfinderTactics.Core
 
         private void OnOpenMenuPerformed(InputAction.CallbackContext context)
         {
+            if (!TurnManager.Instance.IsPlayerTurn())
+                return;
             if (currentPhase == GamePhase.FreeMovement)
             {
                 // Commit the move, and IF they survive, open the menu!

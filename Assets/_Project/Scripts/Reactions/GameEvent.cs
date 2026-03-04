@@ -40,4 +40,35 @@ namespace PathfinderTactics.Reactions
             CurrentPos = currentPos;
         }
     }
+
+    public class BeforeDamageEvent : GameEvent
+    {
+        public Unit TargetUnit { get; }
+
+        // This is mutable. Reactions can reduce or increase this before it resolves.
+        public int DamageAmount { get; set; }
+
+        public bool IsCriticalHit { get; }
+
+        public BeforeDamageEvent(Unit source, Unit target, int damage, bool isCrit)
+            : base(source)
+        {
+            TargetUnit = target;
+            DamageAmount = damage;
+            IsCriticalHit = isCrit;
+        }
+    }
+
+    public class AfterDamageEvent : GameEvent
+    {
+        public Unit TargetUnit { get; }
+        public int FinalDamageTaken { get; }
+
+        public AfterDamageEvent(Unit source, Unit target, int finalDamage)
+            : base(source)
+        {
+            TargetUnit = target;
+            FinalDamageTaken = finalDamage;
+        }
+    }
 }
