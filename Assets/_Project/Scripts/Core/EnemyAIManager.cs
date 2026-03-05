@@ -36,6 +36,11 @@ namespace PathfinderTactics.Core
         private void Start()
         {
             TurnManager.Instance.OnTurnChanged += TurnManager_OnTurnChanged;
+            if (!TurnManager.Instance.IsPlayerTurn())
+            {
+                state = State.TakingTurn;
+                timer = 1.0f;
+            }
         }
 
         private void Update()

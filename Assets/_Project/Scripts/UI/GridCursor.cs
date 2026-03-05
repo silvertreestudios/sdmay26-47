@@ -26,7 +26,6 @@ namespace PathfinderTactics.UI
                 return;
             }
             Instance = this;
-            Hide(); // Hide by default
         }
 
         public void Show(GridPosition startPos)

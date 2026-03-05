@@ -154,6 +154,20 @@ namespace PathfinderTactics.Grid
 
                     if (checkX >= 0 && checkX < width && checkZ >= 0 && checkZ < height)
                     {
+                        // Prevent diagonal movement if the cells are blocked
+                        // If we are evaluating a diagonal move (both x and z are non-zero)
+                        if (x != 0 && z != 0)
+                        {
+                            bool canMoveHorizontal = pathNodeGrid[checkX, pos.z].isWalkable;
+                            bool canMoveVertical = pathNodeGrid[pos.x, checkZ].isWalkable;
+
+                            // If both adjacent cells are blocked, you cannot move diagonally
+                            if (!canMoveHorizontal && !canMoveVertical)
+                            {
+                                continue;
+                            }
+                        }
+
                         neighbourList.Add(pathNodeGrid[checkX, checkZ]);
                     }
                 }
@@ -280,6 +294,20 @@ namespace PathfinderTactics.Grid
                         // If a cell isn't walkable, dont move to it.
                         if (!cell.isWalkable)
                             continue;
+
+                        // Prevent diagonal "corner cutting"
+                        if (x != 0 && z != 0)
+                        {
+                            bool canMoveHorizontal = gridSystem
+                                .GetCell(new GridPosition(neighbourPos.x, pos.z))
+                                .isWalkable;
+                            bool canMoveVertical = gridSystem
+                                .GetCell(new GridPosition(pos.x, neighbourPos.z))
+                                .isWalkable;
+
+                            if (!canMoveHorizontal && !canMoveVertical)
+                                continue;
+                        }
 
                         // If we already have a node for this position, use it. Otherwise, create a new one.
                         if (!pathNodeMap.TryGetValue(neighbourPos, out PathNode neighbourNode))

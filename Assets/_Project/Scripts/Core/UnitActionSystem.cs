@@ -87,7 +87,10 @@ namespace PathfinderTactics.Core
         private void Update()
         {
             // Block if over UI
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            if (!TurnManager.Instance.IsPlayerTurn())
                 return;
 
             switch (currentPhase)
@@ -240,6 +243,9 @@ namespace PathfinderTactics.Core
 
         private void HandleFreeMovement()
         {
+            if (selectedUnit == null || !TurnManager.Instance.IsPlayerTurn())
+                return;
+
             Vector2 inputMoveDir = playerInputActions.Player.Move.ReadValue<Vector2>();
 
             if (inputMoveDir == Vector2.zero)
@@ -562,9 +568,9 @@ namespace PathfinderTactics.Core
                 selectedUnit.CurrentGridPosition,
                 selectedUnit.GetMaxMoveCost()
             );
-            OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
+            // OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
             CameraController.Instance.SetFollowTarget(unit.transform);
-            SetPhase(GamePhase.FreeMovement);
+            // SetPhase(GamePhase.FreeMovement);
         }
 
         public void ClearSelectedUnit()
@@ -592,6 +598,15 @@ namespace PathfinderTactics.Core
         {
             // Debug.Log($"[STATE MACHINE] Phase changing from {currentPhase} to {newPhase}");
             currentPhase = newPhase;
+
+            if (currentPhase == GamePhase.FreeMovement && selectedUnit != null)
+            {
+                validMovePositions = Pathfinding.GetReachableGridPositions(
+                    selectedUnit.CurrentGridPosition,
+                    selectedUnit.GetMaxMoveCost()
+                );
+            }
+
             // Hide tooltip if we leave targeting mode
             if (currentPhase != GamePhase.ActionTargeting && UnitTooltipUI.Instance != null)
             {
