@@ -18,14 +18,23 @@ namespace PathfinderTactics.Reactions
     // Fired right before leaving a square. (Reactive Strike happens here)
     public class BeforeMoveEvent : GameEvent
     {
-        public GridPosition FromPos { get; }
-        public GridPosition ToPos { get; }
+        public Unit MovingUnit { get; }
+        public GridPosition StartPos { get; }
+        public GridPosition TargetPos { get; }
+        public bool IsStep { get; }
 
-        public BeforeMoveEvent(Unit source, GridPosition from, GridPosition to)
-            : base(source)
+        public BeforeMoveEvent(
+            Unit movingUnit,
+            GridPosition startPos,
+            GridPosition targetPos,
+            bool isStep = false
+        )
+            : base(movingUnit)
         {
-            FromPos = from;
-            ToPos = to;
+            MovingUnit = movingUnit;
+            StartPos = startPos;
+            TargetPos = targetPos;
+            IsStep = isStep;
         }
     }
 

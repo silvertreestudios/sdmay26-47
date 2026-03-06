@@ -12,6 +12,9 @@ namespace PathfinderTactics.Core
     {
         public static EnemyAIManager Instance { get; private set; }
 
+        [SerializeField]
+        private bool aiEnabled = true;
+
         private enum State
         {
             WaitingForTurn,
@@ -45,7 +48,18 @@ namespace PathfinderTactics.Core
 
         private void Update()
         {
+            // Press 'P' to enable/disable AI
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                aiEnabled = !aiEnabled;
+                Debug.Log($"[ENEMY AI] AI is now {(aiEnabled ? "ENABLED" : "DISABLED")}");
+            }
+
             if (TurnManager.Instance.IsPlayerTurn())
+                return;
+
+            // If AI is disabled, don't take any actions
+            if (!aiEnabled)
                 return;
 
             switch (state)

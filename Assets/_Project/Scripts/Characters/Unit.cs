@@ -8,6 +8,25 @@ using UnityEngine;
 
 namespace PathfinderTactics.Characters
 {
+    public enum UnitSize
+    {
+        Tiny = 0,
+        Small = 1,
+        Medium = 2,
+        Large = 3,
+        Huge = 4,
+        Gargantuan = 5,
+
+        // TODO: implement this stuff.
+        // Size         Space       Reach (Tall)	Reach (Long)
+        // Tiny         < 5 feet	0 feet	        0 feet
+        // Small        5 feet	    5 feet	        5 feet
+        // Medium       5 feet	    5 feet	        5 feet
+        // Large        10 feet	    10 feet	        5 feet
+        // Huge         15 feet	    15 feet	        10 feet
+        // Gargantuan   >= 20 feet	20 feet	        15 feet
+    }
+
     [RequireComponent(typeof(CharacterController))]
     public class Unit : MonoBehaviour
     {
@@ -28,6 +47,12 @@ namespace PathfinderTactics.Characters
         [Header("Configuration")]
         [SerializeField]
         private UnitStatsSO stats;
+
+        [Header("PF2e Attributes")]
+        [SerializeField]
+        private UnitSize unitSize = UnitSize.Medium;
+
+        public UnitSize GetUnitSize() => unitSize;
 
         // Public Properties
         public GridPosition CurrentGridPosition { get; private set; }
@@ -56,8 +81,7 @@ namespace PathfinderTactics.Characters
         // 3 actions per turn
         private int actionPointsRemaining;
 
-        // Honestly theres no way we need this to be anything other than 3 but
-        // Useful for debugging
+        // TODO: max 4 if quickened.
         private int totalActionPointsPerTurn = 3;
 
         private bool selected = false;

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace PathfinderTactics.Actions
 {
-    public class MeleeAction : BaseAction
+    public class RangedAction : BaseAction
     {
         private Unit targetUnit;
         private float stateTimer;
@@ -15,44 +15,34 @@ namespace PathfinderTactics.Actions
 
         private enum State
         {
-            Swinging,
+            Aiming,
+            Shooting,
             Cooloff,
         }
 
-        public override string GetActionName() => "Strike";
+        public override string GetActionName() => "Shoot";
 
-        // TODO: These stats should change based on the weapon equipped. For now we can just hardcode them.
         [Header("Weapon Stats")]
         [SerializeField]
-        private int maxRange = 1; // 1 tile = 5ft reach.
+        private int maxRange = 12; // 60ft range
 
         [SerializeField]
         private bool isAgileWeapon = false;
 
-        // Defines the boundaries the cursor can move in
-        public override List<GridPosition> GetActionRangeGridPositions()
+        public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
         {
-            List<GridPosition> rangePositions = new List<GridPosition>();
-            GridPosition unitGridPos = unit.CurrentGridPosition;
+            targetUnit = GridSystem.Instance.GetUnitAt(gridPosition);
 
-            for (int x = -maxRange; x <= maxRange; x++)
+            if (targetUnit == null)
             {
-                for (int z = -maxRange; z <= maxRange; z++)
-                {
-                    GridPosition testPos = new GridPosition(unitGridPos.x + x, unitGridPos.z + z);
-
-                    if (!GridSystem.Instance.IsValidGridPosition(testPos))
-                        continue;
-
-                    // TODO: fix distance calculation. For now this works fine when range is 1 tile.
-                    int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance <= maxRange)
-                    {
-                        rangePositions.Add(testPos);
-                    }
-                }
+                onActionComplete?.Invoke();
+                return;
             }
-            return rangePositions;
+
+            this.onActionComplete = onActionComplete;
+            state = State.Aiming;
+            stateTimer = 0.5f;
+            isActive = true;
         }
 
         private void Update()
@@ -64,8 +54,7 @@ namespace PathfinderTactics.Actions
 
             switch (state)
             {
-                // TODO: fix
-                case State.Swinging:
+                case State.Aiming:
                     if (targetUnit != null)
                     {
                         float rotateSpeed = 10f;
@@ -78,6 +67,8 @@ namespace PathfinderTactics.Actions
                             Time.deltaTime * rotateSpeed
                         );
                     }
+                    break;
+                case State.Shooting:
                     break;
                 case State.Cooloff:
                     break;
@@ -93,10 +84,15 @@ namespace PathfinderTactics.Actions
         {
             switch (state)
             {
-                case State.Swinging:
+                case State.Aiming:
+                    state = State.Shooting;
+                    stateTimer = 0.1f;
+                    // TODO: add arrow projectile here later
+                    break;
+                case State.Shooting:
                     state = State.Cooloff;
                     stateTimer = 0.5f;
-                    PerformStrikeLogic();
+                    PerformShootLogic();
                     break;
                 case State.Cooloff:
                     isActive = false;
@@ -105,49 +101,17 @@ namespace PathfinderTactics.Actions
             }
         }
 
-        public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
+        private void PerformShootLogic()
         {
-            targetUnit = GridSystem.Instance.GetUnitAt(gridPosition);
-
-            if (targetUnit == null)
-            {
-                Debug.LogError("No unit found at target position!");
-                onActionComplete?.Invoke();
-                return;
-            }
-
-            this.onActionComplete = onActionComplete;
-            state = State.Swinging;
-            stateTimer = 0.7f;
-            isActive = true;
-        }
-
-        private void PerformStrikeLogic()
-        {
-            // Check stats
             var stats = unit.GetStats();
-            if (stats == null)
-            {
-                Debug.LogError(
-                    $"ERROR: Unit '{unit.name}' is missing its UnitStatsSO! Assign it in the Inspector."
-                );
+            if (stats == null || targetUnit == null)
                 return;
-            }
 
-            // Check target
-            if (targetUnit == null)
-            {
-                Debug.LogError("ERROR: Target Unit is null in PerformStrikeLogic.");
-                return;
-            }
-
-            // Get Stats
-            // TODO: Move Proficiency to UnitStatsSO later
             int level = 1;
-            int strengthMod = (stats.strength - 10) / 2;
+            // Ranged uses dexterity
+            int dexMod = (stats.dexterity - 10) / 2;
             Proficiency weaponProf = Proficiency.Trained;
 
-            // calculate MAP (Multiple Attack Penalty)
             int mapPenalty = 0;
             int attacksMade = unit.AttacksThisTurn;
 
@@ -156,21 +120,18 @@ namespace PathfinderTactics.Actions
             else if (attacksMade >= 2)
                 mapPenalty = isAgileWeapon ? -8 : -10;
 
-            // Apply to bonus
-            int attackBonus =
-                PF2E_Core.CalculateModifier(level, weaponProf, strengthMod) + mapPenalty;
+            int attackBonus = PF2E_Core.CalculateModifier(level, weaponProf, dexMod) + mapPenalty;
 
-            // Cover math
+            // Cover Logic
             int baseAC = targetUnit.getArmorClass();
             int coverBonus = LineOfSightUtility.GetCoverBonus(
                 unit.CurrentGridPosition,
                 targetUnit.CurrentGridPosition
             );
-            Debug.Log($"Cover bonus {coverBonus} Damage to {targetUnit.name}!");
 
             if (coverBonus == -1)
             {
-                Debug.Log("Attack aborted! Target is completely blocked.");
+                Debug.Log("Shot aborted! Target became completely blocked.");
                 return;
             }
 
@@ -183,22 +144,18 @@ namespace PathfinderTactics.Actions
                 );
             }
 
-            // Increment attack count for MAP
             unit.IncrementAttacksThisTurn();
 
             int d20 = UnityEngine.Random.Range(1, 21);
-
             Degree result = PF2E_Core.CheckResult(d20, attackBonus, finalAC);
 
             Debug.Log(
-                $"[Strike] Rolled {d20} + {attackBonus} (MAP: {mapPenalty}) vs AC {finalAC} -> {result}"
+                $"[Shoot] Rolled {d20} + {attackBonus} (MAP: {mapPenalty}) vs AC {finalAC} -> {result}"
             );
 
-            // Apply Damage
             if (result == Degree.Success || result == Degree.CriticalSuccess)
             {
-                int weaponDice = UnityEngine.Random.Range(1, 9);
-                int damage = weaponDice + strengthMod;
+                int damage = UnityEngine.Random.Range(1, 9); // 1d8
 
                 if (result == Degree.CriticalSuccess)
                 {
@@ -206,18 +163,11 @@ namespace PathfinderTactics.Actions
                     Debug.Log("CRITICAL HIT!");
                 }
 
-                // Check health
                 var targetHealth = targetUnit.GetComponent<UnitHealth>();
                 if (targetHealth != null)
                 {
                     targetHealth.ApplyDamage(unit, damage, result == Degree.CriticalSuccess);
-                    Debug.Log($"Dealt {damage} Damage to {targetUnit.name}!");
-                }
-                else
-                {
-                    Debug.LogError(
-                        $"ERROR: Target '{targetUnit.name}' does NOT have a UnitHealth component!"
-                    );
+                    Debug.Log($"Shot dealt {damage} Damage to {targetUnit.name}!");
                 }
             }
             else
@@ -226,17 +176,36 @@ namespace PathfinderTactics.Actions
             }
         }
 
-        public override bool IsValidActionGridPosition(GridPosition gridPosition)
+        public override List<GridPosition> GetActionRangeGridPositions()
         {
-            return GetValidActionGridPositions().Contains(gridPosition);
+            List<GridPosition> rangePositions = new List<GridPosition>();
+            GridPosition unitGridPos = unit.CurrentGridPosition;
+
+            for (int x = -maxRange; x <= maxRange; x++)
+            {
+                for (int z = -maxRange; z <= maxRange; z++)
+                {
+                    GridPosition testPos = new GridPosition(unitGridPos.x + x, unitGridPos.z + z);
+
+                    // Keep it on the map
+                    if (!GridSystem.Instance.IsValidGridPosition(testPos))
+                        continue;
+
+                    // Chebyshev distance
+                    int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
+                    if (distance <= maxRange)
+                    {
+                        rangePositions.Add(testPos);
+                    }
+                }
+            }
+            return rangePositions;
         }
 
         public override List<GridPosition> GetValidActionGridPositions()
         {
             List<GridPosition> validGridPositionList = new List<GridPosition>();
             GridPosition unitGridPosition = unit.CurrentGridPosition;
-
-            // Debug.Log($"<color=yellow>--- STARTING TARGET SEARCH (Range: {maxRange}) ---</color>");
 
             for (int x = -maxRange; x <= maxRange; x++)
             {
@@ -247,54 +216,35 @@ namespace PathfinderTactics.Actions
                         unitGridPosition.z + z
                     );
 
-                    // Grid Boundary Check
                     if (!GridSystem.Instance.IsValidGridPosition(testGridPosition))
                         continue;
-
-                    // Self Check
                     if (unitGridPosition == testGridPosition)
                         continue;
 
-                    // Chebyshev Distance Check
                     int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
                     if (distance > maxRange)
                         continue;
 
-                    // Unit Check
                     Unit targetUnit = GridSystem.Instance.GetUnitAt(testGridPosition);
                     if (targetUnit == null)
-                        continue; // Empty tile
-
-                    // Faction Check
-                    if (targetUnit.GetFaction() == unit.GetFaction())
-                    {
-                        // Debug.Log($"Tile {testGridPosition} rejected: Friendly unit in the way.");
                         continue;
-                    }
-
-                    // Line of sight check (cover)
-                    // Debug.Log($"Found Enemy at {testGridPosition}! Running Cover check...");
+                    if (targetUnit.GetFaction() == unit.GetFaction())
+                        continue;
 
                     int coverBonus = LineOfSightUtility.GetCoverBonus(
                         unitGridPosition,
                         testGridPosition
                     );
-
-                    // Cover / Line of Effect Check
                     if (coverBonus == -1)
-                    {
-                        // Debug.Log($"<color=red>Tile {testGridPosition} rejected: NO LINE OF EFFECT.</color>");
                         continue;
-                    }
 
-                    // Valid target
-                    // Debug.Log($"<color=green>Tile {testGridPosition} is a VALID target! (Cover Bonus: +{coverBonus} AC)</color>");
                     validGridPositionList.Add(testGridPosition);
                 }
             }
-
-            // Debug.Log($"<color=yellow>--- END TARGET SEARCH. Found {validGridPositionList.Count} valid targets. ---</color>");
             return validGridPositionList;
         }
+
+        public override bool IsValidActionGridPosition(GridPosition gridPosition) =>
+            GetValidActionGridPositions().Contains(gridPosition);
     }
 }

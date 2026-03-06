@@ -1,3 +1,5 @@
 ﻿<Solution>
   <Project Path="NewAssembly.csproj" />
+  <Project Path="PathfinderTactics.Tests.EditMode.csproj" />
+  <Project Path="PathfinderTactics.Tests.PlayMode.csproj" />
 </Solution>

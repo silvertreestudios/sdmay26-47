@@ -202,6 +202,15 @@ namespace PathfinderTactics.Core
                 return;
             if (currentPhase == GamePhase.FreeMovement)
             {
+                // Snap unit to the grid cell they're currently over
+                if (selectedUnit != null)
+                {
+                    GridPosition cellTheyreOver = GridSystem.Instance.GetGridPosition(
+                        selectedUnit.transform.position
+                    );
+                    selectedUnit.SnapToGrid(GridSystem.Instance.GetWorldPosition(cellTheyreOver));
+                }
+
                 // Commit the move, and IF they survive, open the menu!
                 CommitMoveAction(() =>
                 {
@@ -485,11 +494,24 @@ namespace PathfinderTactics.Core
                 // Lock the game state
                 SetPhase(GamePhase.Busy);
 
-                // Package the event
+                int distanceX = Mathf.Abs(currentPos.x - selectedUnit.CurrentGridPosition.x);
+                int distanceZ = Mathf.Abs(currentPos.z - selectedUnit.CurrentGridPosition.z);
+                int totalDistance = Mathf.Max(distanceX, distanceZ);
+
+                bool isAutoStep = totalDistance == 1;
+
+                if (isAutoStep)
+                {
+                    Debug.Log(
+                        "<color=yellow>Unit moved exactly 1 tile. Auto-converting Stride to Step.</color>"
+                    );
+                }
+
                 BeforeMoveEvent moveEvent = new BeforeMoveEvent(
                     selectedUnit,
                     selectedUnit.CurrentGridPosition,
-                    currentPos
+                    currentPos,
+                    isAutoStep
                 );
 
                 // Hand it to the Reaction Manager

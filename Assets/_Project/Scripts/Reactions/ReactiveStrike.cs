@@ -17,14 +17,23 @@ namespace PathfinderTactics.Reactions
             // Reactive Strike triggers when an enemy LEAVES a threatened square
             if (gameEvent is BeforeMoveEvent moveEvent)
             {
+                // Steps do not trigger reactions
+                if (moveEvent.IsStep)
+                {
+                    Debug.Log(
+                        $"{unit.name} ignores {moveEvent.SourceUnit.name} because they Stepped!"
+                    );
+                    return false;
+                }
+
                 // Is it an enemy?
                 if (!unit.IsEnemy(moveEvent.SourceUnit))
                     return false;
 
                 // Were they inside our reach before they moved?
                 int dist = Mathf.Max(
-                    Mathf.Abs(moveEvent.FromPos.x - unit.CurrentGridPosition.x),
-                    Mathf.Abs(moveEvent.FromPos.z - unit.CurrentGridPosition.z)
+                    Mathf.Abs(moveEvent.StartPos.x - unit.CurrentGridPosition.x),
+                    Mathf.Abs(moveEvent.StartPos.z - unit.CurrentGridPosition.z)
                 );
 
                 return dist <= reach;

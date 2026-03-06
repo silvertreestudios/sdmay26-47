@@ -24,6 +24,9 @@ namespace PathfinderTactics.Grid
         [SerializeField]
         private LayerMask obstacleLayerMask;
 
+        [SerializeField]
+        private LayerMask halfCoverLayerMask;
+
         public int Width => width;
         public int Height => height;
         public float CellSize => cellSize;
@@ -53,12 +56,13 @@ namespace PathfinderTactics.Grid
                     Vector3 worldPos = GetWorldPosition(gridPos);
                     GridCell cell = new GridCell(gridPos, worldPos);
 
-                    // Obstacle check (Walls)
+                    // Obstacle check (Walls and HalfCover)
+                    LayerMask combinedLayerMask = obstacleLayerMask | halfCoverLayerMask;
                     bool isBlocked = Physics.CheckBox(
                         worldPos + Vector3.up * 0.5f,
                         new Vector3(cellSize, 1f, cellSize) * 0.4f,
                         Quaternion.identity,
-                        obstacleLayerMask
+                        combinedLayerMask
                     );
                     cell.isWalkable = !isBlocked;
                     gridCells[x, z] = cell;
