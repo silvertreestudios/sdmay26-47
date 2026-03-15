@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
 using UnityEngine;
 
 namespace PathfinderTactics.Grid
@@ -136,6 +138,34 @@ namespace PathfinderTactics.Grid
         {
             GridCell cell = GetCell(gridPosition);
             return cell != null && cell.occupyingUnit != null;
+        }
+
+        /// <summary>
+        /// Returns a list of all active units on the board that do not belong to the provided faction.
+        /// </summary>
+        public List<Unit> GetAllEnemies(Faction friendlyFaction)
+        {
+            List<Unit> enemyList = new List<Unit>();
+
+            Unit[] allUnits = FindObjectsByType<Unit>(FindObjectsSortMode.None);
+
+            foreach (Unit testUnit in allUnits)
+            {
+                // Are they on a different team?
+                if (testUnit.GetFaction() != friendlyFaction)
+                {
+                    // Are they actually alive?
+                    var conditions = testUnit.GetComponent<UnitConditions>();
+                    if (conditions != null && conditions.IsDead())
+                    {
+                        continue;
+                    }
+
+                    enemyList.Add(testUnit);
+                }
+            }
+
+            return enemyList;
         }
     }
 }

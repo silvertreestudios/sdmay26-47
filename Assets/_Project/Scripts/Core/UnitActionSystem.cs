@@ -163,6 +163,14 @@ namespace PathfinderTactics.Core
 
         public void SetSelectedAction(BaseAction action)
         {
+            if (!action.CanExecuteAction())
+            {
+                Debug.Log(
+                    $"<color=red>Action '{action.GetActionName()}' is currently blocked by a condition!</color>"
+                );
+                return;
+            }
+
             selectedAction = action;
             SetPhase(GamePhase.ActionTargeting);
 
@@ -254,6 +262,30 @@ namespace PathfinderTactics.Core
         {
             if (selectedUnit == null || !TurnManager.Instance.IsPlayerTurn())
                 return;
+
+            // Condition Blockers
+            var conditions = selectedUnit.GetComponent<UnitConditions>();
+            if (conditions != null)
+            {
+                // Are they completely out of action?
+                if (
+                    conditions.IsDead()
+                    || conditions.HasCondition(ConditionType.Unconscious)
+                    || conditions.GetConditionValue(ConditionType.Stunned) > 0
+                )
+                {
+                    selectedUnit.HandleMovement(Vector3.zero);
+                    return;
+                }
+
+                // Are they tied down or lying on the floor?
+                if (!conditions.CanMove() || conditions.HasCondition(ConditionType.Prone))
+                {
+                    // They might be trying to press WASD, but we force their velocity to zero
+                    selectedUnit.HandleMovement(Vector3.zero);
+                    return;
+                }
+            }
 
             Vector2 inputMoveDir = playerInputActions.Player.Move.ReadValue<Vector2>();
 
@@ -475,6 +507,29 @@ namespace PathfinderTactics.Core
         {
             if (selectedUnit == null)
                 return;
+
+            // Grid Commitment Blockers
+            var conditions = selectedUnit.GetComponent<UnitConditions>();
+            if (conditions != null)
+            {
+                if (!conditions.CanMove())
+                {
+                    Debug.Log(
+                        $"<color=orange>{selectedUnit.name} cannot move! They are Immobilized/Grabbed/Restrained.</color>"
+                    );
+                    onComplete?.Invoke();
+                    return;
+                }
+
+                if (conditions.HasCondition(ConditionType.Prone))
+                {
+                    Debug.Log(
+                        $"<color=orange>{selectedUnit.name} cannot Stride while Prone. They must Stand first!</color>"
+                    );
+                    onComplete?.Invoke();
+                    return;
+                }
+            }
 
             GridPosition currentPos = GridSystem.Instance.GetGridPosition(
                 selectedUnit.transform.position

@@ -107,6 +107,11 @@ namespace PathfinderTactics.Actions
 
         public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
         {
+            if (!CanExecuteAction())
+            {
+                onActionComplete?.Invoke();
+                return;
+            }
             targetUnit = GridSystem.Instance.GetUnitAt(gridPosition);
 
             if (targetUnit == null)
@@ -122,32 +127,40 @@ namespace PathfinderTactics.Actions
             isActive = true;
         }
 
+
         private void PerformStrikeLogic()
         {
-            // Check stats
             var stats = unit.GetStats();
-            if (stats == null)
+            if (stats == null || targetUnit == null) return;
+
+            // Senses and stealth check.
+            var targetConditions = targetUnit.GetComponent<UnitConditions>();
+            if (targetConditions != null)
             {
-                Debug.LogError(
-                    $"ERROR: Unit '{unit.name}' is missing its UnitStatsSO! Assign it in the Inspector."
-                );
-                return;
+                int flatCheckDC = targetConditions.RequiresFlatCheckToTarget(unit);
+                if (flatCheckDC > 0)
+                {
+                    int flatRoll = UnityEngine.Random.Range(1, 21);
+                    if (flatRoll < flatCheckDC)
+                    {
+                        Debug.Log(
+                            $"<color=grey>[SENSES]</color> Strike missed! Failed DC {flatCheckDC} flat check to see the target (Rolled {flatRoll})."
+                        );
+                        unit.IncrementAttacksThisTurn();
+                        BreakStealth();
+                        return;
+                    }
+                    Debug.Log(
+                        $"<color=green>[SENSES]</color> Passed vision flat check! (Rolled {flatRoll} vs DC {flatCheckDC})"
+                    );
+                }
             }
 
-            // Check target
-            if (targetUnit == null)
-            {
-                Debug.LogError("ERROR: Target Unit is null in PerformStrikeLogic.");
-                return;
-            }
-
-            // Get Stats
-            // TODO: Move Proficiency to UnitStatsSO later
+            // Base math
             int level = 1;
             int strengthMod = (stats.strength - 10) / 2;
             Proficiency weaponProf = Proficiency.Trained;
 
-            // calculate MAP (Multiple Attack Penalty)
             int mapPenalty = 0;
             int attacksMade = unit.AttacksThisTurn;
 
@@ -156,21 +169,51 @@ namespace PathfinderTactics.Actions
             else if (attacksMade >= 2)
                 mapPenalty = isAgileWeapon ? -8 : -10;
 
-            // Apply to bonus
-            int attackBonus =
-                PF2E_Core.CalculateModifier(level, weaponProf, strengthMod) + mapPenalty;
+            // Attack modifier calculation with debug tracking
+            int attackBonus = PF2E_Core.CalculateAttackRollModifier(
+                unit,
+                AbilityScore.STR,
+                strengthMod,
+                level,
+                weaponProf,
+                AttackType.Melee,
+                mapPenalty
+            );
 
-            // Cover math
-            int baseAC = targetUnit.getArmorClass();
+            // what the bonus WOULD be without conditions
+            int rawBonus = PF2E_Core.CalculateModifier(level, weaponProf, strengthMod) + mapPenalty;
+            int appliedPenalty = attackBonus - rawBonus;
+
+            string atkDebug =
+                $"<color=yellow>[ATTACK MATH]</color> {unit.name} | Raw Math: {rawBonus - mapPenalty} | MAP: {mapPenalty}";
+            if (appliedPenalty < 0)
+                atkDebug += $" | <color=red>Condition Penalties: {appliedPenalty}</color>";
+            atkDebug += $" ==> <b>Final Attack Bonus: +{attackBonus}</b>";
+            Debug.Log(atkDebug);
+
+            // Defense modifier
+            int baseAC = targetUnit.getArmorClass(AttackType.Melee);
+
+            int rawTargetAC = 15;
+            int appliedACMod = baseAC - rawTargetAC;
+
+            string defDebug =
+                $"<color=yellow>[DEFENSE MATH]</color> {targetUnit.name} | Base AC: {rawTargetAC}";
+            if (appliedACMod != 0)
+                defDebug +=
+                    $" | <color=red>Condition AC Modifiers: {(appliedACMod > 0 ? "+" : "")}{appliedACMod}</color>";
+            defDebug += $" ==> <b>Calculated AC: {baseAC}</b>";
+            Debug.Log(defDebug);
+
+            // Cover Logic
             int coverBonus = LineOfSightUtility.GetCoverBonus(
                 unit.CurrentGridPosition,
                 targetUnit.CurrentGridPosition
             );
-            Debug.Log($"Cover bonus {coverBonus} Damage to {targetUnit.name}!");
 
             if (coverBonus == -1)
             {
-                Debug.Log("Attack aborted! Target is completely blocked.");
+                Debug.Log("<color=red>Attack aborted!</color> Target became completely blocked.");
                 return;
             }
 
@@ -179,50 +222,69 @@ namespace PathfinderTactics.Actions
             if (coverBonus > 0)
             {
                 Debug.Log(
-                    $"<color=cyan>[COVER]</color> Target has {(coverBonus == 2 ? "Standard" : "Lesser")} Cover! AC increased by +{coverBonus} (Base: {baseAC} -> Final: {finalAC})"
+                    $"<color=cyan>[COVER]</color> Target has {(coverBonus == 2 ? "Standard" : "Lesser")} Cover! AC increased by +{coverBonus} (New Final AC: {finalAC})"
                 );
             }
 
-            // Increment attack count for MAP
+            // Roll and resolve
             unit.IncrementAttacksThisTurn();
 
             int d20 = UnityEngine.Random.Range(1, 21);
-
             Degree result = PF2E_Core.CheckResult(d20, attackBonus, finalAC);
 
             Debug.Log(
-                $"[Strike] Rolled {d20} + {attackBonus} (MAP: {mapPenalty}) vs AC {finalAC} -> {result}"
+                $"<b>[STRIKE RESULT]</b> Rolled {d20} + {attackBonus} = {d20 + attackBonus} vs AC {finalAC} -> <color={(result == Degree.Success || result == Degree.CriticalSuccess ? "green" : "red")}>{result}</color>"
             );
 
-            // Apply Damage
             if (result == Degree.Success || result == Degree.CriticalSuccess)
             {
                 int weaponDice = UnityEngine.Random.Range(1, 9);
                 int damage = weaponDice + strengthMod;
 
+                // ENFEEBLED DAMAGE DEBUFF
+                // Enfeebled reduces strength-based damage rolls too!
+                var myConditions = unit.GetComponent<UnitConditions>();
+                if (myConditions != null && myConditions.HasCondition(ConditionType.Enfeebled))
+                {
+                    int enfValue = myConditions.GetConditionValue(ConditionType.Enfeebled);
+                    damage -= enfValue;
+                    if (damage < 1) damage = 1; // Minimum 1 damage on a hit
+                    Debug.Log(
+                        $"<color=orange>[CONDITION]</color> Enfeebled {enfValue} reduced damage roll!"
+                    );
+                }
+
                 if (result == Degree.CriticalSuccess)
                 {
                     damage *= 2;
-                    Debug.Log("CRITICAL HIT!");
+                    Debug.Log("<b><color=red>CRITICAL HIT!</color></b>");
                 }
 
-                // Check health
                 var targetHealth = targetUnit.GetComponent<UnitHealth>();
                 if (targetHealth != null)
                 {
                     targetHealth.ApplyDamage(unit, damage, result == Degree.CriticalSuccess);
                     Debug.Log($"Dealt {damage} Damage to {targetUnit.name}!");
                 }
-                else
-                {
-                    Debug.LogError(
-                        $"ERROR: Target '{targetUnit.name}' does NOT have a UnitHealth component!"
-                    );
-                }
             }
             else
             {
                 Debug.Log("Miss!");
+            }
+
+            // BREAK STEALTH
+            BreakStealth();
+        }
+
+        private void BreakStealth()
+        {
+            var myConditions = unit.GetComponent<UnitConditions>();
+            if (myConditions == null)
+                return;
+
+            foreach (Unit enemy in GridSystem.Instance.GetAllEnemies(unit.GetFaction()))
+            {
+                myConditions.SetDetectionState(enemy, DetectionState.Observed);
             }
         }
 

@@ -1,5 +1,26 @@
+using PathfinderTactics.Characters;
+using UnityEngine;
+
 namespace PathfinderTactics.Core
 {
+    public enum AbilityScore
+    {
+        STR,
+        DEX,
+        CON,
+        INT,
+        WIS,
+        CHA,
+        None,
+    }
+
+    public enum AttackType
+    {
+        Melee,
+        Ranged,
+        Spell,
+    }
+
     public enum Proficiency
     {
         Untrained = 0,
@@ -56,6 +77,92 @@ namespace PathfinderTactics.Core
                 degree--;
 
             return degree;
+        }
+
+        /// <summary>
+        /// Calculates the worst active Status Penalty for a specific ability score.
+        /// </summary>
+        public static int GetStatusPenalty(UnitConditions conditions, AbilityScore ability)
+        {
+            if (conditions == null)
+                return 0;
+
+            int frightened = conditions.GetConditionValue(ConditionType.Frightened);
+            int sickened = conditions.GetConditionValue(ConditionType.Sickened);
+            int specific = 0;
+            ConditionType specificType = ConditionType.Frightened; // Default dummy
+
+            switch (ability)
+            {
+                case AbilityScore.STR:
+                    specific = conditions.GetConditionValue(ConditionType.Enfeebled);
+                    specificType = ConditionType.Enfeebled;
+                    break;
+                case AbilityScore.DEX:
+                    specific = conditions.GetConditionValue(ConditionType.Clumsy);
+                    specificType = ConditionType.Clumsy;
+                    break;
+                case AbilityScore.CON:
+                    specific = conditions.GetConditionValue(ConditionType.Drained);
+                    specificType = ConditionType.Drained;
+                    break;
+                case AbilityScore.INT:
+
+                case AbilityScore.WIS:
+
+                case AbilityScore.CHA:
+                    specific = conditions.GetConditionValue(ConditionType.Stupefied);
+                    specificType = ConditionType.Stupefied;
+                    break;
+            }
+
+            int worstPenalty = Mathf.Max(frightened, sickened, specific);
+
+            if (worstPenalty > 0)
+            {
+                string culprit =
+                    worstPenalty == frightened
+                        ? "Frightened"
+                        : (worstPenalty == sickened ? "Sickened" : specificType.ToString());
+                Debug.Log(
+                    $"<color=orange>[PF2E CORE]</color> Applying -{worstPenalty} Status Penalty from {culprit}."
+                );
+            }
+
+            return -worstPenalty;
+        }
+
+        /// <summary>
+        /// The master method for calculating an attack modifier.
+        /// </summary>
+        public static int CalculateAttackRollModifier(
+            Unit attacker,
+            AbilityScore ability,
+            int baseStatMod,
+            int level,
+            Proficiency prof,
+            AttackType attackType,
+            int mapPenalty = 0
+        )
+        {
+            // Base Math (Level + Proficiency + Stat)
+            int baseMod = CalculateModifier(level, prof, baseStatMod) + mapPenalty;
+
+            UnitConditions conditions = attacker.GetComponent<UnitConditions>();
+            if (conditions == null)
+                return baseMod;
+
+            // Status Penalties
+            int statusPenalty = GetStatusPenalty(conditions, ability);
+
+            // Circumstance Penalties
+            int circumstancePenalty = 0;
+            if (attackType == AttackType.Melee && conditions.HasCondition(ConditionType.Prone))
+            {
+                circumstancePenalty = -2;
+            }
+
+            return baseMod + statusPenalty + circumstancePenalty;
         }
     }
 }

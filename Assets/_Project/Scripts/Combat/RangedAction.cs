@@ -31,6 +31,11 @@ namespace PathfinderTactics.Actions
 
         public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
         {
+            if (!CanExecuteAction())
+            {
+                onActionComplete?.Invoke();
+                return;
+            }
             targetUnit = GridSystem.Instance.GetUnitAt(gridPosition);
 
             if (targetUnit == null)
@@ -108,7 +113,6 @@ namespace PathfinderTactics.Actions
                 return;
 
             int level = 1;
-            // Ranged uses dexterity
             int dexMod = (stats.dexterity - 10) / 2;
             Proficiency weaponProf = Proficiency.Trained;
 
@@ -120,10 +124,43 @@ namespace PathfinderTactics.Actions
             else if (attacksMade >= 2)
                 mapPenalty = isAgileWeapon ? -8 : -10;
 
-            int attackBonus = PF2E_Core.CalculateModifier(level, weaponProf, dexMod) + mapPenalty;
+            int attackBonus = PF2E_Core.CalculateAttackRollModifier(
+                unit,
+                AbilityScore.DEX,
+                dexMod,
+                level,
+                weaponProf,
+                AttackType.Ranged,
+                mapPenalty
+            );
 
-            // Cover Logic
-            int baseAC = targetUnit.getArmorClass();
+            // Check for Stealth/Vision
+            var targetConditions = targetUnit.GetComponent<UnitConditions>();
+            if (targetConditions != null)
+            {
+                int flatCheckDC = targetConditions.RequiresFlatCheckToTarget(unit);
+                if (flatCheckDC > 0)
+                {
+                    int flatRoll = UnityEngine.Random.Range(1, 21);
+                    if (flatRoll < flatCheckDC)
+                    {
+                        Debug.Log(
+                            $"<color=grey>Shot missed! Failed DC {flatCheckDC} flat check to see the target (Rolled {flatRoll}).</color>"
+                        );
+                        unit.IncrementAttacksThisTurn(); // The attack is wasted!
+
+                        // Break your own stealth
+                        BreakStealth();
+                        return;
+                    }
+                    Debug.Log(
+                        $"<color=green>Passed vision flat check! (Rolled {flatRoll} vs DC {flatCheckDC})</color>"
+                    );
+                }
+            }
+
+            int baseAC = targetUnit.getArmorClass(AttackType.Ranged);
+
             int coverBonus = LineOfSightUtility.GetCoverBonus(
                 unit.CurrentGridPosition,
                 targetUnit.CurrentGridPosition
@@ -173,6 +210,21 @@ namespace PathfinderTactics.Actions
             else
             {
                 Debug.Log("Miss!");
+            }
+
+            BreakStealth();
+        }
+
+        private void BreakStealth()
+        {
+            var myConditions = unit.GetComponent<UnitConditions>();
+            if (myConditions == null)
+                return;
+
+            // Firing a weapon reveals you to all enemies!
+            foreach (Unit enemy in GridSystem.Instance.GetAllEnemies(unit.GetFaction()))
+            {
+                myConditions.SetDetectionState(enemy, DetectionState.Observed);
             }
         }
 

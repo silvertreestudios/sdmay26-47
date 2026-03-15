@@ -82,6 +82,18 @@ namespace PathfinderTactics.Core
 
         public void NextTurn()
         {
+            // Before moving to the next person, trigger the end-of-turn logic
+            // for the person who just finished (Decay Frightened, take Persistent Damage)
+            if (CurrentUnit != null)
+            {
+                var conditions = CurrentUnit.GetComponent<UnitConditions>();
+                // Even unconscious/dying units take persistent damage at the end of their turn
+                if (conditions != null && !conditions.IsDead())
+                {
+                    conditions.HandleTurnEnd();
+                }
+            }
+
             currentTurnIndex++;
 
             if (currentTurnIndex >= turnOrderList.Count)
@@ -95,33 +107,33 @@ namespace PathfinderTactics.Core
 
         private void StartTurn(Unit unit)
         {
-            Debug.Log($"Turn Start: {unit.name}");
+            Debug.Log($"<color=cyan>--- Turn Start: {unit.name} ---</color>");
 
             UnitHealth health = unit.GetComponent<UnitHealth>();
+            UnitConditions conditions = unit.GetComponent<UnitConditions>();
 
             // Skip dead units entirely
             if (health != null && health.IsDead)
             {
-                Debug.Log($"{unit.name} is dead. Skipping turn.");
+                Debug.Log($"{unit.name} is a corpse. Skipping turn.");
                 NextTurn();
                 return;
             }
 
-            // Handle unconscious units
+            // Handle unconscious / dying units
             if (health != null && health.IsUnconscious)
             {
                 Debug.Log($"{unit.name} is unconscious. Rolling recovery check...");
                 health.RollRecoveryCheck();
 
-                // Wait a moment so the player can read the log before skipping
-                // FOr now, just skip instantly.
-                // TODO: Add a UI delay here later.
+                // Skip the rest of their turn and immediately trigger NextTurn
                 NextTurn();
                 return;
             }
 
-            // If healthy, proceed normally
+            // Healthy unit (resetting AP, checking Stunned)
             unit.StartTurn();
+
             UnitActionSystem.Instance.ForceSelectUnit(unit);
             OnTurnChanged?.Invoke(this, EventArgs.Empty);
         }

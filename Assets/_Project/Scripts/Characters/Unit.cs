@@ -82,7 +82,7 @@ namespace PathfinderTactics.Characters
         private int actionPointsRemaining;
 
         // TODO: max 4 if quickened.
-        private int totalActionPointsPerTurn = 3;
+        // private int totalActionPointsPerTurn = 3;
 
         private bool selected = false;
 
@@ -96,7 +96,26 @@ namespace PathfinderTactics.Characters
         #region Action Economy
         public void StartTurn()
         {
-            actionPointsRemaining = totalActionPointsPerTurn;
+            int baseAP = 3;
+
+            // (Stunned / Slowed / Quickened)
+            var conditions = GetComponent<UnitConditions>();
+            if (conditions != null)
+            {
+                // HandleTurnStart calculates the AP modifier and automatically decays Stunned
+                int apModifier = conditions.HandleTurnStart(out ActionTag restriction);
+
+                // Max 4 actions if Quickened, Min 0 if heavily Stunned
+                actionPointsRemaining = Mathf.Clamp(baseAP + apModifier, 0, 4);
+
+                // TODO: Maybe store the "restriction" variable
+                // to enforce what the 4th Quickened AP is allowed to be used for
+            }
+            else
+            {
+                actionPointsRemaining = baseAP;
+            }
+
             AttacksThisTurn = 0;
             HasReactionAvailable = true;
         }
@@ -323,11 +342,40 @@ namespace PathfinderTactics.Characters
 
         public UnitStatsSO GetStats() => stats;
 
-        public int getArmorClass()
+        // Default to Melee if nothing is passed in
+        public int getArmorClass(AttackType incomingAttackType = AttackType.Melee)
         {
+            int baseAC;
             if (stats == null)
-                return 10;
-            return stats.armorClass;
+                baseAC = 10;
+            else
+                baseAC = stats.armorClass;
+
+            UnitConditions conditions = GetComponent<UnitConditions>();
+            if (conditions == null)
+                return baseAC;
+
+            // Status Penalty
+            int statusPenalty = PF2E_Core.GetStatusPenalty(conditions, AbilityScore.DEX);
+
+            // Circumstance Modifier
+            int circumstanceMod = 0;
+
+            if (conditions.IsOffGuard())
+            {
+                circumstanceMod -= 2;
+            }
+
+            // Prone grants a +2 circumstance bonus against Ranged attacks.
+            if (
+                incomingAttackType == AttackType.Ranged
+                && conditions.HasCondition(ConditionType.Prone)
+            )
+            {
+                circumstanceMod += 2;
+            }
+
+            return baseAC + statusPenalty + circumstanceMod;
         }
 
         public int getTotalHP()

@@ -46,5 +46,33 @@ namespace PathfinderTactics.Actions
             // but child classes like MeleeAction will override this.
             return GetValidActionGridPositions();
         }
+
+        /// <summary>
+        /// Validates if the unit's current physical/mental state allows actions.
+        /// </summary>
+        public virtual bool CanExecuteAction()
+        {
+            var conditions = unit.GetComponent<UnitConditions>();
+            if (conditions == null)
+                return true;
+
+            // Universal Blockers: Dead or Unconscious units cannot take ANY actions.
+            if (conditions.IsDead() || conditions.HasCondition(ConditionType.Unconscious))
+            {
+                Debug.Log(
+                    $"<color=red>Action blocked: {unit.name} is Unconscious or Dead.</color>"
+                );
+                return false;
+            }
+
+            // Stunned blocker (Just in case the UI accidentally lets them click)
+            if (conditions.GetConditionValue(ConditionType.Stunned) > 0)
+            {
+                Debug.Log($"<color=red>Action blocked: {unit.name} is Stunned.</color>");
+                return false;
+            }
+
+            return true;
+        }
     }
 }
