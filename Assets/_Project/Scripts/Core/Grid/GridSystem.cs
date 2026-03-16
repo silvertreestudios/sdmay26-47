@@ -10,8 +10,6 @@ namespace PathfinderTactics.Grid
     /// </summary>
     public class GridSystem : MonoBehaviour
     {
-        public static GridSystem Instance { get; private set; }
-
         [Header("Grid Settings")]
         [SerializeField]
         private int width = 20;
@@ -37,14 +35,13 @@ namespace PathfinderTactics.Grid
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Debug.LogError("Multiple instances of GridSystem found. Destroying this one.");
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
+            ServiceLocator.Register(this);
             CreateGrid();
+        }
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<GridSystem>();
         }
 
         private void CreateGrid()

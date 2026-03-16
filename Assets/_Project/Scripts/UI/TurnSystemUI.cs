@@ -22,8 +22,8 @@ namespace PathfinderTactics.UI
 
         private void Start()
         {
-            TurnManager.Instance.OnTurnChanged += TurnManager_OnTurnChanged;
-            TurnManager.Instance.OnCombatStarted += TurnManager_OnCombatStarted;
+            ServiceLocator.Get<TurnManager>().OnTurnChanged += TurnManager_OnTurnChanged;
+            ServiceLocator.Get<TurnManager>().OnCombatStarted += TurnManager_OnCombatStarted;
             UpdateVisuals();
         }
 
@@ -54,7 +54,7 @@ namespace PathfinderTactics.UI
 
         private void UpdateVisuals()
         {
-            Unit current = TurnManager.Instance.CurrentUnit;
+            Unit current = ServiceLocator.Get<TurnManager>().CurrentUnit;
             if (current != null)
             {
                 currentTurnText.text = $"Turn: {current.name}";

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: Fireball
+  m_EditorClassIdentifier: 
+  Id: 
+  Slug: 
+  ElementName: 
+  Icon: {fileID: 0}
+  Description: 
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 3
+  Traditions: []
+  Cost: 3
+  School: 
+  Components: []
+  Targeting: 1
+  Target: 0
+  Range: 500
+  Area:
+    Shape: 2
+    Radius: 6
+  SpellAttackRoll: 1
+  SaveType: 2
+  ElementType: 4
+  IsBasicSave: 1
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 6
+    DiceSize: 6
+    Bonus: 0
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: bce6fe82d078a944f9890e132764326a, type: 2}
+  - {fileID: 11400000, guid: 613d96c208f73c741aca3e50de0262dd, type: 2}
+  - {fileID: 11400000, guid: 3ace8a83770335142b74b182ee29ca03, type: 2}
+  AITags: []

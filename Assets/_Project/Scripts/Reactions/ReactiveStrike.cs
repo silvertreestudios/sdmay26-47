@@ -54,20 +54,20 @@ namespace PathfinderTactics.Reactions
             // TODO: replace these with PF2E_Core references later
             int d20 = UnityEngine.Random.Range(1, 21);
             int attackBonus = 7;
-            int ac = target.getArmorClass();
+            int ac = target.GetArmorClass();
 
             if (d20 + attackBonus >= ac)
             {
                 int damage = UnityEngine.Random.Range(1, 9) + 4; // Longsword + Str
                 Debug.Log($"<color=red>HIT!</color> Dealt {damage} damage.");
 
-                UnitHealth targetHealth = target.GetComponent<UnitHealth>();
+                IDamageable targetHealth = target.GetComponent<IDamageable>();
                 if (targetHealth != null)
                 {
                     // TODO: Add critical hit logic later
                     targetHealth.ApplyDamage(unit, damage, false);
                     // PF2e Rule: If the reaction kills them, they don't finish moving!
-                    if (targetHealth.IsDead || targetHealth.IsUnconscious)
+                    if (targetHealth.IsDead)
                     {
                         Debug.Log($"{target.name} was struck down while moving!");
                         intent.TriggeringEvent.IsCancelled = true;

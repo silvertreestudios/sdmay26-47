@@ -103,8 +103,6 @@ namespace PathfinderTactics.Core
                     specificType = ConditionType.Clumsy;
                     break;
                 case AbilityScore.CON:
-                    specific = conditions.GetConditionValue(ConditionType.Drained);
-                    specificType = ConditionType.Drained;
                     break;
                 case AbilityScore.INT:
 
@@ -157,12 +155,67 @@ namespace PathfinderTactics.Core
 
             // Circumstance Penalties
             int circumstancePenalty = 0;
-            if (attackType == AttackType.Melee && conditions.HasCondition(ConditionType.Prone))
+            if (conditions.HasCondition(ConditionType.Prone) && attackType != AttackType.Melee)
             {
                 circumstancePenalty = -2;
             }
 
             return baseMod + statusPenalty + circumstancePenalty;
+        }
+
+        /// <summary>
+        /// Calculates the Spell DC for a caster.
+        /// PF2e: DC = 10 + Level + Proficiency + Casting Ability Mod.
+        /// Applies Stupefied penalty (reduces spell DCs and attack rolls).
+        /// </summary>
+        public static int CalculateSpellDC(
+            Unit caster,
+            int level,
+            Proficiency spellProf,
+            int castingStatMod
+        )
+        {
+            int dc = 10 + CalculateModifier(level, spellProf, castingStatMod);
+
+            UnitConditions conditions = caster.GetComponent<UnitConditions>();
+            if (conditions != null)
+            {
+                // Stupefied penalizes spell DCs
+                int stupefied = conditions.GetConditionValue(ConditionType.Stupefied);
+                if (stupefied > 0)
+                {
+                    dc -= stupefied;
+                    Debug.Log(
+                        $"<color=orange>[PF2E CORE]</color> Spell DC reduced by {stupefied} from Stupefied."
+                    );
+                }
+            }
+
+            return dc;
+        }
+
+        /// <summary>
+        /// Calculates a spell attack roll modifier.
+        /// PF2e: Level + Proficiency + Casting Ability Mod - penalties.
+        /// </summary>
+        public static int CalculateSpellAttackModifier(
+            Unit caster,
+            AbilityScore castingAbility,
+            int castingStatMod,
+            int level,
+            Proficiency spellProf
+        )
+        {
+            int baseMod = CalculateModifier(level, spellProf, castingStatMod);
+
+            UnitConditions conditions = caster.GetComponent<UnitConditions>();
+            if (conditions == null)
+                return baseMod;
+
+            // Status penalties (includes Stupefied for mental stats)
+            int statusPenalty = GetStatusPenalty(conditions, castingAbility);
+
+            return baseMod + statusPenalty;
         }
     }
 }

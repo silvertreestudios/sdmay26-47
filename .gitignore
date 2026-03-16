@@ -96,3 +96,10 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Ignore tests for now, will probably push them sooner or later.
+Assets/_Project/Tests/
+
+# Ignore the Pathfinder 2e
+/pf2e-13-dev/
+/Assets/GameData/PF2e/    

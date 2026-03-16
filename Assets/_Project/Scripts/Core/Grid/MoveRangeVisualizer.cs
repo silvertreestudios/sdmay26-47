@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using PathfinderTactics.Actions;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using UnityEngine;
 
@@ -23,17 +24,35 @@ namespace PathfinderTactics.Grid
 
         private void Start()
         {
-            // This event fires whenever SetPhase() is called in UnitActionSystem
-            UnitActionSystem.Instance.OnSelectedUnitChanged += UnitActionSystem_OnStateChanged;
+            ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged +=
+                UnitActionSystem_OnStateChanged;
+
+            if (ServiceLocator.TryGet<PhaseManager>(out var phaseManager))
+            {
+                phaseManager.OnPhaseChanged += PhaseManager_OnPhaseChanged;
+            }
+
             visualParent = new GameObject("ActionRangeVisuals").transform;
+
+            // Initial update in case Start() order caused us to miss the first selection
+            UpdateVisuals();
         }
 
         private void OnDestroy()
         {
-            if (UnitActionSystem.Instance != null)
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var unitActionSystem))
             {
-                UnitActionSystem.Instance.OnSelectedUnitChanged -= UnitActionSystem_OnStateChanged;
+                unitActionSystem.OnSelectedUnitChanged -= UnitActionSystem_OnStateChanged;
             }
+            if (ServiceLocator.TryGet<PhaseManager>(out var phaseManager))
+            {
+                phaseManager.OnPhaseChanged -= PhaseManager_OnPhaseChanged;
+            }
+        }
+
+        private void PhaseManager_OnPhaseChanged(object sender, GamePhase newPhase)
+        {
+            UpdateVisuals();
         }
 
         private void UnitActionSystem_OnStateChanged(object sender, System.EventArgs e)
@@ -45,11 +64,11 @@ namespace PathfinderTactics.Grid
         {
             ClearVisuals();
 
-            Unit selectedUnit = UnitActionSystem.Instance.SelectedUnit;
+            Unit selectedUnit = ServiceLocator.Get<UnitActionSystem>().SelectedUnit;
             if (selectedUnit == null)
                 return;
 
-            GamePhase currentPhase = UnitActionSystem.Instance.currentPhase;
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
             // If moving, Show Blue Tiles
             if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.ActionSelection)
@@ -77,7 +96,7 @@ namespace PathfinderTactics.Grid
 
         private void ShowActionRange()
         {
-            BaseAction selectedAction = UnitActionSystem.Instance.GetSelectedAction();
+            BaseAction selectedAction = ServiceLocator.Get<UnitActionSystem>().GetSelectedAction();
             if (selectedAction == null)
                 return;
 
@@ -102,11 +121,11 @@ namespace PathfinderTactics.Grid
             if (prefab == null)
                 return;
 
-            float tileScale = GridSystem.Instance.CellSize;
+            float tileScale = ServiceLocator.Get<GridSystem>().CellSize;
 
             foreach (GridPosition pos in positions)
             {
-                Vector3 worldPos = GridSystem.Instance.GetWorldPosition(pos);
+                Vector3 worldPos = ServiceLocator.Get<GridSystem>().GetWorldPosition(pos);
                 // Lift slightly to prevent clipping into the floor
                 Vector3 visualPos = worldPos + new Vector3(0, 0.02f, 0);
 

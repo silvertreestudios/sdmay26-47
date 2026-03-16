@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Data.PF2e;
 using PathfinderTactics.Grid;
 
 namespace PathfinderTactics.Reactions
@@ -59,12 +61,24 @@ namespace PathfinderTactics.Reactions
 
         public bool IsCriticalHit { get; }
 
-        public BeforeDamageEvent(Unit source, Unit target, int damage, bool isCrit)
+        /// <summary>
+        /// The type of damage being dealt. Used for resistance/weakness calculations.
+        /// </summary>
+        public DamageType DamageElement { get; }
+
+        public BeforeDamageEvent(
+            Unit source,
+            Unit target,
+            int damage,
+            bool isCrit,
+            DamageType element = DamageType.Untyped
+        )
             : base(source)
         {
             TargetUnit = target;
             DamageAmount = damage;
             IsCriticalHit = isCrit;
+            DamageElement = element;
         }
     }
 
@@ -78,6 +92,41 @@ namespace PathfinderTactics.Reactions
         {
             TargetUnit = target;
             FinalDamageTaken = finalDamage;
+        }
+    }
+
+    // Spell Events
+
+    /// <summary>
+    /// Fired before a spell resolves. Enables Counterspell and other reactions.
+    /// Setting IsCancelled = true causes the spell to fizzle.
+    /// </summary>
+    public class BeforeSpellEvent : GameEvent
+    {
+        public SpellSO Spell { get; }
+        public GridPosition TargetPosition { get; }
+
+        public BeforeSpellEvent(Unit caster, SpellSO spell, GridPosition targetPos)
+            : base(caster)
+        {
+            Spell = spell;
+            TargetPosition = targetPos;
+        }
+    }
+
+    /// <summary>
+    /// Fired after a spell has fully resolved. For triggered effects and logging.
+    /// </summary>
+    public class AfterSpellEvent : GameEvent
+    {
+        public SpellSO Spell { get; }
+        public List<Unit> AffectedUnits { get; }
+
+        public AfterSpellEvent(Unit caster, SpellSO spell, List<Unit> affectedUnits)
+            : base(caster)
+        {
+            Spell = spell;
+            AffectedUnits = affectedUnits;
         }
     }
 }

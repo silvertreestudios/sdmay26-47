@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PathfinderTactics.Core;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -28,8 +29,12 @@ namespace PathfinderTactics.Grid
             if (startTransform == null || endTransform == null)
                 return;
 
-            GridPosition startPos = GridSystem.Instance.GetGridPosition(startTransform.position);
-            GridPosition endPos = GridSystem.Instance.GetGridPosition(endTransform.position);
+            GridPosition startPos = ServiceLocator
+                .Get<GridSystem>()
+                .GetGridPosition(startTransform.position);
+            GridPosition endPos = ServiceLocator
+                .Get<GridSystem>()
+                .GetGridPosition(endTransform.position);
 
             currentPath = Pathfinding.FindPath(startPos, endPos);
         }
@@ -49,7 +54,8 @@ namespace PathfinderTactics.Grid
                 {
                     // Lift the line slightly so it doesn't clip into the floor
                     points[i] =
-                        GridSystem.Instance.GetWorldPosition(currentPath[i]) + Vector3.up * 0.1f;
+                        ServiceLocator.Get<GridSystem>().GetWorldPosition(currentPath[i])
+                        + Vector3.up * 0.1f;
                 }
 
                 // Draw the line (Thickness: 5.0f)
@@ -59,8 +65,12 @@ namespace PathfinderTactics.Grid
                 Gizmos.color = Color.green;
                 for (int i = 0; i < currentPath.Count - 1; i++)
                 {
-                    Vector3 from = GridSystem.Instance.GetWorldPosition(currentPath[i]);
-                    Vector3 to = GridSystem.Instance.GetWorldPosition(currentPath[i + 1]);
+                    Vector3 from = ServiceLocator
+                        .Get<GridSystem>()
+                        .GetWorldPosition(currentPath[i]);
+                    Vector3 to = ServiceLocator
+                        .Get<GridSystem>()
+                        .GetWorldPosition(currentPath[i + 1]);
                     Gizmos.DrawLine(from, to);
                 }
 #endif

@@ -14,8 +14,6 @@ namespace PathfinderTactics.Characters
 
         private List<PersistentDamageInstance> persistentDamages =
             new List<PersistentDamageInstance>();
-        private Dictionary<Unit, DetectionState> detectionByObserver =
-            new Dictionary<Unit, DetectionState>();
 
         // Delegate to let the Grid/Combat system inject flanking logic without coupling
         public Func<bool> IsFlanked;
@@ -213,34 +211,6 @@ namespace PathfinderTactics.Characters
 
         // Detection states and targeting
 
-        public void SetDetectionState(Unit observer, DetectionState state)
-        {
-            detectionByObserver[observer] = state;
-        }
-
-        public DetectionState GetDetectionState(Unit observer)
-        {
-            return detectionByObserver.TryGetValue(observer, out var state)
-                ? state
-                : DetectionState.Observed;
-        }
-
-        public bool CanBeDirectlyTargeted(Unit attacker)
-        {
-            DetectionState state = GetDetectionState(attacker);
-            return state != DetectionState.Undetected && state != DetectionState.Unnoticed;
-        }
-
-        public int RequiresFlatCheckToTarget(Unit attacker)
-        {
-            DetectionState state = GetDetectionState(attacker);
-            if (state == DetectionState.Concealed)
-                return 5;
-            if (state == DetectionState.Hidden)
-                return 11;
-            return 0;
-        }
-
         // Persistent Damage
 
         public void ApplyPersistentDamage(
@@ -333,7 +303,7 @@ namespace PathfinderTactics.Characters
                 Debug.Log(
                     $"<color=orange>[Persistent]</color> {unit.name} takes {dmg} {pd.Type} damage!"
                 );
-                unit.GetComponent<UnitHealth>()?.ApplyDamage(pd.Source, dmg, false);
+                unit.GetComponent<IDamageable>()?.ApplyDamage(pd.Source, dmg, false);
 
                 // Flat Check for recovery (DC 15 per PF2e Rules)
                 int flatCheck = UnityEngine.Random.Range(1, 21);

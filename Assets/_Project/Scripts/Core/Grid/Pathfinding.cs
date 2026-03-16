@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PathfinderTactics.Core;
 using UnityEngine;
 
 namespace PathfinderTactics.Grid
@@ -13,7 +14,7 @@ namespace PathfinderTactics.Grid
             GridPosition endPosition
         )
         {
-            GridSystem gridSystem = GridSystem.Instance;
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
             int width = gridSystem.Width;
             int height = gridSystem.Height;
 
@@ -208,12 +209,21 @@ namespace PathfinderTactics.Grid
                 )
                 {
                     // Wall Check
-                    if (!GridSystem.Instance.GetCell(neighbourNode.GridPosition).isWalkable)
+                    if (
+                        !ServiceLocator
+                            .Get<GridSystem>()
+                            .GetCell(neighbourNode.GridPosition)
+                            .isWalkable
+                    )
                         continue;
 
                     // Unit Check
                     // If the cell is occupied by someone else, we cannot walk there.
-                    if (GridSystem.Instance.IsPositionOccupied(neighbourNode.GridPosition))
+                    if (
+                        ServiceLocator
+                            .Get<GridSystem>()
+                            .IsPositionOccupied(neighbourNode.GridPosition)
+                    )
                     {
                         // If it's the unit itself (start pos), it's fine.
                         if (neighbourNode.GridPosition != startPosition)
@@ -275,7 +285,7 @@ namespace PathfinderTactics.Grid
             List<PathNode> neighbourList = new List<PathNode>();
             GridPosition pos = currentNode.GridPosition;
 
-            GridSystem gridSystem = GridSystem.Instance;
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
             int width = gridSystem.Width;
             int height = gridSystem.Height;
 

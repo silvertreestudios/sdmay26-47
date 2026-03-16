@@ -41,7 +41,7 @@ namespace PathfinderTactics.Actions
                 {
                     GridPosition testPos = new GridPosition(unitGridPos.x + x, unitGridPos.z + z);
 
-                    if (!GridSystem.Instance.IsValidGridPosition(testPos))
+                    if (!ServiceLocator.Get<GridSystem>().IsValidGridPosition(testPos))
                         continue;
 
                     // TODO: fix distance calculation. For now this works fine when range is 1 tile.
@@ -112,7 +112,7 @@ namespace PathfinderTactics.Actions
                 onActionComplete?.Invoke();
                 return;
             }
-            targetUnit = GridSystem.Instance.GetUnitAt(gridPosition);
+            targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(gridPosition);
 
             if (targetUnit == null)
             {
@@ -127,17 +127,17 @@ namespace PathfinderTactics.Actions
             isActive = true;
         }
 
-
         private void PerformStrikeLogic()
         {
             var stats = unit.GetStats();
-            if (stats == null || targetUnit == null) return;
+            if (stats == null || targetUnit == null)
+                return;
 
             // Senses and stealth check.
-            var targetConditions = targetUnit.GetComponent<UnitConditions>();
-            if (targetConditions != null)
+            var targetStealth = targetUnit.GetComponent<UnitStealth>();
+            if (targetStealth != null)
             {
-                int flatCheckDC = targetConditions.RequiresFlatCheckToTarget(unit);
+                int flatCheckDC = targetStealth.RequiresFlatCheckToTarget(unit);
                 if (flatCheckDC > 0)
                 {
                     int flatRoll = UnityEngine.Random.Range(1, 21);
@@ -192,7 +192,7 @@ namespace PathfinderTactics.Actions
             Debug.Log(atkDebug);
 
             // Defense modifier
-            int baseAC = targetUnit.getArmorClass(AttackType.Melee);
+            int baseAC = targetUnit.GetArmorClass(AttackType.Melee);
 
             int rawTargetAC = 15;
             int appliedACMod = baseAC - rawTargetAC;
@@ -248,7 +248,8 @@ namespace PathfinderTactics.Actions
                 {
                     int enfValue = myConditions.GetConditionValue(ConditionType.Enfeebled);
                     damage -= enfValue;
-                    if (damage < 1) damage = 1; // Minimum 1 damage on a hit
+                    if (damage < 1)
+                        damage = 1; // Minimum 1 damage on a hit
                     Debug.Log(
                         $"<color=orange>[CONDITION]</color> Enfeebled {enfValue} reduced damage roll!"
                     );
@@ -260,7 +261,7 @@ namespace PathfinderTactics.Actions
                     Debug.Log("<b><color=red>CRITICAL HIT!</color></b>");
                 }
 
-                var targetHealth = targetUnit.GetComponent<UnitHealth>();
+                var targetHealth = targetUnit.GetComponent<IDamageable>();
                 if (targetHealth != null)
                 {
                     targetHealth.ApplyDamage(unit, damage, result == Degree.CriticalSuccess);
@@ -278,13 +279,15 @@ namespace PathfinderTactics.Actions
 
         private void BreakStealth()
         {
-            var myConditions = unit.GetComponent<UnitConditions>();
-            if (myConditions == null)
+            var myStealth = unit.GetComponent<UnitStealth>();
+            if (myStealth == null)
                 return;
 
-            foreach (Unit enemy in GridSystem.Instance.GetAllEnemies(unit.GetFaction()))
+            foreach (
+                Unit enemy in ServiceLocator.Get<GridSystem>().GetAllEnemies(unit.GetFaction())
+            )
             {
-                myConditions.SetDetectionState(enemy, DetectionState.Observed);
+                myStealth.SetDetectionState(enemy, DetectionState.Observed);
             }
         }
 
@@ -310,7 +313,7 @@ namespace PathfinderTactics.Actions
                     );
 
                     // Grid Boundary Check
-                    if (!GridSystem.Instance.IsValidGridPosition(testGridPosition))
+                    if (!ServiceLocator.Get<GridSystem>().IsValidGridPosition(testGridPosition))
                         continue;
 
                     // Self Check
@@ -323,7 +326,7 @@ namespace PathfinderTactics.Actions
                         continue;
 
                     // Unit Check
-                    Unit targetUnit = GridSystem.Instance.GetUnitAt(testGridPosition);
+                    Unit targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(testGridPosition);
                     if (targetUnit == null)
                         continue; // Empty tile
 

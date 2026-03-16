@@ -24,16 +24,16 @@ namespace PathfinderTactics.UI
         private void Start()
         {
             // Subscribe to game events
-            UnitActionSystem.Instance.OnSelectedUnitChanged +=
+            ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged +=
                 UnitActionSystem_OnSelectedUnitChanged;
 
-            UnitActionSystem.Instance.OnActionCompleted += onActionCompleted;
+            ServiceLocator.Get<UnitActionSystem>().OnActionCompleted += onActionCompleted;
 
             // Set up button listener
             endTurnButton.onClick.AddListener(() =>
             {
                 // When clicked, tell the action system to end the current unit's turn
-                UnitActionSystem.Instance.EndTurn();
+                ServiceLocator.Get<UnitActionSystem>().EndTurn();
             });
 
             UpdateStatus();
@@ -42,10 +42,9 @@ namespace PathfinderTactics.UI
 
         private void OnDestroy()
         {
-            if (UnitActionSystem.Instance != null)
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var unitActionSystem))
             {
-                UnitActionSystem.Instance.OnSelectedUnitChanged -=
-                    UnitActionSystem_OnSelectedUnitChanged;
+                unitActionSystem.OnSelectedUnitChanged -= UnitActionSystem_OnSelectedUnitChanged;
             }
         }
 
@@ -61,7 +60,7 @@ namespace PathfinderTactics.UI
 
         private void UpdateActionUI()
         {
-            Unit selectedUnit = UnitActionSystem.Instance.SelectedUnit;
+            Unit selectedUnit = ServiceLocator.Get<UnitActionSystem>().SelectedUnit;
 
             if (selectedUnit != null)
             {
@@ -88,7 +87,7 @@ namespace PathfinderTactics.UI
             if (UnitManager.AllUnits.Count > 0)
             {
                 Unit unit1 = UnitManager.AllUnits[0];
-                UnitHealth health1 = unit1.GetComponent<UnitHealth>();
+                IDamageable health1 = unit1.GetComponent<IDamageable>();
                 int p1Health = (health1 != null) ? health1.GetCurrentHealth() : 0;
 
                 var p1Text = statusPanel.transform.Find("Player_one_health");
@@ -101,7 +100,7 @@ namespace PathfinderTactics.UI
             if (UnitManager.AllUnits.Count > 1)
             {
                 Unit unit2 = UnitManager.AllUnits[1];
-                UnitHealth health2 = unit2.GetComponent<UnitHealth>();
+                IDamageable health2 = unit2.GetComponent<IDamageable>();
                 int p2Health = (health2 != null) ? health2.GetCurrentHealth() : 0;
 
                 var p2Text = statusPanel.transform.Find("Player_two_health");

@@ -10,7 +10,8 @@ namespace PathfinderTactics.Characters
     /// Initializes max HP from the Unit's stats (via Unit.getTotalHealth()).
     /// Raises an OnHpChanged event whenever current HP changes.
     /// </summary>
-    public class UnitHealth : MonoBehaviour
+    [RequireComponent(typeof(UnitConditions))]
+    public class UnitHealth : MonoBehaviour, IDamageable
     {
         public event EventHandler OnDeath;
         public event EventHandler OnHealthChanged;
@@ -34,6 +35,10 @@ namespace PathfinderTactics.Characters
         {
             thisUnit = GetComponent<Unit>();
             unitConditions = GetComponent<UnitConditions>();
+            if (unitConditions == null)
+            {
+                unitConditions = gameObject.AddComponent<UnitConditions>();
+            }
 
             currentMaxHealth = baseMaxHealth;
             currentHealth = currentMaxHealth;
@@ -97,69 +102,73 @@ namespace PathfinderTactics.Characters
                 isCriticalHit
             );
 
-            ReactionManager.Instance.EvaluateEvent(
-                damageEvent,
-                (resolvedEvent) =>
-                {
-                    BeforeDamageEvent finalDamageEvent = resolvedEvent as BeforeDamageEvent;
-
-                    if (finalDamageEvent.IsCancelled || finalDamageEvent.DamageAmount <= 0)
+            ServiceLocator
+                .Get<ReactionManager>()
+                .EvaluateEvent(
+                    damageEvent,
+                    (resolvedEvent) =>
                     {
-                        Debug.Log(
-                            $"<color=green>Damage to {thisUnit.name} was fully mitigated!</color>"
-                        );
-                        return;
-                    }
+                        BeforeDamageEvent finalDamageEvent = resolvedEvent as BeforeDamageEvent;
 
-                    // Apply the damage
-                    currentHealth -= finalDamageEvent.DamageAmount;
-                    currentHealth = Mathf.Max(0, currentHealth);
-                    OnHealthChanged?.Invoke(this, EventArgs.Empty);
-
-                    Debug.Log(
-                        $"<color=red>[HEALTH]</color> {thisUnit.name} took {finalDamageEvent.DamageAmount} final damage. HP: {currentHealth}/{currentMaxHealth}"
-                    );
-
-                    // Dying Logic
-                    if (currentHealth == 0)
-                    {
-                        int currentDying = unitConditions.GetConditionValue(ConditionType.Dying);
-
-                        if (currentDying == 0)
+                        if (finalDamageEvent.IsCancelled || finalDamageEvent.DamageAmount <= 0)
                         {
-                            // Initial Knockout
-                            // ApplyDying automatically calculates 1 + Wounded.
-                            // If it was a crit, we need to add 1 more to that
-                            unitConditions.ApplyDying();
-                            if (finalDamageEvent.IsCriticalHit)
+                            Debug.Log(
+                                $"<color=green>Damage to {thisUnit.name} was fully mitigated!</color>"
+                            );
+                            return;
+                        }
+
+                        // Apply the damage
+                        currentHealth -= finalDamageEvent.DamageAmount;
+                        currentHealth = Mathf.Max(0, currentHealth);
+                        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+
+                        Debug.Log(
+                            $"<color=red>[HEALTH]</color> {thisUnit.name} took {finalDamageEvent.DamageAmount} final damage. HP: {currentHealth}/{currentMaxHealth}"
+                        );
+
+                        // Dying Logic
+                        if (currentHealth == 0)
+                        {
+                            int currentDying = unitConditions.GetConditionValue(
+                                ConditionType.Dying
+                            );
+
+                            if (currentDying == 0)
                             {
-                                int newDying =
-                                    unitConditions.GetConditionValue(ConditionType.Dying) + 1;
-                                unitConditions.ApplyCondition(ConditionType.Dying, newDying);
+                                // Initial Knockout
+                                // ApplyDying automatically calculates 1 + Wounded.
+                                // If it was a crit, we need to add 1 more to that
+                                unitConditions.ApplyDying();
+                                if (finalDamageEvent.IsCriticalHit)
+                                {
+                                    int newDying =
+                                        unitConditions.GetConditionValue(ConditionType.Dying) + 1;
+                                    unitConditions.ApplyCondition(ConditionType.Dying, newDying);
+                                }
+
+                                OnStatusMessage?.Invoke(this, "Knocked Out!");
+                            }
+                            else
+                            {
+                                // Taking damage while ALREADY dying
+                                int increase = finalDamageEvent.IsCriticalHit ? 2 : 1;
+                                unitConditions.ApplyCondition(
+                                    ConditionType.Dying,
+                                    currentDying + increase
+                                );
+                                OnStatusMessage?.Invoke(this, $"Dying {currentDying + increase}!");
                             }
 
-                            OnStatusMessage?.Invoke(this, "Knocked Out!");
-                        }
-                        else
-                        {
-                            // Taking damage while ALREADY dying
-                            int increase = finalDamageEvent.IsCriticalHit ? 2 : 1;
-                            unitConditions.ApplyCondition(
-                                ConditionType.Dying,
-                                currentDying + increase
-                            );
-                            OnStatusMessage?.Invoke(this, $"Dying {currentDying + increase}!");
-                        }
-
-                        // Check if that damage killed them
-                        if (IsDead)
-                        {
-                            OnStatusMessage?.Invoke(this, "DEAD");
-                            OnDeath?.Invoke(this, EventArgs.Empty);
+                            // Check if that damage killed them
+                            if (IsDead)
+                            {
+                                OnStatusMessage?.Invoke(this, "DEAD");
+                                OnDeath?.Invoke(this, EventArgs.Empty);
+                            }
                         }
                     }
-                }
-            );
+                );
         }
 
         // Healing and waking up

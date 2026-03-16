@@ -24,7 +24,7 @@ namespace PathfinderTactics.UI
             button.onClick.AddListener(() =>
             {
                 // The player wants to use this action. Let them pick a target.
-                UnitActionSystem.Instance.SetSelectedAction(baseAction);
+                ServiceLocator.Get<UnitActionSystem>().SetSelectedAction(baseAction);
             });
         }
     }

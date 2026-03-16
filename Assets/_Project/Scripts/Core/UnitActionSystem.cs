@@ -2,25 +2,19 @@ using System;
 using System.Collections.Generic;
 using PathfinderTactics.Actions;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Combat;
 using PathfinderTactics.Grid;
+using PathfinderTactics.InputSystem;
 using PathfinderTactics.Reactions;
 using PathfinderTactics.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-// TODO: CURRENT KNOWN BUGS:
-// - PATHFINDING BREAKS WHEN UNIT IS BLOCKED IN ON 2 SIDES, ALLOWS DIAGONAL MOVEMENT
-// - CAMERA GOES UPSIDE DOWN AND THROUGH WALLS (Not a bug but should add limits to camera movement)
-// - RANGE DOES NOT ACCOUNT FOR DIAGONAL ATTACKS (need to test weapon lenght/ranges)
-// - WHEN STARTING GAME, BLUE TILES SIGNIFYING MOVEMENT RANGE DONT APPEAR UNTIL ACTION POINT IS USED.
-
 namespace PathfinderTactics.Core
 {
     public class UnitActionSystem : MonoBehaviour
     {
-        public static UnitActionSystem Instance { get; private set; }
-
         public event EventHandler OnSelectedUnitChanged;
         public event EventHandler OnActionStarted;
         public event EventHandler OnActionCompleted;
@@ -31,87 +25,85 @@ namespace PathfinderTactics.Core
         [SerializeField]
         private LayerMask groundLayerMask;
 
-        private PlayerInputActions playerInputActions;
         private Unit selectedUnit;
-        public GamePhase currentPhase;
         private BaseAction selectedAction;
 
-        // MOVEMENT STATE
         private List<GridPosition> validMovePositions;
-
-        private GridPosition currentCursorGridPosition;
 
         public Unit SelectedUnit => selectedUnit;
 
-        [Header("UI References")]
-        [SerializeField]
-        private Transform gridCursorVisual;
-        private float cursorMoveTimer;
-
         private void Awake()
         {
-            // Hide cursor initially
-            if (gridCursorVisual != null)
-                gridCursorVisual.gameObject.SetActive(false);
-            if (Instance != null)
+            ServiceLocator.Register(this);
+        }
+
+        private void Start()
+        {
+            var inputService = ServiceLocator.Get<InputService>();
+            inputService.OnSelectPerformed += OnSelectPerformed;
+            inputService.OnConfirmPerformed += OnConfirmPerformed;
+            inputService.OnCancelPerformed += OnCancelPerformed;
+            inputService.OnJumpPerformed += OnJumpPerformed;
+            inputService.OnOpenMenuPerformed += OnOpenMenuPerformed;
+
+            var phaseManager = ServiceLocator.Get<PhaseManager>();
+            phaseManager.OnPhaseChanged += PhaseManager_OnPhaseChanged;
+        }
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<UnitActionSystem>();
+            if (ServiceLocator.TryGet<InputService>(out var inputService))
             {
-                Destroy(gameObject);
-                return;
+                inputService.OnSelectPerformed -= OnSelectPerformed;
+                inputService.OnConfirmPerformed -= OnConfirmPerformed;
+                inputService.OnCancelPerformed -= OnCancelPerformed;
+                inputService.OnJumpPerformed -= OnJumpPerformed;
+                inputService.OnOpenMenuPerformed -= OnOpenMenuPerformed;
             }
-            Instance = this;
-
-            playerInputActions = new PlayerInputActions();
-            SetPhase(GamePhase.UnitSelection);
+            if (ServiceLocator.TryGet<PhaseManager>(out var phaseManager))
+            {
+                phaseManager.OnPhaseChanged -= PhaseManager_OnPhaseChanged;
+            }
         }
 
-        private void OnEnable()
+        private void PhaseManager_OnPhaseChanged(object sender, GamePhase newPhase)
         {
-            playerInputActions.Player.Enable();
-            playerInputActions.Player.Select.performed += OnSelectPerformed;
-            playerInputActions.Player.Confirm.performed += OnConfirmPerformed;
-            playerInputActions.Player.Cancel.performed += OnCancelPerformed;
-            playerInputActions.Player.Jump.performed += OnJumpPerformed;
-            playerInputActions.Player.OpenMenu.performed += OnOpenMenuPerformed;
-        }
+            if (newPhase == GamePhase.FreeMovement && selectedUnit != null)
+            {
+                validMovePositions = Pathfinding.GetReachableGridPositions(
+                    selectedUnit.CurrentGridPosition,
+                    selectedUnit.GetMaxMoveCost()
+                );
+            }
 
-        private void OnDisable()
-        {
-            playerInputActions.Player.Disable();
-            playerInputActions.Player.Select.performed -= OnSelectPerformed;
-            playerInputActions.Player.Confirm.performed -= OnConfirmPerformed;
-            playerInputActions.Player.Cancel.performed -= OnCancelPerformed;
-            playerInputActions.Player.Jump.performed -= OnJumpPerformed;
-            playerInputActions.Player.OpenMenu.performed -= OnOpenMenuPerformed;
+            if (
+                newPhase != GamePhase.ActionTargeting
+                && ServiceLocator.Get<UnitTooltipUI>() != null
+            )
+            {
+                ServiceLocator.Get<UnitTooltipUI>().Hide();
+            }
+            OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void Update()
         {
-            // Block if over UI
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
                 return;
 
-            if (!TurnManager.Instance.IsPlayerTurn())
-                return;
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
             switch (currentPhase)
             {
-                case GamePhase.UnitSelection:
-                    break;
                 case GamePhase.FreeMovement:
                     HandleFreeMovement();
                     break;
-                case GamePhase.ActionSelection:
-                    break;
                 case GamePhase.ActionTargeting:
-                    HandleCursorMovement();
-                    // TODO: Add target highlighting here later
-                    break;
-                case GamePhase.Busy:
+                    ServiceLocator.Get<TargetingService>().HandleCursorMovement(selectedAction);
                     break;
             }
         }
-
-        // INPUTS
 
         public void ForceSelectUnit(Unit unit)
         {
@@ -119,33 +111,22 @@ namespace PathfinderTactics.Core
 
             if (unit.GetFaction() == Faction.Enemy)
             {
-                // It's the AI's turn
-                // Lock Player Input (Set phase to Busy or maybe an 'AI' phase)
-                SetPhase(GamePhase.Busy);
-                // TODO: Trigger AI (will implement this in next)
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.Busy);
                 Debug.Log("AI Turn Started. Player controls locked.");
-                // For now, since there is no AI, just automatically end their turn
             }
             else
             {
-                // Player's turn
-                SetPhase(GamePhase.FreeMovement);
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
             }
         }
 
-        private void OnSelectPerformed(InputAction.CallbackContext context)
+        private void OnSelectPerformed(object sender, EventArgs e)
         {
-            // PREVENT UI CLICK-THROUGH CRASH
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-                return;
-
-            // NOTE: removed the "ActionTargeting" check here.
-            // Clicking (Select) now only selects units.
-            // Pressing E (Confirm) executes attacks.
-
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
             if (currentPhase == GamePhase.UnitSelection)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+                Vector2 mousePos = ServiceLocator.Get<InputService>().GetMousePosition();
+                Ray ray = Camera.main.ScreenPointToRay(mousePos);
                 if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, unitLayerMask))
                 {
                     Unit unit = hit.transform.GetComponentInParent<Unit>();
@@ -172,102 +153,96 @@ namespace PathfinderTactics.Core
             }
 
             selectedAction = action;
-            SetPhase(GamePhase.ActionTargeting);
+            ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionTargeting);
 
-            // Initialize Cursor at Unit's feet
-            currentCursorGridPosition = selectedUnit.CurrentGridPosition;
-
-            if (gridCursorVisual != null)
-            {
-                gridCursorVisual.gameObject.SetActive(true);
-                UpdateCursorVisual();
-
-                // Lock camera to the cursor
-                CameraController.Instance.SetFollowTarget(gridCursorVisual);
-            }
+            ServiceLocator
+                .Get<TargetingService>()
+                .InitializeTargeting(selectedUnit.CurrentGridPosition);
         }
 
-        private void OnConfirmPerformed(InputAction.CallbackContext context)
+        private void OnConfirmPerformed(object sender, EventArgs e)
         {
-            if (!TurnManager.Instance.IsPlayerTurn())
+            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
                 return;
-            // Case 1: Moving
+
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+
             if (currentPhase == GamePhase.FreeMovement)
             {
                 CommitMoveAction();
             }
-            // Case 2: Action
             else if (currentPhase == GamePhase.ActionTargeting)
             {
-                // use the Cursor Position instead of Mouse Position
-                TryExecuteActionAtGridPos(currentCursorGridPosition);
+                TryExecuteActionAtGridPos(
+                    ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition
+                );
             }
         }
 
-        private void OnOpenMenuPerformed(InputAction.CallbackContext context)
+        private void OnOpenMenuPerformed(object sender, EventArgs e)
         {
-            if (!TurnManager.Instance.IsPlayerTurn())
+            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
                 return;
+
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+
             if (currentPhase == GamePhase.FreeMovement)
             {
-                // Snap unit to the grid cell they're currently over
                 if (selectedUnit != null)
                 {
-                    GridPosition cellTheyreOver = GridSystem.Instance.GetGridPosition(
-                        selectedUnit.transform.position
+                    GridPosition cellTheyreOver = ServiceLocator
+                        .Get<GridSystem>()
+                        .GetGridPosition(selectedUnit.transform.position);
+                    selectedUnit.SnapToGrid(
+                        ServiceLocator.Get<GridSystem>().GetWorldPosition(cellTheyreOver)
                     );
-                    selectedUnit.SnapToGrid(GridSystem.Instance.GetWorldPosition(cellTheyreOver));
                 }
 
-                // Commit the move, and IF they survive, open the menu!
                 CommitMoveAction(() =>
                 {
                     if (selectedUnit.GetActionPointsRemaining() > 0)
                     {
                         Debug.Log("Opening Menu...");
-                        SetPhase(GamePhase.ActionSelection);
+                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
                     }
                     else
                     {
                         EndTurn();
                     }
                 });
-                return;
             }
             else if (currentPhase == GamePhase.ActionSelection)
             {
                 Debug.Log("Closing Menu...");
-                SetPhase(GamePhase.FreeMovement);
-                return;
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
             }
         }
 
-        private void OnCancelPerformed(InputAction.CallbackContext context)
+        private void OnCancelPerformed(object sender, EventArgs e)
         {
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+
             if (currentPhase == GamePhase.ActionTargeting)
             {
-                if (gridCursorVisual != null)
-                    gridCursorVisual.gameObject.SetActive(false); // Hide cursor
+                ServiceLocator.Get<TargetingService>().HideTargeting();
                 if (selectedUnit != null)
-                    CameraController.Instance.SetFollowTarget(selectedUnit.transform);
-                SetPhase(GamePhase.ActionSelection);
+                    ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
             }
             else if (currentPhase == GamePhase.ActionSelection)
-                SetPhase(GamePhase.FreeMovement);
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
             else if (currentPhase == GamePhase.FreeMovement)
                 ClearSelectedUnit();
         }
 
         private void HandleFreeMovement()
         {
-            if (selectedUnit == null || !TurnManager.Instance.IsPlayerTurn())
+            if (selectedUnit == null || !ServiceLocator.Get<TurnManager>().IsPlayerTurn())
                 return;
 
-            // Condition Blockers
             var conditions = selectedUnit.GetComponent<UnitConditions>();
             if (conditions != null)
             {
-                // Are they completely out of action?
                 if (
                     conditions.IsDead()
                     || conditions.HasCondition(ConditionType.Unconscious)
@@ -277,17 +252,14 @@ namespace PathfinderTactics.Core
                     selectedUnit.HandleMovement(Vector3.zero);
                     return;
                 }
-
-                // Are they tied down or lying on the floor?
                 if (!conditions.CanMove() || conditions.HasCondition(ConditionType.Prone))
                 {
-                    // They might be trying to press WASD, but we force their velocity to zero
                     selectedUnit.HandleMovement(Vector3.zero);
                     return;
                 }
             }
 
-            Vector2 inputMoveDir = playerInputActions.Player.Move.ReadValue<Vector2>();
+            Vector2 inputMoveDir = ServiceLocator.Get<InputService>().GetMovementVectorNormalized();
 
             if (inputMoveDir == Vector2.zero)
             {
@@ -295,7 +267,6 @@ namespace PathfinderTactics.Core
                 return;
             }
 
-            // TODO: Find best speed value
             float moveSpeed = 7f;
             var cameraTransform = Camera.main.transform;
             Vector3 forward = cameraTransform.forward;
@@ -309,8 +280,7 @@ namespace PathfinderTactics.Core
                 (forward * inputMoveDir.y + right * inputMoveDir.x).normalized * moveSpeed;
             Vector3 proposedPosition =
                 selectedUnit.transform.position + moveDirection * Time.deltaTime;
-            // proposedPosition.y = 0;
-            GridSystem gridSystem = GridSystem.Instance;
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
             GridPosition currentGridPos = gridSystem.GetGridPosition(
                 selectedUnit.transform.position
             );
@@ -318,7 +288,6 @@ namespace PathfinderTactics.Core
             float cellSize = gridSystem.CellSize;
             float unitRadius = selectedUnit.GetUnitRadius();
 
-            // Boundary Checks
             GridPosition northPos = new GridPosition(currentGridPos.x, currentGridPos.z + 1);
             if (!IsValidMovePosition(northPos))
             {
@@ -358,7 +327,6 @@ namespace PathfinderTactics.Core
                 return;
             }
 
-            // Execute Move
             if (Vector3.Distance(proposedPosition, selectedUnit.transform.position) < 0.001f)
             {
                 selectedUnit.HandleMovement(Vector3.zero);
@@ -371,98 +339,6 @@ namespace PathfinderTactics.Core
             }
         }
 
-        private void HandleCursorMovement()
-        {
-            cursorMoveTimer -= Time.deltaTime;
-
-            Vector2 input = playerInputActions.Player.Move.ReadValue<Vector2>();
-
-            if (input != Vector2.zero && cursorMoveTimer <= 0f)
-            {
-                cursorMoveTimer = 0.15f; // Cooldown
-
-                // Get Camera directions (flattened to the floor)
-                Transform cameraTransform = Camera.main.transform;
-                Vector3 forward = cameraTransform.forward;
-                Vector3 right = cameraTransform.right;
-                forward.y = 0;
-                right.y = 0;
-                forward.Normalize();
-                right.Normalize();
-
-                // Calculate intended world direction based on input
-                Vector3 moveDirWorld = (forward * input.y + right * input.x).normalized;
-
-                // Snap that world direction to the closest Grid Axis (X or Z)
-                int moveX = 0;
-                int moveZ = 0;
-
-                // Whichever axis is stronger pull gets the movement
-                if (Mathf.Abs(moveDirWorld.x) > Mathf.Abs(moveDirWorld.z))
-                {
-                    moveX = moveDirWorld.x > 0 ? 1 : -1;
-                }
-                else
-                {
-                    moveZ = moveDirWorld.z > 0 ? 1 : -1;
-                }
-
-                GridPosition newPos = new GridPosition(
-                    currentCursorGridPosition.x + moveX,
-                    currentCursorGridPosition.z + moveZ
-                );
-
-                // Validate and Apply
-                if (GridSystem.Instance.IsValidGridPosition(newPos))
-                {
-                    // Is it within the weapon's reach?
-                    if (selectedAction.GetActionRangeGridPositions().Contains(newPos))
-                    {
-                        currentCursorGridPosition = newPos;
-                        UpdateCursorVisual();
-                    }
-                    else
-                    {
-                        // TODO: Play error sound or something here because they hit the edge of their range
-                    }
-                }
-            }
-            else if (input == Vector2.zero)
-            {
-                cursorMoveTimer = 0f; // Reset immediately on key release
-            }
-        }
-
-        private void UpdateCursorVisual()
-        {
-            if (gridCursorVisual != null)
-            {
-                gridCursorVisual.position = GridSystem.Instance.GetWorldPosition(
-                    currentCursorGridPosition
-                );
-
-                // Tell the cursor prefab to change materials if hovering over an enemy
-                GridCursor cursorScript = gridCursorVisual.GetComponent<GridCursor>();
-                if (cursorScript != null && selectedAction != null)
-                {
-                    bool isValidTarget = selectedAction
-                        .GetValidActionGridPositions()
-                        .Contains(currentCursorGridPosition);
-                    cursorScript.SetValidState(isValidTarget);
-                }
-                Unit unitAtCursor = GridSystem.Instance.GetUnitAt(currentCursorGridPosition);
-                if (unitAtCursor != null)
-                {
-                    UnitTooltipUI.Instance.Show(unitAtCursor);
-                }
-                else
-                {
-                    UnitTooltipUI.Instance.Hide();
-                }
-            }
-        }
-
-        // Helper method to keep code clean
         private bool IsValidMovePosition(GridPosition pos)
         {
             return validMovePositions != null && validMovePositions.Contains(pos);
@@ -473,30 +349,23 @@ namespace PathfinderTactics.Core
             if (selectedAction == null)
                 return;
 
-            // Validation Check
             if (!selectedAction.GetValidActionGridPositions().Contains(targetPos))
             {
                 Debug.Log("Invalid Target! Cannot attack here.");
-                // TODO: Trigger a Buzzer UI sound or something here
                 return;
             }
 
-            // Lock State & Hide Visuals
-            SetPhase(GamePhase.Busy);
-            if (gridCursorVisual != null)
-                gridCursorVisual.gameObject.SetActive(false);
+            ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.Busy);
+            ServiceLocator.Get<TargetingService>().HideTargeting();
             if (selectedUnit != null)
-                CameraController.Instance.SetFollowTarget(selectedUnit.transform);
+                ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
 
-            // Consume AP
             selectedUnit.SpendActionPoints(selectedAction.GetActionPointsCost());
 
-            // Trigger the Action (MeleeAction handles the math and damage)
             selectedAction.TakeAction(
                 targetPos,
                 () =>
                 {
-                    // This callback fires when MeleeAction's State.Cooloff finishes
                     OnActionCompleted?.Invoke(this, EventArgs.Empty);
                     CheckTurnEnd();
                 }
@@ -508,7 +377,6 @@ namespace PathfinderTactics.Core
             if (selectedUnit == null)
                 return;
 
-            // Grid Commitment Blockers
             var conditions = selectedUnit.GetComponent<UnitConditions>();
             if (conditions != null)
             {
@@ -531,9 +399,9 @@ namespace PathfinderTactics.Core
                 }
             }
 
-            GridPosition currentPos = GridSystem.Instance.GetGridPosition(
-                selectedUnit.transform.position
-            );
+            GridPosition currentPos = ServiceLocator
+                .Get<GridSystem>()
+                .GetGridPosition(selectedUnit.transform.position);
 
             if (currentPos != selectedUnit.CurrentGridPosition)
             {
@@ -541,13 +409,14 @@ namespace PathfinderTactics.Core
                 {
                     Debug.Log("Not enough AP to Stride!");
                     selectedUnit.SnapToGrid(
-                        GridSystem.Instance.GetWorldPosition(selectedUnit.CurrentGridPosition)
+                        ServiceLocator
+                            .Get<GridSystem>()
+                            .GetWorldPosition(selectedUnit.CurrentGridPosition)
                     );
                     return;
                 }
 
-                // Lock the game state
-                SetPhase(GamePhase.Busy);
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.Busy);
 
                 int distanceX = Mathf.Abs(currentPos.x - selectedUnit.CurrentGridPosition.x);
                 int distanceZ = Mathf.Abs(currentPos.z - selectedUnit.CurrentGridPosition.z);
@@ -569,52 +438,51 @@ namespace PathfinderTactics.Core
                     isAutoStep
                 );
 
-                // Hand it to the Reaction Manager
-                ReactionManager.Instance.EvaluateEvent(
-                    moveEvent,
-                    (resolvedEvent) =>
-                    {
-                        // This block executes AFTER all reactions are totally finished
-
-                        if (resolvedEvent.IsCancelled)
+                ServiceLocator
+                    .Get<ReactionManager>()
+                    .EvaluateEvent(
+                        moveEvent,
+                        (resolvedEvent) =>
                         {
-                            // A reaction killed the unit or rooted them in place. Snap them back
-                            selectedUnit.SnapToGrid(
-                                GridSystem.Instance.GetWorldPosition(
-                                    selectedUnit.CurrentGridPosition
-                                )
-                            );
-                        }
-                        else
-                        {
-                            // Safe to move Apply the AP cost and finalize grid position.
-                            selectedUnit.SpendActionPoints(1);
-                            GridSystem.Instance.MoveUnit(
-                                selectedUnit,
-                                selectedUnit.CurrentGridPosition,
-                                currentPos
-                            );
-                            selectedUnit.FinalizeMove(currentPos);
-                            selectedUnit.SnapToGrid(
-                                GridSystem.Instance.GetWorldPosition(currentPos)
-                            );
-                        }
+                            if (resolvedEvent.IsCancelled)
+                            {
+                                selectedUnit.SnapToGrid(
+                                    ServiceLocator
+                                        .Get<GridSystem>()
+                                        .GetWorldPosition(selectedUnit.CurrentGridPosition)
+                                );
+                            }
+                            else
+                            {
+                                selectedUnit.SpendActionPoints(1);
+                                ServiceLocator
+                                    .Get<GridSystem>()
+                                    .MoveUnit(
+                                        selectedUnit,
+                                        selectedUnit.CurrentGridPosition,
+                                        currentPos
+                                    );
+                                selectedUnit.FinalizeMove(currentPos);
+                                selectedUnit.SnapToGrid(
+                                    ServiceLocator.Get<GridSystem>().GetWorldPosition(currentPos)
+                                );
+                            }
 
-                        OnActionCompleted?.Invoke(this, EventArgs.Empty);
+                            OnActionCompleted?.Invoke(this, EventArgs.Empty);
+                            onComplete?.Invoke();
 
-                        onComplete?.Invoke();
-
-                        // Only drop back to FreeMovement if a menu isn't opening
-                        if (currentPhase != GamePhase.ActionSelection)
-                        {
-                            CheckTurnEnd();
+                            if (
+                                ServiceLocator.Get<PhaseManager>().CurrentPhase
+                                != GamePhase.ActionSelection
+                            )
+                            {
+                                CheckTurnEnd();
+                            }
                         }
-                    }
-                );
+                    );
             }
             else
             {
-                // If they didn't actually move anywhere, just run the callback immediately
                 onComplete?.Invoke();
             }
         }
@@ -627,13 +495,12 @@ namespace PathfinderTactics.Core
             }
             else
             {
-                // Refresh movement range
                 validMovePositions = Pathfinding.GetReachableGridPositions(
                     selectedUnit.CurrentGridPosition,
                     selectedUnit.GetMaxMoveCost()
                 );
-                if (currentPhase != GamePhase.ActionSelection)
-                    SetPhase(GamePhase.FreeMovement);
+                if (ServiceLocator.Get<PhaseManager>().CurrentPhase != GamePhase.ActionSelection)
+                    ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
             }
         }
 
@@ -645,56 +512,41 @@ namespace PathfinderTactics.Core
                 selectedUnit.CurrentGridPosition,
                 selectedUnit.GetMaxMoveCost()
             );
-            // OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
-            CameraController.Instance.SetFollowTarget(unit.transform);
-            // SetPhase(GamePhase.FreeMovement);
+            ServiceLocator.Get<CameraController>().SetFollowTarget(unit.transform);
         }
 
         public void ClearSelectedUnit()
         {
             selectedUnit = null;
-            CameraController.Instance.ClearFollowTarget();
+            ServiceLocator.Get<CameraController>().ClearFollowTarget();
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
-            SetPhase(GamePhase.UnitSelection);
+            ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.UnitSelection);
         }
 
         public void EndTurn()
         {
             if (selectedUnit != null)
             {
-                Vector3 endPos = GridSystem.Instance.GetWorldPosition(
-                    selectedUnit.CurrentGridPosition
-                );
+                Vector3 endPos = ServiceLocator
+                    .Get<GridSystem>()
+                    .GetWorldPosition(selectedUnit.CurrentGridPosition);
                 selectedUnit.SnapToGrid(endPos);
             }
             ClearSelectedUnit();
-            TurnManager.Instance.NextTurn();
+            ServiceLocator.Get<TurnManager>().NextTurn();
         }
 
-        public void SetPhase(GamePhase newPhase)
+        private void OnJumpPerformed(object sender, EventArgs e)
         {
-            // Debug.Log($"[STATE MACHINE] Phase changing from {currentPhase} to {newPhase}");
-            currentPhase = newPhase;
-
-            if (currentPhase == GamePhase.FreeMovement && selectedUnit != null)
-            {
-                validMovePositions = Pathfinding.GetReachableGridPositions(
-                    selectedUnit.CurrentGridPosition,
-                    selectedUnit.GetMaxMoveCost()
-                );
-            }
-
-            // Hide tooltip if we leave targeting mode
-            if (currentPhase != GamePhase.ActionTargeting && UnitTooltipUI.Instance != null)
-            {
-                UnitTooltipUI.Instance.Hide();
-            }
-            OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
+            if (ServiceLocator.Get<PhaseManager>().CurrentPhase == GamePhase.FreeMovement)
+                selectedUnit.HandleJump();
         }
 
         private Vector3 GetMouseWorldPosition()
         {
-            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            Ray ray = Camera.main.ScreenPointToRay(
+                ServiceLocator.Get<InputService>().GetMousePosition()
+            );
             if (
                 Physics.Raycast(
                     ray,
@@ -707,12 +559,6 @@ namespace PathfinderTactics.Core
                 return hit.point;
             }
             return Vector3.zero;
-        }
-
-        private void OnJumpPerformed(InputAction.CallbackContext ctx)
-        {
-            if (currentPhase == GamePhase.FreeMovement)
-                selectedUnit.HandleJump();
         }
     }
 }

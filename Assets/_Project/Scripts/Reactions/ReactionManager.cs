@@ -8,20 +8,18 @@ namespace PathfinderTactics.Reactions
 {
     public class ReactionManager : MonoBehaviour
     {
-        public static ReactionManager Instance { get; private set; }
-
         private Queue<ReactionIntent> pendingIntents = new Queue<ReactionIntent>();
         private Action<GameEvent> onAllReactionsResolved;
         private GameEvent currentResolvingEvent;
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
+            ServiceLocator.Register(this);
+        }
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<ReactionManager>();
         }
 
         public void EvaluateEvent(GameEvent gameEvent, Action<GameEvent> onComplete)
@@ -35,8 +33,8 @@ namespace PathfinderTactics.Reactions
             // Gather all valid intents
             foreach (Unit unit in UnitManager.AllUnits)
             {
-                var health = unit.GetComponent<UnitHealth>();
-                if (health != null && (health.IsDead || health.IsUnconscious))
+                var health = unit.GetComponent<IDamageable>();
+                if (health != null && health.IsDead)
                     continue;
 
                 // Check Availability
@@ -80,7 +78,7 @@ namespace PathfinderTactics.Reactions
             // Safety Check: Did a previous reaction in this chain kill this unit or steal its reaction?
             if (
                 !intent.ReactingUnit.HasReactionAvailable
-                || intent.ReactingUnit.GetComponent<UnitHealth>().IsDead
+                || intent.ReactingUnit.GetComponent<IDamageable>().IsDead
             )
             {
                 ProcessNextIntent(); // Skip and move on

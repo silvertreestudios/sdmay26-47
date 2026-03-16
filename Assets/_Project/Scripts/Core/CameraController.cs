@@ -5,8 +5,6 @@ namespace PathfinderTactics.Core
 {
     public class CameraController : MonoBehaviour
     {
-        public static CameraController Instance { get; private set; }
-
         [Header("References")]
         [SerializeField]
         private CinemachineCamera virtualCamera;
@@ -23,12 +21,7 @@ namespace PathfinderTactics.Core
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
+            ServiceLocator.Register(this);
 
             playerInputActions = new PlayerInputActions();
 
@@ -37,6 +30,11 @@ namespace PathfinderTactics.Core
             {
                 Debug.LogError("No CinemachineOrbitalFollow component found on this GameObject!");
             }
+        }
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<CameraController>();
         }
 
         private void OnEnable()

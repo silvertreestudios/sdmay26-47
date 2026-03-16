@@ -36,7 +36,7 @@ namespace PathfinderTactics.Actions
                 onActionComplete?.Invoke();
                 return;
             }
-            targetUnit = GridSystem.Instance.GetUnitAt(gridPosition);
+            targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(gridPosition);
 
             if (targetUnit == null)
             {
@@ -135,10 +135,10 @@ namespace PathfinderTactics.Actions
             );
 
             // Check for Stealth/Vision
-            var targetConditions = targetUnit.GetComponent<UnitConditions>();
-            if (targetConditions != null)
+            var targetStealth = targetUnit.GetComponent<UnitStealth>();
+            if (targetStealth != null)
             {
-                int flatCheckDC = targetConditions.RequiresFlatCheckToTarget(unit);
+                int flatCheckDC = targetStealth.RequiresFlatCheckToTarget(unit);
                 if (flatCheckDC > 0)
                 {
                     int flatRoll = UnityEngine.Random.Range(1, 21);
@@ -159,7 +159,7 @@ namespace PathfinderTactics.Actions
                 }
             }
 
-            int baseAC = targetUnit.getArmorClass(AttackType.Ranged);
+            int baseAC = targetUnit.GetArmorClass(AttackType.Ranged);
 
             int coverBonus = LineOfSightUtility.GetCoverBonus(
                 unit.CurrentGridPosition,
@@ -200,7 +200,7 @@ namespace PathfinderTactics.Actions
                     Debug.Log("CRITICAL HIT!");
                 }
 
-                var targetHealth = targetUnit.GetComponent<UnitHealth>();
+                var targetHealth = targetUnit.GetComponent<IDamageable>();
                 if (targetHealth != null)
                 {
                     targetHealth.ApplyDamage(unit, damage, result == Degree.CriticalSuccess);
@@ -217,14 +217,16 @@ namespace PathfinderTactics.Actions
 
         private void BreakStealth()
         {
-            var myConditions = unit.GetComponent<UnitConditions>();
-            if (myConditions == null)
+            var myStealth = unit.GetComponent<UnitStealth>();
+            if (myStealth == null)
                 return;
 
             // Firing a weapon reveals you to all enemies!
-            foreach (Unit enemy in GridSystem.Instance.GetAllEnemies(unit.GetFaction()))
+            foreach (
+                Unit enemy in ServiceLocator.Get<GridSystem>().GetAllEnemies(unit.GetFaction())
+            )
             {
-                myConditions.SetDetectionState(enemy, DetectionState.Observed);
+                myStealth.SetDetectionState(enemy, DetectionState.Observed);
             }
         }
 
@@ -240,7 +242,7 @@ namespace PathfinderTactics.Actions
                     GridPosition testPos = new GridPosition(unitGridPos.x + x, unitGridPos.z + z);
 
                     // Keep it on the map
-                    if (!GridSystem.Instance.IsValidGridPosition(testPos))
+                    if (!ServiceLocator.Get<GridSystem>().IsValidGridPosition(testPos))
                         continue;
 
                     // Chebyshev distance
@@ -268,7 +270,7 @@ namespace PathfinderTactics.Actions
                         unitGridPosition.z + z
                     );
 
-                    if (!GridSystem.Instance.IsValidGridPosition(testGridPosition))
+                    if (!ServiceLocator.Get<GridSystem>().IsValidGridPosition(testGridPosition))
                         continue;
                     if (unitGridPosition == testGridPosition)
                         continue;
@@ -277,7 +279,7 @@ namespace PathfinderTactics.Actions
                     if (distance > maxRange)
                         continue;
 
-                    Unit targetUnit = GridSystem.Instance.GetUnitAt(testGridPosition);
+                    Unit targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(testGridPosition);
                     if (targetUnit == null)
                         continue;
                     if (targetUnit.GetFaction() == unit.GetFaction())

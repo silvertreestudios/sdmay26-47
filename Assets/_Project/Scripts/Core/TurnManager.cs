@@ -2,14 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
 using UnityEngine;
 
 namespace PathfinderTactics.Core
 {
     public class TurnManager : MonoBehaviour
     {
-        public static TurnManager Instance { get; private set; }
-
         public event EventHandler OnTurnChanged;
         public event EventHandler<OnTurnOrderedEventArgs> OnCombatStarted;
 
@@ -27,12 +26,12 @@ namespace PathfinderTactics.Core
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
+            ServiceLocator.Register(this);
+        }
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<TurnManager>();
         }
 
         private void Start()
@@ -109,7 +108,7 @@ namespace PathfinderTactics.Core
         {
             Debug.Log($"<color=cyan>--- Turn Start: {unit.name} ---</color>");
 
-            UnitHealth health = unit.GetComponent<UnitHealth>();
+            IDamageable health = unit.GetComponent<IDamageable>();
             UnitConditions conditions = unit.GetComponent<UnitConditions>();
 
             // Skip dead units entirely
@@ -121,10 +120,12 @@ namespace PathfinderTactics.Core
             }
 
             // Handle unconscious / dying units
-            if (health != null && health.IsUnconscious)
+            if (
+                unit.GetComponent<UnitConditions>()?.HasCondition(ConditionType.Unconscious) == true
+            )
             {
                 Debug.Log($"{unit.name} is unconscious. Rolling recovery check...");
-                health.RollRecoveryCheck();
+                unit.GetComponent<UnitHealth>()?.RollRecoveryCheck();
 
                 // Skip the rest of their turn and immediately trigger NextTurn
                 NextTurn();
@@ -134,7 +135,7 @@ namespace PathfinderTactics.Core
             // Healthy unit (resetting AP, checking Stunned)
             unit.StartTurn();
 
-            UnitActionSystem.Instance.ForceSelectUnit(unit);
+            ServiceLocator.Get<UnitActionSystem>().ForceSelectUnit(unit);
             OnTurnChanged?.Invoke(this, EventArgs.Empty);
         }
 

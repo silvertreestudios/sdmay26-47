@@ -1,5 +1,6 @@
 using System;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using UnityEngine;
 
@@ -17,9 +18,11 @@ namespace PathfinderTactics.Core
         public static int GetCoverBonus(GridPosition originGridPos, GridPosition targetGridPos)
         {
             Vector3 originWorld =
-                GridSystem.Instance.GetWorldPosition(originGridPos) + (Vector3.up * HEIGHT_OFFSET);
+                ServiceLocator.Get<GridSystem>().GetWorldPosition(originGridPos)
+                + (Vector3.up * HEIGHT_OFFSET);
             Vector3 targetWorld =
-                GridSystem.Instance.GetWorldPosition(targetGridPos) + (Vector3.up * HEIGHT_OFFSET);
+                ServiceLocator.Get<GridSystem>().GetWorldPosition(targetGridPos)
+                + (Vector3.up * HEIGHT_OFFSET);
 
             Vector3 direction = (targetWorld - originWorld).normalized;
             float distance = Vector3.Distance(originWorld, targetWorld);
@@ -48,8 +51,8 @@ namespace PathfinderTactics.Core
             bool hasStandardCover = false;
             bool hasLesserCover = false;
 
-            Unit originUnit = GridSystem.Instance.GetUnitAt(originGridPos);
-            Unit targetUnit = GridSystem.Instance.GetUnitAt(targetGridPos);
+            Unit originUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(originGridPos);
+            Unit targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(targetGridPos);
 
             int originSizeInt = originUnit != null ? (int)originUnit.GetUnitSize() : 2;
             int targetSizeInt = targetUnit != null ? (int)targetUnit.GetUnitSize() : 2;
@@ -119,9 +122,11 @@ namespace PathfinderTactics.Core
         )
         {
             Vector3 originWorld =
-                GridSystem.Instance.GetWorldPosition(originGridPos) + (Vector3.up * HEIGHT_OFFSET);
+                ServiceLocator.Get<GridSystem>().GetWorldPosition(originGridPos)
+                + (Vector3.up * HEIGHT_OFFSET);
             Vector3 targetWorld =
-                GridSystem.Instance.GetWorldPosition(targetGridPos) + (Vector3.up * HEIGHT_OFFSET);
+                ServiceLocator.Get<GridSystem>().GetWorldPosition(targetGridPos)
+                + (Vector3.up * HEIGHT_OFFSET);
 
             Vector3 direction = (targetWorld - originWorld).normalized;
             float distance = Vector3.Distance(originWorld, targetWorld);

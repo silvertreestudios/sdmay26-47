@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
     "com.unity.ai.navigation": "2.0.9",
     "com.unity.cinemachine": "3.1.4",
     "com.unity.collab-proxy": "2.10.0",

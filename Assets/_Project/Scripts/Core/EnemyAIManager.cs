@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using PathfinderTactics.Actions;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
+using PathfinderTactics.Reactions;
 using UnityEngine;
 
 namespace PathfinderTactics.Core
 {
     public class EnemyAIManager : MonoBehaviour
     {
-        public static EnemyAIManager Instance { get; private set; }
-
         [SerializeField]
         private bool aiEnabled = true;
 
@@ -27,19 +27,19 @@ namespace PathfinderTactics.Core
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
+            ServiceLocator.Register(this);
             state = State.WaitingForTurn;
+        }
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<EnemyAIManager>();
         }
 
         private void Start()
         {
-            TurnManager.Instance.OnTurnChanged += TurnManager_OnTurnChanged;
-            if (!TurnManager.Instance.IsPlayerTurn())
+            ServiceLocator.Get<TurnManager>().OnTurnChanged += TurnManager_OnTurnChanged;
+            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
             {
                 state = State.TakingTurn;
                 timer = 1.0f;
@@ -55,7 +55,7 @@ namespace PathfinderTactics.Core
                 Debug.Log($"[ENEMY AI] AI is now {(aiEnabled ? "ENABLED" : "DISABLED")}");
             }
 
-            if (TurnManager.Instance.IsPlayerTurn())
+            if (ServiceLocator.Get<TurnManager>().IsPlayerTurn())
                 return;
 
             // If AI is disabled, don't take any actions
@@ -72,7 +72,7 @@ namespace PathfinderTactics.Core
                     if (timer <= 0f)
                     {
                         state = State.Busy;
-                        TakeEnemyAction(UnitActionSystem.Instance.SelectedUnit);
+                        TakeEnemyAction(ServiceLocator.Get<UnitActionSystem>().SelectedUnit);
                     }
                     break;
 
@@ -84,7 +84,7 @@ namespace PathfinderTactics.Core
 
         private void TurnManager_OnTurnChanged(object sender, EventArgs e)
         {
-            if (!TurnManager.Instance.IsPlayerTurn())
+            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
             {
                 // Enemy's turn. Give them a brief pause to "think" before moving and to slow the game down a bit.
                 state = State.TakingTurn;
@@ -97,7 +97,7 @@ namespace PathfinderTactics.Core
             if (enemyUnit == null || enemyUnit.GetActionPointsRemaining() <= 0)
             {
                 // Out of AP, end the turn
-                UnitActionSystem.Instance.EndTurn();
+                ServiceLocator.Get<UnitActionSystem>().EndTurn();
                 state = State.WaitingForTurn;
                 return;
             }
@@ -107,23 +107,37 @@ namespace PathfinderTactics.Core
             if (target == null)
             {
                 // No players left alive? End turn.
-                UnitActionSystem.Instance.EndTurn();
+                ServiceLocator.Get<UnitActionSystem>().EndTurn();
                 state = State.WaitingForTurn;
                 return;
             }
 
-            // Are we in Melee Range?
-            MeleeAction meleeAction = enemyUnit.GetComponent<MeleeAction>();
-            if (
-                meleeAction != null
-                && meleeAction.GetValidActionGridPositions().Contains(target.CurrentGridPosition)
-            )
-            {
-                // Attack
-                Debug.Log($"[ENEMY AI] {enemyUnit.name} is attacking {target.name}!");
-                enemyUnit.SpendActionPoints(meleeAction.GetActionPointsCost());
+            // Get all possible actions the enemy can take
+            BaseAction[] availableActions = enemyUnit.GetComponents<BaseAction>();
 
-                meleeAction.TakeAction(
+            // Filter to actions that have valid targets
+            List<BaseAction> validActions = new List<BaseAction>();
+            foreach (var action in availableActions)
+            {
+                if (action.GetValidActionGridPositions().Contains(target.CurrentGridPosition))
+                {
+                    validActions.Add(action);
+                }
+            }
+
+            if (validActions.Count > 0)
+            {
+                // Attack with a random valid action
+                BaseAction chosenAction = validActions[
+                    UnityEngine.Random.Range(0, validActions.Count)
+                ];
+
+                Debug.Log(
+                    $"[ENEMY AI] {enemyUnit.name} is using {chosenAction.GetActionName()} on {target.name}!"
+                );
+                enemyUnit.SpendActionPoints(chosenAction.GetActionPointsCost());
+
+                chosenAction.TakeAction(
                     target.CurrentGridPosition,
                     () =>
                     {
@@ -142,7 +156,7 @@ namespace PathfinderTactics.Core
             }
 
             // If we can't hit them and can't move, just end turn.
-            UnitActionSystem.Instance.EndTurn();
+            ServiceLocator.Get<UnitActionSystem>().EndTurn();
             state = State.WaitingForTurn;
         }
 
@@ -182,49 +196,51 @@ namespace PathfinderTactics.Core
                     bestMove
                 );
 
-                Reactions.ReactionManager.Instance.EvaluateEvent(
-                    moveEvent,
-                    (resolvedEvent) =>
-                    {
-                        if (resolvedEvent.IsCancelled)
+                ServiceLocator
+                    .Get<ReactionManager>()
+                    .EvaluateEvent(
+                        moveEvent,
+                        (resolvedEvent) =>
                         {
-                            // Player's Reactive Strike killed or stopped the enemy
-                            enemyUnit.SnapToGrid(
-                                GridSystem.Instance.GetWorldPosition(enemyUnit.CurrentGridPosition)
-                            );
-                            state = State.TakingTurn;
-                            timer = 0.5f;
-                        }
-                        else
-                        {
-                            // Get the path before updating logical position
-                            List<GridPosition> path = Pathfinding.FindPath(
-                                enemyUnit.CurrentGridPosition,
-                                bestMove
-                            );
+                            if (resolvedEvent.IsCancelled)
+                            {
+                                // Player's Reactive Strike killed or stopped the enemy
+                                enemyUnit.SnapToGrid(
+                                    ServiceLocator
+                                        .Get<GridSystem>()
+                                        .GetWorldPosition(enemyUnit.CurrentGridPosition)
+                                );
+                                state = State.TakingTurn;
+                                timer = 0.5f;
+                            }
+                            else
+                            {
+                                // Get the path before updating logical position
+                                List<GridPosition> path = Pathfinding.FindPath(
+                                    enemyUnit.CurrentGridPosition,
+                                    bestMove
+                                );
 
-                            // Update the Logical Grid
-                            enemyUnit.SpendActionPoints(1);
-                            GridSystem.Instance.MoveUnit(
-                                enemyUnit,
-                                enemyUnit.CurrentGridPosition,
-                                bestMove
-                            );
-                            enemyUnit.FinalizeMove(bestMove);
+                                // Update the Logical Grid
+                                enemyUnit.SpendActionPoints(1);
+                                ServiceLocator
+                                    .Get<GridSystem>()
+                                    .MoveUnit(enemyUnit, enemyUnit.CurrentGridPosition, bestMove);
+                                enemyUnit.FinalizeMove(bestMove);
 
-                            // Animate the Physical Movement
-                            enemyUnit.MoveAlongPath(
-                                path,
-                                () =>
-                                {
-                                    // This callback runs when the walking finishes
-                                    state = State.TakingTurn;
-                                    timer = 0.5f;
-                                }
-                            );
+                                // Animate the Physical Movement
+                                enemyUnit.MoveAlongPath(
+                                    path,
+                                    () =>
+                                    {
+                                        // This callback runs when the walking finishes
+                                        state = State.TakingTurn;
+                                        timer = 0.5f;
+                                    }
+                                );
+                            }
                         }
-                    }
-                );
+                    );
                 return true;
             }
 
@@ -240,8 +256,8 @@ namespace PathfinderTactics.Core
             {
                 if (playerUnit.GetFaction() == Faction.Player)
                 {
-                    var health = playerUnit.GetComponent<UnitHealth>();
-                    if (health != null && (health.IsDead || health.IsUnconscious))
+                    var health = playerUnit.GetComponent<IDamageable>();
+                    if (health != null && health.IsDead)
                         continue; // Ignore downed players
 
                     int dist = Pathfinding.CalculateDistance(

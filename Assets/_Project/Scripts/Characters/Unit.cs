@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using PathfinderTactics.Actions;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
-using TMPro;
 using UnityEngine;
 
 namespace PathfinderTactics.Characters
@@ -16,29 +15,21 @@ namespace PathfinderTactics.Characters
         Large = 3,
         Huge = 4,
         Gargantuan = 5,
-
-        // TODO: implement this stuff.
-        // Size         Space       Reach (Tall)	Reach (Long)
-        // Tiny         < 5 feet	0 feet	        0 feet
-        // Small        5 feet	    5 feet	        5 feet
-        // Medium       5 feet	    5 feet	        5 feet
-        // Large        10 feet	    10 feet	        5 feet
-        // Huge         15 feet	    15 feet	        10 feet
-        // Gargantuan   >= 20 feet	20 feet	        15 feet
     }
 
-    [RequireComponent(typeof(CharacterController))]
-    public class Unit : MonoBehaviour
+    [RequireComponent(typeof(UnitActionEconomy))]
+    [RequireComponent(typeof(UnitGridObject))]
+    [RequireComponent(typeof(UnitMovement))]
+    [RequireComponent(typeof(UnitStealth))]
+    [RequireComponent(typeof(UnitConditions))]
+    public class Unit : MonoBehaviour, ITargetable
     {
         [Header("Team Configuration")]
         [SerializeField]
-        private Faction faction = Faction.Player; // Default to Player
+        private Faction faction = Faction.Player;
 
         public Faction GetFaction() => faction;
 
-        /// <summary>
-        /// Returns true if the other unit is on a different team.
-        /// </summary>
         public bool IsEnemy(Unit otherUnit)
         {
             return otherUnit.GetFaction() != this.faction;
@@ -54,124 +45,43 @@ namespace PathfinderTactics.Characters
 
         public UnitSize GetUnitSize() => unitSize;
 
-        // Public Properties
-        public GridPosition CurrentGridPosition { get; private set; }
-
-        // Physics & Movement State
-        private CharacterController characterController;
-        private float verticalVelocity;
-        private float gravity = -9.81f;
-        private float jumpHeight = 1.5f;
-
-        [Header("Movement Settings")]
-        [SerializeField]
-        private float moveSpeed = 7f;
-
-        [SerializeField]
-        private float rotateSpeed = 15f;
-
-        private List<Vector3> positionList;
-        private int currentPositionIndex;
-        private Action onMoveComplete;
-        private bool isMoving = false;
-
-        // Budget is used to track how far a unit can move
-        private int movementBudgetRemaining;
-
-        // 3 actions per turn
-        private int actionPointsRemaining;
-
-        // TODO: max 4 if quickened.
-        // private int totalActionPointsPerTurn = 3;
+        // Dependencies
+        private UnitActionEconomy actionEconomy;
+        private UnitGridObject gridObject;
+        private UnitMovement movement;
+        private UnitConditions conditions;
 
         private bool selected = false;
-
-        // Modular Actions
-        private BaseAction[] baseActionArray;
-
-        public int AttacksThisTurn { get; private set; } = 0;
-
-        public bool HasReactionAvailable { get; private set; } = true;
-
-        #region Action Economy
-        public void StartTurn()
-        {
-            int baseAP = 3;
-
-            // (Stunned / Slowed / Quickened)
-            var conditions = GetComponent<UnitConditions>();
-            if (conditions != null)
-            {
-                // HandleTurnStart calculates the AP modifier and automatically decays Stunned
-                int apModifier = conditions.HandleTurnStart(out ActionTag restriction);
-
-                // Max 4 actions if Quickened, Min 0 if heavily Stunned
-                actionPointsRemaining = Mathf.Clamp(baseAP + apModifier, 0, 4);
-
-                // TODO: Maybe store the "restriction" variable
-                // to enforce what the 4th Quickened AP is allowed to be used for
-            }
-            else
-            {
-                actionPointsRemaining = baseAP;
-            }
-
-            AttacksThisTurn = 0;
-            HasReactionAvailable = true;
-        }
-
-        public void SpendReaction() => HasReactionAvailable = false;
-
-        public void RestoreReaction() => HasReactionAvailable = true;
-
-        public void IncrementAttacksThisTurn()
-        {
-            AttacksThisTurn++;
-        }
-
-        public void SpendActionPoints(int amount)
-        {
-            actionPointsRemaining -= amount;
-        }
-
-        public int GetActionPointsRemaining()
-        {
-            return actionPointsRemaining;
-        }
-
-        public BaseAction[] GetBaseActionArray()
-        {
-            return baseActionArray;
-        }
-        #endregion
 
         private void Awake()
         {
             UnitManager.AllUnits.Add(this);
-            characterController = GetComponent<CharacterController>();
 
-            // Auto-discover actions
-            baseActionArray = GetComponents<BaseAction>();
+            actionEconomy = GetComponent<UnitActionEconomy>();
+            if (actionEconomy == null)
+                actionEconomy = gameObject.AddComponent<UnitActionEconomy>();
 
-            Debug.Log($"[UNIT BOOTUP] {gameObject.name} found {baseActionArray.Length} actions.");
-            foreach (var action in baseActionArray)
-            {
-                Debug.Log($"   -> Action loaded: {action.GetActionName()}");
-            }
+            gridObject = GetComponent<UnitGridObject>();
+            if (gridObject == null)
+                gridObject = gameObject.AddComponent<UnitGridObject>();
+
+            movement = GetComponent<UnitMovement>();
+            if (movement == null)
+                movement = gameObject.AddComponent<UnitMovement>();
+
+            conditions = GetComponent<UnitConditions>();
+            if (conditions == null)
+                conditions = gameObject.AddComponent<UnitConditions>();
+
+            var stealth = GetComponent<UnitStealth>();
+            if (stealth == null)
+                stealth = gameObject.AddComponent<UnitStealth>();
         }
 
         private void Start()
         {
-            UnitActionSystem.Instance.OnSelectedUnitChanged += Select_unit;
+            ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged += Select_unit;
 
-            // Register self on grid at start
-            CurrentGridPosition = GridSystem.Instance.GetGridPosition(transform.position);
-            GridSystem.Instance.AddUnitAt(this, CurrentGridPosition);
-
-            // Snap to ensure alignment
-            SnapToGrid(GridSystem.Instance.GetWorldPosition(CurrentGridPosition));
-
-            // Temporary Debug: Color units based on faction
             var meshRenderer = GetComponentInChildren<MeshRenderer>();
             if (meshRenderer != null)
             {
@@ -182,116 +92,65 @@ namespace PathfinderTactics.Characters
             }
         }
 
-        void Update()
+        private void OnDestroy()
         {
-            if (!isMoving)
-                return;
-
-            Vector3 targetPosition = positionList[currentPositionIndex];
-            Vector3 moveDirection = (targetPosition - transform.position).normalized;
-
-            // Rotate towards the target
-            if (moveDirection != Vector3.zero)
+            UnitManager.AllUnits.Remove(this);
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var uas))
             {
-                transform.forward = Vector3.Lerp(
-                    transform.forward,
-                    moveDirection,
-                    Time.deltaTime * rotateSpeed
-                );
-            }
-
-            // Move smoothly towards the target
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                targetPosition,
-                moveSpeed * Time.deltaTime
-            );
-
-            // Check if we reached the current waypoint
-            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-            {
-                currentPositionIndex++;
-
-                // Check if we reached the final destination
-                if (currentPositionIndex >= positionList.Count)
-                {
-                    isMoving = false;
-                    transform.position = targetPosition; // Snap precisely to the end
-                    onMoveComplete?.Invoke(); // Tell the system we finished walking
-                }
+                uas.OnSelectedUnitChanged -= Select_unit;
             }
         }
 
-        public void MoveAlongPath(List<GridPosition> path, Action onComplete)
+        private void Select_unit(object sender, EventArgs e)
         {
-            positionList = new List<Vector3>();
-
-            // Convert grid coordinates to actual 3D world coordinates
-            foreach (GridPosition pos in path)
-            {
-                positionList.Add(GridSystem.Instance.GetWorldPosition(pos));
-            }
-
-            currentPositionIndex = 0;
-            onMoveComplete = onComplete;
-            isMoving = true;
-
-            // TODO: add animation here.
+            selected = (ServiceLocator.Get<UnitActionSystem>().SelectedUnit == this);
         }
 
-        #region Movement Budget
-        public void StartMoveAction()
-        {
-            movementBudgetRemaining = GetMaxMoveCost();
-        }
+        // Facade Methods to ActionEconomy
+        public int AttacksThisTurn => actionEconomy.AttacksThisTurn;
+        public bool HasReactionAvailable => actionEconomy.HasReactionAvailable;
 
-        public void SpendMovement(int amount)
-        {
-            movementBudgetRemaining -= amount;
-        }
-        #endregion
+        public void StartTurn() => actionEconomy.StartTurn();
 
-        #region Movement Execution
-        // This method is called every frame from the UnitActionSystem during FreeMovement
-        public void HandleMovement(Vector3 moveDirection)
-        {
-            // Gravity and Grounding
-            if (characterController.isGrounded && verticalVelocity < 0)
-            {
-                // Small downward force to keep the character stuck to the ground
-                verticalVelocity = -5f;
-            }
+        public void SpendReaction() => actionEconomy.SpendReaction();
 
-            // Apply gravity over time
-            verticalVelocity += gravity * Time.deltaTime;
+        public void RestoreReaction() => actionEconomy.RestoreReaction();
 
-            // Combine horizontal and vertical motion
-            Vector3 finalMoveVector = moveDirection + (Vector3.up * verticalVelocity);
+        public void IncrementAttacksThisTurn() => actionEconomy.IncrementAttacksThisTurn();
 
-            characterController.Move(finalMoveVector * Time.deltaTime);
+        public void SpendActionPoints(int amount) => actionEconomy.SpendActionPoints(amount);
 
-            // Update Facing Direction
-            if (moveDirection != Vector3.zero)
-            {
-                transform.forward = Vector3.Slerp(
-                    transform.forward,
-                    moveDirection,
-                    Time.deltaTime * 15f
-                );
-            }
-        }
+        public int GetActionPointsRemaining() => actionEconomy.GetActionPointsRemaining();
 
-        public void HandleJump()
-        {
-            if (characterController.isGrounded)
-            {
-                // Calculate the upward velocity needed to reach a specific height
-                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            }
-        }
-        #endregion
+        public BaseAction[] GetBaseActionArray() => actionEconomy.GetBaseActionArray();
 
-        #region State Management
+        // Facade Methods to GridObject
+        public GridPosition CurrentGridPosition => gridObject.CurrentGridPosition;
+        public Transform Transform => transform;
+
+        public void SetInitialPosition(GridPosition gridPosition) =>
+            gridObject.SetInitialPosition(gridPosition);
+
+        public void FinalizeMove(GridPosition finalPosition) =>
+            gridObject.FinalizeMove(finalPosition);
+
+        // Facade Methods to Movement
+        public void MoveAlongPath(List<GridPosition> path, Action onComplete) =>
+            movement.MoveAlongPath(path, onComplete);
+
+        public void StartMoveAction() => movement.StartMoveAction();
+
+        public void SpendMovement(int amount) => movement.SpendMovement(amount);
+
+        public void HandleMovement(Vector3 moveDirection) => movement.HandleMovement(moveDirection);
+
+        public void HandleJump() => movement.HandleJump();
+
+        public float GetUnitRadius() => movement.GetUnitRadius();
+
+        public void SnapToGrid(Vector3 newPosition) => movement.SnapToGrid(newPosition);
+
+        // Stats & Formulas
         public int GetMoveDistanceInCells()
         {
             if (stats == null)
@@ -304,61 +163,16 @@ namespace PathfinderTactics.Characters
             return GetMoveDistanceInCells() * Pathfinding.MOVE_STRAIGHT_COST;
         }
 
-        public void SetInitialPosition(GridPosition gridPosition)
-        {
-            CurrentGridPosition = gridPosition;
-            characterController.enabled = false;
-            transform.position = GridSystem.Instance.GetWorldPosition(gridPosition);
-            characterController.enabled = true;
-        }
-
-        public void FinalizeMove(GridPosition finalPosition)
-        {
-            GridSystem.Instance.MoveUnit(this, CurrentGridPosition, finalPosition);
-            CurrentGridPosition = finalPosition;
-        }
-        #endregion
-
-        public float GetUnitRadius()
-        {
-            if (characterController != null)
-                return characterController.radius;
-            return 0.25f;
-        }
-
-        public void SnapToGrid(Vector3 newPosition)
-        {
-            if (characterController != null)
-            {
-                characterController.enabled = false;
-                transform.position = newPosition;
-                characterController.enabled = true;
-            }
-            else
-            {
-                transform.position = newPosition;
-            }
-        }
-
         public UnitStatsSO GetStats() => stats;
 
-        // Default to Melee if nothing is passed in
-        public int getArmorClass(AttackType incomingAttackType = AttackType.Melee)
+        public int GetArmorClass(AttackType incomingAttackType = AttackType.Melee)
         {
-            int baseAC;
-            if (stats == null)
-                baseAC = 10;
-            else
-                baseAC = stats.armorClass;
+            int baseAC = stats == null ? 10 : stats.armorClass;
 
-            UnitConditions conditions = GetComponent<UnitConditions>();
             if (conditions == null)
                 return baseAC;
 
-            // Status Penalty
             int statusPenalty = PF2E_Core.GetStatusPenalty(conditions, AbilityScore.DEX);
-
-            // Circumstance Modifier
             int circumstanceMod = 0;
 
             if (conditions.IsOffGuard())
@@ -366,7 +180,6 @@ namespace PathfinderTactics.Characters
                 circumstanceMod -= 2;
             }
 
-            // Prone grants a +2 circumstance bonus against Ranged attacks.
             if (
                 incomingAttackType == AttackType.Ranged
                 && conditions.HasCondition(ConditionType.Prone)
@@ -383,16 +196,6 @@ namespace PathfinderTactics.Characters
             if (stats == null)
                 return 0;
             return stats.TotalHP;
-        }
-
-        private void OnDestroy()
-        {
-            UnitManager.AllUnits.Remove(this);
-        }
-
-        private void Select_unit(object sender, EventArgs e)
-        {
-            selected = (UnitActionSystem.Instance.SelectedUnit == this);
         }
     }
 }

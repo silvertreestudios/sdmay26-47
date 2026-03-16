@@ -155,6 +155,7 @@ namespace PathfinderTactics.Characters
 
     public enum DamageType
     {
+        Untyped,
         Piercing,
         Slashing,
         Bludgeoning,
@@ -165,6 +166,10 @@ namespace PathfinderTactics.Characters
         Poison,
         Bleed,
         Mental,
+        Force,
+        Sonic,
+        Positive,
+        Negative,
     }
 
     public enum ActionTag
