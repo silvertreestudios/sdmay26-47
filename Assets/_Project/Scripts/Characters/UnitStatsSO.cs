@@ -1,3 +1,4 @@
+using PathfinderTactics.Core;
 using UnityEngine;
 
 public class ClassData
@@ -26,39 +27,34 @@ namespace PathfinderTactics.Characters
         [Tooltip("Perception modifier for Initiative rolls.")]
         public int perception = 0;
 
-        [Header("Ability Modifiers")]
-        [Tooltip("Strength: physical power.")]
-        public int strength = 4;
+        [Header("Ability Scores")]
+        [Tooltip("Strength: physical power (e.g. 18).")]
+        public int strength = 18;
 
-        [Tooltip("Dexterity: agility, reflexes, and fine motor control.")]
-        public int dexterity = 2;
+        [Tooltip("Dexterity: agility and reflexes (e.g. 14).")]
+        public int dexterity = 14;
 
-        [Tooltip("Constitution: health and stamina.")]
-        public int constitution = 2;
+        [Tooltip("Constitution: health and stamina (e.g. 14).")]
+        public int constitution = 14;
 
-        [Tooltip("Intelligence: reasoning, memory, and knowledge.")]
-        public int intelligence = 0;
+        [Tooltip("Intelligence: reasoning and knowledge (e.g. 10).")]
+        public int intelligence = 10;
 
-        [Tooltip("Wisdom: perception and willpower.")]
-        public int wisdom = 1;
+        [Tooltip("Wisdom: perception and willpower (e.g. 12).")]
+        public int wisdom = 12;
 
-        [Tooltip("Charisma: presence and force of personality.")]
-        public int charisma = 0;
+        [Tooltip("Charisma: presence and personality (e.g. 10).")]
+        public int charisma = 10;
 
         [Header("Core Stats (Pathfinder 2e)")]
         [Tooltip("Speed in feet. Standard is 25 or 30 for most humanoids.")]
-        public int speedInFeet = 30;
-
-        [Tooltip("Armor Class (AC). Standard is 10 + Dexterity modifier + armor bonus.")]
-        public int armorClass => GetAC();
+        public int baseSpeedInFeet = 30;
 
         [Header("Ancestry & Class (Resources)")]
         [Tooltip(
             "Resource path (relative to Resources/) to the ancestry JSON. Example: JSON/ancestries/human"
         )]
         public string ancestryResourcePath = "JSON/ancestries/human";
-
-        public string armorResourcePath = "JSON/eqiupment/scale-mail";
 
         [Tooltip(
             "Resource path (relative to Resources/) to the class JSON. Example: JSON/classes/fighter"
@@ -89,13 +85,16 @@ namespace PathfinderTactics.Characters
             {
                 int aHp = GetAncestryHp();
                 int cHp = GetClassHp();
-                int con = constitution;
+                int conMod = PF2E_Core.GetAbilityModifier(constitution);
                 int lvl = Mathf.Max(1, level);
-                // Level 1 base
-                int total = aHp + cHp + con;
+
+                // Level 1: Ancestry + Class + ConMod
+                int total = aHp + cHp + conMod;
+
+                // Each additional level: Class + ConMod
                 if (lvl > 1)
                 {
-                    total += (lvl - 1) * (cHp + con);
+                    total += (lvl - 1) * (cHp + conMod);
                 }
                 return total;
             }
@@ -137,36 +136,7 @@ namespace PathfinderTactics.Characters
             }
         }
 
-        private int GetAC()
-        {
-            if (string.IsNullOrEmpty(armorResourcePath))
-                return 0;
-            var ta = Resources.Load<TextAsset>(armorResourcePath);
-            if (ta == null)
-                return 0;
-            try
-            {
-                var data = JsonUtility.FromJson<ArmorJson>(ta.text);
-                if (data != null && data.system != null)
-                {
-                    int acBonus = data.system.acBonus;
-                    int dexCap = data.system.dexCap;
-                    int dexBonus = Mathf.Min(dexterity, dexCap);
-                    string category = data.system.category.ToLower();
-                    // Check category for armor type (heavy, medium, light, unarmored) and apply appropriate profcienecy bonus if needed (TODO: implement proficiency bonuses later)
-                    int fighter_lvl1_trained_bonus = 3; // Placeholder for now, should be based on class and level
-                    return 10 + acBonus + dexBonus + fighter_lvl1_trained_bonus;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            catch
-            {
-                return 0;
-            }
-        }
+        // Legacy AC logic removed in favor of UnitEquipment system
 
         [System.Serializable]
         private class AncestryJson
@@ -192,23 +162,7 @@ namespace PathfinderTactics.Characters
             public int hp;
         }
 
-        [System.Serializable]
-        private class ArmorJson
-        {
-            public ArmorSystem system;
-        }
-
-        [System.Serializable]
-        private class ArmorSystem
-        {
-            public int acBonus;
-            public int dexCap;
-            public int checkPenalty;
-            public int speedPenalty;
-            public int strength;
-            public int bulk;
-            public string category;
-        }
+        // Removed ArmorJson classes
 
         private void OnValidate()
         {

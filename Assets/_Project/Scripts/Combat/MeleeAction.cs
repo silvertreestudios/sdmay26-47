@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
+using PathfinderTactics.Items;
 using UnityEngine;
 
 namespace PathfinderTactics.Actions
@@ -19,25 +20,51 @@ namespace PathfinderTactics.Actions
             Cooloff,
         }
 
-        public override string GetActionName() => "Strike";
+        public override string GetActionName()
+        {
+            var weapon = GetWeapon();
+            string weaponName = weapon != null ? weapon.itemName : "Unarmed";
+            return $"Melee Strike — {weaponName}";
+        }
 
-        // TODO: These stats should change based on the weapon equipped. For now we can just hardcode them.
-        [Header("Weapon Stats")]
-        [SerializeField]
-        private int maxRange = 1; // 1 tile = 5ft reach.
+        /// <summary>
+        /// The specific weapon this strike action uses.
+        /// Set by UnitEquipment.ConfigureStrikeActions(). If null, falls back to equipment.
+        /// </summary>
+        [HideInInspector]
+        public WeaponSO activeWeapon;
 
-        [SerializeField]
-        private bool isAgileWeapon = false;
+        /// <summary>
+        /// Returns the weapon this action should use for all calculations.
+        /// </summary>
+        public WeaponSO GetWeapon()
+        {
+            if (activeWeapon != null)
+                return activeWeapon;
+            var equipment = unit.GetComponent<UnitEquipment>();
+            return equipment != null ? equipment.GetMainWeapon() : null;
+        }
+
+        private int GetMaxRange()
+        {
+            var weapon = GetWeapon();
+            if (weapon != null)
+            {
+                return Mathf.Max(1, weapon.reachFeet / 5);
+            }
+            return 1;
+        }
 
         // Defines the boundaries the cursor can move in
         public override List<GridPosition> GetActionRangeGridPositions()
         {
+            int range = GetMaxRange();
             List<GridPosition> rangePositions = new List<GridPosition>();
             GridPosition unitGridPos = unit.CurrentGridPosition;
 
-            for (int x = -maxRange; x <= maxRange; x++)
+            for (int x = -range; x <= range; x++)
             {
-                for (int z = -maxRange; z <= maxRange; z++)
+                for (int z = -range; z <= range; z++)
                 {
                     GridPosition testPos = new GridPosition(unitGridPos.x + x, unitGridPos.z + z);
 
@@ -46,7 +73,7 @@ namespace PathfinderTactics.Actions
 
                     // TODO: fix distance calculation. For now this works fine when range is 1 tile.
                     int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance <= maxRange)
+                    if (distance <= range)
                     {
                         rangePositions.Add(testPos);
                     }
@@ -156,9 +183,23 @@ namespace PathfinderTactics.Actions
                 }
             }
 
+            var weapon = GetWeapon();
+            if (weapon == null)
+                return;
+
+            bool isAgileWeapon = weapon.HasTrait(WeaponTrait.Agile);
+            bool isFinesseWeapon = weapon.HasTrait(WeaponTrait.Finesse);
+
             // Base math
-            int level = 1;
-            int strengthMod = (stats.strength - 10) / 2;
+            int level = stats.level;
+
+            // Finesse weapons can use Dexterity instead of Strength for attack rolls!
+            int strengthMod = unit.GetAbilityModifier(AbilityScore.STR);
+            int dexMod = unit.GetAbilityModifier(AbilityScore.DEX);
+            int attackStatMod = isFinesseWeapon ? Mathf.Max(strengthMod, dexMod) : strengthMod;
+            AbilityScore attackStat =
+                (isFinesseWeapon && dexMod > strengthMod) ? AbilityScore.DEX : AbilityScore.STR;
+
             Proficiency weaponProf = Proficiency.Trained;
 
             int mapPenalty = 0;
@@ -172,8 +213,8 @@ namespace PathfinderTactics.Actions
             // Attack modifier calculation with debug tracking
             int attackBonus = PF2E_Core.CalculateAttackRollModifier(
                 unit,
-                AbilityScore.STR,
-                strengthMod,
+                attackStat,
+                attackStatMod,
                 level,
                 weaponProf,
                 AttackType.Melee,
@@ -181,7 +222,8 @@ namespace PathfinderTactics.Actions
             );
 
             // what the bonus WOULD be without conditions
-            int rawBonus = PF2E_Core.CalculateModifier(level, weaponProf, strengthMod) + mapPenalty;
+            int rawBonus =
+                PF2E_Core.CalculateModifier(level, weaponProf, attackStatMod) + mapPenalty;
             int appliedPenalty = attackBonus - rawBonus;
 
             string atkDebug =
@@ -238,8 +280,14 @@ namespace PathfinderTactics.Actions
 
             if (result == Degree.Success || result == Degree.CriticalSuccess)
             {
-                int weaponDice = UnityEngine.Random.Range(1, 9);
-                int damage = weaponDice + strengthMod;
+                int weaponDiceRoll = 0;
+                for (int i = 0; i < weapon.damageDice.count; i++)
+                {
+                    weaponDiceRoll += UnityEngine.Random.Range(1, weapon.damageDice.sides + 1);
+                }
+
+                // In PF2e, melee damage is ALWAYS strength, even if finesse uses dex for the attack roll (unless it has a specific trait like Thief Racket)
+                int damage = weaponDiceRoll + strengthMod;
 
                 // ENFEEBLED DAMAGE DEBUFF
                 // Enfeebled reduces strength-based damage rolls too!
@@ -298,14 +346,15 @@ namespace PathfinderTactics.Actions
 
         public override List<GridPosition> GetValidActionGridPositions()
         {
+            int range = GetMaxRange();
             List<GridPosition> validGridPositionList = new List<GridPosition>();
             GridPosition unitGridPosition = unit.CurrentGridPosition;
 
-            // Debug.Log($"<color=yellow>--- STARTING TARGET SEARCH (Range: {maxRange}) ---</color>");
+            // Debug.Log($"<color=yellow>--- STARTING TARGET SEARCH (Range: {range}) ---</color>");
 
-            for (int x = -maxRange; x <= maxRange; x++)
+            for (int x = -range; x <= range; x++)
             {
-                for (int z = -maxRange; z <= maxRange; z++)
+                for (int z = -range; z <= range; z++)
                 {
                     GridPosition testGridPosition = new GridPosition(
                         unitGridPosition.x + x,
@@ -322,7 +371,7 @@ namespace PathfinderTactics.Actions
 
                     // Chebyshev Distance Check
                     int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance > maxRange)
+                    if (distance > range)
                         continue;
 
                     // Unit Check

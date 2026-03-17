@@ -113,7 +113,7 @@ namespace PathfinderTactics.Characters
                 transform.forward = Vector3.Slerp(
                     transform.forward,
                     moveDirection,
-                    Time.deltaTime * 15f
+                    Time.deltaTime * rotateSpeed
                 );
             }
         }

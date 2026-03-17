@@ -23,19 +23,14 @@ namespace PathfinderTactics.Spells.Effects
 
         public override void Apply(SpellCastContext context)
         {
-            // Calculate the caster's spell DC
-            // For now: DC = 10 + level + proficiency + casting stat mod
-            // TODO: Pull casting stat and proficiency from unit's class data
-            int casterLevel = 1;
-            int castingStatMod = 3; // Placeholder - will pull from stats later
-            Proficiency spellProf = Proficiency.Trained;
-            int spellDC = PF2E_Core.CalculateModifier(casterLevel, spellProf, castingStatMod) + 10;
+            // Calculate the caster's spell DC dynamically based on their stats
+            // NOTE: For now using INT as default, but this should be configurable on the SpellSO or ClassData
+            int spellDC = context.Caster.GetSpellDC(AbilityScore.INT, Proficiency.Trained);
 
             foreach (var target in context.AffectedUnits)
             {
-                // Target's save modifier
-                // TODO: Pull save proficiency from target's class/stats
-                int saveMod = GetSaveModifier(target);
+                // Pull target's save modifier dynamically
+                int saveMod = target.GetSaveModifier(SaveType);
 
                 int d20 = Random.Range(1, 21);
                 int total = d20 + saveMod;

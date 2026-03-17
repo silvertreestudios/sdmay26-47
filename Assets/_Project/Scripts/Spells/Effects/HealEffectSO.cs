@@ -49,10 +49,21 @@ namespace PathfinderTactics.Spells.Effects
         private DiceFormula GetScaledHeal(SpellCastContext context)
         {
             DiceFormula formula = BaseHeal;
+            SpellSO spell = context.SpellData;
 
-            if (HeightenScaling.DiceCount > 0 && context.CastLevel > context.SpellData.Level)
+            if (HeightenScaling.DiceCount > 0 && context.CastLevel > spell.Level)
             {
-                int steps = context.CastLevel - context.SpellData.Level;
+                // Parse heighten interval from rules (e.g., "+1" means every level, "+2" every 2 levels)
+                int interval = 1;
+                if (!string.IsNullOrEmpty(spell.HeightenRules))
+                {
+                    string cleaned = spell.HeightenRules.Replace("+", "").Trim();
+                    int.TryParse(cleaned, out interval);
+                    if (interval < 1)
+                        interval = 1;
+                }
+
+                int steps = (context.CastLevel - spell.Level) / interval;
                 formula.DiceCount += HeightenScaling.DiceCount * steps;
                 formula.Bonus += HeightenScaling.Bonus * steps;
             }

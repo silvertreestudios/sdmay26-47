@@ -41,15 +41,23 @@ namespace PathfinderTactics.Core
     public static class PF2E_Core
     {
         /// <summary>
-        /// Calculates the modifier for a check.
+        /// Calculates the modifier for a specific ability score (e.g., 18 -> +4).
+        /// PF2e rule: (Score - 10) / 2, rounded down.
+        /// </summary>
+        public static int GetAbilityModifier(int score)
+        {
+            return Mathf.FloorToInt((score - 10) / 2f);
+        }
+
+        /// <summary>
+        /// Calculates the total modifier for a check.
         /// Result = Level + ProficiencyBonus + AbilityMod + ItemBonus (ignored for now).
+        /// PF2e rule: Untrained gives 0, others give Level + Constant.
         /// </summary>
         public static int CalculateModifier(int level, Proficiency proficiency, int abilityMod)
         {
-            if (proficiency == Proficiency.Untrained)
-                return abilityMod; // Untrained is just the ability mod (usually)
-
-            return level + (int)proficiency + abilityMod;
+            int profBonus = (proficiency == Proficiency.Untrained) ? 0 : (level + (int)proficiency);
+            return profBonus + abilityMod;
         }
 
         /// <summary>

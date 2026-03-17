@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Unit
   perception: 45
-  strength: 30
+  strength: 10
   dexterity: 5
   constitution: 0
   intelligence: 0
   wisdom: 0
   charisma: 0
-  speedInFeet: 30
+  baseSpeedInFeet: 30
   ancestryResourcePath: JSON/ancestries/human
-  armorResourcePath: JSON/eqiupment/scale-mail
   classResourcePath: JSON/classes/fighter
   level: 1

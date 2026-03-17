@@ -62,5 +62,14 @@ namespace PathfinderTactics.Characters
         {
             return baseActionArray;
         }
+
+        /// <summary>
+        /// Re-scans all BaseAction components on this GameObject.
+        /// Called by UnitEquipment after dynamically adding/removing strike actions.
+        /// </summary>
+        public void RefreshActions()
+        {
+            baseActionArray = GetComponents<BaseAction>();
+        }
     }
 }

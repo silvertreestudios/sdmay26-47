@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
+using PathfinderTactics.Items;
 using UnityEngine;
 
 namespace PathfinderTactics.Actions
@@ -20,14 +21,43 @@ namespace PathfinderTactics.Actions
             Cooloff,
         }
 
-        public override string GetActionName() => "Shoot";
+        public override string GetActionName()
+        {
+            var weapon = GetWeapon();
+            string weaponName = weapon != null ? weapon.itemName : "Ranged";
+            return $"Ranged Strike — {weaponName}";
+        }
 
-        [Header("Weapon Stats")]
-        [SerializeField]
-        private int maxRange = 12; // 60ft range
+        /// <summary>
+        /// The specific weapon this ranged action uses.
+        /// Set by UnitEquipment.ConfigureStrikeActions(). If null, falls back to equipment.
+        /// </summary>
+        [HideInInspector]
+        public WeaponSO activeWeapon;
 
-        [SerializeField]
-        private bool isAgileWeapon = false;
+        /// <summary>
+        /// Returns the weapon this action should use for all calculations.
+        /// </summary>
+        public WeaponSO GetWeapon()
+        {
+            if (activeWeapon != null)
+                return activeWeapon;
+            var equipment = unit.GetComponent<UnitEquipment>();
+            if (equipment == null)
+                return null;
+            var weapon = equipment.GetMainWeapon();
+            return (weapon != null && weapon.IsRangedWeapon()) ? weapon : null;
+        }
+
+        private int GetMaxRange()
+        {
+            var weapon = GetWeapon();
+            if (weapon != null && weapon.IsRangedWeapon())
+            {
+                return Mathf.Max(1, weapon.rangeIncrementFeet / 5);
+            }
+            return 12; // fallback 60ft
+        }
 
         public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
         {
@@ -108,16 +138,24 @@ namespace PathfinderTactics.Actions
 
         private void PerformShootLogic()
         {
+            var weapon = GetWeapon();
+            if (weapon == null || !weapon.IsRangedWeapon())
+            {
+                Debug.LogWarning("Tried to shoot without a ranged weapon equipped!");
+                return;
+            }
+
             var stats = unit.GetStats();
-            if (stats == null || targetUnit == null)
+            if (stats == null)
                 return;
 
-            int level = 1;
-            int dexMod = (stats.dexterity - 10) / 2;
+            int level = stats.level;
+            int dexMod = unit.GetAbilityModifier(AbilityScore.DEX);
             Proficiency weaponProf = Proficiency.Trained;
 
             int mapPenalty = 0;
             int attacksMade = unit.AttacksThisTurn;
+            bool isAgileWeapon = weapon.HasTrait(WeaponTrait.Agile);
 
             if (attacksMade == 1)
                 mapPenalty = isAgileWeapon ? -4 : -5;
@@ -192,7 +230,15 @@ namespace PathfinderTactics.Actions
 
             if (result == Degree.Success || result == Degree.CriticalSuccess)
             {
-                int damage = UnityEngine.Random.Range(1, 9); // 1d8
+                int weaponDiceRoll = 0;
+                for (int i = 0; i < weapon.damageDice.count; i++)
+                {
+                    weaponDiceRoll += UnityEngine.Random.Range(1, weapon.damageDice.sides + 1);
+                }
+
+                // Note: Ranged weapons don't add Strength to damage unless they have the Propulsive trait (half Str) or Thrown trait (full Str).
+                // For now, simplifying to just the dice logic.
+                int damage = weaponDiceRoll;
 
                 if (result == Degree.CriticalSuccess)
                 {
@@ -232,12 +278,13 @@ namespace PathfinderTactics.Actions
 
         public override List<GridPosition> GetActionRangeGridPositions()
         {
+            int range = GetMaxRange();
             List<GridPosition> rangePositions = new List<GridPosition>();
             GridPosition unitGridPos = unit.CurrentGridPosition;
 
-            for (int x = -maxRange; x <= maxRange; x++)
+            for (int x = -range; x <= range; x++)
             {
-                for (int z = -maxRange; z <= maxRange; z++)
+                for (int z = -range; z <= range; z++)
                 {
                     GridPosition testPos = new GridPosition(unitGridPos.x + x, unitGridPos.z + z);
 
@@ -247,7 +294,7 @@ namespace PathfinderTactics.Actions
 
                     // Chebyshev distance
                     int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance <= maxRange)
+                    if (distance <= range)
                     {
                         rangePositions.Add(testPos);
                     }
@@ -258,12 +305,13 @@ namespace PathfinderTactics.Actions
 
         public override List<GridPosition> GetValidActionGridPositions()
         {
+            int range = GetMaxRange();
             List<GridPosition> validGridPositionList = new List<GridPosition>();
             GridPosition unitGridPosition = unit.CurrentGridPosition;
 
-            for (int x = -maxRange; x <= maxRange; x++)
+            for (int x = -range; x <= range; x++)
             {
-                for (int z = -maxRange; z <= maxRange; z++)
+                for (int z = -range; z <= range; z++)
                 {
                     GridPosition testGridPosition = new GridPosition(
                         unitGridPosition.x + x,
@@ -276,7 +324,7 @@ namespace PathfinderTactics.Actions
                         continue;
 
                     int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance > maxRange)
+                    if (distance > range)
                         continue;
 
                     Unit targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(testGridPosition);

@@ -506,17 +506,68 @@ namespace PathfinderTactics.Core
 
         private void SetSelectedUnit(Unit unit)
         {
+            if (selectedUnit != null)
+            {
+                var oldEquipment = selectedUnit.GetComponent<UnitEquipment>();
+                if (oldEquipment != null)
+                {
+                    oldEquipment.OnEquipmentChanged -= HandleEquipmentChanged;
+                }
+            }
+
             selectedUnit = unit;
-            selectedUnit.StartTurn();
+
+            if (selectedUnit != null)
+            {
+                selectedUnit.StartTurn();
+                RefreshMovePositions();
+
+                var newEquipment = selectedUnit.GetComponent<UnitEquipment>();
+                if (newEquipment != null)
+                {
+                    newEquipment.OnEquipmentChanged += HandleEquipmentChanged;
+                }
+
+                ServiceLocator.Get<CameraController>().SetFollowTarget(unit.transform);
+            }
+
+            OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void HandleEquipmentChanged()
+        {
+            if (selectedUnit == null)
+                return;
+
+            Debug.Log($"[UAS] Equipment changed on {selectedUnit.name}. Refreshing move range.");
+            RefreshMovePositions();
+
+            // Trigger visual update (MoveRangeVisualizer listens to this)
+            OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void RefreshMovePositions()
+        {
+            if (selectedUnit == null)
+                return;
+
             validMovePositions = Pathfinding.GetReachableGridPositions(
                 selectedUnit.CurrentGridPosition,
                 selectedUnit.GetMaxMoveCost()
             );
-            ServiceLocator.Get<CameraController>().SetFollowTarget(unit.transform);
         }
 
         public void ClearSelectedUnit()
         {
+            if (selectedUnit != null)
+            {
+                var equipment = selectedUnit.GetComponent<UnitEquipment>();
+                if (equipment != null)
+                {
+                    equipment.OnEquipmentChanged -= HandleEquipmentChanged;
+                }
+            }
+
             selectedUnit = null;
             ServiceLocator.Get<CameraController>().ClearFollowTarget();
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);

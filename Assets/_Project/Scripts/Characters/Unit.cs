@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using PathfinderTactics.Actions;
 using PathfinderTactics.Core;
+using PathfinderTactics.Data.PF2e;
 using PathfinderTactics.Grid;
 using UnityEngine;
 
@@ -22,6 +23,7 @@ namespace PathfinderTactics.Characters
     [RequireComponent(typeof(UnitMovement))]
     [RequireComponent(typeof(UnitStealth))]
     [RequireComponent(typeof(UnitConditions))]
+    [RequireComponent(typeof(UnitEquipment))]
     public class Unit : MonoBehaviour, ITargetable
     {
         [Header("Team Configuration")]
@@ -50,6 +52,7 @@ namespace PathfinderTactics.Characters
         private UnitGridObject gridObject;
         private UnitMovement movement;
         private UnitConditions conditions;
+        private UnitEquipment equipment;
 
         private bool selected = false;
 
@@ -72,6 +75,10 @@ namespace PathfinderTactics.Characters
             conditions = GetComponent<UnitConditions>();
             if (conditions == null)
                 conditions = gameObject.AddComponent<UnitConditions>();
+
+            equipment = GetComponent<UnitEquipment>();
+            if (equipment == null)
+                equipment = gameObject.AddComponent<UnitEquipment>();
 
             var stealth = GetComponent<UnitStealth>();
             if (stealth == null)
@@ -155,7 +162,25 @@ namespace PathfinderTactics.Characters
         {
             if (stats == null)
                 return 0;
-            return stats.speedInFeet / 5;
+
+            int speed = stats.baseSpeedInFeet;
+
+            // Apply armor penalty if unit doesn't meet strength requirement
+            if (equipment != null)
+            {
+                var armor = equipment.GetArmor();
+                if (armor != null)
+                {
+                    // PF2e: If Strength < Strength Req, apply Speed Penalty
+                    if (stats.strength < armor.strengthRequirement)
+                    {
+                        speed += armor.speedPenaltyFeet; // Penalty is negative, e.g., -5 or -10
+                    }
+                }
+            }
+
+            // Minimum Speed in PF2e is usually 5ft (1 cell) if penalties are too high.
+            return Mathf.Max(5, speed) / 5;
         }
 
         public int GetMaxMoveCost()
@@ -163,11 +188,97 @@ namespace PathfinderTactics.Characters
             return GetMoveDistanceInCells() * Pathfinding.MOVE_STRAIGHT_COST;
         }
 
+        public int GetAbilityModifier(AbilityScore stat)
+        {
+            if (stats == null)
+                return 0;
+            switch (stat)
+            {
+                case AbilityScore.STR:
+                    return PF2E_Core.GetAbilityModifier(stats.strength);
+                case AbilityScore.DEX:
+                    return PF2E_Core.GetAbilityModifier(stats.dexterity);
+                case AbilityScore.CON:
+                    return PF2E_Core.GetAbilityModifier(stats.constitution);
+                case AbilityScore.INT:
+                    return PF2E_Core.GetAbilityModifier(stats.intelligence);
+                case AbilityScore.WIS:
+                    return PF2E_Core.GetAbilityModifier(stats.wisdom);
+                case AbilityScore.CHA:
+                    return PF2E_Core.GetAbilityModifier(stats.charisma);
+                default:
+                    return 0;
+            }
+        }
+
+        public int GetSaveModifier(SavingThrowType type)
+        {
+            if (stats == null)
+                return 0;
+
+            AbilityScore ability;
+            switch (type)
+            {
+                case SavingThrowType.Fortitude:
+                    ability = AbilityScore.CON;
+                    break;
+                case SavingThrowType.Reflex:
+                    ability = AbilityScore.DEX;
+                    break;
+                case SavingThrowType.Will:
+                    ability = AbilityScore.WIS;
+                    break;
+                default:
+                    return 0;
+            }
+
+            // TODO: Simplified: Assuming Trained (+2) for all saves as a baseline for now
+            return PF2E_Core.CalculateModifier(
+                stats.level,
+                Proficiency.Trained,
+                GetAbilityModifier(ability)
+            );
+        }
+
+        public int GetSpellDC(
+            AbilityScore castingStat = AbilityScore.INT,
+            Proficiency prof = Proficiency.Trained
+        )
+        {
+            return PF2E_Core.CalculateSpellDC(
+                this,
+                stats.level,
+                prof,
+                GetAbilityModifier(castingStat)
+            );
+        }
+
         public UnitStatsSO GetStats() => stats;
 
         public int GetArmorClass(AttackType incomingAttackType = AttackType.Melee)
         {
-            int baseAC = stats == null ? 10 : stats.armorClass;
+            if (stats == null)
+                return 10;
+
+            int dexMod = GetAbilityModifier(AbilityScore.DEX);
+            int itemBonus = 0;
+
+            // NOTE: Proficiency calculation should pull from class later (stubbed as Trained)
+            Proficiency armorProf = Proficiency.Trained;
+
+            if (equipment != null)
+            {
+                var armor = equipment.GetArmor();
+                if (armor != null)
+                {
+                    itemBonus = armor.acBonus;
+                    // Dex Cap check
+                    dexMod = Mathf.Min(dexMod, armor.dexCap);
+                }
+            }
+
+            int baseAC =
+                10 + PF2E_Core.CalculateModifier(stats.level, armorProf, dexMod) + itemBonus;
 
             if (conditions == null)
                 return baseAC;
