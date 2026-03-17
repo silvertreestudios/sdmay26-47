@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using PathfinderTactics.Characters;
@@ -20,6 +21,9 @@ namespace PathfinderTactics.Core
         private List<Unit> turnOrderList;
         private int currentTurnIndex;
         private bool isCombatActive;
+        private int roundCount = 1;
+
+        public int RoundCount => roundCount;
 
         public Unit CurrentUnit =>
             (isCombatActive && turnOrderList.Count > 0) ? turnOrderList[currentTurnIndex] : null;
@@ -34,8 +38,11 @@ namespace PathfinderTactics.Core
             ServiceLocator.Unregister<TurnManager>();
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
+            // Wait one frame to ensure all UnitGridObject.Start() methods
+            // have registered their units on the grid before combat starts.
+            yield return null;
             StartCombat();
         }
 
@@ -98,6 +105,7 @@ namespace PathfinderTactics.Core
             if (currentTurnIndex >= turnOrderList.Count)
             {
                 currentTurnIndex = 0;
+                roundCount++;
                 // Round Ended
             }
 
@@ -134,6 +142,16 @@ namespace PathfinderTactics.Core
 
             // Healthy unit (resetting AP, checking Stunned)
             unit.StartTurn();
+
+            // PF2e Aura / Emanation Refresh
+            UnitAuraEmitter[] allEmitters = FindObjectsByType<UnitAuraEmitter>(
+                FindObjectsSortMode.None
+            );
+            foreach (var emitter in allEmitters)
+            {
+                emitter.ClearOldHistory(roundCount);
+                emitter.UpdateAuras(AuraTriggerType.OnStartTurn);
+            }
 
             ServiceLocator.Get<UnitActionSystem>().ForceSelectUnit(unit);
             OnTurnChanged?.Invoke(this, EventArgs.Empty);

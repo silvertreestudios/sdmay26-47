@@ -164,5 +164,37 @@ namespace PathfinderTactics.Grid
 
             return enemyList;
         }
+
+        public List<Unit> GetUnitsInRadius(GridPosition center, int radiusTiles)
+        {
+            List<Unit> unitsInRange = new List<Unit>();
+
+            float radiusF = radiusTiles + 0.5f;
+            float radiusSq = radiusF * radiusF;
+
+            for (int x = -radiusTiles; x <= radiusTiles; x++)
+            {
+                for (int z = -radiusTiles; z <= radiusTiles; z++)
+                {
+                    GridPosition testPos = new GridPosition(center.x + x, center.z + z);
+
+                    if (!IsValidGridPosition(testPos))
+                        continue;
+
+                    // Circular (Euclidean) distance check
+                    float distSq = (float)(x * x + z * z);
+                    if (distSq <= radiusSq)
+                    {
+                        Unit unit = GetUnitAt(testPos);
+                        if (unit != null)
+                        {
+                            unitsInRange.Add(unit);
+                        }
+                    }
+                }
+            }
+
+            return unitsInRange;
+        }
     }
 }

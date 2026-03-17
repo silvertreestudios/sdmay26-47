@@ -14,7 +14,7 @@ namespace PathfinderTactics.Characters
         /// <summary>
         /// Calculates the Armor Class (AC) of this entity against a specific attack type.
         /// </summary>
-        int GetArmorClass(AttackType incomingAttackType = AttackType.Melee);
+        int GetArmorClass(Unit attacker = null, AttackType incomingAttackType = AttackType.Melee);
 
         /// <summary>
         /// Returns true if this entity is an enemy to the specified unit.

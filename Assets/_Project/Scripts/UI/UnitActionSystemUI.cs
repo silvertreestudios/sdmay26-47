@@ -33,8 +33,6 @@ namespace PathfinderTactics.UI
             // Subscribe to the State Change Event
             ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged +=
                 UnitActionSystem_OnStateChanged;
-            ServiceLocator.Get<UnitActionSystem>().OnActionStarted +=
-                UnitActionSystem_OnDataChanged;
             ServiceLocator.Get<UnitActionSystem>().OnActionCompleted +=
                 UnitActionSystem_OnDataChanged;
 

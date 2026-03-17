@@ -15,9 +15,6 @@ namespace PathfinderTactics.Characters
         private List<PersistentDamageInstance> persistentDamages =
             new List<PersistentDamageInstance>();
 
-        // Delegate to let the Grid/Combat system inject flanking logic without coupling
-        public Func<bool> IsFlanked;
-
         private readonly HashSet<ConditionType> binaryConditions = new HashSet<ConditionType>
         {
             ConditionType.OffGuard,
@@ -163,13 +160,40 @@ namespace PathfinderTactics.Characters
                 || activeConditions.ContainsKey(ConditionType.Restrained)
                 || activeConditions.ContainsKey(ConditionType.Unconscious)
                 || activeConditions.ContainsKey(ConditionType.Blinded)
-                || activeConditions.ContainsKey(ConditionType.Invisible)
-                || (IsFlanked?.Invoke() ?? false);
+                || activeConditions.ContainsKey(ConditionType.Invisible);
         }
 
         public bool CanMove()
         {
             return !HasCondition(ConditionType.Immobilized);
+        }
+
+        /// <summary>
+        /// General capability check for whether the unit can take actions at all.
+        /// Returns false if Dead, Unconscious, Paralyzed, or Petrified.
+        /// </summary>
+        public bool CanAct
+        {
+            get
+            {
+                return !IsDead()
+                    && !HasCondition(ConditionType.Unconscious)
+                    && !HasCondition(ConditionType.Stunned); // Stunned represents losing actions
+                // TODO: Add Paralyzed/Petrified when implemented
+            }
+        }
+
+        /// <summary>
+        /// Capability check for whether the unit can contribute to flanking/threat.
+        /// Returns false if unable to act or under specific melee-restricting effects.
+        /// </summary>
+        public bool CanMakeMeleeAttacks
+        {
+            get
+            {
+                // In PF2e, you can't flank if you can't act or are under effects preventing attacks.
+                return CanAct && !HasCondition(ConditionType.Restrained);
+            }
         }
 
         // Dying, wounded, and unconscious.

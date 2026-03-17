@@ -27,6 +27,13 @@ namespace PathfinderTactics.Characters
         [Tooltip("Perception modifier for Initiative rolls.")]
         public int perception = 0;
 
+        [Header("PF2e Special Abilities")]
+        [Tooltip("Immune to the Off-Guard penalty from flanking.")]
+        public bool hasAllAroundVision = false;
+
+        [Tooltip("Immune to flanking from creatures of equal or lower level.")]
+        public bool hasDenyAdvantage = false;
+
         [Header("Ability Scores")]
         [Tooltip("Strength: physical power (e.g. 18).")]
         public int strength = 18;

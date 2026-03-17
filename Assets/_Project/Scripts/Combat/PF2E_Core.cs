@@ -1,4 +1,5 @@
 using PathfinderTactics.Characters;
+using PathfinderTactics.Grid;
 using UnityEngine;
 
 namespace PathfinderTactics.Core
@@ -38,6 +39,19 @@ namespace PathfinderTactics.Core
         CriticalSuccess = 3,
     }
 
+    /// <summary>
+    /// Data structure for reporting a detailed breakdown of AC modifiers.
+    /// </summary>
+    public struct ArmorClassBreakdown
+    {
+        public int totalAC;
+        public int baseAC; // 10 + prof + dex + item
+        public int statusPenalty;
+        public string statusPenaltySources; // e.g. "Frightened 2"
+        public int circumstanceMod;
+        public string circumstanceModSources; // e.g. "Off-Guard (-2), Prone (+2 vs Ranged)"
+    }
+
     public static class PF2E_Core
     {
         /// <summary>
@@ -47,6 +61,16 @@ namespace PathfinderTactics.Core
         public static int GetAbilityModifier(int score)
         {
             return Mathf.FloorToInt((score - 10) / 2f);
+        }
+
+        /// <summary>
+        /// Calculates the grid distance between two positions using Chebyshev math (all 8 directions = 1 unit).
+        /// PF2e uses 5-10-5 for diagonals in movement, but reach uses simple "adjacency" logic
+        /// which maps to Chebyshev for 5-foot squares.
+        /// </summary>
+        public static int GetGridDistance(GridPosition a, GridPosition b)
+        {
+            return Mathf.Max(Mathf.Abs(a.x - b.x), Mathf.Abs(a.z - b.z));
         }
 
         /// <summary>
@@ -90,15 +114,20 @@ namespace PathfinderTactics.Core
         /// <summary>
         /// Calculates the worst active Status Penalty for a specific ability score.
         /// </summary>
-        public static int GetStatusPenalty(UnitConditions conditions, AbilityScore ability)
+        public static int GetStatusPenalty(
+            UnitConditions conditions,
+            AbilityScore ability,
+            out string sourceCondition
+        )
         {
+            sourceCondition = "";
             if (conditions == null)
                 return 0;
 
             int frightened = conditions.GetConditionValue(ConditionType.Frightened);
             int sickened = conditions.GetConditionValue(ConditionType.Sickened);
             int specific = 0;
-            ConditionType specificType = ConditionType.Frightened; // Default dummy
+            ConditionType specificType = ConditionType.Frightened;
 
             switch (ability)
             {
@@ -113,9 +142,7 @@ namespace PathfinderTactics.Core
                 case AbilityScore.CON:
                     break;
                 case AbilityScore.INT:
-
                 case AbilityScore.WIS:
-
                 case AbilityScore.CHA:
                     specific = conditions.GetConditionValue(ConditionType.Stupefied);
                     specificType = ConditionType.Stupefied;
@@ -130,12 +157,16 @@ namespace PathfinderTactics.Core
                     worstPenalty == frightened
                         ? "Frightened"
                         : (worstPenalty == sickened ? "Sickened" : specificType.ToString());
-                Debug.Log(
-                    $"<color=orange>[PF2E CORE]</color> Applying -{worstPenalty} Status Penalty from {culprit}."
-                );
+                sourceCondition = $"{culprit} {worstPenalty}";
             }
 
             return -worstPenalty;
+        }
+
+        // Keep old overload for backward compatibility if needed, though internal now
+        public static int GetStatusPenalty(UnitConditions conditions, AbilityScore ability)
+        {
+            return GetStatusPenalty(conditions, ability, out _);
         }
 
         /// <summary>

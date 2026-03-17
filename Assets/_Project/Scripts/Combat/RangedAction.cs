@@ -197,7 +197,26 @@ namespace PathfinderTactics.Actions
                 }
             }
 
-            int baseAC = targetUnit.GetArmorClass(AttackType.Ranged);
+            // Defense breakdown
+            ArmorClassBreakdown acBreakdown = targetUnit.GetArmorClassBreakdown(
+                unit,
+                AttackType.Ranged
+            );
+            int baseAC = acBreakdown.totalAC;
+
+            string defDebug =
+                $"<color=yellow>[DEFENSE MATH]</color> {targetUnit.name} | Base AC: {acBreakdown.baseAC}";
+
+            if (acBreakdown.statusPenalty != 0)
+                defDebug +=
+                    $" | <color=red>Status: {acBreakdown.statusPenaltySources} ({acBreakdown.statusPenalty})</color>";
+
+            if (acBreakdown.circumstanceMod != 0)
+                defDebug +=
+                    $" | <color=orange>Circumstance: {acBreakdown.circumstanceModSources}</color>";
+
+            defDebug += $" ==> <b>Calculated AC: {baseAC}</b>";
+            Debug.Log(defDebug);
 
             int coverBonus = LineOfSightUtility.GetCoverBonus(
                 unit.CurrentGridPosition,

@@ -233,17 +233,24 @@ namespace PathfinderTactics.Actions
             atkDebug += $" ==> <b>Final Attack Bonus: +{attackBonus}</b>";
             Debug.Log(atkDebug);
 
-            // Defense modifier
-            int baseAC = targetUnit.GetArmorClass(AttackType.Melee);
-
-            int rawTargetAC = 15;
-            int appliedACMod = baseAC - rawTargetAC;
+            // Defense breakdown
+            ArmorClassBreakdown acBreakdown = targetUnit.GetArmorClassBreakdown(
+                unit,
+                AttackType.Melee
+            );
+            int baseAC = acBreakdown.totalAC;
 
             string defDebug =
-                $"<color=yellow>[DEFENSE MATH]</color> {targetUnit.name} | Base AC: {rawTargetAC}";
-            if (appliedACMod != 0)
+                $"<color=yellow>[DEFENSE MATH]</color> {targetUnit.name} | Base AC: {acBreakdown.baseAC}";
+
+            if (acBreakdown.statusPenalty != 0)
                 defDebug +=
-                    $" | <color=red>Condition AC Modifiers: {(appliedACMod > 0 ? "+" : "")}{appliedACMod}</color>";
+                    $" | <color=red>Status: {acBreakdown.statusPenaltySources} ({acBreakdown.statusPenalty})</color>";
+
+            if (acBreakdown.circumstanceMod != 0)
+                defDebug +=
+                    $" | <color=orange>Circumstance: {acBreakdown.circumstanceModSources}</color>";
+
             defDebug += $" ==> <b>Calculated AC: {baseAC}</b>";
             Debug.Log(defDebug);
 

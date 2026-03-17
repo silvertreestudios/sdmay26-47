@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PathfinderTactics.Actions;
+using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using PathfinderTactics.Data.PF2e;
 using PathfinderTactics.Grid;
@@ -112,6 +113,15 @@ namespace PathfinderTactics.Characters
         {
             selected = (ServiceLocator.Get<UnitActionSystem>().SelectedUnit == this);
         }
+
+        // PF2e Rule Properties
+        public int Level => (stats != null) ? stats.level : 1;
+        public bool HasAllAroundVision => (stats != null) && stats.hasAllAroundVision;
+        public bool HasDenyAdvantage => (stats != null) && stats.hasDenyAdvantage;
+
+        // Capability Flags
+        public bool CanAct => (conditions != null) && conditions.CanAct;
+        public bool CanMakeMeleeAttacks => (conditions != null) && conditions.CanMakeMeleeAttacks;
 
         // Facade Methods to ActionEconomy
         public int AttacksThisTurn => actionEconomy.AttacksThisTurn;
@@ -255,10 +265,26 @@ namespace PathfinderTactics.Characters
 
         public UnitStatsSO GetStats() => stats;
 
-        public int GetArmorClass(AttackType incomingAttackType = AttackType.Melee)
+        public int GetArmorClass(
+            Unit attacker = null,
+            AttackType incomingAttackType = AttackType.Melee
+        )
         {
+            return GetArmorClassBreakdown(attacker, incomingAttackType).totalAC;
+        }
+
+        public ArmorClassBreakdown GetArmorClassBreakdown(
+            Unit attacker,
+            AttackType incomingAttackType
+        )
+        {
+            ArmorClassBreakdown breakdown = new ArmorClassBreakdown();
             if (stats == null)
-                return 10;
+            {
+                breakdown.totalAC = 10;
+                breakdown.baseAC = 10;
+                return breakdown;
+            }
 
             int dexMod = GetAbilityModifier(AbilityScore.DEX);
             int itemBonus = 0;
@@ -277,18 +303,31 @@ namespace PathfinderTactics.Characters
                 }
             }
 
-            int baseAC =
+            breakdown.baseAC =
                 10 + PF2E_Core.CalculateModifier(stats.level, armorProf, dexMod) + itemBonus;
 
             if (conditions == null)
-                return baseAC;
+            {
+                breakdown.totalAC = breakdown.baseAC;
+                return breakdown;
+            }
 
-            int statusPenalty = PF2E_Core.GetStatusPenalty(conditions, AbilityScore.DEX);
+            string statusPenaltySource;
+            breakdown.statusPenalty = PF2E_Core.GetStatusPenalty(
+                conditions,
+                AbilityScore.DEX,
+                out statusPenaltySource
+            );
+            breakdown.statusPenaltySources = statusPenaltySource;
+
+            List<string> circumList = new List<string>();
             int circumstanceMod = 0;
 
-            if (conditions.IsOffGuard())
+            // Resolve Off-Guard status (Conditions + Flanking) via Combat Rules
+            if (CombatRules.IsOffGuard(attacker, this, incomingAttackType))
             {
                 circumstanceMod -= 2;
+                circumList.Add("Off-Guard (-2)");
             }
 
             if (
@@ -297,9 +336,15 @@ namespace PathfinderTactics.Characters
             )
             {
                 circumstanceMod += 2;
+                circumList.Add("Prone (+2 vs Ranged)");
             }
 
-            return baseAC + statusPenalty + circumstanceMod;
+            breakdown.circumstanceMod = circumstanceMod;
+            breakdown.circumstanceModSources = string.Join(", ", circumList);
+            breakdown.totalAC =
+                breakdown.baseAC + breakdown.statusPenalty + breakdown.circumstanceMod;
+
+            return breakdown;
         }
 
         public int getTotalHP()

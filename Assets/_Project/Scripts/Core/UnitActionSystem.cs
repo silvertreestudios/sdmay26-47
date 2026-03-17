@@ -16,7 +16,6 @@ namespace PathfinderTactics.Core
     public class UnitActionSystem : MonoBehaviour
     {
         public event EventHandler OnSelectedUnitChanged;
-        public event EventHandler OnActionStarted;
         public event EventHandler OnActionCompleted;
 
         [SerializeField]
@@ -466,6 +465,15 @@ namespace PathfinderTactics.Core
                                 selectedUnit.SnapToGrid(
                                     ServiceLocator.Get<GridSystem>().GetWorldPosition(currentPos)
                                 );
+
+                                // Trigger Aura Refresh (Enter/Exit/Stay)
+                                UnitAuraEmitter[] allEmitters = FindObjectsByType<UnitAuraEmitter>(
+                                    FindObjectsSortMode.None
+                                );
+                                foreach (var emitter in allEmitters)
+                                {
+                                    emitter.UpdateAuras(AuraTriggerType.OnEnter);
+                                }
                             }
 
                             OnActionCompleted?.Invoke(this, EventArgs.Empty);

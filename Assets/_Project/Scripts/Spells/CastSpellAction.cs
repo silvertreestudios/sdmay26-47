@@ -32,7 +32,6 @@ namespace PathfinderTactics.Spells
         private int castLevel = 1;
 
         private float stateTimer;
-        private bool isResolving;
 
         // BaseAction Interface
 
@@ -212,7 +211,6 @@ namespace PathfinderTactics.Spells
             }
 
             this.onActionComplete = onActionComplete;
-            isResolving = true;
 
             // Build context
             SpellCastContext context = new SpellCastContext
@@ -285,7 +283,6 @@ namespace PathfinderTactics.Spells
 
         private void FinishCasting()
         {
-            isResolving = false;
             onActionComplete?.Invoke();
         }
 
