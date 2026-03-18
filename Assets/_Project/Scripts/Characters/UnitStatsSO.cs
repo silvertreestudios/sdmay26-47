@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using PathfinderTactics.Core;
 using UnityEngine;
 
@@ -17,6 +18,21 @@ public class DefenseValues
 
 namespace PathfinderTactics.Characters
 {
+    [System.Serializable]
+    public class RWIModifier
+    {
+        public DamageType Type;
+        public int Value;
+    }
+
+    [System.Serializable]
+    public class RWIProfile
+    {
+        public List<DamageType> Immunities = new List<DamageType>();
+        public List<RWIModifier> Weaknesses = new List<RWIModifier>();
+        public List<RWIModifier> Resistances = new List<RWIModifier>();
+    }
+
     [CreateAssetMenu(fileName = "NewUnitStats", menuName = "PathfinderTactics/Unit Stats")]
     public class UnitStatsSO : ScriptableObject
     {
@@ -143,8 +159,6 @@ namespace PathfinderTactics.Characters
             }
         }
 
-        // Legacy AC logic removed in favor of UnitEquipment system
-
         [System.Serializable]
         private class AncestryJson
         {
@@ -169,15 +183,13 @@ namespace PathfinderTactics.Characters
             public int hp;
         }
 
-        // Removed ArmorJson classes
+        [Header("Defenses")]
+        public RWIProfile rwiProfile = new RWIProfile();
 
         private void OnValidate()
         {
             if (level < 1)
                 level = 1;
         }
-
-        // TODO: Add many more stats here later (Dying Level, Wounded Level,
-        // Resistances, Weaknesses, Immunities, etc.)
     }
 }

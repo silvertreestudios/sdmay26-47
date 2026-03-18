@@ -17,13 +17,20 @@ namespace PathfinderTactics.Characters
         private void Start()
         {
             // Register self on grid at start
-            CurrentGridPosition = ServiceLocator
-                .Get<GridSystem>()
-                .GetGridPosition(transform.position);
-            ServiceLocator.Get<GridSystem>().AddUnitAt(unit, CurrentGridPosition);
+            var grid = ServiceLocator.Get<GridSystem>();
+            if (grid == null)
+                return;
+
+            if (unit == null)
+                unit = GetComponent<Unit>();
+            if (unit == null)
+                return;
+
+            CurrentGridPosition = grid.GetGridPosition(transform.position);
+            grid.AddUnitAt(unit, CurrentGridPosition);
 
             // Snap to ensure alignment
-            unit.SnapToGrid(ServiceLocator.Get<GridSystem>().GetWorldPosition(CurrentGridPosition));
+            unit.SnapToGrid(grid.GetWorldPosition(CurrentGridPosition));
         }
 
         public void SetInitialPosition(GridPosition gridPosition)

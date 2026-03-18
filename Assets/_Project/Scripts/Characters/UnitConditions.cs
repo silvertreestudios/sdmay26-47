@@ -327,7 +327,7 @@ namespace PathfinderTactics.Characters
                 Debug.Log(
                     $"<color=orange>[Persistent]</color> {unit.name} takes {dmg} {pd.Type} damage!"
                 );
-                unit.GetComponent<IDamageable>()?.ApplyDamage(pd.Source, dmg, false);
+                unit.GetComponent<IDamageable>()?.ApplyDamage(pd.Source, dmg, pd.Type, false);
 
                 // Flat Check for recovery (DC 15 per PF2e Rules)
                 int flatCheck = UnityEngine.Random.Range(1, 21);

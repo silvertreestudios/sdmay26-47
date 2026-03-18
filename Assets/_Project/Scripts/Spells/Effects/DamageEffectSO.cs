@@ -58,7 +58,7 @@ namespace PathfinderTactics.Spells.Effects
                         result.Degree == Degree.CriticalSuccess && IsSpellAttack
                         || result.Degree == Degree.CriticalFailure && IsBasicSave;
 
-                    health.ApplyDamage(context.Caster, finalDamage, isCrit);
+                    health.ApplyDamage(context.Caster, finalDamage, spell.ElementType, isCrit);
 
                     Debug.Log(
                         $"<color=red>[SPELL DMG]</color> {target.name} takes {finalDamage} "

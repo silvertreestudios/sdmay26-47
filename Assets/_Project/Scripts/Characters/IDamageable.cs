@@ -17,10 +17,8 @@ namespace PathfinderTactics.Characters
         /// <summary>
         /// Applies damage to this entity.
         /// </summary>
-        /// <param name="source">The entity that dealt the damage (can be null for environmental sources).</param>
-        /// <param name="amount">The raw damage amount before mitigation.</param>
-        /// <param name="isCriticalHit">True if the damage resulted from a critical hit.</param>
-        void ApplyDamage(Unit source, int amount, bool isCriticalHit = false);
+        /// <param name="type">The type of damage being dealt (Piercing, Slashing, Fire, etc.).</param>
+        void ApplyDamage(Unit source, int amount, DamageType type, bool isCriticalHit = false);
 
         /// <summary>
         /// Applies healing to this entity.

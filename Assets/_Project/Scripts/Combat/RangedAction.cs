@@ -268,7 +268,12 @@ namespace PathfinderTactics.Actions
                 var targetHealth = targetUnit.GetComponent<IDamageable>();
                 if (targetHealth != null)
                 {
-                    targetHealth.ApplyDamage(unit, damage, result == Degree.CriticalSuccess);
+                    targetHealth.ApplyDamage(
+                        unit,
+                        damage,
+                        weapon.damageType,
+                        result == Degree.CriticalSuccess
+                    );
                     Debug.Log($"Shot dealt {damage} Damage to {targetUnit.name}!");
                 }
             }

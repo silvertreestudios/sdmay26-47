@@ -118,6 +118,7 @@ namespace PathfinderTactics.Characters
         public int Level => (stats != null) ? stats.level : 1;
         public bool HasAllAroundVision => (stats != null) && stats.hasAllAroundVision;
         public bool HasDenyAdvantage => (stats != null) && stats.hasDenyAdvantage;
+        public RWIProfile RWIProfile => (stats != null) ? stats.rwiProfile : null;
 
         // Capability Flags
         public bool CanAct => (conditions != null) && conditions.CanAct;
@@ -264,6 +265,8 @@ namespace PathfinderTactics.Characters
         }
 
         public UnitStatsSO GetStats() => stats;
+
+        public void SetStats(UnitStatsSO newStats) => stats = newStats;
 
         public int GetArmorClass(
             Unit attacker = null,

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PathfinderTactics.Characters;
 using UnityEngine;
 
 namespace PathfinderTactics.Items
@@ -91,23 +92,6 @@ namespace PathfinderTactics.Items
             this.count = count;
             this.sides = sides;
         }
-    }
-
-    public enum DamageType
-    {
-        Bludgeoning,
-        Piercing,
-        Slashing,
-        Fire,
-        Cold,
-        Electricity,
-        Acid,
-        Poison,
-        Sonic,
-        Force,
-        Radiant,
-        Necrotic,
-        Mental,
     }
 
     [CreateAssetMenu(menuName = "PathfinderTactics/Items/Weapon")]

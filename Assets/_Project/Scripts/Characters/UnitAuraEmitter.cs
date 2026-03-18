@@ -162,7 +162,7 @@ namespace PathfinderTactics.Characters
                             dmg += UnityEngine.Random.Range(1, aura.damage.diceSides + 1);
                         }
                         dmg += aura.damage.flatBonus;
-                        health.ApplyDamage(unit, dmg, false);
+                        health.ApplyDamage(unit, dmg, aura.damage.damageType, false);
                     }
                     break;
             }

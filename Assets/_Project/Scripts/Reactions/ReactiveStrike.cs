@@ -65,7 +65,7 @@ namespace PathfinderTactics.Reactions
                 if (targetHealth != null)
                 {
                     // TODO: Add critical hit logic later
-                    targetHealth.ApplyDamage(unit, damage, false);
+                    targetHealth.ApplyDamage(unit, damage, DamageType.Slashing, false);
                     // PF2e Rule: If the reaction kills them, they don't finish moving!
                     if (targetHealth.IsDead)
                     {

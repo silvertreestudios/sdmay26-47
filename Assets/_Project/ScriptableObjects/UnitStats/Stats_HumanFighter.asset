@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Unit
   perception: 45
+  hasAllAroundVision: 0
+  hasDenyAdvantage: 0
   strength: 10
   dexterity: 5
   constitution: 0
@@ -24,3 +26,11 @@ MonoBehaviour:
   ancestryResourcePath: JSON/ancestries/human
   classResourcePath: JSON/classes/fighter
   level: 1
+  rwiProfile:
+    Immunities: 04000000
+    Weaknesses:
+    - Type: 5
+      Value: 1
+    Resistances:
+    - Type: 7
+      Value: 0

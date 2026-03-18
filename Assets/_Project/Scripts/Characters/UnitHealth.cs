@@ -90,16 +90,31 @@ namespace PathfinderTactics.Characters
         }
 
         // Damage and Dying Logic
-        public void ApplyDamage(Unit source, int amount, bool isCriticalHit = false)
+        public void ApplyDamage(
+            Unit source,
+            int amount,
+            DamageType type,
+            bool isCriticalHit = false
+        )
         {
             if (IsDead)
                 return;
 
+            // Resolve RWI (Immunity -> Weakness -> Resistance) BEFORE Reactions
+            int rwiResolvedAmount = RWICalculator.ResolveDamage(amount, type, thisUnit);
+
+            if (rwiResolvedAmount <= 0 && amount > 0)
+            {
+                // Damage was fully blocked by Immunity or Resistance
+                return;
+            }
+
             BeforeDamageEvent damageEvent = new BeforeDamageEvent(
                 source,
                 thisUnit,
-                amount,
-                isCriticalHit
+                rwiResolvedAmount,
+                isCriticalHit,
+                type
             );
 
             ServiceLocator
@@ -118,13 +133,15 @@ namespace PathfinderTactics.Characters
                             return;
                         }
 
+                        int finalAmount = finalDamageEvent.DamageAmount;
+
                         // Apply the damage
-                        currentHealth -= finalDamageEvent.DamageAmount;
+                        currentHealth -= finalAmount;
                         currentHealth = Mathf.Max(0, currentHealth);
                         OnHealthChanged?.Invoke(this, EventArgs.Empty);
 
                         Debug.Log(
-                            $"<color=red>[HEALTH]</color> {thisUnit.name} took {finalDamageEvent.DamageAmount} final damage. HP: {currentHealth}/{currentMaxHealth}"
+                            $"<color=red>[HEALTH]</color> {thisUnit.name} took {finalAmount} final damage. HP: {currentHealth}/{currentMaxHealth}"
                         );
 
                         // Dying Logic
