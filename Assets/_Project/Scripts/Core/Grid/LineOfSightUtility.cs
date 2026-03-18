@@ -39,12 +39,12 @@ namespace PathfinderTactics.Core
             Debug.DrawLine(originWorld, targetWorld, Color.magenta, 5f);
 
             // Print out exactly what the raycast hit first
-            if (hits.Length > 0)
-            {
-                Debug.Log(
-                    $"Raycast hit: {hits[0].collider.gameObject.name} on Layer: {LayerMask.LayerToName(hits[0].collider.gameObject.layer)}"
-                );
-            }
+            // if (hits.Length > 0)
+            // {
+            //     Debug.Log(
+            //         $"Raycast hit: {hits[0].collider.gameObject.name} on Layer: {LayerMask.LayerToName(hits[0].collider.gameObject.layer)}"
+            //     );
+            // }
 
             Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
 

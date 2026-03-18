@@ -17,6 +17,9 @@ namespace PathfinderTactics.Characters
         private Color highlightColor = new Color(1, 1, 1, 0.4f);
 
         [SerializeField]
+        private Color flankedColor = new Color(0.8f, 0.1f, 0.1f, 0.6f);
+
+        [SerializeField]
         private float yOffset = 0.01f;
 
         private Unit unit;
@@ -39,6 +42,7 @@ namespace PathfinderTactics.Characters
         private void Update()
         {
             UpdateHighlightPosition();
+            UpdateVisualState();
         }
 
         private void InitializeHighlight()
@@ -79,6 +83,24 @@ namespace PathfinderTactics.Characters
             {
                 lastPosition = currentPos;
                 UpdatePosition();
+            }
+        }
+
+        private void UpdateVisualState()
+        {
+            if (auraTile == null)
+                return;
+
+            // Check if this unit is currently being flanked
+            bool isFlanked = GridMathHelper.IsAnyFlankingVisual(unit);
+
+            if (isFlanked)
+            {
+                auraTile.SetColor(flankedColor);
+            }
+            else
+            {
+                auraTile.SetColor(highlightColor);
             }
         }
 

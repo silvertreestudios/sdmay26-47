@@ -12,12 +12,30 @@ namespace PathfinderTactics.Core
     public static class GridMathHelper
     {
         /// <summary>
+        /// Returns the grid position based on the unit's current world transform.
+        /// Useful for real-time visualization and previews.
+        /// </summary>
+        public static GridPosition GetVisualGridPosition(Unit unit)
+        {
+            return ServiceLocator.Get<GridSystem>().GetGridPosition(unit.transform.position);
+        }
+
+        /// <summary>
         /// A creature threatens a square if it can make a melee Strike into that square.
         /// </summary>
-        public static bool IsThreatening(Unit attacker, Unit target)
+        public static bool IsThreatening(
+            Unit attacker,
+            Unit target,
+            GridPosition? attackerPos = null,
+            GridPosition? targetPos = null
+        )
         {
             if (attacker == null || target == null)
                 return false;
+
+            // Use provided positions or fallback to CurrentGridPosition
+            GridPosition aPos = attackerPos ?? attacker.CurrentGridPosition;
+            GridPosition tPos = targetPos ?? target.CurrentGridPosition;
 
             // Ability to act & attack: Uses capability flags from UnitConditions
             if (!attacker.CanMakeMeleeAttacks)
@@ -35,26 +53,16 @@ namespace PathfinderTactics.Core
                 return false;
 
             // Reach: Grid distance (Chebyshev) must be <= weapon reach
-            // PF2e: Reach 0 means they MUST share a square to threaten.
-            // Doesnt exist in current system tho.
             int reachFeet = weapon.reachFeet;
             int reachInTiles = reachFeet / 5;
 
-            int distance = PF2E_Core.GetGridDistance(
-                attacker.CurrentGridPosition,
-                target.CurrentGridPosition
-            );
+            int distance = PF2E_Core.GetGridDistance(aPos, tPos);
 
             if (distance > reachInTiles)
                 return false;
 
             // Line of Effect: No solid walls blocking the path
-            if (
-                LineOfSightUtility.GetCoverBonus(
-                    attacker.CurrentGridPosition,
-                    target.CurrentGridPosition
-                ) == -1
-            )
+            if (LineOfSightUtility.GetCoverBonus(aPos, tPos) == -1)
                 return false;
 
             return true;
@@ -70,12 +78,18 @@ namespace PathfinderTactics.Core
 
         /// <summary>
         /// Checks if two units are on opposite sides/corners of a target.
-        /// Used for flanking detection.
         /// </summary>
-        public static bool AreOpposite(Unit a, Unit b, Unit target)
+        public static bool AreOpposite(
+            Unit a,
+            GridPosition aPos,
+            Unit b,
+            GridPosition bPos,
+            Unit target,
+            GridPosition targetPos
+        )
         {
-            GridPosition dirA = NormalizeToGrid(a.CurrentGridPosition - target.CurrentGridPosition);
-            GridPosition dirB = NormalizeToGrid(b.CurrentGridPosition - target.CurrentGridPosition);
+            GridPosition dirA = NormalizeToGrid(aPos - targetPos);
+            GridPosition dirB = NormalizeToGrid(bPos - targetPos);
 
             // They are opposite if their normalized direction vectors are inverses
             return dirA == -dirB && dirA != new GridPosition(0, 0);
@@ -83,17 +97,23 @@ namespace PathfinderTactics.Core
 
         /// <summary>
         /// Determines if the target is flanked by the specific attacker.
-        /// PF2e rule: You flank if you and an ally threaten the target and are on opposite sides/corners.
         /// </summary>
-        public static bool IsFlanking(Unit attacker, Unit target)
+        public static bool IsFlanking(
+            Unit attacker,
+            Unit target,
+            GridPosition? attackerOverride = null,
+            GridPosition? targetOverride = null
+        )
         {
             if (attacker == null || target == null)
                 return false;
             if (attacker.GetFaction() == target.GetFaction())
                 return false;
 
+            GridPosition aPos = attackerOverride ?? attacker.CurrentGridPosition;
+            GridPosition tPos = targetOverride ?? target.CurrentGridPosition;
+
             // Reach 0 creatures cannot flank
-            // They can threaten, but cannot form opposite sides/corners reliably.
             var equipment = attacker.GetComponent<UnitEquipment>();
             if (equipment == null)
                 return false;
@@ -102,7 +122,7 @@ namespace PathfinderTactics.Core
                 return false;
 
             // Attacker must threaten the target
-            if (!IsThreatening(attacker, target))
+            if (!IsThreatening(attacker, target, aPos, tPos))
                 return false;
 
             // Find all allies of the attacker
@@ -113,11 +133,51 @@ namespace PathfinderTactics.Core
                 if (ally == attacker)
                     continue;
 
-                // Ally must also threaten the target
-                if (IsThreatening(ally, target))
+                // Ally check uses CurrentGridPosition for standard rules
+                if (IsThreatening(ally, target, null, tPos))
                 {
-                    // Check if they are on opposite sides
-                    if (AreOpposite(attacker, ally, target))
+                    if (AreOpposite(attacker, aPos, ally, ally.CurrentGridPosition, target, tPos))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Visual flanking check that uses transform-based positions for ALL units.
+        /// Used for real-time highlights.
+        /// </summary>
+        public static bool IsAnyFlankingVisual(Unit target)
+        {
+            if (target == null)
+                return false;
+
+            GridPosition targetPos = GetVisualGridPosition(target);
+            List<Unit> enemies = ServiceLocator
+                .Get<GridSystem>()
+                .GetAllEnemies(target.GetFaction());
+
+            // Look for any pair of enemies that flank the target based on visual positions
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                Unit attackerA = enemies[i];
+                GridPosition posA = GetVisualGridPosition(attackerA);
+
+                if (!IsThreatening(attackerA, target, posA, targetPos))
+                    continue;
+
+                for (int j = i + 1; j < enemies.Count; j++)
+                {
+                    Unit attackerB = enemies[j];
+                    GridPosition posB = GetVisualGridPosition(attackerB);
+
+                    if (!IsThreatening(attackerB, target, posB, targetPos))
+                        continue;
+
+                    if (AreOpposite(attackerA, posA, attackerB, posB, target, targetPos))
                     {
                         return true;
                     }
