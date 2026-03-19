@@ -6,7 +6,46 @@ namespace PathfinderTactics.Characters
 {
     public class UnitConditions : MonoBehaviour
     {
-        // Data Structures
+        private const bool STEALTH_DEBUG = true;
+
+        private class SharedState
+        {
+            public Dictionary<ConditionType, ActiveCondition> activeConditions =
+                new Dictionary<ConditionType, ActiveCondition>();
+
+            public List<PersistentDamageInstance> persistentDamages =
+                new List<PersistentDamageInstance>();
+        }
+
+        // Some PlayMode tests intentionally add a second UnitConditions component on the
+        // same GameObject. Multiple components must not desync their stored condition data.
+        // We solve this by sharing internal state between duplicates.
+        private static readonly Dictionary<int, SharedState> SharedByGameObjectId =
+            new Dictionary<int, SharedState>();
+
+        private SharedState shared;
+
+        private void EnsureSharedState()
+        {
+            // Some EditMode test harnesses may call into UnitConditions without Awake().
+            // Lazily bind to the shared backing store so duplicate components stay in sync.
+            if (shared != null && activeConditions == shared.activeConditions)
+                return;
+
+            int key = gameObject.GetInstanceID();
+            if (!SharedByGameObjectId.TryGetValue(key, out shared) || shared == null)
+            {
+                shared = new SharedState();
+                SharedByGameObjectId[key] = shared;
+            }
+
+            activeConditions = shared.activeConditions;
+            persistentDamages = shared.persistentDamages;
+        }
+
+        // Data Structures (backed by shared state).
+        // EditMode tests may use UnitConditions without running Awake(), so these must
+        // be non-null even before Awake executes.
         private Dictionary<ConditionType, ActiveCondition> activeConditions =
             new Dictionary<ConditionType, ActiveCondition>();
         public IReadOnlyDictionary<ConditionType, ActiveCondition> ActiveConditions =>
@@ -26,6 +65,7 @@ namespace PathfinderTactics.Characters
             ConditionType.Blinded,
             ConditionType.Deafened,
             ConditionType.Invisible,
+            ConditionType.Concealed,
             ConditionType.Fatigued,
         };
 
@@ -37,6 +77,45 @@ namespace PathfinderTactics.Characters
         private void Awake()
         {
             unit = GetComponent<Unit>();
+            EnsureSharedState();
+        }
+
+        private void OnDestroy()
+        {
+            // Best-effort cleanup to prevent cross-test contamination memory growth.
+            // Only remove the shared state when this is the last remaining UnitConditions
+            // component on the GameObject.
+            int key = gameObject.GetInstanceID();
+            UnitConditions[] remaining = GetComponents<UnitConditions>();
+            if (remaining == null || remaining.Length <= 1)
+                SharedByGameObjectId.Remove(key);
+        }
+
+        private void BroadcastConditionsChanged()
+        {
+            // If multiple UnitConditions components exist on the same GameObject,
+            // ensure all subscribers (including UnitStealth / UnitHealth) are notified
+            // regardless of which duplicate component a caller used.
+            UnitConditions[] all = GetComponents<UnitConditions>();
+            if (all == null)
+                return;
+
+            foreach (var c in all)
+            {
+                c?.OnConditionsChanged?.Invoke();
+            }
+        }
+
+        private void BroadcastDrainedChanged(int value)
+        {
+            UnitConditions[] all = GetComponents<UnitConditions>();
+            if (all == null)
+                return;
+
+            foreach (var c in all)
+            {
+                c?.OnDrainedChanged?.Invoke(value);
+            }
         }
 
         // Condition Logic
@@ -47,6 +126,7 @@ namespace PathfinderTactics.Characters
             ActionTag quickenedRestriction = ActionTag.None
         )
         {
+            EnsureSharedState();
             if (binaryConditions.Contains(type))
                 value = 1;
             if (value < 1)
@@ -71,12 +151,23 @@ namespace PathfinderTactics.Characters
             }
 
             if (type == ConditionType.Drained)
-                OnDrainedChanged?.Invoke(value);
-            OnConditionsChanged?.Invoke();
+                BroadcastDrainedChanged(value);
+            BroadcastConditionsChanged();
+
+            if (
+                STEALTH_DEBUG
+                && (type == ConditionType.Invisible || type == ConditionType.Concealed)
+            )
+            {
+                Debug.Log(
+                    $"<color=orange>[STEALTH]</color> {gameObject.name} ApplyCondition {type} value={value}"
+                );
+            }
         }
 
         public void ReduceCondition(ConditionType type, int amount)
         {
+            EnsureSharedState();
             if (activeConditions.TryGetValue(type, out var condition))
             {
                 if (binaryConditions.Contains(type))
@@ -94,24 +185,26 @@ namespace PathfinderTactics.Characters
                 else
                 {
                     if (type == ConditionType.Drained)
-                        OnDrainedChanged?.Invoke(condition.Value);
-                    OnConditionsChanged?.Invoke();
+                        BroadcastDrainedChanged(condition.Value);
+                    BroadcastConditionsChanged();
                 }
             }
         }
 
         public void RemoveCondition(ConditionType type)
         {
+            EnsureSharedState();
             if (activeConditions.Remove(type))
             {
                 if (type == ConditionType.Drained)
-                    OnDrainedChanged?.Invoke(0);
-                OnConditionsChanged?.Invoke();
+                    BroadcastDrainedChanged(0);
+                BroadcastConditionsChanged();
             }
         }
 
         public int GetConditionValue(ConditionType type)
         {
+            EnsureSharedState();
             return activeConditions.TryGetValue(type, out var condition) ? condition.Value : 0;
         }
 
@@ -119,6 +212,7 @@ namespace PathfinderTactics.Characters
 
         public bool HasCondition(ConditionType type)
         {
+            EnsureSharedState();
             // PF2e Condition Hierarchy
             switch (type)
             {
@@ -154,6 +248,7 @@ namespace PathfinderTactics.Characters
 
         public bool IsOffGuard()
         {
+            EnsureSharedState();
             return activeConditions.ContainsKey(ConditionType.OffGuard)
                 || activeConditions.ContainsKey(ConditionType.Prone)
                 || activeConditions.ContainsKey(ConditionType.Grabbed)
@@ -210,7 +305,9 @@ namespace PathfinderTactics.Characters
 
             if (GetConditionValue(ConditionType.Dying) >= maxDying)
             {
-                Debug.Log($"{unit.name} has died!");
+                // Unit may be null in some EditMode harnesses that don't run Awake().
+                Unit u = unit != null ? unit : GetComponent<Unit>();
+                Debug.Log($"{(u != null ? u.name : "Unit")} has died!");
             }
         }
 

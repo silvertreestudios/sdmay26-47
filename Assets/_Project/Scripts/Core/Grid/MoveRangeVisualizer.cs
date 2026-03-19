@@ -84,13 +84,22 @@ namespace PathfinderTactics.Grid
 
         private void ShowMoveRange(Unit unit)
         {
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var uas) && uas != null)
+            {
+                List<GridPosition> positions = uas.GetValidMovePositions();
+                if (positions != null)
+                {
+                    SpawnTiles(positions, moveTilePrefab);
+                    return;
+                }
+            }
+
             GridPosition startPos = unit.CurrentGridPosition;
             int maxMoveCost = unit.GetMaxMoveCost();
             List<GridPosition> reachablePositions = Pathfinding.GetReachableGridPositions(
                 startPos,
                 maxMoveCost
             );
-
             SpawnTiles(reachablePositions, moveTilePrefab);
         }
 
@@ -100,8 +109,12 @@ namespace PathfinderTactics.Grid
             if (selectedAction == null)
                 return;
 
-            List<GridPosition> rangeBounds = selectedAction.GetActionRangeGridPositions();
-            List<GridPosition> validTargets = selectedAction.GetValidActionGridPositions();
+            List<GridPosition> rangeBounds = new List<GridPosition>(
+                selectedAction.GetActionRangeGridPositions()
+            );
+            List<GridPosition> validTargets = new List<GridPosition>(
+                selectedAction.GetValidActionGridPositions()
+            );
 
             // Prevent Z-fighting by removing valid targets from the general range list
             foreach (var target in validTargets)

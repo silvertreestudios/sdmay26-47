@@ -41,19 +41,17 @@ namespace PathfinderTactics.Core
             if (!attacker.CanMakeMeleeAttacks)
                 return false;
 
-            // Armed: Must have a melee weapon or unarmed strike
+            // Armed: must have a melee weapon, unarmed fallback, or implicit unarmed strike.
+            // PF2e: every creature can always make a 5ft unarmed strike.
             var equipment = attacker.GetComponent<UnitEquipment>();
-            if (equipment == null)
+            WeaponSO weapon = equipment != null ? equipment.GetMainWeapon() : null;
+
+            // Ranged-only weapons don't threaten melee squares.
+            if (weapon != null && weapon.IsRangedWeapon())
                 return false;
 
-            WeaponSO weapon = equipment.GetMainWeapon();
-
-            // If still null or not a melee weapon, they don't threaten
-            if (weapon == null || weapon.IsRangedWeapon())
-                return false;
-
-            // Reach: Grid distance (Chebyshev) must be <= weapon reach
-            int reachFeet = weapon.reachFeet;
+            // Reach: use weapon reach when available, else default 5ft unarmed.
+            int reachFeet = (weapon != null && weapon.reachFeet > 0) ? weapon.reachFeet : 5;
             int reachInTiles = reachFeet / 5;
 
             int distance = PF2E_Core.GetGridDistance(aPos, tPos);

@@ -5,20 +5,28 @@ namespace PathfinderTactics.Grid
     public class AuraTile : MonoBehaviour
     {
         private MeshRenderer meshRenderer;
+        private Material instanceMaterial;
 
         private void Awake()
         {
             meshRenderer = GetComponentInChildren<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                instanceMaterial = new Material(meshRenderer.sharedMaterial);
+                meshRenderer.material = instanceMaterial;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (instanceMaterial != null)
+                Destroy(instanceMaterial);
         }
 
         public void SetColor(Color color)
         {
-            if (meshRenderer != null)
-            {
-                Material mat = new Material(meshRenderer.material);
-                mat.color = color;
-                meshRenderer.material = mat;
-            }
+            if (instanceMaterial != null)
+                instanceMaterial.color = color;
         }
     }
 }

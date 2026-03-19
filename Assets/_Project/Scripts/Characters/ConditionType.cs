@@ -146,6 +146,11 @@ namespace PathfinderTactics.Characters
         // via other senses or actions like Seek.
         Invisible,
 
+        // Concealed
+        // The creature can still be seen/targeted, but it's harder to pinpoint
+        // (e.g., fog, smoke). This affects targeting flat checks.
+        Concealed,
+
         // Fatigued
         // –1 status penalty to AC and saving throws.
         // Removed after a full night's rest.
@@ -184,7 +189,6 @@ namespace PathfinderTactics.Characters
     public enum DetectionState
     {
         Observed,
-        Concealed,
         Hidden,
         Undetected,
         Unnoticed,

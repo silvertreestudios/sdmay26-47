@@ -167,7 +167,20 @@ namespace PathfinderTactics.Core
             if (CurrentUnit == null)
                 return false;
 
-            return CurrentUnit.GetFaction() == Faction.Player;
+            if (CurrentUnit.GetFaction() == Faction.Player)
+                return true;
+
+            // Allow player control on enemy turns when enabled.
+            if (
+                ServiceLocator.TryGet<EnemyAIManager>(out var ai)
+                && ai != null
+                && ai.ControlMode == EnemyAIManager.EnemyControlMode.PlayerControlsEnemy
+            )
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

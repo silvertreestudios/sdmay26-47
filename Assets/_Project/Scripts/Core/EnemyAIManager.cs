@@ -12,8 +12,18 @@ namespace PathfinderTactics.Core
 {
     public class EnemyAIManager : MonoBehaviour
     {
+        public enum EnemyControlMode
+        {
+            AiEnabled,
+            AiDisabled,
+            PlayerControlsEnemy,
+        }
+
+        [Header("Enemy Control")]
         [SerializeField]
-        private bool aiEnabled = true;
+        private EnemyControlMode controlMode = EnemyControlMode.AiEnabled;
+
+        public EnemyControlMode ControlMode => controlMode;
 
         private enum State
         {
@@ -48,18 +58,34 @@ namespace PathfinderTactics.Core
 
         private void Update()
         {
-            // Press 'P' to enable/disable AI
+            // Press 'P' to cycle enemy control mode:
+            // AI enabled -> AI disabled -> Player controls enemy -> ...
             if (Input.GetKeyDown(KeyCode.P))
             {
-                aiEnabled = !aiEnabled;
-                Debug.Log($"[ENEMY AI] AI is now {(aiEnabled ? "ENABLED" : "DISABLED")}");
+                controlMode = controlMode switch
+                {
+                    EnemyControlMode.AiEnabled => EnemyControlMode.AiDisabled,
+                    EnemyControlMode.AiDisabled => EnemyControlMode.PlayerControlsEnemy,
+                    _ => EnemyControlMode.AiEnabled,
+                };
+
+                Debug.Log($"[ENEMY AI] Enemy control mode: {controlMode}");
             }
 
+            // If it's a player turn (or we're giving player control), do nothing here.
             if (ServiceLocator.Get<TurnManager>().IsPlayerTurn())
                 return;
 
-            // If AI is disabled, don't take any actions
-            if (!aiEnabled)
+            // If AI is disabled, immediately end enemy turns to avoid stalling combat.
+            if (controlMode == EnemyControlMode.AiDisabled)
+            {
+                ServiceLocator.Get<UnitActionSystem>().EndTurn();
+                state = State.WaitingForTurn;
+                return;
+            }
+
+            // If the player controls enemy units, do not run AI.
+            if (controlMode == EnemyControlMode.PlayerControlsEnemy)
                 return;
 
             switch (state)
@@ -86,9 +112,14 @@ namespace PathfinderTactics.Core
         {
             if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
             {
-                // Enemy's turn. Give them a brief pause to "think" before moving and to slow the game down a bit.
-                state = State.TakingTurn;
-                timer = 1.0f;
+                // Enemy's turn.
+                // If AI is enabled, pause briefly to "think". Otherwise player-control/disabled modes
+                // are handled in Update().
+                if (controlMode == EnemyControlMode.AiEnabled)
+                {
+                    state = State.TakingTurn;
+                    timer = 1.0f;
+                }
             }
         }
 

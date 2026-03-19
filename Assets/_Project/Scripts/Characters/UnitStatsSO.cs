@@ -43,6 +43,11 @@ namespace PathfinderTactics.Characters
         [Tooltip("Perception modifier for Initiative rolls.")]
         public int perception = 0;
 
+        [Tooltip(
+            "Stealth modifier for stealth checks (Dex-based). If left 0, defaults to Dex modifier."
+        )]
+        public int stealth = 0;
+
         [Header("PF2e Special Abilities")]
         [Tooltip("Immune to the Off-Guard penalty from flanking.")]
         public bool hasAllAroundVision = false;

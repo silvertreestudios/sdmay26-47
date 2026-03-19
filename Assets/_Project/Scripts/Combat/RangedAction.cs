@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using PathfinderTactics.Items;
@@ -10,7 +11,11 @@ namespace PathfinderTactics.Actions
 {
     public class RangedAction : BaseAction
     {
+        private const bool STEALTH_DEBUG = true;
+
         private Unit targetUnit;
+        private Unit intendedTargetUnit;
+        private GridPosition intendedTargetTile;
         private float stateTimer;
         private State state;
 
@@ -25,7 +30,7 @@ namespace PathfinderTactics.Actions
         {
             var weapon = GetWeapon();
             string weaponName = weapon != null ? weapon.itemName : "Ranged";
-            return $"Ranged Strike — {weaponName}";
+            return $"Ranged Strike - {weaponName}";
         }
 
         /// <summary>
@@ -74,6 +79,8 @@ namespace PathfinderTactics.Actions
                 return;
             }
 
+            intendedTargetUnit = targetUnit;
+            intendedTargetTile = gridPosition;
             this.onActionComplete = onActionComplete;
             state = State.Aiming;
             stateTimer = 0.5f;
@@ -172,28 +179,73 @@ namespace PathfinderTactics.Actions
                 mapPenalty
             );
 
+            // Tile source of truth: resolve against what is actually on the
+            // selected tile at resolution time.
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Unit actualTarget = grid.GetUnitAt(intendedTargetTile);
+            if (actualTarget == null || actualTarget != intendedTargetUnit)
+            {
+                Debug.Log(
+                    $"<color=grey>[GUESS]</color> {unit.name} resolves an attack on {intendedTargetTile} but the intended target is no longer there (miss)."
+                );
+                unit.IncrementAttacksThisTurn();
+                BreakStealth();
+                return;
+            }
+
+            targetUnit = actualTarget;
+
             // Check for Stealth/Vision
-            var targetStealth = targetUnit.GetComponent<UnitStealth>();
+            UnitStealth targetStealth = targetUnit.GetComponent<UnitStealth>();
             if (targetStealth != null)
             {
-                int flatCheckDC = targetStealth.RequiresFlatCheckToTarget(unit);
-                if (flatCheckDC > 0)
-                {
-                    int flatRoll = UnityEngine.Random.Range(1, 21);
-                    if (flatRoll < flatCheckDC)
-                    {
-                        Debug.Log(
-                            $"<color=grey>Shot missed! Failed DC {flatCheckDC} flat check to see the target (Rolled {flatRoll}).</color>"
-                        );
-                        unit.IncrementAttacksThisTurn(); // The attack is wasted!
-
-                        // Break your own stealth
-                        BreakStealth();
-                        return;
-                    }
+                DetectionState targetState = targetStealth.GetDetectionState(unit);
+                if (STEALTH_DEBUG && unit != null)
                     Debug.Log(
-                        $"<color=green>Passed vision flat check! (Rolled {flatRoll} vs DC {flatCheckDC})</color>"
+                        $"<color=red>[STEALTH]</color> {unit.name} resolves Ranged vs {targetUnit.name}: targetDetectionState={targetState} intendedTile={intendedTargetTile}"
                     );
+
+                // Unnoticed: exploration-only state, still not targetable.
+                if (targetState == DetectionState.Unnoticed)
+                {
+                    Debug.Log(
+                        $"<color=grey>[SENSES]</color> {unit.name} cannot target {targetUnit.name} while it is Unnoticed."
+                    );
+                    unit.IncrementAttacksThisTurn();
+                    BreakStealth();
+                    return;
+                }
+
+                // Undetected: guess-tile mode.
+                if (targetState == DetectionState.Undetected)
+                {
+                    // Guess succeeds because we already verified the intended unit
+                    // is still on the intended tile at resolution time.
+                    // We still must skip the vision flat-check (handled below).
+                }
+
+                // Undetected guess mode replaces the vision flat-check entirely.
+                if (targetState != DetectionState.Undetected)
+                {
+                    int flatCheckDC = targetStealth.RequiresFlatCheckToTarget(unit);
+                    if (flatCheckDC > 0)
+                    {
+                        int flatRoll = UnityEngine.Random.Range(1, 21);
+                        if (flatRoll < flatCheckDC)
+                        {
+                            Debug.Log(
+                                $"<color=grey>Shot missed! Failed DC {flatCheckDC} flat check to see the target (Rolled {flatRoll}).</color>"
+                            );
+                            unit.IncrementAttacksThisTurn(); // The attack is wasted!
+
+                            // Break your own stealth
+                            BreakStealth();
+                            return;
+                        }
+                        Debug.Log(
+                            $"<color=green>Passed vision flat check! (Rolled {flatRoll} vs DC {flatCheckDC})</color>"
+                        );
+                    }
                 }
             }
 
@@ -287,17 +339,9 @@ namespace PathfinderTactics.Actions
 
         private void BreakStealth()
         {
-            var myStealth = unit.GetComponent<UnitStealth>();
-            if (myStealth == null)
-                return;
-
-            // Firing a weapon reveals you to all enemies!
-            foreach (
-                Unit enemy in ServiceLocator.Get<GridSystem>().GetAllEnemies(unit.GetFaction())
-            )
-            {
-                myStealth.SetDetectionState(enemy, DetectionState.Observed);
-            }
+            // Attacks are noisy and can reveal you based on precise senses.
+            StealthResolver.OnNoiseGenerated(unit);
+            StealthResolver.BreakStealthAfterAttack(unit);
         }
 
         public override List<GridPosition> GetActionRangeGridPositions()
@@ -355,6 +399,15 @@ namespace PathfinderTactics.Actions
                     if (targetUnit == null)
                         continue;
                     if (targetUnit.GetFaction() == unit.GetFaction())
+                        continue;
+
+                    // Undetected units are targetable via guess-tile mode.
+                    // Unnoticed is exploration-only and still not targetable.
+                    var targetStealth = targetUnit.GetComponent<UnitStealth>();
+                    if (
+                        targetStealth != null
+                        && targetStealth.GetDetectionState(unit) == DetectionState.Unnoticed
+                    )
                         continue;
 
                     int coverBonus = LineOfSightUtility.GetCoverBonus(

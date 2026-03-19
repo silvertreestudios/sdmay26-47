@@ -88,6 +88,12 @@ namespace PathfinderTactics.Characters
 
         public void StartMoveAction()
         {
+            if (unit == null)
+                unit = GetComponent<Unit>();
+
+            if (unit == null)
+                return;
+
             movementBudgetRemaining = unit.GetMaxMoveCost();
         }
 

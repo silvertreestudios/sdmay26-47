@@ -1,3 +1,4 @@
+using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using UnityEngine;
@@ -6,6 +7,8 @@ namespace PathfinderTactics.Characters
 {
     public class UnitGridObject : MonoBehaviour
     {
+        private const bool STEALTH_DEBUG = true;
+
         private Unit unit;
         public GridPosition CurrentGridPosition { get; private set; }
 
@@ -36,6 +39,13 @@ namespace PathfinderTactics.Characters
         public void SetInitialPosition(GridPosition gridPosition)
         {
             CurrentGridPosition = gridPosition;
+            // Edit/Play mode tests may call this before Awake() cached 'unit'.
+            if (unit == null)
+                unit = GetComponent<Unit>();
+
+            if (unit == null)
+                return;
+
             unit.SnapToGrid(ServiceLocator.Get<GridSystem>().GetWorldPosition(gridPosition));
         }
 
@@ -43,6 +53,15 @@ namespace PathfinderTactics.Characters
         {
             ServiceLocator.Get<GridSystem>().MoveUnit(unit, CurrentGridPosition, finalPosition);
             CurrentGridPosition = finalPosition;
+
+            // Passive stealth degradation (cover/LoS loss) happens after logical movement.
+            if (STEALTH_DEBUG && unit != null)
+            {
+                Debug.Log(
+                    $"<color=yellow>[STEALTH]</color> FinalizeMove unit={unit.name} -> {finalPosition}. Evaluating passive stealth."
+                );
+            }
+            StealthResolver.EvaluatePassiveStateChanges(unit);
         }
     }
 }

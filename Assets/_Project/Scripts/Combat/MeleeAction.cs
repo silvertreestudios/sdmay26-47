@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using PathfinderTactics.Items;
@@ -10,7 +11,11 @@ namespace PathfinderTactics.Actions
 {
     public class MeleeAction : BaseAction
     {
+        private const bool STEALTH_DEBUG = true;
+
         private Unit targetUnit;
+        private Unit intendedTargetUnit;
+        private GridPosition intendedTargetTile;
         private float stateTimer;
         private State state;
 
@@ -24,7 +29,7 @@ namespace PathfinderTactics.Actions
         {
             var weapon = GetWeapon();
             string weaponName = weapon != null ? weapon.itemName : "Unarmed";
-            return $"Melee Strike — {weaponName}";
+            return $"Melee Strike - {weaponName}";
         }
 
         /// <summary>
@@ -148,6 +153,8 @@ namespace PathfinderTactics.Actions
                 return;
             }
 
+            intendedTargetUnit = targetUnit;
+            intendedTargetTile = gridPosition;
             this.onActionComplete = onActionComplete;
             state = State.Swinging;
             stateTimer = 0.7f;
@@ -160,26 +167,71 @@ namespace PathfinderTactics.Actions
             if (stats == null || targetUnit == null)
                 return;
 
+            // Attacks resolve against what is actually on
+            // the selected tile at resolution time (unit may have moved/died/replaced).
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Unit actualTarget = grid.GetUnitAt(intendedTargetTile);
+            if (actualTarget == null || actualTarget != intendedTargetUnit)
+            {
+                Debug.Log(
+                    $"<color=grey>[GUESS]</color> {unit.name} resolves an attack on {intendedTargetTile} but the intended target is no longer there (miss)."
+                );
+                unit.IncrementAttacksThisTurn();
+                BreakStealth();
+                return;
+            }
+
+            targetUnit = actualTarget;
+
             // Senses and stealth check.
-            var targetStealth = targetUnit.GetComponent<UnitStealth>();
+            UnitStealth targetStealth = targetUnit.GetComponent<UnitStealth>();
             if (targetStealth != null)
             {
-                int flatCheckDC = targetStealth.RequiresFlatCheckToTarget(unit);
-                if (flatCheckDC > 0)
-                {
-                    int flatRoll = UnityEngine.Random.Range(1, 21);
-                    if (flatRoll < flatCheckDC)
-                    {
-                        Debug.Log(
-                            $"<color=grey>[SENSES]</color> Strike missed! Failed DC {flatCheckDC} flat check to see the target (Rolled {flatRoll})."
-                        );
-                        unit.IncrementAttacksThisTurn();
-                        BreakStealth();
-                        return;
-                    }
+                DetectionState targetState = targetStealth.GetDetectionState(unit);
+                if (STEALTH_DEBUG && unit != null)
                     Debug.Log(
-                        $"<color=green>[SENSES]</color> Passed vision flat check! (Rolled {flatRoll} vs DC {flatCheckDC})"
+                        $"<color=red>[STEALTH]</color> {unit.name} resolves Melee vs {targetUnit.name}: targetDetectionState={targetState} intendedTile={intendedTargetTile}"
                     );
+
+                // Unnoticed: disallow targeting (exploration-only state).
+                if (targetState == DetectionState.Unnoticed)
+                {
+                    Debug.Log(
+                        $"<color=grey>[SENSES]</color> {unit.name} cannot target {targetUnit.name} while it is Unnoticed."
+                    );
+                    unit.IncrementAttacksThisTurn();
+                    BreakStealth();
+                    return;
+                }
+
+                // Undetected: guess tile mode.
+                if (targetState == DetectionState.Undetected)
+                {
+                    // Guess succeeds because we already verified the intended unit
+                    // is still on the intended tile at resolution time.
+                    // We still must skip the vision flat-check (handled below).
+                }
+
+                // Undetected guess mode replaces the vision flat-check entirely.
+                if (targetState != DetectionState.Undetected)
+                {
+                    int flatCheckDC = targetStealth.RequiresFlatCheckToTarget(unit);
+                    if (flatCheckDC > 0)
+                    {
+                        int flatRoll = UnityEngine.Random.Range(1, 21);
+                        if (flatRoll < flatCheckDC)
+                        {
+                            Debug.Log(
+                                $"<color=grey>[SENSES]</color> Strike missed! Failed DC {flatCheckDC} flat check to see the target (Rolled {flatRoll})."
+                            );
+                            unit.IncrementAttacksThisTurn();
+                            BreakStealth();
+                            return;
+                        }
+                        Debug.Log(
+                            $"<color=green>[SENSES]</color> Passed vision flat check! (Rolled {flatRoll} vs DC {flatCheckDC})"
+                        );
+                    }
                 }
             }
 
@@ -339,16 +391,9 @@ namespace PathfinderTactics.Actions
 
         private void BreakStealth()
         {
-            var myStealth = unit.GetComponent<UnitStealth>();
-            if (myStealth == null)
-                return;
-
-            foreach (
-                Unit enemy in ServiceLocator.Get<GridSystem>().GetAllEnemies(unit.GetFaction())
-            )
-            {
-                myStealth.SetDetectionState(enemy, DetectionState.Observed);
-            }
+            // Attacks are noisy and can reveal you based on precise senses.
+            StealthResolver.OnNoiseGenerated(unit);
+            StealthResolver.BreakStealthAfterAttack(unit);
         }
 
         public override bool IsValidActionGridPosition(GridPosition gridPosition)
@@ -397,6 +442,15 @@ namespace PathfinderTactics.Actions
                         // Debug.Log($"Tile {testGridPosition} rejected: Friendly unit in the way.");
                         continue;
                     }
+
+                    // Undetected enemies can still be targeted via guess-tile mode.
+                    // Unnoticed (exploration-only) is still not targetable.
+                    var targetStealth = targetUnit.GetComponent<UnitStealth>();
+                    if (
+                        targetStealth != null
+                        && targetStealth.GetDetectionState(unit) == DetectionState.Unnoticed
+                    )
+                        continue;
 
                     // Line of sight check (cover)
                     // Debug.Log($"Found Enemy at {testGridPosition}! Running Cover check...");

@@ -84,6 +84,20 @@ namespace PathfinderTactics.Characters
             var stealth = GetComponent<UnitStealth>();
             if (stealth == null)
                 stealth = gameObject.AddComponent<UnitStealth>();
+
+            // Stealth actions (Hide/Sneak/Seek) and rendering.
+            if (GetComponent<HideAction>() == null)
+                gameObject.AddComponent<HideAction>();
+            if (GetComponent<SneakAction>() == null)
+                gameObject.AddComponent<SneakAction>();
+            if (GetComponent<SeekAction>() == null)
+                gameObject.AddComponent<SeekAction>();
+
+            if (GetComponent<UnitStealthRenderer>() == null)
+                gameObject.AddComponent<UnitStealthRenderer>();
+
+            // Ensure UnitActionEconomy picks up the dynamically-added BaseAction components.
+            this.actionEconomy?.RefreshActions();
         }
 
         private void Start()
@@ -176,16 +190,24 @@ namespace PathfinderTactics.Characters
 
             int speed = stats.baseSpeedInFeet;
 
-            // Apply armor penalty if unit doesn't meet strength requirement
+            // PF2e: Armor applies a Speed penalty. If you meet the Strength requirement,
+            // the penalty is typically reduced by 5 ft (never becomes a speed bonus).
             if (equipment != null)
             {
                 var armor = equipment.GetArmor();
                 if (armor != null)
                 {
-                    // PF2e: If Strength < Strength Req, apply Speed Penalty
-                    if (stats.strength < armor.strengthRequirement)
+                    int penaltyFeet = armor.speedPenaltyFeet; // negative value like -5 or -10
+
+                    if (penaltyFeet != 0)
                     {
-                        speed += armor.speedPenaltyFeet; // Penalty is negative, e.g., -5 or -10
+                        if (stats.strength >= armor.strengthRequirement)
+                        {
+                            // Reduce the penalty by 5 ft, but never above 0.
+                            penaltyFeet = Mathf.Min(0, penaltyFeet + 5);
+                        }
+
+                        speed += penaltyFeet;
                     }
                 }
             }
@@ -282,34 +304,41 @@ namespace PathfinderTactics.Characters
         )
         {
             ArmorClassBreakdown breakdown = new ArmorClassBreakdown();
+            // Base AC fallback when stats aren't initialized.
             if (stats == null)
             {
-                breakdown.totalAC = 10;
                 breakdown.baseAC = 10;
-                return breakdown;
+                breakdown.totalAC = breakdown.baseAC;
             }
 
-            int dexMod = GetAbilityModifier(AbilityScore.DEX);
+            int dexMod = (stats != null) ? GetAbilityModifier(AbilityScore.DEX) : 0;
             int itemBonus = 0;
 
             // NOTE: Proficiency calculation should pull from class later (stubbed as Trained)
             Proficiency armorProf = Proficiency.Trained;
 
-            if (equipment != null)
+            if (stats != null)
             {
-                var armor = equipment.GetArmor();
-                if (armor != null)
+                if (equipment != null)
                 {
-                    itemBonus = armor.acBonus;
-                    // Dex Cap check
-                    dexMod = Mathf.Min(dexMod, armor.dexCap);
+                    var armor = equipment.GetArmor();
+                    if (armor != null)
+                    {
+                        itemBonus = armor.acBonus;
+                        // Dex Cap check
+                        dexMod = Mathf.Min(dexMod, armor.dexCap);
+                    }
                 }
+
+                breakdown.baseAC =
+                    10 + PF2E_Core.CalculateModifier(stats.level, armorProf, dexMod) + itemBonus;
             }
 
-            breakdown.baseAC =
-                10 + PF2E_Core.CalculateModifier(stats.level, armorProf, dexMod) + itemBonus;
+            UnitConditions currentConditions = GetComponent<UnitConditions>();
+            if (currentConditions == null)
+                currentConditions = conditions;
 
-            if (conditions == null)
+            if (currentConditions == null)
             {
                 breakdown.totalAC = breakdown.baseAC;
                 return breakdown;
@@ -317,7 +346,7 @@ namespace PathfinderTactics.Characters
 
             string statusPenaltySource;
             breakdown.statusPenalty = PF2E_Core.GetStatusPenalty(
-                conditions,
+                currentConditions,
                 AbilityScore.DEX,
                 out statusPenaltySource
             );
@@ -335,7 +364,7 @@ namespace PathfinderTactics.Characters
 
             if (
                 incomingAttackType == AttackType.Ranged
-                && conditions.HasCondition(ConditionType.Prone)
+                && currentConditions.HasCondition(ConditionType.Prone)
             )
             {
                 circumstanceMod += 2;

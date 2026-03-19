@@ -13,6 +13,7 @@ namespace PathfinderTactics.InputSystem
         public event EventHandler OnCancelPerformed;
         public event EventHandler OnJumpPerformed;
         public event EventHandler OnOpenMenuPerformed;
+        public event EventHandler OnEndTurnPerformed;
 
         private PlayerInputActions playerInputActions;
 
@@ -39,6 +40,8 @@ namespace PathfinderTactics.InputSystem
             playerInputActions.Player.Jump.performed += ctx => InvokeEventIfValid(OnJumpPerformed);
             playerInputActions.Player.OpenMenu.performed += ctx =>
                 InvokeEventIfValid(OnOpenMenuPerformed);
+            playerInputActions.Player.EndTurn.performed += ctx =>
+                InvokeEventIfValid(OnEndTurnPerformed);
         }
 
         private void OnDisable()

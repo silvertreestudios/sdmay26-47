@@ -91,17 +91,8 @@ namespace PathfinderTactics.Characters
             if (auraTile == null)
                 return;
 
-            // Check if this unit is currently being flanked
             bool isFlanked = GridMathHelper.IsAnyFlankingVisual(unit);
-
-            if (isFlanked)
-            {
-                auraTile.SetColor(flankedColor);
-            }
-            else
-            {
-                auraTile.SetColor(highlightColor);
-            }
+            auraTile.SetColor(isFlanked ? flankedColor : highlightColor);
         }
 
         private void UpdatePosition()

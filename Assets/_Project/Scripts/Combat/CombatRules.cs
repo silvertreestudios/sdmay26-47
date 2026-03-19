@@ -29,10 +29,33 @@ namespace PathfinderTactics.Combat
             // Flanking ONLY applies to melee attacks
             if (attackType == AttackType.Melee)
             {
-                return IsOffGuardFromFlanking(attacker, target);
+                if (IsOffGuardFromFlanking(attacker, target))
+                    return true;
             }
 
+            // Stealth: target is Off-Guard against attacks from Hidden or Undetected attackers.
+            // Rule: "the creature remains off-guard against that attack".
+            if (IsOffGuardFromStealth(attacker, target))
+                return true;
+
             return false;
+        }
+
+        /// <summary>
+        /// Target is Off-Guard against an attacker who is Hidden or Undetected relative to them.
+        /// </summary>
+        public static bool IsOffGuardFromStealth(Unit attacker, Unit target)
+        {
+            if (attacker == null || target == null)
+                return false;
+
+            var attackerStealth = attacker.GetComponent<UnitStealth>();
+            if (attackerStealth == null)
+                return false;
+
+            DetectionState stateVsTarget = attackerStealth.GetDetectionState(target);
+            return stateVsTarget == DetectionState.Hidden
+                || stateVsTarget == DetectionState.Undetected;
         }
 
         /// <summary>

@@ -80,7 +80,7 @@ namespace PathfinderTactics.Characters
                         ApplyAuraEffect(aura, prev, currentRound);
                     }
                     Debug.Log(
-                        $"<color=gray>[AURA EXIT]</color> {prev.name} is no longer affected by {unit.name}'s {aura.auraName}"
+                        $"<color=magenta>[AURA EXIT]</color> {prev.name} is no longer affected by {unit.name}'s {aura.auraName}"
                     );
                 }
             }
