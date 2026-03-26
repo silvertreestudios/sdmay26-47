@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Data.PF2e;
 using PathfinderTactics.Grid;
+using UnityEngine;
 
 namespace PathfinderTactics.Reactions
 {
-    // TODO: add step movement
     public abstract class GameEvent
     {
         public Unit SourceUnit { get; }
@@ -17,13 +17,22 @@ namespace PathfinderTactics.Reactions
         }
     }
 
-    // Fired right before leaving a square. (Reactive Strike happens here)
     public class BeforeMoveEvent : GameEvent
     {
         public Unit MovingUnit { get; }
         public GridPosition StartPos { get; }
         public GridPosition TargetPos { get; }
         public bool IsStep { get; }
+
+        /// <summary>
+        /// Full 3D layered position at move start. Used for accurate 3D range checks.
+        /// </summary>
+        public Vector3Int StartLayeredPos { get; }
+
+        /// <summary>
+        /// Full 3D layered position at move destination.
+        /// </summary>
+        public Vector3Int TargetLayeredPos { get; }
 
         public BeforeMoveEvent(
             Unit movingUnit,
@@ -37,6 +46,30 @@ namespace PathfinderTactics.Reactions
             StartPos = startPos;
             TargetPos = targetPos;
             IsStep = isStep;
+            StartLayeredPos = movingUnit.CurrentLayeredPosition;
+            TargetLayeredPos = new Vector3Int(
+                targetPos.x,
+                movingUnit.CurrentLayeredPosition.y,
+                targetPos.z
+            );
+        }
+
+        public BeforeMoveEvent(
+            Unit movingUnit,
+            GridPosition startPos,
+            GridPosition targetPos,
+            Vector3Int startLayered,
+            Vector3Int targetLayered,
+            bool isStep = false
+        )
+            : base(movingUnit)
+        {
+            MovingUnit = movingUnit;
+            StartPos = startPos;
+            TargetPos = targetPos;
+            IsStep = isStep;
+            StartLayeredPos = startLayered;
+            TargetLayeredPos = targetLayered;
         }
     }
 

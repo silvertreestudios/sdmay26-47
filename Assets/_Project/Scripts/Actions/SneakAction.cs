@@ -51,9 +51,11 @@ namespace PathfinderTactics.Actions
             {
                 int maxMoveCost = unit.GetMaxMoveCost();
                 int halfMoveCost = Mathf.Max(0, maxMoveCost / 2);
-                cachedRange = Pathfinding.GetReachableGridPositions(start, halfMoveCost);
-
-                // The actor's own square isn't a move.
+                List<Vector3Int> layered = Pathfinding.GetReachablePositions(
+                    unit.CurrentLayeredPosition,
+                    halfMoveCost
+                );
+                cachedRange = Pathfinding.ProjectToGridPositions(layered);
                 cachedRange.Remove(start);
             }
 
@@ -84,7 +86,6 @@ namespace PathfinderTactics.Actions
 
         public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
         {
-            // Move as part of Sneak, then resolve stealth transitions at end.
             GridPosition startPos = unit.CurrentGridPosition;
             GridPosition endPos = gridPosition;
 
@@ -93,7 +94,7 @@ namespace PathfinderTactics.Actions
                     $"<color=blue>[STEALTH]</color> SneakAction.TakeAction unit={unit.name} start={startPos} end={endPos} makesNoise={makesNoise}"
                 );
 
-            List<GridPosition> path = Pathfinding.FindPath(startPos, endPos);
+            List<Vector3Int> path = Pathfinding.FindPath(startPos, endPos);
             if (path == null || path.Count == 0)
             {
                 onActionComplete?.Invoke();
@@ -101,11 +102,11 @@ namespace PathfinderTactics.Actions
             }
 
             GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int endLayered = path[path.Count - 1];
 
-            // Suppress passive state degradation while the stealth action resolves.
             StealthResolver.SetPassiveEvaluationSuppressed(unit, true);
-            grid.MoveUnit(unit, startPos, endPos);
-            unit.FinalizeMove(endPos);
+            grid.MoveUnit(unit, unit.CurrentLayeredPosition, endLayered);
+            unit.FinalizeMove(endLayered);
 
             unit.MoveAlongPath(
                 path,

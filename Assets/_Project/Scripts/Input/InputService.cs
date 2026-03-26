@@ -14,6 +14,8 @@ namespace PathfinderTactics.InputSystem
         public event EventHandler OnJumpPerformed;
         public event EventHandler OnOpenMenuPerformed;
         public event EventHandler OnEndTurnPerformed;
+        public event EventHandler OnLayerUpPerformed;
+        public event EventHandler OnLayerDownPerformed;
 
         private PlayerInputActions playerInputActions;
 
@@ -42,6 +44,10 @@ namespace PathfinderTactics.InputSystem
                 InvokeEventIfValid(OnOpenMenuPerformed);
             playerInputActions.Player.EndTurn.performed += ctx =>
                 InvokeEventIfValid(OnEndTurnPerformed);
+            playerInputActions.Player.LayerUp.performed += ctx =>
+                InvokeEventIfValid(OnLayerUpPerformed);
+            playerInputActions.Player.LayerDown.performed += ctx =>
+                InvokeEventIfValid(OnLayerDownPerformed);
         }
 
         private void OnDisable()
@@ -72,6 +78,19 @@ namespace PathfinderTactics.InputSystem
         public Vector2 GetMousePosition()
         {
             return Mouse.current.position.ReadValue();
+        }
+
+        /// <summary>
+        /// Returns +1 if layer-up was pressed this frame, -1 if layer-down,
+        /// 0 otherwise.
+        /// </summary>
+        public int GetLayerCycleInput()
+        {
+            if (playerInputActions.Player.LayerUp.WasPressedThisFrame())
+                return 1;
+            if (playerInputActions.Player.LayerDown.WasPressedThisFrame())
+                return -1;
+            return 0;
         }
     }
 }

@@ -193,22 +193,21 @@ namespace PathfinderTactics.Core
 
         private bool TryMoveTowardsTarget(Unit enemyUnit, Unit target)
         {
-            // Get all valid moves for this enemy
-            List<GridPosition> validMoves = Pathfinding.GetReachableGridPositions(
-                enemyUnit.CurrentGridPosition,
+            List<Vector3Int> validMoves = Pathfinding.GetReachablePositions(
+                enemyUnit.CurrentLayeredPosition,
                 enemyUnit.GetMaxMoveCost()
             );
 
             if (validMoves.Count == 0)
                 return false;
 
-            GridPosition bestMove = enemyUnit.CurrentGridPosition;
+            Vector3Int bestMove = enemyUnit.CurrentLayeredPosition;
             int closestDistance = int.MaxValue;
 
-            // Find the tile that gets us physically closest to the target
-            foreach (GridPosition movePos in validMoves)
+            Vector3Int targetPos3D = target.CurrentLayeredPosition;
+            foreach (Vector3Int movePos in validMoves)
             {
-                int dist = Pathfinding.CalculateDistance(movePos, target.CurrentGridPosition);
+                int dist = PF2E_Core.GetPF2eDistance3D(movePos, targetPos3D);
                 if (dist < closestDistance)
                 {
                     closestDistance = dist;
@@ -216,15 +215,15 @@ namespace PathfinderTactics.Core
                 }
             }
 
-            if (bestMove != enemyUnit.CurrentGridPosition)
+            if (bestMove != enemyUnit.CurrentLayeredPosition)
             {
                 Debug.Log($"[ENEMY AI] {enemyUnit.name} is moving towards {target.name}!");
 
-                // We must fire the BeforeMoveEvent manually for the AI, so player Reactions trigger
+                GridPosition bestMoveGP = new GridPosition(bestMove.x, bestMove.z);
                 var moveEvent = new Reactions.BeforeMoveEvent(
                     enemyUnit,
                     enemyUnit.CurrentGridPosition,
-                    bestMove
+                    bestMoveGP
                 );
 
                 ServiceLocator
@@ -233,38 +232,34 @@ namespace PathfinderTactics.Core
                         moveEvent,
                         (resolvedEvent) =>
                         {
+                            GridSystem grid = ServiceLocator.Get<GridSystem>();
                             if (resolvedEvent.IsCancelled)
                             {
-                                // Player's Reactive Strike killed or stopped the enemy
                                 enemyUnit.SnapToGrid(
-                                    ServiceLocator
-                                        .Get<GridSystem>()
-                                        .GetWorldPosition(enemyUnit.CurrentGridPosition)
+                                    grid.GetWorldPosition(enemyUnit.CurrentLayeredPosition)
                                 );
                                 state = State.TakingTurn;
                                 timer = 0.5f;
                             }
                             else
                             {
-                                // Get the path before updating logical position
-                                List<GridPosition> path = Pathfinding.FindPath(
-                                    enemyUnit.CurrentGridPosition,
+                                List<Vector3Int> path = Pathfinding.FindPath(
+                                    enemyUnit.CurrentLayeredPosition,
                                     bestMove
                                 );
 
-                                // Update the Logical Grid
                                 enemyUnit.SpendActionPoints(1);
-                                ServiceLocator
-                                    .Get<GridSystem>()
-                                    .MoveUnit(enemyUnit, enemyUnit.CurrentGridPosition, bestMove);
+                                grid.MoveUnit(
+                                    enemyUnit,
+                                    enemyUnit.CurrentLayeredPosition,
+                                    bestMove
+                                );
                                 enemyUnit.FinalizeMove(bestMove);
 
-                                // Animate the Physical Movement
                                 enemyUnit.MoveAlongPath(
                                     path,
                                     () =>
                                     {
-                                        // This callback runs when the walking finishes
                                         state = State.TakingTurn;
                                         timer = 0.5f;
                                     }
@@ -289,11 +284,11 @@ namespace PathfinderTactics.Core
                 {
                     var health = playerUnit.GetComponent<IDamageable>();
                     if (health != null && health.IsDead)
-                        continue; // Ignore downed players
+                        continue;
 
-                    int dist = Pathfinding.CalculateDistance(
-                        enemyUnit.CurrentGridPosition,
-                        playerUnit.CurrentGridPosition
+                    int dist = PF2E_Core.GetPF2eDistance3D(
+                        enemyUnit.CurrentLayeredPosition,
+                        playerUnit.CurrentLayeredPosition
                     );
                     if (dist < closestDist)
                     {

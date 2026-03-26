@@ -16,12 +16,11 @@ namespace PathfinderTactics.Grid
         [SerializeField]
         private Transform endTransform;
 
-        private List<GridPosition> currentPath;
+        private List<Vector3Int> currentPath;
 
         private void Update()
         {
 #if UNITY_EDITOR
-            // Do not run in edit mode
             if (!Application.isPlaying)
                 return;
 #endif
@@ -46,31 +45,21 @@ namespace PathfinderTactics.Grid
 
             if (currentPath != null && currentPath.Count > 1)
             {
+                GridSystem grid = ServiceLocator.Get<GridSystem>();
 #if UNITY_EDITOR
                 Handles.color = Color.blue;
-                // Create an array of points for smoother drawing
                 Vector3[] points = new Vector3[currentPath.Count];
                 for (int i = 0; i < currentPath.Count; i++)
                 {
-                    // Lift the line slightly so it doesn't clip into the floor
-                    points[i] =
-                        ServiceLocator.Get<GridSystem>().GetWorldPosition(currentPath[i])
-                        + Vector3.up * 0.1f;
+                    points[i] = grid.GetWorldPosition(currentPath[i]) + Vector3.up * 0.1f;
                 }
-
-                // Draw the line (Thickness: 5.0f)
                 Handles.DrawAAPolyLine(5.0f, points);
 #else
-                // Fallback for non-editor builds (standard thin Gizmos)
                 Gizmos.color = Color.green;
                 for (int i = 0; i < currentPath.Count - 1; i++)
                 {
-                    Vector3 from = ServiceLocator
-                        .Get<GridSystem>()
-                        .GetWorldPosition(currentPath[i]);
-                    Vector3 to = ServiceLocator
-                        .Get<GridSystem>()
-                        .GetWorldPosition(currentPath[i + 1]);
+                    Vector3 from = grid.GetWorldPosition(currentPath[i]);
+                    Vector3 to = grid.GetWorldPosition(currentPath[i + 1]);
                     Gizmos.DrawLine(from, to);
                 }
 #endif

@@ -117,10 +117,10 @@ namespace PathfinderTactics.Combat
                 if (actorStealth.GetDetectionState(observer) != DetectionState.Observed)
                     continue;
 
-                if (!HasCoverOrConcealmentAt(actor.CurrentGridPosition, observer))
+                if (!HasCoverOrConcealmentAt3D(actor.CurrentLayeredPosition, observer))
                     continue;
 
-                int coverBonus = GetCoverBonusAt(actor.CurrentGridPosition, observer);
+                int coverBonus = GetCoverBonusAt3D(actor.CurrentLayeredPosition, observer);
                 int perceptionDC = 10 + GetPerceptionModifier(observer);
 
                 LogStealth(
@@ -147,7 +147,7 @@ namespace PathfinderTactics.Combat
             Unit actor,
             GridPosition startPosition,
             GridPosition endPosition,
-            List<GridPosition> path,
+            List<Vector3Int> path,
             bool actorMakesNoise
         )
         {
@@ -390,7 +390,7 @@ namespace PathfinderTactics.Combat
                     continue;
 
                 bool canPrecise = CanPreciselySense(observer, actor);
-                bool hasCover = HasCoverOrConcealmentAt(actor.CurrentGridPosition, observer);
+                bool hasCover = HasCoverOrConcealmentAt3D(actor.CurrentLayeredPosition, observer);
                 LogStealth(
                     $"  [Passive] observer={observer.name} state={state} canPrecise={canPrecise} hasCoverOrConcealment={hasCover}"
                 );
@@ -508,12 +508,9 @@ namespace PathfinderTactics.Combat
             if (actorConditions != null && actorConditions.HasCondition(ConditionType.Invisible))
                 return false;
 
-            // Precise sensing is blocked by Total Cover / No Line of Effect.
-            // Standard/Lesser cover should not prevent the observer from seeing you,
-            // it just makes targeting harder.
             int cover = LineOfSightUtility.GetCoverBonus(
-                observer.CurrentGridPosition,
-                actor.CurrentGridPosition
+                observer.CurrentLayeredPosition,
+                actor.CurrentLayeredPosition
             );
             return cover != -1;
         }
@@ -522,38 +519,44 @@ namespace PathfinderTactics.Combat
         {
             if (observer == null)
                 return false;
+            Vector3Int actorPos3D = ResolveLayeredPosition(actorPos);
+            return HasCoverOrConcealmentAt3D(actorPos3D, observer);
+        }
 
-            int cover = LineOfSightUtility.GetCoverBonus(observer.CurrentGridPosition, actorPos);
+        private static bool HasCoverOrConcealmentAt3D(Vector3Int actorPos, Unit observer)
+        {
+            if (observer == null)
+                return false;
 
-            // Treat solid block as concealment.
-            // PF2e: Lesser Cover (+1) does NOT qualify for Hide/Sneak.
+            int cover = LineOfSightUtility.GetCoverBonus(observer.CurrentLayeredPosition, actorPos);
             return cover == -1 || cover >= 2;
         }
 
         private static bool CanSee(Unit observer, Unit actor)
         {
-            // "can see" and "can precisely sense" are the samae for now.
-            // Blinded, Invisible, and No Line of Effect.
             return CanPreciselySense(observer, actor);
         }
 
         private static int GetCoverBonusAt(GridPosition actorPos, Unit observer)
         {
-            int cover = LineOfSightUtility.GetCoverBonus(observer.CurrentGridPosition, actorPos);
+            Vector3Int actorPos3D = ResolveLayeredPosition(actorPos);
+            return GetCoverBonusAt3D(actorPos3D, observer);
+        }
 
-            // Only standard or greater cover contributes to stealth DCs.
-            // Lesser cover (+1): no bonus.
-            // Total cover (wall, -1): at least Greater Cover -> +4 bonus.
+        private static int GetCoverBonusAt3D(Vector3Int actorPos, Unit observer)
+        {
+            int cover = LineOfSightUtility.GetCoverBonus(observer.CurrentLayeredPosition, actorPos);
+
             if (cover == -1)
-                return 4; // wall-blocked -> Greater Cover bonus
+                return 4;
             if (cover >= 2)
-                return cover; // standard (+2) or greater (+4) directly
+                return cover;
 
             return 0;
         }
 
         private static bool EvaluatePathCover(
-            List<GridPosition> path,
+            List<Vector3Int> path,
             GridPosition endPosition,
             Unit observer
         )
@@ -561,15 +564,26 @@ namespace PathfinderTactics.Combat
             if (path == null || path.Count == 0)
                 return false;
 
-            // Must have standard-or-greater cover throughout the whole stride.
-            foreach (GridPosition pos in path)
+            foreach (Vector3Int pos in path)
             {
-                int coverBonus = GetCoverBonusAt(pos, observer);
+                int coverBonus = GetCoverBonusAt3D(pos, observer);
                 if (coverBonus <= 0)
                     return false;
             }
 
             return true;
+        }
+
+        private static Vector3Int ResolveLayeredPosition(GridPosition gp)
+        {
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            if (grid != null)
+            {
+                List<GridNode> column = grid.GetColumn(new Vector2Int(gp.x, gp.z));
+                if (column != null && column.Count > 0)
+                    return column[0].Coordinates;
+            }
+            return new Vector3Int(gp.x, 0, gp.z);
         }
     }
 }

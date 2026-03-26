@@ -42,10 +42,15 @@ namespace PathfinderTactics.Actions
 
         public virtual List<GridPosition> GetActionRangeGridPositions()
         {
-            // Default implementation just returns valid targets,
-            // but child classes like MeleeAction will override this.
             return GetValidActionGridPositions();
         }
+
+        /// <summary>
+        /// True for actions that target a specific unit (melee/ranged strikes,
+        /// single-target abilities). False for position-based actions (AoE spells).
+        /// When true, the TargetLockService handles targeting instead of the grid cursor.
+        /// </summary>
+        public virtual bool IsUnitTargeted => false;
 
         /// <summary>
         /// Validates if the unit's current physical/mental state allows actions.

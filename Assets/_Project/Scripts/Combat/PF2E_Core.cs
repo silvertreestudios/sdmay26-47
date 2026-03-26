@@ -74,6 +74,37 @@ namespace PathfinderTactics.Core
         }
 
         /// <summary>
+        /// PF2e 3D distance in tiles using the 2-step 5-10-5 diagonal rule.
+        /// Step 1: Merge dx and dz horizontally with the alternating diagonal rule.
+        /// Step 2: Merge the horizontal result with dy using the same rule.
+        /// </summary>
+        public static int GetPF2eDistance3D(Vector3Int a, Vector3Int b)
+        {
+            int dx = Mathf.Abs(a.x - b.x);
+            int dy = Mathf.Abs(a.y - b.y);
+            int dz = Mathf.Abs(a.z - b.z);
+            int dHorizontal = Pf2eMergeDiagonal(dx, dz);
+            return Pf2eMergeDiagonal(dHorizontal, dy);
+        }
+
+        /// <summary>
+        /// Returns 3D PF2e distance in feet (tiles * 5).
+        /// </summary>
+        public static int GetPF2eDistance3DInFeet(Vector3Int a, Vector3Int b)
+        {
+            return GetPF2eDistance3D(a, b) * 5;
+        }
+
+        /// <summary>
+        /// Merges two axis distances using PF2e's 5-10-5 alternating diagonal rule.
+        /// Result = max(a,b) + floor(min(a,b) / 2).
+        /// </summary>
+        private static int Pf2eMergeDiagonal(int a, int b)
+        {
+            return Mathf.Max(a, b) + Mathf.FloorToInt(Mathf.Min(a, b) / 2f);
+        }
+
+        /// <summary>
         /// Calculates the total modifier for a check.
         /// Result = Level + ProficiencyBonus + AbilityMod + ItemBonus (ignored for now).
         /// PF2e rule: Untrained gives 0, others give Level + Constant.

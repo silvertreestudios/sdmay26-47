@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
+using UnityEngine;
 
 namespace PathfinderTactics.Spells.Services
 {
@@ -28,6 +29,36 @@ namespace PathfinderTactics.Spells.Services
                 if (!gridSystem.IsValidGridPosition(cell))
                     continue;
 
+                Unit unitAtCell = gridSystem.GetUnitAt(cell);
+                if (unitAtCell == null)
+                    continue;
+
+                if (PassesFilter(unitAtCell, filter, caster))
+                {
+                    if (!result.Contains(unitAtCell))
+                        result.Add(unitAtCell);
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 3D overload: checks each exact Vector3Int for a unit, supporting
+        /// multi-layer AoE that can hit units on different Y levels.
+        /// TODO: thoroughly test this.
+        /// </summary>
+        public static List<Unit> GetUnitsInCells(
+            List<Vector3Int> cells,
+            TargetFilter filter,
+            Unit caster
+        )
+        {
+            List<Unit> result = new List<Unit>();
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+
+            foreach (Vector3Int cell in cells)
+            {
                 Unit unitAtCell = gridSystem.GetUnitAt(cell);
                 if (unitAtCell == null)
                     continue;

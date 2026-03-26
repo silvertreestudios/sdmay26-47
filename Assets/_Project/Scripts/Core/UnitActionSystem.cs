@@ -27,15 +27,14 @@ namespace PathfinderTactics.Core
         private Unit selectedUnit;
         private BaseAction selectedAction;
 
-        private List<GridPosition> validMovePositions;
+        private List<Vector3Int> validMovePositions;
+        private HashSet<Vector2Int> validMoveColumns;
 
         public Unit SelectedUnit => selectedUnit;
 
-        // Sneak movement-mode action support:
-        // selecting Sneak enters FreeMovement with half-speed boundary, and confirm commits
-        // via movement pipeline then resolves StealthResolver.ResolveSneak at end.
         private SneakAction pendingSneakAction;
         private GridPosition pendingSneakStart;
+        private Vector3Int pendingSneakStartLayered;
 
         private void Awake()
         {
@@ -78,15 +77,15 @@ namespace PathfinderTactics.Core
         {
             if (newPhase == GamePhase.FreeMovement && selectedUnit != null)
             {
-                // If a movement-mode action is pending (e.g., Sneak), the move boundary
-                // must reflect that action's rules (Sneak = half speed).
                 int maxMoveCost = selectedUnit.GetMaxMoveCost();
                 if (pendingSneakAction != null)
                     maxMoveCost = Mathf.Max(0, maxMoveCost / 2);
 
-                validMovePositions = Pathfinding.GetReachableGridPositions(
-                    selectedUnit.CurrentGridPosition,
-                    maxMoveCost
+                SetValidMovePositions(
+                    Pathfinding.GetReachablePositions(
+                        selectedUnit.CurrentLayeredPosition,
+                        maxMoveCost
+                    )
                 );
             }
 
@@ -113,7 +112,15 @@ namespace PathfinderTactics.Core
                     HandleFreeMovement();
                     break;
                 case GamePhase.ActionTargeting:
-                    ServiceLocator.Get<TargetingService>().HandleCursorMovement(selectedAction);
+                    if (selectedAction != null && selectedAction.IsUnitTargeted)
+                    {
+                        if (ServiceLocator.TryGet<TargetLockService>(out var tls))
+                            tls.HandleInput();
+                    }
+                    else
+                    {
+                        ServiceLocator.Get<TargetingService>().HandleCursorMovement(selectedAction);
+                    }
                     break;
             }
         }
@@ -184,24 +191,34 @@ namespace PathfinderTactics.Core
             {
                 pendingSneakAction = sneak;
                 pendingSneakStart = selectedUnit.CurrentGridPosition;
+                pendingSneakStartLayered = selectedUnit.CurrentLayeredPosition;
 
                 int maxMoveCost = selectedUnit.GetMaxMoveCost();
                 int halfMoveCost = Mathf.Max(0, maxMoveCost / 2);
-                validMovePositions = Pathfinding.GetReachableGridPositions(
-                    selectedUnit.CurrentGridPosition,
-                    halfMoveCost
+                SetValidMovePositions(
+                    Pathfinding.GetReachablePositions(
+                        selectedUnit.CurrentLayeredPosition,
+                        halfMoveCost
+                    )
                 );
 
-                // Enter movement mode so the player can preview/choose a destination naturally.
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
                 return;
             }
 
-            // Default: use targeting cursor
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionTargeting);
-            ServiceLocator
-                .Get<TargetingService>()
-                .InitializeTargeting(selectedUnit.CurrentGridPosition);
+
+            if (selectedAction != null && selectedAction.IsUnitTargeted)
+            {
+                if (ServiceLocator.TryGet<TargetLockService>(out var tls))
+                    tls.InitializeTargeting(selectedUnit, selectedAction);
+            }
+            else
+            {
+                ServiceLocator
+                    .Get<TargetingService>()
+                    .InitializeTargeting(selectedUnit.CurrentGridPosition);
+            }
         }
 
         private void OnConfirmPerformed(object sender, EventArgs e)
@@ -220,9 +237,21 @@ namespace PathfinderTactics.Core
             }
             else if (currentPhase == GamePhase.ActionTargeting)
             {
-                TryExecuteActionAtGridPos(
-                    ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition
-                );
+                GridPosition targetPos;
+                if (
+                    selectedAction != null
+                    && selectedAction.IsUnitTargeted
+                    && ServiceLocator.TryGet<TargetLockService>(out var tls)
+                    && tls.IsActive
+                )
+                {
+                    targetPos = tls.CurrentCursorGridPosition;
+                }
+                else
+                {
+                    targetPos = ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition;
+                }
+                TryExecuteActionAtGridPos(targetPos);
             }
         }
 
@@ -237,12 +266,11 @@ namespace PathfinderTactics.Core
             {
                 if (selectedUnit != null)
                 {
-                    GridPosition cellTheyreOver = ServiceLocator
-                        .Get<GridSystem>()
-                        .GetGridPosition(selectedUnit.transform.position);
-                    selectedUnit.SnapToGrid(
-                        ServiceLocator.Get<GridSystem>().GetWorldPosition(cellTheyreOver)
+                    GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+                    Vector3Int snappedPos = gridSystem.GetLayeredGridPosition(
+                        selectedUnit.transform.position
                     );
+                    selectedUnit.SnapToGrid(gridSystem.GetWorldPosition(snappedPos));
                 }
 
                 CommitMoveAction(() =>
@@ -271,7 +299,18 @@ namespace PathfinderTactics.Core
 
             if (currentPhase == GamePhase.ActionTargeting)
             {
-                ServiceLocator.Get<TargetingService>().HideTargeting();
+                if (
+                    selectedAction != null
+                    && selectedAction.IsUnitTargeted
+                    && ServiceLocator.TryGet<TargetLockService>(out var tls)
+                )
+                {
+                    tls.HideTargeting();
+                }
+                else
+                {
+                    ServiceLocator.Get<TargetingService>().HideTargeting();
+                }
                 if (selectedUnit != null)
                     ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
@@ -331,36 +370,35 @@ namespace PathfinderTactics.Core
             GridPosition currentGridPos = gridSystem.GetGridPosition(
                 selectedUnit.transform.position
             );
-            Vector3 cellCenterWorld = gridSystem.GetWorldPosition(currentGridPos);
+            Vector3Int currentLayered = gridSystem.GetLayeredGridPosition(
+                selectedUnit.transform.position
+            );
+            Vector3 cellCenterWorld = gridSystem.GetWorldPosition(currentLayered);
             float cellSize = gridSystem.CellSize;
             float unitRadius = selectedUnit.GetUnitRadius();
 
-            GridPosition northPos = new GridPosition(currentGridPos.x, currentGridPos.z + 1);
-            if (!IsValidMovePosition(northPos))
+            if (!IsValidMoveColumn(currentGridPos.x, currentGridPos.z + 1))
             {
                 float maxZ = cellCenterWorld.z + (cellSize * 0.5f) - unitRadius;
                 if (proposedPosition.z > maxZ)
                     proposedPosition.z = maxZ;
             }
 
-            GridPosition southPos = new GridPosition(currentGridPos.x, currentGridPos.z - 1);
-            if (!IsValidMovePosition(southPos))
+            if (!IsValidMoveColumn(currentGridPos.x, currentGridPos.z - 1))
             {
                 float minZ = cellCenterWorld.z - (cellSize * 0.5f) + unitRadius;
                 if (proposedPosition.z < minZ)
                     proposedPosition.z = minZ;
             }
 
-            GridPosition eastPos = new GridPosition(currentGridPos.x + 1, currentGridPos.z);
-            if (!IsValidMovePosition(eastPos))
+            if (!IsValidMoveColumn(currentGridPos.x + 1, currentGridPos.z))
             {
                 float maxX = cellCenterWorld.x + (cellSize * 0.5f) - unitRadius;
                 if (proposedPosition.x > maxX)
                     proposedPosition.x = maxX;
             }
 
-            GridPosition westPos = new GridPosition(currentGridPos.x - 1, currentGridPos.z);
-            if (!IsValidMovePosition(westPos))
+            if (!IsValidMoveColumn(currentGridPos.x - 1, currentGridPos.z))
             {
                 float minX = cellCenterWorld.x - (cellSize * 0.5f) + unitRadius;
                 if (proposedPosition.x < minX)
@@ -368,7 +406,7 @@ namespace PathfinderTactics.Core
             }
 
             GridPosition targetGridPos = gridSystem.GetGridPosition(proposedPosition);
-            if (!validMovePositions.Contains(targetGridPos))
+            if (!IsValidMoveColumn(targetGridPos.x, targetGridPos.z))
             {
                 selectedUnit.HandleMovement(Vector3.zero);
                 return;
@@ -386,9 +424,9 @@ namespace PathfinderTactics.Core
             }
         }
 
-        private bool IsValidMovePosition(GridPosition pos)
+        private bool IsValidMoveColumn(int x, int z)
         {
-            return validMovePositions != null && validMovePositions.Contains(pos);
+            return validMoveColumns != null && validMoveColumns.Contains(new Vector2Int(x, z));
         }
 
         private void TryExecuteActionAtGridPos(GridPosition targetPos)
@@ -404,6 +442,8 @@ namespace PathfinderTactics.Core
 
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.Busy);
             ServiceLocator.Get<TargetingService>().HideTargeting();
+            if (ServiceLocator.TryGet<TargetLockService>(out var confirmTls) && confirmTls.IsActive)
+                confirmTls.HideTargeting();
             if (selectedUnit != null)
                 ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
 
@@ -446,19 +486,21 @@ namespace PathfinderTactics.Core
                 }
             }
 
-            GridPosition currentPos = ServiceLocator
-                .Get<GridSystem>()
-                .GetGridPosition(selectedUnit.transform.position);
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+            GridPosition currentPos = gridSystem.GetGridPosition(selectedUnit.transform.position);
+            Vector3Int currentLayered = gridSystem.GetLayeredGridPosition(
+                selectedUnit.transform.position
+            );
 
-            if (currentPos != selectedUnit.CurrentGridPosition)
+            bool hasMoved = currentLayered != selectedUnit.CurrentLayeredPosition;
+
+            if (hasMoved)
             {
                 if (selectedUnit.GetActionPointsRemaining() < 1)
                 {
                     Debug.Log("Not enough AP to Stride!");
                     selectedUnit.SnapToGrid(
-                        ServiceLocator
-                            .Get<GridSystem>()
-                            .GetWorldPosition(selectedUnit.CurrentGridPosition)
+                        gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                     );
                     return;
                 }
@@ -467,7 +509,8 @@ namespace PathfinderTactics.Core
 
                 int distanceX = Mathf.Abs(currentPos.x - selectedUnit.CurrentGridPosition.x);
                 int distanceZ = Mathf.Abs(currentPos.z - selectedUnit.CurrentGridPosition.z);
-                int totalDistance = Mathf.Max(distanceX, distanceZ);
+                int distanceY = Mathf.Abs(currentLayered.y - selectedUnit.CurrentLayeredPosition.y);
+                int totalDistance = Mathf.Max(distanceX, Mathf.Max(distanceZ, distanceY));
 
                 bool isAutoStep = totalDistance == 1;
 
@@ -494,27 +537,22 @@ namespace PathfinderTactics.Core
                             if (resolvedEvent.IsCancelled)
                             {
                                 selectedUnit.SnapToGrid(
-                                    ServiceLocator
-                                        .Get<GridSystem>()
-                                        .GetWorldPosition(selectedUnit.CurrentGridPosition)
+                                    gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                                 );
                             }
                             else
                             {
                                 selectedUnit.SpendActionPoints(1);
-                                ServiceLocator
-                                    .Get<GridSystem>()
-                                    .MoveUnit(
-                                        selectedUnit,
-                                        selectedUnit.CurrentGridPosition,
-                                        currentPos
-                                    );
-                                selectedUnit.FinalizeMove(currentPos);
+                                gridSystem.MoveUnit(
+                                    selectedUnit,
+                                    selectedUnit.CurrentLayeredPosition,
+                                    currentLayered
+                                );
+                                selectedUnit.FinalizeMove(currentLayered);
                                 selectedUnit.SnapToGrid(
-                                    ServiceLocator.Get<GridSystem>().GetWorldPosition(currentPos)
+                                    gridSystem.GetWorldPosition(currentLayered)
                                 );
 
-                                // Trigger Aura Refresh (Enter/Exit/Stay)
                                 UnitAuraEmitter[] allEmitters = FindObjectsByType<UnitAuraEmitter>(
                                     FindObjectsSortMode.None
                                 );
@@ -548,24 +586,24 @@ namespace PathfinderTactics.Core
             if (selectedUnit == null || pendingSneakAction == null)
                 return;
 
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
             GridPosition startPos = pendingSneakStart;
-            GridPosition endPos = ServiceLocator
-                .Get<GridSystem>()
-                .GetGridPosition(selectedUnit.transform.position);
+            GridPosition endPos = gridSystem.GetGridPosition(selectedUnit.transform.position);
+            Vector3Int endLayered = gridSystem.GetLayeredGridPosition(
+                selectedUnit.transform.position
+            );
 
-            // If they didn't actually move to a different tile, treat as cancelled.
-            if (endPos == startPos)
+            if (endLayered == pendingSneakStartLayered)
             {
                 pendingSneakAction = null;
                 onComplete?.Invoke();
                 return;
             }
 
-            // Must be within the current move boundary.
-            if (validMovePositions == null || !validMovePositions.Contains(endPos))
+            if (!IsValidMoveColumn(endPos.x, endPos.z))
             {
                 selectedUnit.SnapToGrid(
-                    ServiceLocator.Get<GridSystem>().GetWorldPosition(startPos)
+                    gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                 );
                 onComplete?.Invoke();
                 return;
@@ -575,7 +613,7 @@ namespace PathfinderTactics.Core
             {
                 Debug.Log("Not enough AP to Sneak!");
                 selectedUnit.SnapToGrid(
-                    ServiceLocator.Get<GridSystem>().GetWorldPosition(startPos)
+                    gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                 );
                 pendingSneakAction = null;
                 onComplete?.Invoke();
@@ -600,7 +638,7 @@ namespace PathfinderTactics.Core
                         if (resolvedEvent.IsCancelled)
                         {
                             selectedUnit.SnapToGrid(
-                                ServiceLocator.Get<GridSystem>().GetWorldPosition(startPos)
+                                gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                             );
                         }
                         else
@@ -609,20 +647,17 @@ namespace PathfinderTactics.Core
                                 pendingSneakAction.GetActionPointsCost()
                             );
 
-                            // Move logic: update grid occupancy and finalize logical position.
-                            ServiceLocator
-                                .Get<GridSystem>()
-                                .MoveUnit(selectedUnit, startPos, endPos);
-
-                            // Suppress passive evaluation spam during the Sneak move resolution.
-                            StealthResolver.SetPassiveEvaluationSuppressed(selectedUnit, true);
-                            selectedUnit.FinalizeMove(endPos);
-                            selectedUnit.SnapToGrid(
-                                ServiceLocator.Get<GridSystem>().GetWorldPosition(endPos)
+                            gridSystem.MoveUnit(
+                                selectedUnit,
+                                selectedUnit.CurrentLayeredPosition,
+                                endLayered
                             );
 
-                            // Resolve Sneak at end using a path for "cover throughout" check.
-                            List<GridPosition> path = Pathfinding.FindPath(startPos, endPos);
+                            StealthResolver.SetPassiveEvaluationSuppressed(selectedUnit, true);
+                            selectedUnit.FinalizeMove(endLayered);
+                            selectedUnit.SnapToGrid(gridSystem.GetWorldPosition(endLayered));
+
+                            List<Vector3Int> path = Pathfinding.FindPath(startPos, endPos);
                             StealthResolver.ResolveSneak(
                                 selectedUnit,
                                 startPos,
@@ -632,7 +667,6 @@ namespace PathfinderTactics.Core
                             );
                             StealthResolver.SetPassiveEvaluationSuppressed(selectedUnit, false);
 
-                            // Trigger Aura Refresh (Enter/Exit/Stay)
                             UnitAuraEmitter[] allEmitters = FindObjectsByType<UnitAuraEmitter>(
                                 FindObjectsSortMode.None
                             );
@@ -650,9 +684,20 @@ namespace PathfinderTactics.Core
                 );
         }
 
-        public List<GridPosition> GetValidMovePositions()
+        public List<Vector3Int> GetValidMovePositions()
         {
-            return validMovePositions == null ? null : new List<GridPosition>(validMovePositions);
+            return validMovePositions == null ? null : new List<Vector3Int>(validMovePositions);
+        }
+
+        private void SetValidMovePositions(List<Vector3Int> positions)
+        {
+            validMovePositions = positions;
+            validMoveColumns = new HashSet<Vector2Int>();
+            if (positions != null)
+            {
+                foreach (Vector3Int p in positions)
+                    validMoveColumns.Add(new Vector2Int(p.x, p.z));
+            }
         }
 
         private void CheckTurnEnd()
@@ -663,14 +708,15 @@ namespace PathfinderTactics.Core
             }
             else
             {
-                // If Sneak is pending, keep half-speed boundary even after actions complete.
                 int maxMoveCost = selectedUnit.GetMaxMoveCost();
                 if (pendingSneakAction != null)
                     maxMoveCost = Mathf.Max(0, maxMoveCost / 2);
 
-                validMovePositions = Pathfinding.GetReachableGridPositions(
-                    selectedUnit.CurrentGridPosition,
-                    maxMoveCost
+                SetValidMovePositions(
+                    Pathfinding.GetReachablePositions(
+                        selectedUnit.CurrentLayeredPosition,
+                        maxMoveCost
+                    )
                 );
                 if (ServiceLocator.Get<PhaseManager>().CurrentPhase != GamePhase.ActionSelection)
                     ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
@@ -715,7 +761,6 @@ namespace PathfinderTactics.Core
             Debug.Log($"[UAS] Equipment changed on {selectedUnit.name}. Refreshing move range.");
             RefreshMovePositions();
 
-            // Trigger visual update (MoveRangeVisualizer listens to this)
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
         }
 
@@ -728,9 +773,8 @@ namespace PathfinderTactics.Core
             if (pendingSneakAction != null)
                 maxMoveCost = Mathf.Max(0, maxMoveCost / 2);
 
-            validMovePositions = Pathfinding.GetReachableGridPositions(
-                selectedUnit.CurrentGridPosition,
-                maxMoveCost
+            SetValidMovePositions(
+                Pathfinding.GetReachablePositions(selectedUnit.CurrentLayeredPosition, maxMoveCost)
             );
         }
 
@@ -755,10 +799,8 @@ namespace PathfinderTactics.Core
         {
             if (selectedUnit != null)
             {
-                Vector3 endPos = ServiceLocator
-                    .Get<GridSystem>()
-                    .GetWorldPosition(selectedUnit.CurrentGridPosition);
-                selectedUnit.SnapToGrid(endPos);
+                GridSystem grid = ServiceLocator.Get<GridSystem>();
+                selectedUnit.SnapToGrid(grid.GetWorldPosition(selectedUnit.CurrentLayeredPosition));
             }
             ClearSelectedUnit();
             ServiceLocator.Get<TurnManager>().NextTurn();

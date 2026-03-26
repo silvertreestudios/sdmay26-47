@@ -22,6 +22,7 @@ namespace PathfinderTactics.Core
 
         /// <summary>
         /// A creature threatens a square if it can make a melee Strike into that square.
+        /// Uses 3D PF2e distance for reach calculations.
         /// </summary>
         public static bool IsThreatening(
             Unit attacker,
@@ -33,34 +34,38 @@ namespace PathfinderTactics.Core
             if (attacker == null || target == null)
                 return false;
 
-            // Use provided positions or fallback to CurrentGridPosition
-            GridPosition aPos = attackerPos ?? attacker.CurrentGridPosition;
-            GridPosition tPos = targetPos ?? target.CurrentGridPosition;
-
-            // Ability to act & attack: Uses capability flags from UnitConditions
             if (!attacker.CanMakeMeleeAttacks)
                 return false;
 
-            // Armed: must have a melee weapon, unarmed fallback, or implicit unarmed strike.
-            // PF2e: every creature can always make a 5ft unarmed strike.
             var equipment = attacker.GetComponent<UnitEquipment>();
             WeaponSO weapon = equipment != null ? equipment.GetMainWeapon() : null;
 
-            // Ranged-only weapons don't threaten melee squares.
             if (weapon != null && weapon.IsRangedWeapon())
                 return false;
 
-            // Reach: use weapon reach when available, else default 5ft unarmed.
             int reachFeet = (weapon != null && weapon.reachFeet > 0) ? weapon.reachFeet : 5;
             int reachInTiles = reachFeet / 5;
 
-            int distance = PF2E_Core.GetGridDistance(aPos, tPos);
+            Vector3Int aPos3D = attackerPos.HasValue
+                ? new Vector3Int(
+                    attackerPos.Value.x,
+                    attacker.CurrentLayeredPosition.y,
+                    attackerPos.Value.z
+                )
+                : attacker.CurrentLayeredPosition;
+            Vector3Int tPos3D = targetPos.HasValue
+                ? new Vector3Int(
+                    targetPos.Value.x,
+                    target.CurrentLayeredPosition.y,
+                    targetPos.Value.z
+                )
+                : target.CurrentLayeredPosition;
 
+            int distance = PF2E_Core.GetPF2eDistance3D(aPos3D, tPos3D);
             if (distance > reachInTiles)
                 return false;
 
-            // Line of Effect: No solid walls blocking the path
-            if (LineOfSightUtility.GetCoverBonus(aPos, tPos) == -1)
+            if (!LineOfSightUtility.HasLineOfEffect(aPos3D, tPos3D))
                 return false;
 
             return true;

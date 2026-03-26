@@ -47,9 +47,20 @@ namespace PathfinderTactics.UI
                 Destroy(tileParent.gameObject);
         }
 
+        [Header("Off-Layer Fading")]
+        [Tooltip("Material used for AoE tiles on layers other than the cursor's current Y.")]
+        [SerializeField]
+        private Material fadedAoEMaterial;
+
+        [Tooltip("Alpha multiplier for faded off-layer tiles.")]
+        [SerializeField]
+        private float fadedAlpha = 0.35f;
+
+        private int currentCursorY;
+
         /// <summary>
         /// Called by TargetingService whenever the cursor moves during spell targeting.
-        /// Computes the AoE footprint at the cursor position and spawns highlight tiles.
+        /// Computes the 3D AoE footprint at the cursor position and spawns highlight tiles.
         /// </summary>
         public void UpdateAoEPreview(GridPosition cursorPos, CastSpellAction spellAction)
         {
@@ -61,14 +72,12 @@ namespace PathfinderTactics.UI
 
             SpellSO spell = spellAction.GetCurrentSpell();
 
-            // Only show AoE preview for spells with an actual area shape
             if (spell.Area.Shape == AreaShape.None)
             {
                 ClearTiles();
                 return;
             }
 
-            // Skip rebuild if cursor hasn't moved
             if (isActive && cursorPos.x == lastCursorPos.x && cursorPos.z == lastCursorPos.z)
                 return;
 
@@ -77,25 +86,26 @@ namespace PathfinderTactics.UI
 
             ClearTiles();
 
-            // Get the caster's position for emanation/cone/line origin
             Unit casterUnit = ServiceLocator.Get<UnitActionSystem>().SelectedUnit;
-            GridPosition casterPos =
-                casterUnit != null ? casterUnit.CurrentGridPosition : cursorPos;
+            Vector3Int casterPos3D =
+                casterUnit != null
+                    ? casterUnit.CurrentLayeredPosition
+                    : new Vector3Int(cursorPos.x, 0, cursorPos.z);
 
-            // Compute affected cells using the existing AreaService
-            List<GridPosition> affectedCells = AreaService.GetAffectedCells(
-                cursorPos,
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+            int cursorY = ResolveCursorY(gridSystem, cursorPos);
+            currentCursorY = cursorY;
+
+            Vector3Int origin3D = new Vector3Int(cursorPos.x, cursorY, cursorPos.z);
+
+            List<Vector3Int> affectedCells = AreaService.GetAffectedCells3D(
+                origin3D,
                 spell.Area,
-                casterPos,
-                cursorPos
+                casterPos3D,
+                origin3D
             );
 
-            // Filter to valid grid positions
-            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
-            affectedCells.RemoveAll(c => !gridSystem.IsValidGridPosition(c));
-
-            // Spawn tiles
-            SpawnAoETiles(affectedCells, gridSystem);
+            SpawnAoETiles3D(affectedCells, gridSystem);
         }
 
         /// <summary>
@@ -114,17 +124,23 @@ namespace PathfinderTactics.UI
 
             ClearTiles();
 
-            List<GridPosition> affectedCells = AreaService.GetAffectedCells(
-                cursorPos,
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+
+            int cursorY = ResolveCursorY(gridSystem, cursorPos);
+            int casterY = ResolveCursorY(gridSystem, casterPos);
+            currentCursorY = cursorY;
+
+            Vector3Int origin3D = new Vector3Int(cursorPos.x, cursorY, cursorPos.z);
+            Vector3Int caster3D = new Vector3Int(casterPos.x, casterY, casterPos.z);
+
+            List<Vector3Int> affectedCells = AreaService.GetAffectedCells3D(
+                origin3D,
                 spell.Area,
-                casterPos,
-                cursorPos
+                caster3D,
+                origin3D
             );
 
-            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
-            affectedCells.RemoveAll(c => !gridSystem.IsValidGridPosition(c));
-
-            SpawnAoETiles(affectedCells, gridSystem);
+            SpawnAoETiles3D(affectedCells, gridSystem);
         }
 
         /// <summary>
@@ -136,7 +152,15 @@ namespace PathfinderTactics.UI
             isActive = false;
         }
 
-        private void SpawnAoETiles(List<GridPosition> cells, GridSystem gridSystem)
+        private int ResolveCursorY(GridSystem grid, GridPosition pos)
+        {
+            List<GridNode> column = grid.GetColumn(new Vector2Int(pos.x, pos.z));
+            if (column != null && column.Count > 0)
+                return column[0].Coordinates.y;
+            return 0;
+        }
+
+        private void SpawnAoETiles3D(List<Vector3Int> cells, GridSystem gridSystem)
         {
             if (aoeTilePrefab == null)
             {
@@ -146,7 +170,7 @@ namespace PathfinderTactics.UI
 
             float tileScale = gridSystem.CellSize;
 
-            foreach (var cell in cells)
+            foreach (Vector3Int cell in cells)
             {
                 Vector3 worldPos = gridSystem.GetWorldPosition(cell);
                 Vector3 visualPos = worldPos + new Vector3(0, yOffset, 0);
@@ -158,6 +182,20 @@ namespace PathfinderTactics.UI
                     tileParent
                 );
                 tile.transform.localScale = new Vector3(tileScale, tileScale, tileScale);
+
+                if (cell.y != currentCursorY && fadedAoEMaterial != null)
+                {
+                    Renderer rend = tile.GetComponent<Renderer>();
+                    if (rend != null)
+                    {
+                        Material fadedInstance = new Material(fadedAoEMaterial);
+                        Color c = fadedInstance.color;
+                        c.a = fadedAlpha;
+                        fadedInstance.color = c;
+                        rend.material = fadedInstance;
+                    }
+                }
+
                 activeTiles.Add(tile);
             }
         }

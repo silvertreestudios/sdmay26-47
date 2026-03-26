@@ -26,6 +26,8 @@ namespace PathfinderTactics.Actions
             Cooloff,
         }
 
+        public override bool IsUnitTargeted => true;
+
         public override string GetActionName()
         {
             var weapon = GetWeapon();
@@ -71,7 +73,19 @@ namespace PathfinderTactics.Actions
                 onActionComplete?.Invoke();
                 return;
             }
-            targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(gridPosition);
+
+            if (
+                ServiceLocator.TryGet<TargetLockService>(out var tls)
+                && tls.IsActive
+                && tls.CurrentTarget != null
+            )
+            {
+                targetUnit = tls.CurrentTarget;
+            }
+            else
+            {
+                targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(gridPosition);
+            }
 
             if (targetUnit == null)
             {
@@ -182,7 +196,7 @@ namespace PathfinderTactics.Actions
             // Tile source of truth: resolve against what is actually on the
             // selected tile at resolution time.
             GridSystem grid = ServiceLocator.Get<GridSystem>();
-            Unit actualTarget = grid.GetUnitAt(intendedTargetTile);
+            Unit actualTarget = grid.GetUnitAt(intendedTargetUnit.CurrentLayeredPosition);
             if (actualTarget == null || actualTarget != intendedTargetUnit)
             {
                 Debug.Log(
@@ -271,8 +285,8 @@ namespace PathfinderTactics.Actions
             Debug.Log(defDebug);
 
             int coverBonus = LineOfSightUtility.GetCoverBonus(
-                unit.CurrentGridPosition,
-                targetUnit.CurrentGridPosition
+                unit.CurrentLayeredPosition,
+                targetUnit.CurrentLayeredPosition
             );
 
             if (coverBonus == -1)
@@ -348,23 +362,25 @@ namespace PathfinderTactics.Actions
         {
             int range = GetMaxRange();
             List<GridPosition> rangePositions = new List<GridPosition>();
-            GridPosition unitGridPos = unit.CurrentGridPosition;
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int unitPos = unit.CurrentLayeredPosition;
 
             for (int x = -range; x <= range; x++)
             {
                 for (int z = -range; z <= range; z++)
                 {
-                    GridPosition testPos = new GridPosition(unitGridPos.x + x, unitGridPos.z + z);
-
-                    // Keep it on the map
-                    if (!ServiceLocator.Get<GridSystem>().IsValidGridPosition(testPos))
+                    Vector2Int colKey = new Vector2Int(unitPos.x + x, unitPos.z + z);
+                    List<GridNode> column = grid.GetColumn(colKey);
+                    if (column == null || column.Count == 0)
                         continue;
 
-                    // Chebyshev distance
-                    int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance <= range)
+                    foreach (GridNode node in column)
                     {
-                        rangePositions.Add(testPos);
+                        if (PF2E_Core.GetPF2eDistance3D(unitPos, node.Coordinates) <= range)
+                        {
+                            rangePositions.Add(new GridPosition(colKey.x, colKey.y));
+                            break;
+                        }
                     }
                 }
             }
@@ -375,49 +391,50 @@ namespace PathfinderTactics.Actions
         {
             int range = GetMaxRange();
             List<GridPosition> validGridPositionList = new List<GridPosition>();
-            GridPosition unitGridPosition = unit.CurrentGridPosition;
+            HashSet<Vector2Int> addedColumns = new HashSet<Vector2Int>();
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int unitPos = unit.CurrentLayeredPosition;
 
             for (int x = -range; x <= range; x++)
             {
                 for (int z = -range; z <= range; z++)
                 {
-                    GridPosition testGridPosition = new GridPosition(
-                        unitGridPosition.x + x,
-                        unitGridPosition.z + z
-                    );
-
-                    if (!ServiceLocator.Get<GridSystem>().IsValidGridPosition(testGridPosition))
-                        continue;
-                    if (unitGridPosition == testGridPosition)
+                    Vector2Int colKey = new Vector2Int(unitPos.x + x, unitPos.z + z);
+                    List<GridNode> column = grid.GetColumn(colKey);
+                    if (column == null || column.Count == 0)
                         continue;
 
-                    int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance > range)
-                        continue;
+                    foreach (GridNode node in column)
+                    {
+                        Vector3Int testPos = node.Coordinates;
+                        if (testPos == unitPos)
+                            continue;
 
-                    Unit targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(testGridPosition);
-                    if (targetUnit == null)
-                        continue;
-                    if (targetUnit.GetFaction() == unit.GetFaction())
-                        continue;
+                        if (PF2E_Core.GetPF2eDistance3D(unitPos, testPos) > range)
+                            continue;
 
-                    // Undetected units are targetable via guess-tile mode.
-                    // Unnoticed is exploration-only and still not targetable.
-                    var targetStealth = targetUnit.GetComponent<UnitStealth>();
-                    if (
-                        targetStealth != null
-                        && targetStealth.GetDetectionState(unit) == DetectionState.Unnoticed
-                    )
-                        continue;
+                        Unit target = grid.GetUnitAt(testPos);
+                        if (target == null)
+                            continue;
+                        if (target.GetFaction() == unit.GetFaction())
+                            continue;
 
-                    int coverBonus = LineOfSightUtility.GetCoverBonus(
-                        unitGridPosition,
-                        testGridPosition
-                    );
-                    if (coverBonus == -1)
-                        continue;
+                        var targetStealth = target.GetComponent<UnitStealth>();
+                        if (
+                            targetStealth != null
+                            && targetStealth.GetDetectionState(unit) == DetectionState.Unnoticed
+                        )
+                            continue;
 
-                    validGridPositionList.Add(testGridPosition);
+                        if (!LineOfSightUtility.HasLineOfEffect(unitPos, testPos))
+                            continue;
+
+                        if (!LineOfSightUtility.Evaluate(unitPos, testPos).HasLineOfSight)
+                            continue;
+
+                        if (addedColumns.Add(colKey))
+                            validGridPositionList.Add(new GridPosition(testPos.x, testPos.z));
+                    }
                 }
             }
             return validGridPositionList;

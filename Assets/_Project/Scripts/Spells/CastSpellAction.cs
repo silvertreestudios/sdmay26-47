@@ -85,27 +85,31 @@ namespace PathfinderTactics.Spells
             GridPosition unitPos = unit.CurrentGridPosition;
             int range = GetRangeInTiles();
 
-            // Self-only spells
             if (currentSpell.Targeting == SpellTargetingType.Self)
             {
                 positions.Add(unitPos);
                 return positions;
             }
 
-            // Range circle
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int unitPos3D = unit.CurrentLayeredPosition;
+
             for (int x = -range; x <= range; x++)
             {
                 for (int z = -range; z <= range; z++)
                 {
-                    GridPosition testPos = new GridPosition(unitPos.x + x, unitPos.z + z);
-
-                    if (!ServiceLocator.Get<GridSystem>().IsValidGridPosition(testPos))
+                    Vector2Int colKey = new Vector2Int(unitPos3D.x + x, unitPos3D.z + z);
+                    List<GridNode> column = grid.GetColumn(colKey);
+                    if (column == null || column.Count == 0)
                         continue;
 
-                    int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance <= range)
+                    foreach (GridNode node in column)
                     {
-                        positions.Add(testPos);
+                        if (PF2E_Core.GetPF2eDistance3D(unitPos3D, node.Coordinates) <= range)
+                        {
+                            positions.Add(new GridPosition(colKey.x, colKey.y));
+                            break;
+                        }
                     }
                 }
             }
@@ -141,47 +145,59 @@ namespace PathfinderTactics.Spells
             }
 
             // SingleTarget - must have a valid unit
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int unitPos3D = unit.CurrentLayeredPosition;
+
             for (int x = -range; x <= range; x++)
             {
                 for (int z = -range; z <= range; z++)
                 {
-                    GridPosition testPos = new GridPosition(unitPos.x + x, unitPos.z + z);
-                    GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
-
-                    if (!gridSystem.IsValidGridPosition(testPos))
+                    Vector2Int colKey = new Vector2Int(unitPos.x + x, unitPos.z + z);
+                    List<GridNode> column = grid.GetColumn(colKey);
+                    if (column == null || column.Count == 0)
                         continue;
 
-                    int distance = Mathf.Max(Mathf.Abs(x), Mathf.Abs(z));
-                    if (distance > range)
-                        continue;
-
-                    Unit targetUnit = gridSystem.GetUnitAt(testPos);
-                    if (targetUnit == null)
-                        continue;
-
-                    // Filter by TargetType
-                    bool valid = false;
-                    switch (currentSpell.Target)
+                    bool foundInColumn = false;
+                    foreach (GridNode node in column)
                     {
-                        case TargetType.Enemy:
-                            valid = targetUnit.GetFaction() != unit.GetFaction();
+                        if (foundInColumn)
                             break;
-                        case TargetType.Ally:
-                            valid = targetUnit.GetFaction() == unit.GetFaction();
-                            break;
-                        case TargetType.Creature:
-                            valid = true; // Any creature
-                            break;
-                        case TargetType.Self:
-                            valid = targetUnit == unit;
-                            break;
-                        default:
-                            valid = true;
-                            break;
-                    }
 
-                    if (valid)
-                        validPositions.Add(testPos);
+                        Vector3Int testPos3D = node.Coordinates;
+
+                        if (PF2E_Core.GetPF2eDistance3D(unitPos3D, testPos3D) > range)
+                            continue;
+
+                        Unit targetUnit = grid.GetUnitAt(testPos3D);
+                        if (targetUnit == null)
+                            continue;
+
+                        bool valid = false;
+                        switch (currentSpell.Target)
+                        {
+                            case TargetType.Enemy:
+                                valid = targetUnit.GetFaction() != unit.GetFaction();
+                                break;
+                            case TargetType.Ally:
+                                valid = targetUnit.GetFaction() == unit.GetFaction();
+                                break;
+                            case TargetType.Creature:
+                                valid = true;
+                                break;
+                            case TargetType.Self:
+                                valid = targetUnit == unit;
+                                break;
+                            default:
+                                valid = true;
+                                break;
+                        }
+
+                        if (valid)
+                        {
+                            validPositions.Add(new GridPosition(testPos3D.x, testPos3D.z));
+                            foundInColumn = true;
+                        }
+                    }
                 }
             }
 

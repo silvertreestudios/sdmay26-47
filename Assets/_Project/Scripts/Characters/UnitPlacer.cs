@@ -14,16 +14,15 @@ namespace PathfinderTactics.Characters
     {
         private void Start()
         {
-            // Find the grid position corresponding to this unit's world position
-            GridPosition gridPosition = ServiceLocator
-                .Get<GridSystem>()
-                .GetGridPosition(transform.position);
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int layeredPos = grid.GetLayeredGridPosition(transform.position);
+            Vector3Int resolved = grid.ResolveClosestLayeredPosition(
+                new GridPosition(layeredPos.x, layeredPos.z),
+                layeredPos.y
+            );
 
-            // Get the Unit component on this same GameObject
             Unit unit = GetComponent<Unit>();
-
-            // Tell the GridSystem to add this unit to the grid
-            ServiceLocator.Get<GridSystem>().AddUnitAt(unit, gridPosition);
+            grid.AddUnitAt(unit, resolved);
         }
     }
 }

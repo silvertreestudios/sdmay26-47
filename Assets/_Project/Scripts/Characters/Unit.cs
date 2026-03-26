@@ -158,16 +158,20 @@ namespace PathfinderTactics.Characters
 
         // Facade Methods to GridObject
         public GridPosition CurrentGridPosition => gridObject.CurrentGridPosition;
+        public Vector3Int CurrentLayeredPosition => gridObject.CurrentLayeredPosition;
         public Transform Transform => transform;
 
         public void SetInitialPosition(GridPosition gridPosition) =>
             gridObject.SetInitialPosition(gridPosition);
 
+        public void FinalizeMove(Vector3Int finalLayeredPosition) =>
+            gridObject.FinalizeMove(finalLayeredPosition);
+
         public void FinalizeMove(GridPosition finalPosition) =>
             gridObject.FinalizeMove(finalPosition);
 
         // Facade Methods to Movement
-        public void MoveAlongPath(List<GridPosition> path, Action onComplete) =>
+        public void MoveAlongPath(List<Vector3Int> path, Action onComplete) =>
             movement.MoveAlongPath(path, onComplete);
 
         public void StartMoveAction() => movement.StartMoveAction();

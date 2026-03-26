@@ -65,7 +65,19 @@ namespace PathfinderTactics.Core
         {
             cursorMoveTimer -= Time.deltaTime;
 
-            Vector2 input = ServiceLocator.Get<InputService>().GetMovementVectorNormalized();
+            InputService inputService = ServiceLocator.Get<InputService>();
+            Vector2 input = inputService.GetMovementVectorNormalized();
+
+            // Layer cycling
+            int layerInput = inputService.GetLayerCycleInput();
+            if (layerInput != 0 && gridCursorVisual != null)
+            {
+                GridCursor cursorScript = gridCursorVisual.GetComponent<GridCursor>();
+                if (cursorScript != null && cursorScript.CycleLayer(layerInput))
+                {
+                    UpdateCursorVisual(selectedAction);
+                }
+            }
 
             if (input != Vector2.zero && cursorMoveTimer <= 0f)
             {

@@ -10,7 +10,11 @@ namespace PathfinderTactics.Characters
         private const bool STEALTH_DEBUG = true;
 
         private Unit unit;
-        public GridPosition CurrentGridPosition { get; private set; }
+
+        public Vector3Int CurrentLayeredPosition { get; private set; }
+
+        public GridPosition CurrentGridPosition =>
+            new GridPosition(CurrentLayeredPosition.x, CurrentLayeredPosition.z);
 
         private void Awake()
         {
@@ -19,7 +23,6 @@ namespace PathfinderTactics.Characters
 
         private void Start()
         {
-            // Register self on grid at start
             var grid = ServiceLocator.Get<GridSystem>();
             if (grid == null)
                 return;
@@ -29,39 +32,49 @@ namespace PathfinderTactics.Characters
             if (unit == null)
                 return;
 
-            CurrentGridPosition = grid.GetGridPosition(transform.position);
-            grid.AddUnitAt(unit, CurrentGridPosition);
+            GridPosition gp = grid.GetGridPosition(transform.position);
+            int referenceY = Mathf.RoundToInt(transform.position.y / grid.VerticalCellSize);
+            CurrentLayeredPosition = grid.ResolveClosestLayeredPosition(gp, referenceY);
 
-            // Snap to ensure alignment
-            unit.SnapToGrid(grid.GetWorldPosition(CurrentGridPosition));
+            grid.AddUnitAt(unit, CurrentLayeredPosition);
+            unit.SnapToGrid(grid.GetWorldPosition(CurrentLayeredPosition));
         }
 
         public void SetInitialPosition(GridPosition gridPosition)
         {
-            CurrentGridPosition = gridPosition;
-            // Edit/Play mode tests may call this before Awake() cached 'unit'.
             if (unit == null)
                 unit = GetComponent<Unit>();
-
             if (unit == null)
                 return;
 
-            unit.SnapToGrid(ServiceLocator.Get<GridSystem>().GetWorldPosition(gridPosition));
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            int referenceY = Mathf.RoundToInt(transform.position.y / grid.VerticalCellSize);
+            CurrentLayeredPosition = grid.ResolveClosestLayeredPosition(gridPosition, referenceY);
+
+            unit.SnapToGrid(grid.GetWorldPosition(CurrentLayeredPosition));
+        }
+
+        public void FinalizeMove(Vector3Int finalLayeredPosition)
+        {
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            grid.MoveUnit(unit, CurrentLayeredPosition, finalLayeredPosition);
+            CurrentLayeredPosition = finalLayeredPosition;
+
+            if (STEALTH_DEBUG && unit != null)
+            {
+                Debug.Log(
+                    $"<color=yellow>[STEALTH]</color> FinalizeMove unit={unit.name} -> {finalLayeredPosition}. Evaluating passive stealth."
+                );
+            }
+            StealthResolver.EvaluatePassiveStateChanges(unit);
         }
 
         public void FinalizeMove(GridPosition finalPosition)
         {
-            ServiceLocator.Get<GridSystem>().MoveUnit(unit, CurrentGridPosition, finalPosition);
-            CurrentGridPosition = finalPosition;
-
-            // Passive stealth degradation (cover/LoS loss) happens after logical movement.
-            if (STEALTH_DEBUG && unit != null)
-            {
-                Debug.Log(
-                    $"<color=yellow>[STEALTH]</color> FinalizeMove unit={unit.name} -> {finalPosition}. Evaluating passive stealth."
-                );
-            }
-            StealthResolver.EvaluatePassiveStateChanges(unit);
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            int referenceY = CurrentLayeredPosition.y;
+            Vector3Int resolved = grid.ResolveClosestLayeredPosition(finalPosition, referenceY);
+            FinalizeMove(resolved);
         }
     }
 }

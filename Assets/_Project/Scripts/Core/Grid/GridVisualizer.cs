@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -18,8 +19,7 @@ namespace PathfinderTactics.Grid
         private Transform visualParent;
         private const string VISUAL_PARENT_NAME = "GridVisuals";
 
-        private int lastWidth = -1;
-        private int lastHeight = -1;
+        private int lastNodeCount = -1;
         private float lastCellSize = -1f;
         private Transform lastPrefab = null;
 
@@ -28,7 +28,7 @@ namespace PathfinderTactics.Grid
 #if UNITY_EDITOR
             if (!Application.isPlaying)
             {
-                lastWidth = -1;
+                lastNodeCount = -1;
                 UpdateGridVisuals();
             }
 #endif
@@ -60,8 +60,7 @@ namespace PathfinderTactics.Grid
             }
 
             if (
-                gridSystem.Width == lastWidth
-                && gridSystem.Height == lastHeight
+                gridSystem.NodeCount == lastNodeCount
                 && Mathf.Approximately(gridSystem.CellSize, lastCellSize)
                 && gridTilePrefab == lastPrefab
             )
@@ -73,8 +72,7 @@ namespace PathfinderTactics.Grid
             DestroyGridVisuals();
             CreateGridVisuals();
 
-            lastWidth = gridSystem.Width;
-            lastHeight = gridSystem.Height;
+            lastNodeCount = gridSystem.NodeCount;
             lastCellSize = gridSystem.CellSize;
             lastPrefab = gridTilePrefab;
         }
@@ -92,23 +90,27 @@ namespace PathfinderTactics.Grid
 
         private void CreateGridVisuals()
         {
-            for (int x = 0; x < gridSystem.Width; x++)
+            TerrainBlock[] terrainBlocks = FindObjectsByType<TerrainBlock>(
+                FindObjectsSortMode.None
+            );
+
+            float planeScale = gridSystem.CellSize / 10f;
+
+            foreach (TerrainBlock block in terrainBlocks)
             {
-                for (int z = 0; z < gridSystem.Height; z++)
-                {
-                    GridPosition gridPosition = new GridPosition(x, z);
-                    Vector3 worldPosition = gridSystem.GetWorldPosition(gridPosition);
+                if (block == null)
+                    continue;
 
-                    Transform gridTile = Instantiate(
-                        gridTilePrefab,
-                        worldPosition,
-                        Quaternion.identity,
-                        visualParent
-                    );
+                Vector3Int gridPos = gridSystem.GetLayeredGridPosition(block.transform.position);
+                Vector3 worldPos = gridSystem.GetWorldPosition(gridPos);
 
-                    float planeScale = gridSystem.CellSize / 10f;
-                    gridTile.localScale = new Vector3(planeScale, 1f, planeScale);
-                }
+                Transform gridTile = Instantiate(
+                    gridTilePrefab,
+                    worldPos,
+                    Quaternion.identity,
+                    visualParent
+                );
+                gridTile.localScale = new Vector3(planeScale, 1f, planeScale);
             }
         }
 

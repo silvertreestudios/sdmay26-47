@@ -86,21 +86,20 @@ namespace PathfinderTactics.Grid
         {
             if (ServiceLocator.TryGet<UnitActionSystem>(out var uas) && uas != null)
             {
-                List<GridPosition> positions = uas.GetValidMovePositions();
+                List<Vector3Int> positions = uas.GetValidMovePositions();
                 if (positions != null)
                 {
-                    SpawnTiles(positions, moveTilePrefab);
+                    SpawnLayeredTiles(positions, moveTilePrefab);
                     return;
                 }
             }
 
-            GridPosition startPos = unit.CurrentGridPosition;
             int maxMoveCost = unit.GetMaxMoveCost();
-            List<GridPosition> reachablePositions = Pathfinding.GetReachableGridPositions(
-                startPos,
+            List<Vector3Int> reachable = Pathfinding.GetReachablePositions(
+                unit.CurrentLayeredPosition,
                 maxMoveCost
             );
-            SpawnTiles(reachablePositions, moveTilePrefab);
+            SpawnLayeredTiles(reachable, moveTilePrefab);
         }
 
         private void ShowActionRange()
@@ -123,23 +122,31 @@ namespace PathfinderTactics.Grid
             }
 
             // Spawn soft red for empty reachable tiles
-            SpawnTiles(rangeBounds, attackRangeTilePrefab);
+            SpawnTiles(
+                rangeBounds,
+                attackRangeTilePrefab,
+                ServiceLocator.Get<UnitActionSystem>().SelectedUnit
+            );
 
             // Spawn bright red for tiles containing enemies
-            SpawnTiles(validTargets, attackTargetTilePrefab);
+            SpawnTiles(
+                validTargets,
+                attackTargetTilePrefab,
+                ServiceLocator.Get<UnitActionSystem>().SelectedUnit
+            );
         }
 
-        private void SpawnTiles(List<GridPosition> positions, GameObject prefab)
+        private void SpawnLayeredTiles(List<Vector3Int> positions, GameObject prefab)
         {
             if (prefab == null)
                 return;
 
-            float tileScale = ServiceLocator.Get<GridSystem>().CellSize;
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            float tileScale = grid.CellSize;
 
-            foreach (GridPosition pos in positions)
+            foreach (Vector3Int pos in positions)
             {
-                Vector3 worldPos = ServiceLocator.Get<GridSystem>().GetWorldPosition(pos);
-                // Lift slightly to prevent clipping into the floor
+                Vector3 worldPos = grid.GetWorldPosition(pos);
                 Vector3 visualPos = worldPos + new Vector3(0, 0.02f, 0);
 
                 GameObject tile = Instantiate(
@@ -148,6 +155,32 @@ namespace PathfinderTactics.Grid
                     Quaternion.Euler(90, 0, 0),
                     visualParent
                 );
+                DisableColliders(tile);
+                tile.transform.localScale = new Vector3(tileScale, tileScale, tileScale);
+                activeVisuals.Add(tile);
+            }
+        }
+
+        private void SpawnTiles(List<GridPosition> positions, GameObject prefab, Unit referenceUnit)
+        {
+            if (prefab == null)
+                return;
+
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            float tileScale = grid.CellSize;
+
+            foreach (GridPosition pos in positions)
+            {
+                Vector3 worldPos = grid.GetWorldPosition(pos);
+                Vector3 visualPos = worldPos + new Vector3(0, 0.02f, 0);
+
+                GameObject tile = Instantiate(
+                    prefab,
+                    visualPos,
+                    Quaternion.Euler(90, 0, 0),
+                    visualParent
+                );
+                DisableColliders(tile);
                 tile.transform.localScale = new Vector3(tileScale, tileScale, tileScale);
                 activeVisuals.Add(tile);
             }
@@ -160,6 +193,15 @@ namespace PathfinderTactics.Grid
                 Destroy(visual);
             }
             activeVisuals.Clear();
+        }
+
+        private static void DisableColliders(GameObject root)
+        {
+            Collider[] colliders = root.GetComponentsInChildren<Collider>(true);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].enabled = false;
+            }
         }
     }
 }

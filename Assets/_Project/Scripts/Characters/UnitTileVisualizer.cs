@@ -58,6 +58,7 @@ namespace PathfinderTactics.Characters
                 transform.position,
                 Quaternion.Euler(90, 0, 0)
             );
+            DisableColliders(highlightInstance);
             highlightInstance.name = $"{unit.name}_TileHighlight";
 
             float scale = gridSystem.CellSize;
@@ -79,11 +80,8 @@ namespace PathfinderTactics.Characters
                 return;
 
             GridPosition currentPos = gridSystem.GetGridPosition(transform.position);
-            if (currentPos != lastPosition)
-            {
-                lastPosition = currentPos;
-                UpdatePosition();
-            }
+            lastPosition = currentPos;
+            UpdatePosition();
         }
 
         private void UpdateVisualState()
@@ -97,7 +95,10 @@ namespace PathfinderTactics.Characters
 
         private void UpdatePosition()
         {
-            Vector3 worldPos = gridSystem.GetWorldPosition(lastPosition);
+            int referenceY = Mathf.RoundToInt(
+                unit.transform.position.y / gridSystem.VerticalCellSize
+            );
+            Vector3 worldPos = gridSystem.GetClosestWorldPosition(lastPosition, referenceY);
             highlightInstance.transform.position = worldPos + new Vector3(0, yOffset, 0);
         }
 
@@ -117,6 +118,15 @@ namespace PathfinderTactics.Characters
         {
             if (highlightInstance != null)
                 Destroy(highlightInstance);
+        }
+
+        private static void DisableColliders(GameObject root)
+        {
+            Collider[] colliders = root.GetComponentsInChildren<Collider>(true);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].enabled = false;
+            }
         }
     }
 }

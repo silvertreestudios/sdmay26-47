@@ -41,12 +41,9 @@ namespace PathfinderTactics.Reactions
             if (spellEvent.SourceUnit.GetFaction() == unit.GetFaction())
                 return false;
 
-            // Range check
-            GridPosition myPos = unit.CurrentGridPosition;
-            GridPosition casterPos = spellEvent.SourceUnit.CurrentGridPosition;
-            int distance = Mathf.Max(
-                Mathf.Abs(myPos.x - casterPos.x),
-                Mathf.Abs(myPos.z - casterPos.z)
+            int distance = PF2E_Core.GetPF2eDistance3D(
+                unit.CurrentLayeredPosition,
+                spellEvent.SourceUnit.CurrentLayeredPosition
             );
 
             if (distance > counterRange)

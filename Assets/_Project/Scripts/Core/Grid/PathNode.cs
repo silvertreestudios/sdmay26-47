@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace PathfinderTactics.Grid
 {
     /// <summary>
@@ -7,6 +9,9 @@ namespace PathfinderTactics.Grid
     public class PathNode
     {
         public GridPosition GridPosition { get; }
+        public int ElevationY { get; }
+        public Vector3Int LayeredPosition =>
+            new Vector3Int(GridPosition.x, ElevationY, GridPosition.z);
 
         // G-cost: Walking distance from the start node
         public int gCost;
@@ -23,9 +28,10 @@ namespace PathfinderTactics.Grid
         // If a node is walkable
         public bool isWalkable = true;
 
-        public PathNode(GridPosition gridPosition)
+        public PathNode(GridPosition gridPosition, int elevationY = 0)
         {
             this.GridPosition = gridPosition;
+            this.ElevationY = elevationY;
         }
 
         public void CalculateFCost()

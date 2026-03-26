@@ -127,13 +127,11 @@ namespace PathfinderTactics.Characters
             List<GameObject> tiles = new List<GameObject>();
             float tileScale = gridSystem.CellSize;
 
-            // Get all grid positions within range
-            List<GridPosition> positions = GetAuraPositions(aura);
+            List<Vector3Int> positions = GetAuraPositions3D(aura);
 
-            foreach (var pos in positions)
+            foreach (Vector3Int pos in positions)
             {
                 Vector3 worldPos = gridSystem.GetWorldPosition(pos);
-                // Slight offset to prevent Z-fighting with other grid visuals
                 Vector3 visualPos = worldPos + new Vector3(0, 0.012f, 0);
 
                 GameObject tileObj = Instantiate(
@@ -144,13 +142,12 @@ namespace PathfinderTactics.Characters
                 );
                 tileObj.transform.localScale = new Vector3(tileScale, tileScale, tileScale);
 
-                // Use AuraTile component for color management
                 AuraTile auraTile = tileObj.GetComponent<AuraTile>();
                 if (auraTile == null)
                     auraTile = tileObj.AddComponent<AuraTile>();
 
                 Color color = aura.auraColor;
-                color.a = 0.25f; // Standard transparency for aura highlights
+                color.a = 0.25f;
                 auraTile.SetColor(color);
 
                 tiles.Add(tileObj);
@@ -159,28 +156,28 @@ namespace PathfinderTactics.Characters
             activeAuras[aura] = tiles;
         }
 
-        private List<GridPosition> GetAuraPositions(AuraEffectSO aura)
+        private List<Vector3Int> GetAuraPositions3D(AuraEffectSO aura)
         {
-            List<GridPosition> positions = new List<GridPosition>();
-            GridPosition center = lastPosition; // world-position based center
+            List<Vector3Int> positions = new List<Vector3Int>();
+            // Use the unit's live world position so tiles follow in real-time
+            // during free movement, not just after move finalization.
+            Vector3Int center = gridSystem.GetLayeredGridPosition(unit.transform.position);
             int radius = aura.radiusInTiles;
-
-            float radiusF = radius + 0.5f;
-            float radiusSq = radiusF * radiusF;
 
             for (int x = -radius; x <= radius; x++)
             {
                 for (int z = -radius; z <= radius; z++)
                 {
-                    // Distance check (Same as Emanation)
-                    float distSq = (float)(x * x + z * z);
-                    if (distSq <= radiusSq)
+                    Vector2Int colKey = new Vector2Int(center.x + x, center.z + z);
+                    List<GridNode> column = gridSystem.GetColumn(colKey);
+                    if (column == null || column.Count == 0)
+                        continue;
+
+                    foreach (GridNode node in column)
                     {
-                        GridPosition pos = new GridPosition(center.x + x, center.z + z);
-                        if (gridSystem.IsValidGridPosition(pos))
-                        {
-                            positions.Add(pos);
-                        }
+                        int dist = PF2E_Core.GetPF2eDistance3D(center, node.Coordinates);
+                        if (dist <= radius)
+                            positions.Add(node.Coordinates);
                     }
                 }
             }

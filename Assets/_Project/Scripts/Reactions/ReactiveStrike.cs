@@ -1,5 +1,6 @@
 using System;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using UnityEngine;
 
@@ -10,14 +11,12 @@ namespace PathfinderTactics.Reactions
         [SerializeField]
         private int reach = 1;
 
-        public override int GetPriority() => 50; // Standard attack priority
+        public override int GetPriority() => 50;
 
         public override bool CanTrigger(GameEvent gameEvent)
         {
-            // Reactive Strike triggers when an enemy LEAVES a threatened square
             if (gameEvent is BeforeMoveEvent moveEvent)
             {
-                // Steps do not trigger reactions
                 if (moveEvent.IsStep)
                 {
                     Debug.Log(
@@ -26,20 +25,17 @@ namespace PathfinderTactics.Reactions
                     return false;
                 }
 
-                // Is it an enemy?
                 if (!unit.IsEnemy(moveEvent.SourceUnit))
                     return false;
 
-                // Were they inside our reach before they moved?
-                int dist = Mathf.Max(
-                    Mathf.Abs(moveEvent.StartPos.x - unit.CurrentGridPosition.x),
-                    Mathf.Abs(moveEvent.StartPos.z - unit.CurrentGridPosition.z)
+                int dist = PF2E_Core.GetPF2eDistance3D(
+                    moveEvent.StartLayeredPos,
+                    unit.CurrentLayeredPosition
                 );
 
                 return dist <= reach;
             }
 
-            // TODO: Add RangedAttackEvent and ManipulateEvent triggers here
             return false;
         }
 
