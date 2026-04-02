@@ -102,4 +102,5 @@ Assets/_Project/Tests/
 
 # Ignore the Pathfinder 2e
 /pf2e-13-dev/
-/Assets/GameData/PF2e/    
+/Assets/GameData/PF2e/
+Assets/GameData/PF2e/

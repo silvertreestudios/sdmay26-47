@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: 
   description: 
   icon: {fileID: 0}
+  prefab: {fileID: 2187642192913816276, guid: 0a19ca6f73dfe6d4992a28bded471584, type: 3}
   level: 0
   priceInCopper: 0
   bulk: L

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Longsword
   description: A versatile, straight-bladed sword designed for both cutting and thrusting.
   icon: {fileID: 0}
+  prefab: {fileID: 7957283012378598738, guid: 36e3abbc94749eb4f8d06837e68e9ef7, type: 3}
   level: 0
   priceInCopper: 100
   bulk: 1
@@ -26,6 +27,7 @@ MonoBehaviour:
   category: 2
   group: 14
   hands: 0
+  weaponAnimType: 1
   reachFeet: 5
   rangeIncrementFeet: 0
   traits: 27000000

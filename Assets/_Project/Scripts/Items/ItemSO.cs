@@ -10,6 +10,7 @@ namespace PathfinderTactics.Items
         [TextArea(3, 10)]
         public string description;
         public Sprite icon;
+        public GameObject prefab; // Visual model for the item
 
         [Header("Item Properties")]
         public int level = 0;

@@ -31,25 +31,37 @@ namespace PathfinderTactics.Characters
 
         private void Start()
         {
+            if (mainHand != null)
+                SpawnWeaponModel(mainHand, 1);
+            if (offHand != null)
+                SpawnWeaponModel(offHand, 2);
             ConfigureStrikeActions();
         }
 
+        private GameObject mainHandInstance;
+        private GameObject offHandInstance;
+
         /// <summary>
-        /// Equips a weapon to the main hand. Handles 2-hand constraints.
+        /// Method to equip a weapon, requested by character creator pipeline.
+        /// handSlot: 1 = Main Hand (Right), 2 = Off Hand (Left).
+        /// </summary>
+        public void EquipWeapon(WeaponSO weapon, int handSlot = 1)
+        {
+            if (handSlot == 1)
+                EquipMainHand(weapon);
+            else
+                EquipOffHand(weapon);
+        }
+
+        /// <summary>
+        /// Equips a weapon to the main hand. Handles 2-hand constraints and visual spawning.
         /// </summary>
         public void EquipMainHand(WeaponSO weapon)
         {
-            if (weapon == null)
-            {
-                mainHand = null;
-                NotifyEquipmentChanged();
-                return;
-            }
-
             mainHand = weapon;
 
-            // If the weapon requires 2 hands, we MUST unequip the offhand
-            if (weapon.hands == HandsRequired.Two)
+            // If the weapon requires 2 hands, we should unequip the offhand
+            if (weapon != null && weapon.hands == HandsRequired.Two)
             {
                 if (offHand != null)
                 {
@@ -57,9 +69,11 @@ namespace PathfinderTactics.Characters
                         $"Unequipped {offHand.itemName} from off-hand because {weapon.itemName} requires 2 hands."
                     );
                     offHand = null;
+                    DespawnVisualModel(2);
                 }
             }
 
+            SpawnWeaponModel(weapon, 1);
             NotifyEquipmentChanged();
         }
 
@@ -71,6 +85,7 @@ namespace PathfinderTactics.Characters
             if (equipment == null)
             {
                 offHand = null;
+                DespawnVisualModel(2);
                 NotifyEquipmentChanged();
                 return;
             }
@@ -87,6 +102,7 @@ namespace PathfinderTactics.Characters
             if (equipment is WeaponSO || equipment is ShieldSO)
             {
                 offHand = equipment;
+                SpawnWeaponModel(equipment, 2);
                 NotifyEquipmentChanged();
             }
             else
@@ -101,6 +117,72 @@ namespace PathfinderTactics.Characters
         {
             equippedArmor = armor;
             NotifyEquipmentChanged();
+        }
+
+        private void DespawnVisualModel(int handSlot)
+        {
+            if (handSlot == 1 && mainHandInstance != null)
+            {
+                Destroy(mainHandInstance);
+                mainHandInstance = null;
+            }
+            else if (handSlot == 2 && offHandInstance != null)
+            {
+                Destroy(offHandInstance);
+                offHandInstance = null;
+            }
+        }
+
+        private void SpawnWeaponModel(EquipmentSO equipment, int handSlot)
+        {
+            DespawnVisualModel(handSlot);
+
+            if (equipment == null || equipment.prefab == null)
+                return;
+
+            Animator animator = GetComponentInChildren<Animator>();
+            if (animator == null || !animator.isHuman)
+            {
+                Debug.LogWarning(
+                    $"Cannot spawn {equipment.itemName} visually: No Humanoid Animator found on {gameObject.name}."
+                );
+                return;
+            }
+
+            Transform handBone = animator.GetBoneTransform(
+                handSlot == 1 ? HumanBodyBones.RightHand : HumanBodyBones.LeftHand
+            );
+            if (handBone == null)
+            {
+                Debug.LogWarning(
+                    $"Cannot spawn {equipment.itemName} visually: Humanoid Animator missing hand bone."
+                );
+                return;
+            }
+
+            GameObject instance = Instantiate(equipment.prefab, handBone);
+
+            WeaponGrip grip = instance.GetComponent<WeaponGrip>();
+            if (grip != null)
+            {
+                instance.transform.localPosition = grip.positionalOffset;
+                instance.transform.localEulerAngles = grip.rotationalOffset;
+            }
+            else
+            {
+                instance.transform.localPosition = Vector3.zero;
+                instance.transform.localRotation = Quaternion.identity;
+            }
+
+            if (handSlot == 1)
+                mainHandInstance = instance;
+            else
+                offHandInstance = instance;
+
+            if (equipment is WeaponSO weaponData)
+            {
+                animator.SetInteger("WeaponType", weaponData.weaponAnimType);
+            }
         }
 
         public void AddToInventory(ItemSO item, int quantity = 1)
@@ -171,50 +253,62 @@ namespace PathfinderTactics.Characters
         //  Dynamic Strike Action Management
 
         /// <summary>
-        /// Removes all existing MeleeAction/RangedAction components and creates
-        /// fresh ones based on the currently equipped weapons.
-        /// Each equipped weapon that can attack gets its own Strike button.
+        /// Updates the MeleeAction/RangedAction components based on the currently equipped weapons.
+        /// Uses a component pooling pattern rather than destroying at runtime.
         /// </summary>
         public void ConfigureStrikeActions()
         {
-            // Remove all existing strike action components (DestroyImmediate is
-            // required here so GetComponents sees the clean state before we add new ones)
-            foreach (var melee in GetComponents<MeleeAction>())
-                DestroyImmediate(melee);
-            foreach (var ranged in GetComponents<RangedAction>())
-                DestroyImmediate(ranged);
+            // Get existing components instead of destroying them
+            var meleeActions = GetComponents<MeleeAction>();
+            var rangedActions = GetComponents<RangedAction>();
 
-            // Collect all weapons that should have strike options
+            // Disable them all first
+            foreach (var melee in meleeActions)
+                melee.enabled = false;
+            foreach (var ranged in rangedActions)
+                ranged.enabled = false;
+
+            // Figure out what weapons we actually have
             var weapons = new List<WeaponSO>();
-
-            // Main hand (or unarmed fallback)
             WeaponSO mainWeapon = mainHand != null ? mainHand : unarmedFallback;
             if (mainWeapon != null)
                 weapons.Add(mainWeapon);
-
-            // Off-hand weapon (if it's a WeaponSO, not a shield)
             if (offHand is WeaponSO offWeapon && offWeapon != mainWeapon)
                 weapons.Add(offWeapon);
 
-            // Create one action per weapon
+            // Update or Add components as needed
+            int meleeIndex = 0;
+            int rangedIndex = 0;
+
             foreach (var weapon in weapons)
             {
-                // Melee: any weapon with reachFeet > 0
                 if (weapon.reachFeet > 0)
                 {
-                    var melee = gameObject.AddComponent<MeleeAction>();
+                    // Reuse existing or add new
+                    MeleeAction melee =
+                        meleeIndex < meleeActions.Length
+                            ? meleeActions[meleeIndex]
+                            : gameObject.AddComponent<MeleeAction>();
+
                     melee.activeWeapon = weapon;
+                    melee.enabled = true;
+                    meleeIndex++;
                 }
 
-                // Ranged: any weapon with rangeIncrementFeet > 0 (thrown, bows, etc.)
                 if (weapon.IsRangedWeapon())
                 {
-                    var ranged = gameObject.AddComponent<RangedAction>();
+                    RangedAction ranged =
+                        rangedIndex < rangedActions.Length
+                            ? rangedActions[rangedIndex]
+                            : gameObject.AddComponent<RangedAction>();
+
                     ranged.activeWeapon = weapon;
+                    ranged.enabled = true;
+                    rangedIndex++;
                 }
             }
 
-            // Refresh the action economy cache so the UI picks up the new components
+            // Refresh the action economy cache so the UI picks up the updated components
             var actionEconomy = GetComponent<UnitActionEconomy>();
             if (actionEconomy != null)
                 actionEconomy.RefreshActions();

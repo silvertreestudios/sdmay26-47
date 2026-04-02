@@ -8,9 +8,14 @@ namespace PathfinderTactics.Reactions
 {
     public class ReactionManager : MonoBehaviour
     {
-        private Queue<ReactionIntent> pendingIntents = new Queue<ReactionIntent>();
-        private Action<GameEvent> onAllReactionsResolved;
-        private GameEvent currentResolvingEvent;
+        private class EvaluationContext
+        {
+            public Queue<ReactionIntent> PendingIntents = new Queue<ReactionIntent>();
+            public Action<GameEvent> OnAllReactionsResolved;
+            public GameEvent CurrentResolvingEvent;
+        }
+
+        private Stack<EvaluationContext> evaluationStack = new Stack<EvaluationContext>();
 
         private void Awake()
         {
@@ -24,9 +29,12 @@ namespace PathfinderTactics.Reactions
 
         public void EvaluateEvent(GameEvent gameEvent, Action<GameEvent> onComplete)
         {
-            pendingIntents.Clear();
-            currentResolvingEvent = gameEvent;
-            onAllReactionsResolved = onComplete;
+            EvaluationContext context = new EvaluationContext
+            {
+                CurrentResolvingEvent = gameEvent,
+                OnAllReactionsResolved = onComplete,
+            };
+            evaluationStack.Push(context);
 
             List<ReactionIntent> validIntents = new List<ReactionIntent>();
 
@@ -58,7 +66,7 @@ namespace PathfinderTactics.Reactions
 
             foreach (var intent in validIntents)
             {
-                pendingIntents.Enqueue(intent);
+                context.PendingIntents.Enqueue(intent);
             }
 
             // Begin processing
@@ -67,13 +75,20 @@ namespace PathfinderTactics.Reactions
 
         private void ProcessNextIntent()
         {
-            if (pendingIntents.Count == 0 || currentResolvingEvent.IsCancelled)
+            if (evaluationStack.Count == 0)
+                return;
+
+            EvaluationContext context = evaluationStack.Peek();
+
+            if (context.PendingIntents.Count == 0 || context.CurrentResolvingEvent.IsCancelled)
             {
-                onAllReactionsResolved?.Invoke(currentResolvingEvent);
+                // We finished evaluating this specific event level
+                evaluationStack.Pop();
+                context.OnAllReactionsResolved?.Invoke(context.CurrentResolvingEvent);
                 return;
             }
 
-            ReactionIntent intent = pendingIntents.Dequeue();
+            ReactionIntent intent = context.PendingIntents.Dequeue();
 
             // Safety Check: Did a previous reaction in this chain kill this unit or steal its reaction?
             if (

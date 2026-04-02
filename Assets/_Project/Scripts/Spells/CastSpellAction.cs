@@ -31,7 +31,7 @@ namespace PathfinderTactics.Spells
         [SerializeField]
         private int castLevel = 1;
 
-        private float stateTimer;
+        private SpellCastContext activeContext;
 
         // BaseAction Interface
 
@@ -275,26 +275,60 @@ namespace PathfinderTactics.Spells
                             return;
                         }
 
-                        // Resolve all effects through the phase pipeline
-                        SpellEffectResolver.Resolve(context);
-
-                        // Fire AfterSpellEvent
-                        AfterSpellEvent afterEvent = new AfterSpellEvent(
-                            unit,
-                            currentSpell,
-                            context.AffectedUnits
-                        );
-                        ServiceLocator
-                            .Get<ReactionManager>()
-                            .EvaluateEvent(
-                                afterEvent,
-                                (_) =>
-                                {
-                                    FinishCasting();
-                                }
-                            );
+                        var visuals = unit.GetComponentInChildren<UnitVisuals>();
+                        if (visuals != null)
+                        {
+                            activeContext = context;
+                            visuals.OnCastSpell += HandleCastSpellFire;
+                            visuals.OnAnimationEnd += HandleCastAnimationEnd;
+                            visuals.TriggerCastSpellAction();
+                        }
+                        else
+                        {
+                            // Fallback
+                            SpellEffectResolver.Resolve(context);
+                            FireAfterEventAndFinish(context);
+                        }
                     }
                 );
+        }
+
+        private void HandleCastSpellFire()
+        {
+            if (activeContext != null)
+            {
+                SpellEffectResolver.Resolve(activeContext);
+                FireAfterEventAndFinish(activeContext);
+            }
+        }
+
+        private void FireAfterEventAndFinish(SpellCastContext ctx)
+        {
+            AfterSpellEvent afterEvent = new AfterSpellEvent(unit, currentSpell, ctx.AffectedUnits);
+            ServiceLocator
+                .Get<ReactionManager>()
+                .EvaluateEvent(
+                    afterEvent,
+                    (_) =>
+                    {
+                        var visuals = unit.GetComponentInChildren<UnitVisuals>();
+                        if (visuals == null)
+                        {
+                            FinishCasting();
+                        }
+                    }
+                );
+        }
+
+        private void HandleCastAnimationEnd()
+        {
+            var visuals = unit.GetComponentInChildren<UnitVisuals>();
+            if (visuals != null)
+            {
+                visuals.OnCastSpell -= HandleCastSpellFire;
+                visuals.OnAnimationEnd -= HandleCastAnimationEnd;
+            }
+            FinishCasting();
         }
 
         private void FinishCasting()

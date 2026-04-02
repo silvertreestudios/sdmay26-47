@@ -16,6 +16,7 @@ MonoBehaviour:
   description: A small, easily concealed blade suited for stabbing and close-quarters
     fighting.
   icon: {fileID: 0}
+  prefab: {fileID: 1856494049994197953, guid: 19a4aed7f66e4dc4b8665430cf578060, type: 3}
   level: 0
   priceInCopper: 20
   bulk: L
@@ -27,6 +28,7 @@ MonoBehaviour:
   category: 1
   group: 8
   hands: 0
+  weaponAnimType: 1
   reachFeet: 5
   rangeIncrementFeet: 10
   traits: 00000000120000002200000027000000

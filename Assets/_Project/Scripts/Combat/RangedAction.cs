@@ -16,15 +16,6 @@ namespace PathfinderTactics.Actions
         private Unit targetUnit;
         private Unit intendedTargetUnit;
         private GridPosition intendedTargetTile;
-        private float stateTimer;
-        private State state;
-
-        private enum State
-        {
-            Aiming,
-            Shooting,
-            Cooloff,
-        }
 
         public override bool IsUnitTargeted => true;
 
@@ -96,65 +87,83 @@ namespace PathfinderTactics.Actions
             intendedTargetUnit = targetUnit;
             intendedTargetTile = gridPosition;
             this.onActionComplete = onActionComplete;
-            state = State.Aiming;
-            stateTimer = 0.5f;
             isActive = true;
+
+            var visuals = unit.GetComponentInChildren<UnitVisuals>();
+            if (visuals != null)
+            {
+                var weapon = GetWeapon();
+                if (weapon != null)
+                {
+                    visuals.SetWeaponType(weapon.weaponAnimType);
+                }
+
+                visuals.OnShoot += HandleShoot;
+                visuals.OnAnimationEnd += HandleAnimationEnd;
+                visuals.TriggerRangedAttack();
+
+                Invoke(nameof(FallbackActionComplete), 2.0f);
+            }
+            else
+            {
+                // Fallback for testing without animator attached
+                PerformShootLogic();
+                ActionComplete();
+            }
         }
 
         private void Update()
         {
-            if (!isActive)
+            if (!isActive || targetUnit == null)
                 return;
 
-            stateTimer -= Time.deltaTime;
+            float rotateSpeed = 10f;
+            Vector3 aimDir = (targetUnit.transform.position - transform.position).normalized;
+            aimDir.y = 0f;
 
-            switch (state)
+            if (aimDir.sqrMagnitude > 0.001f)
             {
-                case State.Aiming:
-                    if (targetUnit != null)
-                    {
-                        float rotateSpeed = 10f;
-                        Vector3 aimDir = (
-                            targetUnit.transform.position - transform.position
-                        ).normalized;
-                        transform.forward = Vector3.Lerp(
-                            transform.forward,
-                            aimDir,
-                            Time.deltaTime * rotateSpeed
-                        );
-                    }
-                    break;
-                case State.Shooting:
-                    break;
-                case State.Cooloff:
-                    break;
-            }
-
-            if (stateTimer <= 0f)
-            {
-                NextState();
+                transform.forward = Vector3.Lerp(
+                    transform.forward,
+                    aimDir,
+                    Time.deltaTime * rotateSpeed
+                );
             }
         }
 
-        private void NextState()
+        private void HandleShoot()
         {
-            switch (state)
+            PerformShootLogic();
+        }
+
+        private void HandleAnimationEnd()
+        {
+            ActionComplete();
+        }
+
+        private void ActionComplete()
+        {
+            if (!isActive)
+                return;
+
+            CancelInvoke(nameof(FallbackActionComplete));
+
+            isActive = false;
+            var visuals = unit.GetComponentInChildren<UnitVisuals>();
+            if (visuals != null)
             {
-                case State.Aiming:
-                    state = State.Shooting;
-                    stateTimer = 0.1f;
-                    // TODO: add arrow projectile here later
-                    break;
-                case State.Shooting:
-                    state = State.Cooloff;
-                    stateTimer = 0.5f;
-                    PerformShootLogic();
-                    break;
-                case State.Cooloff:
-                    isActive = false;
-                    onActionComplete?.Invoke();
-                    break;
+                visuals.OnShoot -= HandleShoot;
+                visuals.OnAnimationEnd -= HandleAnimationEnd;
             }
+            onActionComplete?.Invoke();
+        }
+
+        private void FallbackActionComplete()
+        {
+            Debug.LogWarning(
+                $"<color=orange>[FAILSAFE]</color> The Animator swallowed the ActionComplete event! Rescuing the game state via failsafe timer."
+            );
+            ActionComplete();
         }
 
         private void PerformShootLogic()
@@ -345,6 +354,11 @@ namespace PathfinderTactics.Actions
             }
             else
             {
+                var targetVisuals = targetUnit.GetComponentInChildren<UnitVisuals>();
+                if (targetVisuals != null)
+                {
+                    targetVisuals.TriggerDodge();
+                }
                 Debug.Log("Miss!");
             }
 

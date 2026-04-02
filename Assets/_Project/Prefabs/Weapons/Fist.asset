@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Fist
   description: A basic unarmed strike
   icon: {fileID: 0}
+  prefab: {fileID: 0}
   level: 0
   priceInCopper: 0
   bulk: 
@@ -26,6 +27,7 @@ MonoBehaviour:
   category: 0
   group: 3
   hands: 0
+  weaponAnimType: 0
   reachFeet: 5
   rangeIncrementFeet: 0
   traits: 00000000120000001b000000

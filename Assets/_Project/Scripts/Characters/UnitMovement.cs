@@ -54,10 +54,7 @@ namespace PathfinderTactics.Characters
         private bool jumpedThisAirTime;
 
         // Animator integration
-        private Animator animator;
-        private static readonly int AnimIsGrounded = Animator.StringToHash("IsGrounded");
-        private static readonly int AnimVerticalSpeed = Animator.StringToHash("VerticalSpeed");
-        private static readonly int AnimJumpTrigger = Animator.StringToHash("Jump");
+        private UnitVisuals unitVisuals;
 
         // State accessors for external systems
         public bool IsGrounded => characterController != null && characterController.isGrounded;
@@ -68,6 +65,7 @@ namespace PathfinderTactics.Characters
         public event Action OnLanded;
 
         private bool wasGroundedLastFrame;
+        private Vector3 lastFramePosition; // Used to manually track velocity safely
 
         // Path-following state
         private List<Vector3> positionList;
@@ -81,7 +79,7 @@ namespace PathfinderTactics.Characters
         {
             characterController = GetComponent<CharacterController>();
             unit = GetComponent<Unit>();
-            animator = GetComponentInChildren<Animator>();
+            unitVisuals = GetComponentInChildren<UnitVisuals>();
         }
 
         private void Update()
@@ -89,11 +87,39 @@ namespace PathfinderTactics.Characters
             if (isMoving)
             {
                 TickPathMovement();
-                return;
+            }
+            else
+            {
+                // Always apply gravity when idle so IsGrounded accurately detects the floor
+                ApplyGravity();
+                characterController.Move(Vector3.up * verticalVelocity * Time.deltaTime);
             }
 
             UpdateGroundedTracking();
             UpdateAnimator();
+
+            lastFramePosition = transform.position;
+        }
+
+        private void ApplyGravity()
+        {
+            bool grounded = IsGrounded;
+
+            // strong downward force keeps unit planted on slopes
+            if (grounded && verticalVelocity < 0f)
+            {
+                verticalVelocity = -groundStickForce;
+            }
+
+            // Asymmetric gravity: heavier on the way down.
+            float currentGravity =
+                verticalVelocity > 0f ? riseGravity : riseGravity * fallGravityMultiplier;
+
+            verticalVelocity -= currentGravity * Time.deltaTime;
+
+            // Terminal velocity clamp
+            if (verticalVelocity < -maxFallSpeed)
+                verticalVelocity = -maxFallSpeed;
         }
 
         private void UpdateGroundedTracking()
@@ -114,11 +140,18 @@ namespace PathfinderTactics.Characters
 
         private void UpdateAnimator()
         {
-            if (animator == null)
+            if (unitVisuals == null)
                 return;
 
-            animator.SetBool(AnimIsGrounded, IsGrounded);
-            animator.SetFloat(AnimVerticalSpeed, verticalVelocity);
+            // Compute velocity manually based on actual transform changes this frame.
+            Vector3 worldVelocity = (transform.position - lastFramePosition) / Time.deltaTime;
+            Vector3 planarVelocity = worldVelocity;
+            planarVelocity.y = 0f;
+            float speed = planarVelocity.magnitude;
+
+            unitVisuals.SetSpeed(speed);
+            unitVisuals.SetGrounded(IsGrounded);
+            unitVisuals.SetVerticalSpeed(verticalVelocity);
         }
 
         // Path-following (AI)
@@ -126,30 +159,38 @@ namespace PathfinderTactics.Characters
         private void TickPathMovement()
         {
             Vector3 targetPosition = positionList[currentPositionIndex];
-            Vector3 moveDirection = (targetPosition - transform.position).normalized;
 
-            if (moveDirection != Vector3.zero)
+            // Move on XZ plane towards target
+            Vector3 currentPosXZ = new Vector3(transform.position.x, 0, transform.position.z);
+            Vector3 targetPosXZ = new Vector3(targetPosition.x, 0, targetPosition.z);
+            Vector3 moveDirectionXZ = (targetPosXZ - currentPosXZ).normalized;
+
+            if (moveDirectionXZ != Vector3.zero)
             {
                 transform.forward = Vector3.Lerp(
                     transform.forward,
-                    moveDirection,
+                    moveDirectionXZ,
                     Time.deltaTime * rotateSpeed
                 );
             }
 
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                targetPosition,
+            Vector3 stepXZ = Vector3.MoveTowards(
+                currentPosXZ,
+                targetPosXZ,
                 moveSpeed * Time.deltaTime
             );
+            Vector3 moveDelta = stepXZ - currentPosXZ;
 
-            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+            ApplyGravity();
+            characterController.Move(moveDelta + (Vector3.up * verticalVelocity * Time.deltaTime));
+
+            // Planar reach check
+            if (Vector3.Distance(currentPosXZ, targetPosXZ) < 0.1f)
             {
                 currentPositionIndex++;
                 if (currentPositionIndex >= positionList.Count)
                 {
                     isMoving = false;
-                    transform.position = targetPosition;
                     onMoveComplete?.Invoke();
                 }
             }
@@ -189,24 +230,7 @@ namespace PathfinderTactics.Characters
 
         public void HandleMovement(Vector3 moveDirection)
         {
-            bool grounded = IsGrounded;
-
-            // strong downward force keeps unit planted on slopes
-            // and prevents micro-bouncing after landing.
-            if (grounded && verticalVelocity < 0f)
-            {
-                verticalVelocity = -groundStickForce;
-            }
-
-            // Asymmetric gravity: heavier on the way down.
-            float currentGravity =
-                verticalVelocity > 0f ? riseGravity : riseGravity * fallGravityMultiplier;
-
-            verticalVelocity -= currentGravity * Time.deltaTime;
-
-            // Terminal velocity clamp
-            if (verticalVelocity < -maxFallSpeed)
-                verticalVelocity = -maxFallSpeed;
+            ApplyGravity();
 
             Vector3 finalMoveVector = moveDirection + (Vector3.up * verticalVelocity);
 
@@ -249,8 +273,8 @@ namespace PathfinderTactics.Characters
 
             OnJumpStarted?.Invoke();
 
-            if (animator != null)
-                animator.SetTrigger(AnimJumpTrigger);
+            if (unitVisuals != null)
+                unitVisuals.TriggerJump();
         }
 
         // Called from HandleMovement's ground tracking via Update loop.

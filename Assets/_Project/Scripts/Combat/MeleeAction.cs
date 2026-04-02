@@ -16,14 +16,6 @@ namespace PathfinderTactics.Actions
         private Unit targetUnit;
         private Unit intendedTargetUnit;
         private GridPosition intendedTargetTile;
-        private float stateTimer;
-        private State state;
-
-        private enum State
-        {
-            Swinging,
-            Cooloff,
-        }
 
         public override bool IsUnitTargeted => true;
 
@@ -93,52 +85,56 @@ namespace PathfinderTactics.Actions
 
         private void Update()
         {
-            if (!isActive)
+            if (!isActive || targetUnit == null)
                 return;
 
-            stateTimer -= Time.deltaTime;
+            float rotateSpeed = 10f;
+            Vector3 aimDir = (targetUnit.transform.position - transform.position).normalized;
+            aimDir.y = 0f;
 
-            switch (state)
+            if (aimDir.sqrMagnitude > 0.001f)
             {
-                // TODO: fix
-                case State.Swinging:
-                    if (targetUnit != null)
-                    {
-                        float rotateSpeed = 10f;
-                        Vector3 aimDir = (
-                            targetUnit.transform.position - transform.position
-                        ).normalized;
-                        transform.forward = Vector3.Lerp(
-                            transform.forward,
-                            aimDir,
-                            Time.deltaTime * rotateSpeed
-                        );
-                    }
-                    break;
-                case State.Cooloff:
-                    break;
-            }
-
-            if (stateTimer <= 0f)
-            {
-                NextState();
+                transform.forward = Vector3.Lerp(
+                    transform.forward,
+                    aimDir,
+                    Time.deltaTime * rotateSpeed
+                );
             }
         }
 
-        private void NextState()
+        private void HandleStrikeConnects()
         {
-            switch (state)
+            PerformStrikeLogic();
+        }
+
+        private void HandleAnimationEnd()
+        {
+            ActionComplete();
+        }
+
+        private void ActionComplete()
+        {
+            if (!isActive)
+                return;
+
+            CancelInvoke(nameof(FallbackActionComplete));
+
+            isActive = false;
+            var visuals = unit.GetComponentInChildren<UnitVisuals>();
+            if (visuals != null)
             {
-                case State.Swinging:
-                    state = State.Cooloff;
-                    stateTimer = 0.5f;
-                    PerformStrikeLogic();
-                    break;
-                case State.Cooloff:
-                    isActive = false;
-                    onActionComplete?.Invoke();
-                    break;
+                visuals.OnStrikeConnects -= HandleStrikeConnects;
+                visuals.OnAnimationEnd -= HandleAnimationEnd;
             }
+            onActionComplete?.Invoke();
+        }
+
+        private void FallbackActionComplete()
+        {
+            Debug.LogWarning(
+                $"<color=orange>[FAILSAFE]</color> The Animator swallowed the ActionComplete event! Rescuing the game state via failsafe timer."
+            );
+            ActionComplete();
         }
 
         public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
@@ -172,9 +168,31 @@ namespace PathfinderTactics.Actions
             intendedTargetUnit = targetUnit;
             intendedTargetTile = gridPosition;
             this.onActionComplete = onActionComplete;
-            state = State.Swinging;
-            stateTimer = 0.7f;
             isActive = true;
+
+            var visuals = unit.GetComponentInChildren<UnitVisuals>();
+            if (visuals != null)
+            {
+                var weapon = GetWeapon();
+                if (weapon != null)
+                {
+                    visuals.SetWeaponType(weapon.weaponAnimType);
+                }
+
+                visuals.OnStrikeConnects += HandleStrikeConnects;
+                visuals.OnAnimationEnd += HandleAnimationEnd;
+                visuals.TriggerMeleeAttack();
+
+                // Unity's Animator sometimes drops the final frame of animations during blends.
+                // This guarantees the game will never soft-lock even if the event is swallowed.
+                Invoke(nameof(FallbackActionComplete), 2.0f);
+            }
+            else
+            {
+                // Fallback for testing without animator attached
+                PerformStrikeLogic();
+                ActionComplete();
+            }
         }
 
         private void PerformStrikeLogic()
@@ -398,6 +416,11 @@ namespace PathfinderTactics.Actions
             }
             else
             {
+                var targetVisuals = targetUnit.GetComponentInChildren<UnitVisuals>();
+                if (targetVisuals != null)
+                {
+                    targetVisuals.TriggerDodge();
+                }
                 Debug.Log("Miss!");
             }
 

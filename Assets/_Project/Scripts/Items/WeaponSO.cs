@@ -105,6 +105,7 @@ namespace PathfinderTactics.Items
         public WeaponCategory category = WeaponCategory.Martial;
         public WeaponGroup group = WeaponGroup.Sword;
         public HandsRequired hands = HandsRequired.One;
+        public int weaponAnimType; // 1=1H, 2=2H, 3=Bow
 
         [Header("Range")]
         [Tooltip("Max reach in feet. Standard melee is 5ft. Reach weapons are 10ft.")]

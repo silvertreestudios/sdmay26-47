@@ -25,6 +25,7 @@ namespace PathfinderTactics.Characters
 
         private UnitConditions unitConditions;
         private Unit thisUnit;
+        private UnitVisuals unitVisuals;
 
         // Route state checks directly to the Condition Manager
         public bool IsUnconscious =>
@@ -35,6 +36,7 @@ namespace PathfinderTactics.Characters
         {
             thisUnit = GetComponent<Unit>();
             unitConditions = GetComponent<UnitConditions>();
+            unitVisuals = GetComponentInChildren<UnitVisuals>();
             if (unitConditions == null)
             {
                 unitConditions = gameObject.AddComponent<UnitConditions>();
@@ -144,6 +146,9 @@ namespace PathfinderTactics.Characters
                             $"<color=red>[HEALTH]</color> {thisUnit.name} took {finalAmount} final damage. HP: {currentHealth}/{currentMaxHealth}"
                         );
 
+                        if (unitVisuals != null && finalAmount > 0)
+                            unitVisuals.TriggerTakeDamage();
+
                         // Dying Logic
                         if (currentHealth == 0)
                         {
@@ -164,6 +169,9 @@ namespace PathfinderTactics.Characters
                                     unitConditions.ApplyCondition(ConditionType.Dying, newDying);
                                 }
 
+                                if (unitVisuals != null)
+                                    unitVisuals.SetUnconscious(true);
+
                                 OnStatusMessage?.Invoke(this, "Knocked Out!");
                             }
                             else
@@ -180,6 +188,9 @@ namespace PathfinderTactics.Characters
                             // Check if that damage killed them
                             if (IsDead)
                             {
+                                if (unitVisuals != null)
+                                    unitVisuals.SetDead(true);
+
                                 OnStatusMessage?.Invoke(this, "DEAD");
                                 OnDeath?.Invoke(this, EventArgs.Empty);
                             }
@@ -206,12 +217,20 @@ namespace PathfinderTactics.Characters
             {
                 unitConditions.RecoverFromDying(); // This automatically adds Wounded and removes Unconscious
                 int wounded = unitConditions.GetConditionValue(ConditionType.Wounded);
+
+                if (unitVisuals != null)
+                    unitVisuals.SetUnconscious(false);
+
                 OnStatusMessage?.Invoke(this, $"Stabilized & Woke Up! (Wounded {wounded})");
             }
             // Waking up from normal Unconscious (like sleep)
             else if (unitConditions.HasCondition(ConditionType.Unconscious))
             {
                 unitConditions.RemoveCondition(ConditionType.Unconscious);
+
+                if (unitVisuals != null)
+                    unitVisuals.SetUnconscious(false);
+
                 OnStatusMessage?.Invoke(this, "Woke Up!");
             }
         }

@@ -13,7 +13,7 @@ namespace PathfinderTactics.Combat
     public static class StealthResolver
     {
         // Enable stealth tracing in the Unity console.
-        private const bool STEALTH_DEBUG = true;
+        private static bool STEALTH_DEBUG = true;
 
         private static readonly HashSet<Unit> passiveEvaluationSuppressed = new HashSet<Unit>();
 

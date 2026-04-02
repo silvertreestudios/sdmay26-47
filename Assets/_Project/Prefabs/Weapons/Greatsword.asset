@@ -16,6 +16,7 @@ MonoBehaviour:
   description: A massive two-handed sword capable of delivering devastating sweeping
     strikes.
   icon: {fileID: 0}
+  prefab: {fileID: 6000193900841546362, guid: 0db54f656e4422948991e322cf9e3a7f, type: 3}
   level: 0
   priceInCopper: 200
   bulk: 2
@@ -27,6 +28,7 @@ MonoBehaviour:
   category: 2
   group: 14
   hands: 1
+  weaponAnimType: 2
   reachFeet: 5
   rangeIncrementFeet: 0
   traits: 27000000

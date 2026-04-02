@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Shortbow
   description: 
   icon: {fileID: 0}
+  prefab: {fileID: 7380925511996755442, guid: f4598a93048d3da4eb773354d6c52852, type: 3}
   level: 0
   priceInCopper: 0
   bulk: L
@@ -26,6 +27,7 @@ MonoBehaviour:
   category: 2
   group: 2
   hands: 1
+  weaponAnimType: 3
   reachFeet: 0
   rangeIncrementFeet: 60
   traits: 0c000000
