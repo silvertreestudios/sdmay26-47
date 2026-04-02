@@ -4,6 +4,7 @@ using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using UnityEngine;
+using TMPro;
 
 namespace PathfinderTactics.Actions
 {
@@ -170,6 +171,12 @@ namespace PathfinderTactics.Actions
             Debug.Log(
                 $"[Strike] Rolled {d20} + {attackBonus} (MAP: {mapPenalty}) vs AC {ac} -> {result}"
             );
+            Transform Log = GameObject.Find("LogLayoutGroup").transform;
+            GameObject prefab = Resources.Load<GameObject>("LogChatBox");
+            GameObject textIcon = Instantiate(prefab, Log);
+
+            textIcon.GetComponent<TextMeshProUGUI>().text
+                = $"[Strike] Rolled {d20} + {attackBonus} (MAP: {mapPenalty}) vs AC {ac} -> {result}";
 
             // Apply Damage
             if (result == Degree.Success || result == Degree.CriticalSuccess)
@@ -189,6 +196,13 @@ namespace PathfinderTactics.Actions
                 {
                     targetHealth.ApplyDamage(damage);
                     Debug.Log($"Dealt {damage} Damage to {targetUnit.name}!");
+
+                    Transform Log1 = GameObject.Find("LogLayoutGroup").transform;
+                    GameObject prefab1 = Resources.Load<GameObject>("LogChatBox");
+                    GameObject textIcon1 = Instantiate(prefab1, Log1);
+
+                    textIcon1.GetComponent<TextMeshProUGUI>().text
+                        = $"Dealt {damage} Damage to {targetUnit.name}!";
                 }
                 else
                 {

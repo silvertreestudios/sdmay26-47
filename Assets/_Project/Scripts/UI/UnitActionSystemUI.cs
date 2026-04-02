@@ -25,6 +25,7 @@ namespace PathfinderTactics.UI
         [SerializeField]
         private TextMeshProUGUI actionPointsText;
 
+
         private List<Button> actionButtons = new List<Button>();
 
         private void Start()

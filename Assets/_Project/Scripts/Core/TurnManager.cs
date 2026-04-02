@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using PathfinderTactics.Characters;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ namespace PathfinderTactics.Core
 {
     public class TurnManager : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject LogEntry;
+
         public static TurnManager Instance { get; private set; }
 
         public event EventHandler OnTurnChanged;
@@ -62,6 +66,11 @@ namespace PathfinderTactics.Core
                 initiativeRolls[unit] = roll;
 
                 Debug.Log($"{unit.name} Initiative Roll: {roll} (Bonus: {perceptionBonus})");
+                Transform Log = GameObject.Find("LogLayoutGroup").transform;
+                GameObject textIcon = Instantiate(LogEntry, Log);
+
+                textIcon.GetComponent<TextMeshProUGUI>().text
+                    = $"{unit.name} Initiative Roll: {roll} (Bonus: {perceptionBonus})";
             }
 
             // Sort based on the stored rolls (Highest to Lowest)
@@ -75,6 +84,7 @@ namespace PathfinderTactics.Core
             );
 
             currentTurnIndex = 0;
+            Debug.Log("[TurnManager] Invoking OnCombatStarted");
 
             OnCombatStarted?.Invoke(this, new OnTurnOrderedEventArgs { turnOrder = turnOrderList });
             StartTurn(turnOrderList[currentTurnIndex]);
@@ -91,6 +101,7 @@ namespace PathfinderTactics.Core
             }
 
             StartTurn(turnOrderList[currentTurnIndex]);
+            OnTurnChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void StartTurn(Unit unit)
@@ -123,7 +134,6 @@ namespace PathfinderTactics.Core
             // If healthy, proceed normally
             unit.StartTurn();
             UnitActionSystem.Instance.ForceSelectUnit(unit);
-            OnTurnChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public bool IsUnitTurn(Unit unit)

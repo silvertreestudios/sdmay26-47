@@ -34,12 +34,12 @@ namespace PathfinderTactics.UI
 
         private void Update()
         {
-            // Real-time updates while visible (instantly shows damage numbers dropping)
-            if (container.activeSelf && currentUnit != null && currentHealth != null)
-            {
-                healthText.text =
-                    $"HP: {currentHealth.GetCurrentHealth()} / {currentHealth.GetMaxHealth()}";
-            }
+            //// Real-time updates while visible (instantly shows damage numbers dropping)
+            //if (container.activeSelf && currentUnit != null && currentHealth != null)
+            //{
+            //    healthText.text =
+            //        $"HP: {currentHealth.GetCurrentHealth()} / {currentHealth.GetMaxHealth()}";
+            //}
         }
 
         public void Show(Unit unit)
@@ -47,16 +47,16 @@ namespace PathfinderTactics.UI
             currentUnit = unit;
             currentHealth = unit.GetComponent<UnitHealth>();
 
-            unitNameText.text = unit.gameObject.name;
+            //unitNameText.text = unit.gameObject.name;
 
-            container.SetActive(true);
+            //container.SetActive(true);
         }
 
         public void Hide()
         {
             currentUnit = null;
             currentHealth = null;
-            container.SetActive(false);
+            //container.SetActive(false);
         }
     }
 }
