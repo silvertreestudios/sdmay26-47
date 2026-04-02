@@ -19,7 +19,9 @@ namespace PathfinderTactics.UI
         private GameObject actionPanel;
 
         [SerializeField]
-        private GameObject statusPanel;
+        private Transform images;
+        [SerializeField]
+        private Transform descriptions;
 
         [SerializeField]
         private GameObject PlayerIcon;
@@ -28,7 +30,7 @@ namespace PathfinderTactics.UI
         [SerializeField]
         private GameObject PlayerDesc;
         [SerializeField]
-        private GameObject TurnOrderPanel;
+        private Transform TurnOrderPanel;
 
 
         private void Awake()
@@ -58,28 +60,22 @@ namespace PathfinderTactics.UI
 
         private void TurnChanged(object sender, System.EventArgs e)
         {
-            var view = TurnOrderPanel.transform.Find("Viewport");
-            var content = view.transform.Find("Content");
-            var images = content.transform.Find("HorzLayoutGroup");
-            images.GetChild(0).SetAsLastSibling();
+            TurnOrderPanel.GetChild(0).SetAsLastSibling();
         }
 
         private void CombatStarted(object sender, TurnManager.OnTurnOrderedEventArgs e)
         {
-            var view = TurnOrderPanel.transform.Find("Viewport");
-            var content = view.transform.Find("Content");
-            var images = content.transform.Find("HorzLayoutGroup");
 
             foreach (Unit unit in e.turnOrder)
             {
                 GameObject imageIcon;
                 if (unit.GetFaction() == Faction.Player)
                 {
-                    imageIcon = Instantiate(PlayerIcon, images);
+                    imageIcon = Instantiate(PlayerIcon, TurnOrderPanel);
                 }
                 else
                 {
-                    imageIcon = Instantiate(EnemyIcon, images);
+                    imageIcon = Instantiate(EnemyIcon, TurnOrderPanel);
                 }
                 imageIcon.name = $"{unit.gameObject.name}_icon";
             }
@@ -159,12 +155,12 @@ namespace PathfinderTactics.UI
             {
                 if (unit.GetFaction() == Faction.Player)
                 {
-                    GameObject textIcon = GameObject.Find($"{unit.gameObject.name}_desc");
-                    if (textIcon == null) {return; }
-                    textIcon.GetComponent<TextMeshProUGUI>().text
-                        = $"{unit.gameObject.name} \n" +
-                        $" HP: {unit.gameObject.GetComponent<UnitHealth>().GetCurrentHealth()} / " +
-                        $"{unit.gameObject.GetComponent<UnitHealth>().GetMaxHealth()}";
+                    var unitName = unit.gameObject.name;
+                    GameObject textIcon = GameObject.Find($"{unitName}_desc");
+                    if (textIcon == null) {continue; }
+                    var health = unit.gameObject.GetComponent<UnitHealth>().GetCurrentHealth();
+                    var maxHealth = unit.gameObject.GetComponent<UnitHealth>().GetMaxHealth();
+                    textIcon.GetComponent<TextMeshProUGUI>().text = $"{unitName} \n" + $" HP: {health} / " + $"{maxHealth}";
                 }
             }
 
@@ -172,23 +168,23 @@ namespace PathfinderTactics.UI
 
     private void AddParty()
         {
-            var images = statusPanel.transform.Find("images");
-            var descriptions = statusPanel.transform.Find("desc");
 
             foreach (Unit unit in UnitManager.AllUnits)
             {
                 if (unit.GetFaction() == Faction.Player)
                 {
+                    var unitName = unit.gameObject.name;
+
                     GameObject imageIcon = Instantiate(PlayerIcon, images);
-                    imageIcon.name = $"{unit.gameObject.name}_icon";
+                    imageIcon.name = $"{unitName}_icon";
 
                     GameObject textIcon = Instantiate(PlayerDesc, descriptions);
 
+                    var health = unit.gameObject.GetComponent<UnitHealth>().GetCurrentHealth();
+                    var maxHealth = unit.gameObject.GetComponent<UnitHealth>().GetMaxHealth();
+
                     textIcon.name = $"{unit.gameObject.name}_desc";
-                    textIcon.GetComponent<TextMeshProUGUI>().text 
-                        = $"{unit.gameObject.name} \n" +
-                        $" HP: {unit.gameObject.GetComponent<UnitHealth>().GetCurrentHealth()} / " +
-                        $"{unit.gameObject.GetComponent<UnitHealth>().GetMaxHealth()}";
+                    textIcon.GetComponent<TextMeshProUGUI>().text  = $"{unitName} \n" + $" HP: {health} / " + $"{maxHealth}";
                 }
             }
         }
