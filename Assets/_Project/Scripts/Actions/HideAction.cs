@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using PathfinderTactics.Characters;
+using PathfinderTactics.Combat;
+using PathfinderTactics.Core;
+using PathfinderTactics.Grid;
+using UnityEngine;
+
+namespace PathfinderTactics.Actions
+{
+    public class HideAction : BaseAction
+    {
+        private const bool STEALTH_DEBUG = true;
+
+        public override string GetActionName() => "Hide";
+
+        public override int GetActionPointsCost() => 1;
+
+        public override List<GridPosition> GetActionRangeGridPositions()
+        {
+            return new List<GridPosition> { unit.CurrentGridPosition };
+        }
+
+        public override List<GridPosition> GetValidActionGridPositions()
+        {
+            return new List<GridPosition> { unit.CurrentGridPosition };
+        }
+
+        public override bool CanExecuteAction()
+        {
+            if (!base.CanExecuteAction())
+                return false;
+
+            UnitStealth actorStealth = unit.GetComponent<UnitStealth>();
+            if (actorStealth == null)
+                return false;
+
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            List<Unit> observers = grid.GetAllEnemies(unit.GetFaction());
+            GridPosition actorPos = unit.CurrentGridPosition;
+
+            foreach (Unit observer in observers)
+            {
+                if (actorStealth.GetDetectionState(observer) != DetectionState.Observed)
+                    continue;
+
+                if (StealthResolver.HasCoverOrConcealmentAt(actorPos, observer))
+                    return true;
+            }
+
+            return false;
+        }
+
+        public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
+        {
+            // Hide doesn't depend on target square (we only allow current square in UI anyway).
+            if (STEALTH_DEBUG && unit != null)
+                Debug.Log(
+                    $"<color=blue>[STEALTH]</color> HideAction.TakeAction unit={unit.name} pos={unit.CurrentGridPosition}"
+                );
+            StealthResolver.ResolveHide(unit);
+            onActionComplete?.Invoke();
+        }
+    }
+}

@@ -1,3 +1,4 @@
+using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using UnityEngine;
 
@@ -13,14 +14,15 @@ namespace PathfinderTactics.Characters
     {
         private void Start()
         {
-            // Find the grid position corresponding to this unit's world position
-            GridPosition gridPosition = GridSystem.Instance.GetGridPosition(transform.position);
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int layeredPos = grid.GetLayeredGridPosition(transform.position);
+            Vector3Int resolved = grid.ResolveClosestLayeredPosition(
+                new GridPosition(layeredPos.x, layeredPos.z),
+                layeredPos.y
+            );
 
-            // Get the Unit component on this same GameObject
             Unit unit = GetComponent<Unit>();
-
-            // Tell the GridSystem to add this unit to the grid
-            GridSystem.Instance.AddUnitAt(unit, gridPosition);
+            grid.AddUnitAt(unit, resolved);
         }
     }
 }

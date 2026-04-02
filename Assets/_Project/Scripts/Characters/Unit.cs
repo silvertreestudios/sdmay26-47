@@ -1,25 +1,38 @@
 using System;
 using System.Collections.Generic;
 using PathfinderTactics.Actions;
+using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
+using PathfinderTactics.Data.PF2e;
 using PathfinderTactics.Grid;
-using TMPro;
 using UnityEngine;
 
 namespace PathfinderTactics.Characters
 {
-    [RequireComponent(typeof(CharacterController))]
-    public class Unit : MonoBehaviour
+    public enum UnitSize
     {
-        [Header("Configuration")]
+        Tiny = 0,
+        Small = 1,
+        Medium = 2,
+        Large = 3,
+        Huge = 4,
+        Gargantuan = 5,
+    }
+
+    [RequireComponent(typeof(UnitActionEconomy))]
+    [RequireComponent(typeof(UnitGridObject))]
+    [RequireComponent(typeof(UnitMovement))]
+    [RequireComponent(typeof(UnitStealth))]
+    [RequireComponent(typeof(UnitConditions))]
+    [RequireComponent(typeof(UnitEquipment))]
+    public class Unit : MonoBehaviour, ITargetable
+    {
+        [Header("Team Configuration")]
         [SerializeField]
-        private Faction faction = Faction.Player; // Default to Player
+        private Faction faction = Faction.Player;
 
         public Faction GetFaction() => faction;
 
-        /// <summary>
-        /// Returns true if the other unit is on a different team.
-        /// </summary>
         public bool IsEnemy(Unit otherUnit)
         {
             return otherUnit.GetFaction() != this.faction;
@@ -29,99 +42,68 @@ namespace PathfinderTactics.Characters
         [SerializeField]
         private UnitStatsSO stats;
 
-
-        //Contains all feats this unit can use (exacting strike for now)
+        [Header("PF2e Attributes")]
         [SerializeField]
-        private FeatLoadoutSO featLoadout;
+        private UnitSize unitSize = UnitSize.Medium;
 
-        // Public Properties
-        public GridPosition CurrentGridPosition { get; private set; }
+        public UnitSize GetUnitSize() => unitSize;
 
-        // Physics & Movement State
-        private CharacterController characterController;
-        private float verticalVelocity;
-        private float gravity = -9.81f;
-        private float jumpHeight = 1.5f;
-
-        // Budget is used to track how far a unit can move
-        private int movementBudgetRemaining;
-
-        // 3 actions per turn
-        private int actionPointsRemaining;
-
-        // Honestly theres no way we need this to be anything other than 3 but
-        // Useful for debugging
-        private int totalActionPointsPerTurn = 3;
+        // Dependencies
+        private UnitActionEconomy actionEconomy;
+        private UnitGridObject gridObject;
+        private UnitMovement movement;
+        private UnitConditions conditions;
+        private UnitEquipment equipment;
 
         private bool selected = false;
-
-        // Modular Actions
-        private BaseAction[] baseActionArray;
-
-        public int AttacksThisTurn { get; private set; } = 0;
-
-        public bool HasReactionAvailable { get; private set; } = true;
-
-        #region Action Economy
-        public void StartTurn()
-        {
-            actionPointsRemaining = totalActionPointsPerTurn;
-            AttacksThisTurn = 0;
-            HasReactionAvailable = true;
-        }
-
-        public void SpendReaction() => HasReactionAvailable = false;
-
-        public void RestoreReaction() => HasReactionAvailable = true;
-
-        public void IncrementAttacksThisTurn()
-        {
-            AttacksThisTurn++;
-        }
-
-        public void SpendActionPoints(int amount)
-        {
-            actionPointsRemaining -= amount;
-        }
-
-        public int GetActionPointsRemaining()
-        {
-            return actionPointsRemaining;
-        }
-
-        public BaseAction[] GetBaseActionArray()
-        {
-            return baseActionArray;
-        }
-        #endregion
 
         private void Awake()
         {
             UnitManager.AllUnits.Add(this);
-            characterController = GetComponent<CharacterController>();
 
-            // Auto-discover actions
-            baseActionArray = GetComponents<BaseAction>();
+            actionEconomy = GetComponent<UnitActionEconomy>();
+            if (actionEconomy == null)
+                actionEconomy = gameObject.AddComponent<UnitActionEconomy>();
 
-            Debug.Log($"[UNIT BOOTUP] {gameObject.name} found {baseActionArray.Length} actions.");
-            foreach (var action in baseActionArray)
-            {
-                Debug.Log($"   -> Action loaded: {action.GetActionName()}");
-            }
+            gridObject = GetComponent<UnitGridObject>();
+            if (gridObject == null)
+                gridObject = gameObject.AddComponent<UnitGridObject>();
+
+            movement = GetComponent<UnitMovement>();
+            if (movement == null)
+                movement = gameObject.AddComponent<UnitMovement>();
+
+            conditions = GetComponent<UnitConditions>();
+            if (conditions == null)
+                conditions = gameObject.AddComponent<UnitConditions>();
+
+            equipment = GetComponent<UnitEquipment>();
+            if (equipment == null)
+                equipment = gameObject.AddComponent<UnitEquipment>();
+
+            var stealth = GetComponent<UnitStealth>();
+            if (stealth == null)
+                stealth = gameObject.AddComponent<UnitStealth>();
+
+            // Stealth actions (Hide/Sneak/Seek) and rendering.
+            if (GetComponent<HideAction>() == null)
+                gameObject.AddComponent<HideAction>();
+            if (GetComponent<SneakAction>() == null)
+                gameObject.AddComponent<SneakAction>();
+            if (GetComponent<SeekAction>() == null)
+                gameObject.AddComponent<SeekAction>();
+
+            if (GetComponent<UnitStealthRenderer>() == null)
+                gameObject.AddComponent<UnitStealthRenderer>();
+
+            // Ensure UnitActionEconomy picks up the dynamically-added BaseAction components.
+            this.actionEconomy?.RefreshActions();
         }
 
         private void Start()
         {
-            UnitActionSystem.Instance.OnSelectedUnitChanged += Select_unit;
+            ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged += Select_unit;
 
-            // Register self on grid at start
-            CurrentGridPosition = GridSystem.Instance.GetGridPosition(transform.position);
-            GridSystem.Instance.AddUnitAt(this, CurrentGridPosition);
-
-            // Snap to ensure alignment
-            SnapToGrid(GridSystem.Instance.GetWorldPosition(CurrentGridPosition));
-
-            // Temporary Debug: Color units based on faction
             var meshRenderer = GetComponentInChildren<MeshRenderer>();
             if (meshRenderer != null)
             {
@@ -132,70 +114,110 @@ namespace PathfinderTactics.Characters
             }
         }
 
-        void Update()
+        private void OnDestroy()
         {
-            if (!selected)
-                return;
-        }
-
-        #region Movement Budget
-        public void StartMoveAction()
-        {
-            movementBudgetRemaining = GetMaxMoveCost();
-        }
-
-        public void SpendMovement(int amount)
-        {
-            movementBudgetRemaining -= amount;
-        }
-        #endregion
-
-        #region Movement Execution
-        // This method is called every frame from the UnitActionSystem during FreeMovement
-        public void HandleMovement(Vector3 moveDirection)
-        {
-            // Gravity and Grounding
-            if (characterController.isGrounded && verticalVelocity < 0)
+            UnitManager.AllUnits.Remove(this);
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var uas))
             {
-                // Small downward force to keep the character stuck to the ground
-                verticalVelocity = -5f;
-            }
-
-            // Apply gravity over time
-            verticalVelocity += gravity * Time.deltaTime;
-
-            // Combine horizontal and vertical motion
-            Vector3 finalMoveVector = moveDirection + (Vector3.up * verticalVelocity);
-
-            characterController.Move(finalMoveVector * Time.deltaTime);
-
-            // Update Facing Direction
-            if (moveDirection != Vector3.zero)
-            {
-                transform.forward = Vector3.Slerp(
-                    transform.forward,
-                    moveDirection,
-                    Time.deltaTime * 15f
-                );
+                uas.OnSelectedUnitChanged -= Select_unit;
             }
         }
 
-        public void HandleJump()
+        private void Select_unit(object sender, EventArgs e)
         {
-            if (characterController.isGrounded)
-            {
-                // Calculate the upward velocity needed to reach a specific height
-                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            }
+            selected = (ServiceLocator.Get<UnitActionSystem>().SelectedUnit == this);
         }
-        #endregion
 
-        #region State Management
+        // PF2e Rule Properties
+        public int Level => (stats != null) ? stats.level : 1;
+        public bool HasAllAroundVision => (stats != null) && stats.hasAllAroundVision;
+        public bool HasDenyAdvantage => (stats != null) && stats.hasDenyAdvantage;
+        public RWIProfile RWIProfile => (stats != null) ? stats.rwiProfile : null;
+
+        // Capability Flags
+        public bool CanAct => (conditions != null) && conditions.CanAct;
+        public bool CanMakeMeleeAttacks => (conditions != null) && conditions.CanMakeMeleeAttacks;
+
+        // Facade Methods to ActionEconomy
+        public int AttacksThisTurn => actionEconomy.AttacksThisTurn;
+        public bool HasReactionAvailable => actionEconomy.HasReactionAvailable;
+
+        public void StartTurn() => actionEconomy.StartTurn();
+
+        public void SpendReaction() => actionEconomy.SpendReaction();
+
+        public void RestoreReaction() => actionEconomy.RestoreReaction();
+
+        public void IncrementAttacksThisTurn() => actionEconomy.IncrementAttacksThisTurn();
+
+        public void SpendActionPoints(int amount) => actionEconomy.SpendActionPoints(amount);
+
+        public int GetActionPointsRemaining() => actionEconomy.GetActionPointsRemaining();
+
+        public BaseAction[] GetBaseActionArray() => actionEconomy.GetBaseActionArray();
+
+        // Facade Methods to GridObject
+        public GridPosition CurrentGridPosition => gridObject.CurrentGridPosition;
+        public Vector3Int CurrentLayeredPosition => gridObject.CurrentLayeredPosition;
+        public Transform Transform => transform;
+
+        public void SetInitialPosition(GridPosition gridPosition) =>
+            gridObject.SetInitialPosition(gridPosition);
+
+        public void FinalizeMove(Vector3Int finalLayeredPosition) =>
+            gridObject.FinalizeMove(finalLayeredPosition);
+
+        public void FinalizeMove(GridPosition finalPosition) =>
+            gridObject.FinalizeMove(finalPosition);
+
+        // Facade Methods to Movement
+        public void MoveAlongPath(List<Vector3Int> path, Action onComplete) =>
+            movement.MoveAlongPath(path, onComplete);
+
+        public void StartMoveAction() => movement.StartMoveAction();
+
+        public void SpendMovement(int amount) => movement.SpendMovement(amount);
+
+        public void HandleMovement(Vector3 moveDirection) => movement.HandleMovement(moveDirection);
+
+        public void HandleJump() => movement.HandleJump();
+
+        public float GetUnitRadius() => movement.GetUnitRadius();
+
+        public void SnapToGrid(Vector3 newPosition) => movement.SnapToGrid(newPosition);
+
+        // Stats & Formulas
         public int GetMoveDistanceInCells()
         {
             if (stats == null)
                 return 0;
-            return stats.speedInFeet / 5;
+
+            int speed = stats.baseSpeedInFeet;
+
+            // PF2e: Armor applies a Speed penalty. If you meet the Strength requirement,
+            // the penalty is typically reduced by 5 ft (never becomes a speed bonus).
+            if (equipment != null)
+            {
+                var armor = equipment.GetArmor();
+                if (armor != null)
+                {
+                    int penaltyFeet = armor.speedPenaltyFeet; // negative value like -5 or -10
+
+                    if (penaltyFeet != 0)
+                    {
+                        if (stats.strength >= armor.strengthRequirement)
+                        {
+                            // Reduce the penalty by 5 ft, but never above 0.
+                            penaltyFeet = Mathf.Min(0, penaltyFeet + 5);
+                        }
+
+                        speed += penaltyFeet;
+                    }
+                }
+            }
+
+            // Minimum Speed in PF2e is usually 5ft (1 cell) if penalties are too high.
+            return Mathf.Max(5, speed) / 5;
         }
 
         public int GetMaxMoveCost()
@@ -203,49 +225,162 @@ namespace PathfinderTactics.Characters
             return GetMoveDistanceInCells() * Pathfinding.MOVE_STRAIGHT_COST;
         }
 
-        public void SetInitialPosition(GridPosition gridPosition)
+        public int GetAbilityModifier(AbilityScore stat)
         {
-            CurrentGridPosition = gridPosition;
-            characterController.enabled = false;
-            transform.position = GridSystem.Instance.GetWorldPosition(gridPosition);
-            characterController.enabled = true;
-        }
-
-        public void FinalizeMove(GridPosition finalPosition)
-        {
-            GridSystem.Instance.MoveUnit(this, CurrentGridPosition, finalPosition);
-            CurrentGridPosition = finalPosition;
-        }
-        #endregion
-
-        public float GetUnitRadius()
-        {
-            if (characterController != null)
-                return characterController.radius;
-            return 0.25f;
-        }
-
-        public void SnapToGrid(Vector3 newPosition)
-        {
-            if (characterController != null)
+            if (stats == null)
+                return 0;
+            switch (stat)
             {
-                characterController.enabled = false;
-                transform.position = newPosition;
-                characterController.enabled = true;
+                case AbilityScore.STR:
+                    return PF2E_Core.GetAbilityModifier(stats.strength);
+                case AbilityScore.DEX:
+                    return PF2E_Core.GetAbilityModifier(stats.dexterity);
+                case AbilityScore.CON:
+                    return PF2E_Core.GetAbilityModifier(stats.constitution);
+                case AbilityScore.INT:
+                    return PF2E_Core.GetAbilityModifier(stats.intelligence);
+                case AbilityScore.WIS:
+                    return PF2E_Core.GetAbilityModifier(stats.wisdom);
+                case AbilityScore.CHA:
+                    return PF2E_Core.GetAbilityModifier(stats.charisma);
+                default:
+                    return 0;
             }
-            else
+        }
+
+        public int GetSaveModifier(SavingThrowType type)
+        {
+            if (stats == null)
+                return 0;
+
+            AbilityScore ability;
+            switch (type)
             {
-                transform.position = newPosition;
+                case SavingThrowType.Fortitude:
+                    ability = AbilityScore.CON;
+                    break;
+                case SavingThrowType.Reflex:
+                    ability = AbilityScore.DEX;
+                    break;
+                case SavingThrowType.Will:
+                    ability = AbilityScore.WIS;
+                    break;
+                default:
+                    return 0;
             }
+
+            // TODO: Simplified: Assuming Trained (+2) for all saves as a baseline for now
+            return PF2E_Core.CalculateModifier(
+                stats.level,
+                Proficiency.Trained,
+                GetAbilityModifier(ability)
+            );
+        }
+
+        public int GetSpellDC(
+            AbilityScore castingStat = AbilityScore.INT,
+            Proficiency prof = Proficiency.Trained
+        )
+        {
+            return PF2E_Core.CalculateSpellDC(
+                this,
+                stats.level,
+                prof,
+                GetAbilityModifier(castingStat)
+            );
         }
 
         public UnitStatsSO GetStats() => stats;
 
-        public int getArmorClass()
+        public void SetStats(UnitStatsSO newStats) => stats = newStats;
+
+        public int GetArmorClass(
+            Unit attacker = null,
+            AttackType incomingAttackType = AttackType.Melee
+        )
         {
+            return GetArmorClassBreakdown(attacker, incomingAttackType).totalAC;
+        }
+
+        public ArmorClassBreakdown GetArmorClassBreakdown(
+            Unit attacker,
+            AttackType incomingAttackType
+        )
+        {
+            ArmorClassBreakdown breakdown = new ArmorClassBreakdown();
+            // Base AC fallback when stats aren't initialized.
             if (stats == null)
-                return 10;
-            return stats.armorClass;
+            {
+                breakdown.baseAC = 10;
+                breakdown.totalAC = breakdown.baseAC;
+            }
+
+            int dexMod = (stats != null) ? GetAbilityModifier(AbilityScore.DEX) : 0;
+            int itemBonus = 0;
+
+            // NOTE: Proficiency calculation should pull from class later (stubbed as Trained)
+            Proficiency armorProf = Proficiency.Trained;
+
+            if (stats != null)
+            {
+                if (equipment != null)
+                {
+                    var armor = equipment.GetArmor();
+                    if (armor != null)
+                    {
+                        itemBonus = armor.acBonus;
+                        // Dex Cap check
+                        dexMod = Mathf.Min(dexMod, armor.dexCap);
+                    }
+                }
+
+                breakdown.baseAC =
+                    10 + PF2E_Core.CalculateModifier(stats.level, armorProf, dexMod) + itemBonus;
+            }
+
+            UnitConditions currentConditions = GetComponent<UnitConditions>();
+            if (currentConditions == null)
+                currentConditions = conditions;
+
+            if (currentConditions == null)
+            {
+                breakdown.totalAC = breakdown.baseAC;
+                return breakdown;
+            }
+
+            string statusPenaltySource;
+            breakdown.statusPenalty = PF2E_Core.GetStatusPenalty(
+                currentConditions,
+                AbilityScore.DEX,
+                out statusPenaltySource
+            );
+            breakdown.statusPenaltySources = statusPenaltySource;
+
+            List<string> circumList = new List<string>();
+            int circumstanceMod = 0;
+
+            // Resolve Off-Guard status (Conditions + Flanking) via Combat Rules
+            if (CombatRules.IsOffGuard(attacker, this, incomingAttackType))
+            {
+                circumstanceMod -= 2;
+                circumList.Add("Off-Guard (-2)");
+            }
+
+            if (
+                incomingAttackType == AttackType.Ranged
+                && currentConditions.HasCondition(ConditionType.Prone)
+            )
+            {
+                circumstanceMod += 2;
+                circumList.Add("Prone (+2 vs Ranged)");
+            }
+
+            breakdown.circumstanceMod = circumstanceMod;
+            breakdown.circumstanceModSources = string.Join(", ", circumList);
+            breakdown.totalAC =
+                breakdown.baseAC + breakdown.statusPenalty + breakdown.circumstanceMod;
+
+            return breakdown;
         }
 
         public int getTotalHP()
@@ -253,16 +388,6 @@ namespace PathfinderTactics.Characters
             if (stats == null)
                 return 0;
             return stats.TotalHP;
-        }
-
-        private void OnDestroy()
-        {
-            UnitManager.AllUnits.Remove(this);
-        }
-
-        private void Select_unit(object sender, EventArgs e)
-        {
-            selected = (UnitActionSystem.Instance.SelectedUnit == this);
         }
     }
 }

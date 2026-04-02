@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39d340ac0e6cf4488cae3ad1c5532a6, type: 3}
+  m_Name: Steel Sheild
+  m_EditorClassIdentifier: 
+  itemName: 
+  description: 
+  icon: {fileID: 0}
+  prefab: {fileID: 2187642192913816276, guid: 0a19ca6f73dfe6d4992a28bded471584, type: 3}
+  level: 0
+  priceInCopper: 0
+  bulk: L
+  modifiers: []
+  acBonus: 2
+  hardness: 5
+  hp: 20
+  brokenThreshold: 10
+  blockable: 1

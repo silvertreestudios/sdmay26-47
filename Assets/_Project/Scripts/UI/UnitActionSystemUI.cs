@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using PathfinderTactics.Actions;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using TMPro;
 using UnityEngine;
@@ -31,9 +32,10 @@ namespace PathfinderTactics.UI
         private void Start()
         {
             // Subscribe to the State Change Event
-            UnitActionSystem.Instance.OnSelectedUnitChanged += UnitActionSystem_OnStateChanged;
-            UnitActionSystem.Instance.OnActionStarted += UnitActionSystem_OnDataChanged;
-            UnitActionSystem.Instance.OnActionCompleted += UnitActionSystem_OnDataChanged;
+            ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged +=
+                UnitActionSystem_OnStateChanged;
+            ServiceLocator.Get<UnitActionSystem>().OnActionCompleted +=
+                UnitActionSystem_OnDataChanged;
 
             // Force menu off at start
             if (actionMenuContainer != null)
@@ -44,7 +46,7 @@ namespace PathfinderTactics.UI
 
         private void UnitActionSystem_OnStateChanged(object sender, EventArgs e)
         {
-            var currentPhase = UnitActionSystem.Instance.currentPhase;
+            var currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
             bool shouldShowMenu = (currentPhase == GamePhase.ActionSelection);
 
             // Debug.Log($"[UI MANAGER] State Change Detected: {currentPhase}. Menu Should Show: {shouldShowMenu}");
@@ -88,7 +90,7 @@ namespace PathfinderTactics.UI
             }
             actionButtons.Clear();
 
-            Unit selectedUnit = UnitActionSystem.Instance.SelectedUnit;
+            Unit selectedUnit = ServiceLocator.Get<UnitActionSystem>().SelectedUnit;
             if (selectedUnit == null)
             {
                 Debug.LogWarning(
@@ -147,7 +149,7 @@ namespace PathfinderTactics.UI
 
         private void UpdateVisuals()
         {
-            Unit selectedUnit = UnitActionSystem.Instance.SelectedUnit;
+            Unit selectedUnit = ServiceLocator.Get<UnitActionSystem>().SelectedUnit;
             if (selectedUnit != null && actionPointsText != null)
             {
                 actionPointsText.text = $"AP: {selectedUnit.GetActionPointsRemaining()}";

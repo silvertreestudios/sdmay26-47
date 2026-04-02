@@ -22,13 +22,13 @@ namespace PathfinderTactics.UI
         private GameObject panelRoot;
 
         private Unit currentSelectedUnit;
-        private UnitHealth currentUnitHealth;
+        private IDamageable currentUnitHealth;
 
         private void Start()
         {
-            if (UnitActionSystem.Instance != null)
+            if (ServiceLocator.Get<UnitActionSystem>() != null)
             {
-                UnitActionSystem.Instance.OnSelectedUnitChanged +=
+                ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged +=
                     UnitActionSystem_OnSelectedUnitChanged;
             }
 
@@ -37,9 +37,9 @@ namespace PathfinderTactics.UI
 
         private void OnDestroy()
         {
-            if (UnitActionSystem.Instance != null)
+            if (ServiceLocator.Get<UnitActionSystem>() != null)
             {
-                UnitActionSystem.Instance.OnSelectedUnitChanged -=
+                ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged -=
                     UnitActionSystem_OnSelectedUnitChanged;
             }
 
@@ -48,7 +48,7 @@ namespace PathfinderTactics.UI
 
         private void UnitActionSystem_OnSelectedUnitChanged(object sender, System.EventArgs e)
         {
-            UpdateForSelectedUnit(UnitActionSystem.Instance?.SelectedUnit);
+            UpdateForSelectedUnit(ServiceLocator.Get<UnitActionSystem>()?.SelectedUnit);
         }
 
         private void UpdateForSelectedUnit(Unit unit)
@@ -68,7 +68,7 @@ namespace PathfinderTactics.UI
                 nameText.text = currentSelectedUnit.name;
 
             // Subscribe to health component if present
-            currentUnitHealth = currentSelectedUnit.GetComponent<UnitHealth>();
+            currentUnitHealth = currentSelectedUnit.GetComponent<IDamageable>();
             if (currentUnitHealth != null)
             {
                 currentUnitHealth.OnHealthChanged += UnitHealth_OnHpChanged;
@@ -105,7 +105,7 @@ namespace PathfinderTactics.UI
                 return;
             }
 
-            var health = currentSelectedUnit.GetComponent<UnitHealth>();
+            var health = currentSelectedUnit.GetComponent<IDamageable>();
             if (health == null)
             {
                 // Fall back to using stats TotalHP if no UnitHealth component exists

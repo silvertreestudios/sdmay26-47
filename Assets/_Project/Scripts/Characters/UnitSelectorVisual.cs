@@ -17,7 +17,7 @@ namespace PathfinderTactics.Characters
         private void Start()
         {
             // Subscribe to the event
-            UnitActionSystem.Instance.OnSelectedUnitChanged +=
+            ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged +=
                 UnitActionSystem_OnSelectedUnitChanged;
 
             // Run an initial update to ensure it's hidden at the start
@@ -27,9 +27,9 @@ namespace PathfinderTactics.Characters
         private void OnDestroy()
         {
             // Unsubscribe to prevent memory leaks
-            if (UnitActionSystem.Instance != null)
+            if (ServiceLocator.Get<UnitActionSystem>() != null)
             {
-                UnitActionSystem.Instance.OnSelectedUnitChanged -=
+                ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged -=
                     UnitActionSystem_OnSelectedUnitChanged;
             }
         }
@@ -61,7 +61,7 @@ namespace PathfinderTactics.Characters
                 return;
             }
 
-            bool shouldBeActive = (UnitActionSystem.Instance.SelectedUnit == unit);
+            bool shouldBeActive = (ServiceLocator.Get<UnitActionSystem>().SelectedUnit == unit);
 
             Debug.Log(
                 gameObject.name + " - UpdateVisual() called. Should I be active? " + shouldBeActive

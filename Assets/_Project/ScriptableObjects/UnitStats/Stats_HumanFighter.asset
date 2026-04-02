@@ -13,14 +13,25 @@ MonoBehaviour:
   m_Name: Stats_HumanFighter
   m_EditorClassIdentifier: 
   unitName: Unit
-  perception: 45
-  strength: 30
-  dexterity: 14
+  perception: 0
+  stealth: 0
+  hasAllAroundVision: 0
+  hasDenyAdvantage: 0
+  strength: 10
+  dexterity: 12
   constitution: 0
   intelligence: 0
   wisdom: 0
   charisma: 0
-  speedInFeet: 30
+  baseSpeedInFeet: 30
   ancestryResourcePath: JSON/ancestries/human
   classResourcePath: JSON/classes/fighter
   level: 1
+  rwiProfile:
+    Immunities: 04000000
+    Weaknesses:
+    - Type: 5
+      Value: 1
+    Resistances:
+    - Type: 7
+      Value: 0

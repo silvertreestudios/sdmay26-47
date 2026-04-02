@@ -8,35 +8,41 @@ namespace PathfinderTactics.Reactions
 {
     public class ReactionManager : MonoBehaviour
     {
-        public static ReactionManager Instance { get; private set; }
+        private class EvaluationContext
+        {
+            public Queue<ReactionIntent> PendingIntents = new Queue<ReactionIntent>();
+            public Action<GameEvent> OnAllReactionsResolved;
+            public GameEvent CurrentResolvingEvent;
+        }
 
-        private Queue<ReactionIntent> pendingIntents = new Queue<ReactionIntent>();
-        private Action<GameEvent> onAllReactionsResolved;
-        private GameEvent currentResolvingEvent;
+        private Stack<EvaluationContext> evaluationStack = new Stack<EvaluationContext>();
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
+            ServiceLocator.Register(this);
+        }
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<ReactionManager>();
         }
 
         public void EvaluateEvent(GameEvent gameEvent, Action<GameEvent> onComplete)
         {
-            pendingIntents.Clear();
-            currentResolvingEvent = gameEvent;
-            onAllReactionsResolved = onComplete;
+            EvaluationContext context = new EvaluationContext
+            {
+                CurrentResolvingEvent = gameEvent,
+                OnAllReactionsResolved = onComplete,
+            };
+            evaluationStack.Push(context);
 
             List<ReactionIntent> validIntents = new List<ReactionIntent>();
 
             // Gather all valid intents
             foreach (Unit unit in UnitManager.AllUnits)
             {
-                var health = unit.GetComponent<UnitHealth>();
-                if (health != null && (health.IsDead || health.IsUnconscious))
+                var health = unit.GetComponent<IDamageable>();
+                if (health != null && health.IsDead)
                     continue;
 
                 // Check Availability
@@ -60,7 +66,7 @@ namespace PathfinderTactics.Reactions
 
             foreach (var intent in validIntents)
             {
-                pendingIntents.Enqueue(intent);
+                context.PendingIntents.Enqueue(intent);
             }
 
             // Begin processing
@@ -69,18 +75,25 @@ namespace PathfinderTactics.Reactions
 
         private void ProcessNextIntent()
         {
-            if (pendingIntents.Count == 0 || currentResolvingEvent.IsCancelled)
+            if (evaluationStack.Count == 0)
+                return;
+
+            EvaluationContext context = evaluationStack.Peek();
+
+            if (context.PendingIntents.Count == 0 || context.CurrentResolvingEvent.IsCancelled)
             {
-                onAllReactionsResolved?.Invoke(currentResolvingEvent);
+                // We finished evaluating this specific event level
+                evaluationStack.Pop();
+                context.OnAllReactionsResolved?.Invoke(context.CurrentResolvingEvent);
                 return;
             }
 
-            ReactionIntent intent = pendingIntents.Dequeue();
+            ReactionIntent intent = context.PendingIntents.Dequeue();
 
             // Safety Check: Did a previous reaction in this chain kill this unit or steal its reaction?
             if (
                 !intent.ReactingUnit.HasReactionAvailable
-                || intent.ReactingUnit.GetComponent<UnitHealth>().IsDead
+                || intent.ReactingUnit.GetComponent<IDamageable>().IsDead
             )
             {
                 ProcessNextIntent(); // Skip and move on

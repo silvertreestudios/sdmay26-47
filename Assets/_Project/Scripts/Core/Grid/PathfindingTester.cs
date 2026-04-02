@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PathfinderTactics.Core;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -15,12 +16,11 @@ namespace PathfinderTactics.Grid
         [SerializeField]
         private Transform endTransform;
 
-        private List<GridPosition> currentPath;
+        private List<Vector3Int> currentPath;
 
         private void Update()
         {
 #if UNITY_EDITOR
-            // Do not run in edit mode
             if (!Application.isPlaying)
                 return;
 #endif
@@ -28,8 +28,12 @@ namespace PathfinderTactics.Grid
             if (startTransform == null || endTransform == null)
                 return;
 
-            GridPosition startPos = GridSystem.Instance.GetGridPosition(startTransform.position);
-            GridPosition endPos = GridSystem.Instance.GetGridPosition(endTransform.position);
+            GridPosition startPos = ServiceLocator
+                .Get<GridSystem>()
+                .GetGridPosition(startTransform.position);
+            GridPosition endPos = ServiceLocator
+                .Get<GridSystem>()
+                .GetGridPosition(endTransform.position);
 
             currentPath = Pathfinding.FindPath(startPos, endPos);
         }
@@ -41,26 +45,21 @@ namespace PathfinderTactics.Grid
 
             if (currentPath != null && currentPath.Count > 1)
             {
+                GridSystem grid = ServiceLocator.Get<GridSystem>();
 #if UNITY_EDITOR
                 Handles.color = Color.blue;
-                // Create an array of points for smoother drawing
                 Vector3[] points = new Vector3[currentPath.Count];
                 for (int i = 0; i < currentPath.Count; i++)
                 {
-                    // Lift the line slightly so it doesn't clip into the floor
-                    points[i] =
-                        GridSystem.Instance.GetWorldPosition(currentPath[i]) + Vector3.up * 0.1f;
+                    points[i] = grid.GetWorldPosition(currentPath[i]) + Vector3.up * 0.1f;
                 }
-
-                // Draw the line (Thickness: 5.0f)
                 Handles.DrawAAPolyLine(5.0f, points);
 #else
-                // Fallback for non-editor builds (standard thin Gizmos)
                 Gizmos.color = Color.green;
                 for (int i = 0; i < currentPath.Count - 1; i++)
                 {
-                    Vector3 from = GridSystem.Instance.GetWorldPosition(currentPath[i]);
-                    Vector3 to = GridSystem.Instance.GetWorldPosition(currentPath[i + 1]);
+                    Vector3 from = grid.GetWorldPosition(currentPath[i]);
+                    Vector3 to = grid.GetWorldPosition(currentPath[i + 1]);
                     Gizmos.DrawLine(from, to);
                 }
 #endif

@@ -1,4 +1,5 @@
 using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
 using TMPro;
 using UnityEngine;
 
@@ -6,8 +7,6 @@ namespace PathfinderTactics.UI
 {
     public class UnitTooltipUI : MonoBehaviour
     {
-        public static UnitTooltipUI Instance { get; private set; }
-
         [Header("References")]
         [SerializeField]
         private GameObject container;
@@ -19,17 +18,17 @@ namespace PathfinderTactics.UI
         private TextMeshProUGUI healthText;
 
         private Unit currentUnit;
-        private UnitHealth currentHealth;
+        private IDamageable currentHealth;
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
+            ServiceLocator.Register(this);
             Hide();
+        }
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<UnitTooltipUI>();
         }
 
         private void Update()
@@ -45,7 +44,7 @@ namespace PathfinderTactics.UI
         public void Show(Unit unit)
         {
             currentUnit = unit;
-            currentHealth = unit.GetComponent<UnitHealth>();
+            currentHealth = unit.GetComponent<IDamageable>();
 
             //unitNameText.text = unit.gameObject.name;
 

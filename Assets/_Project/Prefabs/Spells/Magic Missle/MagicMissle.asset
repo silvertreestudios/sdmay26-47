@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: MagicMissle
+  m_EditorClassIdentifier: 
+  Id: 
+  Slug: 
+  ElementName: Magic Missle
+  Icon: {fileID: 0}
+  Description: 
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 1
+  Traditions: []
+  Cost: 3
+  School: 
+  Components: []
+  Targeting: 0
+  Target: 2
+  Range: 120
+  Area:
+    Shape: 0
+    Radius: 0
+  SpellAttackRoll: 0
+  SaveType: 0
+  ElementType: 0
+  IsBasicSave: 0
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 3
+    DiceSize: 4
+    Bonus: 3
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: b1e7ba9215f0b7a4da9ab075524eb225, type: 2}
+  - {fileID: 11400000, guid: 4de1e602533d17e4d90a6e8eb6f27880, type: 2}
+  AITags: []

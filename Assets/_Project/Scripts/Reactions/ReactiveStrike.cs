@@ -1,5 +1,6 @@
 using System;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using UnityEngine;
 
@@ -10,27 +11,31 @@ namespace PathfinderTactics.Reactions
         [SerializeField]
         private int reach = 1;
 
-        public override int GetPriority() => 50; // Standard attack priority
+        public override int GetPriority() => 50;
 
         public override bool CanTrigger(GameEvent gameEvent)
         {
-            // Reactive Strike triggers when an enemy LEAVES a threatened square
             if (gameEvent is BeforeMoveEvent moveEvent)
             {
-                // Is it an enemy?
+                if (moveEvent.IsStep)
+                {
+                    Debug.Log(
+                        $"{unit.name} ignores {moveEvent.SourceUnit.name} because they Stepped!"
+                    );
+                    return false;
+                }
+
                 if (!unit.IsEnemy(moveEvent.SourceUnit))
                     return false;
 
-                // Were they inside our reach before they moved?
-                int dist = Mathf.Max(
-                    Mathf.Abs(moveEvent.FromPos.x - unit.CurrentGridPosition.x),
-                    Mathf.Abs(moveEvent.FromPos.z - unit.CurrentGridPosition.z)
+                int dist = PF2E_Core.GetPF2eDistance3D(
+                    moveEvent.StartLayeredPos,
+                    unit.CurrentLayeredPosition
                 );
 
                 return dist <= reach;
             }
 
-            // TODO: Add RangedAttackEvent and ManipulateEvent triggers here
             return false;
         }
 
@@ -45,20 +50,20 @@ namespace PathfinderTactics.Reactions
             // TODO: replace these with PF2E_Core references later
             int d20 = UnityEngine.Random.Range(1, 21);
             int attackBonus = 7;
-            int ac = target.getArmorClass();
+            int ac = target.GetArmorClass();
 
             if (d20 + attackBonus >= ac)
             {
                 int damage = UnityEngine.Random.Range(1, 9) + 4; // Longsword + Str
                 Debug.Log($"<color=red>HIT!</color> Dealt {damage} damage.");
 
-                UnitHealth targetHealth = target.GetComponent<UnitHealth>();
+                IDamageable targetHealth = target.GetComponent<IDamageable>();
                 if (targetHealth != null)
                 {
-                    targetHealth.ApplyDamage(damage);
-
+                    // TODO: Add critical hit logic later
+                    targetHealth.ApplyDamage(unit, damage, DamageType.Slashing, false);
                     // PF2e Rule: If the reaction kills them, they don't finish moving!
-                    if (targetHealth.IsDead || targetHealth.IsUnconscious)
+                    if (targetHealth.IsDead)
                     {
                         Debug.Log($"{target.name} was struck down while moving!");
                         intent.TriggeringEvent.IsCancelled = true;

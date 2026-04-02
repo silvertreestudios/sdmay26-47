@@ -42,9 +42,42 @@ namespace PathfinderTactics.Actions
 
         public virtual List<GridPosition> GetActionRangeGridPositions()
         {
-            // Default implementation just returns valid targets,
-            // but child classes like MeleeAction will override this.
             return GetValidActionGridPositions();
+        }
+
+        /// <summary>
+        /// True for actions that target a specific unit (melee/ranged strikes,
+        /// single-target abilities). False for position-based actions (AoE spells).
+        /// When true, the TargetLockService handles targeting instead of the grid cursor.
+        /// </summary>
+        public virtual bool IsUnitTargeted => false;
+
+        /// <summary>
+        /// Validates if the unit's current physical/mental state allows actions.
+        /// </summary>
+        public virtual bool CanExecuteAction()
+        {
+            var conditions = unit.GetComponent<UnitConditions>();
+            if (conditions == null)
+                return true;
+
+            // Universal Blockers: Dead or Unconscious units cannot take ANY actions.
+            if (conditions.IsDead() || conditions.HasCondition(ConditionType.Unconscious))
+            {
+                Debug.Log(
+                    $"<color=red>Action blocked: {unit.name} is Unconscious or Dead.</color>"
+                );
+                return false;
+            }
+
+            // Stunned blocker (Just in case the UI accidentally lets them click)
+            if (conditions.GetConditionValue(ConditionType.Stunned) > 0)
+            {
+                Debug.Log($"<color=red>Action blocked: {unit.name} is Stunned.</color>");
+                return false;
+            }
+
+            return true;
         }
     }
 }
