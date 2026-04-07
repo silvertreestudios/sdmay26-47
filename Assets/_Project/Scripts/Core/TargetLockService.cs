@@ -76,6 +76,10 @@ namespace PathfinderTactics.Core
             isActive = false;
             currentAttacker = attacker;
 
+            Debug.Log(
+                $"[TargetLockService] InitializeTargeting: attacker={attacker.name}, action={action.GetActionName()}"
+            );
+
             if (attacker == null || action == null)
                 return;
 
@@ -96,87 +100,87 @@ namespace PathfinderTactics.Core
                     );
                 }
 
-                List<GridPosition> validPositions = action.GetValidActionGridPositions();
-                HashSet<Vector2Int> validColumns = new HashSet<Vector2Int>();
-                foreach (GridPosition gp in validPositions)
-                    validColumns.Add(new Vector2Int(gp.x, gp.z));
+                List<Vector3Int> validPositions = action.GetValidActionGridPositions();
 
                 if (debugTargeting)
-                    Debug.Log($"[TargetLock] Valid columns from action: {validColumns.Count}");
+                    Debug.Log($"[TargetLock] Valid positions from action: {validPositions.Count}");
 
                 HashSet<Unit> added = new HashSet<Unit>();
                 List<Unit> allCandidates = new List<Unit>();
 
-                foreach (Vector2Int colKey in validColumns)
+                // O(N) candidate collection from all active units.
+                Debug.Log(
+                    $"[TargetLock-Detail] UnitManager.AllUnits count: {UnitManager.AllUnits.Count}"
+                );
+
+                foreach (Unit target in UnitManager.AllUnits)
                 {
-                    List<GridNode> column = grid.GetColumn(colKey);
-                    if (column == null)
-                        continue;
-
-                    foreach (GridNode node in column)
+                    if (target == null)
                     {
-                        Unit target = grid.GetUnitAt(node.Coordinates);
-                        if (target == null || target == attacker || !added.Add(target))
-                            continue;
-
-                        if (target.GetFaction() == attacker.GetFaction())
-                        {
-                            if (debugTargeting)
-                                Debug.Log(
-                                    $"[TargetLock] Skip {target.name} @ {target.CurrentLayeredPosition}: same faction"
-                                );
-                            continue;
-                        }
-
-                        Vector3Int targetPos = target.CurrentLayeredPosition;
-
-                        if (debugTargeting)
-                            Debug.Log(
-                                $"[TargetLock] Candidate {target.name} @ {targetPos} (testing LoE/LoS)…"
-                            );
-
-                        if (!LineOfSightUtility.HasLineOfEffect(attackerPos, targetPos))
-                        {
-                            if (debugTargeting)
-                                Debug.Log(
-                                    $"[TargetLock] REJECT {target.name}: HasLineOfEffect=false"
-                                );
-                            continue;
-                        }
-
-                        if (!LineOfSightUtility.Evaluate(attackerPos, targetPos).HasLineOfSight)
-                        {
-                            if (debugTargeting)
-                                Debug.Log(
-                                    $"[TargetLock] REJECT {target.name}: HasLineOfSight=false"
-                                );
-                            continue;
-                        }
-
-                        var targetStealth = target.GetComponent<UnitStealth>();
-                        if (
-                            targetStealth != null
-                            && targetStealth.GetDetectionState(attacker) == DetectionState.Unnoticed
-                        )
-                        {
-                            if (debugTargeting)
-                                Debug.Log(
-                                    $"[TargetLock] REJECT {target.name}: Unnoticed vs attacker"
-                                );
-                            continue;
-                        }
-
-                        if (debugTargeting)
-                            Debug.Log($"[TargetLock] ACCEPT {target.name} @ {targetPos}");
-
-                        allCandidates.Add(target);
+                        Debug.Log("[TargetLock-Detail] Skip: target is NULL (destroyed?).");
+                        continue;
                     }
+                    if (target == attacker)
+                    {
+                        Debug.Log($"[TargetLock-Detail] Skip: {target.name} (self).");
+                        continue;
+                    }
+
+                    Vector3Int targetPos = target.CurrentLayeredPosition;
+
+                    if (target.GetFaction() == attacker.GetFaction())
+                    {
+                        Debug.Log($"[TargetLock-Detail] Skip: {target.name} (same faction).");
+                        continue;
+                    }
+
+                    // Check if the action itself allows this position (Range)
+                    if (!validPositions.Contains(targetPos))
+                    {
+                        Debug.Log(
+                            $"[TargetLock-Detail] Skip: {target.name} @ {targetPos} (OUT OF RANGE - action list)."
+                        );
+                        continue;
+                    }
+
+                    if (!LineOfSightUtility.HasLineOfEffect(attackerPos, targetPos))
+                    {
+                        Debug.Log(
+                            $"[TargetLock-Detail] Skip: {target.name} @ {targetPos} (No Line of Effect)."
+                        );
+                        continue;
+                    }
+
+                    if (!LineOfSightUtility.Evaluate(attackerPos, targetPos).HasLineOfSight)
+                    {
+                        Debug.Log(
+                            $"[TargetLock-Detail] Skip: {target.name} @ {targetPos} (No Line of Sight)."
+                        );
+                        continue;
+                    }
+
+                    var targetStealth = target.GetComponent<UnitStealth>();
+                    if (
+                        targetStealth != null
+                        && targetStealth.GetDetectionState(attacker) == DetectionState.Unnoticed
+                    )
+                    {
+                        Debug.Log(
+                            $"[TargetLock-Detail] Skip: {target.name} @ {targetPos} (Unnoticed)."
+                        );
+                        continue;
+                    }
+
+                    Debug.Log($"[TargetLock-Detail] ACCEPT: {target.name} @ {targetPos}");
+                    if (added.Add(target))
+                        allCandidates.Add(target);
                 }
 
                 if (allCandidates.Count == 0)
                 {
-                    if (debugTargeting)
-                        Debug.Log("[TargetLock] No candidates after filters - targeting inactive.");
+                    Debug.LogWarning(
+                        "[TargetLock-Detail] Initialization FAILED: allCandidates count is 0."
+                    );
                     return;
                 }
 
@@ -217,9 +221,19 @@ namespace PathfinderTactics.Core
                 isActive = true;
                 UpdateIndicator();
 
+                Debug.Log(
+                    $"[TargetLockService] Targeting ACTIVE. Candidates found: {validTargets.Count}. Initial target: {CurrentTarget.name}"
+                );
+
                 ServiceLocator
                     .Get<CameraController>()
                     .EnterOTSMode(attacker.transform, CurrentTarget.transform);
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError(
+                    $"[TargetLock-Detail] FATAL EXCEPTION during InitializeTargeting: {ex}"
+                );
             }
             finally
             {

@@ -137,9 +137,9 @@ namespace PathfinderTactics.Reactions
     public class BeforeSpellEvent : GameEvent
     {
         public SpellSO Spell { get; }
-        public GridPosition TargetPosition { get; }
+        public Vector3Int TargetPosition { get; }
 
-        public BeforeSpellEvent(Unit caster, SpellSO spell, GridPosition targetPos)
+        public BeforeSpellEvent(Unit caster, SpellSO spell, Vector3Int targetPos)
             : base(caster)
         {
             Spell = spell;

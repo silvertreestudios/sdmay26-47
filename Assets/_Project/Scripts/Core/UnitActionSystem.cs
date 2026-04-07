@@ -89,12 +89,12 @@ namespace PathfinderTactics.Core
                 );
             }
 
-            if (
-                newPhase != GamePhase.ActionTargeting
-                && ServiceLocator.Get<UnitTooltipUI>() != null
-            )
+            if (newPhase != GamePhase.ActionTargeting)
             {
-                ServiceLocator.Get<UnitTooltipUI>().Hide();
+                if (ServiceLocator.TryGet(out PathfinderTactics.UI.UnitTooltipUI tooltipUI))
+                {
+                    tooltipUI.Hide();
+                }
             }
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
         }
@@ -153,8 +153,27 @@ namespace PathfinderTactics.Core
             }
         }
 
+        private bool AllowInteraction(string context)
+        {
+            if (ServiceLocator.TryGet<CameraController>(out var cc))
+            {
+                bool blending = cc.IsBlending();
+                if (blending)
+                {
+                    Debug.Log(
+                        $"[UnitActionSystem] Interaction '{context}' BLOCKED due to camera blend."
+                    );
+                }
+                return !blending;
+            }
+            return true;
+        }
+
         private void OnSelectPerformed(object sender, EventArgs e)
         {
+            if (!AllowInteraction("Select"))
+                return;
+
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
             if (currentPhase == GamePhase.UnitSelection)
             {
@@ -177,6 +196,8 @@ namespace PathfinderTactics.Core
 
         public void SetSelectedAction(BaseAction action)
         {
+            Debug.Log($"[UnitActionSystem] SetSelectedAction: {action.GetActionName()}");
+
             if (!action.CanExecuteAction())
             {
                 Debug.Log(
@@ -211,7 +232,17 @@ namespace PathfinderTactics.Core
             if (selectedAction != null && selectedAction.IsUnitTargeted)
             {
                 if (ServiceLocator.TryGet<TargetLockService>(out var tls))
+                {
                     tls.InitializeTargeting(selectedUnit, selectedAction);
+
+                    if (!tls.IsActive)
+                    {
+                        Debug.LogWarning(
+                            "[UnitActionSystem] TargetLockService failed to activate. Reverting to ActionSelection."
+                        );
+                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
+                    }
+                }
             }
             else
             {
@@ -223,6 +254,9 @@ namespace PathfinderTactics.Core
 
         private void OnConfirmPerformed(object sender, EventArgs e)
         {
+            if (!AllowInteraction("Confirm"))
+                return;
+
             if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
                 return;
 
@@ -237,7 +271,7 @@ namespace PathfinderTactics.Core
             }
             else if (currentPhase == GamePhase.ActionTargeting)
             {
-                GridPosition targetPos;
+                Vector3Int targetPos;
                 if (
                     selectedAction != null
                     && selectedAction.IsUnitTargeted
@@ -245,11 +279,18 @@ namespace PathfinderTactics.Core
                     && tls.IsActive
                 )
                 {
-                    targetPos = tls.CurrentCursorGridPosition;
+                    targetPos = tls.CurrentTargetLayeredPosition;
                 }
                 else
                 {
-                    targetPos = ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition;
+                    targetPos =
+                        GridCursor.Instance != null
+                            ? GridCursor.Instance.CurrentLayeredPosition
+                            : new Vector3Int(
+                                ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition.x,
+                                0,
+                                ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition.z
+                            );
                 }
                 TryExecuteActionAtGridPos(targetPos);
             }
@@ -293,8 +334,12 @@ namespace PathfinderTactics.Core
             }
         }
 
+        private GamePhase preEagleEyePhase;
+
         private void OnCancelPerformed(object sender, EventArgs e)
         {
+            Debug.Log("[UnitActionSystem] OnCancelPerformed");
+
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
             if (currentPhase == GamePhase.ActionTargeting)
@@ -318,7 +363,16 @@ namespace PathfinderTactics.Core
             else if (currentPhase == GamePhase.ActionSelection)
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
             else if (currentPhase == GamePhase.FreeMovement)
-                ClearSelectedUnit();
+            {
+                preEagleEyePhase = currentPhase;
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
+                ServiceLocator.Get<CameraController>().EnterEagleEyeMode();
+            }
+            else if (currentPhase == GamePhase.EagleEye)
+            {
+                ServiceLocator.Get<PhaseManager>().SetPhase(preEagleEyePhase);
+                ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
+            }
         }
 
         private void HandleFreeMovement()
@@ -377,28 +431,40 @@ namespace PathfinderTactics.Core
             float cellSize = gridSystem.CellSize;
             float unitRadius = selectedUnit.GetUnitRadius();
 
-            if (!IsValidMoveColumn(currentGridPos.x, currentGridPos.z + 1))
+            if (
+                !IsValidMoveColumn(currentGridPos.x, currentGridPos.z + 1)
+                || IsOccupiedByOther(currentGridPos.x, currentGridPos.z + 1, currentLayered.y)
+            )
             {
                 float maxZ = cellCenterWorld.z + (cellSize * 0.5f) - unitRadius;
                 if (proposedPosition.z > maxZ)
                     proposedPosition.z = maxZ;
             }
 
-            if (!IsValidMoveColumn(currentGridPos.x, currentGridPos.z - 1))
+            if (
+                !IsValidMoveColumn(currentGridPos.x, currentGridPos.z - 1)
+                || IsOccupiedByOther(currentGridPos.x, currentGridPos.z - 1, currentLayered.y)
+            )
             {
                 float minZ = cellCenterWorld.z - (cellSize * 0.5f) + unitRadius;
                 if (proposedPosition.z < minZ)
                     proposedPosition.z = minZ;
             }
 
-            if (!IsValidMoveColumn(currentGridPos.x + 1, currentGridPos.z))
+            if (
+                !IsValidMoveColumn(currentGridPos.x + 1, currentGridPos.z)
+                || IsOccupiedByOther(currentGridPos.x + 1, currentGridPos.z, currentLayered.y)
+            )
             {
                 float maxX = cellCenterWorld.x + (cellSize * 0.5f) - unitRadius;
                 if (proposedPosition.x > maxX)
                     proposedPosition.x = maxX;
             }
 
-            if (!IsValidMoveColumn(currentGridPos.x - 1, currentGridPos.z))
+            if (
+                !IsValidMoveColumn(currentGridPos.x - 1, currentGridPos.z)
+                || IsOccupiedByOther(currentGridPos.x - 1, currentGridPos.z, currentLayered.y)
+            )
             {
                 float minX = cellCenterWorld.x - (cellSize * 0.5f) + unitRadius;
                 if (proposedPosition.x < minX)
@@ -406,7 +472,10 @@ namespace PathfinderTactics.Core
             }
 
             GridPosition targetGridPos = gridSystem.GetGridPosition(proposedPosition);
-            if (!IsValidMoveColumn(targetGridPos.x, targetGridPos.z))
+            if (
+                !IsValidMoveColumn(targetGridPos.x, targetGridPos.z)
+                || IsOccupiedByOther(targetGridPos.x, targetGridPos.z, currentLayered.y)
+            )
             {
                 selectedUnit.HandleMovement(Vector3.zero);
                 return;
@@ -429,7 +498,20 @@ namespace PathfinderTactics.Core
             return validMoveColumns != null && validMoveColumns.Contains(new Vector2Int(x, z));
         }
 
-        private void TryExecuteActionAtGridPos(GridPosition targetPos)
+        private bool IsOccupiedByOther(int x, int z, int referenceY)
+        {
+            // Block all occupied cells (allies and enemies).
+            // This is for technical simplicity and deviates from PF2e rules.
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int layered = grid.ResolveClosestLayeredPosition(
+                new GridPosition(x, z),
+                referenceY
+            );
+            Unit unitAtPos = grid.GetUnitAt(layered);
+            return unitAtPos != null && unitAtPos != selectedUnit;
+        }
+
+        private void TryExecuteActionAtGridPos(Vector3Int targetPos)
         {
             if (selectedAction == null)
                 return;
@@ -442,8 +524,14 @@ namespace PathfinderTactics.Core
 
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.Busy);
             ServiceLocator.Get<TargetingService>().HideTargeting();
-            if (ServiceLocator.TryGet<TargetLockService>(out var confirmTls) && confirmTls.IsActive)
-                confirmTls.HideTargeting();
+
+            // TakeAction relies on the Active state of TLS to lock on correctly.
+            TargetLockService confirmTls = null;
+            if (ServiceLocator.TryGet<TargetLockService>(out var tls) && tls.IsActive)
+            {
+                confirmTls = tls;
+            }
+
             if (selectedUnit != null)
                 ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
 
@@ -457,6 +545,12 @@ namespace PathfinderTactics.Core
                     CheckTurnEnd();
                 }
             );
+
+            // Now that TakeAction has successfully pulled the unit, we can wipe the visuals.
+            if (confirmTls != null)
+            {
+                confirmTls.HideTargeting();
+            }
         }
 
         private void CommitMoveAction(Action onComplete = null)
@@ -542,6 +636,21 @@ namespace PathfinderTactics.Core
                             }
                             else
                             {
+                                // Failsafe check for occupancy
+                                if (IsOccupiedByOther(currentPos.x, currentPos.z, currentLayered.y))
+                                {
+                                    Debug.LogWarning(
+                                        $"[UnitActionSystem] Move cancelled. Target destination {currentLayered} is occupied."
+                                    );
+                                    selectedUnit.SnapToGrid(
+                                        gridSystem.GetWorldPosition(
+                                            selectedUnit.CurrentLayeredPosition
+                                        )
+                                    );
+                                    onComplete?.Invoke();
+                                    return;
+                                }
+
                                 selectedUnit.SpendActionPoints(1);
                                 gridSystem.MoveUnit(
                                     selectedUnit,
@@ -738,7 +847,6 @@ namespace PathfinderTactics.Core
 
             if (selectedUnit != null)
             {
-                selectedUnit.StartTurn();
                 RefreshMovePositions();
 
                 var newEquipment = selectedUnit.GetComponent<UnitEquipment>();
@@ -790,6 +898,7 @@ namespace PathfinderTactics.Core
             }
 
             selectedUnit = null;
+            pendingSneakAction = null;
             ServiceLocator.Get<CameraController>().ClearFollowTarget();
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.UnitSelection);

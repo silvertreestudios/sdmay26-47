@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
+using PathfinderTactics.Actions;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
 using PathfinderTactics.Items;
-using PathfinderTactics.Actions;
 using TMPro;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ namespace PathfinderTactics.Feats
 
         private Unit targetUnit;
         private Unit intendedTargetUnit;
-        private GridPosition intendedTargetTile;
+        private Vector3Int intendedTargetTile;
 
         public override bool IsUnitTargeted => true;
 
@@ -35,7 +35,7 @@ namespace PathfinderTactics.Feats
         {
             if (activeWeapon != null)
                 return activeWeapon;
-            var equipment = unit.GetComponent<UnitEquipment>();
+            var equipment = GetComponent<UnitEquipment>();
             return equipment != null ? equipment.GetMainWeapon() : null;
         }
 
@@ -49,10 +49,11 @@ namespace PathfinderTactics.Feats
             return 1;
         }
 
-        public override List<GridPosition> GetActionRangeGridPositions()
+        public override List<Vector3Int> GetActionRangeGridPositions()
         {
             int range = GetMaxRange();
-            List<GridPosition> rangePositions = new List<GridPosition>();
+            List<Vector3Int> rangePositions = new List<Vector3Int>();
+            HashSet<Vector3Int> added = new HashSet<Vector3Int>();
             GridSystem grid = ServiceLocator.Get<GridSystem>();
             Vector3Int unitPos = unit.CurrentLayeredPosition;
 
@@ -69,8 +70,8 @@ namespace PathfinderTactics.Feats
                     {
                         if (PF2E_Core.GetPF2eDistance3D(unitPos, node.Coordinates) <= range)
                         {
-                            rangePositions.Add(new GridPosition(colKey.x, colKey.y));
-                            break;
+                            if (added.Add(node.Coordinates))
+                                rangePositions.Add(node.Coordinates);
                         }
                     }
                 }
@@ -139,7 +140,7 @@ namespace PathfinderTactics.Feats
             return true;
         }
 
-        public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
+        public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
             if (!CanExecuteAction())
             {
@@ -157,7 +158,7 @@ namespace PathfinderTactics.Feats
             }
             else
             {
-                targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(gridPosition);
+                targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(targetPosition);
             }
 
             if (targetUnit == null)
@@ -168,7 +169,7 @@ namespace PathfinderTactics.Feats
             }
 
             intendedTargetUnit = targetUnit;
-            intendedTargetTile = gridPosition;
+            intendedTargetTile = targetPosition;
             this.onActionComplete = onActionComplete;
             isActive = true;
 
@@ -365,16 +366,16 @@ namespace PathfinderTactics.Feats
             StealthResolver.BreakStealthAfterAttack(unit);
         }
 
-        public override bool IsValidActionGridPosition(GridPosition gridPosition)
+        public override bool IsValidActionGridPosition(Vector3Int targetPosition)
         {
-            return GetValidActionGridPositions().Contains(gridPosition);
+            return GetValidActionGridPositions().Contains(targetPosition);
         }
 
-        public override List<GridPosition> GetValidActionGridPositions()
+        public override List<Vector3Int> GetValidActionGridPositions()
         {
             int range = GetMaxRange();
-            List<GridPosition> validGridPositionList = new List<GridPosition>();
-            HashSet<Vector2Int> addedColumns = new HashSet<Vector2Int>();
+            List<Vector3Int> validPositions = new List<Vector3Int>();
+            HashSet<Vector3Int> added = new HashSet<Vector3Int>();
             GridSystem grid = ServiceLocator.Get<GridSystem>();
             Vector3Int unitPos = unit.CurrentLayeredPosition;
 
@@ -415,13 +416,13 @@ namespace PathfinderTactics.Feats
                         if (!LineOfSightUtility.Evaluate(unitPos, testPos).HasLineOfSight)
                             continue;
 
-                        if (addedColumns.Add(colKey))
-                            validGridPositionList.Add(new GridPosition(testPos.x, testPos.z));
+                        if (added.Add(testPos))
+                            validPositions.Add(testPos);
                     }
                 }
             }
 
-            return validGridPositionList;
+            return validPositions;
         }
     }
 }

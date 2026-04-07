@@ -195,6 +195,20 @@ namespace PathfinderTactics.Grid
 
             if (nodes.TryGetValue(position, out GridNode existingNode))
             {
+                TerrainDef existingTerrain = existingNode.Terrain;
+                int existingScore =
+                    (existingTerrain != null && existingTerrain.BlocksLineOfEffect ? 10 : 0)
+                    + (existingTerrain != null ? (int)existingTerrain.CoverType : 0);
+                int newScore =
+                    (resolvedTerrain.BlocksLineOfEffect ? 10 : 0) + (int)resolvedTerrain.CoverType;
+
+                // If the existing node provides more or equal cover/blocking, do not overwrite it
+                // This ensures solid pillars aren't accidentally hollowed out by intersecting walkable flat tiles.
+                if (existingScore > newScore)
+                {
+                    return;
+                }
+
                 Vector2Int existingColumnKey = new Vector2Int(
                     existingNode.Coordinates.x,
                     existingNode.Coordinates.z

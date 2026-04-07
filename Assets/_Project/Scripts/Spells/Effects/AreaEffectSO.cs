@@ -31,17 +31,17 @@ namespace PathfinderTactics.Spells.Effects
             }
             else
             {
-                // Compute AoE cells
-                context.AffectedCells = AreaService.GetAffectedCells(
+                // Compute AoE cells using 3D logic
+                context.AffectedCells = AreaService.GetAffectedCells3D(
                     context.TargetPosition,
                     area,
-                    context.Caster.CurrentGridPosition,
+                    context.Caster.CurrentLayeredPosition,
                     context.TargetPosition
                 );
 
                 // Validate cells against grid bounds
                 GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
-                context.AffectedCells.RemoveAll(c => !gridSystem.IsValidGridPosition(c));
+                context.AffectedCells.RemoveAll(c => gridSystem.GetNode(c) == null);
             }
 
             // Populate affected units using this effect's filter

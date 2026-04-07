@@ -76,23 +76,23 @@ namespace PathfinderTactics.Spells
 
         // Targeting
 
-        public override List<GridPosition> GetActionRangeGridPositions()
+        public override List<Vector3Int> GetActionRangeGridPositions()
         {
-            List<GridPosition> positions = new List<GridPosition>();
+            List<Vector3Int> positions = new List<Vector3Int>();
             if (currentSpell == null)
                 return positions;
 
-            GridPosition unitPos = unit.CurrentGridPosition;
+            Vector3Int unitPos3D = unit.CurrentLayeredPosition;
             int range = GetRangeInTiles();
 
             if (currentSpell.Targeting == SpellTargetingType.Self)
             {
-                positions.Add(unitPos);
+                positions.Add(unitPos3D);
                 return positions;
             }
 
             GridSystem grid = ServiceLocator.Get<GridSystem>();
-            Vector3Int unitPos3D = unit.CurrentLayeredPosition;
+            HashSet<Vector3Int> added = new HashSet<Vector3Int>();
 
             for (int x = -range; x <= range; x++)
             {
@@ -107,8 +107,8 @@ namespace PathfinderTactics.Spells
                     {
                         if (PF2E_Core.GetPF2eDistance3D(unitPos3D, node.Coordinates) <= range)
                         {
-                            positions.Add(new GridPosition(colKey.x, colKey.y));
-                            break;
+                            if (added.Add(node.Coordinates))
+                                positions.Add(node.Coordinates);
                         }
                     }
                 }
@@ -117,19 +117,19 @@ namespace PathfinderTactics.Spells
             return positions;
         }
 
-        public override List<GridPosition> GetValidActionGridPositions()
+        public override List<Vector3Int> GetValidActionGridPositions()
         {
-            List<GridPosition> validPositions = new List<GridPosition>();
+            List<Vector3Int> validPositions = new List<Vector3Int>();
             if (currentSpell == null)
                 return validPositions;
 
-            GridPosition unitPos = unit.CurrentGridPosition;
+            Vector3Int unitPos3D = unit.CurrentLayeredPosition;
             int range = GetRangeInTiles();
 
             // Self-targeting
             if (currentSpell.Targeting == SpellTargetingType.Self)
             {
-                validPositions.Add(unitPos);
+                validPositions.Add(unitPos3D);
                 return validPositions;
             }
 
@@ -146,23 +146,19 @@ namespace PathfinderTactics.Spells
 
             // SingleTarget - must have a valid unit
             GridSystem grid = ServiceLocator.Get<GridSystem>();
-            Vector3Int unitPos3D = unit.CurrentLayeredPosition;
+            HashSet<Vector3Int> added = new HashSet<Vector3Int>();
 
             for (int x = -range; x <= range; x++)
             {
                 for (int z = -range; z <= range; z++)
                 {
-                    Vector2Int colKey = new Vector2Int(unitPos.x + x, unitPos.z + z);
+                    Vector2Int colKey = new Vector2Int(unitPos3D.x + x, unitPos3D.z + z);
                     List<GridNode> column = grid.GetColumn(colKey);
                     if (column == null || column.Count == 0)
                         continue;
 
-                    bool foundInColumn = false;
                     foreach (GridNode node in column)
                     {
-                        if (foundInColumn)
-                            break;
-
                         Vector3Int testPos3D = node.Coordinates;
 
                         if (PF2E_Core.GetPF2eDistance3D(unitPos3D, testPos3D) > range)
@@ -192,10 +188,9 @@ namespace PathfinderTactics.Spells
                                 break;
                         }
 
-                        if (valid)
+                        if (valid && added.Add(testPos3D))
                         {
-                            validPositions.Add(new GridPosition(testPos3D.x, testPos3D.z));
-                            foundInColumn = true;
+                            validPositions.Add(testPos3D);
                         }
                     }
                 }
@@ -204,14 +199,14 @@ namespace PathfinderTactics.Spells
             return validPositions;
         }
 
-        public override bool IsValidActionGridPosition(GridPosition gridPosition)
+        public override bool IsValidActionGridPosition(Vector3Int targetPosition)
         {
-            return GetValidActionGridPositions().Contains(gridPosition);
+            return GetValidActionGridPositions().Contains(targetPosition);
         }
 
         // Execution
 
-        public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
+        public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
             if (!CanExecuteAction())
             {
@@ -234,7 +229,7 @@ namespace PathfinderTactics.Spells
                 Caster = unit,
                 SpellData = currentSpell,
                 CastLevel = castLevel,
-                TargetPosition = gridPosition,
+                TargetPosition = targetPosition,
                 TargetingType = currentSpell.Targeting,
             };
 
@@ -244,21 +239,21 @@ namespace PathfinderTactics.Spells
                 || currentSpell.Targeting == SpellTargetingType.Self
             )
             {
-                Unit targetAtPos = ServiceLocator.Get<GridSystem>().GetUnitAt(gridPosition);
+                Unit targetAtPos = ServiceLocator.Get<GridSystem>().GetUnitAt(targetPosition);
                 if (targetAtPos != null)
                 {
                     context.AffectedUnits.Add(targetAtPos);
-                    context.AffectedCells.Add(gridPosition);
+                    context.AffectedCells.Add(targetPosition);
                 }
             }
 
             Debug.Log(
                 $"<b><color=magenta>[SPELL CAST]</color></b> {unit.name} casts "
-                    + $"{currentSpell.ElementName} (Level {castLevel}) at {gridPosition}!"
+                    + $"{currentSpell.ElementName} (Level {castLevel}) at {targetPosition}!"
             );
 
             // Fire BeforeSpellEvent -> Counterspell window
-            BeforeSpellEvent spellEvent = new BeforeSpellEvent(unit, currentSpell, gridPosition);
+            BeforeSpellEvent spellEvent = new BeforeSpellEvent(unit, currentSpell, targetPosition);
 
             ServiceLocator
                 .Get<ReactionManager>()

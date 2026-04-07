@@ -15,7 +15,7 @@ namespace PathfinderTactics.Actions
 
         private Unit targetUnit;
         private Unit intendedTargetUnit;
-        private GridPosition intendedTargetTile;
+        private Vector3Int intendedTargetTile;
 
         public override bool IsUnitTargeted => true;
 
@@ -26,25 +26,45 @@ namespace PathfinderTactics.Actions
             return $"Ranged Strike - {weaponName}";
         }
 
-        /// <summary>
-        /// The specific weapon this ranged action uses.
-        /// Set by UnitEquipment.ConfigureStrikeActions(). If null, falls back to equipment.
-        /// </summary>
         [HideInInspector]
         public WeaponSO activeWeapon;
 
-        /// <summary>
-        /// Returns the weapon this action should use for all calculations.
-        /// </summary>
         public WeaponSO GetWeapon()
         {
             if (activeWeapon != null)
                 return activeWeapon;
-            var equipment = unit.GetComponent<UnitEquipment>();
+            var equipment = GetComponent<UnitEquipment>();
             if (equipment == null)
                 return null;
             var weapon = equipment.GetMainWeapon();
             return (weapon != null && weapon.IsRangedWeapon()) ? weapon : null;
+        }
+
+        public float GetDistanceFeet(Vector3Int a, Vector3Int b)
+        {
+            return Vector3.Distance(new Vector3(a.x, a.y, a.z), new Vector3(b.x, b.y, b.z)) * 5.0f;
+        }
+
+        public int GetRangePenalty(
+            float distFeet,
+            int rangeIncrement,
+            out int incrementIndex,
+            out bool isInvalid
+        )
+        {
+            if (rangeIncrement <= 0)
+            {
+                incrementIndex = 1;
+                isInvalid = false;
+                return 0;
+            }
+
+            incrementIndex = Mathf.CeilToInt(distFeet / rangeIncrement);
+            if (incrementIndex == 0)
+                incrementIndex = 1;
+
+            isInvalid = incrementIndex > 6;
+            return Mathf.Max(-10, (incrementIndex - 1) * -2);
         }
 
         private int GetMaxRange()
@@ -52,12 +72,12 @@ namespace PathfinderTactics.Actions
             var weapon = GetWeapon();
             if (weapon != null && weapon.IsRangedWeapon())
             {
-                return Mathf.Max(1, weapon.rangeIncrementFeet / 5);
+                return (weapon.rangeIncrementFeet * 6) / 5;
             }
-            return 12; // fallback 60ft
+            return 0;
         }
 
-        public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
+        public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
             if (!CanExecuteAction())
             {
@@ -75,7 +95,7 @@ namespace PathfinderTactics.Actions
             }
             else
             {
-                targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(gridPosition);
+                targetUnit = ServiceLocator.Get<GridSystem>().GetUnitAt(targetPosition);
             }
 
             if (targetUnit == null)
@@ -85,7 +105,7 @@ namespace PathfinderTactics.Actions
             }
 
             intendedTargetUnit = targetUnit;
-            intendedTargetTile = gridPosition;
+            intendedTargetTile = targetPosition;
             this.onActionComplete = onActionComplete;
             isActive = true;
 
@@ -94,9 +114,7 @@ namespace PathfinderTactics.Actions
             {
                 var weapon = GetWeapon();
                 if (weapon != null)
-                {
                     visuals.SetWeaponType(weapon.weaponAnimType);
-                }
 
                 visuals.OnShoot += HandleShoot;
                 visuals.OnAnimationEnd += HandleAnimationEnd;
@@ -106,7 +124,6 @@ namespace PathfinderTactics.Actions
             }
             else
             {
-                // Fallback for testing without animator attached
                 PerformShootLogic();
                 ActionComplete();
             }
@@ -147,8 +164,8 @@ namespace PathfinderTactics.Actions
                 return;
 
             CancelInvoke(nameof(FallbackActionComplete));
-
             isActive = false;
+
             var visuals = unit.GetComponentInChildren<UnitVisuals>();
             if (visuals != null)
             {
@@ -161,7 +178,7 @@ namespace PathfinderTactics.Actions
         private void FallbackActionComplete()
         {
             Debug.LogWarning(
-                $"<color=orange>[FAILSAFE]</color> The Animator swallowed the ActionComplete event! Rescuing the game state via failsafe timer."
+                $"<color=orange>[FAILSAFE]</color> The Animator swallowed the ActionComplete event!"
             );
             ActionComplete();
         }
@@ -170,23 +187,70 @@ namespace PathfinderTactics.Actions
         {
             var weapon = GetWeapon();
             if (weapon == null || !weapon.IsRangedWeapon())
-            {
-                Debug.LogWarning("Tried to shoot without a ranged weapon equipped!");
                 return;
-            }
 
             var stats = unit.GetStats();
             if (stats == null)
                 return;
 
+            if (intendedTargetUnit == null)
+            {
+                Debug.Log(
+                    $"<color=grey>[GUESS]</color> {unit.name} resolves an attack on {intendedTargetTile} but the intended target was destroyed (miss)."
+                );
+                unit.IncrementAttacksThisTurn();
+                BreakStealth();
+                return;
+            }
+
+            int driftDistance = PF2E_Core.GetChebyshevDistance3D(
+                intendedTargetTile,
+                intendedTargetUnit.CurrentLayeredPosition
+            );
+
+            var targetConditions = intendedTargetUnit.GetComponent<UnitConditions>();
+            bool isTargetDead = targetConditions != null && targetConditions.IsDead();
+
+            if (driftDistance > 1 || isTargetDead)
+            {
+                Debug.Log(
+                    $"<color=grey>[GUESS]</color> {unit.name} resolves an attack on {intendedTargetTile} but the intended target is no longer there (miss)."
+                );
+                unit.IncrementAttacksThisTurn();
+                BreakStealth();
+                return;
+            }
+
+            targetUnit = intendedTargetUnit;
+
             int level = stats.level;
             int dexMod = unit.GetAbilityModifier(AbilityScore.DEX);
             Proficiency weaponProf = Proficiency.Trained;
 
-            int mapPenalty = 0;
+            float distFeet = GetDistanceFeet(
+                unit.CurrentLayeredPosition,
+                targetUnit.CurrentLayeredPosition
+            );
+            int rangePenalty = GetRangePenalty(
+                distFeet,
+                weapon.rangeIncrementFeet,
+                out int incIndex,
+                out bool isInvalid
+            );
+
+            if (isInvalid)
+            {
+                Debug.LogWarning(
+                    $"<color=red>[RANGE]</color> Target {targetUnit.name} is beyond the 6-increment functional range. Attack aborted."
+                );
+                unit.IncrementAttacksThisTurn();
+                BreakStealth();
+                return;
+            }
+
             int attacksMade = unit.AttacksThisTurn;
             bool isAgileWeapon = weapon.HasTrait(WeaponTrait.Agile);
-
+            int mapPenalty = 0;
             if (attacksMade == 1)
                 mapPenalty = isAgileWeapon ? -4 : -5;
             else if (attacksMade >= 2)
@@ -199,55 +263,20 @@ namespace PathfinderTactics.Actions
                 level,
                 weaponProf,
                 AttackType.Ranged,
-                mapPenalty
+                mapPenalty + rangePenalty
             );
 
-            // Tile source of truth: resolve against what is actually on the
-            // selected tile at resolution time.
-            GridSystem grid = ServiceLocator.Get<GridSystem>();
-            Unit actualTarget = grid.GetUnitAt(intendedTargetUnit.CurrentLayeredPosition);
-            if (actualTarget == null || actualTarget != intendedTargetUnit)
-            {
-                Debug.Log(
-                    $"<color=grey>[GUESS]</color> {unit.name} resolves an attack on {intendedTargetTile} but the intended target is no longer there (miss)."
-                );
-                unit.IncrementAttacksThisTurn();
-                BreakStealth();
-                return;
-            }
-
-            targetUnit = actualTarget;
-
-            // Check for Stealth/Vision
             UnitStealth targetStealth = targetUnit.GetComponent<UnitStealth>();
             if (targetStealth != null)
             {
                 DetectionState targetState = targetStealth.GetDetectionState(unit);
-                if (STEALTH_DEBUG && unit != null)
-                    Debug.Log(
-                        $"<color=red>[STEALTH]</color> {unit.name} resolves Ranged vs {targetUnit.name}: targetDetectionState={targetState} intendedTile={intendedTargetTile}"
-                    );
-
-                // Unnoticed: exploration-only state, still not targetable.
                 if (targetState == DetectionState.Unnoticed)
                 {
-                    Debug.Log(
-                        $"<color=grey>[SENSES]</color> {unit.name} cannot target {targetUnit.name} while it is Unnoticed."
-                    );
                     unit.IncrementAttacksThisTurn();
                     BreakStealth();
                     return;
                 }
 
-                // Undetected: guess-tile mode.
-                if (targetState == DetectionState.Undetected)
-                {
-                    // Guess succeeds because we already verified the intended unit
-                    // is still on the intended tile at resolution time.
-                    // We still must skip the vision flat-check (handled below).
-                }
-
-                // Undetected guess mode replaces the vision flat-check entirely.
                 if (targetState != DetectionState.Undetected)
                 {
                     int flatCheckDC = targetStealth.RequiresFlatCheckToTarget(unit);
@@ -257,41 +286,21 @@ namespace PathfinderTactics.Actions
                         if (flatRoll < flatCheckDC)
                         {
                             Debug.Log(
-                                $"<color=grey>Shot missed! Failed DC {flatCheckDC} flat check to see the target (Rolled {flatRoll}).</color>"
+                                $"<color=grey>Shot missed! Failed DC {flatCheckDC} flat check (Rolled {flatRoll}).</color>"
                             );
-                            unit.IncrementAttacksThisTurn(); // The attack is wasted!
-
-                            // Break your own stealth
+                            unit.IncrementAttacksThisTurn();
                             BreakStealth();
                             return;
                         }
-                        Debug.Log(
-                            $"<color=green>Passed vision flat check! (Rolled {flatRoll} vs DC {flatCheckDC})</color>"
-                        );
                     }
                 }
             }
 
-            // Defense breakdown
             ArmorClassBreakdown acBreakdown = targetUnit.GetArmorClassBreakdown(
                 unit,
                 AttackType.Ranged
             );
             int baseAC = acBreakdown.totalAC;
-
-            string defDebug =
-                $"<color=yellow>[DEFENSE MATH]</color> {targetUnit.name} | Base AC: {acBreakdown.baseAC}";
-
-            if (acBreakdown.statusPenalty != 0)
-                defDebug +=
-                    $" | <color=red>Status: {acBreakdown.statusPenaltySources} ({acBreakdown.statusPenalty})</color>";
-
-            if (acBreakdown.circumstanceMod != 0)
-                defDebug +=
-                    $" | <color=orange>Circumstance: {acBreakdown.circumstanceModSources}</color>";
-
-            defDebug += $" ==> <b>Calculated AC: {baseAC}</b>";
-            Debug.Log(defDebug);
 
             int coverBonus = LineOfSightUtility.GetCoverBonus(
                 unit.CurrentLayeredPosition,
@@ -304,23 +313,19 @@ namespace PathfinderTactics.Actions
                 return;
             }
 
+            CombatLogUtility.LogDefenseStage(targetUnit, acBreakdown, coverBonus);
             int finalAC = baseAC + coverBonus;
 
-            if (coverBonus > 0)
-            {
-                Debug.Log(
-                    $"<color=cyan>[COVER]</color> Target has {(coverBonus == 2 ? "Standard" : "Lesser")} Cover! AC increased by +{coverBonus} (Base: {baseAC} -> Final: {finalAC})"
-                );
-            }
-
             unit.IncrementAttacksThisTurn();
-
             int d20 = UnityEngine.Random.Range(1, 21);
-            Degree result = PF2E_Core.CheckResult(d20, attackBonus, finalAC);
+            CombatLogUtility.LogAttackStage(unit, this, d20, attackBonus, mapPenalty, rangePenalty);
 
-            Debug.Log(
-                $"[Shoot] Rolled {d20} + {attackBonus} (MAP: {mapPenalty}) vs AC {finalAC} -> {result}"
+            Degree result = PF2E_Core.CheckResult(
+                d20,
+                attackBonus + mapPenalty + rangePenalty,
+                finalAC
             );
+            CombatLogUtility.LogResult(result);
 
             if (result == Degree.Success || result == Degree.CriticalSuccess)
             {
@@ -330,36 +335,34 @@ namespace PathfinderTactics.Actions
                     weaponDiceRoll += UnityEngine.Random.Range(1, weapon.damageDice.sides + 1);
                 }
 
-                // Note: Ranged weapons don't add Strength to damage unless they have the Propulsive trait (half Str) or Thrown trait (full Str).
-                // For now, simplifying to just the dice logic.
-                int damage = weaponDiceRoll;
+                CombatLogUtility.LogDamageStage(
+                    targetUnit,
+                    weaponDiceRoll,
+                    0,
+                    weapon.damageType,
+                    result == Degree.CriticalSuccess
+                );
 
+                int finalDamage = weaponDiceRoll;
                 if (result == Degree.CriticalSuccess)
-                {
-                    damage *= 2;
-                    Debug.Log("CRITICAL HIT!");
-                }
+                    finalDamage *= 2;
 
                 var targetHealth = targetUnit.GetComponent<IDamageable>();
                 if (targetHealth != null)
                 {
                     targetHealth.ApplyDamage(
                         unit,
-                        damage,
+                        finalDamage,
                         weapon.damageType,
                         result == Degree.CriticalSuccess
                     );
-                    Debug.Log($"Shot dealt {damage} Damage to {targetUnit.name}!");
                 }
             }
             else
             {
                 var targetVisuals = targetUnit.GetComponentInChildren<UnitVisuals>();
                 if (targetVisuals != null)
-                {
                     targetVisuals.TriggerDodge();
-                }
-                Debug.Log("Miss!");
             }
 
             BreakStealth();
@@ -367,94 +370,58 @@ namespace PathfinderTactics.Actions
 
         private void BreakStealth()
         {
-            // Attacks are noisy and can reveal you based on precise senses.
             StealthResolver.OnNoiseGenerated(unit);
             StealthResolver.BreakStealthAfterAttack(unit);
         }
 
-        public override List<GridPosition> GetActionRangeGridPositions()
+        public override List<Vector3Int> GetActionRangeGridPositions()
         {
-            int range = GetMaxRange();
-            List<GridPosition> rangePositions = new List<GridPosition>();
-            GridSystem grid = ServiceLocator.Get<GridSystem>();
-            Vector3Int unitPos = unit.CurrentLayeredPosition;
-
-            for (int x = -range; x <= range; x++)
-            {
-                for (int z = -range; z <= range; z++)
-                {
-                    Vector2Int colKey = new Vector2Int(unitPos.x + x, unitPos.z + z);
-                    List<GridNode> column = grid.GetColumn(colKey);
-                    if (column == null || column.Count == 0)
-                        continue;
-
-                    foreach (GridNode node in column)
-                    {
-                        if (PF2E_Core.GetPF2eDistance3D(unitPos, node.Coordinates) <= range)
-                        {
-                            rangePositions.Add(new GridPosition(colKey.x, colKey.y));
-                            break;
-                        }
-                    }
-                }
-            }
-            return rangePositions;
+            return new List<Vector3Int>();
         }
 
-        public override List<GridPosition> GetValidActionGridPositions()
+        public override List<Vector3Int> GetValidActionGridPositions()
         {
-            int range = GetMaxRange();
-            List<GridPosition> validGridPositionList = new List<GridPosition>();
-            HashSet<Vector2Int> addedColumns = new HashSet<Vector2Int>();
-            GridSystem grid = ServiceLocator.Get<GridSystem>();
-            Vector3Int unitPos = unit.CurrentLayeredPosition;
+            var weapon = GetWeapon();
+            if (weapon == null)
+                return new List<Vector3Int>();
 
-            for (int x = -range; x <= range; x++)
+            List<Vector3Int> validPositions = new List<Vector3Int>();
+            Vector3Int attackerPos = Attacker.CurrentLayeredPosition;
+            float maxRangeFeet = weapon.rangeIncrementFeet * 6;
+
+            foreach (Unit target in UnitManager.AllUnits)
             {
-                for (int z = -range; z <= range; z++)
-                {
-                    Vector2Int colKey = new Vector2Int(unitPos.x + x, unitPos.z + z);
-                    List<GridNode> column = grid.GetColumn(colKey);
-                    if (column == null || column.Count == 0)
-                        continue;
+                if (
+                    target == null
+                    || target == Attacker
+                    || target.GetFaction() == Attacker.GetFaction()
+                )
+                    continue;
 
-                    foreach (GridNode node in column)
-                    {
-                        Vector3Int testPos = node.Coordinates;
-                        if (testPos == unitPos)
-                            continue;
+                Vector3Int targetPos = target.CurrentLayeredPosition;
 
-                        if (PF2E_Core.GetPF2eDistance3D(unitPos, testPos) > range)
-                            continue;
+                float distFeet = GetDistanceFeet(attackerPos, targetPos);
+                if (distFeet > maxRangeFeet)
+                    continue;
 
-                        Unit target = grid.GetUnitAt(testPos);
-                        if (target == null)
-                            continue;
-                        if (target.GetFaction() == unit.GetFaction())
-                            continue;
+                VisibilityResult visResult = LineOfSightUtility.Evaluate(attackerPos, targetPos);
+                if (!visResult.HasLineOfSight)
+                    continue;
 
-                        var targetStealth = target.GetComponent<UnitStealth>();
-                        if (
-                            targetStealth != null
-                            && targetStealth.GetDetectionState(unit) == DetectionState.Unnoticed
-                        )
-                            continue;
+                var targetStealth = target.GetComponent<UnitStealth>();
+                if (
+                    targetStealth != null
+                    && targetStealth.GetDetectionState(Attacker) == DetectionState.Unnoticed
+                )
+                    continue;
 
-                        if (!LineOfSightUtility.HasLineOfEffect(unitPos, testPos))
-                            continue;
-
-                        if (!LineOfSightUtility.Evaluate(unitPos, testPos).HasLineOfSight)
-                            continue;
-
-                        if (addedColumns.Add(colKey))
-                            validGridPositionList.Add(new GridPosition(testPos.x, testPos.z));
-                    }
-                }
+                validPositions.Add(targetPos);
             }
-            return validGridPositionList;
+
+            return validPositions;
         }
 
-        public override bool IsValidActionGridPosition(GridPosition gridPosition) =>
-            GetValidActionGridPositions().Contains(gridPosition);
+        public override bool IsValidActionGridPosition(Vector3Int targetPosition) =>
+            GetValidActionGridPositions().Contains(targetPosition);
     }
 }

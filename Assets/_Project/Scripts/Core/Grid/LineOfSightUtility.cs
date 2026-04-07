@@ -168,7 +168,8 @@ namespace PathfinderTactics.Grid
             if (line3d == null || line3d.Count < 3)
                 return false;
 
-            Dictionary<Vector2Int, int> columnMaxY = new Dictionary<Vector2Int, int>();
+            Dictionary<Vector2Int, Vector2Int> columnYBounds =
+                new Dictionary<Vector2Int, Vector2Int>();
 
             for (int i = 0; i < line3d.Count; i++)
             {
@@ -177,31 +178,41 @@ namespace PathfinderTactics.Grid
                     continue;
 
                 Vector2Int xz = new Vector2Int(v.x, v.z);
-                if (!columnMaxY.TryGetValue(xz, out int prevY) || v.y > prevY)
-                    columnMaxY[xz] = v.y;
+                if (!columnYBounds.TryGetValue(xz, out Vector2Int bounds))
+                {
+                    columnYBounds[xz] = new Vector2Int(v.y, v.y);
+                }
+                else
+                {
+                    if (v.y < bounds.x)
+                        bounds.x = v.y;
+                    if (v.y > bounds.y)
+                        bounds.y = v.y;
+                    columnYBounds[xz] = bounds;
+                }
             }
 
-            foreach (KeyValuePair<Vector2Int, int> kvp in columnMaxY)
+            foreach (KeyValuePair<Vector2Int, Vector2Int> kvp in columnYBounds)
             {
                 int gx = kvp.Key.x;
                 int gz = kvp.Key.y;
+                int minY = kvp.Value.x;
+                int maxY = kvp.Value.y;
 
                 // Same-column vertical handled by SameColumnVerticalLoEBlockedByEndpoints
                 if (gx == origin.x && gz == origin.z && gx == target.x && gz == target.z)
                     continue;
 
-                // A bridge deck only blocks LoE if the line crosses through it,
-                // i.e. the deck sits between origin.y and target.y in this column.
-                // This correctly allows horizontal under-bridge shots (both at
-                // same Y -> no bridge "between") while blocking cross-bridge shots
-                // in either direction.
-                if (BridgeDeckExistsBetweenYLevelsInColumn(grid, gx, gz, origin.y, target.y))
+                // A bridge deck only blocks LoE if the line crosses through it in this specific column.
+                // We use minY - 1 to properly catch "corner skipping" cases where a 3D line
+                // passes diagonally right through a floor panel without registering an interior node there.
+                if (BridgeDeckExistsBetweenYLevelsInColumn(grid, gx, gz, minY - 1, maxY))
                 {
                     if (DebugLineOfEffect)
                     {
                         Debug.Log(
                             $"[LoE][BridgeCross] {origin} -> {target}: BLOCK column=({gx},{gz}) "
-                                + $"(bridge deck between origin.y={origin.y} and target.y={target.y})"
+                                + $"(bridge deck pierced exactly between minY={minY - 1} and maxY={maxY})"
                         );
                     }
                     return true;
@@ -631,12 +642,13 @@ namespace PathfinderTactics.Grid
                 return CoverType.None;
 
             bool observerAbove = originY > obstacleY;
-            bool targetAbove = targetY > obstacleY;
+            bool observerBelow = originY < obstacleY;
+            bool targetBelow = targetY < obstacleY;
 
             if (observerAbove)
                 return StepCover(baseCover, -1);
 
-            if (!observerAbove && !targetAbove)
+            if (observerBelow && targetBelow)
                 return StepCover(baseCover, +1);
 
             return baseCover;
@@ -657,7 +669,7 @@ namespace PathfinderTactics.Grid
         /// from start to end (inclusive). The driving axis is the one with the
         /// largest absolute delta.
         /// </summary>
-        private static List<Vector3Int> Get3DBresenhamLine(Vector3Int start, Vector3Int end)
+        public static List<Vector3Int> Get3DBresenhamLine(Vector3Int start, Vector3Int end)
         {
             List<Vector3Int> result = new List<Vector3Int>();
 

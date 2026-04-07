@@ -16,14 +16,14 @@ namespace PathfinderTactics.Actions
 
         public override int GetActionPointsCost() => 1;
 
-        public override List<GridPosition> GetActionRangeGridPositions()
+        public override List<Vector3Int> GetActionRangeGridPositions()
         {
-            return new List<GridPosition> { unit.CurrentGridPosition };
+            return new List<Vector3Int> { unit.CurrentLayeredPosition };
         }
 
-        public override List<GridPosition> GetValidActionGridPositions()
+        public override List<Vector3Int> GetValidActionGridPositions()
         {
-            return new List<GridPosition> { unit.CurrentGridPosition };
+            return new List<Vector3Int> { unit.CurrentLayeredPosition };
         }
 
         public override bool CanExecuteAction()
@@ -51,7 +51,7 @@ namespace PathfinderTactics.Actions
             return false;
         }
 
-        public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
+        public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
             // Hide doesn't depend on target square (we only allow current square in UI anyway).
             if (STEALTH_DEBUG && unit != null)

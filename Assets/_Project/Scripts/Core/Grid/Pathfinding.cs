@@ -144,6 +144,8 @@ namespace PathfinderTactics.Grid
                     if (!neighbour.isWalkable)
                         continue;
 
+                    // We block all occupied squares, including allies.
+                    // This is for technical simplicity and deviates from PF2e rules (which allow walking through allies).
                     if (gridSystem.IsPositionOccupied(neighbour.LayeredPosition))
                     {
                         if (neighbour.LayeredPosition != startPosition)

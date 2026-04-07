@@ -1,4 +1,5 @@
 using System;
+using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using PathfinderTactics.Reactions;
 using UnityEngine;
@@ -142,8 +143,12 @@ namespace PathfinderTactics.Characters
                         currentHealth = Mathf.Max(0, currentHealth);
                         OnHealthChanged?.Invoke(this, EventArgs.Empty);
 
-                        Debug.Log(
-                            $"<color=red>[HEALTH]</color> {thisUnit.name} took {finalAmount} final damage. HP: {currentHealth}/{currentMaxHealth}"
+                        // CombatLog: Final Impact
+                        CombatLogUtility.LogFinalImpact(
+                            thisUnit,
+                            finalAmount,
+                            currentHealth,
+                            currentMaxHealth
                         );
 
                         if (unitVisuals != null && finalAmount > 0)

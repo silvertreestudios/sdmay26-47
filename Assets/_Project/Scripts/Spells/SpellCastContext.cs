@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Data.PF2e;
-using PathfinderTactics.Grid;
+using UnityEngine;
 
 namespace PathfinderTactics.Spells
 {
@@ -16,11 +16,11 @@ namespace PathfinderTactics.Spells
         public Unit Caster { get; set; }
         public SpellSO SpellData { get; set; }
         public int CastLevel { get; set; }
-        public GridPosition TargetPosition { get; set; }
+        public Vector3Int TargetPosition { get; set; }
         public SpellTargetingType TargetingType { get; set; }
 
         // Populated during Targeting phase
-        public List<GridPosition> AffectedCells { get; set; } = new List<GridPosition>();
+        public List<Vector3Int> AffectedCells { get; set; } = new List<Vector3Int>();
         public List<Unit> AffectedUnits { get; set; } = new List<Unit>();
 
         // Populated during Roll phase

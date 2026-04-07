@@ -110,6 +110,9 @@ namespace PathfinderTactics.UI
 
             foreach (BaseAction baseAction in actions)
             {
+                if (!baseAction.isActiveAndEnabled)
+                    continue;
+
                 GameObject buttonObj = Instantiate(actionButtonPrefab, actionButtonContainer);
                 ActionButtonUI actionButtonUI = buttonObj.GetComponent<ActionButtonUI>();
 

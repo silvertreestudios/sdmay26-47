@@ -7,5 +7,6 @@ namespace PathfinderTactics.Core
         ActionSelection, // Player has finished moving and is choosing an action (Attack, etc.)
         ActionTargeting, // Player is targeting a unit to use an action on
         Busy, // An action is being executed, block all input
+        EagleEye, // Free camera top down view for observing map
     }
 }

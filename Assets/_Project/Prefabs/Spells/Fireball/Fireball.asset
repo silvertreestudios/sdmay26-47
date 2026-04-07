@@ -32,8 +32,8 @@ MonoBehaviour:
   Target: 0
   Range: 500
   Area:
-    Shape: 1
-    Radius: 6
+    Shape: 2
+    Radius: 4
   SpellAttackRoll: 1
   SaveType: 2
   ElementType: 4

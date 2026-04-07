@@ -1,6 +1,4 @@
 ﻿<Solution>
   <Project Path="NewAssembly.csproj" />
-  <Project Path="PathfinderTactics.Tests.PlayMode.csproj" />
-  <Project Path="PathfinderTactics.Tests.EditMode.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
 </Solution>

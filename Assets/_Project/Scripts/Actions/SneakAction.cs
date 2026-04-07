@@ -20,23 +20,23 @@ namespace PathfinderTactics.Actions
         public bool MakesNoise => makesNoise;
 
         private GridPosition cachedStart;
-        private List<GridPosition> cachedRange = null;
+        private List<Vector3Int> cachedRange = null;
 
         public override string GetActionName() => "Sneak";
 
         public override int GetActionPointsCost() => 1;
 
-        public override List<GridPosition> GetActionRangeGridPositions()
+        public override List<Vector3Int> GetActionRangeGridPositions()
         {
             return GetCachedSneakRange();
         }
 
-        public override List<GridPosition> GetValidActionGridPositions()
+        public override List<Vector3Int> GetValidActionGridPositions()
         {
             return GetCachedSneakRange();
         }
 
-        private List<GridPosition> GetCachedSneakRange()
+        private List<Vector3Int> GetCachedSneakRange()
         {
             GridPosition start = unit.CurrentGridPosition;
             if (cachedRange != null && start == cachedStart)
@@ -46,17 +46,16 @@ namespace PathfinderTactics.Actions
 
             UnitStatsSO stats = unit.GetStats();
             if (stats == null)
-                cachedRange = new List<GridPosition>();
+                cachedRange = new List<Vector3Int>();
             else
             {
                 int maxMoveCost = unit.GetMaxMoveCost();
                 int halfMoveCost = Mathf.Max(0, maxMoveCost / 2);
-                List<Vector3Int> layered = Pathfinding.GetReachablePositions(
+                cachedRange = Pathfinding.GetReachablePositions(
                     unit.CurrentLayeredPosition,
                     halfMoveCost
                 );
-                cachedRange = Pathfinding.ProjectToGridPositions(layered);
-                cachedRange.Remove(start);
+                cachedRange.RemoveAll(v => v == unit.CurrentLayeredPosition);
             }
 
             return cachedRange;
@@ -84,10 +83,10 @@ namespace PathfinderTactics.Actions
             return false;
         }
 
-        public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
+        public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
             GridPosition startPos = unit.CurrentGridPosition;
-            GridPosition endPos = gridPosition;
+            GridPosition endPos = new GridPosition(targetPosition.x, targetPosition.z);
 
             if (STEALTH_DEBUG)
                 Debug.Log(

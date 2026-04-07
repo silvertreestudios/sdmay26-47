@@ -150,7 +150,7 @@ namespace PathfinderTactics.Core
             List<BaseAction> validActions = new List<BaseAction>();
             foreach (var action in availableActions)
             {
-                if (action.GetValidActionGridPositions().Contains(target.CurrentGridPosition))
+                if (action.GetValidActionGridPositions().Contains(target.CurrentLayeredPosition))
                 {
                     validActions.Add(action);
                 }
@@ -169,7 +169,7 @@ namespace PathfinderTactics.Core
                 enemyUnit.SpendActionPoints(chosenAction.GetActionPointsCost());
 
                 chosenAction.TakeAction(
-                    target.CurrentGridPosition,
+                    target.CurrentLayeredPosition,
                     () =>
                     {
                         // Callback when attack finishes

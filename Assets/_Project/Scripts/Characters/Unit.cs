@@ -25,6 +25,7 @@ namespace PathfinderTactics.Characters
     [RequireComponent(typeof(UnitStealth))]
     [RequireComponent(typeof(UnitConditions))]
     [RequireComponent(typeof(UnitEquipment))]
+    [SelectionBase]
     public class Unit : MonoBehaviour, ITargetable
     {
         [Header("Team Configuration")]
@@ -59,7 +60,8 @@ namespace PathfinderTactics.Characters
 
         private void Awake()
         {
-            UnitManager.AllUnits.Add(this);
+            if (!UnitManager.AllUnits.Contains(this))
+                UnitManager.AllUnits.Add(this);
 
             actionEconomy = GetComponent<UnitActionEconomy>();
             if (actionEconomy == null)

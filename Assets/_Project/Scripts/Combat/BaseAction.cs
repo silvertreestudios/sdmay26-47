@@ -9,6 +9,11 @@ namespace PathfinderTactics.Actions
     public abstract class BaseAction : MonoBehaviour
     {
         protected Unit unit;
+        protected Unit Attacker
+        {
+            get => unit ??= GetComponent<Unit>();
+            set => unit = value;
+        }
         protected bool isActive;
         protected Action onActionComplete;
 
@@ -30,17 +35,17 @@ namespace PathfinderTactics.Actions
             return 1;
         }
 
-        public abstract void TakeAction(GridPosition gridPosition, Action onActionComplete);
+        public abstract void TakeAction(Vector3Int targetPosition, Action onActionComplete);
 
-        public virtual bool IsValidActionGridPosition(GridPosition gridPosition)
+        public virtual bool IsValidActionGridPosition(Vector3Int targetPosition)
         {
             return true;
         }
 
-        // Returns a list of all valid grids (e.g., all enemies in range)
-        public abstract System.Collections.Generic.List<Grid.GridPosition> GetValidActionGridPositions();
+        // Returns a list of all valid 3D layered positions (e.g., all enemies in range)
+        public abstract List<Vector3Int> GetValidActionGridPositions();
 
-        public virtual List<GridPosition> GetActionRangeGridPositions()
+        public virtual List<Vector3Int> GetActionRangeGridPositions()
         {
             return GetValidActionGridPositions();
         }

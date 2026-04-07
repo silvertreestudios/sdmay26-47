@@ -39,8 +39,21 @@ namespace PathfinderTactics.Core
             if (gridCursorVisual != null)
             {
                 gridCursorVisual.gameObject.SetActive(true);
-                UpdateCursorVisual(ServiceLocator.Get<UnitActionSystem>().GetSelectedAction());
-                ServiceLocator.Get<CameraController>().SetFollowTarget(gridCursorVisual);
+
+                BaseAction selectedAction = ServiceLocator
+                    .Get<UnitActionSystem>()
+                    .GetSelectedAction();
+                UpdateCursorVisual(selectedAction);
+
+                // Spell targeting uses birdseye camera
+                if (selectedAction is CastSpellAction)
+                {
+                    ServiceLocator.Get<CameraController>().EnterEagleEyeMode(gridCursorVisual);
+                }
+                else
+                {
+                    ServiceLocator.Get<CameraController>().SetFollowTarget(gridCursorVisual);
+                }
             }
         }
 
@@ -54,8 +67,12 @@ namespace PathfinderTactics.Core
             {
                 ui.Hide();
             }
+
+            // Reset cameras
+            ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
+
             // Clear AoE preview when exiting targeting
-            if (ServiceLocator.TryGet<SpellAoEVisualizer>(out var aoeVis))
+            if (ServiceLocator.TryGet<AoEVisualizer>(out var aoeVis))
             {
                 aoeVis.HidePreview();
             }
@@ -110,11 +127,18 @@ namespace PathfinderTactics.Core
                     currentCursorGridPosition.z + moveZ
                 );
 
-                if (ServiceLocator.Get<GridSystem>().IsValidGridPosition(newPos))
+                GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+                GridCursor cursorScript = gridCursorVisual.GetComponent<GridCursor>();
+
+                if (gridSystem.IsValidGridPosition(newPos))
                 {
+                    // Resolve the new column position to the correct elevation for range checking
+                    int refY = cursorScript != null ? cursorScript.CurrentLayeredPosition.y : 0;
+                    Vector3Int newPos3D = gridSystem.ResolveClosestLayeredPosition(newPos, refY);
+
                     if (
                         selectedAction != null
-                        && selectedAction.GetActionRangeGridPositions().Contains(newPos)
+                        && selectedAction.GetActionRangeGridPositions().Contains(newPos3D)
                     )
                     {
                         currentCursorGridPosition = newPos;
@@ -134,33 +158,38 @@ namespace PathfinderTactics.Core
             {
                 GridCursor cursorScript = gridCursorVisual.GetComponent<GridCursor>();
 
-                // Determine if this is a burst spell (needs 2x2 cursor)
-                bool isBurstSpell = false;
+                Debug.Log(
+                    $"[TargetingService] UpdateCursorVisual called with action: {(selectedAction != null ? selectedAction.GetActionName() : "NULL")} (Type: {selectedAction?.GetType().FullName})"
+                );
+
+                // Determine if this is an intersection-targeted spell (Bursts and Cones)
+                bool isIntersectionTargeted = false;
                 if (
                     selectedAction is CastSpellAction spellAction
                     && spellAction.GetCurrentSpell() != null
                 )
                 {
-                    isBurstSpell =
-                        spellAction.GetCurrentSpell().Area.Shape == Data.PF2e.AreaShape.Burst;
+                    var shape = spellAction.GetCurrentSpell().Area.Shape;
+                    isIntersectionTargeted = (
+                        shape == Data.PF2e.AreaShape.Burst || shape == Data.PF2e.AreaShape.Cone
+                    );
                 }
 
-                // Set cursor size: 2x2 for burst, 1x1 for everything else
                 if (cursorScript != null)
                 {
-                    if (isBurstSpell)
+                    // Snap the cursor visual to 2x2 for intersection targeting
+                    if (isIntersectionTargeted)
                         cursorScript.SetCursorSize(2);
                     else
                         cursorScript.ResetCursorSize();
 
-                    // Use GridCursor.SetPosition - handles intersection offset for 2x2 internally
                     cursorScript.SetPosition(currentCursorGridPosition);
 
                     if (selectedAction != null)
                     {
                         bool isValidTarget = selectedAction
                             .GetValidActionGridPositions()
-                            .Contains(currentCursorGridPosition);
+                            .Contains(cursorScript.CurrentLayeredPosition);
                         cursorScript.SetValidState(isValidTarget);
                     }
                 }
@@ -186,15 +215,37 @@ namespace PathfinderTactics.Core
                 // Update AoE preview if this is a spell action
                 if (selectedAction is CastSpellAction spellAct)
                 {
-                    if (ServiceLocator.TryGet<SpellAoEVisualizer>(out var aoeVis))
+                    bool foundAoEVis = ServiceLocator.TryGet<AoEVisualizer>(out var aoeVis);
+                    Debug.Log(
+                        $"[TargetingService] Detected spell '{spellAct.GetActionName()}'. AoEVisualizer Found? {foundAoEVis}"
+                    );
+
+                    if (foundAoEVis)
                     {
-                        aoeVis.UpdateAoEPreview(currentCursorGridPosition, spellAct);
+                        if (cursorScript != null)
+                        {
+                            // Pass the exact origin (intersection or center) to the visualizer
+                            aoeVis.UpdateAoEPreview(cursorScript.CurrentLayeredPosition, spellAct);
+                        }
+                        else
+                        {
+                            // FALLBACK: If the cursor script is missing, derive the 3D position manually
+                            // This allows AoE visuals to work even without the specialized GridCursor component.
+                            Vector3Int pos3D = ServiceLocator
+                                .Get<GridSystem>()
+                                .ResolveClosestLayeredPosition(currentCursorGridPosition, 0);
+                            aoeVis.UpdateAoEPreview(pos3D, spellAct);
+
+                            Debug.LogWarning(
+                                "[TargetingService] UpdateAoEPreview called with manual fallback (GridCursor component missing). Intersection snapping will not be active."
+                            );
+                        }
                     }
                 }
                 else
                 {
                     // Not a spell - clear any lingering AoE preview
-                    if (ServiceLocator.TryGet<SpellAoEVisualizer>(out var aoeVis))
+                    if (ServiceLocator.TryGet<AoEVisualizer>(out var aoeVis))
                     {
                         aoeVis.HidePreview();
                     }

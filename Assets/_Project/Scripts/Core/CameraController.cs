@@ -63,6 +63,11 @@ namespace PathfinderTactics.Core
         [Min(0.05f)]
         private float otsEntryBlendDuration = 0.22f;
 
+        [Tooltip("Duration of the blend back to the standard camera when exiting targeting.")]
+        [SerializeField]
+        [Min(0.05f)]
+        private float otsExitBlendDuration = 0.15f;
+
         private PlayerInputActions playerInputActions;
         private CinemachineOrbitalFollow orbitalFollow;
 
@@ -79,7 +84,19 @@ namespace PathfinderTactics.Core
         private bool hasSavedDefaultBlend;
         private Coroutine restoreBlendCoroutine;
 
+        private CinemachineCamera eagleEyeVirtualCamera;
+        private Transform eagleEyeFollowTarget;
+        private bool isEagleEyeActive;
+
         public bool IsOTSActive => isOTSActive;
+        public bool IsEagleEyeActive => isEagleEyeActive;
+
+        public bool IsBlending()
+        {
+            if (cinemachineBrain == null)
+                CacheCinemachineBrain();
+            return cinemachineBrain != null && cinemachineBrain.IsBlending;
+        }
 
         private void Awake()
         {
@@ -94,6 +111,7 @@ namespace PathfinderTactics.Core
             }
 
             CreateOTSCamera();
+            CreateEagleEyeCamera();
             CacheCinemachineBrain();
         }
 
@@ -108,6 +126,8 @@ namespace PathfinderTactics.Core
             ServiceLocator.Unregister<CameraController>();
             if (otsVirtualCamera != null)
                 Destroy(otsVirtualCamera.gameObject);
+            if (eagleEyeVirtualCamera != null)
+                Destroy(eagleEyeVirtualCamera.gameObject);
         }
 
         private void OnEnable()
@@ -122,6 +142,12 @@ namespace PathfinderTactics.Core
 
         private void Update()
         {
+            if (isEagleEyeActive)
+            {
+                UpdateEagleEyeCamera();
+                return;
+            }
+
             if (isOTSActive)
             {
                 UpdateOTSCamera();
@@ -155,6 +181,87 @@ namespace PathfinderTactics.Core
             }
         }
 
+        #region Eagle Eye Camera
+
+        private void CreateEagleEyeCamera()
+        {
+            var go = new GameObject("EagleEye_VirtualCamera");
+            go.transform.SetParent(transform.parent);
+            eagleEyeVirtualCamera = go.AddComponent<CinemachineCamera>();
+            eagleEyeVirtualCamera.Lens = new LensSettings
+            {
+                FieldOfView = 60f,
+                NearClipPlane = 0.1f,
+                FarClipPlane = 1000f,
+            };
+            eagleEyeVirtualCamera.transform.rotation = Quaternion.Euler(85f, 0f, 0f);
+            eagleEyeVirtualCamera.Priority = 200; // Above everything else
+            go.SetActive(false);
+        }
+
+        public void EnterEagleEyeMode(Transform target = null)
+        {
+            if (eagleEyeVirtualCamera == null)
+                return;
+
+            isEagleEyeActive = true;
+            eagleEyeFollowTarget = target;
+
+            Vector3 startPos = transform.position;
+            if (target != null)
+                startPos = target.position;
+            else if (virtualCamera != null && virtualCamera.Follow != null)
+                startPos = virtualCamera.Follow.position;
+
+            eagleEyeVirtualCamera.transform.position = new Vector3(startPos.x, 25f, startPos.z);
+
+            RestoreSavedBrainBlendIfNeeded(); // Clear any previous active stack
+            ApplyFastBlend(0.25f);
+            eagleEyeVirtualCamera.gameObject.SetActive(true);
+            StopCoroutineSafe_RestoreBrain();
+            restoreBlendCoroutine = StartCoroutine(RestoreBrainBlendAfterTime(0.25f));
+        }
+
+        public void ExitEagleEyeMode()
+        {
+            isEagleEyeActive = false;
+            eagleEyeFollowTarget = null;
+
+            ApplyFastBlend(0.25f);
+            if (eagleEyeVirtualCamera != null)
+                eagleEyeVirtualCamera.gameObject.SetActive(false);
+            StopCoroutineSafe_RestoreBrain();
+            restoreBlendCoroutine = StartCoroutine(RestoreBrainBlendAfterTime(0.25f));
+        }
+
+        private void UpdateEagleEyeCamera()
+        {
+            if (eagleEyeFollowTarget != null)
+            {
+                // Smoothly follow the target's position
+                Vector3 targetPos = eagleEyeFollowTarget.position;
+                targetPos.y = 25f; // Keep fixed birdseye height
+
+                // Using SmoothDamp for height-locked tracking
+                eagleEyeVirtualCamera.transform.position = Vector3.SmoothDamp(
+                    eagleEyeVirtualCamera.transform.position,
+                    targetPos,
+                    ref otsPositionVelocity,
+                    otsPositionSmoothTime
+                );
+            }
+            else
+            {
+                // Fallback to manual panning if no target is active
+                Vector2 inputMoveDir = playerInputActions.Player.Move.ReadValue<Vector2>();
+                Vector3 moveVector = new Vector3(inputMoveDir.x, 0, inputMoveDir.y);
+                eagleEyeVirtualCamera.transform.position +=
+                    moveVector * (moveSpeed * 1.5f) * Time.deltaTime;
+            }
+        }
+
+        #endregion
+
         #region Over-the-Shoulder Targeting
 
         private void CreateOTSCamera()
@@ -184,26 +291,38 @@ namespace PathfinderTactics.Core
             otsLastTargetSwitchTime = -1f;
             isOTSActive = true;
 
+            Debug.Log(
+                $"[CameraController] EnterOTSMode: attacker={attacker.name}, target={target.name}"
+            );
+
             CalculateOTSTransform(out Vector3 pos, out Quaternion rot);
             otsVirtualCamera.transform.SetPositionAndRotation(pos, rot);
 
-            ApplyFastBlendForOTSActivation();
+            RestoreSavedBrainBlendIfNeeded(); // Handle consecutive transitions
+            ApplyFastBlend(otsEntryBlendDuration, otsEntryBlendStyle);
             otsVirtualCamera.gameObject.SetActive(true);
             StopCoroutineSafe_RestoreBrain();
-            restoreBlendCoroutine = StartCoroutine(RestoreBrainBlendAfterOTSActivation());
+            restoreBlendCoroutine = StartCoroutine(
+                RestoreBrainBlendAfterTime(otsEntryBlendDuration)
+            );
         }
 
         public void ExitOTSMode()
         {
+            Debug.Log("[CameraController] ExitOTSMode");
             StopCoroutineSafe_RestoreBrain();
-            RestoreSavedBrainBlendIfNeeded();
 
             isOTSActive = false;
             otsAttacker = null;
             otsTarget = null;
 
+            ApplyFastBlend(otsExitBlendDuration);
             if (otsVirtualCamera != null)
                 otsVirtualCamera.gameObject.SetActive(false);
+
+            restoreBlendCoroutine = StartCoroutine(
+                RestoreBrainBlendAfterTime(otsExitBlendDuration)
+            );
         }
 
         public void SetOTSTarget(Transform target)
@@ -213,25 +332,27 @@ namespace PathfinderTactics.Core
             otsLastTargetSwitchTime = Time.time;
         }
 
-        private void ApplyFastBlendForOTSActivation()
+        private void ApplyFastBlend(
+            float duration,
+            CinemachineBlendDefinition.Styles style = CinemachineBlendDefinition.Styles.EaseInOut
+        )
         {
             if (cinemachineBrain == null)
                 CacheCinemachineBrain();
             if (cinemachineBrain == null)
                 return;
 
-            savedDefaultBlend = cinemachineBrain.DefaultBlend;
-            hasSavedDefaultBlend = true;
-            cinemachineBrain.DefaultBlend = new CinemachineBlendDefinition(
-                otsEntryBlendStyle,
-                otsEntryBlendDuration
-            );
+            if (!hasSavedDefaultBlend)
+            {
+                savedDefaultBlend = cinemachineBrain.DefaultBlend;
+                hasSavedDefaultBlend = true;
+            }
+            cinemachineBrain.DefaultBlend = new CinemachineBlendDefinition(style, duration);
         }
 
-        private IEnumerator RestoreBrainBlendAfterOTSActivation()
+        private IEnumerator RestoreBrainBlendAfterTime(float duration)
         {
-            // Small buffer so the brain finishes this blend before DefaultBlend is restored.
-            yield return new WaitForSeconds(otsEntryBlendDuration + 0.03f);
+            yield return new WaitForSeconds(duration + 0.03f);
             RestoreSavedBrainBlendIfNeeded();
             restoreBlendCoroutine = null;
         }

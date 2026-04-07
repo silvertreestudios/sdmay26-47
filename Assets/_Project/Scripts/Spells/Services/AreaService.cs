@@ -386,26 +386,23 @@ namespace PathfinderTactics.Spells.Services
 
             for (int tx = origin.x - radius + 1; tx <= origin.x + radius; tx++)
             {
-                for (int tz = origin.z - radius + 1; tz <= origin.z + radius; tz++)
+                for (int ty = origin.y - radius; ty <= origin.y + radius; ty++)
                 {
-                    Vector2Int colKey = new Vector2Int(tx, tz);
-                    List<GridNode> column = grid.GetColumn(colKey);
-                    if (column == null || column.Count == 0)
-                        continue;
-
-                    int stepX = tx <= origin.x ? origin.x - tx + 1 : tx - origin.x;
-                    int stepZ = tz <= origin.z ? origin.z - tz + 1 : tz - origin.z;
-
-                    foreach (GridNode node in column)
+                    for (int tz = origin.z - radius + 1; tz <= origin.z + radius; tz++)
                     {
-                        int stepY = Mathf.Abs(node.Coordinates.y - origin.y);
+                        int stepX = tx <= origin.x ? origin.x - tx + 1 : tx - origin.x;
+                        int stepZ = tz <= origin.z ? origin.z - tz + 1 : tz - origin.z;
+                        int stepY = Mathf.Abs(ty - origin.y);
+
                         int dist = Pf2eGridDistance3D(stepX, stepY, stepZ);
 
                         if (dist <= radiusInFeet)
                         {
-                            Vector3Int nodePos = node.Coordinates;
-                            if (LineOfSightUtility.HasLineOfEffect(origin, nodePos))
-                                cells.Add(nodePos);
+                            Vector3Int testPos = new Vector3Int(tx, ty, tz);
+                            if (LineOfSightUtility.HasLineOfEffect(origin, testPos))
+                            {
+                                cells.Add(testPos);
+                            }
                         }
                     }
                 }
@@ -425,16 +422,15 @@ namespace PathfinderTactics.Spells.Services
         {
             for (int x = -radius; x <= radius; x++)
             {
-                for (int z = -radius; z <= radius; z++)
+                for (int y = -radius; y <= radius; y++)
                 {
-                    Vector2Int colKey = new Vector2Int(center.x + x, center.z + z);
-                    List<GridNode> column = grid.GetColumn(colKey);
-                    if (column == null || column.Count == 0)
-                        continue;
-
-                    foreach (GridNode node in column)
+                    for (int z = -radius; z <= radius; z++)
                     {
-                        Vector3Int testPos = node.Coordinates;
+                        Vector3Int testPos = new Vector3Int(
+                            center.x + x,
+                            center.y + y,
+                            center.z + z
+                        );
                         int dist = PF2E_Core.GetPF2eDistance3D(center, testPos);
                         if (dist <= radius && LineOfSightUtility.HasLineOfEffect(center, testPos))
                         {
@@ -447,7 +443,7 @@ namespace PathfinderTactics.Spells.Services
 
         /// <summary>
         /// 3D line using Bresenham from caster toward target direction.
-        /// Checks each voxel along the line for LoE.
+        /// 1-voxel thick, pure volumetric generation passing through empty space.
         /// </summary>
         private static void AddLineCells3D(
             List<Vector3Int> cells,
@@ -467,6 +463,7 @@ namespace PathfinderTactics.Spells.Services
             if (mag < 0.001f)
                 return;
 
+            // Generate full length 3D trajectory
             int targetX = Mathf.RoundToInt(start.x + (dx / mag) * length);
             int targetY = Mathf.RoundToInt(start.y + (dy / mag) * length);
             int targetZ = Mathf.RoundToInt(start.z + (dz / mag) * length);
@@ -475,57 +472,96 @@ namespace PathfinderTactics.Spells.Services
             int absDx = Mathf.Abs(lineEnd.x - start.x);
             int absDy = Mathf.Abs(lineEnd.y - start.y);
             int absDz = Mathf.Abs(lineEnd.z - start.z);
-            int sx = start.x < lineEnd.x ? 1 : (start.x > lineEnd.x ? -1 : 0);
-            int sy = start.y < lineEnd.y ? 1 : (start.y > lineEnd.y ? -1 : 0);
-            int sz = start.z < lineEnd.z ? 1 : (start.z > lineEnd.z ? -1 : 0);
 
-            int maxSteps = absDx + absDy + absDz;
-            int cx = start.x,
-                cy = start.y,
-                cz = start.z;
+            int xs = start.x < lineEnd.x ? 1 : (start.x > lineEnd.x ? -1 : 0);
+            int ys = start.y < lineEnd.y ? 1 : (start.y > lineEnd.y ? -1 : 0);
+            int zs = start.z < lineEnd.z ? 1 : (start.z > lineEnd.z ? -1 : 0);
+
+            int x = start.x;
+            int y = start.y;
+            int z = start.z;
+
             int cellCount = 0;
 
-            int errXY = absDx - absDy;
-            int errXZ = absDx - absDz;
-
-            for (int step = 0; step <= maxSteps + 1 && cellCount < length; step++)
+            if (absDx >= absDy && absDx >= absDz)
             {
-                Vector3Int current = new Vector3Int(cx, cy, cz);
-                if (current != start)
+                int p1 = 2 * absDy - absDx;
+                int p2 = 2 * absDz - absDx;
+                for (int i = 0; i <= absDx && cellCount < length; i++)
                 {
-                    GridNode node = grid.GetNode(current);
-                    if (node != null && LineOfSightUtility.HasLineOfEffect(start, current))
+                    Vector3Int testPos = new Vector3Int(x, y, z);
+                    if (testPos != start && LineOfSightUtility.HasLineOfEffect(start, testPos))
                     {
-                        cells.Add(current);
+                        cells.Add(testPos);
+                        cellCount++;
                     }
-                    cellCount++;
+                    if (p1 >= 0)
+                    {
+                        y += ys;
+                        p1 -= 2 * absDx;
+                    }
+                    if (p2 >= 0)
+                    {
+                        z += zs;
+                        p2 -= 2 * absDx;
+                    }
+                    p1 += 2 * absDy;
+                    p2 += 2 * absDz;
+                    x += xs;
                 }
-
-                if (cx == lineEnd.x && cy == lineEnd.y && cz == lineEnd.z)
-                    break;
-
-                int e2xy = 2 * errXY;
-                int e2xz = 2 * errXZ;
-
-                if (e2xy > -absDy)
+            }
+            else if (absDy >= absDx && absDy >= absDz)
+            {
+                int p1 = 2 * absDx - absDy;
+                int p2 = 2 * absDz - absDy;
+                for (int i = 0; i <= absDy && cellCount < length; i++)
                 {
-                    errXY -= absDy;
-                    cx += sx;
+                    Vector3Int testPos = new Vector3Int(x, y, z);
+                    if (testPos != start && LineOfSightUtility.HasLineOfEffect(start, testPos))
+                    {
+                        cells.Add(testPos);
+                        cellCount++;
+                    }
+                    if (p1 >= 0)
+                    {
+                        x += xs;
+                        p1 -= 2 * absDy;
+                    }
+                    if (p2 >= 0)
+                    {
+                        z += zs;
+                        p2 -= 2 * absDy;
+                    }
+                    p1 += 2 * absDx;
+                    p2 += 2 * absDz;
+                    y += ys;
                 }
-                if (e2xy < absDx)
+            }
+            else
+            {
+                int p1 = 2 * absDx - absDz;
+                int p2 = 2 * absDy - absDz;
+                for (int i = 0; i <= absDz && cellCount < length; i++)
                 {
-                    errXY += absDx;
-                    cy += sy;
-                }
-                if (e2xz > -absDz)
-                {
-                    errXZ -= absDz;
-                    cx += sx;
-                }
-                if (e2xz < absDx)
-                {
-                    errXZ += absDx;
-                    cz += sz;
+                    Vector3Int testPos = new Vector3Int(x, y, z);
+                    if (testPos != start && LineOfSightUtility.HasLineOfEffect(start, testPos))
+                    {
+                        cells.Add(testPos);
+                        cellCount++;
+                    }
+                    if (p1 >= 0)
+                    {
+                        x += xs;
+                        p1 -= 2 * absDz;
+                    }
+                    if (p2 >= 0)
+                    {
+                        y += ys;
+                        p2 -= 2 * absDz;
+                    }
+                    p1 += 2 * absDx;
+                    p2 += 2 * absDy;
+                    z += zs;
                 }
             }
         }
@@ -543,29 +579,37 @@ namespace PathfinderTactics.Spells.Services
             GridSystem grid
         )
         {
-            if (start.x == end.x && start.z == end.z)
+            if (start == end)
                 return;
 
-            List<GridPosition> cone2D = new List<GridPosition>();
-            GridPosition start2D = new GridPosition(start.x, start.z);
-            GridPosition end2D = new GridPosition(end.x, end.z);
-            AddConeCells(cone2D, start2D, end2D, radius);
-
             int radiusFt = radius * 5;
-            foreach (GridPosition gp in cone2D)
-            {
-                Vector2Int colKey = new Vector2Int(gp.x, gp.z);
-                List<GridNode> column = grid.GetColumn(colKey);
-                if (column == null || column.Count == 0)
-                    continue;
+            Vector3 dirForward = ((Vector3)(end - start)).normalized;
+            // Half-angle of 45 degrees yields a 90-degree cone apex standard in many games
+            float cosHalfAngle = Mathf.Cos(45f * Mathf.Deg2Rad);
 
-                foreach (GridNode node in column)
+            for (int x = -radius; x <= radius; x++)
+            {
+                for (int y = -radius; y <= radius; y++)
                 {
-                    Vector3Int testPos = node.Coordinates;
-                    int dist = PF2E_Core.GetPF2eDistance3DInFeet(start, testPos);
-                    if (dist <= radiusFt && LineOfSightUtility.HasLineOfEffect(start, testPos))
+                    for (int z = -radius; z <= radius; z++)
                     {
-                        cells.Add(testPos);
+                        Vector3Int testPos = new Vector3Int(start.x + x, start.y + y, start.z + z);
+                        if (testPos == start)
+                            continue;
+
+                        int distFt = PF2E_Core.GetPF2eDistance3DInFeet(start, testPos);
+                        if (distFt <= radiusFt)
+                        {
+                            Vector3 dirToTest = ((Vector3)(testPos - start)).normalized;
+                            float dot = Vector3.Dot(dirForward, dirToTest);
+                            if (dot >= cosHalfAngle)
+                            {
+                                if (LineOfSightUtility.HasLineOfEffect(start, testPos))
+                                {
+                                    cells.Add(testPos);
+                                }
+                            }
+                        }
                     }
                 }
             }

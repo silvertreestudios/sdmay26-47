@@ -96,6 +96,18 @@ namespace PathfinderTactics.Core
         }
 
         /// <summary>
+        /// Returns 3D Chebyshev distance (max difference between axes).
+        /// Used primarily for melee reach on a voxel grid.
+        /// </summary>
+        public static int GetChebyshevDistance3D(Vector3Int a, Vector3Int b)
+        {
+            return Mathf.Max(
+                Mathf.Abs(a.x - b.x),
+                Mathf.Max(Mathf.Abs(a.y - b.y), Mathf.Abs(a.z - b.z))
+            );
+        }
+
+        /// <summary>
         /// Merges two axis distances using PF2e's 5-10-5 alternating diagonal rule.
         /// Result = max(a,b) + floor(min(a,b) / 2).
         /// </summary>
