@@ -16,6 +16,7 @@ namespace PathfinderTactics.InputSystem
         public event EventHandler OnEndTurnPerformed;
         public event EventHandler OnLayerUpPerformed;
         public event EventHandler OnLayerDownPerformed;
+        public event EventHandler OnEagleEyePerformed;
 
         private PlayerInputActions playerInputActions;
 
@@ -48,6 +49,8 @@ namespace PathfinderTactics.InputSystem
                 InvokeEventIfValid(OnLayerUpPerformed);
             playerInputActions.Player.LayerDown.performed += ctx =>
                 InvokeEventIfValid(OnLayerDownPerformed);
+            playerInputActions.Player.EagleEye.performed += ctx =>
+                InvokeEventIfValid(OnEagleEyePerformed);
         }
 
         private void OnDisable()

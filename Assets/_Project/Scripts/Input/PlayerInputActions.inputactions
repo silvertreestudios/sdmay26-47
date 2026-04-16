@@ -104,6 +104,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Eagle Eye",
+                    "type": "Button",
+                    "id": "2261bf88-df92-4153-a665-6e488b0c2605",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -511,6 +520,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "LayerDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "417fc5aa-0325-43e1-941f-e4d1eb96bb9b",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Eagle Eye",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4708f57d-2d5a-4336-b4ae-a3e5a7c4fb0c",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Eagle Eye",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

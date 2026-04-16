@@ -190,6 +190,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Eagle Eye"",
+                    ""type"": ""Button"",
+                    ""id"": ""2261bf88-df92-4153-a665-6e488b0c2605"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -599,6 +608,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""LayerDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""417fc5aa-0325-43e1-941f-e4d1eb96bb9b"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Eagle Eye"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4708f57d-2d5a-4336-b4ae-a3e5a7c4fb0c"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Eagle Eye"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -618,6 +649,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_EndTurn = m_Player.FindAction("EndTurn", throwIfNotFound: true);
         m_Player_LayerUp = m_Player.FindAction("LayerUp", throwIfNotFound: true);
         m_Player_LayerDown = m_Player.FindAction("LayerDown", throwIfNotFound: true);
+        m_Player_EagleEye = m_Player.FindAction("Eagle Eye", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -709,6 +741,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_EndTurn;
     private readonly InputAction m_Player_LayerUp;
     private readonly InputAction m_Player_LayerDown;
+    private readonly InputAction m_Player_EagleEye;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -764,6 +797,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/LayerDown".
         /// </summary>
         public InputAction @LayerDown => m_Wrapper.m_Player_LayerDown;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/EagleEye".
+        /// </summary>
+        public InputAction @EagleEye => m_Wrapper.m_Player_EagleEye;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -823,6 +860,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @LayerDown.started += instance.OnLayerDown;
             @LayerDown.performed += instance.OnLayerDown;
             @LayerDown.canceled += instance.OnLayerDown;
+            @EagleEye.started += instance.OnEagleEye;
+            @EagleEye.performed += instance.OnEagleEye;
+            @EagleEye.canceled += instance.OnEagleEye;
         }
 
         /// <summary>
@@ -867,6 +907,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @LayerDown.started -= instance.OnLayerDown;
             @LayerDown.performed -= instance.OnLayerDown;
             @LayerDown.canceled -= instance.OnLayerDown;
+            @EagleEye.started -= instance.OnEagleEye;
+            @EagleEye.performed -= instance.OnEagleEye;
+            @EagleEye.canceled -= instance.OnEagleEye;
         }
 
         /// <summary>
@@ -984,5 +1027,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLayerDown(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Eagle Eye" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEagleEye(InputAction.CallbackContext context);
     }
 }
