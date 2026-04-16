@@ -263,7 +263,7 @@ namespace PathfinderTactics.Core
 
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
-            if (currentPhase == GamePhase.FreeMovement)
+            if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.EagleEye)
             {
                 if (pendingSneakAction != null)
                     CommitSneakMoveAction();
@@ -304,7 +304,7 @@ namespace PathfinderTactics.Core
 
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
-            if (currentPhase == GamePhase.FreeMovement)
+            if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.EagleEye)
             {
                 if (selectedUnit != null)
                 {
@@ -367,7 +367,7 @@ namespace PathfinderTactics.Core
             {
                 preEagleEyePhase = currentPhase;
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
-                ServiceLocator.Get<CameraController>().EnterEagleEyeMode();
+                ServiceLocator.Get<CameraController>().EnterEagleEyeMode(selectedUnit.transform);
             }
             else if (currentPhase == GamePhase.EagleEye)
             {

@@ -19,13 +19,18 @@ namespace PathfinderTactics.UI
         public void SetBaseAction(BaseAction baseAction)
         {
             this.baseAction = baseAction;
-            textMeshPro.text = baseAction.GetActionName().ToUpper();
+            if (textMeshPro != null)
+                textMeshPro.text = baseAction.GetActionName().ToUpper();
 
-            button.onClick.AddListener(() =>
+            if (button != null)
             {
-                // The player wants to use this action. Let them pick a target.
-                ServiceLocator.Get<UnitActionSystem>().SetSelectedAction(baseAction);
-            });
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(() =>
+                {
+                    // The player wants to use this action. Let them pick a target.
+                    ServiceLocator.Get<UnitActionSystem>().SetSelectedAction(baseAction);
+                });
+            }
         }
     }
 }

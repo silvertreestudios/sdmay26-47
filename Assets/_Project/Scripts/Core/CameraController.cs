@@ -97,6 +97,9 @@ namespace PathfinderTactics.Core
         [Min(0.05f)]
         private float otsExitBlendDuration = 0.15f;
 
+        [SerializeField]
+        private string roofLayerName = "Roof";
+
         private PlayerInputActions playerInputActions;
         private CinemachineOrbitalFollow orbitalFollow;
 
@@ -121,6 +124,7 @@ namespace PathfinderTactics.Core
         private CinemachineCamera eagleEyeVirtualCamera;
         private Transform eagleEyeFollowTarget;
         private bool isEagleEyeActive;
+        private bool isEagleEyeFollowDetached;
 
         public bool IsOTSActive => isOTSActive;
         public bool IsEagleEyeActive => isEagleEyeActive;
@@ -199,6 +203,12 @@ namespace PathfinderTactics.Core
             {
                 virtualCamera.Follow = target;
             }
+
+            if (isEagleEyeActive)
+            {
+                eagleEyeFollowTarget = target;
+                isEagleEyeFollowDetached = false;
+            }
         }
 
         public void ClearFollowTarget()
@@ -206,6 +216,11 @@ namespace PathfinderTactics.Core
             if (virtualCamera != null)
             {
                 virtualCamera.Follow = null;
+            }
+
+            if (isEagleEyeActive)
+            {
+                eagleEyeFollowTarget = null;
             }
         }
 
@@ -234,6 +249,9 @@ namespace PathfinderTactics.Core
 
             isEagleEyeActive = true;
             eagleEyeFollowTarget = target;
+            isEagleEyeFollowDetached = false;
+
+            SetLayerVisibility(roofLayerName, false);
 
             Vector3 startPos = transform.position;
             if (target != null)
@@ -255,6 +273,8 @@ namespace PathfinderTactics.Core
             isEagleEyeActive = false;
             eagleEyeFollowTarget = null;
 
+            SetLayerVisibility(roofLayerName, true);
+
             ApplyFastBlend(0.25f);
             if (eagleEyeVirtualCamera != null)
                 eagleEyeVirtualCamera.gameObject.SetActive(false);
@@ -264,13 +284,26 @@ namespace PathfinderTactics.Core
 
         private void UpdateEagleEyeCamera()
         {
-            if (eagleEyeFollowTarget != null)
+            Vector2 rotateInput = playerInputActions.Player.Rotate.ReadValue<Vector2>();
+            Vector2 moveInput = playerInputActions.Player.Move.ReadValue<Vector2>();
+
+            // Detach if player tries to pan away with Right Stick
+            if (rotateInput.sqrMagnitude > 0.01f)
+            {
+                isEagleEyeFollowDetached = true;
+            }
+            // Re-attach if player moves the unit with Left Stick
+            else if (moveInput.sqrMagnitude > 0.01f)
+            {
+                isEagleEyeFollowDetached = false;
+            }
+
+            if (!isEagleEyeFollowDetached && eagleEyeFollowTarget != null)
             {
                 // Smoothly follow the target's position
                 Vector3 targetPos = eagleEyeFollowTarget.position;
-                targetPos.y = 25f; // Keep fixed birdseye height
+                targetPos.y = eagleEyeVirtualCamera.transform.position.y; // Maintain height
 
-                // Using SmoothDamp for height-locked tracking
                 eagleEyeVirtualCamera.transform.position = Vector3.SmoothDamp(
                     eagleEyeVirtualCamera.transform.position,
                     targetPos,
@@ -280,9 +313,8 @@ namespace PathfinderTactics.Core
             }
             else
             {
-                // Fallback to manual panning if no target is active
-                Vector2 inputMoveDir = playerInputActions.Player.Rotate.ReadValue<Vector2>();
-                Vector3 moveVector = new Vector3(inputMoveDir.x, 0, inputMoveDir.y);
+                // Manual panning using Right Stick (Rotate input)
+                Vector3 moveVector = new Vector3(rotateInput.x, 0, rotateInput.y);
                 eagleEyeVirtualCamera.transform.position +=
                     moveVector * (moveSpeed * 1.5f) * Time.deltaTime;
             }
@@ -612,6 +644,27 @@ namespace PathfinderTactics.Core
             // Apply pitch and clamp it to prevent flipping over or hitting Gimbal lock
             float newPitch = orbitalFollow.VerticalAxis.Value - pitch;
             orbitalFollow.VerticalAxis.Value = Mathf.Clamp(newPitch, minPitch, maxPitch);
+        }
+
+        private void SetLayerVisibility(string layerName, bool visible)
+        {
+            if (Camera.main == null)
+                return;
+
+            int layer = LayerMask.NameToLayer(layerName);
+            if (layer == -1)
+            {
+                return;
+            }
+
+            if (visible)
+            {
+                Camera.main.cullingMask |= (1 << layer);
+            }
+            else
+            {
+                Camera.main.cullingMask &= ~(1 << layer);
+            }
         }
 
         #endregion

@@ -19,6 +19,7 @@ namespace PathfinderTactics.Core
         private float cursorMoveTimer;
 
         public GridPosition CurrentCursorGridPosition => currentCursorGridPosition;
+        private bool wasInEagleEyeBeforeTargeting;
 
         private void Awake()
         {
@@ -45,14 +46,17 @@ namespace PathfinderTactics.Core
                     .GetSelectedAction();
                 UpdateCursorVisual(selectedAction);
 
+                var cam = ServiceLocator.Get<CameraController>();
+                wasInEagleEyeBeforeTargeting = cam.IsEagleEyeActive;
+
                 // Spell targeting uses birdseye camera
                 if (selectedAction is CastSpellAction)
                 {
-                    ServiceLocator.Get<CameraController>().EnterEagleEyeMode(gridCursorVisual);
+                    cam.EnterEagleEyeMode(gridCursorVisual);
                 }
                 else
                 {
-                    ServiceLocator.Get<CameraController>().SetFollowTarget(gridCursorVisual);
+                    cam.SetFollowTarget(gridCursorVisual);
                 }
             }
         }
@@ -68,8 +72,11 @@ namespace PathfinderTactics.Core
                 ui.Hide();
             }
 
-            // Reset cameras
-            ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
+            // Reset cameras - only exit EagleEye if we weren't already in it manually
+            if (!wasInEagleEyeBeforeTargeting)
+            {
+                ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
+            }
 
             // Clear AoE preview when exiting targeting
             if (ServiceLocator.TryGet<AoEVisualizer>(out var aoeVis))

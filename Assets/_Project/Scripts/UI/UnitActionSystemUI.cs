@@ -26,8 +26,8 @@ namespace PathfinderTactics.UI
         [SerializeField]
         private TextMeshProUGUI actionPointsText;
 
-
-        private List<Button> actionButtons = new List<Button>();
+        private List<ActionButtonUI> actionButtonPool = new List<ActionButtonUI>();
+        private List<ActionButtonUI> activeButtons = new List<ActionButtonUI>();
 
         private void Start()
         {
@@ -74,21 +74,18 @@ namespace PathfinderTactics.UI
 
         private void ClearActionButtons()
         {
-            foreach (Transform buttonTransform in actionButtonContainer)
+            foreach (ActionButtonUI button in activeButtons)
             {
-                Destroy(buttonTransform.gameObject);
+                button.gameObject.SetActive(false);
+                actionButtonPool.Add(button);
             }
-            actionButtons.Clear();
+            activeButtons.Clear();
         }
 
         private void CreateUnitActionButtons()
         {
-            // destroy old buttons
-            foreach (Transform buttonTransform in actionButtonContainer)
-            {
-                DestroyImmediate(buttonTransform.gameObject);
-            }
-            actionButtons.Clear();
+            // Disable active buttons and send to pool
+            ClearActionButtons();
 
             Unit selectedUnit = ServiceLocator.Get<UnitActionSystem>().SelectedUnit;
             if (selectedUnit == null)
@@ -113,31 +110,46 @@ namespace PathfinderTactics.UI
                 if (!baseAction.isActiveAndEnabled)
                     continue;
 
-                GameObject buttonObj = Instantiate(actionButtonPrefab, actionButtonContainer);
-                ActionButtonUI actionButtonUI = buttonObj.GetComponent<ActionButtonUI>();
+                ActionButtonUI actionButtonUI;
+
+                if (actionButtonPool.Count > 0)
+                {
+                    // Pull from pool
+                    actionButtonUI = actionButtonPool[0];
+                    actionButtonPool.RemoveAt(0);
+                    actionButtonUI.gameObject.SetActive(true);
+                    // Ensure it stays in the container if it was moved
+                    actionButtonUI.transform.SetAsLastSibling();
+                }
+                else
+                {
+                    // Create new
+                    GameObject buttonObj = Instantiate(actionButtonPrefab, actionButtonContainer);
+                    actionButtonUI = buttonObj.GetComponent<ActionButtonUI>();
+                }
 
                 if (actionButtonUI == null)
                 {
-                    Debug.LogError($"[UI MANAGER] Button prefab missing ActionButtonUI component!");
+                    Debug.LogError(
+                        $"[UI MANAGER] Button prefab or pooled object missing ActionButtonUI!"
+                    );
                     continue;
                 }
 
                 actionButtonUI.SetBaseAction(baseAction);
-                Button button = buttonObj.GetComponent<Button>();
-                if (button != null)
-                {
-                    actionButtons.Add(button);
-                }
+                activeButtons.Add(actionButtonUI);
             }
 
             // Select first button if available
-            if (actionButtons.Count > 0)
+            if (activeButtons.Count > 0)
             {
-                Debug.Log($"[UI MANAGER] Forcing EventSystem to select: {actionButtons[0].name}");
-
-                // Clear and re-select to force the UI highlight
-                EventSystem.current.SetSelectedGameObject(null);
-                EventSystem.current.SetSelectedGameObject(actionButtons[0].gameObject);
+                Button firstButton = activeButtons[0].GetComponent<Button>();
+                if (firstButton != null)
+                {
+                    Debug.Log($"[UI MANAGER] Selecting: {firstButton.name}");
+                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+                }
             }
             else
             {
