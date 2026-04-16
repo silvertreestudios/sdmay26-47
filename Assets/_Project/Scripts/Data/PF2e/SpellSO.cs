@@ -20,6 +20,7 @@ namespace PathfinderTactics.Data.PF2e
         public SpellTargetingType Targeting;
         public TargetType Target;
         public int Range; // 0 for touch/none
+        public bool RequiresLineOfEffect = true;
         public AreaDefinition Area;
         public bool SpellAttackRoll; // True = uses attack roll, False = uses save DC
 
