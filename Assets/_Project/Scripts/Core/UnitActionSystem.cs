@@ -109,6 +109,7 @@ namespace PathfinderTactics.Core
             switch (currentPhase)
             {
                 case GamePhase.FreeMovement:
+                case GamePhase.EagleEye:
                     HandleFreeMovement();
                     break;
                 case GamePhase.ActionTargeting:

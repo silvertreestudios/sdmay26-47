@@ -30,6 +30,10 @@ namespace PathfinderTactics.Grid
         [SerializeField]
         private Material actionInnerMaterial;
 
+        [Header("3D Line Settings")]
+        [SerializeField]
+        private float lineThickness = 0.05f;
+
         [Header("Smoothing Settings")]
         [SerializeField]
         private float cornerRadius = 0.4f;
@@ -349,8 +353,24 @@ namespace PathfinderTactics.Grid
             List<Vector3> innerPath = GenerateOffsetPath(smoothBase, (-innerWidth / 2f) * sign);
 
             // Render
-            CreateLineRenderer("OuterOutline", outerPath, outerWidth, outMat, 0.04f);
-            CreateLineRenderer("InnerOutline", innerPath, innerWidth, inMat, 0.06f);
+            CreateExtrudedLineMesh(
+                "OuterOutline",
+                outerPath,
+                outerWidth,
+                lineThickness,
+                outMat,
+                0.04f,
+                4
+            );
+            CreateExtrudedLineMesh(
+                "InnerOutline",
+                innerPath,
+                innerWidth,
+                lineThickness,
+                inMat,
+                0.04f,
+                6
+            );
         }
 
         private List<Vector3> GenerateCurvedPath(List<Vector3> points)
@@ -430,38 +450,123 @@ namespace PathfinderTactics.Grid
             return offsetPoints;
         }
 
-        private void CreateLineRenderer(
+        private void CreateExtrudedLineMesh(
             string name,
             List<Vector3> points,
             float width,
+            float height,
             Material material,
-            float yOffset
+            float yBaseOffset,
+            int sortOrder
         )
         {
+            if (points.Count < 3)
+                return;
+
             GameObject obj = new GameObject(name);
             obj.transform.SetParent(visualParent);
 
-            // Apply height offset
-            Vector3[] offsetPoints = new Vector3[points.Count];
-            for (int i = 0; i < points.Count; i++)
+            MeshRenderer mr = obj.AddComponent<MeshRenderer>();
+            mr.material = material;
+            mr.sortingOrder = sortOrder;
+
+            MeshFilter mf = obj.AddComponent<MeshFilter>();
+            Mesh mesh = new Mesh();
+            mesh.name = name + "Mesh";
+
+            int n = points.Count;
+            Vector3[] bottomOuter = new Vector3[n];
+            Vector3[] bottomInner = new Vector3[n];
+            Vector3[] topOuter = new Vector3[n];
+            Vector3[] topInner = new Vector3[n];
+
+            for (int i = 0; i < n; i++)
             {
-                offsetPoints[i] = points[i] + new Vector3(0, yOffset, 0);
+                Vector3 prev = points[(i + n - 1) % n];
+                Vector3 curr = points[i];
+                Vector3 next = points[(i + 1) % n];
+
+                Vector3 tangentPrev = (curr - prev).normalized;
+                Vector3 tangentNext = (next - curr).normalized;
+
+                Vector3 n1 = new Vector3(-tangentPrev.z, 0, tangentPrev.x);
+                Vector3 n2 = new Vector3(-tangentNext.z, 0, tangentNext.x);
+                Vector3 avgNormal = (n1 + n2).normalized;
+
+                float dot = Vector3.Dot(n1, n2);
+                float miterScale = 1.0f;
+                if (dot > -0.99f)
+                {
+                    float angle = Vector3.Angle(n1, n2);
+                    miterScale = 1.0f / Mathf.Cos(angle * 0.5f * Mathf.Deg2Rad);
+                }
+                miterScale = Mathf.Min(miterScale, 2.0f);
+
+                Vector3 rightOffset = avgNormal * (width * 0.5f * miterScale);
+                Vector3 basePos = curr + new Vector3(0, yBaseOffset, 0);
+
+                bottomOuter[i] = basePos + rightOffset;
+                bottomInner[i] = basePos - rightOffset;
+                topOuter[i] = bottomOuter[i] + new Vector3(0, height, 0);
+                topInner[i] = bottomInner[i] + new Vector3(0, height, 0);
             }
 
-            LineRenderer lr = obj.AddComponent<LineRenderer>();
-            lr.startWidth = width;
-            lr.endWidth = width;
-            lr.positionCount = offsetPoints.Length;
-            lr.SetPositions(offsetPoints);
-            lr.loop = true;
-            lr.material = material;
-            lr.startColor = Color.white;
-            lr.endColor = Color.white;
-            lr.useWorldSpace = true;
-            lr.alignment = LineAlignment.TransformZ;
-            lr.sortingOrder = Mathf.RoundToInt(yOffset * 100);
+            List<Vector3> verts = new List<Vector3>();
+            List<int> tris = new List<int>();
+            List<Vector2> uvs = new List<Vector2>();
 
-            obj.transform.rotation = Quaternion.Euler(90, 0, 0);
+            void AddQuad(Vector3 v0, Vector3 v1, Vector3 v2, Vector3 v3)
+            {
+                int startIndex = verts.Count;
+                verts.Add(v0);
+                verts.Add(v1);
+                verts.Add(v2);
+                verts.Add(v3);
+                uvs.Add(new Vector2(0, 0));
+                uvs.Add(new Vector2(1, 0));
+                uvs.Add(new Vector2(1, 1));
+                uvs.Add(new Vector2(0, 1));
+
+                // Front face
+                tris.Add(startIndex);
+                tris.Add(startIndex + 1);
+                tris.Add(startIndex + 2);
+
+                tris.Add(startIndex);
+                tris.Add(startIndex + 2);
+                tris.Add(startIndex + 3);
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                int ni = (i + 1) % n;
+
+                // Top Face (Faces Up)
+                AddQuad(topOuter[i], topInner[i], topInner[ni], topOuter[ni]);
+
+                // Bottom Face (Faces Down)
+                AddQuad(bottomInner[i], bottomOuter[i], bottomOuter[ni], bottomInner[ni]);
+
+                // Outer Face
+                AddQuad(bottomOuter[i], topOuter[i], topOuter[ni], bottomOuter[ni]);
+
+                // Inner Face
+                AddQuad(topInner[i], bottomInner[i], bottomInner[ni], topInner[ni]);
+            }
+
+            mesh.SetVertices(verts);
+            mesh.SetTriangles(tris, 0);
+            mesh.SetUVs(0, uvs);
+
+            Color32[] colors = new Color32[verts.Count];
+            for (int i = 0; i < colors.Length; i++)
+                colors[i] = new Color32(255, 255, 255, 255);
+            mesh.colors32 = colors;
+
+            mesh.RecalculateNormals();
+            mesh.RecalculateBounds();
+
+            mf.mesh = mesh;
             activeVisuals.Add(obj);
         }
 
