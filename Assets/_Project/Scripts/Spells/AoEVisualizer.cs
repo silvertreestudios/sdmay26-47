@@ -55,6 +55,11 @@ namespace PathfinderTactics.Spells
                     ? ServiceLocator.Get<UnitActionSystem>().SelectedUnit.CurrentLayeredPosition
                     : cursorPos;
 
+            Debug.Log(
+                $"<color=cyan>[AoE Visualizer]</color> UpdateAoEPreview "
+                    + $"cursorPos={cursorPos} | casterPos={casterPos} | shape={spell.Area.Shape} | radius={spell.Area.Radius}"
+            );
+
             switch (spell.Area.Shape)
             {
                 case Data.PF2e.AreaShape.Burst:
@@ -85,8 +90,9 @@ namespace PathfinderTactics.Spells
                     break;
             }
 
+            string voxelList = string.Join(", ", voxels);
             Debug.Log(
-                $"<color=cyan>[AoE Visualizer]</color> Generated {voxels.Count} voxels for {spell.Area.Shape}."
+                $"<color=cyan>[AoE Visualizer]</color> Generated {voxels.Count} voxels: [{voxelList}]"
             );
 
             UpdateAoEFootprint(voxels);
@@ -120,6 +126,10 @@ namespace PathfinderTactics.Spells
 
             foreach (var voxel in activeVoxels)
             {
+                // Only render highlights for tiles that actually exist in the world
+                // if (grid.GetNode(voxel) == null)
+                //     continue;
+
                 GameObject highlight;
                 if (highlightPool.Count > 0)
                 {
@@ -130,8 +140,8 @@ namespace PathfinderTactics.Spells
                     highlight = Instantiate(highlightPrefab, transform);
                 }
 
-                highlight.transform.position =
-                    grid.GetWorldPosition(voxel) + new Vector3(0, yOffset, 0);
+                Vector3 worldPos = grid.GetWorldPosition(voxel) + new Vector3(0, yOffset, 0);
+                highlight.transform.position = worldPos;
                 highlight.transform.rotation = flatRotation;
                 highlight.transform.localScale = scale;
 

@@ -194,7 +194,7 @@ namespace PathfinderTactics.Characters
                             if (IsDead)
                             {
                                 if (unitVisuals != null)
-                                    unitVisuals.SetDead(true);
+                                    unitVisuals.PlayFallenSequence();
 
                                 OnStatusMessage?.Invoke(this, "DEAD");
                                 OnDeath?.Invoke(this, EventArgs.Empty);
@@ -289,6 +289,9 @@ namespace PathfinderTactics.Characters
 
                 if (IsDead)
                 {
+                    if (unitVisuals != null)
+                        unitVisuals.PlayFallenSequence();
+
                     OnStatusMessage?.Invoke(this, "DEAD");
                     OnDeath?.Invoke(this, EventArgs.Empty);
                 }
