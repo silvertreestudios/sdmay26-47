@@ -31,6 +31,7 @@ namespace PathfinderTactics.Characters
         [Header("Team Configuration")]
         [SerializeField]
         private Faction faction = Faction.Player;
+        public event Action OnMoveConfirmed;
 
         public Faction GetFaction() => faction;
 
@@ -166,11 +167,17 @@ namespace PathfinderTactics.Characters
         public void SetInitialPosition(GridPosition gridPosition) =>
             gridObject.SetInitialPosition(gridPosition);
 
-        public void FinalizeMove(Vector3Int finalLayeredPosition) =>
+        public void FinalizeMove(Vector3Int finalLayeredPosition)
+        {
             gridObject.FinalizeMove(finalLayeredPosition);
+            OnMoveConfirmed?.Invoke();
+        }
 
-        public void FinalizeMove(GridPosition finalPosition) =>
+        public void FinalizeMove(GridPosition finalPosition)
+        {
             gridObject.FinalizeMove(finalPosition);
+            OnMoveConfirmed?.Invoke();
+        }
 
         // Facade Methods to Movement
         public void MoveAlongPath(List<Vector3Int> path, Action onComplete) =>
