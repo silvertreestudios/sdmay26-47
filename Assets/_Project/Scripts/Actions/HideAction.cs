@@ -26,6 +26,8 @@ namespace PathfinderTactics.Actions
             return new List<Vector3Int> { unit.CurrentLayeredPosition };
         }
 
+        public override bool IsUnitTargeted => false;
+
         public override bool CanExecuteAction()
         {
             if (!base.CanExecuteAction())

@@ -73,11 +73,43 @@ namespace PathfinderTactics.Characters
 
         public void SetSneaking(bool isSneaking) => animator.SetBool(AnimIsSneaking, isSneaking);
 
-        public void SetDead(bool isDead) => animator.SetBool(AnimIsDead, isDead);
+        public void SetDead(bool isDead)
+        {
+            if (isDead)
+                PlayFallenSequence();
+            else
+                animator.SetBool(AnimIsDead, false);
+        }
+
+        public void PlayFallenSequence()
+        {
+            StartCoroutine(FallenCoroutine());
+        }
+
+        private System.Collections.IEnumerator FallenCoroutine()
+        {
+            animator.SetBool(AnimIsDead, true);
+            animator.SetBool(AnimIsUnconscious, true);
+            animator.SetBool(AnimIsProne, false);
+
+            yield return new WaitForSeconds(1.5f);
+
+            animator.SetBool(AnimIsProne, true);
+        }
 
         public void SetCovering(bool isCover) => animator.SetBool(AnimIsCovering, isCover);
 
-        public void SetUnconscious(bool isUn) => animator.SetBool(AnimIsUnconscious, isUn);
+        public void SetUnconscious(bool isUn)
+        {
+            if (isUn)
+                PlayFallenSequence();
+            else
+            {
+                animator.SetBool(AnimIsUnconscious, false);
+                animator.SetBool(AnimIsProne, false);
+                animator.SetBool(AnimIsDead, false);
+            }
+        }
 
         public void SetWeaponType(int itemType) => animator.SetInteger(AnimWeaponType, itemType);
 

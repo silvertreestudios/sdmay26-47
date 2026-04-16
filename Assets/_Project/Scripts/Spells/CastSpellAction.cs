@@ -74,6 +74,8 @@ namespace PathfinderTactics.Spells
 
         public SpellSO GetCurrentSpell() => currentSpell;
 
+        public override bool IsUnitTargeted => false;
+
         // Targeting
 
         public override List<Vector3Int> GetActionRangeGridPositions()

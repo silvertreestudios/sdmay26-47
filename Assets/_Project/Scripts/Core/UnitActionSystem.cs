@@ -230,26 +230,16 @@ namespace PathfinderTactics.Core
 
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionTargeting);
 
+            ServiceLocator
+                .Get<TargetingService>()
+                .InitializeTargeting(selectedUnit.CurrentGridPosition);
+
             if (selectedAction != null && selectedAction.IsUnitTargeted)
             {
                 if (ServiceLocator.TryGet<TargetLockService>(out var tls))
                 {
                     tls.InitializeTargeting(selectedUnit, selectedAction);
-
-                    if (!tls.IsActive)
-                    {
-                        Debug.LogWarning(
-                            "[UnitActionSystem] TargetLockService failed to activate. Reverting to ActionSelection."
-                        );
-                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
-                    }
                 }
-            }
-            else
-            {
-                ServiceLocator
-                    .Get<TargetingService>()
-                    .InitializeTargeting(selectedUnit.CurrentGridPosition);
             }
         }
 
@@ -273,26 +263,23 @@ namespace PathfinderTactics.Core
             else if (currentPhase == GamePhase.ActionTargeting)
             {
                 Vector3Int targetPos;
+                var targetingService = ServiceLocator.Get<TargetingService>();
+
                 if (
                     selectedAction != null
                     && selectedAction.IsUnitTargeted
                     && ServiceLocator.TryGet<TargetLockService>(out var tls)
                     && tls.IsActive
+                    && tls.CurrentTarget != null
                 )
                 {
                     targetPos = tls.CurrentTargetLayeredPosition;
                 }
                 else
                 {
-                    targetPos =
-                        GridCursor.Instance != null
-                            ? GridCursor.Instance.CurrentLayeredPosition
-                            : new Vector3Int(
-                                ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition.x,
-                                0,
-                                ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition.z
-                            );
+                    targetPos = targetingService.CurrentTargetLayeredPosition;
                 }
+
                 TryExecuteActionAtGridPos(targetPos);
             }
         }
@@ -319,7 +306,6 @@ namespace PathfinderTactics.Core
                 {
                     if (selectedUnit.GetActionPointsRemaining() > 0)
                     {
-                        Debug.Log("Opening Menu...");
                         ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
                     }
                     else
@@ -330,7 +316,6 @@ namespace PathfinderTactics.Core
             }
             else if (currentPhase == GamePhase.ActionSelection)
             {
-                Debug.Log("Closing Menu...");
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
             }
         }
@@ -339,8 +324,6 @@ namespace PathfinderTactics.Core
 
         private void OnCancelPerformed(object sender, EventArgs e)
         {
-            Debug.Log("[UnitActionSystem] OnCancelPerformed");
-
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
             if (currentPhase == GamePhase.ActionTargeting)
@@ -353,10 +336,9 @@ namespace PathfinderTactics.Core
                 {
                     tls.HideTargeting();
                 }
-                else
-                {
-                    ServiceLocator.Get<TargetingService>().HideTargeting();
-                }
+
+                ServiceLocator.Get<TargetingService>().HideTargeting();
+
                 if (selectedUnit != null)
                     ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
@@ -519,7 +501,6 @@ namespace PathfinderTactics.Core
 
             if (!selectedAction.GetValidActionGridPositions().Contains(targetPos))
             {
-                Debug.Log("Invalid Target! Cannot attack here.");
                 return;
             }
 
@@ -564,18 +545,12 @@ namespace PathfinderTactics.Core
             {
                 if (!conditions.CanMove())
                 {
-                    Debug.Log(
-                        $"<color=orange>{selectedUnit.name} cannot move! They are Immobilized/Grabbed/Restrained.</color>"
-                    );
                     onComplete?.Invoke();
                     return;
                 }
 
                 if (conditions.HasCondition(ConditionType.Prone))
                 {
-                    Debug.Log(
-                        $"<color=orange>{selectedUnit.name} cannot Stride while Prone. They must Stand first!</color>"
-                    );
                     onComplete?.Invoke();
                     return;
                 }
@@ -593,7 +568,6 @@ namespace PathfinderTactics.Core
             {
                 if (selectedUnit.GetActionPointsRemaining() < 1)
                 {
-                    Debug.Log("Not enough AP to Stride!");
                     selectedUnit.SnapToGrid(
                         gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                     );
@@ -608,13 +582,6 @@ namespace PathfinderTactics.Core
                 int totalDistance = Mathf.Max(distanceX, Mathf.Max(distanceZ, distanceY));
 
                 bool isAutoStep = totalDistance == 1;
-
-                if (isAutoStep)
-                {
-                    Debug.Log(
-                        "<color=yellow>Unit moved exactly 1 tile. Auto-converting Stride to Step.</color>"
-                    );
-                }
 
                 BeforeMoveEvent moveEvent = new BeforeMoveEvent(
                     selectedUnit,
@@ -640,9 +607,6 @@ namespace PathfinderTactics.Core
                                 // Failsafe check for occupancy
                                 if (IsOccupiedByOther(currentPos.x, currentPos.z, currentLayered.y))
                                 {
-                                    Debug.LogWarning(
-                                        $"[UnitActionSystem] Move cancelled. Target destination {currentLayered} is occupied."
-                                    );
                                     selectedUnit.SnapToGrid(
                                         gridSystem.GetWorldPosition(
                                             selectedUnit.CurrentLayeredPosition
@@ -721,7 +685,6 @@ namespace PathfinderTactics.Core
 
             if (selectedUnit.GetActionPointsRemaining() < pendingSneakAction.GetActionPointsCost())
             {
-                Debug.Log("Not enough AP to Sneak!");
                 selectedUnit.SnapToGrid(
                     gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                 );

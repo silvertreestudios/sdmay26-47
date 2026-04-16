@@ -30,7 +30,7 @@ MonoBehaviour:
   Components: []
   Targeting: 1
   Target: 0
-  Range: 20
+  Range: 120
   Area:
     Shape: 1
     Radius: 3
