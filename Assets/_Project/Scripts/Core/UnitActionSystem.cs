@@ -50,6 +50,7 @@ namespace PathfinderTactics.Core
             inputService.OnJumpPerformed += OnJumpPerformed;
             inputService.OnOpenMenuPerformed += OnOpenMenuPerformed;
             inputService.OnEndTurnPerformed += OnEndTurnPerformed;
+            inputService.OnEagleEyePerformed += OnEagleEyePerformed;
 
             var phaseManager = ServiceLocator.Get<PhaseManager>();
             phaseManager.OnPhaseChanged += PhaseManager_OnPhaseChanged;
@@ -66,6 +67,7 @@ namespace PathfinderTactics.Core
                 inputService.OnJumpPerformed -= OnJumpPerformed;
                 inputService.OnOpenMenuPerformed -= OnOpenMenuPerformed;
                 inputService.OnEndTurnPerformed -= OnEndTurnPerformed;
+                inputService.OnEagleEyePerformed -= OnEagleEyePerformed;
             }
             if (ServiceLocator.TryGet<PhaseManager>(out var phaseManager))
             {
@@ -228,6 +230,10 @@ namespace PathfinderTactics.Core
                 return;
             }
 
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+            if (currentPhase == GamePhase.EagleEye)
+                preEagleEyePhase = GamePhase.EagleEye;
+
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionTargeting);
 
             ServiceLocator
@@ -341,20 +347,42 @@ namespace PathfinderTactics.Core
 
                 if (selectedUnit != null)
                     ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
-                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
+
+                if (preEagleEyePhase == GamePhase.EagleEye)
+                {
+                    ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
+                }
+                else
+                {
+                    ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
+                }
             }
             else if (currentPhase == GamePhase.ActionSelection)
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
-            else if (currentPhase == GamePhase.FreeMovement)
+        }
+
+        private void OnEagleEyePerformed(object sender, EventArgs e)
+        {
+            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
+                return;
+
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+
+            if (currentPhase == GamePhase.EagleEye)
             {
+                // Toggle OFF
+                ServiceLocator.Get<PhaseManager>().SetPhase(preEagleEyePhase);
+                ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
+            }
+            else if (
+                currentPhase == GamePhase.FreeMovement
+                || currentPhase == GamePhase.ActionSelection
+            )
+            {
+                // Toggle ON
                 preEagleEyePhase = currentPhase;
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
                 ServiceLocator.Get<CameraController>().EnterEagleEyeMode(selectedUnit.transform);
-            }
-            else if (currentPhase == GamePhase.EagleEye)
-            {
-                ServiceLocator.Get<PhaseManager>().SetPhase(preEagleEyePhase);
-                ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
             }
         }
 
@@ -524,6 +552,8 @@ namespace PathfinderTactics.Core
                 () =>
                 {
                     OnActionCompleted?.Invoke(this, EventArgs.Empty);
+                    if (preEagleEyePhase == GamePhase.EagleEye)
+                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
                     CheckTurnEnd();
                 }
             );
@@ -791,8 +821,13 @@ namespace PathfinderTactics.Core
                         maxMoveCost
                     )
                 );
-                if (ServiceLocator.Get<PhaseManager>().CurrentPhase != GamePhase.ActionSelection)
+                if (
+                    ServiceLocator.Get<PhaseManager>().CurrentPhase != GamePhase.ActionSelection
+                    && ServiceLocator.Get<PhaseManager>().CurrentPhase != GamePhase.EagleEye
+                )
+                {
                     ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
+                }
             }
         }
 
