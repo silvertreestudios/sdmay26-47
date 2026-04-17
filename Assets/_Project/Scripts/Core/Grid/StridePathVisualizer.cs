@@ -122,10 +122,8 @@ namespace PathfinderTactics.UI
             else
                 gridNodes.Add(uas.SelectedUnit.CurrentLayeredPosition);
 
-            GridPosition currentGP = grid.GetGridPosition(uas.SelectedUnit.transform.position);
-            Vector3Int currentCell = grid.ResolveLayeredPosition(
-                currentGP,
-                uas.SelectedUnit.CurrentLayeredPosition.y
+            Vector3Int currentCell = grid.GetLayeredGridPosition(
+                uas.SelectedUnit.transform.position
             );
             if (gridNodes[gridNodes.Count - 1] != currentCell)
                 gridNodes.Add(currentCell);
