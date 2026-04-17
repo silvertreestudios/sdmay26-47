@@ -199,6 +199,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Toggle Waypoint"",
+                    ""type"": ""Button"",
+                    ""id"": ""963f1516-39aa-4540-b06a-ffa652d3963c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -630,6 +639,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Eagle Eye"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68f233df-efcf-4723-975e-9c1d48160327"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Waypoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17ea37c6-2c40-4605-99a5-137970484c4d"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Waypoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -650,6 +681,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_LayerUp = m_Player.FindAction("LayerUp", throwIfNotFound: true);
         m_Player_LayerDown = m_Player.FindAction("LayerDown", throwIfNotFound: true);
         m_Player_EagleEye = m_Player.FindAction("Eagle Eye", throwIfNotFound: true);
+        m_Player_ToggleWaypoint = m_Player.FindAction("Toggle Waypoint", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -742,6 +774,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_LayerUp;
     private readonly InputAction m_Player_LayerDown;
     private readonly InputAction m_Player_EagleEye;
+    private readonly InputAction m_Player_ToggleWaypoint;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -801,6 +834,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/EagleEye".
         /// </summary>
         public InputAction @EagleEye => m_Wrapper.m_Player_EagleEye;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ToggleWaypoint".
+        /// </summary>
+        public InputAction @ToggleWaypoint => m_Wrapper.m_Player_ToggleWaypoint;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -863,6 +900,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @EagleEye.started += instance.OnEagleEye;
             @EagleEye.performed += instance.OnEagleEye;
             @EagleEye.canceled += instance.OnEagleEye;
+            @ToggleWaypoint.started += instance.OnToggleWaypoint;
+            @ToggleWaypoint.performed += instance.OnToggleWaypoint;
+            @ToggleWaypoint.canceled += instance.OnToggleWaypoint;
         }
 
         /// <summary>
@@ -910,6 +950,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @EagleEye.started -= instance.OnEagleEye;
             @EagleEye.performed -= instance.OnEagleEye;
             @EagleEye.canceled -= instance.OnEagleEye;
+            @ToggleWaypoint.started -= instance.OnToggleWaypoint;
+            @ToggleWaypoint.performed -= instance.OnToggleWaypoint;
+            @ToggleWaypoint.canceled -= instance.OnToggleWaypoint;
         }
 
         /// <summary>
@@ -1034,5 +1077,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnEagleEye(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Toggle Waypoint" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnToggleWaypoint(InputAction.CallbackContext context);
     }
 }

@@ -63,6 +63,8 @@ namespace PathfinderTactics.Grid
             }
 
             visualParent = new GameObject("ActionRangeVisuals").transform;
+            ServiceLocator.Get<UnitActionSystem>().OnValidPositionsChanged +=
+                HandleValidPositionsChanged;
 
             // Create a default material if none assigned
             if (outerMaterial == null)
@@ -99,8 +101,18 @@ namespace PathfinderTactics.Grid
             }
             if (ServiceLocator.TryGet<PhaseManager>(out var phaseManager))
             {
-                phaseManager.OnPhaseChanged += PhaseManager_OnPhaseChanged;
+                phaseManager.OnPhaseChanged -= PhaseManager_OnPhaseChanged;
             }
+
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var uas))
+            {
+                uas.OnValidPositionsChanged -= HandleValidPositionsChanged;
+            }
+        }
+
+        private void HandleValidPositionsChanged(object sender, System.EventArgs e)
+        {
+            UpdateVisuals();
         }
 
         private void PhaseManager_OnPhaseChanged(object sender, GamePhase newPhase)
@@ -128,14 +140,24 @@ namespace PathfinderTactics.Grid
                 currentPhase == GamePhase.FreeMovement
                 || currentPhase == GamePhase.ActionSelection
                 || currentPhase == GamePhase.EagleEye
+                || currentPhase == GamePhase.Busy
             )
             {
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Phase {currentPhase} matches movement. Showing Range Outline."
+                // );
                 ShowMoveRangeOutline(selectedUnit);
             }
             // If targeting, Show Red Tiles
             else if (currentPhase == GamePhase.ActionTargeting)
             {
                 ShowActionRange();
+            }
+            else
+            {
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Phase {currentPhase} NOT movement. Hiding Range Outline."
+                // );
             }
         }
 
@@ -150,10 +172,19 @@ namespace PathfinderTactics.Grid
             if (positions == null)
             {
                 int maxMoveCost = unit.GetMaxMoveCost();
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] UAS positions was NULL for {unit.name}. Falling back to full range calc. Start: {unit.CurrentLayeredPosition}, Max: {maxMoveCost}"
+                // );
                 positions = Pathfinding.GetReachablePositions(
                     unit.CurrentLayeredPosition,
                     maxMoveCost
                 );
+            }
+            else
+            {
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Drawing Range with {positions.Count} positions provided by UAS."
+                // );
             }
 
             DrawOutlines(positions, outerMaterial, innerMaterial);
@@ -222,6 +253,9 @@ namespace PathfinderTactics.Grid
 
                 // Trace continuous loops from the graph
                 List<List<Vector3>> loops = TraceLoops(adjacency);
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Layer Y={entry.Key}: Found {layerSet.Count} tiles, resulting in {loops.Count} loops."
+                // );
                 foreach (var loop in loops)
                 {
                     GenerateDualOutline(loop, layerSet, entry.Key, outMat, inMat);
@@ -229,18 +263,33 @@ namespace PathfinderTactics.Grid
             }
         }
 
-        private void AddEdgeToGraph(Dictionary<Vector3, List<Vector3>> adj, Vector3 p1, Vector3 p2)
+        private Vector3 RoundVector(Vector3 v)
         {
+            return new Vector3(
+                Mathf.Round(v.x * 1000f) / 1000f,
+                Mathf.Round(v.y * 1000f) / 1000f,
+                Mathf.Round(v.z * 1000f) / 1000f
+            );
+        }
+
+        private void AddEdgeToGraph(
+            Dictionary<Vector3, List<Vector3>> adj,
+            Vector3 rawP1,
+            Vector3 rawP2
+        )
+        {
+            Vector3 p1 = RoundVector(rawP1);
+            Vector3 p2 = RoundVector(rawP2);
+
             if (!adj.ContainsKey(p1))
                 adj[p1] = new List<Vector3>();
             if (!adj.ContainsKey(p2))
                 adj[p2] = new List<Vector3>();
 
-            // Small tolerance for grid precision issues
             bool alreadyHasP2 = false;
             foreach (var existing in adj[p1])
             {
-                if (Vector3.Distance(existing, p2) < 0.01f)
+                if (Vector3.Distance(existing, p2) < 0.001f)
                 {
                     alreadyHasP2 = true;
                     break;
@@ -252,7 +301,7 @@ namespace PathfinderTactics.Grid
             bool alreadyHasP1 = false;
             foreach (var existing in adj[p2])
             {
-                if (Vector3.Distance(existing, p1) < 0.01f)
+                if (Vector3.Distance(existing, p1) < 0.001f)
                 {
                     alreadyHasP1 = true;
                     break;
@@ -262,53 +311,87 @@ namespace PathfinderTactics.Grid
                 adj[p2].Add(p1);
         }
 
+        private (Vector3, Vector3) SortEdge(Vector3 v1, Vector3 v2)
+        {
+            // Robust sorting for ValueTuple edge keys
+            if (
+                v1.x < v2.x
+                || (v1.x == v2.x && v1.y < v2.y)
+                || (v1.x == v2.x && v1.y == v2.y && v1.z < v2.z)
+            )
+                return (v1, v2);
+            return (v2, v1);
+        }
+
         private List<List<Vector3>> TraceLoops(Dictionary<Vector3, List<Vector3>> adj)
         {
             List<List<Vector3>> loops = new List<List<Vector3>>();
-            HashSet<Vector3> visited = new HashSet<Vector3>();
+            HashSet<(Vector3, Vector3)> visitedEdges = new HashSet<(Vector3, Vector3)>();
 
-            foreach (var start in adj.Keys)
+            // We iterate through all nodes and all their edges to find untraced cycles
+            foreach (var startNode in adj.Keys)
             {
-                if (visited.Contains(start))
-                    continue;
-
-                List<Vector3> loop = new List<Vector3>();
-                Vector3 current = start;
-                Vector3 prev = Vector3.zero;
-
-                while (current != Vector3.zero)
+                foreach (var firstNeighbor in adj[startNode])
                 {
-                    loop.Add(current);
-                    visited.Add(current);
+                    var firstEdge = SortEdge(startNode, firstNeighbor);
+                    if (visitedEdges.Contains(firstEdge))
+                        continue;
 
-                    Vector3 next = Vector3.zero;
-                    if (adj.ContainsKey(current))
+                    // Start a new loop trace from this unused edge
+                    List<Vector3> loop = new List<Vector3>();
+                    Vector3 current = firstNeighbor;
+                    Vector3 prev = startNode;
+                    loop.Add(startNode);
+                    visitedEdges.Add(firstEdge);
+
+                    bool foundClosure = false;
+                    const int MAX_ITER = 5000;
+                    int iter = 0;
+
+                    while (iter++ < MAX_ITER)
                     {
-                        foreach (var neighbor in adj[current])
+                        if (Vector3.Distance(current, startNode) < 0.001f)
                         {
-                            if (neighbor == prev)
-                                continue;
-                            if (neighbor == start && loop.Count > 2)
+                            foundClosure = true;
+                            break;
+                        }
+
+                        loop.Add(current);
+                        Vector3? nextNode = null;
+
+                        if (adj.ContainsKey(current))
+                        {
+                            foreach (var neighbor in adj[current])
                             {
-                                // Loop closed!
-                                loops.Add(loop);
-                                current = Vector3.zero;
-                                break;
-                            }
-                            if (!visited.Contains(neighbor))
-                            {
-                                next = neighbor;
+                                if (Vector3.Distance(neighbor, prev) < 0.001f)
+                                    continue;
+
+                                var edge = SortEdge(current, neighbor);
+                                if (visitedEdges.Contains(edge))
+                                    continue;
+
+                                nextNode = neighbor;
+                                visitedEdges.Add(edge);
                                 break;
                             }
                         }
+
+                        if (nextNode.HasValue)
+                        {
+                            prev = current;
+                            current = nextNode.Value;
+                        }
+                        else
+                        {
+                            // Stuck at a dead end (shouldn't happen in a valid boundary graph)
+                            // Debug.LogWarning($"[MOVEMENT RANGE WAYPOINTS DEBUG] Trace hit dead-end at {current} while starting from {startNode}");
+                            break;
+                        }
                     }
 
-                    if (current != Vector3.zero)
+                    if (foundClosure && loop.Count >= 3)
                     {
-                        if (next == Vector3.zero)
-                            break; // Dead end
-                        prev = current;
-                        current = next;
+                        loops.Add(loop);
                     }
                 }
             }

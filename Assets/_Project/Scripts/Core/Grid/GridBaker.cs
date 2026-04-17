@@ -59,7 +59,7 @@ namespace PathfinderTactics.Grid
 
                     if (boundsInitialized)
                     {
-                        // Shrink bounds slightly to avoid boundary precision edge cases (e.g., perfectly overlapping adjacent voxels)
+                        // Shrink bounds slightly to avoid boundary precision edge cases
                         Vector3 minWorld = bounds.min + Vector3.one * 0.01f;
                         Vector3 maxWorld = bounds.max - Vector3.one * 0.01f;
 
@@ -71,7 +71,6 @@ namespace PathfinderTactics.Grid
                         if (minWorld.z > maxWorld.z)
                             minWorld.z = maxWorld.z = bounds.center.z;
 
-                        // X and Z are centered around the physical mesh coordinates, so we purely resolve their grid domain borders.
                         Vector3Int minGrid = new Vector3Int(
                             Mathf.RoundToInt(minWorld.x / cellSize),
                             0, // calculated below
@@ -83,10 +82,18 @@ namespace PathfinderTactics.Grid
                             Mathf.RoundToInt(maxWorld.z / cellSize)
                         );
 
-                        // An obstacle fills geometric space upwards, constrained accurately so precisely ending edges (Y=2.0)
-                        // do not spill over into the next distinct Voxel layer unless they significantly pierce it.
-                        minGrid.y = Mathf.FloorToInt(minWorld.y / gridSystem.VerticalCellSize);
+                        // SIZE-BASED LAYER COUNTING:
+                        // Prevent thin assets from bleeding into multiple layers by explicitly determining
+                        // how many layers their physical height justifies.
+                        int numLayersToFill = Mathf.Max(
+                            1,
+                            Mathf.RoundToInt(bounds.size.y / gridSystem.VerticalCellSize)
+                        );
+
+                        // Anchoring the body to the top of the asset ensures it occupies the
+                        // intended layer, even if it spans a boundary slightly.
                         maxGrid.y = Mathf.FloorToInt(maxWorld.y / gridSystem.VerticalCellSize);
+                        minGrid.y = maxGrid.y - (numLayersToFill - 1);
 
                         // Project the solid geometric body of the mesh
                         for (int x = minGrid.x; x <= maxGrid.x; x++)
@@ -99,22 +106,21 @@ namespace PathfinderTactics.Grid
                                         new Vector3Int(x, y, z),
                                         block.Terrain
                                     );
-                                    bakedCount++;
                                 }
                             }
                         }
+                        bakedCount++;
 
                         // Project the pure Walkable Surface
-                        // If this block is walkable, its physical top edge inherently establishes a floor.
                         if (block.Terrain.IsWalkable)
                         {
-                            int surfaceLayer = Mathf.RoundToInt(
+                            // Surface is the layer the unit "stands in" (floor = layer index)
+                            int surfaceLayer = Mathf.FloorToInt(
                                 bounds.max.y / gridSystem.VerticalCellSize
                             );
 
-                            // If the surface layer rises above the geometric body (e.g., [0, 2] -> body maps to 0, surface maps to 1),
-                            // OR if the block was originally designed as a pure horizontal floor (CoverType.None),
-                            // we inject a synthetic surface proxy isolated from any bulk obstructive Cover.
+                            // If the surface layer rises above the geometric body,
+                            // OR if the block is a pure floor (CoverType.None), inject a surface proxy.
                             if (
                                 surfaceLayer > maxGrid.y
                                 || block.Terrain.CoverType == CoverType.None
@@ -125,7 +131,7 @@ namespace PathfinderTactics.Grid
                                     MovementCost = block.Terrain.MovementCost,
                                     IsWalkable = true,
                                     CoverType = CoverType.None,
-                                    BlocksLineOfEffect = false, // Floor surface doesn't block horizontally
+                                    BlocksLineOfEffect = false,
                                     AllowVerticalLineOfEffect = block
                                         .Terrain
                                         .AllowVerticalLineOfEffect,
@@ -139,7 +145,6 @@ namespace PathfinderTactics.Grid
                                             new Vector3Int(x, surfaceLayer, z),
                                             floorProxy
                                         );
-                                        // Count doesn't increment here to avoid double-counting the same block, but the node is registered.
                                     }
                                 }
                             }
@@ -148,20 +153,11 @@ namespace PathfinderTactics.Grid
                 }
                 else
                 {
-                    // Fallback to pivot-based single node mapping if no geometry
+                    // Fallback to pivot-based single node mapping
                     Vector3Int gridPosition = WorldToGridPosition(
                         gridSystem,
                         block.transform.position
                     );
-                    if (
-                        !IsGridSnapped(gridSystem, block.transform.position, gridPosition, cellSize)
-                    )
-                    {
-                        Debug.LogWarning(
-                            $"[GridBaker] TerrainBlock '{block.name}' is off-grid. Rounded to {gridPosition}."
-                        );
-                    }
-
                     gridSystem.RegisterLayeredNode(gridPosition, block.Terrain);
                     bakedCount++;
                 }
