@@ -17,6 +17,7 @@ namespace PathfinderTactics.InputSystem
         public event EventHandler OnLayerUpPerformed;
         public event EventHandler OnLayerDownPerformed;
         public event EventHandler OnEagleEyePerformed;
+        public event EventHandler OnToggleWaypointPerformed;
 
         private PlayerInputActions playerInputActions;
 
@@ -51,6 +52,8 @@ namespace PathfinderTactics.InputSystem
                 InvokeEventIfValid(OnLayerDownPerformed);
             playerInputActions.Player.EagleEye.performed += ctx =>
                 InvokeEventIfValid(OnEagleEyePerformed);
+            playerInputActions.Player.ToggleWaypoint.performed += ctx =>
+                InvokeEventIfValid(OnToggleWaypointPerformed);
         }
 
         private void OnDisable()

@@ -96,7 +96,7 @@ namespace PathfinderTactics.Grid
         {
             return new Vector3Int(
                 Mathf.RoundToInt(worldPosition.x / cellSize),
-                Mathf.RoundToInt(worldPosition.y / VerticalCellSize),
+                Mathf.FloorToInt(worldPosition.y / VerticalCellSize),
                 Mathf.RoundToInt(worldPosition.z / cellSize)
             );
         }
