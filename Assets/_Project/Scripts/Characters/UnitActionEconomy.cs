@@ -8,12 +8,20 @@ namespace PathfinderTactics.Characters
     public class UnitActionEconomy : MonoBehaviour
     {
         private int actionPointsRemaining;
+        private int maxActionPoints;
+
+        public int MaxActionPoints => maxActionPoints;
+        public int ActionPointsRemaining => actionPointsRemaining;
+
         public int AttacksThisTurn { get; private set; } = 0;
         public bool HasReactionAvailable { get; private set; } = true;
         private BaseAction[] baseActionArray;
 
         private void Awake()
         {
+            maxActionPoints = 3;
+            actionPointsRemaining = 3;
+
             // Auto-discover actions
             baseActionArray = GetComponents<BaseAction>();
 
@@ -32,16 +40,22 @@ namespace PathfinderTactics.Characters
             if (conditions != null)
             {
                 int apModifier = conditions.HandleTurnStart(out ActionTag restriction);
-                actionPointsRemaining = Mathf.Clamp(baseAP + apModifier, 0, 4);
+                maxActionPoints = Mathf.Clamp(baseAP + apModifier, 0, 4);
             }
             else
             {
-                actionPointsRemaining = baseAP;
+                maxActionPoints = baseAP;
             }
 
+            actionPointsRemaining = maxActionPoints;
             AttacksThisTurn = 0;
             HasReactionAvailable = true;
             GameEvents.TriggerUnitReactionChanged(GetComponent<Unit>(), true);
+            GameEvents.TriggerUnitAPChanged(
+                GetComponent<Unit>(),
+                actionPointsRemaining,
+                maxActionPoints
+            );
         }
 
         public void SpendReaction()
