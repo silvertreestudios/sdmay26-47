@@ -23,6 +23,11 @@ namespace PathfinderTactics.Core
         public static void TriggerUnitHealthChanged(Unit unit, int current, int max) =>
             OnUnitHealthChanged?.Invoke(unit, current, max);
 
+        public static event Action<Unit, int, int> OnUnitAPChanged;
+
+        public static void TriggerUnitAPChanged(Unit unit, int current, int max) =>
+            OnUnitAPChanged?.Invoke(unit, current, max);
+
         public static event Action<Unit, bool> OnUnitReactionChanged;
 
         public static void TriggerUnitReactionChanged(Unit unit, bool isAvailable) =>
