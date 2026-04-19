@@ -38,6 +38,7 @@ namespace PathfinderTactics.Characters
     {
         [Header("Identity")]
         public string unitName = "Unit";
+        public Sprite portraitIcon;
 
         [Header("Skills & Senses")]
         [Tooltip("Perception modifier for Initiative rolls.")]

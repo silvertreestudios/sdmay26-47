@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hider_Stealth_Test 1
   m_EditorClassIdentifier: 
   unitName: Unit
+  portraitIcon: {fileID: 21300000, guid: 5c40dd2bf444ee84da378df1a27166ae, type: 3}
   perception: 0
   stealth: 10
   hasAllAroundVision: 0
