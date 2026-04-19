@@ -1,5 +1,6 @@
 using System;
 using PathfinderTactics.Actions;
+using PathfinderTactics.Core;
 using UnityEngine;
 
 namespace PathfinderTactics.Characters
@@ -40,11 +41,20 @@ namespace PathfinderTactics.Characters
 
             AttacksThisTurn = 0;
             HasReactionAvailable = true;
+            GameEvents.TriggerUnitReactionChanged(GetComponent<Unit>(), true);
         }
 
-        public void SpendReaction() => HasReactionAvailable = false;
+        public void SpendReaction()
+        {
+            HasReactionAvailable = false;
+            GameEvents.TriggerUnitReactionChanged(GetComponent<Unit>(), false);
+        }
 
-        public void RestoreReaction() => HasReactionAvailable = true;
+        public void RestoreReaction()
+        {
+            HasReactionAvailable = true;
+            GameEvents.TriggerUnitReactionChanged(GetComponent<Unit>(), true);
+        }
 
         public void IncrementAttacksThisTurn() => AttacksThisTurn++;
 
