@@ -25,6 +25,12 @@ namespace PathfinderTactics.Characters
             // Auto-discover actions
             baseActionArray = GetComponents<BaseAction>();
 
+            // If none found on root, check children
+            if (baseActionArray == null || baseActionArray.Length == 0)
+            {
+                baseActionArray = GetComponentsInChildren<BaseAction>();
+            }
+
             Debug.Log($"[UNIT BOOTUP] {gameObject.name} found {baseActionArray.Length} actions.");
             foreach (var action in baseActionArray)
             {
@@ -75,6 +81,14 @@ namespace PathfinderTactics.Characters
         public void SpendActionPoints(int amount)
         {
             actionPointsRemaining -= amount;
+            // Debug.Log(
+            //     $"<color=orange>[ECONOMY]</color> {gameObject.name} spent {amount} AP. Remaining: {actionPointsRemaining}"
+            // );
+            GameEvents.TriggerUnitAPChanged(
+                GetComponent<Unit>(),
+                actionPointsRemaining,
+                maxActionPoints
+            );
         }
 
         public int GetActionPointsRemaining()
@@ -94,6 +108,10 @@ namespace PathfinderTactics.Characters
         public void RefreshActions()
         {
             baseActionArray = GetComponents<BaseAction>();
+            if (baseActionArray == null || baseActionArray.Length == 0)
+            {
+                baseActionArray = GetComponentsInChildren<BaseAction>();
+            }
         }
     }
 }

@@ -18,30 +18,57 @@ namespace PathfinderTactics.UI
         private GameObject actionMenuContainer;
 
         [SerializeField]
-        private Transform actionButtonContainer;
+        private ActionMenuUI actionMenu;
 
         [SerializeField]
-        private GameObject actionButtonPrefab;
+        private CanvasGroup canvasGroup;
 
         [SerializeField]
         private TextMeshProUGUI actionPointsText;
 
-        private List<ActionButtonUI> actionButtonPool = new List<ActionButtonUI>();
-        private List<ActionButtonUI> activeButtons = new List<ActionButtonUI>();
+        private bool isSubscribed = false;
+
+        private void Awake()
+        {
+            Debug.Log("<color=cyan>[UI DEBUG]</color> UnitActionSystemUI Awake called.");
+            if (canvasGroup == null)
+                canvasGroup = GetComponent<CanvasGroup>();
+
+            SetMenuVisibility(false);
+        }
 
         private void Start()
         {
-            // Subscribe to the State Change Event
-            ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged +=
-                UnitActionSystem_OnStateChanged;
-            ServiceLocator.Get<UnitActionSystem>().OnActionCompleted +=
-                UnitActionSystem_OnDataChanged;
-
-            // Force menu off at start
-            if (actionMenuContainer != null)
-                actionMenuContainer.SetActive(false);
-
+            Debug.Log("<color=cyan>[UI DEBUG]</color> UnitActionSystemUI Start called.");
+            TryInitialize();
             UpdateVisuals();
+        }
+
+        private void Update()
+        {
+            if (!isSubscribed)
+            {
+                TryInitialize();
+            }
+        }
+
+        private void TryInitialize()
+        {
+            if (isSubscribed)
+                return;
+
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var uas))
+            {
+                uas.OnSelectedUnitChanged += UnitActionSystem_OnStateChanged;
+                uas.OnActionCompleted += UnitActionSystem_OnDataChanged;
+                isSubscribed = true;
+                Debug.Log(
+                    "<color=cyan>[UI DEBUG]</color> UnitActionSystemUI successfully subscribed to UnitActionSystem events."
+                );
+
+                // Refresh state immediately in case we missed the first event
+                UnitActionSystem_OnStateChanged(this, EventArgs.Empty);
+            }
         }
 
         private void UnitActionSystem_OnStateChanged(object sender, EventArgs e)
@@ -49,117 +76,79 @@ namespace PathfinderTactics.UI
             var currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
             bool shouldShowMenu = (currentPhase == GamePhase.ActionSelection);
 
-            // Debug.Log($"[UI MANAGER] State Change Detected: {currentPhase}. Menu Should Show: {shouldShowMenu}");
+            Debug.Log(
+                $"<color=cyan>[UI DEBUG]</color> Phase: {currentPhase}, shouldShowMenu: {shouldShowMenu}"
+            );
 
             // Update menu visibility
-            if (actionMenuContainer.activeSelf != shouldShowMenu)
-            {
-                actionMenuContainer.SetActive(shouldShowMenu);
-            }
+            SetMenuVisibility(shouldShowMenu);
 
             // Create/refresh buttons when entering ActionSelection
             if (shouldShowMenu)
             {
-                Debug.Log("[UI MANAGER] Menu opened! Building buttons...");
+                Debug.Log(
+                    $"<color=cyan>[UI DEBUG]</color> Menu opened! Attempting to build buttons for unit: {ServiceLocator.Get<UnitActionSystem>().SelectedUnit?.name ?? "NULL"}"
+                );
                 CreateUnitActionButtons();
             }
             else
             {
                 // Clean up buttons when leaving ActionSelection
-                ClearActionButtons();
+                if (actionMenu != null)
+                {
+                    actionMenu.ClearMenu();
+                }
             }
 
             UpdateVisuals(); // Update AP text too
         }
 
-        private void ClearActionButtons()
-        {
-            foreach (ActionButtonUI button in activeButtons)
-            {
-                button.gameObject.SetActive(false);
-                actionButtonPool.Add(button);
-            }
-            activeButtons.Clear();
-        }
-
         private void CreateUnitActionButtons()
         {
-            // Disable active buttons and send to pool
-            ClearActionButtons();
+            if (actionMenu == null)
+            {
+                Debug.LogError("[UI MANAGER] ActionMenuUI reference is missing!");
+                return;
+            }
 
             Unit selectedUnit = ServiceLocator.Get<UnitActionSystem>().SelectedUnit;
             if (selectedUnit == null)
             {
-                Debug.LogWarning(
-                    "[UI MANAGER] No unit selected when trying to create action buttons!"
-                );
-                return;
-            }
-
-            if (actionButtonPrefab == null)
-            {
-                Debug.LogError("[UI MANAGER] Action button prefab is not assigned!");
+                actionMenu.ClearMenu();
                 return;
             }
 
             BaseAction[] actions = selectedUnit.GetBaseActionArray();
-            Debug.Log($"[UI MANAGER] Creating {actions.Length} action buttons");
-
-            foreach (BaseAction baseAction in actions)
-            {
-                if (!baseAction.isActiveAndEnabled)
-                    continue;
-
-                ActionButtonUI actionButtonUI;
-
-                if (actionButtonPool.Count > 0)
-                {
-                    // Pull from pool
-                    actionButtonUI = actionButtonPool[0];
-                    actionButtonPool.RemoveAt(0);
-                    actionButtonUI.gameObject.SetActive(true);
-                    // Ensure it stays in the container if it was moved
-                    actionButtonUI.transform.SetAsLastSibling();
-                }
-                else
-                {
-                    // Create new
-                    GameObject buttonObj = Instantiate(actionButtonPrefab, actionButtonContainer);
-                    actionButtonUI = buttonObj.GetComponent<ActionButtonUI>();
-                }
-
-                if (actionButtonUI == null)
-                {
-                    Debug.LogError(
-                        $"[UI MANAGER] Button prefab or pooled object missing ActionButtonUI!"
-                    );
-                    continue;
-                }
-
-                actionButtonUI.SetBaseAction(baseAction);
-                activeButtons.Add(actionButtonUI);
-            }
-
-            // Select first button if available
-            if (activeButtons.Count > 0)
-            {
-                Button firstButton = activeButtons[0].GetComponent<Button>();
-                if (firstButton != null)
-                {
-                    Debug.Log($"[UI MANAGER] Selecting: {firstButton.name}");
-                    EventSystem.current.SetSelectedGameObject(null);
-                    EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
-                }
-            }
-            else
-            {
-                Debug.LogWarning("[UI MANAGER] No action buttons were created!");
-            }
+            Debug.Log(
+                $"<color=cyan>[UI DEBUG]</color> Building menu for {selectedUnit.name}. Actions found: {actions?.Length ?? 0}"
+            );
+            actionMenu.PopulateMenu(actions);
         }
 
         private void UnitActionSystem_OnDataChanged(object sender, EventArgs e)
         {
             UpdateVisuals();
+        }
+
+        private void SetMenuVisibility(bool isVisible)
+        {
+            if (canvasGroup != null)
+            {
+                canvasGroup.alpha = isVisible ? 1 : 0;
+                canvasGroup.interactable = isVisible;
+                canvasGroup.blocksRaycasts = isVisible;
+            }
+            else if (actionMenuContainer != null)
+            {
+                // Fallback to SetActive if no CanvasGroup is present
+                if (actionMenuContainer == gameObject && !isVisible)
+                {
+                    Debug.LogWarning(
+                        "<color=orange>[UI DEBUG]</color> Suicide Warning: Disabling the GameObject this script is attached to! Use a CanvasGroup instead."
+                    );
+                }
+                actionMenuContainer.SetActive(isVisible);
+            }
         }
 
         private void UpdateVisuals()

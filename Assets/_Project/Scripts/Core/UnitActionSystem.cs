@@ -311,7 +311,10 @@ namespace PathfinderTactics.Core
         private void OnOpenMenuPerformed(object sender, EventArgs e)
         {
             if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
+            {
+                Debug.LogWarning("[UAS DEBUG] Not Player turn, ignoring menu command.");
                 return;
+            }
 
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
@@ -1206,16 +1209,22 @@ namespace PathfinderTactics.Core
 
         private void HandlePostMoveActionSelection()
         {
-            if (selectedUnit == null)
-                return;
+            bool isPlayerTurn = ServiceLocator.Get<TurnManager>().IsPlayerTurn();
+            Debug.Log(
+                $"<color=yellow>[UAS DEBUG]</color> HandlePostMoveActionSelection. Unit: {selectedUnit?.name}, Faction: {selectedUnit?.GetFaction()}, IsPlayerTurn: {isPlayerTurn}, AP: {selectedUnit?.GetActionPointsRemaining()}"
+            );
 
-            if (selectedUnit.GetActionPointsRemaining() > 0)
+            if (selectedUnit != null && selectedUnit.GetActionPointsRemaining() > 0)
             {
+                Debug.Log("<color=yellow>[UAS DEBUG]</color> Setting phase to ActionSelection.");
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
             }
             else
             {
-                EndTurn();
+                Debug.Log(
+                    "<color=yellow>[UAS DEBUG]</color> Phase transition skipped. Zero AP or no unit."
+                );
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
             }
         }
 

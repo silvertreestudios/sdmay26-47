@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PathfinderTactics.Characters;
+using PathfinderTactics.Data;
 using PathfinderTactics.Grid;
 using UnityEngine;
 
@@ -17,6 +18,10 @@ namespace PathfinderTactics.Actions
         protected bool isActive;
         protected Action onActionComplete;
 
+        [Header("UI & Metadata")]
+        [Tooltip("The static data used for UI representation.")]
+        public ActionData actionData;
+
         protected virtual void Awake()
         {
             unit = GetComponent<Unit>();
@@ -25,13 +30,30 @@ namespace PathfinderTactics.Actions
         /// <summary>
         /// Returns the name to display in the UI (e.g., "Strike").
         /// </summary>
-        public abstract string GetActionName();
+        public virtual string GetActionName()
+        {
+            if (actionData != null && !string.IsNullOrEmpty(actionData.actionName))
+            {
+                return actionData.actionName;
+            }
+            return "Unnamed Action";
+        }
+
+        /// <summary>
+        /// Returns the damage type associated with this action for UI iconography.
+        /// Defaults to Untyped/None.
+        /// </summary>
+        public virtual DamageType GetPrimaryDamageType() => DamageType.Untyped;
 
         /// <summary>
         /// How many actions (1-3) this consumes.
         /// </summary>
         public virtual int GetActionPointsCost()
         {
+            if (actionData != null)
+            {
+                return actionData.apCost;
+            }
             return 1;
         }
 
@@ -75,10 +97,16 @@ namespace PathfinderTactics.Actions
                 return false;
             }
 
-            // Stunned blocker (Just in case the UI accidentally lets them click)
+            // Stunned blocker
             if (conditions.GetConditionValue(ConditionType.Stunned) > 0)
             {
                 Debug.Log($"<color=red>Action blocked: {unit.name} is Stunned.</color>");
+                return false;
+            }
+
+            // AP check
+            if (unit.GetActionPointsRemaining() < GetActionPointsCost())
+            {
                 return false;
             }
 

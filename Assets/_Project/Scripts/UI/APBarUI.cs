@@ -82,10 +82,22 @@ namespace PathfinderTactics.UI
                 bool shouldBeFull = (i < currentAP);
 
                 if (activeSlots[i].fill != null)
+                {
                     activeSlots[i].fill.enabled = shouldBeFull;
+                }
 
                 if (activeSlots[i].empty != null)
+                {
                     activeSlots[i].empty.enabled = !shouldBeFull;
+                }
+
+                // string fillStatus =
+                //     activeSlots[i].fill != null ? activeSlots[i].fill.enabled.ToString() : "NULL";
+                // string emptyStatus =
+                //     activeSlots[i].empty != null ? activeSlots[i].empty.enabled.ToString() : "NULL";
+                // Debug.Log(
+                //     $"<color=cyan>[APBarUI]</color> Slot {i} State: Fill={fillStatus}, Empty={emptyStatus} (ShouldBeFull={shouldBeFull})"
+                // );
             }
         }
 
