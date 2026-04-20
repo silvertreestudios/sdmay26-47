@@ -26,6 +26,12 @@ namespace PathfinderTactics.Actions
             return $"Ranged Strike - {weaponName}";
         }
 
+        public override DamageType GetPrimaryDamageType()
+        {
+            var weapon = GetWeapon();
+            return weapon != null ? weapon.damageType : DamageType.Untyped;
+        }
+
         [HideInInspector]
         public WeaponSO activeWeapon;
 

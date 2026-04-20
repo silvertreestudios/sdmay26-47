@@ -61,6 +61,11 @@ namespace PathfinderTactics.Spells
             return currentSpell != null ? currentSpell.ElementName : "Cast Spell";
         }
 
+        public override DamageType GetPrimaryDamageType()
+        {
+            return currentSpell != null ? currentSpell.ElementType : DamageType.Untyped;
+        }
+
         public override int GetActionPointsCost()
         {
             if (currentSpell == null)

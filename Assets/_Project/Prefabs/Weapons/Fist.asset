@@ -23,7 +23,7 @@ MonoBehaviour:
   damageDice:
     count: 1
     sides: 4
-  damageType: 0
+  damageType: 3
   category: 0
   group: 3
   hands: 0
