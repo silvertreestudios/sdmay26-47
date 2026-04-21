@@ -97,6 +97,15 @@ namespace PathfinderTactics.Core
         [Min(0.05f)]
         private float otsExitBlendDuration = 0.15f;
 
+        [Header("OTS Tight-Space Handling")]
+        [Tooltip("Distance at which the camera starts rising to see over the unit.")]
+        [SerializeField]
+        private float otsCollisionPushUpThreshold = 2.0f;
+
+        [Tooltip("Max vertical lift applied when the camera is at its closest distance.")]
+        [SerializeField]
+        private float otsMaxCollisionPushUpHeight = 2.0f;
+
         [SerializeField]
         private string roofLayerName = "Roof";
 
@@ -518,6 +527,17 @@ namespace PathfinderTactics.Core
 
             Vector3 finalDesiredPos = attackerPivot + dirToDesired * otsCurrentCollisionDistance;
 
+            // If the camera is forced close to the unit, move it upward to maintain a view of the target.
+            float pushUpFactor = Mathf.Clamp01(
+                1f - (otsCurrentCollisionDistance / otsCollisionPushUpThreshold)
+            );
+            float pushUpAmount = pushUpFactor * otsMaxCollisionPushUpHeight;
+            finalDesiredPos.y += pushUpAmount;
+
+            // Recalculate rotation based on the final adjusted position to keep the target centered.
+            Vector3 lookPoint = otsTarget.position + Vector3.up * otsTargetHeight;
+            Quaternion finalDesiredRot = Quaternion.LookRotation(lookPoint - finalDesiredPos);
+
             float timeSinceEnter = Time.time - otsModeEnterTime;
             float timeSinceTargetSwitch =
                 otsLastTargetSwitchTime >= 0f
@@ -555,7 +575,7 @@ namespace PathfinderTactics.Core
             );
             cam.rotation = Quaternion.Slerp(
                 cam.rotation,
-                desiredRot,
+                finalDesiredRot,
                 1f - Mathf.Exp(-rotSpeed * Time.deltaTime)
             );
         }
