@@ -669,6 +669,14 @@ namespace PathfinderTactics.Core
                 return;
             }
 
+            if (!selectedAction.CanExecuteAction())
+            {
+                Debug.LogWarning(
+                    $"[SPELL DEBUG] [UnitActionSystem] Cannot execute {selectedAction.GetActionName()}: CanExecuteAction returned false."
+                );
+                return;
+            }
+
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.Busy);
             ServiceLocator.Get<TargetingService>().HideTargeting();
 

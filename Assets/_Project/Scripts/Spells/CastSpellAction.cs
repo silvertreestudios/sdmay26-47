@@ -238,12 +238,6 @@ namespace PathfinderTactics.Spells
 
         public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
-            if (!CanExecuteAction())
-            {
-                onActionComplete?.Invoke();
-                return;
-            }
-
             if (currentSpell == null)
             {
                 Debug.LogError("[CastSpellAction] No spell configured!");
