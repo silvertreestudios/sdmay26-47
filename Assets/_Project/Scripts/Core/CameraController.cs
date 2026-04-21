@@ -115,6 +115,8 @@ namespace PathfinderTactics.Core
         private bool isOTSActive;
         private float otsModeEnterTime;
         private float otsLastTargetSwitchTime = -1f;
+        private float otsCurrentCollisionDistance;
+        private float otsCollisionVelocity;
 
         private CinemachineBrain cinemachineBrain;
         private CinemachineBlendDefinition savedDefaultBlend;
@@ -356,6 +358,10 @@ namespace PathfinderTactics.Core
             );
 
             CalculateOTSTransform(out Vector3 pos, out Quaternion rot);
+
+            Vector3 attackerPivot = otsAttacker.position + orbitTargetOffset;
+            otsCurrentCollisionDistance = Vector3.Distance(attackerPivot, pos);
+
             otsVirtualCamera.transform.SetPositionAndRotation(pos, rot);
 
             RestoreSavedBrainBlendIfNeeded(); // Handle consecutive transitions
@@ -468,6 +474,50 @@ namespace PathfinderTactics.Core
 
             CalculateOTSTransform(out Vector3 desiredPos, out Quaternion desiredRot);
 
+            // OTS Collision Handling
+            Vector3 attackerPivot = otsAttacker.position + orbitTargetOffset;
+            Vector3 toDesired = desiredPos - attackerPivot;
+            float idealDistance = toDesired.magnitude;
+            Vector3 dirToDesired = toDesired.normalized;
+
+            int mask = obstacleLayers.value;
+            mask &= ~(1 << otsAttacker.gameObject.layer);
+            mask &= ~(1 << 2); // Ignore Raycast
+
+            float targetDistance = idealDistance;
+            if (
+                Physics.SphereCast(
+                    attackerPivot,
+                    cameraCollisionRadius,
+                    dirToDesired,
+                    out RaycastHit hit,
+                    idealDistance,
+                    mask,
+                    QueryTriggerInteraction.Ignore
+                )
+            )
+            {
+                targetDistance = Mathf.Max(hit.distance - 0.05f, 0.5f);
+            }
+
+            // Snapping behavior: inward is instant, outward is smooth
+            if (targetDistance < otsCurrentCollisionDistance)
+            {
+                otsCurrentCollisionDistance = targetDistance;
+                otsCollisionVelocity = 0f;
+            }
+            else
+            {
+                otsCurrentCollisionDistance = Mathf.SmoothDamp(
+                    otsCurrentCollisionDistance,
+                    targetDistance,
+                    ref otsCollisionVelocity,
+                    1f / collisionRecoverySpeed
+                );
+            }
+
+            Vector3 finalDesiredPos = attackerPivot + dirToDesired * otsCurrentCollisionDistance;
+
             float timeSinceEnter = Time.time - otsModeEnterTime;
             float timeSinceTargetSwitch =
                 otsLastTargetSwitchTime >= 0f
@@ -499,7 +549,7 @@ namespace PathfinderTactics.Core
             Transform cam = otsVirtualCamera.transform;
             cam.position = Vector3.SmoothDamp(
                 cam.position,
-                desiredPos,
+                finalDesiredPos,
                 ref otsPositionVelocity,
                 smoothTime
             );
