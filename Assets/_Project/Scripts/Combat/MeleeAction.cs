@@ -114,11 +114,7 @@ namespace PathfinderTactics.Actions
 
         public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
-            if (!CanExecuteAction())
-            {
-                onActionComplete?.Invoke();
-                return;
-            }
+            // Validation is now handled by UnitActionSystem before spending AP.
 
             if (
                 ServiceLocator.TryGet<TargetLockService>(out var tls)

@@ -30,8 +30,13 @@ namespace PathfinderTactics.Spells.Effects
             SpellSO spell = context.SpellData;
             DiceFormula damageFormula = GetScaledDamage(spell, context.CastLevel);
 
-            foreach (var target in context.AffectedUnits)
+            foreach (Unit target in context.AffectedUnits)
             {
+                if ((IsBasicSave || IsSpellAttack) && !context.RollResults.ContainsKey(target))
+                {
+                    continue;
+                }
+
                 if (!context.RollResults.TryGetValue(target, out var result))
                     continue;
 
