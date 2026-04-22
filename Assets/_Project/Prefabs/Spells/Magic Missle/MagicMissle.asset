@@ -31,12 +31,13 @@ MonoBehaviour:
   Targeting: 0
   Target: 2
   Range: 120
+  RequiresLineOfEffect: 0
   Area:
     Shape: 0
     Radius: 0
   SpellAttackRoll: 0
   SaveType: 0
-  ElementType: 0
+  ElementType: 11
   IsBasicSave: 0
   Duration: 
   IsSustained: 0

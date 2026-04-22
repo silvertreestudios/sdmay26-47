@@ -26,6 +26,12 @@ namespace PathfinderTactics.Actions
             return $"Melee Strike - {weaponName}";
         }
 
+        public override DamageType GetPrimaryDamageType()
+        {
+            var weapon = GetWeapon();
+            return weapon != null ? weapon.damageType : DamageType.Untyped;
+        }
+
         [HideInInspector]
         public WeaponSO activeWeapon;
 
@@ -108,11 +114,7 @@ namespace PathfinderTactics.Actions
 
         public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
-            if (!CanExecuteAction())
-            {
-                onActionComplete?.Invoke();
-                return;
-            }
+            // Validation is now handled by UnitActionSystem before spending AP.
 
             if (
                 ServiceLocator.TryGet<TargetLockService>(out var tls)

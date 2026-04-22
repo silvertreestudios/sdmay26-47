@@ -30,6 +30,10 @@ namespace PathfinderTactics.Grid
         [SerializeField]
         private Material actionInnerMaterial;
 
+        [Header("3D Line Settings")]
+        [SerializeField]
+        private float lineThickness = 0.05f;
+
         [Header("Smoothing Settings")]
         [SerializeField]
         private float cornerRadius = 0.4f;
@@ -59,6 +63,8 @@ namespace PathfinderTactics.Grid
             }
 
             visualParent = new GameObject("ActionRangeVisuals").transform;
+            ServiceLocator.Get<UnitActionSystem>().OnValidPositionsChanged +=
+                HandleValidPositionsChanged;
 
             // Create a default material if none assigned
             if (outerMaterial == null)
@@ -95,8 +101,18 @@ namespace PathfinderTactics.Grid
             }
             if (ServiceLocator.TryGet<PhaseManager>(out var phaseManager))
             {
-                phaseManager.OnPhaseChanged += PhaseManager_OnPhaseChanged;
+                phaseManager.OnPhaseChanged -= PhaseManager_OnPhaseChanged;
             }
+
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var uas))
+            {
+                uas.OnValidPositionsChanged -= HandleValidPositionsChanged;
+            }
+        }
+
+        private void HandleValidPositionsChanged(object sender, System.EventArgs e)
+        {
+            UpdateVisuals();
         }
 
         private void PhaseManager_OnPhaseChanged(object sender, GamePhase newPhase)
@@ -124,14 +140,24 @@ namespace PathfinderTactics.Grid
                 currentPhase == GamePhase.FreeMovement
                 || currentPhase == GamePhase.ActionSelection
                 || currentPhase == GamePhase.EagleEye
+                || currentPhase == GamePhase.Busy
             )
             {
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Phase {currentPhase} matches movement. Showing Range Outline."
+                // );
                 ShowMoveRangeOutline(selectedUnit);
             }
             // If targeting, Show Red Tiles
             else if (currentPhase == GamePhase.ActionTargeting)
             {
                 ShowActionRange();
+            }
+            else
+            {
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Phase {currentPhase} NOT movement. Hiding Range Outline."
+                // );
             }
         }
 
@@ -146,10 +172,19 @@ namespace PathfinderTactics.Grid
             if (positions == null)
             {
                 int maxMoveCost = unit.GetMaxMoveCost();
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] UAS positions was NULL for {unit.name}. Falling back to full range calc. Start: {unit.CurrentLayeredPosition}, Max: {maxMoveCost}"
+                // );
                 positions = Pathfinding.GetReachablePositions(
                     unit.CurrentLayeredPosition,
                     maxMoveCost
                 );
+            }
+            else
+            {
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Drawing Range with {positions.Count} positions provided by UAS."
+                // );
             }
 
             DrawOutlines(positions, outerMaterial, innerMaterial);
@@ -218,6 +253,9 @@ namespace PathfinderTactics.Grid
 
                 // Trace continuous loops from the graph
                 List<List<Vector3>> loops = TraceLoops(adjacency);
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Layer Y={entry.Key}: Found {layerSet.Count} tiles, resulting in {loops.Count} loops."
+                // );
                 foreach (var loop in loops)
                 {
                     GenerateDualOutline(loop, layerSet, entry.Key, outMat, inMat);
@@ -225,18 +263,33 @@ namespace PathfinderTactics.Grid
             }
         }
 
-        private void AddEdgeToGraph(Dictionary<Vector3, List<Vector3>> adj, Vector3 p1, Vector3 p2)
+        private Vector3 RoundVector(Vector3 v)
         {
+            return new Vector3(
+                Mathf.Round(v.x * 1000f) / 1000f,
+                Mathf.Round(v.y * 1000f) / 1000f,
+                Mathf.Round(v.z * 1000f) / 1000f
+            );
+        }
+
+        private void AddEdgeToGraph(
+            Dictionary<Vector3, List<Vector3>> adj,
+            Vector3 rawP1,
+            Vector3 rawP2
+        )
+        {
+            Vector3 p1 = RoundVector(rawP1);
+            Vector3 p2 = RoundVector(rawP2);
+
             if (!adj.ContainsKey(p1))
                 adj[p1] = new List<Vector3>();
             if (!adj.ContainsKey(p2))
                 adj[p2] = new List<Vector3>();
 
-            // Small tolerance for grid precision issues
             bool alreadyHasP2 = false;
             foreach (var existing in adj[p1])
             {
-                if (Vector3.Distance(existing, p2) < 0.01f)
+                if (Vector3.Distance(existing, p2) < 0.001f)
                 {
                     alreadyHasP2 = true;
                     break;
@@ -248,7 +301,7 @@ namespace PathfinderTactics.Grid
             bool alreadyHasP1 = false;
             foreach (var existing in adj[p2])
             {
-                if (Vector3.Distance(existing, p1) < 0.01f)
+                if (Vector3.Distance(existing, p1) < 0.001f)
                 {
                     alreadyHasP1 = true;
                     break;
@@ -258,53 +311,87 @@ namespace PathfinderTactics.Grid
                 adj[p2].Add(p1);
         }
 
+        private (Vector3, Vector3) SortEdge(Vector3 v1, Vector3 v2)
+        {
+            // Robust sorting for ValueTuple edge keys
+            if (
+                v1.x < v2.x
+                || (v1.x == v2.x && v1.y < v2.y)
+                || (v1.x == v2.x && v1.y == v2.y && v1.z < v2.z)
+            )
+                return (v1, v2);
+            return (v2, v1);
+        }
+
         private List<List<Vector3>> TraceLoops(Dictionary<Vector3, List<Vector3>> adj)
         {
             List<List<Vector3>> loops = new List<List<Vector3>>();
-            HashSet<Vector3> visited = new HashSet<Vector3>();
+            HashSet<(Vector3, Vector3)> visitedEdges = new HashSet<(Vector3, Vector3)>();
 
-            foreach (var start in adj.Keys)
+            // We iterate through all nodes and all their edges to find untraced cycles
+            foreach (var startNode in adj.Keys)
             {
-                if (visited.Contains(start))
-                    continue;
-
-                List<Vector3> loop = new List<Vector3>();
-                Vector3 current = start;
-                Vector3 prev = Vector3.zero;
-
-                while (current != Vector3.zero)
+                foreach (var firstNeighbor in adj[startNode])
                 {
-                    loop.Add(current);
-                    visited.Add(current);
+                    var firstEdge = SortEdge(startNode, firstNeighbor);
+                    if (visitedEdges.Contains(firstEdge))
+                        continue;
 
-                    Vector3 next = Vector3.zero;
-                    if (adj.ContainsKey(current))
+                    // Start a new loop trace from this unused edge
+                    List<Vector3> loop = new List<Vector3>();
+                    Vector3 current = firstNeighbor;
+                    Vector3 prev = startNode;
+                    loop.Add(startNode);
+                    visitedEdges.Add(firstEdge);
+
+                    bool foundClosure = false;
+                    const int MAX_ITER = 5000;
+                    int iter = 0;
+
+                    while (iter++ < MAX_ITER)
                     {
-                        foreach (var neighbor in adj[current])
+                        if (Vector3.Distance(current, startNode) < 0.001f)
                         {
-                            if (neighbor == prev)
-                                continue;
-                            if (neighbor == start && loop.Count > 2)
+                            foundClosure = true;
+                            break;
+                        }
+
+                        loop.Add(current);
+                        Vector3? nextNode = null;
+
+                        if (adj.ContainsKey(current))
+                        {
+                            foreach (var neighbor in adj[current])
                             {
-                                // Loop closed!
-                                loops.Add(loop);
-                                current = Vector3.zero;
-                                break;
-                            }
-                            if (!visited.Contains(neighbor))
-                            {
-                                next = neighbor;
+                                if (Vector3.Distance(neighbor, prev) < 0.001f)
+                                    continue;
+
+                                var edge = SortEdge(current, neighbor);
+                                if (visitedEdges.Contains(edge))
+                                    continue;
+
+                                nextNode = neighbor;
+                                visitedEdges.Add(edge);
                                 break;
                             }
                         }
+
+                        if (nextNode.HasValue)
+                        {
+                            prev = current;
+                            current = nextNode.Value;
+                        }
+                        else
+                        {
+                            // Stuck at a dead end (shouldn't happen in a valid boundary graph)
+                            // Debug.LogWarning($"[MOVEMENT RANGE WAYPOINTS DEBUG] Trace hit dead-end at {current} while starting from {startNode}");
+                            break;
+                        }
                     }
 
-                    if (current != Vector3.zero)
+                    if (foundClosure && loop.Count >= 3)
                     {
-                        if (next == Vector3.zero)
-                            break; // Dead end
-                        prev = current;
-                        current = next;
+                        loops.Add(loop);
                     }
                 }
             }
@@ -349,8 +436,24 @@ namespace PathfinderTactics.Grid
             List<Vector3> innerPath = GenerateOffsetPath(smoothBase, (-innerWidth / 2f) * sign);
 
             // Render
-            CreateLineRenderer("OuterOutline", outerPath, outerWidth, outMat, 0.04f);
-            CreateLineRenderer("InnerOutline", innerPath, innerWidth, inMat, 0.06f);
+            CreateExtrudedLineMesh(
+                "OuterOutline",
+                outerPath,
+                outerWidth,
+                lineThickness,
+                outMat,
+                0.04f,
+                4
+            );
+            CreateExtrudedLineMesh(
+                "InnerOutline",
+                innerPath,
+                innerWidth,
+                lineThickness,
+                inMat,
+                0.04f,
+                6
+            );
         }
 
         private List<Vector3> GenerateCurvedPath(List<Vector3> points)
@@ -430,38 +533,123 @@ namespace PathfinderTactics.Grid
             return offsetPoints;
         }
 
-        private void CreateLineRenderer(
+        private void CreateExtrudedLineMesh(
             string name,
             List<Vector3> points,
             float width,
+            float height,
             Material material,
-            float yOffset
+            float yBaseOffset,
+            int sortOrder
         )
         {
+            if (points.Count < 3)
+                return;
+
             GameObject obj = new GameObject(name);
             obj.transform.SetParent(visualParent);
 
-            // Apply height offset
-            Vector3[] offsetPoints = new Vector3[points.Count];
-            for (int i = 0; i < points.Count; i++)
+            MeshRenderer mr = obj.AddComponent<MeshRenderer>();
+            mr.material = material;
+            mr.sortingOrder = sortOrder;
+
+            MeshFilter mf = obj.AddComponent<MeshFilter>();
+            Mesh mesh = new Mesh();
+            mesh.name = name + "Mesh";
+
+            int n = points.Count;
+            Vector3[] bottomOuter = new Vector3[n];
+            Vector3[] bottomInner = new Vector3[n];
+            Vector3[] topOuter = new Vector3[n];
+            Vector3[] topInner = new Vector3[n];
+
+            for (int i = 0; i < n; i++)
             {
-                offsetPoints[i] = points[i] + new Vector3(0, yOffset, 0);
+                Vector3 prev = points[(i + n - 1) % n];
+                Vector3 curr = points[i];
+                Vector3 next = points[(i + 1) % n];
+
+                Vector3 tangentPrev = (curr - prev).normalized;
+                Vector3 tangentNext = (next - curr).normalized;
+
+                Vector3 n1 = new Vector3(-tangentPrev.z, 0, tangentPrev.x);
+                Vector3 n2 = new Vector3(-tangentNext.z, 0, tangentNext.x);
+                Vector3 avgNormal = (n1 + n2).normalized;
+
+                float dot = Vector3.Dot(n1, n2);
+                float miterScale = 1.0f;
+                if (dot > -0.99f)
+                {
+                    float angle = Vector3.Angle(n1, n2);
+                    miterScale = 1.0f / Mathf.Cos(angle * 0.5f * Mathf.Deg2Rad);
+                }
+                miterScale = Mathf.Min(miterScale, 2.0f);
+
+                Vector3 rightOffset = avgNormal * (width * 0.5f * miterScale);
+                Vector3 basePos = curr + new Vector3(0, yBaseOffset, 0);
+
+                bottomOuter[i] = basePos + rightOffset;
+                bottomInner[i] = basePos - rightOffset;
+                topOuter[i] = bottomOuter[i] + new Vector3(0, height, 0);
+                topInner[i] = bottomInner[i] + new Vector3(0, height, 0);
             }
 
-            LineRenderer lr = obj.AddComponent<LineRenderer>();
-            lr.startWidth = width;
-            lr.endWidth = width;
-            lr.positionCount = offsetPoints.Length;
-            lr.SetPositions(offsetPoints);
-            lr.loop = true;
-            lr.material = material;
-            lr.startColor = Color.white;
-            lr.endColor = Color.white;
-            lr.useWorldSpace = true;
-            lr.alignment = LineAlignment.TransformZ;
-            lr.sortingOrder = Mathf.RoundToInt(yOffset * 100);
+            List<Vector3> verts = new List<Vector3>();
+            List<int> tris = new List<int>();
+            List<Vector2> uvs = new List<Vector2>();
 
-            obj.transform.rotation = Quaternion.Euler(90, 0, 0);
+            void AddQuad(Vector3 v0, Vector3 v1, Vector3 v2, Vector3 v3)
+            {
+                int startIndex = verts.Count;
+                verts.Add(v0);
+                verts.Add(v1);
+                verts.Add(v2);
+                verts.Add(v3);
+                uvs.Add(new Vector2(0, 0));
+                uvs.Add(new Vector2(1, 0));
+                uvs.Add(new Vector2(1, 1));
+                uvs.Add(new Vector2(0, 1));
+
+                // Front face
+                tris.Add(startIndex);
+                tris.Add(startIndex + 1);
+                tris.Add(startIndex + 2);
+
+                tris.Add(startIndex);
+                tris.Add(startIndex + 2);
+                tris.Add(startIndex + 3);
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                int ni = (i + 1) % n;
+
+                // Top Face (Faces Up)
+                AddQuad(topOuter[i], topInner[i], topInner[ni], topOuter[ni]);
+
+                // Bottom Face (Faces Down)
+                AddQuad(bottomInner[i], bottomOuter[i], bottomOuter[ni], bottomInner[ni]);
+
+                // Outer Face
+                AddQuad(bottomOuter[i], topOuter[i], topOuter[ni], bottomOuter[ni]);
+
+                // Inner Face
+                AddQuad(topInner[i], bottomInner[i], bottomInner[ni], topInner[ni]);
+            }
+
+            mesh.SetVertices(verts);
+            mesh.SetTriangles(tris, 0);
+            mesh.SetUVs(0, uvs);
+
+            Color32[] colors = new Color32[verts.Count];
+            for (int i = 0; i < colors.Length; i++)
+                colors[i] = new Color32(255, 255, 255, 255);
+            mesh.colors32 = colors;
+
+            mesh.RecalculateNormals();
+            mesh.RecalculateBounds();
+
+            mf.mesh = mesh;
             activeVisuals.Add(obj);
         }
 

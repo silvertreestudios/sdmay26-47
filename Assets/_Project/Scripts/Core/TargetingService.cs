@@ -19,13 +19,19 @@ namespace PathfinderTactics.Core
         private float cursorMoveTimer;
 
         public GridPosition CurrentCursorGridPosition => currentCursorGridPosition;
+        public Vector3Int CurrentTargetLayeredPosition { get; private set; }
+        private bool wasInEagleEyeBeforeTargeting;
+        private Vector3 baseCursorScale = Vector3.one;
 
         private void Awake()
         {
             ServiceLocator.Register(this);
 
             if (gridCursorVisual != null)
+            {
                 gridCursorVisual.gameObject.SetActive(false);
+                baseCursorScale = gridCursorVisual.localScale;
+            }
         }
 
         private void OnDestroy()
@@ -36,23 +42,32 @@ namespace PathfinderTactics.Core
         public void InitializeTargeting(GridPosition startPosition)
         {
             currentCursorGridPosition = startPosition;
+
+            // Assume the start position is on its natural layer
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            CurrentTargetLayeredPosition = grid.ResolveClosestLayeredPosition(startPosition, 0);
             if (gridCursorVisual != null)
             {
-                gridCursorVisual.gameObject.SetActive(true);
-
                 BaseAction selectedAction = ServiceLocator
                     .Get<UnitActionSystem>()
                     .GetSelectedAction();
+
+                bool showCursor = selectedAction == null || !selectedAction.IsUnitTargeted;
+                gridCursorVisual.gameObject.SetActive(showCursor);
+
                 UpdateCursorVisual(selectedAction);
+
+                var cam = ServiceLocator.Get<CameraController>();
+                wasInEagleEyeBeforeTargeting = cam.IsEagleEyeActive;
 
                 // Spell targeting uses birdseye camera
                 if (selectedAction is CastSpellAction)
                 {
-                    ServiceLocator.Get<CameraController>().EnterEagleEyeMode(gridCursorVisual);
+                    cam.EnterEagleEyeMode(gridCursorVisual);
                 }
                 else
                 {
-                    ServiceLocator.Get<CameraController>().SetFollowTarget(gridCursorVisual);
+                    cam.SetFollowTarget(gridCursorVisual);
                 }
             }
         }
@@ -68,8 +83,11 @@ namespace PathfinderTactics.Core
                 ui.Hide();
             }
 
-            // Reset cameras
-            ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
+            // Reset cameras - only exit EagleEye if we weren't already in it manually
+            if (!wasInEagleEyeBeforeTargeting)
+            {
+                ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
+            }
 
             // Clear AoE preview when exiting targeting
             if (ServiceLocator.TryGet<AoEVisualizer>(out var aoeVis))
@@ -130,21 +148,41 @@ namespace PathfinderTactics.Core
                 GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
                 GridCursor cursorScript = gridCursorVisual.GetComponent<GridCursor>();
 
-                if (gridSystem.IsValidGridPosition(newPos))
-                {
-                    // Resolve the new column position to the correct elevation for range checking
-                    int refY = cursorScript != null ? cursorScript.CurrentLayeredPosition.y : 0;
-                    Vector3Int newPos3D = gridSystem.ResolveClosestLayeredPosition(newPos, refY);
+                bool gridValid = gridSystem.IsValidGridPosition(newPos);
+                Debug.Log(
+                    $"[CursorMove] Input={input} Dir=({moveX},{moveZ}) | CurrentPos={currentCursorGridPosition} -> NewPos={newPos} | GridValid={gridValid} | Action={selectedAction?.GetActionName() ?? "NULL"}"
+                );
 
-                    if (
-                        selectedAction != null
-                        && selectedAction.GetActionRangeGridPositions().Contains(newPos3D)
-                    )
+                if (gridValid)
+                {
+                    int refY =
+                        cursorScript != null
+                            ? cursorScript.CurrentLayeredPosition.y
+                            : CurrentTargetLayeredPosition.y;
+                    Vector3Int newPos3D = gridSystem.ResolveClosestLayeredPosition(newPos, refY);
+                    var rangePositions = selectedAction?.GetActionRangeGridPositions();
+                    bool inRange = rangePositions != null && rangePositions.Contains(newPos3D);
+
+                    Debug.Log(
+                        $"[CursorMove] Resolved3D={newPos3D} | RefY={refY} | RangePositions={rangePositions?.Count ?? 0} | InRange={inRange}"
+                    );
+
+                    if (selectedAction != null && inRange)
                     {
                         currentCursorGridPosition = newPos;
                         UpdateCursorVisual(selectedAction);
                     }
+                    else if (selectedAction == null)
+                    {
+                        // No action gating - allow free movement
+                        currentCursorGridPosition = newPos;
+                        UpdateCursorVisual(null);
+                    }
                 }
+            }
+            else if (input != Vector2.zero && cursorMoveTimer > 0f)
+            {
+                // not logging every frame to avoid spam
             }
             else if (input == Vector2.zero)
             {
@@ -157,9 +195,14 @@ namespace PathfinderTactics.Core
             if (gridCursorVisual != null)
             {
                 GridCursor cursorScript = gridCursorVisual.GetComponent<GridCursor>();
+                if (cursorScript == null)
+                {
+                    // Search children just in case the script is on a sub-object
+                    cursorScript = gridCursorVisual.GetComponentInChildren<GridCursor>();
+                }
 
                 Debug.Log(
-                    $"[TargetingService] UpdateCursorVisual called with action: {(selectedAction != null ? selectedAction.GetActionName() : "NULL")} (Type: {selectedAction?.GetType().FullName})"
+                    $"[TargetingService] UpdateCursorVisual called with action: {(selectedAction != null ? selectedAction.GetActionName() : "NULL")} (Type: {selectedAction?.GetType().FullName}) | CursorScript={cursorScript != null}"
                 );
 
                 // Determine if this is an intersection-targeted spell (Bursts and Cones)
@@ -184,20 +227,38 @@ namespace PathfinderTactics.Core
                         cursorScript.ResetCursorSize();
 
                     cursorScript.SetPosition(currentCursorGridPosition);
+                    CurrentTargetLayeredPosition = cursorScript.CurrentLayeredPosition;
 
                     if (selectedAction != null)
                     {
-                        bool isValidTarget = selectedAction
-                            .GetValidActionGridPositions()
-                            .Contains(cursorScript.CurrentLayeredPosition);
+                        var validPositions = selectedAction.GetValidActionGridPositions();
+                        bool isValidTarget = validPositions.Contains(CurrentTargetLayeredPosition);
                         cursorScript.SetValidState(isValidTarget);
                     }
                 }
                 else
                 {
-                    gridCursorVisual.position = ServiceLocator
-                        .Get<GridSystem>()
-                        .GetWorldPosition(currentCursorGridPosition);
+                    GridSystem grid = ServiceLocator.Get<GridSystem>();
+                    CurrentTargetLayeredPosition = grid.ResolveClosestLayeredPosition(
+                        currentCursorGridPosition,
+                        CurrentTargetLayeredPosition.y
+                    );
+
+                    Vector3 worldPos = grid.GetWorldPosition(CurrentTargetLayeredPosition);
+                    float scaleMultiplier = 1f;
+
+                    if (isIntersectionTargeted)
+                    {
+                        worldPos += new Vector3(grid.CellSize * 0.5f, 0, grid.CellSize * 0.5f);
+                        scaleMultiplier = 2f;
+                    }
+                    else
+                    {
+                        scaleMultiplier = 1f;
+                    }
+
+                    gridCursorVisual.position = worldPos;
+                    gridCursorVisual.localScale = baseCursorScale * scaleMultiplier;
                 }
 
                 Unit unitAtCursor = ServiceLocator

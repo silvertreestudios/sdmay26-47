@@ -17,6 +17,7 @@ namespace PathfinderTactics.Core
     {
         public event EventHandler OnSelectedUnitChanged;
         public event EventHandler OnActionCompleted;
+        public event EventHandler OnValidPositionsChanged;
 
         [SerializeField]
         private LayerMask unitLayerMask;
@@ -36,6 +37,13 @@ namespace PathfinderTactics.Core
         private GridPosition pendingSneakStart;
         private Vector3Int pendingSneakStartLayered;
 
+        private List<Vector3Int> movementWaypoints = new List<Vector3Int>();
+        private bool isWaypointMode;
+        private int spentWaypointCost;
+        public bool IsWaypointMode => isWaypointMode;
+        public List<Vector3Int> MovementWaypoints => movementWaypoints;
+        public int SpentWaypointCost => spentWaypointCost;
+
         private void Awake()
         {
             ServiceLocator.Register(this);
@@ -50,6 +58,8 @@ namespace PathfinderTactics.Core
             inputService.OnJumpPerformed += OnJumpPerformed;
             inputService.OnOpenMenuPerformed += OnOpenMenuPerformed;
             inputService.OnEndTurnPerformed += OnEndTurnPerformed;
+            inputService.OnEagleEyePerformed += OnEagleEyePerformed;
+            inputService.OnToggleWaypointPerformed += OnToggleWaypointPerformed;
 
             var phaseManager = ServiceLocator.Get<PhaseManager>();
             phaseManager.OnPhaseChanged += PhaseManager_OnPhaseChanged;
@@ -66,6 +76,8 @@ namespace PathfinderTactics.Core
                 inputService.OnJumpPerformed -= OnJumpPerformed;
                 inputService.OnOpenMenuPerformed -= OnOpenMenuPerformed;
                 inputService.OnEndTurnPerformed -= OnEndTurnPerformed;
+                inputService.OnEagleEyePerformed -= OnEagleEyePerformed;
+                inputService.OnToggleWaypointPerformed -= OnToggleWaypointPerformed;
             }
             if (ServiceLocator.TryGet<PhaseManager>(out var phaseManager))
             {
@@ -87,6 +99,14 @@ namespace PathfinderTactics.Core
                         maxMoveCost
                     )
                 );
+
+                // Ensure waypoints are seeded with at least the current position
+                if (isWaypointMode && (movementWaypoints == null || movementWaypoints.Count == 0))
+                {
+                    movementWaypoints.Clear();
+                    movementWaypoints.Add(selectedUnit.CurrentLayeredPosition);
+                    spentWaypointCost = 0;
+                }
             }
 
             if (newPhase != GamePhase.ActionTargeting)
@@ -109,6 +129,7 @@ namespace PathfinderTactics.Core
             switch (currentPhase)
             {
                 case GamePhase.FreeMovement:
+                case GamePhase.EagleEye:
                     HandleFreeMovement();
                     break;
                 case GamePhase.ActionTargeting:
@@ -227,28 +248,22 @@ namespace PathfinderTactics.Core
                 return;
             }
 
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+            if (currentPhase == GamePhase.EagleEye)
+                preEagleEyePhase = GamePhase.EagleEye;
+
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionTargeting);
+
+            ServiceLocator
+                .Get<TargetingService>()
+                .InitializeTargeting(selectedUnit.CurrentGridPosition);
 
             if (selectedAction != null && selectedAction.IsUnitTargeted)
             {
                 if (ServiceLocator.TryGet<TargetLockService>(out var tls))
                 {
                     tls.InitializeTargeting(selectedUnit, selectedAction);
-
-                    if (!tls.IsActive)
-                    {
-                        Debug.LogWarning(
-                            "[UnitActionSystem] TargetLockService failed to activate. Reverting to ActionSelection."
-                        );
-                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
-                    }
                 }
-            }
-            else
-            {
-                ServiceLocator
-                    .Get<TargetingService>()
-                    .InitializeTargeting(selectedUnit.CurrentGridPosition);
             }
         }
 
@@ -262,7 +277,7 @@ namespace PathfinderTactics.Core
 
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
-            if (currentPhase == GamePhase.FreeMovement)
+            if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.EagleEye)
             {
                 if (pendingSneakAction != null)
                     CommitSneakMoveAction();
@@ -272,26 +287,23 @@ namespace PathfinderTactics.Core
             else if (currentPhase == GamePhase.ActionTargeting)
             {
                 Vector3Int targetPos;
+                var targetingService = ServiceLocator.Get<TargetingService>();
+
                 if (
                     selectedAction != null
                     && selectedAction.IsUnitTargeted
                     && ServiceLocator.TryGet<TargetLockService>(out var tls)
                     && tls.IsActive
+                    && tls.CurrentTarget != null
                 )
                 {
                     targetPos = tls.CurrentTargetLayeredPosition;
                 }
                 else
                 {
-                    targetPos =
-                        GridCursor.Instance != null
-                            ? GridCursor.Instance.CurrentLayeredPosition
-                            : new Vector3Int(
-                                ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition.x,
-                                0,
-                                ServiceLocator.Get<TargetingService>().CurrentCursorGridPosition.z
-                            );
+                    targetPos = targetingService.CurrentTargetLayeredPosition;
                 }
+
                 TryExecuteActionAtGridPos(targetPos);
             }
         }
@@ -299,11 +311,14 @@ namespace PathfinderTactics.Core
         private void OnOpenMenuPerformed(object sender, EventArgs e)
         {
             if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
+            {
+                Debug.LogWarning("[UAS DEBUG] Not Player turn, ignoring menu command.");
                 return;
+            }
 
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
-            if (currentPhase == GamePhase.FreeMovement)
+            if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.EagleEye)
             {
                 if (selectedUnit != null)
                 {
@@ -314,32 +329,84 @@ namespace PathfinderTactics.Core
                     selectedUnit.SnapToGrid(gridSystem.GetWorldPosition(snappedPos));
                 }
 
-                CommitMoveAction(() =>
-                {
-                    if (selectedUnit.GetActionPointsRemaining() > 0)
-                    {
-                        Debug.Log("Opening Menu...");
-                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
-                    }
-                    else
-                    {
-                        EndTurn();
-                    }
-                });
+                CommitMoveAction(HandlePostMoveActionSelection);
             }
             else if (currentPhase == GamePhase.ActionSelection)
             {
-                Debug.Log("Closing Menu...");
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
             }
         }
 
         private GamePhase preEagleEyePhase;
 
+        private void OnToggleWaypointPerformed(object sender, EventArgs e)
+        {
+            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
+                return;
+
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+            if (currentPhase != GamePhase.FreeMovement && currentPhase != GamePhase.EagleEye)
+                return;
+
+            DropWaypoint();
+        }
+
+        private void DropWaypoint()
+        {
+            if (selectedUnit == null)
+                return;
+
+            // Ensure waypoint mode is true once we start placing nodes
+            if (!isWaypointMode)
+            {
+                isWaypointMode = true;
+                movementWaypoints.Clear();
+                movementWaypoints.Add(selectedUnit.CurrentLayeredPosition);
+            }
+
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+            Vector3Int currentLayered = gridSystem.GetLayeredGridPosition(
+                selectedUnit.transform.position
+            );
+
+            if (
+                movementWaypoints.Count > 0
+                && currentLayered == movementWaypoints[movementWaypoints.Count - 1]
+            )
+                return;
+
+            // Check if we have budget for the path between last waypoint and current spot
+            List<Vector3Int> segment = Pathfinding.FindPath(
+                movementWaypoints[movementWaypoints.Count - 1],
+                currentLayered
+            );
+            if (segment == null)
+                return;
+
+            int segmentCost = Pathfinding.CalculatePathCost(segment);
+            int maxMoveCost = selectedUnit.GetMaxMoveCost();
+            if (pendingSneakAction != null)
+                maxMoveCost = Mathf.Max(0, maxMoveCost / 2);
+
+            if (spentWaypointCost + segmentCost <= maxMoveCost)
+            {
+                movementWaypoints.Add(currentLayered);
+                spentWaypointCost += segmentCost;
+                UpdateValidMovePositions();
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] [WAYPOINT] Added node at {currentLayered}. Segment Cost: {segmentCost}, Total Cost: {spentWaypointCost}, Max: {maxMoveCost}"
+                // );
+            }
+            else
+            {
+                // Debug.LogWarning(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] [WAYPOINT] NOT ENOUGH BUDGET! Adding {segmentCost} would exceed {maxMoveCost}. (Current spent: {spentWaypointCost})"
+                // );
+            }
+        }
+
         private void OnCancelPerformed(object sender, EventArgs e)
         {
-            Debug.Log("[UnitActionSystem] OnCancelPerformed");
-
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
 
             if (currentPhase == GamePhase.ActionTargeting)
@@ -352,26 +419,107 @@ namespace PathfinderTactics.Core
                 {
                     tls.HideTargeting();
                 }
-                else
-                {
-                    ServiceLocator.Get<TargetingService>().HideTargeting();
-                }
+
+                ServiceLocator.Get<TargetingService>().HideTargeting();
+
                 if (selectedUnit != null)
                     ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
-                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
+
+                if (preEagleEyePhase == GamePhase.EagleEye)
+                {
+                    ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
+                }
+                else
+                {
+                    if (selectedUnit != null && selectedUnit.GetActionPointsRemaining() > 0)
+                    {
+                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
+                    }
+                    else
+                    {
+                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
+                    }
+                }
+            }
+            else if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.EagleEye)
+            {
+                if (isWaypointMode && movementWaypoints.Count > 1)
+                {
+                    Vector3Int lastWP = movementWaypoints[movementWaypoints.Count - 1];
+                    GridSystem grid = ServiceLocator.Get<GridSystem>();
+                    Vector3 wpWorldPos = grid.GetWorldPosition(lastWP);
+
+                    // If we have moved into a DIFFERENT grid cell than the last waypoint, first snap back to it.
+                    Vector3Int currentCell = grid.GetLayeredGridPosition(
+                        selectedUnit.transform.position
+                    );
+                    if (currentCell != lastWP)
+                    {
+                        selectedUnit.SnapToGrid(wpWorldPos);
+                        UpdateValidMovePositions();
+                        // Debug.Log($"[WAYPOINT] Undo: Snapped back to current waypoint {lastWP}");
+                        return;
+                    }
+
+                    // If we are already in the same cell as the last waypoint, remove it and go to the previous one.
+                    Vector3Int removedPoint = lastWP;
+                    movementWaypoints.RemoveAt(movementWaypoints.Count - 1);
+
+                    // Recalculate full spent cost
+                    spentWaypointCost = 0;
+                    for (int i = 0; i < movementWaypoints.Count - 1; i++)
+                    {
+                        var path = Pathfinding.FindPath(
+                            movementWaypoints[i],
+                            movementWaypoints[i + 1],
+                            selectedUnit.CurrentLayeredPosition
+                        );
+                        spentWaypointCost += Pathfinding.CalculatePathCost(path);
+                    }
+
+                    // Snap unit back to the previous waypoint center
+                    Vector3 prevWorldPos = grid.GetWorldPosition(
+                        movementWaypoints[movementWaypoints.Count - 1]
+                    );
+                    selectedUnit.SnapToGrid(prevWorldPos);
+
+                    UpdateValidMovePositions();
+                    // Debug.Log(
+                    //     $"[WAYPOINT] Undo: Removed node at {removedPoint}. Returning to {movementWaypoints[movementWaypoints.Count - 1]}. Remaining Cost: {spentWaypointCost}"
+                    // );
+                }
+                else if (isWaypointMode && movementWaypoints.Count == 1)
+                {
+                    // Snap back to start
+                    Vector3 startPos = ServiceLocator
+                        .Get<GridSystem>()
+                        .GetWorldPosition(movementWaypoints[0]);
+                    selectedUnit.SnapToGrid(startPos);
+                }
             }
             else if (currentPhase == GamePhase.ActionSelection)
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
-            else if (currentPhase == GamePhase.FreeMovement)
+        }
+
+        private void OnEagleEyePerformed(object sender, EventArgs e)
+        {
+            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
+                return;
+
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+
+            if (currentPhase == GamePhase.EagleEye)
             {
-                preEagleEyePhase = currentPhase;
-                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
-                ServiceLocator.Get<CameraController>().EnterEagleEyeMode();
-            }
-            else if (currentPhase == GamePhase.EagleEye)
-            {
+                // Toggle OFF
                 ServiceLocator.Get<PhaseManager>().SetPhase(preEagleEyePhase);
                 ServiceLocator.Get<CameraController>().ExitEagleEyeMode();
+            }
+            else if (currentPhase == GamePhase.FreeMovement)
+            {
+                // Toggle ON
+                preEagleEyePhase = currentPhase;
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
+                ServiceLocator.Get<CameraController>().EnterEagleEyeMode(selectedUnit.transform);
             }
         }
 
@@ -518,7 +666,14 @@ namespace PathfinderTactics.Core
 
             if (!selectedAction.GetValidActionGridPositions().Contains(targetPos))
             {
-                Debug.Log("Invalid Target! Cannot attack here.");
+                return;
+            }
+
+            if (!selectedAction.CanExecuteAction())
+            {
+                Debug.LogWarning(
+                    $"[SPELL DEBUG] [UnitActionSystem] Cannot execute {selectedAction.GetActionName()}: CanExecuteAction returned false."
+                );
                 return;
             }
 
@@ -542,6 +697,8 @@ namespace PathfinderTactics.Core
                 () =>
                 {
                     OnActionCompleted?.Invoke(this, EventArgs.Empty);
+                    if (preEagleEyePhase == GamePhase.EagleEye)
+                        ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
                     CheckTurnEnd();
                 }
             );
@@ -563,131 +720,189 @@ namespace PathfinderTactics.Core
             {
                 if (!conditions.CanMove())
                 {
-                    Debug.Log(
-                        $"<color=orange>{selectedUnit.name} cannot move! They are Immobilized/Grabbed/Restrained.</color>"
-                    );
                     onComplete?.Invoke();
                     return;
                 }
 
                 if (conditions.HasCondition(ConditionType.Prone))
                 {
-                    Debug.Log(
-                        $"<color=orange>{selectedUnit.name} cannot Stride while Prone. They must Stand first!</color>"
-                    );
                     onComplete?.Invoke();
                     return;
                 }
             }
 
             GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
-            GridPosition currentPos = gridSystem.GetGridPosition(selectedUnit.transform.position);
-            Vector3Int currentLayered = gridSystem.GetLayeredGridPosition(
+            Vector3Int currentLayeredTerminal = gridSystem.GetLayeredGridPosition(
                 selectedUnit.transform.position
             );
 
-            bool hasMoved = currentLayered != selectedUnit.CurrentLayeredPosition;
+            bool hasMoved = currentLayeredTerminal != selectedUnit.CurrentLayeredPosition;
 
             if (hasMoved)
             {
                 if (selectedUnit.GetActionPointsRemaining() < 1)
                 {
-                    Debug.Log("Not enough AP to Stride!");
                     selectedUnit.SnapToGrid(
                         gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                     );
+                    // Debug.LogWarning("[MOVE] Not enough AP to commit movement.");
                     return;
                 }
 
                 ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.Busy);
 
-                int distanceX = Mathf.Abs(currentPos.x - selectedUnit.CurrentGridPosition.x);
-                int distanceZ = Mathf.Abs(currentPos.z - selectedUnit.CurrentGridPosition.z);
-                int distanceY = Mathf.Abs(currentLayered.y - selectedUnit.CurrentLayeredPosition.y);
-                int totalDistance = Mathf.Max(distanceX, Mathf.Max(distanceZ, distanceY));
-
-                bool isAutoStep = totalDistance == 1;
-
-                if (isAutoStep)
+                // Build the full path through all waypoints
+                List<Vector3Int> fullPath = new List<Vector3Int>();
+                if (isWaypointMode)
                 {
-                    Debug.Log(
-                        "<color=yellow>Unit moved exactly 1 tile. Auto-converting Stride to Step.</color>"
+                    // Ensure the current unit position is part of the waypoints list if it's the destination
+                    if (currentLayeredTerminal != movementWaypoints[movementWaypoints.Count - 1])
+                    {
+                        // Temporary list to build segments
+                        List<Vector3Int> plannedNodes = new List<Vector3Int>(movementWaypoints);
+                        plannedNodes.Add(currentLayeredTerminal);
+
+                        for (int i = 0; i < plannedNodes.Count - 1; i++)
+                        {
+                            var segment = Pathfinding.FindPath(
+                                plannedNodes[i],
+                                plannedNodes[i + 1],
+                                selectedUnit.CurrentLayeredPosition
+                            );
+                            if (segment != null)
+                            {
+                                foreach (var p in segment)
+                                {
+                                    if (fullPath.Count == 0 || p != fullPath[fullPath.Count - 1])
+                                        fullPath.Add(p);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < movementWaypoints.Count - 1; i++)
+                        {
+                            var segment = Pathfinding.FindPath(
+                                movementWaypoints[i],
+                                movementWaypoints[i + 1],
+                                selectedUnit.CurrentLayeredPosition
+                            );
+                            if (segment != null)
+                            {
+                                foreach (var p in segment)
+                                {
+                                    if (fullPath.Count == 0 || p != fullPath[fullPath.Count - 1])
+                                        fullPath.Add(p);
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    // Standard move Start -> Current position
+                    fullPath = Pathfinding.FindPath(
+                        selectedUnit.CurrentLayeredPosition,
+                        currentLayeredTerminal,
+                        selectedUnit.CurrentLayeredPosition
                     );
                 }
 
-                BeforeMoveEvent moveEvent = new BeforeMoveEvent(
-                    selectedUnit,
-                    selectedUnit.CurrentGridPosition,
-                    currentPos,
-                    isAutoStep
-                );
+                if (fullPath == null || fullPath.Count < 2)
+                {
+                    ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
+                    onComplete?.Invoke();
+                    return;
+                }
 
-                ServiceLocator
-                    .Get<ReactionManager>()
-                    .EvaluateEvent(
-                        moveEvent,
-                        (resolvedEvent) =>
-                        {
-                            if (resolvedEvent.IsCancelled)
-                            {
-                                selectedUnit.SnapToGrid(
-                                    gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
-                                );
-                            }
-                            else
-                            {
-                                // Failsafe check for occupancy
-                                if (IsOccupiedByOther(currentPos.x, currentPos.z, currentLayered.y))
-                                {
-                                    Debug.LogWarning(
-                                        $"[UnitActionSystem] Move cancelled. Target destination {currentLayered} is occupied."
-                                    );
-                                    selectedUnit.SnapToGrid(
-                                        gridSystem.GetWorldPosition(
-                                            selectedUnit.CurrentLayeredPosition
-                                        )
-                                    );
-                                    onComplete?.Invoke();
-                                    return;
-                                }
-
-                                selectedUnit.SpendActionPoints(1);
-                                gridSystem.MoveUnit(
-                                    selectedUnit,
-                                    selectedUnit.CurrentLayeredPosition,
-                                    currentLayered
-                                );
-                                selectedUnit.FinalizeMove(currentLayered);
-                                selectedUnit.SnapToGrid(
-                                    gridSystem.GetWorldPosition(currentLayered)
-                                );
-
-                                UnitAuraEmitter[] allEmitters = FindObjectsByType<UnitAuraEmitter>(
-                                    FindObjectsSortMode.None
-                                );
-                                foreach (var emitter in allEmitters)
-                                {
-                                    emitter.UpdateAuras(AuraTriggerType.OnEnter);
-                                }
-                            }
-
-                            OnActionCompleted?.Invoke(this, EventArgs.Empty);
-                            onComplete?.Invoke();
-
-                            if (
-                                ServiceLocator.Get<PhaseManager>().CurrentPhase
-                                != GamePhase.ActionSelection
-                            )
-                            {
-                                CheckTurnEnd();
-                            }
-                        }
-                    );
+                // Execute reactive move sequence
+                ExecuteReactiveSnap(fullPath, 1, onComplete);
+                // TODO: test this
+                // Reset planning state after commitment
+                // We don't clear fully here because ExecuteReactiveSnap will re-seed WP0 at the end.
+                spentWaypointCost = 0;
             }
             else
             {
                 onComplete?.Invoke();
             }
+        }
+
+        private void ExecuteReactiveSnap(List<Vector3Int> path, int nextIndex, Action onComplete)
+        {
+            if (nextIndex >= path.Count)
+            {
+                // Sequence finished successfully - Final Snap
+                Vector3Int finalPos = path[path.Count - 1];
+                selectedUnit.SpendActionPoints(1);
+
+                GridSystem grid = ServiceLocator.Get<GridSystem>();
+                grid.MoveUnit(selectedUnit, selectedUnit.CurrentLayeredPosition, finalPos);
+                selectedUnit.FinalizeMove(finalPos);
+                selectedUnit.SnapToGrid(grid.GetWorldPosition(finalPos));
+
+                // Post-Move effects
+                // TODO: update auras to be 3d, and work with waypoints.
+                UnitAuraEmitter[] allEmitters = FindObjectsByType<UnitAuraEmitter>(
+                    FindObjectsSortMode.None
+                );
+                foreach (var emitter in allEmitters)
+                    emitter.UpdateAuras(AuraTriggerType.OnEnter);
+
+                OnActionCompleted?.Invoke(this, EventArgs.Empty);
+                ResetWaypointState(finalPos);
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
+
+                onComplete?.Invoke();
+                CheckTurnEnd();
+                return;
+            }
+
+            Vector3Int from = path[nextIndex - 1];
+            Vector3Int to = path[nextIndex];
+
+            // Evaluate reaction specifically for LEAVING 'from'
+            GridPosition fromGP = new GridPosition(from.x, from.z);
+            GridPosition toGP = new GridPosition(to.x, to.z);
+
+            BeforeMoveEvent moveEvent = new BeforeMoveEvent(selectedUnit, fromGP, toGP, false);
+
+            ServiceLocator
+                .Get<ReactionManager>()
+                .EvaluateEvent(
+                    moveEvent,
+                    (resolvedEvent) =>
+                    {
+                        if (
+                            resolvedEvent.IsCancelled
+                            || selectedUnit.GetComponent<UnitConditions>().IsDead()
+                        )
+                        {
+                            // Interrupted at tile 'from' - Snap unit here
+                            selectedUnit.SpendActionPoints(1);
+
+                            GridSystem grid = ServiceLocator.Get<GridSystem>();
+                            grid.MoveUnit(selectedUnit, selectedUnit.CurrentLayeredPosition, from);
+                            selectedUnit.FinalizeMove(from);
+                            selectedUnit.SnapToGrid(grid.GetWorldPosition(from));
+
+                            OnActionCompleted?.Invoke(this, EventArgs.Empty);
+                            ResetWaypointState(from);
+                            ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
+                            CheckTurnEnd();
+                        }
+                        else
+                        {
+                            // Move unit to 'to' immediately (The Snap)
+                            GridSystem grid = ServiceLocator.Get<GridSystem>();
+                            selectedUnit.SnapToGrid(grid.GetWorldPosition(to));
+
+                            // Recursive call to check next tile in path
+                            ExecuteReactiveSnap(path, nextIndex + 1, onComplete);
+                        }
+                    }
+                );
         }
 
         private void CommitSneakMoveAction(Action onComplete = null)
@@ -720,7 +935,6 @@ namespace PathfinderTactics.Core
 
             if (selectedUnit.GetActionPointsRemaining() < pendingSneakAction.GetActionPointsCost())
             {
-                Debug.Log("Not enough AP to Sneak!");
                 selectedUnit.SnapToGrid(
                     gridSystem.GetWorldPosition(selectedUnit.CurrentLayeredPosition)
                 );
@@ -807,10 +1021,52 @@ namespace PathfinderTactics.Core
                 foreach (Vector3Int p in positions)
                     validMoveColumns.Add(new Vector2Int(p.x, p.z));
             }
+            OnValidPositionsChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void UpdateValidMovePositions()
+        {
+            if (selectedUnit == null)
+                return;
+
+            int maxMoveCost = selectedUnit.GetMaxMoveCost();
+            if (pendingSneakAction != null)
+                maxMoveCost = Mathf.Max(0, maxMoveCost / 2);
+
+            Vector3Int searchStart = selectedUnit.CurrentLayeredPosition;
+            int budget = maxMoveCost;
+
+            if (isWaypointMode && movementWaypoints.Count > 0)
+            {
+                searchStart = movementWaypoints[movementWaypoints.Count - 1];
+                budget = maxMoveCost - spentWaypointCost;
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Waypoint Mode Active: LastWP={searchStart}, CurrentSpent={spentWaypointCost}, RemainingBudget={budget}"
+                // );
+            }
+            else
+            {
+                // Debug.Log(
+                //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Waypoint Mode Inactive: Using unit pos {searchStart}, Budget={budget}"
+                // );
+            }
+
+            var reachable = Pathfinding.GetReachablePositions(
+                searchStart,
+                budget,
+                selectedUnit.CurrentLayeredPosition
+            );
+            // Debug.Log(
+            //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] Pathfinding returned {reachable.Count} reachable tiles for budget {budget} from start {searchStart}."
+            // );
+            SetValidMovePositions(reachable);
         }
 
         private void CheckTurnEnd()
         {
+            if (selectedUnit == null)
+                return;
+
             if (selectedUnit.GetActionPointsRemaining() <= 0)
             {
                 EndTurn();
@@ -827,8 +1083,13 @@ namespace PathfinderTactics.Core
                         maxMoveCost
                     )
                 );
-                if (ServiceLocator.Get<PhaseManager>().CurrentPhase != GamePhase.ActionSelection)
+                if (
+                    ServiceLocator.Get<PhaseManager>().CurrentPhase != GamePhase.ActionSelection
+                    && ServiceLocator.Get<PhaseManager>().CurrentPhase != GamePhase.EagleEye
+                )
+                {
                     ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
+                }
             }
         }
 
@@ -847,6 +1108,13 @@ namespace PathfinderTactics.Core
 
             if (selectedUnit != null)
             {
+                // Initialize waypoint state first to prevent stale cost from previous unit
+                isWaypointMode = true;
+                movementWaypoints.Clear();
+                movementWaypoints.Add(selectedUnit.CurrentLayeredPosition);
+                spentWaypointCost = 0;
+
+                // calculate the range safely
                 RefreshMovePositions();
 
                 var newEquipment = selectedUnit.GetComponent<UnitEquipment>();
@@ -874,16 +1142,7 @@ namespace PathfinderTactics.Core
 
         private void RefreshMovePositions()
         {
-            if (selectedUnit == null)
-                return;
-
-            int maxMoveCost = selectedUnit.GetMaxMoveCost();
-            if (pendingSneakAction != null)
-                maxMoveCost = Mathf.Max(0, maxMoveCost / 2);
-
-            SetValidMovePositions(
-                Pathfinding.GetReachablePositions(selectedUnit.CurrentLayeredPosition, maxMoveCost)
-            );
+            UpdateValidMovePositions();
         }
 
         public void ClearSelectedUnit()
@@ -899,6 +1158,9 @@ namespace PathfinderTactics.Core
 
             selectedUnit = null;
             pendingSneakAction = null;
+            isWaypointMode = false;
+            movementWaypoints.Clear();
+            spentWaypointCost = 0;
             ServiceLocator.Get<CameraController>().ClearFollowTarget();
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.UnitSelection);
@@ -951,6 +1213,38 @@ namespace PathfinderTactics.Core
                 return hit.point;
             }
             return Vector3.zero;
+        }
+
+        private void HandlePostMoveActionSelection()
+        {
+            bool isPlayerTurn = ServiceLocator.Get<TurnManager>().IsPlayerTurn();
+            Debug.Log(
+                $"<color=yellow>[UAS DEBUG]</color> HandlePostMoveActionSelection. Unit: {selectedUnit?.name}, Faction: {selectedUnit?.GetFaction()}, IsPlayerTurn: {isPlayerTurn}, AP: {selectedUnit?.GetActionPointsRemaining()}"
+            );
+
+            if (selectedUnit != null && selectedUnit.GetActionPointsRemaining() > 0)
+            {
+                Debug.Log("<color=yellow>[UAS DEBUG]</color> Setting phase to ActionSelection.");
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionSelection);
+            }
+            else
+            {
+                Debug.Log(
+                    "<color=yellow>[UAS DEBUG]</color> Phase transition skipped. Zero AP or no unit."
+                );
+                ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
+            }
+        }
+
+        private void ResetWaypointState(Vector3Int position)
+        {
+            isWaypointMode = true;
+            movementWaypoints.Clear();
+            movementWaypoints.Add(position);
+            spentWaypointCost = 0;
+
+            RefreshMovePositions();
+            OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

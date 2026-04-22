@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 
   Slug: 
-  ElementName: 
+  ElementName: Fireball
   Icon: {fileID: 0}
   Description: 
   SourceBook: 
@@ -31,9 +31,10 @@ MonoBehaviour:
   Targeting: 1
   Target: 0
   Range: 500
+  RequiresLineOfEffect: 1
   Area:
-    Shape: 2
-    Radius: 4
+    Shape: 1
+    Radius: 3
   SpellAttackRoll: 1
   SaveType: 2
   ElementType: 4

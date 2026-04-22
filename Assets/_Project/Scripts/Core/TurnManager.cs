@@ -83,6 +83,8 @@ namespace PathfinderTactics.Core
             currentTurnIndex = 0;
 
             OnCombatStarted?.Invoke(this, new OnTurnOrderedEventArgs { turnOrder = turnOrderList });
+            GameEvents.TriggerCombatStarted();
+            GameEvents.TriggerTurnOrderChanged(turnOrderList[currentTurnIndex], turnOrderList);
             StartTurn(turnOrderList[currentTurnIndex]);
         }
 
@@ -155,6 +157,7 @@ namespace PathfinderTactics.Core
 
             ServiceLocator.Get<UnitActionSystem>().ForceSelectUnit(unit);
             OnTurnChanged?.Invoke(this, EventArgs.Empty);
+            GameEvents.TriggerTurnOrderChanged(unit, turnOrderList);
         }
 
         public bool IsUnitTurn(Unit unit)

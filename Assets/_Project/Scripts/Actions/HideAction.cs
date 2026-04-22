@@ -12,10 +12,6 @@ namespace PathfinderTactics.Actions
     {
         private const bool STEALTH_DEBUG = true;
 
-        public override string GetActionName() => "Hide";
-
-        public override int GetActionPointsCost() => 1;
-
         public override List<Vector3Int> GetActionRangeGridPositions()
         {
             return new List<Vector3Int> { unit.CurrentLayeredPosition };
@@ -25,6 +21,8 @@ namespace PathfinderTactics.Actions
         {
             return new List<Vector3Int> { unit.CurrentLayeredPosition };
         }
+
+        public override bool IsUnitTargeted => false;
 
         public override bool CanExecuteAction()
         {

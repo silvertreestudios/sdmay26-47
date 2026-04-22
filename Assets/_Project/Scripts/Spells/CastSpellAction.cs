@@ -32,12 +32,38 @@ namespace PathfinderTactics.Spells
         private int castLevel = 1;
 
         private SpellCastContext activeContext;
+        private List<Vector3Int> cachedRangePositions;
 
-        // BaseAction Interface
+        protected override void Awake()
+        {
+            base.Awake();
+        }
+
+        private void Start()
+        {
+            if (unit != null)
+                unit.OnMoveConfirmed += HandleMoveConfirmed;
+        }
+
+        private void OnDestroy()
+        {
+            if (unit != null)
+                unit.OnMoveConfirmed -= HandleMoveConfirmed;
+        }
+
+        private void HandleMoveConfirmed()
+        {
+            cachedRangePositions = null;
+        }
 
         public override string GetActionName()
         {
             return currentSpell != null ? currentSpell.ElementName : "Cast Spell";
+        }
+
+        public override DamageType GetPrimaryDamageType()
+        {
+            return currentSpell != null ? currentSpell.ElementType : DamageType.Untyped;
         }
 
         public override int GetActionPointsCost()
@@ -70,81 +96,34 @@ namespace PathfinderTactics.Spells
         {
             currentSpell = spell;
             castLevel = level > 0 ? level : spell.Level;
+            cachedRangePositions = null; // Invalidate cache
         }
 
         public SpellSO GetCurrentSpell() => currentSpell;
+
+        public override bool IsUnitTargeted => false;
 
         // Targeting
 
         public override List<Vector3Int> GetActionRangeGridPositions()
         {
-            List<Vector3Int> positions = new List<Vector3Int>();
             if (currentSpell == null)
-                return positions;
+                return new List<Vector3Int>();
 
+            if (cachedRangePositions != null)
+                return new List<Vector3Int>(cachedRangePositions);
+
+            List<Vector3Int> positions = new List<Vector3Int>();
             Vector3Int unitPos3D = unit.CurrentLayeredPosition;
             int range = GetRangeInTiles();
 
             if (currentSpell.Targeting == SpellTargetingType.Self)
             {
                 positions.Add(unitPos3D);
+                cachedRangePositions = new List<Vector3Int>(positions);
                 return positions;
             }
 
-            GridSystem grid = ServiceLocator.Get<GridSystem>();
-            HashSet<Vector3Int> added = new HashSet<Vector3Int>();
-
-            for (int x = -range; x <= range; x++)
-            {
-                for (int z = -range; z <= range; z++)
-                {
-                    Vector2Int colKey = new Vector2Int(unitPos3D.x + x, unitPos3D.z + z);
-                    List<GridNode> column = grid.GetColumn(colKey);
-                    if (column == null || column.Count == 0)
-                        continue;
-
-                    foreach (GridNode node in column)
-                    {
-                        if (PF2E_Core.GetPF2eDistance3D(unitPos3D, node.Coordinates) <= range)
-                        {
-                            if (added.Add(node.Coordinates))
-                                positions.Add(node.Coordinates);
-                        }
-                    }
-                }
-            }
-
-            return positions;
-        }
-
-        public override List<Vector3Int> GetValidActionGridPositions()
-        {
-            List<Vector3Int> validPositions = new List<Vector3Int>();
-            if (currentSpell == null)
-                return validPositions;
-
-            Vector3Int unitPos3D = unit.CurrentLayeredPosition;
-            int range = GetRangeInTiles();
-
-            // Self-targeting
-            if (currentSpell.Targeting == SpellTargetingType.Self)
-            {
-                validPositions.Add(unitPos3D);
-                return validPositions;
-            }
-
-            // Ground/Area targeting - any tile in range is valid
-            if (
-                currentSpell.Targeting == SpellTargetingType.GroundTarget
-                || currentSpell.Targeting == SpellTargetingType.Area
-                || currentSpell.Targeting == SpellTargetingType.Line
-                || currentSpell.Targeting == SpellTargetingType.Cone
-            )
-            {
-                return GetActionRangeGridPositions();
-            }
-
-            // SingleTarget - must have a valid unit
             GridSystem grid = ServiceLocator.Get<GridSystem>();
             HashSet<Vector3Int> added = new HashSet<Vector3Int>();
 
@@ -161,38 +140,89 @@ namespace PathfinderTactics.Spells
                     {
                         Vector3Int testPos3D = node.Coordinates;
 
+                        // Physical Walkability Check (Terrain only)
+                        // Prevents targeting "empty air" or solid wall voxels
+                        if (node.Terrain == null || !node.Terrain.IsWalkable)
+                            continue;
+
+                        // Range Check
                         if (PF2E_Core.GetPF2eDistance3D(unitPos3D, testPos3D) > range)
                             continue;
 
-                        Unit targetUnit = grid.GetUnitAt(testPos3D);
-                        if (targetUnit == null)
-                            continue;
-
-                        bool valid = false;
-                        switch (currentSpell.Target)
+                        // Line of Effect Check
+                        if (currentSpell.RequiresLineOfEffect)
                         {
-                            case TargetType.Enemy:
-                                valid = targetUnit.GetFaction() != unit.GetFaction();
-                                break;
-                            case TargetType.Ally:
-                                valid = targetUnit.GetFaction() == unit.GetFaction();
-                                break;
-                            case TargetType.Creature:
-                                valid = true;
-                                break;
-                            case TargetType.Self:
-                                valid = targetUnit == unit;
-                                break;
-                            default:
-                                valid = true;
-                                break;
+                            if (!LineOfSightUtility.HasLineOfEffect(unitPos3D, testPos3D))
+                                continue;
                         }
 
-                        if (valid && added.Add(testPos3D))
-                        {
-                            validPositions.Add(testPos3D);
-                        }
+                        if (added.Add(testPos3D))
+                            positions.Add(testPos3D);
                     }
+                }
+            }
+
+            cachedRangePositions = new List<Vector3Int>(positions);
+            return positions;
+        }
+
+        public override List<Vector3Int> GetValidActionGridPositions()
+        {
+            List<Vector3Int> validPositions = new List<Vector3Int>();
+            if (currentSpell == null)
+                return validPositions;
+
+            // Use the filtered range positions as the base set
+            List<Vector3Int> rangePositions = GetActionRangeGridPositions();
+
+            // Self-targeting
+            if (currentSpell.Targeting == SpellTargetingType.Self)
+            {
+                return rangePositions;
+            }
+
+            // Ground/Area targeting - any tile in range is valid
+            if (
+                currentSpell.Targeting == SpellTargetingType.GroundTarget
+                || currentSpell.Targeting == SpellTargetingType.Area
+                || currentSpell.Targeting == SpellTargetingType.Line
+                || currentSpell.Targeting == SpellTargetingType.Cone
+            )
+            {
+                return rangePositions;
+            }
+
+            // SingleTarget - must have a valid unit within the already-filtered range
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            foreach (Vector3Int testPos3D in rangePositions)
+            {
+                Unit targetUnit = grid.GetUnitAt(testPos3D);
+                if (targetUnit == null)
+                    continue;
+
+                bool valid = false;
+                switch (currentSpell.Target)
+                {
+                    case TargetType.Enemy:
+                        valid = targetUnit.GetFaction() != unit.GetFaction();
+                        break;
+                    case TargetType.Ally:
+                        valid = targetUnit.GetFaction() == unit.GetFaction();
+                        break;
+                    case TargetType.Creature:
+                        valid = true;
+                        break;
+                    case TargetType.Self:
+                        valid = targetUnit == unit;
+                        break;
+                    default:
+                        valid = true;
+                        break;
+                }
+
+                if (valid)
+                {
+                    validPositions.Add(testPos3D);
                 }
             }
 
@@ -208,12 +238,6 @@ namespace PathfinderTactics.Spells
 
         public override void TakeAction(Vector3Int targetPosition, Action onActionComplete)
         {
-            if (!CanExecuteAction())
-            {
-                onActionComplete?.Invoke();
-                return;
-            }
-
             if (currentSpell == null)
             {
                 Debug.LogError("[CastSpellAction] No spell configured!");

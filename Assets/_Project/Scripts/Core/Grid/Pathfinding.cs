@@ -24,7 +24,11 @@ namespace PathfinderTactics.Grid
 
         // Public path APIs
 
-        public static List<Vector3Int> FindPath(Vector3Int startPosition, Vector3Int endPosition)
+        public static List<Vector3Int> FindPath(
+            Vector3Int startPosition,
+            Vector3Int endPosition,
+            Vector3Int? ignoreOccupancyAt = null
+        )
         {
             GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
             GridNode startNode = gridSystem.GetNode(startPosition);
@@ -65,6 +69,19 @@ namespace PathfinderTactics.Grid
                         continue;
                     }
 
+                    if (gridSystem.IsPositionOccupied(neighbour.LayeredPosition))
+                    {
+                        if (
+                            neighbour.LayeredPosition != startPosition
+                            && neighbour.LayeredPosition != endPosition
+                            && neighbour.LayeredPosition != ignoreOccupancyAt
+                        )
+                        {
+                            closedSet.Add(neighbour.LayeredPosition);
+                            continue;
+                        }
+                    }
+
                     int tentativeGCost =
                         currentNode.gCost + GetStepCost(gridSystem, currentNode, neighbour);
 
@@ -92,23 +109,26 @@ namespace PathfinderTactics.Grid
         /// </summary>
         public static List<Vector3Int> FindPath(
             GridPosition startPosition,
-            GridPosition endPosition
+            GridPosition endPosition,
+            Vector3Int? ignoreOccupancyAt = null
         )
         {
             GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
             GridNode startNode = GetDefaultColumnNode(gridSystem, startPosition);
             GridNode endNode = GetDefaultColumnNode(gridSystem, endPosition);
+
             if (startNode == null || endNode == null)
                 return null;
 
-            return FindPath(startNode.Coordinates, endNode.Coordinates);
+            return FindPath(startNode.Coordinates, endNode.Coordinates, ignoreOccupancyAt);
         }
 
         // Reachability
 
         public static List<Vector3Int> GetReachablePositions(
             Vector3Int startPosition,
-            int maxMoveCost
+            int maxMoveCost,
+            Vector3Int? ignoreOccupancyAt = null
         )
         {
             List<Vector3Int> reachable = new List<Vector3Int>();
@@ -117,6 +137,10 @@ namespace PathfinderTactics.Grid
 
             if (startNode == null)
                 return reachable;
+
+            // Debug.Log(
+            //     $"[MOVEMENT RANGE WAYPOINTS DEBUG] [PATHFINDING] Starting GetReachablePositions. Start: {startPosition}, MaxCost: {maxMoveCost}"
+            // );
 
             Dictionary<Vector3Int, PathNode> pathNodeMap = new Dictionary<Vector3Int, PathNode>();
             List<PathNode> openList = new List<PathNode>();
@@ -148,7 +172,10 @@ namespace PathfinderTactics.Grid
                     // This is for technical simplicity and deviates from PF2e rules (which allow walking through allies).
                     if (gridSystem.IsPositionOccupied(neighbour.LayeredPosition))
                     {
-                        if (neighbour.LayeredPosition != startPosition)
+                        if (
+                            neighbour.LayeredPosition != startPosition
+                            && neighbour.LayeredPosition != ignoreOccupancyAt
+                        )
                             continue;
                     }
 
@@ -210,13 +237,43 @@ namespace PathfinderTactics.Grid
                 return result;
 
             HashSet<GridPosition> seen = new HashSet<GridPosition>();
-            foreach (Vector3Int v in layered)
-            {
-                GridPosition gp = new GridPosition(v.x, v.z);
-                if (seen.Add(gp))
-                    result.Add(gp);
-            }
             return result;
+        }
+
+        /// <summary>
+        /// Calculates the total cost of a specific sequence of layered positions,
+        /// respecting grid distances and terrain modifiers.
+        /// </summary>
+        public static int CalculatePathCost(List<Vector3Int> path)
+        {
+            if (path == null || path.Count < 2)
+                return 0;
+
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+            int totalCost = 0;
+
+            for (int i = 0; i < path.Count - 1; i++)
+            {
+                Vector3Int from = path[i];
+                Vector3Int to = path[i + 1];
+
+                int baseCost = CalculateDistance(
+                    new GridPosition(from.x, from.z),
+                    new GridPosition(to.x, to.z)
+                );
+
+                GridNode toNode = gridSystem.GetNode(to);
+                int terrainCost = 0;
+                if (toNode?.Terrain != null)
+                {
+                    terrainCost =
+                        Mathf.Max(0, toNode.Terrain.MovementCost - 1) * MOVE_STRAIGHT_COST;
+                }
+
+                totalCost += baseCost + terrainCost;
+            }
+
+            return totalCost;
         }
 
         // distance

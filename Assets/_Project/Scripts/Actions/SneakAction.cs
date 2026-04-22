@@ -22,10 +22,6 @@ namespace PathfinderTactics.Actions
         private GridPosition cachedStart;
         private List<Vector3Int> cachedRange = null;
 
-        public override string GetActionName() => "Sneak";
-
-        public override int GetActionPointsCost() => 1;
-
         public override List<Vector3Int> GetActionRangeGridPositions()
         {
             return GetCachedSneakRange();

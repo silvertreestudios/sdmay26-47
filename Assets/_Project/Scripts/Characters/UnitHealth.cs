@@ -90,6 +90,7 @@ namespace PathfinderTactics.Characters
             }
 
             OnHealthChanged?.Invoke(this, EventArgs.Empty);
+            GameEvents.TriggerUnitHealthChanged(thisUnit, currentHealth, currentMaxHealth);
         }
 
         // Damage and Dying Logic
@@ -142,6 +143,11 @@ namespace PathfinderTactics.Characters
                         currentHealth -= finalAmount;
                         currentHealth = Mathf.Max(0, currentHealth);
                         OnHealthChanged?.Invoke(this, EventArgs.Empty);
+                        GameEvents.TriggerUnitHealthChanged(
+                            thisUnit,
+                            currentHealth,
+                            currentMaxHealth
+                        );
 
                         // CombatLog: Final Impact
                         CombatLogUtility.LogFinalImpact(
@@ -194,7 +200,7 @@ namespace PathfinderTactics.Characters
                             if (IsDead)
                             {
                                 if (unitVisuals != null)
-                                    unitVisuals.SetDead(true);
+                                    unitVisuals.PlayFallenSequence();
 
                                 OnStatusMessage?.Invoke(this, "DEAD");
                                 OnDeath?.Invoke(this, EventArgs.Empty);
@@ -216,6 +222,7 @@ namespace PathfinderTactics.Characters
             currentHealth += amount;
             currentHealth = Mathf.Min(currentHealth, currentMaxHealth);
             OnHealthChanged?.Invoke(this, EventArgs.Empty);
+            GameEvents.TriggerUnitHealthChanged(thisUnit, currentHealth, currentMaxHealth);
 
             // Waking up from Dying
             if (unitConditions.HasCondition(ConditionType.Dying))
@@ -289,6 +296,9 @@ namespace PathfinderTactics.Characters
 
                 if (IsDead)
                 {
+                    if (unitVisuals != null)
+                        unitVisuals.PlayFallenSequence();
+
                     OnStatusMessage?.Invoke(this, "DEAD");
                     OnDeath?.Invoke(this, EventArgs.Empty);
                 }

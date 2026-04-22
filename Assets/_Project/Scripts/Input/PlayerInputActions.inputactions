@@ -104,6 +104,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Eagle Eye",
+                    "type": "Button",
+                    "id": "2261bf88-df92-4153-a665-6e488b0c2605",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Waypoint",
+                    "type": "Button",
+                    "id": "963f1516-39aa-4540-b06a-ffa652d3963c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -417,6 +435,17 @@
                 },
                 {
                     "name": "",
+                    "id": "dd57294a-276f-4bec-beff-602b1ce4ee4e",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "475d16ac-1112-424d-b02b-3a5336e43b80",
                     "path": "<Keyboard>/r",
                     "interactions": "",
@@ -429,7 +458,7 @@
                 {
                     "name": "",
                     "id": "c29bea76-517a-4de3-a357-26761478d306",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -451,7 +480,7 @@
                 {
                     "name": "",
                     "id": "637db3cf-031b-473a-80f3-b616ad046a7b",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -500,6 +529,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "LayerDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "417fc5aa-0325-43e1-941f-e4d1eb96bb9b",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Eagle Eye",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4708f57d-2d5a-4336-b4ae-a3e5a7c4fb0c",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Eagle Eye",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68f233df-efcf-4723-975e-9c1d48160327",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Waypoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17ea37c6-2c40-4605-99a5-137970484c4d",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Waypoint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

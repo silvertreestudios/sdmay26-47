@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace PathfinderTactics.Core
 {
+    [DefaultExecutionOrder(1000)]
     public class CameraController : MonoBehaviour
     {
         [Header("References")]
@@ -16,6 +17,34 @@ namespace PathfinderTactics.Core
 
         [SerializeField]
         private float rotationSpeed = 100f;
+
+        [Header("Standard Orbit Settings")]
+        [Tooltip(
+            "Vertical offset from the Follow target root. Raise this so the camera orbits the chest/head, not the feet."
+        )]
+        [SerializeField]
+        private Vector3 orbitTargetOffset = new Vector3(0, 1.5f, 0);
+
+        [Tooltip("Min and Max pitch angles for the orbit camera.")]
+        [SerializeField]
+        private float minPitch = -20f;
+
+        [SerializeField]
+        private float maxPitch = 70f;
+
+        [Header("Camera Collision")]
+        [Tooltip("Layers the camera collides with (walls, floors, etc.). Defaults to Everything.")]
+        [SerializeField]
+        private LayerMask obstacleLayers = ~0;
+
+        [Tooltip("Radius of camera collision sphere. Keep small (0.2-0.3).")]
+        [SerializeField]
+        [Range(0.05f, 0.5f)]
+        private float cameraCollisionRadius = 0.2f;
+
+        [Tooltip("How fast the camera returns to full distance after obstacle clears.")]
+        [SerializeField]
+        private float collisionRecoverySpeed = 5f;
 
         [Header("Over-the-Shoulder Targeting")]
         [SerializeField]
@@ -68,8 +97,25 @@ namespace PathfinderTactics.Core
         [Min(0.05f)]
         private float otsExitBlendDuration = 0.15f;
 
+        [Header("OTS Tight-Space Handling")]
+        [Tooltip("Distance at which the camera starts rising to see over the unit.")]
+        [SerializeField]
+        private float otsCollisionPushUpThreshold = 2.0f;
+
+        [Tooltip("Max vertical lift applied when the camera is at its closest distance.")]
+        [SerializeField]
+        private float otsMaxCollisionPushUpHeight = 2.0f;
+
+        [SerializeField]
+        private string roofLayerName = "Roof";
+
         private PlayerInputActions playerInputActions;
         private CinemachineOrbitalFollow orbitalFollow;
+
+        private float currentCollisionDistance;
+        private float collisionVelocity;
+        private float defaultOrbitRadius;
+        private Vector3 lastCameraDirection;
 
         private CinemachineCamera otsVirtualCamera;
         private Transform otsAttacker;
@@ -78,6 +124,8 @@ namespace PathfinderTactics.Core
         private bool isOTSActive;
         private float otsModeEnterTime;
         private float otsLastTargetSwitchTime = -1f;
+        private float otsCurrentCollisionDistance;
+        private float otsCollisionVelocity;
 
         private CinemachineBrain cinemachineBrain;
         private CinemachineBlendDefinition savedDefaultBlend;
@@ -87,6 +135,7 @@ namespace PathfinderTactics.Core
         private CinemachineCamera eagleEyeVirtualCamera;
         private Transform eagleEyeFollowTarget;
         private bool isEagleEyeActive;
+        private bool isEagleEyeFollowDetached;
 
         public bool IsOTSActive => isOTSActive;
         public bool IsEagleEyeActive => isEagleEyeActive;
@@ -115,6 +164,25 @@ namespace PathfinderTactics.Core
             CacheCinemachineBrain();
         }
 
+        private void Start()
+        {
+            SetupOrbitalFollow();
+
+            if (orbitalFollow != null)
+            {
+                defaultOrbitRadius = orbitalFollow.Radius;
+                currentCollisionDistance = defaultOrbitRadius;
+            }
+        }
+
+        private void SetupOrbitalFollow()
+        {
+            if (orbitalFollow == null)
+                return;
+
+            orbitalFollow.TargetOffset = orbitTargetOffset;
+        }
+
         private void CacheCinemachineBrain()
         {
             if (Camera.main != null)
@@ -140,36 +208,17 @@ namespace PathfinderTactics.Core
             playerInputActions.Player.Disable();
         }
 
-        private void Update()
-        {
-            if (isEagleEyeActive)
-            {
-                UpdateEagleEyeCamera();
-                return;
-            }
-
-            if (isOTSActive)
-            {
-                UpdateOTSCamera();
-                return;
-            }
-
-            if (virtualCamera != null && virtualCamera.Follow != null)
-            {
-                HandleOrbitRotation();
-            }
-            else
-            {
-                HandleFreeCamMovement();
-                HandleFreeCamRotation();
-            }
-        }
-
         public void SetFollowTarget(Transform target)
         {
             if (virtualCamera != null)
             {
                 virtualCamera.Follow = target;
+            }
+
+            if (isEagleEyeActive)
+            {
+                eagleEyeFollowTarget = target;
+                isEagleEyeFollowDetached = false;
             }
         }
 
@@ -178,6 +227,11 @@ namespace PathfinderTactics.Core
             if (virtualCamera != null)
             {
                 virtualCamera.Follow = null;
+            }
+
+            if (isEagleEyeActive)
+            {
+                eagleEyeFollowTarget = null;
             }
         }
 
@@ -206,6 +260,9 @@ namespace PathfinderTactics.Core
 
             isEagleEyeActive = true;
             eagleEyeFollowTarget = target;
+            isEagleEyeFollowDetached = false;
+
+            SetLayerVisibility(roofLayerName, false);
 
             Vector3 startPos = transform.position;
             if (target != null)
@@ -227,6 +284,8 @@ namespace PathfinderTactics.Core
             isEagleEyeActive = false;
             eagleEyeFollowTarget = null;
 
+            SetLayerVisibility(roofLayerName, true);
+
             ApplyFastBlend(0.25f);
             if (eagleEyeVirtualCamera != null)
                 eagleEyeVirtualCamera.gameObject.SetActive(false);
@@ -236,13 +295,26 @@ namespace PathfinderTactics.Core
 
         private void UpdateEagleEyeCamera()
         {
-            if (eagleEyeFollowTarget != null)
+            Vector2 rotateInput = playerInputActions.Player.Rotate.ReadValue<Vector2>();
+            Vector2 moveInput = playerInputActions.Player.Move.ReadValue<Vector2>();
+
+            // Detach if player tries to pan away with Right Stick
+            if (rotateInput.sqrMagnitude > 0.01f)
+            {
+                isEagleEyeFollowDetached = true;
+            }
+            // Re-attach if player moves the unit with Left Stick
+            else if (moveInput.sqrMagnitude > 0.01f)
+            {
+                isEagleEyeFollowDetached = false;
+            }
+
+            if (!isEagleEyeFollowDetached && eagleEyeFollowTarget != null)
             {
                 // Smoothly follow the target's position
                 Vector3 targetPos = eagleEyeFollowTarget.position;
-                targetPos.y = 25f; // Keep fixed birdseye height
+                targetPos.y = eagleEyeVirtualCamera.transform.position.y; // Maintain height
 
-                // Using SmoothDamp for height-locked tracking
                 eagleEyeVirtualCamera.transform.position = Vector3.SmoothDamp(
                     eagleEyeVirtualCamera.transform.position,
                     targetPos,
@@ -252,9 +324,8 @@ namespace PathfinderTactics.Core
             }
             else
             {
-                // Fallback to manual panning if no target is active
-                Vector2 inputMoveDir = playerInputActions.Player.Move.ReadValue<Vector2>();
-                Vector3 moveVector = new Vector3(inputMoveDir.x, 0, inputMoveDir.y);
+                // Manual panning using Right Stick (Rotate input)
+                Vector3 moveVector = new Vector3(rotateInput.x, 0, rotateInput.y);
                 eagleEyeVirtualCamera.transform.position +=
                     moveVector * (moveSpeed * 1.5f) * Time.deltaTime;
             }
@@ -296,6 +367,10 @@ namespace PathfinderTactics.Core
             );
 
             CalculateOTSTransform(out Vector3 pos, out Quaternion rot);
+
+            Vector3 attackerPivot = otsAttacker.position + orbitTargetOffset;
+            otsCurrentCollisionDistance = Vector3.Distance(attackerPivot, pos);
+
             otsVirtualCamera.transform.SetPositionAndRotation(pos, rot);
 
             RestoreSavedBrainBlendIfNeeded(); // Handle consecutive transitions
@@ -408,6 +483,61 @@ namespace PathfinderTactics.Core
 
             CalculateOTSTransform(out Vector3 desiredPos, out Quaternion desiredRot);
 
+            // OTS Collision Handling
+            Vector3 attackerPivot = otsAttacker.position + orbitTargetOffset;
+            Vector3 toDesired = desiredPos - attackerPivot;
+            float idealDistance = toDesired.magnitude;
+            Vector3 dirToDesired = toDesired.normalized;
+
+            int mask = obstacleLayers.value;
+            mask &= ~(1 << otsAttacker.gameObject.layer);
+            mask &= ~(1 << 2); // Ignore Raycast
+
+            float targetDistance = idealDistance;
+            if (
+                Physics.SphereCast(
+                    attackerPivot,
+                    cameraCollisionRadius,
+                    dirToDesired,
+                    out RaycastHit hit,
+                    idealDistance,
+                    mask,
+                    QueryTriggerInteraction.Ignore
+                )
+            )
+            {
+                targetDistance = Mathf.Max(hit.distance - 0.05f, 0.5f);
+            }
+
+            // Snapping behavior: inward is instant, outward is smooth
+            if (targetDistance < otsCurrentCollisionDistance)
+            {
+                otsCurrentCollisionDistance = targetDistance;
+                otsCollisionVelocity = 0f;
+            }
+            else
+            {
+                otsCurrentCollisionDistance = Mathf.SmoothDamp(
+                    otsCurrentCollisionDistance,
+                    targetDistance,
+                    ref otsCollisionVelocity,
+                    1f / collisionRecoverySpeed
+                );
+            }
+
+            Vector3 finalDesiredPos = attackerPivot + dirToDesired * otsCurrentCollisionDistance;
+
+            // If the camera is forced close to the unit, move it upward to maintain a view of the target.
+            float pushUpFactor = Mathf.Clamp01(
+                1f - (otsCurrentCollisionDistance / otsCollisionPushUpThreshold)
+            );
+            float pushUpAmount = pushUpFactor * otsMaxCollisionPushUpHeight;
+            finalDesiredPos.y += pushUpAmount;
+
+            // Recalculate rotation based on the final adjusted position to keep the target centered.
+            Vector3 lookPoint = otsTarget.position + Vector3.up * otsTargetHeight;
+            Quaternion finalDesiredRot = Quaternion.LookRotation(lookPoint - finalDesiredPos);
+
             float timeSinceEnter = Time.time - otsModeEnterTime;
             float timeSinceTargetSwitch =
                 otsLastTargetSwitchTime >= 0f
@@ -439,13 +569,13 @@ namespace PathfinderTactics.Core
             Transform cam = otsVirtualCamera.transform;
             cam.position = Vector3.SmoothDamp(
                 cam.position,
-                desiredPos,
+                finalDesiredPos,
                 ref otsPositionVelocity,
                 smoothTime
             );
             cam.rotation = Quaternion.Slerp(
                 cam.rotation,
-                desiredRot,
+                finalDesiredRot,
                 1f - Mathf.Exp(-rotSpeed * Time.deltaTime)
             );
         }
@@ -453,6 +583,103 @@ namespace PathfinderTactics.Core
         #endregion
 
         #region Standard Camera
+
+        private void Update()
+        {
+            if (isEagleEyeActive)
+            {
+                UpdateEagleEyeCamera();
+                return;
+            }
+
+            if (isOTSActive)
+            {
+                UpdateOTSCamera();
+                return;
+            }
+
+            if (virtualCamera != null && virtualCamera.Follow != null)
+            {
+                HandleOrbitRotation();
+                HandleCameraCollision();
+            }
+            else
+            {
+                HandleFreeCamMovement();
+                HandleFreeCamRotation();
+            }
+        }
+
+        private void LateUpdate()
+        {
+            if (isOTSActive || isEagleEyeActive)
+                return;
+            if (virtualCamera == null || virtualCamera.Follow == null)
+                return;
+            if (Camera.main == null)
+                return;
+
+            Vector3 orbitCenter = virtualCamera.Follow.position + orbitTargetOffset;
+            Vector3 toCamera = Camera.main.transform.position - orbitCenter;
+            if (toCamera.sqrMagnitude > 0.001f)
+                lastCameraDirection = toCamera.normalized;
+        }
+
+        private void HandleCameraCollision()
+        {
+            if (orbitalFollow == null || virtualCamera.Follow == null)
+                return;
+
+            // On the very first frame, we might not have a cached direction yet.
+            // Use a sensible fallback.
+            if (lastCameraDirection.sqrMagnitude < 0.001f)
+            {
+                orbitalFollow.Radius = defaultOrbitRadius;
+                return;
+            }
+
+            Vector3 orbitCenter = virtualCamera.Follow.position + orbitTargetOffset;
+
+            // Build collision mask: exclude the player's layer
+            int mask = obstacleLayers.value;
+            mask &= ~(1 << virtualCamera.Follow.gameObject.layer);
+            mask &= ~(1 << 2); // Ignore IgnoreRaycast layer
+
+            float targetRadius = defaultOrbitRadius;
+
+            if (
+                Physics.SphereCast(
+                    orbitCenter,
+                    cameraCollisionRadius,
+                    lastCameraDirection,
+                    out RaycastHit hit,
+                    defaultOrbitRadius,
+                    mask,
+                    QueryTriggerInteraction.Ignore
+                )
+            )
+            {
+                targetRadius = Mathf.Max(hit.distance - 0.05f, 0.5f);
+            }
+
+            // Asymmetric smoothing: snap inward instantly, recover outward smoothly
+            if (targetRadius < currentCollisionDistance)
+            {
+                currentCollisionDistance = targetRadius;
+                collisionVelocity = 0f;
+            }
+            else
+            {
+                currentCollisionDistance = Mathf.SmoothDamp(
+                    currentCollisionDistance,
+                    targetRadius,
+                    ref collisionVelocity,
+                    1f / collisionRecoverySpeed
+                );
+            }
+
+            orbitalFollow.Radius = currentCollisionDistance;
+        }
 
         private void HandleFreeCamMovement()
         {
@@ -483,7 +710,31 @@ namespace PathfinderTactics.Core
             float pitch = inputRotateDir.y * rotationSpeed * Time.deltaTime;
 
             orbitalFollow.HorizontalAxis.Value += yaw;
-            orbitalFollow.VerticalAxis.Value -= pitch;
+
+            // Apply pitch and clamp it to prevent flipping over or hitting Gimbal lock
+            float newPitch = orbitalFollow.VerticalAxis.Value - pitch;
+            orbitalFollow.VerticalAxis.Value = Mathf.Clamp(newPitch, minPitch, maxPitch);
+        }
+
+        private void SetLayerVisibility(string layerName, bool visible)
+        {
+            if (Camera.main == null)
+                return;
+
+            int layer = LayerMask.NameToLayer(layerName);
+            if (layer == -1)
+            {
+                return;
+            }
+
+            if (visible)
+            {
+                Camera.main.cullingMask |= (1 << layer);
+            }
+            else
+            {
+                Camera.main.cullingMask &= ~(1 << layer);
+            }
         }
 
         #endregion

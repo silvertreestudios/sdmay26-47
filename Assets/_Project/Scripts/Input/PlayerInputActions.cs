@@ -190,6 +190,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Eagle Eye"",
+                    ""type"": ""Button"",
+                    ""id"": ""2261bf88-df92-4153-a665-6e488b0c2605"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Toggle Waypoint"",
+                    ""type"": ""Button"",
+                    ""id"": ""963f1516-39aa-4540-b06a-ffa652d3963c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -503,6 +521,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""dd57294a-276f-4bec-beff-602b1ce4ee4e"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""475d16ac-1112-424d-b02b-3a5336e43b80"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
@@ -515,7 +544,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c29bea76-517a-4de3-a357-26761478d306"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -537,7 +566,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""637db3cf-031b-473a-80f3-b616ad046a7b"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -588,6 +617,50 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""LayerDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""417fc5aa-0325-43e1-941f-e4d1eb96bb9b"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Eagle Eye"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4708f57d-2d5a-4336-b4ae-a3e5a7c4fb0c"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Eagle Eye"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68f233df-efcf-4723-975e-9c1d48160327"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Waypoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17ea37c6-2c40-4605-99a5-137970484c4d"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Waypoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -607,6 +680,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_EndTurn = m_Player.FindAction("EndTurn", throwIfNotFound: true);
         m_Player_LayerUp = m_Player.FindAction("LayerUp", throwIfNotFound: true);
         m_Player_LayerDown = m_Player.FindAction("LayerDown", throwIfNotFound: true);
+        m_Player_EagleEye = m_Player.FindAction("Eagle Eye", throwIfNotFound: true);
+        m_Player_ToggleWaypoint = m_Player.FindAction("Toggle Waypoint", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -698,6 +773,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_EndTurn;
     private readonly InputAction m_Player_LayerUp;
     private readonly InputAction m_Player_LayerDown;
+    private readonly InputAction m_Player_EagleEye;
+    private readonly InputAction m_Player_ToggleWaypoint;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -753,6 +830,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/LayerDown".
         /// </summary>
         public InputAction @LayerDown => m_Wrapper.m_Player_LayerDown;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/EagleEye".
+        /// </summary>
+        public InputAction @EagleEye => m_Wrapper.m_Player_EagleEye;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ToggleWaypoint".
+        /// </summary>
+        public InputAction @ToggleWaypoint => m_Wrapper.m_Player_ToggleWaypoint;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -812,6 +897,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @LayerDown.started += instance.OnLayerDown;
             @LayerDown.performed += instance.OnLayerDown;
             @LayerDown.canceled += instance.OnLayerDown;
+            @EagleEye.started += instance.OnEagleEye;
+            @EagleEye.performed += instance.OnEagleEye;
+            @EagleEye.canceled += instance.OnEagleEye;
+            @ToggleWaypoint.started += instance.OnToggleWaypoint;
+            @ToggleWaypoint.performed += instance.OnToggleWaypoint;
+            @ToggleWaypoint.canceled += instance.OnToggleWaypoint;
         }
 
         /// <summary>
@@ -856,6 +947,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @LayerDown.started -= instance.OnLayerDown;
             @LayerDown.performed -= instance.OnLayerDown;
             @LayerDown.canceled -= instance.OnLayerDown;
+            @EagleEye.started -= instance.OnEagleEye;
+            @EagleEye.performed -= instance.OnEagleEye;
+            @EagleEye.canceled -= instance.OnEagleEye;
+            @ToggleWaypoint.started -= instance.OnToggleWaypoint;
+            @ToggleWaypoint.performed -= instance.OnToggleWaypoint;
+            @ToggleWaypoint.canceled -= instance.OnToggleWaypoint;
         }
 
         /// <summary>
@@ -973,5 +1070,19 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLayerDown(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Eagle Eye" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEagleEye(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Toggle Waypoint" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnToggleWaypoint(InputAction.CallbackContext context);
     }
 }

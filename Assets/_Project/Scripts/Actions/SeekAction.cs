@@ -19,10 +19,6 @@ namespace PathfinderTactics.Actions
         [SerializeField]
         private int seekRadiusTiles = 3;
 
-        public override string GetActionName() => "Seek";
-
-        public override int GetActionPointsCost() => 1;
-
         public override List<Vector3Int> GetActionRangeGridPositions()
         {
             return new List<Vector3Int> { unit.CurrentLayeredPosition };
