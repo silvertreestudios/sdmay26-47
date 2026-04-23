@@ -183,5 +183,14 @@ namespace PathfinderTactics.Characters
         {
             OnAnimationEnd?.Invoke();
         }
+
+        public Transform GetHandTransform(bool rightHand = true)
+        {
+            if (animator == null)
+                animator = GetComponent<Animator>();
+            return animator.GetBoneTransform(
+                rightHand ? HumanBodyBones.RightHand : HumanBodyBones.LeftHand
+            );
+        }
     }
 }

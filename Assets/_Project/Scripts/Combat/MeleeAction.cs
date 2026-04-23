@@ -4,6 +4,7 @@ using PathfinderTactics.Characters;
 using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
+using PathfinderTactics.InputSystem;
 using PathfinderTactics.Items;
 using UnityEngine;
 
@@ -151,6 +152,11 @@ namespace PathfinderTactics.Actions
                 visuals.OnAnimationEnd += HandleAnimationEnd;
                 visuals.TriggerMeleeAttack();
 
+                if (unit.GetFaction() == Faction.Player)
+                {
+                    ServiceLocator.Get<HapticService>()?.TriggerRumble(0.25f, 0.25f, 0.1f);
+                }
+
                 Invoke(nameof(FallbackActionComplete), 2.0f);
             }
             else
@@ -288,6 +294,9 @@ namespace PathfinderTactics.Actions
 
             if (result == Degree.Success || result == Degree.CriticalSuccess)
             {
+                // Rumble on hit
+                ServiceLocator.Get<HapticService>()?.TriggerRumble(0.75f, 0.75f, 0.2f);
+
                 int weaponDiceRoll = 0;
                 for (int i = 0; i < weapon.damageDice.count; i++)
                 {

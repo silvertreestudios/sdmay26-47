@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Combat;
@@ -6,6 +7,12 @@ using UnityEngine;
 
 namespace PathfinderTactics.Data.PF2e
 {
+    public enum SpellDelivery
+    {
+        Instant,
+        Projectile,
+    }
+
     [CreateAssetMenu(menuName = "PF2e/Spell")]
     public class SpellSO : GameElementSO
     {
@@ -23,6 +30,22 @@ namespace PathfinderTactics.Data.PF2e
         public bool RequiresLineOfEffect = true;
         public AreaDefinition Area;
         public bool SpellAttackRoll; // True = uses attack roll, False = uses save DC
+
+        [Header("Delivery Mechanics")]
+        public SpellDelivery DeliveryType = SpellDelivery.Instant;
+
+        [Tooltip("Only used if deliveryType is Projectile.")]
+        public float ProjectileSpeed = 15f;
+
+        [Header("Visual Effects (Particles)")]
+        [Tooltip("Spawns at the caster's hand when the cast begins.")]
+        public GameObject CastVFXPrefab;
+
+        [Tooltip("Spawns and travels from caster to target.")]
+        public GameObject ProjectileVFXPrefab;
+
+        [Tooltip("Spawns at the target's location upon impact.")]
+        public GameObject HitVFXPrefab;
 
         [Header("Combat Mechanics")]
         public SavingThrowType SaveType;

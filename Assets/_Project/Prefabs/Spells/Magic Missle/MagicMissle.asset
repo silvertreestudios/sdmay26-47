@@ -36,6 +36,11 @@ MonoBehaviour:
     Shape: 0
     Radius: 0
   SpellAttackRoll: 0
+  DeliveryType: 1
+  ProjectileSpeed: 15
+  CastVFXPrefab: {fileID: 5061633202700799819, guid: 86079ca52ce9f634cb3fc2fd0106651e, type: 3}
+  ProjectileVFXPrefab: {fileID: 3356376747817116496, guid: 2af20aca99097af46835c0f6a89ab9d6, type: 3}
+  HitVFXPrefab: {fileID: 2448264115887459482, guid: 75eac7254f549124b9b57e63e821f7e8, type: 3}
   SaveType: 0
   ElementType: 11
   IsBasicSave: 0
