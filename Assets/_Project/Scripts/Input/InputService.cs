@@ -25,6 +25,9 @@ namespace PathfinderTactics.InputSystem
         {
             ServiceLocator.Register(this);
             playerInputActions = new PlayerInputActions();
+
+            if (gameObject.GetComponent<HapticService>() == null)
+                gameObject.AddComponent<HapticService>();
         }
 
         private void OnDestroy()

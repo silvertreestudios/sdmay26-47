@@ -4,6 +4,7 @@ using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
 using PathfinderTactics.Data.PF2e;
 using PathfinderTactics.Grid;
+using PathfinderTactics.InputSystem;
 using PathfinderTactics.Reactions;
 using PathfinderTactics.Spells.Services;
 using UnityEngine;
@@ -346,6 +347,11 @@ namespace PathfinderTactics.Spells
             if (activeContext.SpellData.CastVFXPrefab != null)
             {
                 Instantiate(activeContext.SpellData.CastVFXPrefab, handPos, Quaternion.identity);
+
+                if (unit.GetFaction() == Faction.Player)
+                {
+                    ServiceLocator.Get<HapticService>()?.TriggerRumble(0.25f, 0.25f, 0.1f);
+                }
             }
 
             // Delivery Branch
@@ -401,6 +407,9 @@ namespace PathfinderTactics.Spells
 
                 Instantiate(activeContext.SpellData.HitVFXPrefab, hitPos, Quaternion.identity);
             }
+
+            // Rumble on impact
+            ServiceLocator.Get<HapticService>()?.TriggerRumble(0.75f, 0.75f, 0.2f);
 
             // Logic Resolution
             SpellEffectResolver.Resolve(activeContext);
