@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22f7a0d34b844b4c8ebb1a8de0a9cd0, type: 3}
+  m_Name: ConditionIconData
+  m_EditorClassIdentifier: 
+  mappings:
+  - conditionType: 18
+    icon: {fileID: 3286163911610860551, guid: e58c3c3c5a86c904fbd14e9986c85e42, type: 3}
+  - conditionType: 2
+    icon: {fileID: 3286163911610860551, guid: e70b65d4089bdd749932911ffc9c2b0c, type: 3}
+  - conditionType: 21
+    icon: {fileID: 3286163911610860551, guid: 4b3dc81d81d79e6439ec6d432decc0f0, type: 3}
+  - conditionType: 19
+    icon: {fileID: 3286163911610860551, guid: b2673c41dfd5d4b48817967889ce18ec, type: 3}
+  - conditionType: 10
+    icon: {fileID: 3286163911610860551, guid: 3612c53b5a9bc684ba747da2041e4af8, type: 3}
+  - conditionType: 11
+    icon: {fileID: 3286163911610860551, guid: 2e55b88c093bb2842bf62bab66518aeb, type: 3}
+  - conditionType: 8
+    icon: {fileID: 3286163911610860551, guid: a028d4351bff39d4ebbbe96958bbd123, type: 3}
+  - conditionType: 1
+    icon: {fileID: 3286163911610860551, guid: f1491a2c864c21a4998519a6d42e34f0, type: 3}
+  - conditionType: 22
+    icon: {fileID: 3286163911610860551, guid: b39e4aab0c48e184b85fc0dff7a4e36c, type: 3}
+  - conditionType: 0
+    icon: {fileID: 3286163911610860551, guid: 25a7e8762d3fb02448412b983e367dec, type: 3}
+  - conditionType: 3
+    icon: {fileID: 3286163911610860551, guid: 1abc84118b1fba44e8de560a03ffccf0, type: 3}
+  - conditionType: 4
+    icon: {fileID: 3286163911610860551, guid: 977c54d24132be743b9976b5cfc8b76f, type: 3}
+  - conditionType: 5
+    icon: {fileID: 3286163911610860551, guid: 6d86702f27602ce448b57f30995724d7, type: 3}
+  - conditionType: 6
+    icon: {fileID: 3286163911610860551, guid: 5f09ee98dd8cdf842900b2cf24586caf, type: 3}
+  - conditionType: 7
+    icon: {fileID: 3286163911610860551, guid: 3d5011425d6f8d546a8e522d403533da, type: 3}
+  - conditionType: 9
+    icon: {fileID: 3286163911610860551, guid: 9cca605333b1fae4eb9e96d5846c057e, type: 3}
+  - conditionType: 12
+    icon: {fileID: 3286163911610860551, guid: 03ae4e2fadce9334f9fbb484fde37f60, type: 3}
+  - conditionType: 13
+    icon: {fileID: 3286163911610860551, guid: 7cc59fe5cba66924284ac2dc6af64b7b, type: 3}
+  - conditionType: 14
+    icon: {fileID: 3286163911610860551, guid: 7e77b272e464a44488851588e01b295a, type: 3}
+  - conditionType: 15
+    icon: {fileID: 3286163911610860551, guid: 2c46ea4de06c91a4da66676f37f1d350, type: 3}
+  - conditionType: 17
+    icon: {fileID: 3286163911610860551, guid: fd7ab85d82f9a83478ef045ff90db2ea, type: 3}
+  - conditionType: 0
+    icon: {fileID: 3286163911610860551, guid: 25a7e8762d3fb02448412b983e367dec, type: 3}
+  - conditionType: 16
+    icon: {fileID: 3286163911610860551, guid: 3f9ec4db73de4da4097399cd72254b44, type: 3}
