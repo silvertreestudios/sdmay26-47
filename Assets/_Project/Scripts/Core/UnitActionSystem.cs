@@ -692,7 +692,68 @@ namespace PathfinderTactics.Core
 
             selectedUnit.SpendActionPoints(selectedAction.GetActionPointsCost());
 
-            selectedAction.TakeAction(
+            // Handle reactions for Manipulate and Ranged Attack triggers
+            GameEvent reactionTrigger = null;
+            if (selectedAction.IsRangedAttack)
+            {
+                Unit target = ServiceLocator.Get<GridSystem>().GetUnitAt(targetPos);
+                reactionTrigger = new RangedAttackEvent(selectedUnit, target);
+            }
+            else if (selectedAction.IsManipulateAction)
+            {
+                reactionTrigger = new ManipulateEvent(selectedUnit, selectedAction.GetActionName());
+            }
+            else if (selectedAction.IsMoveAction)
+            {
+                reactionTrigger = new MoveActionEvent(selectedUnit, selectedAction.GetActionName());
+            }
+
+            if (reactionTrigger != null)
+            {
+                ServiceLocator
+                    .Get<ReactionManager>()
+                    .EvaluateEvent(
+                        reactionTrigger,
+                        (resolvedEvent) =>
+                        {
+                            if (resolvedEvent.IsCancelled)
+                            {
+                                // Action was disrupted
+                                Debug.Log(
+                                    $"<color=red>[ACTION]</color> {selectedUnit.name}'s {selectedAction.GetActionName()} was DISRUPTED!"
+                                );
+                                OnActionCompleted?.Invoke(this, EventArgs.Empty);
+                                if (preEagleEyePhase == GamePhase.EagleEye)
+                                    ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
+                                CheckTurnEnd();
+                            }
+                            else
+                            {
+                                // Proceed with action
+                                ExecuteActionWithVisuals(selectedAction, targetPos, confirmTls);
+                            }
+                        }
+                    );
+            }
+            else
+            {
+                ExecuteActionWithVisuals(selectedAction, targetPos, confirmTls);
+            }
+
+            // Now that TakeAction has successfully pulled the unit, we can wipe the visuals.
+            if (confirmTls != null)
+            {
+                confirmTls.HideTargeting();
+            }
+        }
+
+        private void ExecuteActionWithVisuals(
+            BaseAction action,
+            Vector3Int targetPos,
+            TargetLockService tls
+        )
+        {
+            action.TakeAction(
                 targetPos,
                 () =>
                 {
@@ -702,12 +763,6 @@ namespace PathfinderTactics.Core
                     CheckTurnEnd();
                 }
             );
-
-            // Now that TakeAction has successfully pulled the unit, we can wipe the visuals.
-            if (confirmTls != null)
-            {
-                confirmTls.HideTargeting();
-            }
         }
 
         private void CommitMoveAction(Action onComplete = null)
@@ -817,7 +872,14 @@ namespace PathfinderTactics.Core
                 }
 
                 // Execute reactive move sequence
-                ExecuteReactiveSnap(fullPath, 1, onComplete);
+                bool isStep = fullPath.Count == 2;
+                if (isStep)
+                {
+                    Debug.Log(
+                        $"<color=yellow>[MOVE]</color> 5-foot move detected for {selectedUnit.name}. Treating as a STEP (no reactions)."
+                    );
+                }
+                ExecuteReactiveSnap(fullPath, 1, isStep, onComplete);
                 // TODO: test this
                 // Reset planning state after commitment
                 // We don't clear fully here because ExecuteReactiveSnap will re-seed WP0 at the end.
@@ -829,7 +891,12 @@ namespace PathfinderTactics.Core
             }
         }
 
-        private void ExecuteReactiveSnap(List<Vector3Int> path, int nextIndex, Action onComplete)
+        private void ExecuteReactiveSnap(
+            List<Vector3Int> path,
+            int nextIndex,
+            bool isStep,
+            Action onComplete
+        )
         {
             if (nextIndex >= path.Count)
             {
@@ -866,7 +933,14 @@ namespace PathfinderTactics.Core
             GridPosition fromGP = new GridPosition(from.x, from.z);
             GridPosition toGP = new GridPosition(to.x, to.z);
 
-            BeforeMoveEvent moveEvent = new BeforeMoveEvent(selectedUnit, fromGP, toGP, false);
+            BeforeMoveEvent moveEvent = new BeforeMoveEvent(
+                selectedUnit,
+                fromGP,
+                toGP,
+                from,
+                to,
+                isStep
+            );
 
             ServiceLocator
                 .Get<ReactionManager>()
@@ -879,16 +953,17 @@ namespace PathfinderTactics.Core
                             || selectedUnit.GetComponent<UnitConditions>().IsDead()
                         )
                         {
-                            // Interrupted at tile 'from' - Snap unit here
+                            // Interrupted while moving from 'from' to 'to'
+                            // In PF2e, you are considered to be in the square you were entering.
                             selectedUnit.SpendActionPoints(1);
 
                             GridSystem grid = ServiceLocator.Get<GridSystem>();
-                            grid.MoveUnit(selectedUnit, selectedUnit.CurrentLayeredPosition, from);
-                            selectedUnit.FinalizeMove(from);
-                            selectedUnit.SnapToGrid(grid.GetWorldPosition(from));
+                            grid.MoveUnit(selectedUnit, selectedUnit.CurrentLayeredPosition, to);
+                            selectedUnit.FinalizeMove(to);
+                            selectedUnit.SnapToGrid(grid.GetWorldPosition(to));
 
                             OnActionCompleted?.Invoke(this, EventArgs.Empty);
-                            ResetWaypointState(from);
+                            ResetWaypointState(to);
                             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
                             CheckTurnEnd();
                         }
@@ -898,8 +973,12 @@ namespace PathfinderTactics.Core
                             GridSystem grid = ServiceLocator.Get<GridSystem>();
                             selectedUnit.SnapToGrid(grid.GetWorldPosition(to));
 
+                            // PF2e: The unit is now in the new square.
+                            // Update grid position and check for detection changes (e.g. entering reach of someone else)
+                            selectedUnit.FinalizeMove(to);
+
                             // Recursive call to check next tile in path
-                            ExecuteReactiveSnap(path, nextIndex + 1, onComplete);
+                            ExecuteReactiveSnap(path, nextIndex + 1, isStep, onComplete);
                         }
                     }
                 );

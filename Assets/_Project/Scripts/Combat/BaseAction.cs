@@ -112,5 +112,10 @@ namespace PathfinderTactics.Actions
 
             return true;
         }
+
+        // Action categories for PF2e Reactions
+        public virtual bool IsMoveAction => false;
+        public virtual bool IsManipulateAction => false;
+        public virtual bool IsRangedAttack => false;
     }
 }

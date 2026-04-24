@@ -56,6 +56,9 @@ namespace PathfinderTactics.Characters
             actionPointsRemaining = maxActionPoints;
             AttacksThisTurn = 0;
             HasReactionAvailable = true;
+            Debug.Log(
+                $"<color=green>[ECONOMY]</color> {gameObject.name} REACTION RESTORED at start of turn."
+            );
             GameEvents.TriggerUnitReactionChanged(GetComponent<Unit>(), true);
             GameEvents.TriggerUnitAPChanged(
                 GetComponent<Unit>(),
@@ -67,6 +70,7 @@ namespace PathfinderTactics.Characters
         public void SpendReaction()
         {
             HasReactionAvailable = false;
+            Debug.Log($"<color=red>[ECONOMY]</color> {gameObject.name} REACTION SPENT.");
             GameEvents.TriggerUnitReactionChanged(GetComponent<Unit>(), false);
         }
 

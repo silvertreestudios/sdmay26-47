@@ -57,7 +57,14 @@ namespace PathfinderTactics.Grid
                 closedSet.Add(currentNode.LayeredPosition);
 
                 foreach (
-                    PathNode neighbour in GetNeighbourList(currentNode, pathNodeMap, gridSystem)
+                    PathNode neighbour in GetNeighbourList(
+                        currentNode,
+                        pathNodeMap,
+                        gridSystem,
+                        startPosition,
+                        endPosition,
+                        ignoreOccupancyAt
+                    )
                 )
                 {
                     if (closedSet.Contains(neighbour.LayeredPosition))
@@ -162,7 +169,14 @@ namespace PathfinderTactics.Grid
                     reachable.Add(currentNode.LayeredPosition);
 
                 foreach (
-                    PathNode neighbour in GetNeighbourList(currentNode, pathNodeMap, gridSystem)
+                    PathNode neighbour in GetNeighbourList(
+                        currentNode,
+                        pathNodeMap,
+                        gridSystem,
+                        startPosition,
+                        null,
+                        ignoreOccupancyAt
+                    )
                 )
                 {
                     if (!neighbour.isWalkable)
@@ -345,7 +359,10 @@ namespace PathfinderTactics.Grid
         private static List<PathNode> GetNeighbourList(
             PathNode currentNode,
             Dictionary<Vector3Int, PathNode> pathNodeMap,
-            GridSystem gridSystem
+            GridSystem gridSystem,
+            Vector3Int? startPos = null,
+            Vector3Int? endPos = null,
+            Vector3Int? ignoreOccupancyAt = null
         )
         {
             List<PathNode> neighbourList = new List<PathNode>();
@@ -373,7 +390,10 @@ namespace PathfinderTactics.Grid
                                 surface.Coordinates.y,
                                 gridSystem,
                                 new Vector2Int(neighbourPos.x, pos.z),
-                                new Vector2Int(pos.x, neighbourPos.z)
+                                new Vector2Int(pos.x, neighbourPos.z),
+                                startPos,
+                                endPos,
+                                ignoreOccupancyAt
                             )
                         )
                             continue;
@@ -447,18 +467,40 @@ namespace PathfinderTactics.Grid
             int destinationY,
             GridSystem gridSystem,
             Vector2Int intermediateCol1,
-            Vector2Int intermediateCol2
+            Vector2Int intermediateCol2,
+            Vector3Int? startPos,
+            Vector3Int? endPos,
+            Vector3Int? ignoreOccupancyAt
         )
         {
-            return HasBridgingNode(currentY, destinationY, gridSystem, intermediateCol1)
-                || HasBridgingNode(currentY, destinationY, gridSystem, intermediateCol2);
+            return HasBridgingNode(
+                    currentY,
+                    destinationY,
+                    gridSystem,
+                    intermediateCol1,
+                    startPos,
+                    endPos,
+                    ignoreOccupancyAt
+                )
+                || HasBridgingNode(
+                    currentY,
+                    destinationY,
+                    gridSystem,
+                    intermediateCol2,
+                    startPos,
+                    endPos,
+                    ignoreOccupancyAt
+                );
         }
 
         private static bool HasBridgingNode(
             int currentY,
             int destinationY,
             GridSystem gridSystem,
-            Vector2Int columnKey
+            Vector2Int columnKey,
+            Vector3Int? startPos,
+            Vector3Int? endPos,
+            Vector3Int? ignoreOccupancyAt
         )
         {
             List<GridNode> column = gridSystem.GetColumn(columnKey);
@@ -469,6 +511,16 @@ namespace PathfinderTactics.Grid
             {
                 if (node == null || !node.IsWalkable())
                     continue;
+
+                if (gridSystem.IsPositionOccupied(node.Coordinates))
+                {
+                    if (
+                        node.Coordinates != startPos
+                        && node.Coordinates != endPos
+                        && node.Coordinates != ignoreOccupancyAt
+                    )
+                        continue;
+                }
 
                 int y = node.Coordinates.y;
                 if (Mathf.Abs(y - currentY) <= 1 && Mathf.Abs(y - destinationY) <= 1)

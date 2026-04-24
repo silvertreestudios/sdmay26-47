@@ -19,6 +19,7 @@ namespace PathfinderTactics.Actions
         private Vector3Int intendedTargetTile;
 
         public override bool IsUnitTargeted => true;
+        public override bool IsRangedAttack => true;
 
         public override string GetActionName()
         {
