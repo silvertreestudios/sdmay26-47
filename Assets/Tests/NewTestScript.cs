@@ -2,23 +2,48 @@ using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using PathfinderTactics.Characters;
+using PathfinderTactics.Core;
+using PathfinderTactics.Reactions;
 
 public class NewTestScript
 {
-    // A Test behaves as an ordinary method
-    [Test]
-    public void NewTestScriptSimplePasses()
-    {
-        // Use the Assert class to test conditions
-    }
-
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
     [UnityTest]
-    public IEnumerator NewTestScriptWithEnumeratorPasses()
+    public IEnumerator UnitTakesDamage_HealthDecreases()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
+        // 1. Setup ServiceLocator & ReactionManager
+        ServiceLocator.ClearAll();
+        var rmGo = new GameObject("ReactionManager");
+        var rm = rmGo.AddComponent<ReactionManager>();
+        
+        // Let Unity initialize the objects properly.
+        yield return null; 
+
+        // 2. Setup Unit and UnitHealth
+        var attackerGo = new GameObject("Attacker");
+        var attacker = attackerGo.AddComponent<Unit>();
+
+        var defenderGo = new GameObject("Defender");
+        var defender = defenderGo.AddComponent<Unit>();
+        var defenderHealth = defenderGo.AddComponent<UnitHealth>(); // automatically adds UnitConditions
+        yield return null; // Let Unity run Awake on components
+
+        // Verify initial setup is correct
+        Assert.AreEqual(20, defenderHealth.GetCurrentHealth(), "Initial health should be 20.");
+
+        // 3. Apply Damage
+        defenderHealth.ApplyDamage(attacker, 5, DamageType.Slashing);
+        
+        // Let any reactions process (they are synchronous but just in case)
         yield return null;
+
+        // 4. Verify Health Changed
+        Assert.AreEqual(15, defenderHealth.GetCurrentHealth(), "Health should drop to 15 after taking 5 damage.");
+
+        // Cleanup
+        ServiceLocator.ClearAll();
+        GameObject.DestroyImmediate(rmGo);
+        GameObject.DestroyImmediate(attackerGo);
+        GameObject.DestroyImmediate(defenderGo);
     }
 }
