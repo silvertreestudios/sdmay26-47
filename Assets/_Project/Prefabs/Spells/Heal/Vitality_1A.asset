@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: Vitality_1A
+  m_EditorClassIdentifier: 
+  Id: 
+  Slug: 
+  ElementName: Heal
+  Icon: {fileID: 0}
+  Description: Channel vital energy through your touch to restore 1d8 HP to a living
+    creature or deal 1d8 vitality damage to an undead creature.
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 0
+  Traditions: []
+  Cost: 2
+  School: 
+  Components: []
+  Targeting: 0
+  Target: 3
+  Range: 5
+  RequiresLineOfEffect: 1
+  Area:
+    Shape: 0
+    Radius: 0
+  SpellAttackRoll: 0
+  DeliveryType: 0
+  ProjectileSpeed: 15
+  CastVFXPrefab: {fileID: 0}
+  ProjectileVFXPrefab: {fileID: 0}
+  HitVFXPrefab: {fileID: 0}
+  SaveType: 1
+  ElementType: 13
+  IsBasicSave: 0
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: 5486b2306ed5be14a8f132764ea7ebb9, type: 2}
+  AITags: []

@@ -143,9 +143,8 @@ namespace PathfinderTactics.Spells
                     {
                         Vector3Int testPos3D = node.Coordinates;
 
-                        // Physical Walkability Check (Terrain only)
-                        // Prevents targeting "empty air" or solid wall voxels
-                        if (node.Terrain == null || !node.Terrain.IsWalkable)
+                        // Ensure the node exists
+                        if (node == null)
                             continue;
 
                         // Range Check
@@ -229,6 +228,9 @@ namespace PathfinderTactics.Spells
                 }
             }
 
+            Debug.Log(
+                $"[SPELL TARGETING] Found {validPositions.Count} valid target tiles for {currentSpell.ElementName}. Range used: {GetRangeInTiles()} tiles."
+            );
             return validPositions;
         }
 

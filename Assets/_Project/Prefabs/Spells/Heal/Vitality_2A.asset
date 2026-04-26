@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: Vitality_2A
+  m_EditorClassIdentifier: 
+  Id: 
+  Slug: 
+  ElementName: Heal
+  Icon: {fileID: 0}
+  Description: Release a surge of life at a distance. Restores 1d8 + 8 HP to a living
+    creature or deals 1d8 vitality damage to an undead creature within 30 feet.
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 0
+  Traditions: []
+  Cost: 3
+  School: 
+  Components: []
+  Targeting: 0
+  Target: 3
+  Range: 30
+  RequiresLineOfEffect: 1
+  Area:
+    Shape: 0
+    Radius: 0
+  SpellAttackRoll: 0
+  DeliveryType: 0
+  ProjectileSpeed: 15
+  CastVFXPrefab: {fileID: 0}
+  ProjectileVFXPrefab: {fileID: 0}
+  HitVFXPrefab: {fileID: 0}
+  SaveType: 1
+  ElementType: 13
+  IsBasicSave: 0
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: 191dad8e49b679043a960be4cfbcd4ab, type: 2}
+  AITags: []
