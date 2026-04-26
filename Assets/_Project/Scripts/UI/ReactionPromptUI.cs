@@ -100,8 +100,10 @@ namespace PathfinderTactics.UI
         private void HandleChoice(bool choice)
         {
             Hide();
-            onChoiceMade?.Invoke(choice);
+            // Cache and clear before invoking to prevent recursion from wiping the next prompt's callback
+            var callback = onChoiceMade;
             onChoiceMade = null;
+            callback?.Invoke(choice);
         }
     }
 }
