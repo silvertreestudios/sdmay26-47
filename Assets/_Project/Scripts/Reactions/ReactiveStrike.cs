@@ -2,6 +2,7 @@ using System;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
+using PathfinderTactics.Items;
 using UnityEngine;
 
 namespace PathfinderTactics.Reactions
