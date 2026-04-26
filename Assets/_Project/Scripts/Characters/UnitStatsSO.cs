@@ -18,6 +18,16 @@ public class DefenseValues
 
 namespace PathfinderTactics.Characters
 {
+    public enum UnitSize
+    {
+        Tiny = 0,
+        Small = 1,
+        Medium = 2,
+        Large = 3,
+        Huge = 4,
+        Gargantuan = 5,
+    }
+
     [System.Serializable]
     public class RWIModifier
     {
@@ -39,6 +49,7 @@ namespace PathfinderTactics.Characters
         [Header("Identity")]
         public string unitName = "Unit";
         public Sprite portraitIcon;
+        public UnitSize unitSize = UnitSize.Medium;
 
         [Header("Skills & Senses")]
         [Tooltip("Perception modifier for Initiative rolls.")]
@@ -191,6 +202,9 @@ namespace PathfinderTactics.Characters
 
         [Header("Defenses")]
         public RWIProfile rwiProfile = new RWIProfile();
+
+        [Header("Traits")]
+        public List<string> traits = new List<string>();
 
         private void OnValidate()
         {

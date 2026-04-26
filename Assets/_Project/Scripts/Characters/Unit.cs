@@ -9,16 +9,6 @@ using UnityEngine;
 
 namespace PathfinderTactics.Characters
 {
-    public enum UnitSize
-    {
-        Tiny = 0,
-        Small = 1,
-        Medium = 2,
-        Large = 3,
-        Huge = 4,
-        Gargantuan = 5,
-    }
-
     [RequireComponent(typeof(UnitActionEconomy))]
     [RequireComponent(typeof(UnitGridObject))]
     [RequireComponent(typeof(UnitMovement))]
@@ -44,11 +34,7 @@ namespace PathfinderTactics.Characters
         [SerializeField]
         private UnitStatsSO stats;
 
-        [Header("PF2e Attributes")]
-        [SerializeField]
-        private UnitSize unitSize = UnitSize.Medium;
-
-        public UnitSize GetUnitSize() => unitSize;
+        public UnitSize GetUnitSize() => (stats != null) ? stats.unitSize : UnitSize.Medium;
 
         // Dependencies
         private UnitActionEconomy actionEconomy;
@@ -397,6 +383,13 @@ namespace PathfinderTactics.Characters
             if (stats == null)
                 return 0;
             return stats.TotalHP;
+        }
+
+        public bool HasTrait(string trait)
+        {
+            if (stats == null || stats.traits == null)
+                return false;
+            return stats.traits.Exists(t => t.Equals(trait, StringComparison.OrdinalIgnoreCase));
         }
     }
 }
