@@ -19,7 +19,7 @@ variables:
   - echo "Ensuring Unity license is set..."
   - if [ -z "$UNITY_LICENSE" ]; then echo "UNITY_LICENSE variable is not set. Please set it in GitLab CI/CD settings."; exit 1; fi
   - mkdir -p /root/.local/share/unity3d/Unity/
-  - echo "$UNITY_LICENSE" | tr -d '\r' > /root/.local/share/unity3d/Unity/Unity_lic.ulf
+  - cp "$UNITY_LICENSE" /root/.local/share/unity3d/Unity/Unity_lic.ulf
 
 build-windows:
   stage: build
