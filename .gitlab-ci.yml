@@ -6,7 +6,6 @@ workflow:
     - if: '$CI_COMMIT_BRANCH == "CI-Setup"'
 
 stages:
-  - setup
   - build
   - test
 
@@ -14,16 +13,6 @@ variables:
   BUILD_NAME: "PathfinderTactics"
   BUILD_TARGET: "StandaloneWindows64"
 
-# 1. Run this job to get the .alf file for the Linux runner
-get-activation-file:
-  stage: setup
-  script:
-    - echo "Generating Activation File for Unity Personal..."
-    - unity-editor -batchmode -nographics -createManualActivationFile -logfile /dev/stdout || exit 0
-  artifacts:
-    paths:
-      - "*.alf"
-    expire_in: 1 week
 
 # A reusable snippet to check and write the Unity License
 .license-check: &license-check
