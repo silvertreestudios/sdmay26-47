@@ -765,6 +765,11 @@ namespace PathfinderTactics.Core
             );
         }
 
+        public void AiCommitMoveAction(Action onComplete = null)
+        {
+            CommitMoveAction(onComplete);
+        }
+
         private void CommitMoveAction(Action onComplete = null)
         {
             if (selectedUnit == null)

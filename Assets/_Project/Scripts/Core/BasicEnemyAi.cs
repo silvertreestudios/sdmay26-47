@@ -48,71 +48,110 @@ namespace PathfinderTactics.Core
 
             yield return new WaitForSeconds(turnStartDelay);
 
-            Unit target = GetClosestPlayerUnit(enemyUnit);
+            int safety = 0;
 
-            if (target != null && !IsNextToPlayer(enemyUnit))
+            while (
+                !IsNextToPlayer(enemyUnit)
+                && enemyUnit.GetActionPointsRemaining() > 0
+                && safety < 5
+            )
             {
-                yield return MoveTowardTarget(enemyUnit, target);
+                int apBefore = enemyUnit.GetActionPointsRemaining();
+                Vector3Int posBefore = enemyUnit.CurrentLayeredPosition;
+
+                yield return MoveTowardTarget(enemyUnit, GetClosestPlayerUnit(enemyUnit));
+
+                safety++;
+
+                // If nothing changed, stop so we do not loop forever.
+                if (
+                    enemyUnit.GetActionPointsRemaining() == apBefore
+                    && enemyUnit.CurrentLayeredPosition == posBefore
+                )
+                {
+                    break;
+                }
             }
 
-            if (IsNextToPlayer(enemyUnit))
+            if (IsNextToPlayer(enemyUnit) && enemyUnit.GetActionPointsRemaining() > 0)
             {
                 ServiceLocator.Get<UnitActionSystem>().EndTurn();
             }
+
+            // If AP reached 0, UnitActionSystem.CheckTurnEnd() should already end the turn.
         }
 
         private IEnumerator MoveTowardTarget(Unit enemyUnit, Unit target)
         {
+            if (target == null)
+                yield break;
+
             GridSystem grid = ServiceLocator.Get<GridSystem>();
 
             Vector3Int start = enemyUnit.CurrentLayeredPosition;
             Vector3Int targetPos = target.CurrentLayeredPosition;
 
+            List<Vector3Int> fullPath = Pathfinding.FindPath(
+                start,
+                targetPos,
+                targetPos // allow pathing to the occupied target square
+            );
+
+            if (fullPath == null || fullPath.Count < 2)
+                yield break;
+
             int maxMoveCost = enemyUnit.GetMaxMoveCost();
 
-            List<Vector3Int> reachablePositions =
-                Pathfinding.GetReachablePositions(start, maxMoveCost);
-
             Vector3Int bestDestination = start;
-            int bestDistance = int.MaxValue;
+            int usedCost = 0;
 
-            foreach (Vector3Int position in reachablePositions)
+            for (int i = 1; i < fullPath.Count; i++)
             {
-                if (position == start)
-                    continue;
+                Vector3Int previous = fullPath[i - 1];
+                Vector3Int next = fullPath[i];
 
-                if (grid.IsPositionOccupied(position))
-                    continue;
+                if (grid.IsPositionOccupied(next) && next != targetPos)
+                    break;
 
-                int distance = PF2E_Core.GetPF2eDistance3D(position, targetPos);
+                if (next == targetPos)
+                    break; // do not move into the player's occupied tile
 
-                if (distance < bestDistance)
-                {
-                    bestDistance = distance;
-                    bestDestination = position;
-                }
+                int stepCost = Pathfinding.CalculatePathCost(
+                    new List<Vector3Int> { previous, next }
+                );
+
+                if (usedCost + stepCost > maxMoveCost)
+                    break;
+
+                usedCost += stepCost;
+                bestDestination = next;
             }
 
             if (bestDestination == start)
                 yield break;
 
-            List<Vector3Int> path = Pathfinding.FindPath(start, bestDestination);
+            List<Vector3Int> movePath = Pathfinding.FindPath(start, bestDestination);
 
-            if (path == null || path.Count < 2)
+            if (movePath == null || movePath.Count < 2)
                 yield break;
 
+            bool visualMoveComplete = false;
 
-            grid.MoveUnit(enemyUnit, start, bestDestination);
-            enemyUnit.FinalizeMove(bestDestination);
-
-            bool moveComplete = false;
-
-            enemyUnit.MoveAlongPath(path, () =>
+            enemyUnit.MoveAlongPath(movePath, () =>
             {
-                moveComplete = true;
+                visualMoveComplete = true;
             });
 
-            yield return new WaitUntil(() => moveComplete);
+            yield return new WaitUntil(() => visualMoveComplete);
+
+            bool actionCommitComplete = false;
+
+            ServiceLocator.Get<UnitActionSystem>().AiCommitMoveAction(() =>
+            {
+                actionCommitComplete = true;
+            });
+
+            yield return new WaitUntil(() => actionCommitComplete);
         }
 
         private IEnumerator MoveOneStepTowardTarget(Unit enemyUnit, Unit target)
