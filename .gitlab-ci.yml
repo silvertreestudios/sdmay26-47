@@ -1,24 +1,30 @@
+image: unityci/editor:ubuntu-6000.0.72f1-windows-mono-3
+
+workflow:
+  rules:
+    # Restrict the entire pipeline to only run on the CI-Setup branch for testing.
+    - if: '$CI_COMMIT_BRANCH == "CI-Setup"'
+
 stages:
   - build
   - test
 
 variables:
-  # The path to the Unity Editor executable on the GitLab Runner (using typical install path)
-  UNITY_EXECUTABLE: "C:\\Program Files\\Unity\\Hub\\Editor\\6000.0.72f1\\Editor\\Unity.exe"
   BUILD_NAME: "PathfinderTactics"
   BUILD_TARGET: "StandaloneWindows64"
 
-# Set a default tag globally so all jobs run on the 'windows' runner
-default:
-  tags:
-    - windows
+before_script:
+  # GameCI provides the unity-editor command which wraps xvfb-run and handles license activation
+  # if the UNITY_LICENSE environment variable is set in GitLab CI/CD settings.
+  - echo "Ensuring Unity license is set..."
+  - if [ -z "$UNITY_LICENSE" ]; then echo "UNITY_LICENSE variable is not set. Please set it in GitLab CI/CD settings."; exit 1; fi
 
 build-windows:
   stage: build
   script:
     - echo "Building $BUILD_NAME for $BUILD_TARGET..."
-    - New-Item -ItemType Directory -Force -Path "Builds\Windows" -ErrorAction SilentlyContinue
-    - '& "$UNITY_EXECUTABLE" -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -buildWindowsPlayer "$CI_PROJECT_DIR\Builds\Windows\$BUILD_NAME.exe"'
+    - mkdir -p Builds/Windows
+    - unity-editor -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -buildWindowsPlayer "$CI_PROJECT_DIR/Builds/Windows/$BUILD_NAME.exe"
   artifacts:
     name: "${BUILD_NAME}_${CI_COMMIT_SHORT_SHA}"
     paths:
@@ -29,8 +35,8 @@ test-playmode:
   stage: test
   script:
     - echo "Running PlayMode tests..."
-    - New-Item -ItemType Directory -Force -Path "TestResults" -ErrorAction SilentlyContinue
-    - '& "$UNITY_EXECUTABLE" -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -runTests -testPlatform PlayMode -testResults "$CI_PROJECT_DIR\TestResults\playmode-results.xml"'
+    - mkdir -p TestResults
+    - unity-editor -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -runTests -testPlatform PlayMode -testResults "$CI_PROJECT_DIR/TestResults/playmode-results.xml"
   artifacts:
     when: always
     paths:
@@ -43,8 +49,8 @@ test-editmode:
   stage: test
   script:
     - echo "Running EditMode tests..."
-    - New-Item -ItemType Directory -Force -Path "TestResults" -ErrorAction SilentlyContinue
-    - '& "$UNITY_EXECUTABLE" -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -runTests -testPlatform EditMode -testResults "$CI_PROJECT_DIR\TestResults\editmode-results.xml"'
+    - mkdir -p TestResults
+    - unity-editor -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -runTests -testPlatform EditMode -testResults "$CI_PROJECT_DIR/TestResults/editmode-results.xml"
   artifacts:
     when: always
     paths:
