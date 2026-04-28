@@ -18,6 +18,9 @@ before_script:
   # if the UNITY_LICENSE environment variable is set in GitLab CI/CD settings.
   - echo "Ensuring Unity license is set..."
   - if [ -z "$UNITY_LICENSE" ]; then echo "UNITY_LICENSE variable is not set. Please set it in GitLab CI/CD settings."; exit 1; fi
+  # Write the license file to the expected directory for Unity to find it, stripping Windows line endings
+  - mkdir -p /root/.local/share/unity3d/Unity/
+  - echo "$UNITY_LICENSE" | tr -d '\r' > /root/.local/share/unity3d/Unity/Unity_lic.ulf
 
 build-windows:
   stage: build
