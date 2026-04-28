@@ -14,21 +14,12 @@ variables:
   BUILD_TARGET: "StandaloneWindows64"
 
 
-# A reusable snippet to check and write the Unity License
-.license-check: &license-check
-  - echo "Ensuring Unity license is set..."
-  - if [ -z "$UNITY_LICENSE" ]; then echo "UNITY_LICENSE variable is not set. Please set it in GitLab CI/CD settings."; exit 1; fi
-  - mkdir -p /root/.local/share/unity3d/Unity/
-  - cp "$UNITY_LICENSE" /root/.local/share/unity3d/Unity/Unity_lic.ulf
-
 build-windows:
   stage: build
-  before_script:
-    - *license-check
   script:
     - echo "Building $BUILD_NAME for $BUILD_TARGET..."
     - mkdir -p Builds/Windows
-    - unity-editor -quit -username "$UNITY_EMAIL" -password "$UNITY_PASSWORD" -projectPath "$CI_PROJECT_DIR" -buildWindowsPlayer "$CI_PROJECT_DIR/Builds/Windows/$BUILD_NAME.exe"
+    - unity-editor -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -buildWindowsPlayer "$CI_PROJECT_DIR/Builds/Windows/$BUILD_NAME.exe"
   artifacts:
     name: "${BUILD_NAME}_${CI_COMMIT_SHORT_SHA}"
     paths:
@@ -37,12 +28,10 @@ build-windows:
 
 test-playmode:
   stage: test
-  before_script:
-    - *license-check
   script:
     - echo "Running PlayMode tests..."
     - mkdir -p TestResults
-    - unity-editor -quit -username "$UNITY_EMAIL" -password "$UNITY_PASSWORD" -projectPath "$CI_PROJECT_DIR" -runTests -testPlatform PlayMode -testResults "$CI_PROJECT_DIR/TestResults/playmode-results.xml"
+    - unity-editor -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -runTests -testPlatform PlayMode -testResults "$CI_PROJECT_DIR/TestResults/playmode-results.xml"
   artifacts:
     when: always
     paths:
@@ -53,12 +42,10 @@ test-playmode:
 
 test-editmode:
   stage: test
-  before_script:
-    - *license-check
   script:
     - echo "Running EditMode tests..."
     - mkdir -p TestResults
-    - unity-editor -quit -username "$UNITY_EMAIL" -password "$UNITY_PASSWORD" -projectPath "$CI_PROJECT_DIR" -runTests -testPlatform EditMode -testResults "$CI_PROJECT_DIR/TestResults/editmode-results.xml"
+    - unity-editor -batchmode -nographics -quit -projectPath "$CI_PROJECT_DIR" -runTests -testPlatform EditMode -testResults "$CI_PROJECT_DIR/TestResults/editmode-results.xml"
   artifacts:
     when: always
     paths:
