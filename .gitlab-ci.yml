@@ -6,6 +6,7 @@ workflow:
     - if: '$CI_COMMIT_BRANCH == "CI-Setup"'
 
 stages:
+  - setup
   - build
   - test
 
@@ -13,17 +14,28 @@ variables:
   BUILD_NAME: "PathfinderTactics"
   BUILD_TARGET: "StandaloneWindows64"
 
-before_script:
-  # GameCI provides the unity-editor command which wraps xvfb-run and handles license activation
-  # if the UNITY_LICENSE environment variable is set in GitLab CI/CD settings.
+# 1. Run this job to get the .alf file for the Linux runner
+get-activation-file:
+  stage: setup
+  script:
+    - echo "Generating Activation File for Unity Personal..."
+    - unity-editor -batchmode -nographics -createManualActivationFile -logfile /dev/stdout || exit 0
+  artifacts:
+    paths:
+      - "*.alf"
+    expire_in: 1 week
+
+# A reusable snippet to check and write the Unity License
+.license-check: &license-check
   - echo "Ensuring Unity license is set..."
   - if [ -z "$UNITY_LICENSE" ]; then echo "UNITY_LICENSE variable is not set. Please set it in GitLab CI/CD settings."; exit 1; fi
-  # Write the license file to the expected directory for Unity to find it, stripping Windows line endings
   - mkdir -p /root/.local/share/unity3d/Unity/
   - echo "$UNITY_LICENSE" | tr -d '\r' > /root/.local/share/unity3d/Unity/Unity_lic.ulf
 
 build-windows:
   stage: build
+  before_script:
+    - *license-check
   script:
     - echo "Building $BUILD_NAME for $BUILD_TARGET..."
     - mkdir -p Builds/Windows
@@ -36,6 +48,8 @@ build-windows:
 
 test-playmode:
   stage: test
+  before_script:
+    - *license-check
   script:
     - echo "Running PlayMode tests..."
     - mkdir -p TestResults
@@ -50,6 +64,8 @@ test-playmode:
 
 test-editmode:
   stage: test
+  before_script:
+    - *license-check
   script:
     - echo "Running EditMode tests..."
     - mkdir -p TestResults
