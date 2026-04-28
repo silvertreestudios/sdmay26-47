@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Grid;
 using UnityEngine;
+using PathfinderTactics.Actions;
 
 namespace PathfinderTactics.Core
 {
@@ -50,35 +51,42 @@ namespace PathfinderTactics.Core
 
             int safety = 0;
 
-            while (
-                !IsNextToPlayer(enemyUnit)
-                && enemyUnit.GetActionPointsRemaining() > 0
-                && safety < 5
-            )
+            while (turnManager.CurrentUnit == enemyUnit
+                   && enemyUnit.GetActionPointsRemaining() > 0
+                   && safety < 5)
             {
-                int apBefore = enemyUnit.GetActionPointsRemaining();
-                Vector3Int posBefore = enemyUnit.CurrentLayeredPosition;
-
-                yield return MoveTowardTarget(enemyUnit, GetClosestPlayerUnit(enemyUnit));
-
                 safety++;
 
-                // If nothing changed, stop so we do not loop forever.
-                if (
-                    enemyUnit.GetActionPointsRemaining() == apBefore
-                    && enemyUnit.CurrentLayeredPosition == posBefore
-                )
+                if (IsNextToPlayer(enemyUnit))
                 {
-                    break;
+                    int apBefore = enemyUnit.GetActionPointsRemaining();
+
+                    yield return TryMeleeAttack(enemyUnit);
+
+                    if (turnManager.CurrentUnit != enemyUnit)
+                        yield break;
+
+                    if (enemyUnit.GetActionPointsRemaining() == apBefore)
+                    {
+                        ServiceLocator.Get<UnitActionSystem>().EndTurn();
+                        yield break;
+                    }
                 }
+                else
+                {
+                    yield return MoveTowardTarget(enemyUnit, GetClosestPlayerUnit(enemyUnit));
+
+                    if (turnManager.CurrentUnit != enemyUnit)
+                        yield break;
+                }
+
+                yield return null;
             }
 
-            if (IsNextToPlayer(enemyUnit) && enemyUnit.GetActionPointsRemaining() > 0)
+            if (turnManager.CurrentUnit == enemyUnit && enemyUnit.GetActionPointsRemaining() > 0)
             {
                 ServiceLocator.Get<UnitActionSystem>().EndTurn();
             }
-
-            // If AP reached 0, UnitActionSystem.CheckTurnEnd() should already end the turn.
         }
 
         private IEnumerator MoveTowardTarget(Unit enemyUnit, Unit target)
@@ -152,6 +160,41 @@ namespace PathfinderTactics.Core
             });
 
             yield return new WaitUntil(() => actionCommitComplete);
+        }
+
+        private IEnumerator TryMeleeAttack(Unit enemyUnit)
+        {
+            Unit target = GetClosestPlayerUnit(enemyUnit);
+            if (target == null)
+                yield break;
+
+            MeleeAction meleeAction = enemyUnit.GetComponent<MeleeAction>();
+            if (meleeAction == null)
+                yield break;
+
+            if (!meleeAction.CanExecuteAction())
+                yield break;
+
+            Vector3Int targetPos = target.CurrentLayeredPosition;
+
+            if (!meleeAction.GetValidActionGridPositions().Contains(targetPos))
+                yield break;
+
+            bool actionComplete = false;
+
+            UnitActionSystem uas = ServiceLocator.Get<UnitActionSystem>();
+
+            void HandleActionComplete(object sender, EventArgs e)
+            {
+                actionComplete = true;
+            }
+
+            uas.OnActionCompleted += HandleActionComplete;
+            uas.AiExecuteAction(meleeAction, targetPos);
+
+            yield return new WaitUntil(() => actionComplete);
+
+            uas.OnActionCompleted -= HandleActionComplete;
         }
 
         private IEnumerator MoveOneStepTowardTarget(Unit enemyUnit, Unit target)
