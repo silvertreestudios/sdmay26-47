@@ -14,8 +14,17 @@ variables:
   BUILD_TARGET: "StandaloneWindows64"
 
 
+# A reusable snippet to check and write the Unity License
+.license-check: &license-check
+  - echo "Ensuring Unity license is set..."
+  - if [ -z "$UNITY_LICENSE" ]; then echo "UNITY_LICENSE variable is not set. Please set it in GitLab CI/CD settings."; exit 1; fi
+  - mkdir -p /root/.local/share/unity3d/Unity/
+  - cp "$UNITY_LICENSE" /root/.local/share/unity3d/Unity/Unity_lic.ulf
+
 build-windows:
   stage: build
+  before_script:
+    - *license-check
   script:
     - echo "Building $BUILD_NAME for $BUILD_TARGET..."
     - mkdir -p Builds/Windows
@@ -28,6 +37,8 @@ build-windows:
 
 test-playmode:
   stage: test
+  before_script:
+    - *license-check
   script:
     - echo "Running PlayMode tests..."
     - mkdir -p TestResults
@@ -42,6 +53,8 @@ test-playmode:
 
 test-editmode:
   stage: test
+  before_script:
+    - *license-check
   script:
     - echo "Running EditMode tests..."
     - mkdir -p TestResults
