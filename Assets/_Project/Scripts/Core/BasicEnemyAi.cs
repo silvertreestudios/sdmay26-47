@@ -11,7 +11,16 @@ namespace PathfinderTactics.Core
     public class BasicEnemyAi : MonoBehaviour
     {
         [SerializeField]
+        private bool aiEnabled = true;
+
+        [SerializeField]
         private float turnStartDelay = 1f;
+
+        [SerializeField]
+        private float delayBetweenActions = 0.5f;
+
+        [SerializeField]
+        private int maxAttackDistanceTiles = 5;
 
         private TurnManager turnManager;
 
@@ -29,6 +38,9 @@ namespace PathfinderTactics.Core
 
         private void TurnManager_OnTurnChanged(object sender, EventArgs e)
         {
+            if (!aiEnabled)
+                return;
+
             Unit currentUnit = turnManager.CurrentUnit;
 
             if (currentUnit == null)
@@ -51,42 +63,219 @@ namespace PathfinderTactics.Core
 
             int safety = 0;
 
-            while (turnManager.CurrentUnit == enemyUnit
-                   && enemyUnit.GetActionPointsRemaining() > 0
-                   && safety < 5)
+            while (
+    turnManager.CurrentUnit == enemyUnit
+    && enemyUnit.GetActionPointsRemaining() > 0
+    && safety < 5
+)
             {
                 safety++;
 
-                if (IsNextToPlayer(enemyUnit))
+                if (IsNextToPlayer(enemyUnit) && WantsToUseRangedAttack(enemyUnit))
                 {
-                    int apBefore = enemyUnit.GetActionPointsRemaining();
-
-                    yield return TryMeleeAttack(enemyUnit);
+                    yield return MoveAwayFromClosestPlayer(enemyUnit);
 
                     if (turnManager.CurrentUnit != enemyUnit)
                         yield break;
 
-                    if (enemyUnit.GetActionPointsRemaining() == apBefore)
-                    {
-                        ServiceLocator.Get<UnitActionSystem>().EndTurn();
-                        yield break;
-                    }
+                    yield return new WaitForSeconds(delayBetweenActions);
                 }
-                else
+
+                int apBefore = enemyUnit.GetActionPointsRemaining();
+
+                yield return TryAttackIfPossible(enemyUnit);
+
+                if (turnManager.CurrentUnit != enemyUnit)
+                    yield break;
+
+                if (enemyUnit.GetActionPointsRemaining() < apBefore)
                 {
-                    yield return MoveTowardTarget(enemyUnit, GetClosestPlayerUnit(enemyUnit));
-
-                    if (turnManager.CurrentUnit != enemyUnit)
-                        yield break;
+                    yield return new WaitForSeconds(delayBetweenActions);
+                    continue;
                 }
 
-                yield return null;
+                Unit target = GetClosestPlayerUnit(enemyUnit);
+                if (target == null)
+                {
+                    ServiceLocator.Get<UnitActionSystem>().EndTurn();
+                    yield break;
+                }
+
+                yield return MoveTowardTarget(enemyUnit, target);
+
+                if (turnManager.CurrentUnit != enemyUnit)
+                    yield break;
+
+                yield return new WaitForSeconds(delayBetweenActions);
             }
 
             if (turnManager.CurrentUnit == enemyUnit && enemyUnit.GetActionPointsRemaining() > 0)
             {
                 ServiceLocator.Get<UnitActionSystem>().EndTurn();
             }
+        }
+
+        private IEnumerator TryAttackIfPossible(Unit enemyUnit)
+        {
+            BaseAction attackAction = null;
+            Unit target = null;
+
+            // Prefer ranged if this enemy has a ranged weapon/action.
+            RangedAction rangedAction = enemyUnit.GetComponent<RangedAction>();
+            if (rangedAction != null && rangedAction.CanExecuteAction())
+            {
+                target = GetClosestValidTargetForAction(enemyUnit, rangedAction);
+                if (target != null)
+                    attackAction = rangedAction;
+            }
+
+            // Fall back to melee.
+            if (attackAction == null)
+            {
+                MeleeAction meleeAction = enemyUnit.GetComponent<MeleeAction>();
+                if (meleeAction != null && meleeAction.CanExecuteAction())
+                {
+                    target = GetClosestValidTargetForAction(enemyUnit, meleeAction);
+                    if (target != null)
+                        attackAction = meleeAction;
+                }
+            }
+
+            if (attackAction == null || target == null)
+                yield break;
+
+            bool actionComplete = false;
+            UnitActionSystem uas = ServiceLocator.Get<UnitActionSystem>();
+
+            void HandleActionComplete(object sender, EventArgs e)
+            {
+                actionComplete = true;
+            }
+
+            uas.OnActionCompleted += HandleActionComplete;
+            uas.AiExecuteAction(attackAction, target.CurrentLayeredPosition);
+
+            yield return new WaitUntil(() => actionComplete);
+
+            uas.OnActionCompleted -= HandleActionComplete;
+        }
+
+        private Unit GetClosestValidTargetForAction(Unit enemyUnit, BaseAction action)
+        {
+            List<Vector3Int> validPositions = action.GetValidActionGridPositions();
+
+            Unit closest = null;
+            int closestDistance = int.MaxValue;
+
+            foreach (Unit unit in UnitManager.AllUnits)
+            {
+                if (unit == null)
+                    continue;
+
+                if (unit.GetFaction() != Faction.Player)
+                    continue;
+
+                var health = unit.GetComponent<IDamageable>();
+                if (health != null && health.IsDead)
+                    continue;
+
+                if (!validPositions.Contains(unit.CurrentLayeredPosition))
+                    continue;
+
+                int distance = PF2E_Core.GetPF2eDistance3D(
+                    enemyUnit.CurrentLayeredPosition,
+                    unit.CurrentLayeredPosition
+                );
+
+                if (distance > maxAttackDistanceTiles)
+                    continue;
+
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closest = unit;
+                }
+            }
+
+            return closest;
+        }
+
+        private bool WantsToUseRangedAttack(Unit enemyUnit)
+        {
+            RangedAction rangedAction = enemyUnit.GetComponent<RangedAction>();
+
+            if (rangedAction == null)
+                return false;
+
+            if (!rangedAction.CanExecuteAction())
+                return false;
+
+            Unit rangedTarget = GetClosestValidTargetForAction(enemyUnit, rangedAction);
+
+            return rangedTarget != null;
+        }
+
+        private IEnumerator MoveAwayFromClosestPlayer(Unit enemyUnit)
+        {
+            Unit closestPlayer = GetClosestPlayerUnit(enemyUnit);
+            if (closestPlayer == null)
+                yield break;
+
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+
+            Vector3Int start = enemyUnit.CurrentLayeredPosition;
+            Vector3Int playerPos = closestPlayer.CurrentLayeredPosition;
+
+            int maxMoveCost = enemyUnit.GetMaxMoveCost();
+
+            List<Vector3Int> reachablePositions =
+                Pathfinding.GetReachablePositions(start, maxMoveCost);
+
+            Vector3Int bestDestination = start;
+            int bestDistance = PF2E_Core.GetPF2eDistance3D(start, playerPos);
+
+            foreach (Vector3Int position in reachablePositions)
+            {
+                if (position == start)
+                    continue;
+
+                if (grid.IsPositionOccupied(position))
+                    continue;
+
+                int distance = PF2E_Core.GetPF2eDistance3D(position, playerPos);
+
+                if (distance > bestDistance)
+                {
+                    bestDistance = distance;
+                    bestDestination = position;
+                }
+            }
+
+            if (bestDestination == start)
+                yield break;
+
+            List<Vector3Int> path = Pathfinding.FindPath(start, bestDestination);
+
+            if (path == null || path.Count < 2)
+                yield break;
+
+            bool visualMoveComplete = false;
+
+            enemyUnit.MoveAlongPath(path, () =>
+            {
+                visualMoveComplete = true;
+            });
+
+            yield return new WaitUntil(() => visualMoveComplete);
+
+            bool actionCommitComplete = false;
+
+            ServiceLocator.Get<UnitActionSystem>().AiCommitMoveAction(() =>
+            {
+                actionCommitComplete = true;
+            });
+
+            yield return new WaitUntil(() => actionCommitComplete);
         }
 
         private IEnumerator MoveTowardTarget(Unit enemyUnit, Unit target)
