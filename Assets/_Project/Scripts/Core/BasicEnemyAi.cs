@@ -20,7 +20,7 @@ namespace PathfinderTactics.Core
         private float delayBetweenActions = 0.5f;
 
         [SerializeField]
-        private int maxAttackDistanceTiles = 5;
+        private int maxAttackDistanceTiles = 6;
 
         private TurnManager turnManager;
 
