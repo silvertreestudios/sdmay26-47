@@ -36,7 +36,7 @@ test-playmode:
   script:
     - echo "Running PlayMode tests..."
     - New-Item -ItemType Directory -Force -Path "TestResults" | Out-Null
-    - '& "$env:UNITY_PATH" -batchmode -nographics -quit -projectPath "$env:CI_PROJECT_DIR" -runTests -testPlatform PlayMode -testResults "$env:CI_PROJECT_DIR\TestResults\playmode-results.xml" -logFile "$env:CI_PROJECT_DIR\Logs\playmode.log"'
+    - '& "$env:UNITY_PATH" -batchmode -nographics -projectPath "$env:CI_PROJECT_DIR" -runTests -testPlatform PlayMode -testResults "$env:CI_PROJECT_DIR\TestResults\playmode-results.xml" -logFile "$env:CI_PROJECT_DIR\Logs\playmode.log"'
     - if (-not (Test-Path "TestResults\playmode-results.xml")) { Set-Content "TestResults\playmode-results.xml" '<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="PlayMode" tests="0" failures="0" errors="0"/></testsuites>' }
   artifacts:
     when: always
@@ -52,7 +52,7 @@ test-editmode:
   script:
     - echo "Running EditMode tests..."
     - New-Item -ItemType Directory -Force -Path "TestResults" | Out-Null
-    - '& "$env:UNITY_PATH" -batchmode -nographics -quit -projectPath "$env:CI_PROJECT_DIR" -runTests -testPlatform EditMode -testResults "$env:CI_PROJECT_DIR\TestResults\editmode-results.xml" -logFile "$env:CI_PROJECT_DIR\Logs\editmode.log"'
+    - '& "$env:UNITY_PATH" -batchmode -nographics -projectPath "$env:CI_PROJECT_DIR" -runTests -testPlatform EditMode -testResults "$env:CI_PROJECT_DIR\TestResults\editmode-results.xml" -logFile "$env:CI_PROJECT_DIR\Logs\editmode.log"'
     - if (-not (Test-Path "TestResults\editmode-results.xml")) { Set-Content "TestResults\editmode-results.xml" '<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="EditMode" tests="0" failures="0" errors="0"/></testsuites>' }
   artifacts:
     when: always
