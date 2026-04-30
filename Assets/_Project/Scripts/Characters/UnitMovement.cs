@@ -160,17 +160,22 @@ namespace PathfinderTactics.Characters
         {
             Vector3 targetPosition = positionList[currentPositionIndex];
 
-            // Move on XZ plane towards target
             Vector3 currentPosXZ = new Vector3(transform.position.x, 0, transform.position.z);
             Vector3 targetPosXZ = new Vector3(targetPosition.x, 0, targetPosition.z);
-            Vector3 moveDirectionXZ = (targetPosXZ - currentPosXZ).normalized;
 
-            if (moveDirectionXZ != Vector3.zero)
+            Vector3 moveDirectionXZ = targetPosXZ - currentPosXZ;
+            moveDirectionXZ.y = 0f;
+
+            if (moveDirectionXZ.sqrMagnitude > 0.001f)
             {
-                transform.forward = Vector3.Lerp(
-                    transform.forward,
-                    moveDirectionXZ,
-                    Time.deltaTime * rotateSpeed
+                moveDirectionXZ.Normalize();
+
+                Quaternion targetRotation = Quaternion.LookRotation(moveDirectionXZ, Vector3.up);
+
+                transform.rotation = Quaternion.Slerp(
+                    transform.rotation,
+                    targetRotation,
+                    1f - Mathf.Exp(-rotateSpeed * Time.deltaTime)
                 );
             }
 
@@ -179,15 +184,16 @@ namespace PathfinderTactics.Characters
                 targetPosXZ,
                 moveSpeed * Time.deltaTime
             );
+
             Vector3 moveDelta = stepXZ - currentPosXZ;
 
             ApplyGravity();
             characterController.Move(moveDelta + (Vector3.up * verticalVelocity * Time.deltaTime));
 
-            // Planar reach check
             if (Vector3.Distance(currentPosXZ, targetPosXZ) < 0.1f)
             {
                 currentPositionIndex++;
+
                 if (currentPositionIndex >= positionList.Count)
                 {
                     isMoving = false;

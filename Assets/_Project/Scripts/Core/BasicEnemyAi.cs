@@ -10,6 +10,7 @@ namespace PathfinderTactics.Core
 {
     public class BasicEnemyAi : MonoBehaviour
     {
+
         [SerializeField]
         private bool aiEnabled = true;
 
@@ -21,6 +22,17 @@ namespace PathfinderTactics.Core
 
         [SerializeField]
         private int maxAttackDistanceTiles = 6;
+
+        [Header("Random Jumping")]
+        [SerializeField]
+        private bool randomJumpEnabled = true;
+
+        [SerializeField]
+        [Range(0f, 1f)]
+        private float randomJumpChance = 0.25f;
+
+        [SerializeField]
+        private float jumpLeadTime = 0.08f;
 
         private TurnManager turnManager;
 
@@ -60,6 +72,15 @@ namespace PathfinderTactics.Core
                 yield break;
 
             yield return new WaitForSeconds(turnStartDelay);
+
+            UnitConditions conditions = enemyUnit.GetComponent<UnitConditions>();
+
+            if (conditions != null && conditions.HasCondition(ConditionType.Unconscious))
+            {
+                Debug.Log($"[AI] {enemyUnit.name} is unconscious. Skipping AI turn.");
+                ServiceLocator.Get<UnitActionSystem>().EndTurn();
+                yield break;
+            }
 
             int safety = 0;
 
@@ -258,6 +279,7 @@ namespace PathfinderTactics.Core
 
             if (path == null || path.Count < 2)
                 yield break;
+
 
             bool visualMoveComplete = false;
 
