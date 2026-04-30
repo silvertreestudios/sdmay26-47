@@ -11,14 +11,19 @@ variables:
   BUILD_NAME: "PathfinderTactics"
   BUILD_TARGET: "StandaloneWindows64"
   UNITY_PATH: 'C:\Program Files\Unity\Hub\Editor\6000.0.72f1\Editor\Unity.exe'
+  # Prevent GitLab from deleting the Library folder (huge speed boost)
+  GIT_CLEAN_FLAGS: -ffdx -e Library/ -e Logs/ -e TestResults/
 
 build-windows:
   stage: build
   tags: ["windows", "self-hosted"]
   script:
+    - echo "Cleaning up any zombie Unity processes..."
+    - taskkill /F /IM Unity.exe /T 2>$null | Out-Null
     - echo "Building $env:BUILD_NAME for $env:BUILD_TARGET..."
-    - New-Item -ItemType Directory -Force -Path "Builds\Windows" | Out-Null
-    - '& "$env:UNITY_PATH" -batchmode -nographics -quit -projectPath "$env:CI_PROJECT_DIR" -buildWindowsPlayer "$env:CI_PROJECT_DIR\Builds\Windows\$env:BUILD_NAME.exe" -logFile -'
+    - New-Item -ItemType Directory -Force -Path "Builds\Windows", "Logs" | Out-Null
+    - '& "$env:UNITY_PATH" -batchmode -nographics -quit -projectPath "$env:CI_PROJECT_DIR" -buildWindowsPlayer "$env:CI_PROJECT_DIR\Builds\Windows\$env:BUILD_NAME.exe" -logFile "$env:CI_PROJECT_DIR\Logs\build.log"'
+    - if ($LASTEXITCODE -ne 0) { Get-Content "Logs\build.log" -Tail 50; exit $LASTEXITCODE }
   artifacts:
     name: "${BUILD_NAME}_${CI_COMMIT_SHORT_SHA}"
     paths:
