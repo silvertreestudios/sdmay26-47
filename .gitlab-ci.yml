@@ -27,6 +27,7 @@ build-windows:
 
 test-playmode:
   stage: test
+  tags: ["windows", "self-hosted"]
   script:
     - echo "Running PlayMode tests..."
     - New-Item -ItemType Directory -Force -Path "TestResults" | Out-Null
@@ -42,6 +43,7 @@ test-playmode:
 
 test-editmode:
   stage: test
+  tags: ["windows", "self-hosted"]
   script:
     - echo "Running EditMode tests..."
     - New-Item -ItemType Directory -Force -Path "TestResults" | Out-Null
