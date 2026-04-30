@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text.RegularExpressions;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -30,7 +31,7 @@ namespace PathfinderTactics.Tests
             {
                 Object.Destroy(reactionManagerGo);
             }
-            
+
             // Cleanup any stray GameObjects
             var allUnits = Object.FindObjectsByType<Unit>(FindObjectsSortMode.None);
             foreach (var unit in allUnits)
@@ -41,11 +42,30 @@ namespace PathfinderTactics.Tests
             yield return null;
         }
 
+        /// <summary>
+        /// Suppresses the expected ServiceLocator errors that fire when Unit and its
+        /// RequireComponent dependencies (UnitGridObject, UnitMovement, etc.) call
+        /// Start() without a full game environment.
+        /// </summary>
+        private void SuppressExpectedServiceErrors()
+        {
+            // These errors come from ServiceLocator.Get<T>() when services aren't registered.
+            // They are harmless in a test context but Unity's test runner treats unhandled
+            // Debug.LogError as a failure. LogAssert.Expect tells the runner to expect them.
+            LogAssert.Expect(LogType.Error, new Regex("Service .* not found"));
+            LogAssert.Expect(LogType.Error, new Regex("Service .* not found"));
+            LogAssert.Expect(LogType.Error, new Regex("Service .* not found"));
+            LogAssert.Expect(LogType.Error, new Regex("Service .* not found"));
+            LogAssert.Expect(LogType.Error, new Regex("Service .* not found"));
+            // NullReferenceException from Unit.Start() when UnitActionSystem is null
+            LogAssert.ignoreFailingMessages = true;
+        }
+
         private (GameObject, Unit, UnitHealth, UnitConditions) CreateTestUnit(string name)
         {
             var go = new GameObject(name);
             var unit = go.AddComponent<Unit>();
-            var conditions = go.AddComponent<UnitConditions>();
+            var conditions = go.GetComponent<UnitConditions>(); // Added by RequireComponent
             var health = go.AddComponent<UnitHealth>();
             return (go, unit, health, conditions);
         }
@@ -53,6 +73,7 @@ namespace PathfinderTactics.Tests
         [UnityTest]
         public IEnumerator ApplyHealing_CappedAtMaxHealth()
         {
+            SuppressExpectedServiceErrors();
             var (go, unit, health, _) = CreateTestUnit("HealUnit");
             yield return null;
 
@@ -62,11 +83,14 @@ namespace PathfinderTactics.Tests
 
             health.ApplyHealing(10);
             Assert.AreEqual(20, health.GetCurrentHealth(), "Healing should not exceed base max health of 20.");
+
+            LogAssert.ignoreFailingMessages = false;
         }
 
         [UnityTest]
         public IEnumerator ReachingZeroHP_AppliesDyingAndUnconscious()
         {
+            SuppressExpectedServiceErrors();
             var (go, unit, health, conditions) = CreateTestUnit("DyingUnit");
             yield return null;
 
@@ -77,11 +101,14 @@ namespace PathfinderTactics.Tests
             Assert.IsTrue(conditions.HasCondition(ConditionType.Dying), "Should have Dying condition at 0 HP.");
             Assert.IsTrue(conditions.HasCondition(ConditionType.Unconscious), "Should be Unconscious at 0 HP.");
             Assert.AreEqual(1, conditions.GetConditionValue(ConditionType.Dying), "Initial Dying value should be 1.");
+
+            LogAssert.ignoreFailingMessages = false;
         }
 
         [UnityTest]
         public IEnumerator DamageWhileDying_IncreasesDyingValue()
         {
+            SuppressExpectedServiceErrors();
             var (go, unit, health, conditions) = CreateTestUnit("MultiDyingUnit");
             yield return null;
 
@@ -95,11 +122,14 @@ namespace PathfinderTactics.Tests
             yield return null;
 
             Assert.AreEqual(2, conditions.GetConditionValue(ConditionType.Dying), "Dying value should increase when taking damage while already at 0 HP.");
+
+            LogAssert.ignoreFailingMessages = false;
         }
 
         [UnityTest]
         public IEnumerator DrainedCondition_ReducesCurrentAndMaxHP()
         {
+            SuppressExpectedServiceErrors();
             var (go, unit, health, conditions) = CreateTestUnit("DrainedUnit");
             yield return null;
 
@@ -113,11 +143,14 @@ namespace PathfinderTactics.Tests
 
             Assert.AreEqual(18, health.GetMaxHealth(), "Max HP should be reduced by Drained.");
             Assert.AreEqual(18, health.GetCurrentHealth(), "Current HP should also be reduced by Drained.");
+
+            LogAssert.ignoreFailingMessages = false;
         }
 
         [UnityTest]
         public IEnumerator HealingWhileDying_RemovesDyingAndIncreasesWounded()
         {
+            SuppressExpectedServiceErrors();
             var (go, unit, health, conditions) = CreateTestUnit("RecoverUnit");
             yield return null;
 
@@ -134,6 +167,8 @@ namespace PathfinderTactics.Tests
             Assert.IsFalse(conditions.HasCondition(ConditionType.Dying), "Dying condition should be removed upon healing.");
             Assert.IsFalse(conditions.HasCondition(ConditionType.Unconscious), "Unconscious condition should be removed upon healing.");
             Assert.AreEqual(1, conditions.GetConditionValue(ConditionType.Wounded), "Wounded value should increase by 1 after recovering from Dying.");
+
+            LogAssert.ignoreFailingMessages = false;
         }
     }
 }

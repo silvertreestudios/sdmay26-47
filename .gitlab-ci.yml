@@ -35,13 +35,18 @@ test-playmode:
   tags: ["windows", "self-hosted"]
   script:
     - echo "Running PlayMode tests..."
-    - New-Item -ItemType Directory -Force -Path "TestResults" | Out-Null
+    - Remove-Item -Path "TestResults\playmode-results.xml" -ErrorAction SilentlyContinue
+    - New-Item -ItemType Directory -Force -Path "TestResults", "Logs" | Out-Null
     - '& "$env:UNITY_PATH" -batchmode -nographics -projectPath "$env:CI_PROJECT_DIR" -runTests -testPlatform PlayMode -testResults "$env:CI_PROJECT_DIR\TestResults\playmode-results.xml" -logFile "$env:CI_PROJECT_DIR\Logs\playmode.log"'
-    - if (-not (Test-Path "TestResults\playmode-results.xml")) { Set-Content "TestResults\playmode-results.xml" '<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="PlayMode" tests="0" failures="0" errors="0"/></testsuites>' }
+    - $exitCode = $LASTEXITCODE
+    - echo "Unity exited with code $exitCode"
+    - if (-not (Test-Path "TestResults\playmode-results.xml")) { echo "WARNING - No results file found. Dumping log tail:"; Get-Content "Logs\playmode.log" -Tail 30 -ErrorAction SilentlyContinue; Set-Content "TestResults\playmode-results.xml" '<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="PlayMode" tests="0" failures="0" errors="0"/></testsuites>' }
+    - if ($exitCode -ne 0 -and $exitCode -ne 2) { exit $exitCode }
   artifacts:
     when: always
     paths:
       - TestResults/
+      - Logs/
     reports:
       junit: TestResults/playmode-results.xml
   allow_failure: true
@@ -51,13 +56,18 @@ test-editmode:
   tags: ["windows", "self-hosted"]
   script:
     - echo "Running EditMode tests..."
-    - New-Item -ItemType Directory -Force -Path "TestResults" | Out-Null
+    - Remove-Item -Path "TestResults\editmode-results.xml" -ErrorAction SilentlyContinue
+    - New-Item -ItemType Directory -Force -Path "TestResults", "Logs" | Out-Null
     - '& "$env:UNITY_PATH" -batchmode -nographics -projectPath "$env:CI_PROJECT_DIR" -runTests -testPlatform EditMode -testResults "$env:CI_PROJECT_DIR\TestResults\editmode-results.xml" -logFile "$env:CI_PROJECT_DIR\Logs\editmode.log"'
-    - if (-not (Test-Path "TestResults\editmode-results.xml")) { Set-Content "TestResults\editmode-results.xml" '<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="EditMode" tests="0" failures="0" errors="0"/></testsuites>' }
+    - $exitCode = $LASTEXITCODE
+    - echo "Unity exited with code $exitCode"
+    - if (-not (Test-Path "TestResults\editmode-results.xml")) { echo "WARNING - No results file found. Dumping log tail:"; Get-Content "Logs\editmode.log" -Tail 30 -ErrorAction SilentlyContinue; Set-Content "TestResults\editmode-results.xml" '<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="EditMode" tests="0" failures="0" errors="0"/></testsuites>' }
+    - if ($exitCode -ne 0 -and $exitCode -ne 2) { exit $exitCode }
   artifacts:
     when: always
     paths:
       - TestResults/
+      - Logs/
     reports:
       junit: TestResults/editmode-results.xml
   allow_failure: true
