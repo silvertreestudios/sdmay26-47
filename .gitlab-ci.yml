@@ -14,6 +14,7 @@ variables:
 
 build-windows:
   stage: build
+  tags: ["windows", "self-hosted"]
   script:
     - echo "Building $env:BUILD_NAME for $env:BUILD_TARGET..."
     - New-Item -ItemType Directory -Force -Path "Builds\Windows" | Out-Null
