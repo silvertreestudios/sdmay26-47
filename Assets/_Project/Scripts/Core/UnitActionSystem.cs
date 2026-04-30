@@ -765,6 +765,17 @@ namespace PathfinderTactics.Core
             );
         }
 
+        public void AiExecuteAction(BaseAction action, Vector3Int targetPos)
+        {
+            selectedAction = action;
+            TryExecuteActionAtGridPos(targetPos);
+        }
+
+        public void AiCommitMoveAction(Action onComplete = null)
+        {
+            CommitMoveAction(onComplete);
+        }
+
         private void CommitMoveAction(Action onComplete = null)
         {
             if (selectedUnit == null)

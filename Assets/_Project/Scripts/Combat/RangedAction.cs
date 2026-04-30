@@ -263,6 +263,7 @@ namespace PathfinderTactics.Actions
                 mapPenalty = isAgileWeapon ? -4 : -5;
             else if (attacksMade >= 2)
                 mapPenalty = isAgileWeapon ? -8 : -10;
+            //Double counting map for ranged strikes
 
             int attackBonus = PF2E_Core.CalculateAttackRollModifier(
                 unit,
@@ -330,7 +331,8 @@ namespace PathfinderTactics.Actions
 
             Degree result = PF2E_Core.CheckResult(
                 d20,
-                attackBonus + mapPenalty + rangePenalty,
+                //attackBonus + mapPenalty + rangePenalty, (double counting map bonus)
+                attackBonus + rangePenalty,
                 finalAC
             );
             CombatLogUtility.LogResult(result);

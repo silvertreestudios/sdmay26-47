@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02b4dbbef26f0994cab6b8ec41cdcf92, type: 3}
-  m_Name: SkeletonGuard
+  m_Name: SkeletonArcher
   m_EditorClassIdentifier: 
-  unitName: 'Skeleton Guard '
+  unitName: 'Skeleton Archer '
   portraitIcon: {fileID: 21300000, guid: 73d02f30ad2a0b24a8a512e615bf8ad6, type: 3}
   unitSize: 2
-  perception: 0
-  stealth: 0
+  perception: 2
+  stealth: 2
   hasAllAroundVision: 0
   hasDenyAdvantage: 0
-  strength: 20
-  dexterity: 16
-  constitution: 10
+  strength: 16
+  dexterity: 20
+  constitution: 6
   intelligence: 10
   wisdom: 10
   charisma: 10
