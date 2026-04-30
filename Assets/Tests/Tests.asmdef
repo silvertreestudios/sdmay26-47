@@ -1,10 +1,9 @@
 {
     "name": "Tests",
     "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
         "PathfinderTactics.Runtime"
-    ],
-    "optionalUnityReferences": [
-        "TestAssemblies"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
