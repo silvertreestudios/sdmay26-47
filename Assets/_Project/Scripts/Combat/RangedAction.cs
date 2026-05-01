@@ -263,6 +263,7 @@ namespace TacticsGame.Actions
                 mapPenalty = isAgileWeapon ? -4 : -5;
             else if (attacksMade >= 2)
                 mapPenalty = isAgileWeapon ? -8 : -10;
+            //Double counting map for ranged strikes
 
             int attackBonus = TacticsRuleset_Core.CalculateAttackRollModifier(
                 unit,
