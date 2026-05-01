@@ -1,15 +1,15 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data.PF2e;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Data.TacticsRuleset;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Effects
+namespace TacticsGame.Spells.Effects
 {
     /// <summary>
     /// Specialized effect for PF2e Vitality (Heal).
     /// Heals living creatures and deals Vitality damage to Undead.
     /// </summary>
-    [CreateAssetMenu(menuName = "PF2e/Spell Effects/Vitality")]
+    [CreateAssetMenu(menuName = "TacticsRuleset/Spell Effects/Vitality")]
     public class VitalityEffectSO : SpellEffectSO
     {
         [Header("Base Scaling")]
@@ -54,7 +54,7 @@ namespace PathfinderTactics.Spells.Effects
                         );
                         int saveMod = target.GetSaveModifier(SavingThrowType.Fortitude);
                         int d20 = Random.Range(1, 21);
-                        Degree degree = PF2E_Core.CheckResult(d20, saveMod, spellDC);
+                        Degree degree = TacticsRuleset_Core.CheckResult(d20, saveMod, spellDC);
                         result = new RollResult(d20, d20 + saveMod, degree);
                         context.RollResults[target] = result;
                     }

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_bCJ9p3P5uJDAtaUI
+  m_EditorClassIdentifier: 
+  SourceId: bCJ9p3P5uJDAtaUI
+  Slug: miner
+  DisplayName: Miner
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You earned a living wrenching precious minerals from the lightless
+    depths of the earth. Adventuring might have seemed lucrative or glamorous compared
+    to this backbreaking labor\u2014and if you have to head back underground, this
+    time you plan to do so armed with a real weapon instead of a miner's pick. Choose
+    two attribute boosts. One must be to Strength or Wisdom , and one is a free attribute
+    boost. You're trained in the Survival skill and the Mining Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Terrain Expertise] skill feat with underground
+    terrain."
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: ceb0b197141558657cb5e62566b6bdfcd0c9f7c04abfb08a6c3a3ab2b023ddd3
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mining Lore
+    Rank: 1
+  LoreSkills:
+  - Mining Lore
+  GrantedFeats:
+  - SourceKey: kvkjl
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Expertise
+    SourceId: 
+    DisplayName: Terrain Expertise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

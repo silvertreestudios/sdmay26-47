@@ -4,7 +4,7 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 
-namespace PathfinderTactics.Utilities
+namespace TacticsGame.Utilities
 {
     public class PortraitGenerator : EditorWindow
     {
@@ -28,7 +28,7 @@ namespace PathfinderTactics.Utilities
         private Camera previewCamera;
         private GameObject previewCamObj;
 
-        [MenuItem("Tools/Pathfinder Tactics/Portrait Generator")]
+        [MenuItem("Tactics Core/Portrait Generator")]
         public static void ShowWindow()
         {
             GetWindow<PortraitGenerator>("Portrait Gen");

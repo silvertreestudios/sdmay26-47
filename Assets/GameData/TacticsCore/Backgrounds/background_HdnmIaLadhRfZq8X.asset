@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HdnmIaLadhRfZq8X
+  m_EditorClassIdentifier: 
+  SourceId: HdnmIaLadhRfZq8X
+  Slug: insurgent
+  DisplayName: Insurgent
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were more than a rebel; you were a revolutionary, fighting for
+    the promise of a new or better country. You may or may not still believe in the
+    cause, or perhaps victory or exile has led you on this new journey to trumpet
+    your glory... or to escape the consequences of your defeat. Choose two attribute
+    boosts. One must be to Strength or Wisdom , and one is a free attribute boost.
+    You're trained in the Deception skill and the Warfare Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Lengthy Diversion] skill feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 9b3cfd90c13e6d161554169826f59b138cf771fc6bde724fbd81662cbffafe2d
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare Lore
+    Rank: 1
+  LoreSkills:
+  - Warfare Lore
+  GrantedFeats:
+  - SourceKey: ltz28
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Lengthy Diversion
+    SourceId: 
+    DisplayName: Lengthy Diversion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

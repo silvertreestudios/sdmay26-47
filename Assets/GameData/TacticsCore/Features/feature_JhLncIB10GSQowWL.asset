@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_JhLncIB10GSQowWL
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: JhLncIB10GSQowWL
+  Slug: masterful-hunter-flurry
+  DisplayName: Masterful Hunter (Flurry)
+  IconPath: icons/skills/melee/strike-polearm-light-orange.webp
+  Description: Masterful Hunter Upgrade Level 17 You can blend your weapon mastery
+    with skillful targeting to make a series of precise attacks. If you have master
+    proficiency with your weapon, your multiple attack penalty for attacks against
+    your hunted prey is -2 (-1 with an agile weapon) on your second attack of the
+    turn, and -4 (-2 with an agile weapon) on your third and subsequent attacks of
+    the turn.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d564fd597bd9c45fb5a6adf33b079bd9a4297cca4caf69a64efba9df12cc8136
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: MultipleAttackPenalty
+    Path: 
+    Mode: 
+    Value: -2
+    Uuid: 
+    Json: '{"key":"MultipleAttackPenalty","predicate":["target:mark:hunted-prey",{"or":["proficiency:master","proficiency:legendary"]},{"not":"agile"}],"selector":"attack","value":-2}'
+  - Key: MultipleAttackPenalty
+    Path: 
+    Mode: 
+    Value: -1
+    Uuid: 
+    Json: '{"key":"MultipleAttackPenalty","predicate":["agile","target:mark:hunted-prey",{"or":["proficiency:master","proficiency:legendary"]}],"selector":"attack","value":-1}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

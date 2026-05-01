@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_phwQ2MrDZ13D2HxC
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: phwQ2MrDZ13D2HxC
+  Slug: second-skin
+  DisplayName: Second Skin
+  IconPath: icons/commodities/leather/leather-studded-tan.webp
+  Description: Your armor has become akin to a second skin for you. Your proficiency
+    ranks for light armor, medium armor, and unarmored defense increase to master.
+    When wearing light or medium armor, you can rest normally, rather than receiving
+    poor rest that leaves you fatigued.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 68a4694892e311a3e42f5140e719ff3bb567224472c1f3380632ed199781f487
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: light
+    Rank: 3
+  - Target: medium
+    Rank: 3
+  - Target: unarmored
+    Rank: 3
+  FocusPointDelta: 0

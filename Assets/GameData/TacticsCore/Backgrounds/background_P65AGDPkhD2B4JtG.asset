@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_P65AGDPkhD2B4JtG
+  m_EditorClassIdentifier: 
+  SourceId: P65AGDPkhD2B4JtG
+  Slug: perfection-seeker
+  DisplayName: Perfection Seeker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Impossible Lands You aspire to perfect your
+    body and mind in the tradition of Jalmeray's Houses of Perfection, honing your
+    acrobatic skills and mental faculties in preparation for a lifetime pushing the
+    edge of what most consider possible. Choose two attribute boosts. One must be
+    to Dexterity or Wisdom , and one is a free attribute boost. You're trained in
+    the Acrobatics skill as well as the Warfare Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Cat
+    Fall] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 6cca1bf6e21d915bcd25cf2b3b202f3054dd5afb65852aa66f6114015a793103
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 1
+    CustomSkillId: acrobatics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare Lore
+    Rank: 1
+  LoreSkills:
+  - Warfare Lore
+  GrantedFeats:
+  - SourceKey: k542i
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Cat Fall
+    SourceId: 
+    DisplayName: Cat Fall
+    Level: 1
+    ResolvedFeature: {fileID: 0}

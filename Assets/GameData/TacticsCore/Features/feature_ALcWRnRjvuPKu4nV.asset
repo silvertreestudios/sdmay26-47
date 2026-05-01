@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ALcWRnRjvuPKu4nV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ALcWRnRjvuPKu4nV
+  Slug: initiate-benefit-amulet
+  DisplayName: Initiate Benefit (Amulet)
+  IconPath: icons/commodities/treasure/token-gold-gem-purple.webp
+  Description: The protective aspects of your amulet can shield you and your allies
+    from harm. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Amulet's Abeyance]
+    reaction.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 533bd779fc20c93c4400bd0e651cd80ebb716d3b60accd8edb14c0e1c3b44c19
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Amulet's Abeyance
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Amulet''s
+      Abeyance"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Amulet's Abeyance
+    SourceId: 
+    DisplayName: Amulet's Abeyance
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

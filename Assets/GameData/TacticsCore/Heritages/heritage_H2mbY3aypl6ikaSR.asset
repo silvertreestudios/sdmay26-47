@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_H2mbY3aypl6ikaSR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: H2mbY3aypl6ikaSR
+  Slug: new-moon-sarangay
+  DisplayName: New Moon Sarangay
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: "Some people call you a dwarf sarangay and your kind \"hiding ones.\"
+    Others whisper you go out with the moon when the moon \"goes hunting\"\u2014a
+    common folk saying for when the new moon vanishes from the sky. Your elusive
+    ancestors built their lodgings in the shade of bamboo thickets, and your ancestral
+    communities valued caution and independence, passing down the knowledge of walking
+    lightly and moving like smoke through bamboo. Your ancestors had dark brown or
+    gray fur with white markings and a V-shaped pair of flat, triangular horns. Your
+    size is Small instead of Medium. You gain 10 Hit Points from your ancestry instead
+    of 8 and gain a +2 circumstance bonus to Athletics checks to @UUID[Compendium.pf2e.actionspf2e.Item.Shove]."
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c00150bdcdd5bdfd4d2bf08c16254106a75af58137fb9c66a0107834cf8e066f
+  Traits:
+  - sarangay
+  TraitsLower:
+  - sarangay
+  RawRules:
+  - Key: CreatureSize
+    Path: 
+    Mode: 
+    Value: '"small"'
+    Uuid: 
+    Json: '{"key":"CreatureSize","value":"small"}'
+  - Key: ActiveEffectLike
+    Path: system.attributes.ancestryhp
+    Mode: override
+    Value: 10
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.attributes.ancestryhp","value":10}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:shove"],"selector":"athletics","type":"circumstance","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.7mpMGhVoaPANJnZ8
+    SourceId: 
+    Slug: sarangay
+    DisplayName: Sarangay
+  ParentAncestryAsset: {fileID: 11400000, guid: 3b5aa169692386942ac6e90d44192e00, type: 2}
+  GrantedFeatures: []

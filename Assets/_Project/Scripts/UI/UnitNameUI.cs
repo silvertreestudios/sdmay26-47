@@ -1,9 +1,9 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using TMPro;
 using UnityEngine;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     /// <summary>
     /// Displays the name of the currently selected unit.
@@ -80,7 +80,7 @@ namespace PathfinderTactics.UI
             }
 
             var stats = selectedUnit.GetStats();
-            nameText.text = stats != null ? stats.unitName : selectedUnit.name;
+            nameText.text = stats != null ? stats.GetUnitName() : selectedUnit.name;
 
             ApplyGradient();
         }

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ADm8BpMlmoYUCyZy
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ADm8BpMlmoYUCyZy
+  Slug: artisan-s-calling
+  DisplayName: Artisan's Calling
+  IconPath: icons/skills/social/diplomacy-writing-letter.webp
+  Description: You feel an urge that echoes throughout your being to create, and
+    one day you know you shall craft an achievement surpassing anything the world
+    has ever seen. When you @UUID[Compendium.pf2e.actionspf2e.Item.Craft] or @UUID[Compendium.pf2e.actionspf2e.Item.Repair]
+    an object (including vehicles and structures), you can spend a Mythic Point to
+    attempt the check at mythic proficiency. The first time each day that you critically
+    succeed on a check to Repair an object, you regain a Mythic Point. Edicts be
+    the first to test an item or weapon crafted with your own hands, seek out or
+    innovate formulas for evermore complex creations Anathema destroy the creations
+    of other artisans, refuse an earnest request to repair something that has been
+    broken, use a weapon or item crafted by someone else, except for the purpose
+    of learning its function so you can understand how to create it yourself
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 5aa8b89f361d92bc40cc4b016b4187414971bbfdf391388c518435c8afdf7d95
+  Traits:
+  - calling
+  - mythic
+  TraitsLower:
+  - calling
+  - mythic
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Rewrite Fate"}'
+  Category: 0
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    SourceId: 
+    DisplayName: Rewrite Fate
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

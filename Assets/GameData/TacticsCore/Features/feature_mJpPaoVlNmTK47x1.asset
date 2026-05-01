@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_mJpPaoVlNmTK47x1
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: mJpPaoVlNmTK47x1
+  Slug: inventor-weapon-mastery
+  DisplayName: Inventor Weapon Mastery
+  IconPath: icons/skills/melee/hand-grip-sword-orange.webp
+  Description: You fully understand your weapons. Your proficiency ranks for simple
+    and martial weapons and unarmed attacks increase to master.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 41c7a471ea29cdfc646f5a4b77faa2d956fba0a40866488649218301f6045fc8
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules: []
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: martial
+    Rank: 3
+  - Target: simple
+    Rank: 3
+  - Target: unarmed
+    Rank: 3
+  FocusPointDelta: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 
   Slug: 
-  ElementName: Heal
+  ElementName: Heal 1
   Icon: {fileID: 0}
   Description: Channel vital energy through your touch to restore 1d8 HP to a living
     creature or deal 1d8 vitality damage to an undead creature.
@@ -35,7 +35,7 @@ MonoBehaviour:
   RequiresLineOfEffect: 1
   Area:
     Shape: 0
-    Radius: 0
+    Radius: 5
   SpellAttackRoll: 0
   DeliveryType: 0
   ProjectileSpeed: 15

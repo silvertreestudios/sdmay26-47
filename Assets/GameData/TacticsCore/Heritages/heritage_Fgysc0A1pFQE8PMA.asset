@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_Fgysc0A1pFQE8PMA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: Fgysc0A1pFQE8PMA
+  Slug: lorekeeper-shisk
+  DisplayName: Lorekeeper Shisk
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You grew up surrounded by knowledge and secrets. You become trained
+    in one Lore skill and one other Intelligence- or Wisdom-based skill of your choice.
+    At 5th level, you become expert in the chosen skills.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c354be809f2318a8e470cda784250a29dbeb782a39fae81017d72f261934d34d
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.x1YinOddgUxwOLqP
+    SourceId: 
+    Slug: shisk
+    DisplayName: Shisk
+  ParentAncestryAsset: {fileID: 11400000, guid: 99c85d2314ba82d469243287e812686c, type: 2}
+  GrantedFeatures: []

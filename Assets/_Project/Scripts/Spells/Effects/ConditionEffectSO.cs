@@ -1,15 +1,15 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Effects
+namespace TacticsGame.Spells.Effects
 {
     /// <summary>
     /// Resolution Phase: Applies a condition to affected targets based on degree of success.
     /// PF2e pattern: different condition values at different degrees.
     /// Example: Fear -> CritFail=Frightened 3, Fail=Frightened 2, Success=Frightened 1, CritSuccess=nothing.
     /// </summary>
-    [CreateAssetMenu(menuName = "PF2e/Spell Effects/Condition")]
+    [CreateAssetMenu(menuName = "TacticsRuleset/Spell Effects/Condition")]
     public class ConditionEffectSO : SpellEffectSO
     {
         [Header("Condition Configuration")]

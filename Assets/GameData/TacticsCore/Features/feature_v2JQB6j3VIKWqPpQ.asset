@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_v2JQB6j3VIKWqPpQ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: v2JQB6j3VIKWqPpQ
+  Slug: choir-politic
+  DisplayName: Choir Politic
+  IconPath: icons/skills/social/diplomacy-unity-alliance.webp
+  Description: "When your patron speaks, it is a chorus of voices sounding as one.
+    They first appeared to you in the faces of your neighbors in the middle of a
+    town festival or council meeting, when the success of an endeavor hinged on everyone
+    working together. With the strength of your patron behind you, you then rallied
+    the community together for a common goal. Your patron might be a single entity
+    gathering a coterie of subjects together for an unknown cause or a like-minded
+    covenant of deities and spirits. Whatever the case, your patron\u2014and by extension,
+    you\u2014understands that mortals are stronger together. Spell List divine Patron
+    Skill Religion Lesson of Community Knowledge Your patron taught you the importance
+    of pooling information to help a group with a common cause. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Share
+    Vision] hex cantrip and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Share
+    Lore]. Familiar of Bolstering Aid Your familiar knows all manner of tricks that
+    can help! When you Cast or Sustain a hex, and your familiar is adjacent to an
+    ally, that ally gains a +2 status bonus to the next non-attack skill check that
+    ally attempts before the start of your next turn."
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6600e3e23f1d9d59ef260108d6f9670c333a25cdbee34794dd5c84a7fbdc47eb
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.religion.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.religion.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"divine"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.BolsteringAid.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.BolsteringAid.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.BolsteringAid.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.BolsteringAid.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

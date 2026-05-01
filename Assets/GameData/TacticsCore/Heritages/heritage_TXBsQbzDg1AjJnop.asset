@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_TXBsQbzDg1AjJnop
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: TXBsQbzDg1AjJnop
+  Slug: dijiang
+  DisplayName: Dijiang
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have the form of a faceless, leathery ball with short fur, six
+    legs, and a connection to primordial chaos. While you have no face, head, mouth,
+    eyes, or ears, you can somehow hear, speak, see, eat, and breathe just fine (though
+    it's unclear exactly how). Your erratic nature means you often react to stimuli
+    in unpredictable ways. When you roll a failure (though not a critical failure)
+    on a saving throw against an emotion effect, you get a success instead.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 9f502c9b3855004c204bf3ac3a12b6716e900a1ec1b859ddd7cc69f385d21ea5
+  Traits:
+  - sprite
+  TraitsLower:
+  - sprite
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"failure":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["item:trait:emotion"],"selector":"saving-throw"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TRqoeYfGAFjQbviF
+    SourceId: 
+    Slug: sprite
+    DisplayName: Sprite
+  ParentAncestryAsset: {fileID: 11400000, guid: afedc73b20f7005478723c5b1a6b86f8, type: 2}
+  GrantedFeatures: []

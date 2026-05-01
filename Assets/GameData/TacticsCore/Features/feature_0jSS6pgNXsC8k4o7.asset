@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0jSS6pgNXsC8k4o7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0jSS6pgNXsC8k4o7
+  Slug: elemental-instinct
+  DisplayName: Elemental Instinct
+  IconPath: icons/magic/symbols/elements-air-earth-fire-water.webp
+  Description: This instinct option for barbarians allows you to channel elemental
+    forces, bonding with a single element and its associated plane. Perhaps your
+    ancestors were elemental conjurers or blessed by an elemental lord. Select an
+    element from the Elemental Instincts table to be your instinct's element. If
+    your element offers multiple damage types, choose one of those type when you
+    select your element. Element Trait Damage Air Air Electricity or slashing Earth
+    Earth Bludgeoning or piercing Fire Fire Fire Metal Metal Piercing or slashing
+    Water Water Bludgeoning or cold Wood Wood Bludgeoning or piercing Anathema Disrespecting
+    an elemental creature is anathema to your instinct; defending yourself against
+    one is not. Purposefully despoiling the elemental plane associated with your
+    element is anathema to your instinct, though this doesn't prevent you from responsibly
+    altering that plane. Elemental Rage While raging, you're cloaked in a vortex
+    of elemental matter; you become @UUID[Compendium.pf2e.conditionitems.Item.Concealed]
+    against ranged attacks. You can't use this concealment to @UUID[Compendium.pf2e.actionspf2e.Item.Hide]
+    or @UUID[Compendium.pf2e.actionspf2e.Item.Sneak]. While raging, you increase
+    the additional damage from Rage from 2 to 4 and change its damage type to the
+    one you selected for your element. If you have any kineticist impulses with the
+    same element type as the one you chose for your instinct, such as ones gained
+    by taking the @UUID[Compendium.pf2e.feats-srd.Item.Kineticist Dedication] multiclass
+    feat, you can use them while raging even if they have the concentrate trait.
+    Specialization Ability When you use elemental rage, you increase the damage from
+    Rage from 4 to 6. If you have greater weapon specialization, instead increase
+    the damage from Rage when using elemental rage from 6 to 12. Raging Resistance
+    You resist the damage dealt by attacks and abilities of elemental creatures of
+    your chosen element, as well as creatures made of your element, regardless of
+    the damage type. You also resist damage dealt by attacks, spells, and abilities
+    with your elemental trait.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a9924131401a429be88ddffd4ea368ef144c73d90be573cef787ddb129f621f1
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitAir","value":"air"},{"label":"PF2E.TraitEarth","value":"earth"},{"label":"PF2E.TraitFire","value":"fire"},{"label":"PF2E.TraitMetal","value":"metal"},{"label":"PF2E.TraitWater","value":"water"},{"label":"PF2E.TraitWood","value":"wood"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Element","rollOption":"elemental-instinct"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitBludgeoning","predicate":[{"or":["elemental-instinct:earth","elemental-instinct:water","elemental-instinct:wood"]}],"value":"bludgeoning"},{"label":"PF2E.TraitCold","predicate":["elemental-instinct:water"],"value":"cold"},{"label":"PF2E.TraitElectricity","predicate":["elemental-instinct:air"],"value":"electricity"},{"label":"PF2E.TraitFire","predicate":["elemental-instinct:fire"],"value":"fire"},{"label":"PF2E.TraitPiercing","predicate":[{"or":["elemental-instinct:earth","elemental-instinct:metal","elemental-instinct:wood"]}],"value":"piercing"},{"label":"PF2E.TraitSlashing","predicate":[{"or":["elemental-instinct:air","elemental-instinct:metal"]}],"value":"slashing"}],"flag":"damage","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.DamageType","rollOption":"elemental-instinct:damage"}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 4
+    Uuid: 
+    Json: '{"damageType":"{item|flags.pf2e.rulesSelections.damage}","key":"AdjustModifier","mode":"upgrade","predicate":[{"or":["class:barbarian","feat:instinct-ability"]}],"selectors":["strike-damage"],"slug":"rage","value":4}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 6
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian","feature:weapon-specialization"],"selectors":["strike-damage"],"slug":"rage","value":6}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 12
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian","feature:greater-weapon-specialization"],"selectors":["strike-damage"],"slug":"rage","value":12}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

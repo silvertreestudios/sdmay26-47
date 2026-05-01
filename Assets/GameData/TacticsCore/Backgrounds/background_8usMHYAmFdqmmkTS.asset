@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_8usMHYAmFdqmmkTS
+  m_EditorClassIdentifier: 
+  SourceId: 8usMHYAmFdqmmkTS
+  Slug: sponsored-by-a-village
+  DisplayName: Sponsored by a Village
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You come from a small community far from any large cities, but the
+    Magaambya is known even in your isolated corner of the world. You have shown
+    more scholarly talent than anyone from your village in many years, perhaps even
+    generations, and the village elders have insisted you explore your potential
+    at the Magaambya. Whether you were eager to leave or not seemed irrelevant to
+    the elders; you had the talent, so you must go. You don''t know how the elders
+    had the connections or influence to sponsor your education there, but you''ve
+    left your tight- knit community behind for the city of Nantambu and the Magaambya
+    at its heart. Choose two attribute boosts. One must be to Intelligence or Wisdom
+    , and one is a free attribute boost. You''re trained in your choice of the Crafting
+    or Survival skill. You gain a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Crafter''s
+    Appraisal] if you chose Crafting or @UUID[Compendium.pf2e.feats-srd.Item.Forager]
+    if you chose Survival. You''re also trained in the Lore skill appropriate for
+    the terrain around your community (such as Forest Lore or Jungle Lore). Your
+    recommended primary branch is the Cascade Bearers.'
+  SourceTitle: Pathfinder Strength of Thousands Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: f730655561e640f3d23dc6bf8c2f09988e6368e7f65d4303c1ffea2329266900
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Crafting","value":"crafting"},{"label":"PF2E.Skill.Survival","value":"survival"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"village"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Crafter's Appraisal
+    Json: '{"key":"GrantItem","predicate":["village:crafting"],"uuid":"Compendium.pf2e.feats-srd.Item.Crafter''s
+      Appraisal"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Forager
+    Json: '{"key":"GrantItem","predicate":["village:survival"],"uuid":"Compendium.pf2e.feats-srd.Item.Forager"}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Terrain> Lore
+    Rank: 1
+  LoreSkills:
+  - <Terrain> Lore
+  GrantedFeats: []

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_beW1OqibVQ3fBvRw
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: beW1OqibVQ3fBvRw
+  Slug: swashbuckler-s-style
+  DisplayName: Swashbuckler's Style
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: Your own distinctive style lets you gracefully handle any situation.
+    Choose a swashbuckler's style. This style determines the additional actions you
+    use to gain panache and makes you trained in the skill related to that action.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 108e5d707873d9b2816cc114b379532036a12dfb735ab27888a6a54caf4c1861
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:swashbuckler-style",{"or":[{"and":["class:swashbuckler","item:tag:swashbuckler-style"]},{"and":["item:tag:swashbuckler-style",{"not":"item:tag:class-archetype"}]}]}]},"flag":"swashbucklersStyle","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Swashbuckler.Style.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.swashbucklersStyle}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.swashbucklersStyle}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.swashbucklersStyle}'
+    SourceId: 
+    DisplayName: swashbucklersStyle}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

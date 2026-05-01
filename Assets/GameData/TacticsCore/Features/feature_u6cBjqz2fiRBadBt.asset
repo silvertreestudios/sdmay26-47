@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_u6cBjqz2fiRBadBt
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: u6cBjqz2fiRBadBt
+  Slug: precision
+  DisplayName: Precision
+  IconPath: icons/skills/ranged/target-bullseye-archer-orange.webp
+  Description: You have trained to aim for your prey's weak points. The first time
+    you hit your hunted prey in a round, you also deal 1d8 additional precision damage.
+    (Precision damage increases the damage you already deal, using the same type,
+    but is ineffective against creatures that lack vital organs or weak points.)
+    At 11th level, the extra damage increases to 2d8 precision damage, and at 19th
+    level, the extra damage increases to 3d8 precision damage.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6efed732782ca15373a06fa421f47fbf1d8261bae451975f9a5000a833c02648
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Ranger.HuntersEdge.FirstAttack","option":"first-attack","toggleable":true}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"precision","diceNumber":"ternary(lt(@actor.level, 11), 1,
+      ternary(lt(@actor.level, 19), 2, 3))","dieSize":"d8","key":"DamageDice","predicate":["first-attack"],"selector":"strike-damage"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

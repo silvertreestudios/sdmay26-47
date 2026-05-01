@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_gf2CfXocpIQgRsCY
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: gf2CfXocpIQgRsCY
+  Slug: dokkaebi-goblin
+  DisplayName: Dokkaebi Goblin
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your ancestors mastered illusion-based magic, giving you an innate
+    understanding of it. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Figment]
+    as an innate occult cantrip at will. A cantrip is heightened to a spell rank
+    equal to half your level rounded up. You also gain a +1 circumstance bonus to
+    Will saves against illusions.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 50be1e90e223443f4a881d52e0807092fd7f80b3e57ffebe6994fecd690a5040
+  Traits:
+  - goblin
+  TraitsLower:
+  - goblin
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["item:trait:illusion"],"selector":"will","type":"circumstance","value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:figment","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:goblin"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:figment","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:goblin"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.sQfjTMDaZbT9DThq
+    SourceId: 
+    Slug: goblin
+    DisplayName: Goblin
+  ParentAncestryAsset: {fileID: 11400000, guid: 06394c9c758154f4f9f55b529d6315ca, type: 2}
+  GrantedFeatures: []

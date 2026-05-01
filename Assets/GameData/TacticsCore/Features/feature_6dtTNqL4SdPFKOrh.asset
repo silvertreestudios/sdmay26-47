@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_6dtTNqL4SdPFKOrh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 6dtTNqL4SdPFKOrh
+  Slug: thousand-league-sandals
+  DisplayName: Thousand-League Sandals
+  IconPath: icons/equipment/feet/wrappings-leather-brown.webp
+  Description: "Usage worn shoes Threadbare but trustworthy, your sandals have carried
+    you this far, and they'll carry you much further still. Immanence Your sandals
+    ease your travels on the path ahead, granting you a +10-foot status bonus to
+    your Speed. Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.Marathon
+    Dash] 1 (transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.AZt0m0EHRmtDCd5s
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 00620084753d089c8a6a641d1889b6de84c13af42feddf3a4734bfb07822e001
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"thousand-league-sandals"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.ThousandLeagueSandals.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"thousand-league-sandals"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.ThousandLeagueSandals.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"thousand-league-sandals"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Marathon Dash
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Marathon Dash"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"thousand-league-sandals-origin"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Thousand-League Sandals
+    Json: '{"alterations":[{"mode":"add","property":"other-tags","value":"physical-ikon"},{"mode":"add","property":"other-tags","value":"physical-ikon:thousand-league-sandals"}],"key":"GrantItem","predicate":["thousand-league-sandals-origin:granted"],"uuid":"Compendium.pf2e.equipment-srd.Item.Thousand-League
+      Sandals"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"types":["equipment"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["thousand-league-sandals-origin:existing"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:thousand-league-sandals"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"other-tags","value":"physical-ikon:thousand-league-sandals"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.6dtTNqL4SdPFKOrh
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"equipment","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:thousand-league-sandals","thousand-league-sandals-origin:existing",{"not":"item:slug:thousand-league-sandals"}],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.6dtTNqL4SdPFKOrh
+      inline]"}]}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 10
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["divine-spark:thousand-league-sandals"],"selector":"land-speed","type":"status","value":10}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:thousand-league-sandals","item:slug:marathon-dash"]},{"not":"divine-spark:thousand-league-sandals"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"traits","value":"divine"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Marathon Dash
+    SourceId: 
+    DisplayName: Marathon Dash
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Thousand-League Sandals
+    SourceId: 
+    DisplayName: Thousand-League Sandals
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

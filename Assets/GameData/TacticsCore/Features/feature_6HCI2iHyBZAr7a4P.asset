@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_6HCI2iHyBZAr7a4P
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 6HCI2iHyBZAr7a4P
+  Slug: studious-spells
+  DisplayName: Studious Spells
+  IconPath: icons/sundries/documents/document-torn-diagram-tan.webp
+  Description: 'Your hybrid study grants you additional spells that can enhance your
+    power in combat. You gain two special 2nd-rank studious spell slots, which can
+    be used to prepare @UUID[Compendium.pf2e.spells-srd.Item.Gecko Grip], @UUID[Compendium.pf2e.spells-srd.Item.Sure
+    Strike], @UUID[Compendium.pf2e.spells-srd.Item.Water Breathing], and an additional
+    spell depending on your hybrid study. You add any spells from this class feature
+    to your spellbook. At 11th level, the extra slots increase to 3rd-rank and you
+    add @UUID[Compendium.pf2e.spells-srd.Item.Haste] and an additional spell depending
+    on your hybrid study. At 13th level, the extra slots increase to 4th-rank and
+    you add @UUID[Compendium.pf2e.spells-srd.Item.Fly] and an additional spell depending
+    on your hybrid study. Aloof Firmament 7th: @UUID[Compendium.pf2e.spells-srd.Item.Water
+    Walk]; 11th: @UUID[Compendium.pf2e.spells-srd.Item.Wall of Wind]; 13th: @UUID[Compendium.pf2e.spells-srd.Item.Variable
+    Gravity] Inexorable Iron 7th: @UUID[Compendium.pf2e.spells-srd.Item.Enlarge];
+    11th: @UUID[Compendium.pf2e.spells-srd.Item.Earthbind]; 13th: @UUID[Compendium.pf2e.spells-srd.Item.Planar
+    Tether] Laughing Shadow 7th: @UUID[Compendium.pf2e.spells-srd.Item.Blur]; 11th:
+    @UUID[Compendium.pf2e.spells-srd.Item.Time Jump]; 13th: @UUID[Compendium.pf2e.spells-srd.Item.Translocate]
+    Sparkling Targe 7th: @UUID[Compendium.pf2e.spells-srd.Item.Resist Energy]; 11th:
+    @UUID[Compendium.pf2e.spells-srd.Item.Warding Aggression]; 13th: @UUID[Compendium.pf2e.spells-srd.Item.Mountain
+    Resilience] Starlit Span 7th: @UUID[Compendium.pf2e.spells-srd.Item.Darkvision];
+    11th: @UUID[Compendium.pf2e.spells-srd.Item.Wall of Wind]; 13th: @UUID[Compendium.pf2e.spells-srd.Item.Unfettered
+    Movement] Twisting Tree 7th: @UUID[Compendium.pf2e.spells-srd.Item.Embed Message];
+    11th: @UUID[Compendium.pf2e.spells-srd.Item.Slow]; 13th: @UUID[Compendium.pf2e.spells-srd.Item.Flicker]
+    Unfurling Brocade 7th: @UUID[Compendium.pf2e.spells-srd.Item.Web]; 11th: @UUID[Compendium.pf2e.spells-srd.Item.Whirling
+    Scarves]; 13th: @UUID[Compendium.pf2e.spells-srd.Item.Planar Tether] Resurgent
+    Maelstrom 7th: @UUID[Compendium.pf2e.spells-srd.Item.Water Walk], 11th: @UUID[Compendium.pf2e.spells-srd.Item.Aqueous
+    Orb], 13th: @UUID[Compendium.pf2e.spells-srd.Item.Unfettered Movement]'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a85eb4f7fca52823fd63cb7a7e7a8e76fbd037f5cf84e04c6e6251a6d23ad9d2
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules: []
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

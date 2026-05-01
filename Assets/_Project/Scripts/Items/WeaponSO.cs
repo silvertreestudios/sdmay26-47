@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 using UnityEngine;
 
-namespace PathfinderTactics.Items
+namespace TacticsGame.Items
 {
     public enum WeaponCategory
     {
@@ -94,7 +94,7 @@ namespace PathfinderTactics.Items
         }
     }
 
-    [CreateAssetMenu(menuName = "PathfinderTactics/Items/Weapon")]
+    [CreateAssetMenu(menuName = "TacticsGame/Items/Weapon")]
     public class WeaponSO : EquipmentSO
     {
         [Header("Damage")]

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_7ZDCShtRg5QZggrU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 7ZDCShtRg5QZggrU
+  Slug: inured-azarketi
+  DisplayName: Inured Azarketi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your ancestors had to survive in polluted water that made every breath
+    noxious. You gain poison resistance equal to half your level (minimum 1). Furthermore,
+    you can survive outside of water for 72 hours before you begin to suffocate.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: e21da23cc20443a229b3866e67bf1a47fa5ac78928860bace097080becc9968e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"poison","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.yFoojz6q3ZjvceFw
+    SourceId: 
+    Slug: azarketi
+    DisplayName: Azarketi
+  ParentAncestryAsset: {fileID: 11400000, guid: 35691cbce9f238047a56788acb89af44, type: 2}
+  GrantedFeatures: []

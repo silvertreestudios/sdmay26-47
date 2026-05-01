@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_dmK1wya8GBi9MmCB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: dmK1wya8GBi9MmCB
+  Slug: skillful-lessons
+  DisplayName: Skillful Lessons
+  IconPath: icons/tools/hand/hammer-and-nail.webp
+  Description: At 3rd level and every odd-numbered level thereafter, you gain a skill
+    feat. This feat must be for an Intelligence-, Wisdom-, or Charisma-based skill,
+    or for the skill you gained from your methodology.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a6554686ae4cc41bd91c7e7e39d62e17f3a437c4e4d46ed9c1de752ea139a9a8
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules: []
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

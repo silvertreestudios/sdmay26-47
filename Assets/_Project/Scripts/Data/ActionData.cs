@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Data
+namespace TacticsGame.Data
 {
-    [CreateAssetMenu(fileName = "NewAction", menuName = "PathfinderTactics/Data/Action Data")]
+    [CreateAssetMenu(fileName = "NewAction", menuName = "TacticsGame/Data/Action Data")]
     public class ActionData : ScriptableObject
     {
         public string actionName;

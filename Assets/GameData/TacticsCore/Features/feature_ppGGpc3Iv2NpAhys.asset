@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ppGGpc3Iv2NpAhys
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ppGGpc3Iv2NpAhys
+  Slug: palatine-detective
+  DisplayName: Palatine Detective
+  IconPath: icons/creatures/invertebrates/beetle-stag-yellow-green.webp
+  Description: 'Whether at the invitation of a senior member of the Esoteric Order
+    of the Palatine Eye, after going through a rigorous sorting process, or by a
+    twist of fate, you recently underwent a secret ritual involving The Lost Gospels
+    of Tabris that granted you a greater understanding of both the divine and the
+    occult. Not even you are certain of the origin or purpose of the forces that
+    have granted you these abilities, but you know the key to answering that question
+    and expanding your power lies hidden behind the cryptic words of the many ancient
+    texts still waiting to be discovered and examined. If you choose this class archetype,
+    you must select Palatine Detective Dedication as your 2nd-level class feat. Prerequisites:
+    You must be an investigator. You are affiliated with the Esoteric Order of the
+    Palatine Eye. Palatine Detective Adjustments: Instead of choosing a methodology
+    from others available to the investigator class, you have the esoterica methodology
+    (see below). Esoterica Methodology You become trained in Occultism or Religion,
+    and you gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick Identification] skill
+    feat. In addition, choose one common cantrip from the divine spell list and one
+    common cantrip from the occult spell list. You can cast those spells as innate
+    spells at will. You become trained in the spell attack modifier and spell DCs
+    statistics. Intelligence is your spellcasting attribute.'
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0cc11fcff71dc8e73c3220bdef0acc13c1a167b7db0d6f1fab1f991ac5cf67be
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Occultism","value":"occultism"},{"label":"PF2E.Skill.Religion","value":"religion"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Quick Identification
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Quick Identification"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Palatine Detective Dedication
+    Json: '{"flag":"palatineDetectiveDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Palatine
+      Detective Dedication"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Identification
+    SourceId: 
+    DisplayName: Quick Identification
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Palatine Detective Dedication
+    SourceId: 
+    DisplayName: Palatine Detective Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades:
+  - Target: spellcasting
+    Rank: 1
+  FocusPointDelta: 0

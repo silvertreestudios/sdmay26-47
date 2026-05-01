@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     /// <summary>
     /// Static Event Bus to decouple gameplay systems from the UI.

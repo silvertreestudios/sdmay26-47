@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Lc7PS4JDnO6SWmiS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Lc7PS4JDnO6SWmiS
+  Slug: guardian-s-calling
+  DisplayName: Guardian's Calling
+  IconPath: icons/environment/people/charge.webp
+  Description: Your instinctive urge is always to protect others, pushing back aggressors
+    and doing everything in your power to prevent them from harming your allies and
+    charges. When you attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Disarm],
+    @UUID[Compendium.pf2e.actionspf2e.Item.Reposition], or @UUID[Compendium.pf2e.actionspf2e.Item.Shove]
+    an opponent, you can spend a Mythic Point to make the check at mythic proficiency.
+    You can attempt these maneuvers against a creature of any size when performing
+    them at mythic proficiency. The first time each day that you critically succeed
+    on a check to Disarm, Reposition, or Shove an opponent, you regain a Mythic Point.
+    Edicts place yourself in harm's way to protect your allies or innocent creatures
+    under threat Anathema retreat from a battle while your allies or innocent bystanders
+    are in danger without taking every reasonable effort to rescue them first
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 7e6b1375f18f94de587110ec0338e71685ef418c397e05362241b7fb1335eb87
+  Traits:
+  - calling
+  - mythic
+  TraitsLower:
+  - calling
+  - mythic
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Rewrite Fate"}'
+  Category: 0
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    SourceId: 
+    DisplayName: Rewrite Fate
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

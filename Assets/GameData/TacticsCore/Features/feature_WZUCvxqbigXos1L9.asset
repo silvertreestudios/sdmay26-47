@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_WZUCvxqbigXos1L9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: WZUCvxqbigXos1L9
+  Slug: rage
+  DisplayName: Rage
+  IconPath: icons/skills/wounds/injury-face-impact-orange.webp
+  Description: You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Rage] action,
+    which lets you fly into a frenzy.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: fbe66864634701597463da75e53367a0c58fd0fa3a328d412432fa3d445f31a6
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Rage
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Rage"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Rage
+    SourceId: 
+    DisplayName: Rage
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

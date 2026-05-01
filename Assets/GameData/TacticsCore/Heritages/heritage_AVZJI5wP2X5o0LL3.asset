@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_AVZJI5wP2X5o0LL3
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: AVZJI5wP2X5o0LL3
+  Slug: trogloshi
+  DisplayName: Trogloshi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're adapted to the sunless regions of dense jungle forests and
+    deep caves, with soft flesh lacking pigment and unusually clear crystalline horns.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Crystal Luminescence] ancestry
+    feat.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: b946445aba32429db30d0f2b3a8f71b2018f48a321a437603d5bbcb68c239802
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Crystal Luminescence
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Crystal Luminescence"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.dw2K1AJR9mQ25nDP
+    SourceId: 
+    Slug: kashrishi
+    DisplayName: Kashrishi
+  ParentAncestryAsset: {fileID: 11400000, guid: d86fd71f542a48c4fa8e13bce9c8218c, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Crystal Luminescence
+    SourceId: 
+    DisplayName: Crystal Luminescence
+    Level: 0
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_TIvzBALymvb56L79
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: TIvzBALymvb56L79
+  Slug: battlefield-surveyor
+  DisplayName: Battlefield Surveyor
+  IconPath: icons/environment/people/charge.webp
+  Description: Whether taking stock of an enemy army or simply standing guard, you
+    excel at observing your foes. Your proficiency rank for Perception increases
+    to master. In addition, you gain a +2 circumstance bonus to Perception checks
+    for initiative, making you faster to react during combat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e1b9a2a8eb8b104eac32da8f6f04632b56fbd29f8b3e2656327f7798d837f958
+  Traits:
+  - fighter
+  TraitsLower:
+  - fighter
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["perception"],"selector":"initiative","type":"circumstance","value":2}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: perception
+    Rank: 3
+  FocusPointDelta: 0

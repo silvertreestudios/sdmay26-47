@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0npO4rPscGm0dX13
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0npO4rPscGm0dX13
+  Slug: perception-mastery
+  DisplayName: Perception Mastery
+  IconPath: icons/magic/perception/eye-tendrils-web-purple.webp
+  Description: Barbarian Your instinct heightens each of your senses further. Your
+    proficiency rank for Perception increases to master. Bard, Gunslinger, Rogue
+    You've developed keen awareness and attention to detail. Your proficiency rank
+    for Perception increases to master. Exemplar Through your adventures, you've
+    developed keen awareness and attention to detail, the better to watch over your
+    wards and keep an eye out for monsters and other threats. Your proficiency rank
+    for Perception increases to master. Ranger You have highly developed acuity and
+    attention to detail. Your proficiency rank for Perception increases to master.
+    Swashbuckler Through your adventures, you've developed keen awareness and attention
+    to detail. Your proficiency rank for Perception increases to master.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 3bff3798580dee9a61a5cbc5d9ddc84597a46d496baca9fb4eef24624b2090ca
+  Traits:
+  - barbarian
+  - bard
+  - exemplar
+  - gunslinger
+  - ranger
+  - rogue
+  - swashbuckler
+  TraitsLower:
+  - barbarian
+  - bard
+  - exemplar
+  - gunslinger
+  - ranger
+  - rogue
+  - swashbuckler
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{actor|class.slug}"'
+    Uuid: 
+    Json: '{"itemId":"{item|id}","key":"ItemAlteration","mode":"add","property":"traits","value":"{actor|class.slug}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '[{"text":"PF2E.SpecificRule.ClassFeatures.PerceptionMastery.{actor|class.slug}.Description"}]'
+    Uuid: 
+    Json: '{"itemId":"{item|id}","key":"ItemAlteration","mode":"override","property":"description","value":[{"text":"PF2E.SpecificRule.ClassFeatures.PerceptionMastery.{actor|class.slug}.Description"}]}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: perception
+    Rank: 3
+  FocusPointDelta: 0

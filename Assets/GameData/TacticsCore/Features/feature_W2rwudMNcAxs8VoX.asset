@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_W2rwudMNcAxs8VoX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: W2rwudMNcAxs8VoX
+  Slug: improved-flexibility
+  DisplayName: Improved Flexibility
+  IconPath: icons/environment/settlement/target-dummy.webp
+  Description: Your extensive experience gives you even greater ability to adapt
+    to each day's challenges. When you use combat flexibility, you can gain two fighter
+    feats instead of one. While the first feat must still be 8th level or lower,
+    the second feat can be up to 14th level, and you can use the first feat to meet
+    the prerequisites of the second feat. You must meet all of the feats' prerequisites.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 47502347c5818786328791b5f22e2f89594a4169f07415efa441c99e99e58921
+  Traits:
+  - fighter
+  TraitsLower:
+  - fighter
+  RawRules: []
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

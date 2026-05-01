@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_BTpL6XvMk4jvVYYJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: BTpL6XvMk4jvVYYJ
+  Slug: greater-rogue-reflexes
+  DisplayName: Greater Rogue Reflexes
+  IconPath: systems/pf2e/icons/features/classes/improved-evasion.webp
+  Description: You elude danger to a degree that few can match. Your proficiency
+    rank for Reflex saves increases to legendary. When you roll a critical failure
+    on a Reflex save, you get a failure instead. When you roll a failure on a Reflex
+    save against a damaging effect, you take half damage.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 3b5b55c2f6f3804d5c94d8e80f932a26ab31bc2033074366eca00a5857b0522f
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"reflex"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["damaging-effect"],"selector":"will","text":"PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Reflex","title":"{item|name}"}'
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: reflex
+    Rank: 4
+  FocusPointDelta: 0

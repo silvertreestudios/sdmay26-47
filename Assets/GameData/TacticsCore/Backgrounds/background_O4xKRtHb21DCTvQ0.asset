@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_O4xKRtHb21DCTvQ0
+  m_EditorClassIdentifier: 
+  SourceId: O4xKRtHb21DCTvQ0
+  Slug: wished-alive
+  DisplayName: Wished Alive
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Once you were a simple construct or inanimate doll, but due to a deeply
+    felt wish, either yours or another's, you came to life, and so you're now a living,
+    breathing creature. Choose two attribute boosts. One must be to Constitution
+    or Charisma , and one is a free attribute boost. You're trained in the Diplomacy
+    skill. Once per day, you can fervently wish for something you could work towards
+    achieving as a single action which has the concentrate trait. If you do, you
+    gain a +2 circumstance bonus on the first skill check you attempt before the
+    end of your turn to fulfill that wish.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: bb355371a5a1920b691f533fb7e6b32387810e1ceecd86de99fb261dca1b0af8
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"Making a Wish","option":"make-a-wish","toggleable":true}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["make-a-wish"],"selector":"skill-check","type":"circumstance","value":2}'
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats: []

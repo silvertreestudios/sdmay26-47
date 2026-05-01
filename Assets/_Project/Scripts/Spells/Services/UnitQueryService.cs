@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Services
+namespace TacticsGame.Spells.Services
 {
     /// <summary>
     /// Converts grid cells into filtered unit lists.

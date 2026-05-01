@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_9c57R18pfgfqlBCD
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 9c57R18pfgfqlBCD
+  Slug: silence-in-snow
+  DisplayName: Silence in Snow
+  IconPath: icons/magic/water/bubbles-air-water-light.webp
+  Description: "Bitter cold heralded your patron's appearance, in the depths of the
+    winter solstice or on a frozen peak at the end of the world. Your patron might
+    be a winter hag, ice yai, or other spirit of the cold, but one thing is clear
+    as ice\u2014their power is not to be underestimated. Spell List primal Patron
+    Skill Nature Lesson of Winter's Chill Your patron taught you the power of winter
+    firsthand by subjecting you to frost and snow. You learn the @UUID[Compendium.pf2e.spells-srd.Item.Clinging
+    Ice] hex cantrip and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Gust
+    of Wind]. Familiar of Freezing Rime Your familiar is cold to the touch, its breath
+    always visible. When you Cast or Sustain a hex, you can cause ice to form in
+    a @Template[burst|distance:5] centered on a square of your familiar's space.
+    Those squares are difficult terrain until the start of your next turn."
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0f2e00b24682040f5f520ae826370d78601914f976b5795cd4335e89e5ed52de
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"primal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"primal"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.FreezingRime.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.FreezingRime.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.FreezingRime.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.FreezingRime.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

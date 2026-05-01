@@ -1,9 +1,9 @@
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     public class ConditionIconUI : MonoBehaviour
     {

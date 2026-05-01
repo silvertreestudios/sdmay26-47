@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_Y0ht4JteTUS5pace
+  m_EditorClassIdentifier: 
+  SourceId: Y0ht4JteTUS5pace
+  Slug: academic-scion
+  DisplayName: Academic Scion
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were born to famed scholars of magic; your childhood was filled
+    with old books, ink-stained lesson papers, and casual dinners with your parents'
+    brilliant colleagues. This erudite upbringing eases your academic journey, as
+    you were introduced early on to seminal texts and foundational theories that
+    granted you a preternatural instinct and affinity for magic, but that also exposed
+    you to massive pressures from familial expectations. Choose two attribute boosts.
+    One must be to Charisma or Intelligence , and one is a free attribute boost.
+    You're trained in Arcana. You're also trained in the Academia Lore skill or a
+    Lore skill associated with your school. You gain the Arcane Sense skill feat.
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: b1df650ae151252336499163a52048f88abff0c3236681c5709715c42bd38c4a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Academia Lore
+    Rank: 1
+  LoreSkills:
+  - Academia Lore
+  GrantedFeats:
+  - SourceKey: b07v0
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Arcane Sense
+    SourceId: 
+    DisplayName: Arcane Sense
+    Level: 1
+    ResolvedFeature: {fileID: 0}

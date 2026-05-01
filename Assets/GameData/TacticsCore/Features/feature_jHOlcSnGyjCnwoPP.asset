@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_jHOlcSnGyjCnwoPP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: jHOlcSnGyjCnwoPP
+  Slug: zoophonia
+  DisplayName: Zoophonia
+  IconPath: icons/creatures/mammals/wolf-howl-moon-gray.webp
+  Description: 'Your muse is a master of birdsong, wolf howls, trumpeting elephants,
+    and other animal communication, pushing you to new heights and encouraging your
+    connections with nature. If your muse is a creature, it might be an enlightened
+    animal or a spirit guide. If it''s a deity, it might be one of the Wardens of
+    the Wild, Gozreh, or another representative of nature. Muse Feat @UUID[Compendium.pf2e.feats-srd.Item.Zoophonic
+    Communication] Muse Spell @UUID[Compendium.pf2e.spells-srd.Item.Summon Animal]'
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 96fc412edbb4b647c4c3870a1d7000bae6319125a2fec06b5cb9313b751eebc9
+  Traits:
+  - bard
+  TraitsLower:
+  - bard
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Zoophonic Communication
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Zoophonic Communication"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Zoophonic Communication
+    SourceId: 
+    DisplayName: Zoophonic Communication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

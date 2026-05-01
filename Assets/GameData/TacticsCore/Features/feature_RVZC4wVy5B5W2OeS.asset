@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_RVZC4wVy5B5W2OeS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: RVZC4wVy5B5W2OeS
+  Slug: masterful-hunter
+  DisplayName: Masterful Hunter
+  IconPath: icons/weapons/bows/shortbow-recurve-yellow-blue.webp
+  Description: "You have honed your abilities as a hunter to incredible levels. Your
+    proficiency rank for your ranger class DC increases to master. If you have warden
+    spells, your proficiency rank for spell attacks and spell DCs increases to master.
+    When using a ranged weapon that you have master proficiency in, you can ignore
+    the penalty if attacking your hunted prey within the weapon's second and third
+    range increments. If you have master proficiency in Perception, you gain a +4
+    circumstance bonus to Perception checks when you @UUID[Compendium.pf2e.actionspf2e.Item.Seek]
+    your prey, and if you have master proficiency in Survival, you gain a +4 circumstance
+    bonus to Survival checks when you @UUID[Compendium.pf2e.actionspf2e.Item.Track]
+    your prey. You also gain an additional benefit depending on your hunter's edge.
+    Flurry: You can blend your weapon mastery with skillful targeting to make a series
+    of precise attacks. If you have master proficiency with your weapon, your multiple
+    attack penalty for attacks against your hunted prey is \u20132 (\u20131 with
+    an agile weapon) on your second attack of the turn, and \u20134 (\u20132 with
+    an agile weapon) on your third and subsequent attacks of the turn. Outwit: Your
+    mastery of skills allows you to overwhelm your prey. If you have master proficiency
+    in Deception, Intimidation, Stealth, or the skill you use to Recall Knowledge
+    about your prey, increase the circumstance bonus against the prey with that skill
+    from +2 to +4. If you have master proficiency with your armor, increase the circumstance
+    bonus to AC against the prey from +1 to +2. Precision: Your weapon mastery allows
+    you to hit your prey's vital areas multiple times. The second time in a round
+    you hit your hunted prey, you also deal 1d8 precision damage. At 19th level,
+    your second hit in a round against your hunted prey deals 2d8 precision damage,
+    and your third hit in a round against your hunted prey deals 1d8 precision damage."
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 7ccf9352290e8708e123e3ece5efddb2d4980bf3a04aad0aaffc6f7b8c9b5bfb
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.survival.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"To Track hunted prey (Masterful Hunter)","predicate":["action:track","target:mark:hunted-prey"],"selector":"survival","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.survival.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.perception.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"To Seek hunted prey (Masterful Hunter)","predicate":["action:seek","target:mark:hunted-prey"],"selector":"perception","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.perception.rank"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Masterful Hunter (Flurry)
+    Json: '{"key":"GrantItem","predicate":["feature:flurry"],"uuid":"Compendium.pf2e.classfeatures.Item.Masterful
+      Hunter (Flurry)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Masterful Hunter (Outwit)
+    Json: '{"key":"GrantItem","predicate":["feature:outwit"],"uuid":"Compendium.pf2e.classfeatures.Item.Masterful
+      Hunter (Outwit)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Masterful Hunter (Precision)
+    Json: '{"key":"GrantItem","predicate":["feature:precision"],"uuid":"Compendium.pf2e.classfeatures.Item.Masterful
+      Hunter (Precision)"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"ranged-attack-roll","key":"RollOption","option":"ignore-range-penalty:3","predicate":["target:mark:hunted-prey",{"gte":["item:proficiency:rank",3]}]}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.spellcasting.rank
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.spellcasting.rank","predicate":["feat:initiate-warden"],"value":3}'
+  Category: 2
+  Level: 17
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Masterful Hunter (Flurry)
+    SourceId: 
+    DisplayName: Masterful Hunter (Flurry)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Masterful Hunter (Outwit)
+    SourceId: 
+    DisplayName: Masterful Hunter (Outwit)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Masterful Hunter (Precision)
+    SourceId: 
+    DisplayName: Masterful Hunter (Precision)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades:
+  - Target: ranger
+    Rank: 3
+  FocusPointDelta: 0

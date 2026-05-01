@@ -1,4 +1,4 @@
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     public enum GamePhase
     {

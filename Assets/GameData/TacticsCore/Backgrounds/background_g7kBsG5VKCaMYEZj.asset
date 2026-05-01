@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_g7kBsG5VKCaMYEZj
+  m_EditorClassIdentifier: 
+  SourceId: g7kBsG5VKCaMYEZj
+  Slug: eclectic-scholar
+  DisplayName: Eclectic Scholar
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'Understanding history isn''t just about translating old laws and
+    reading about who invaded whom; it''s also packed with magical outbursts, extraplanar
+    interventions, and unexplained oddities not yet understood by modern science.
+    You have a knack for absorbing esoteric trivia and unraveling past supernatural
+    events. Your studies recently drew you to the dwarven city of Tar-Kazmukh, whose
+    Blue Warders maintain an eclectically magical library. Perusing its shelves didn''t
+    answer your most burning questions, but it did earn you some friends, expose
+    you to a dizzying array of dwarven religious lore, and introduce you to some
+    intriguing mysteries buried in Highhelm''s history. Believing that Highhelm might
+    provide you with greater opportunities, a Blue Warder named Rosha Coppervein
+    facilitated introductions between you and their adoptive clan, Clan Tolorr. It
+    seems your credentials and whatever Rosha wrote on your behalf made an impression;
+    within a week, you received an invitation to Highhelm and travel funds to study
+    with Tolorr sages! The shy Rosha has stayed in Tar-Kazmukh for now, enjoying
+    its relative quiet, but you know that they''ll join you in a few weeks for Tolorr''s
+    Family Festival. Choose two attribute boosts. One must be to Intelligence or
+    Wisdom , and one is a free attribute boost. You''re trained in the Occultism
+    skill and the Dwarven Pantheon Lore skill, an uncommonly broad Lore skill that
+    pertains to Torag''s faith and those faiths of his divine family. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Quick Identification] skill feat. Connection:
+    Rosha Coppervein, a Blue Warder who married into Clan Tolorr Reputation Points:
+    +0'
+  SourceTitle: Pathfinder Sky King's Tomb Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 50b99e99e2e0dbc635a38388cfc77ec1af50c4c90465a7536fdd37e83af0cce2
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Dwarven Pantheon Lore
+    Rank: 1
+  LoreSkills:
+  - Dwarven Pantheon Lore
+  GrantedFeats:
+  - SourceKey: L0YLx
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Identification
+    SourceId: 
+    DisplayName: Quick Identification
+    Level: 1
+    ResolvedFeature: {fileID: 0}

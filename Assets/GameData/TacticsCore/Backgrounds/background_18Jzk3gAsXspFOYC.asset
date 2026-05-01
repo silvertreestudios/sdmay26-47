@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_18Jzk3gAsXspFOYC
+  m_EditorClassIdentifier: 
+  SourceId: 18Jzk3gAsXspFOYC
+  Slug: haunted-citizen
+  DisplayName: Haunted Citizen
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You grew up in a region where undead lurk everywhere. This could be
+    a domain as small as a vampire's fief or as vast as the nation of Ustalav. As
+    an ever-present concern, the undead greatly shaped your life. Living with fear
+    became an everyday skill... as did pleading for your life. Choose two attribute
+    boosts. One must be to Wisdom or Charisma , and one is a free attribute boost.
+    You're trained in the Diplomacy skill and the Lore skill for your home settlement.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.No Cause for Alarm] skill feat.
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 229865e2e66a4eb42d495ab529d4e98a036ab2188b94ff08568089f998a43b0e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: xxszd
+    SourceUuid: Compendium.pf2e.feats-srd.Item.No Cause for Alarm
+    SourceId: 
+    DisplayName: No Cause For Alarm
+    Level: 1
+    ResolvedFeature: {fileID: 0}

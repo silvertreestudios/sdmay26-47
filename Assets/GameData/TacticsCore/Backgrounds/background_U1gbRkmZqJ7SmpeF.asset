@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_U1gbRkmZqJ7SmpeF
+  m_EditorClassIdentifier: 
+  SourceId: U1gbRkmZqJ7SmpeF
+  Slug: banished-brighite
+  DisplayName: Banished Brighite
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'Once, you were a dedicated and important priest of Brigh, goddess
+    of clockwork and invention, based out of the largest church to your deity, the
+    Temple of Brigh in Alkenstar. Here, you made important discoveries in the annals
+    of your religion''s canon and furthered the Bronze Lady''s agendas of innovation
+    and creation. Your future seemed bright, and you predicted that it was only a
+    matter of time until you ascended to the rank of primary cog or, someday, grand
+    cog. Then, your years of devout service were undone in an instant. A man named
+    Ambrost Mugland came to the Temple and demanded not only access to the religious
+    formulas you''d been uncovering, but exclusive rights to the precious knowledge.
+    When you refused, Mugland sent word to the church''s leaders that you''d been
+    meddling in heretical doctrine. He also implicated you in the theft of church
+    funds that had mysteriously gone missing as of late. Sure enough, you found yourself
+    being asked to hand in your robes. Your church colleagues didn''t turn you in,
+    but they told you in no uncertain terms that you wouldn''t be able to find sanctuary
+    for your alleged crimes in the halls of the Temple of Brigh. On the run and with
+    nowhere to turn, your faith has been thoroughly tested, though so far you''ve
+    remained true to your religion and maintained your sacred skills and divine powers.
+    It''s unclear what the Bronze Lady has in store for you, but at least one thing''s
+    for certain: Ambrost Mugland will pay for what he did. Choose two attribute boosts.
+    One must be to Intelligence or Wisdom , and one is a free attribute boost. You''re
+    trained in the Religion skill and the Brigh Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Identification] skill feat.'
+  SourceTitle: Pathfinder Outlaws of Alkenstar Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 1cb16f2bd57ceefb9221640e5ebb27c376a2170864f180ba2c0a964e67992862
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Brigh Lore
+    Rank: 1
+  LoreSkills:
+  - Brigh Lore
+  GrantedFeats:
+  - SourceKey: 57e4s
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Identification
+    SourceId: 
+    DisplayName: Quick Identification
+    Level: 1
+    ResolvedFeature: {fileID: 0}

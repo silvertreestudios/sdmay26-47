@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_0B0M6CUnVDkeznRv
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 0B0M6CUnVDkeznRv
+  Slug: dog-kholo
+  DisplayName: Dog Kholo
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're a nimble-bodied kholo with a prehistoric, almost dog-like build.
+    Though you typically move like a quadruped, you can still stand and fight like
+    a biped, allowing you to use all equipment normally. If you have both hands free,
+    you can increase your Speed to 30 feet as you run on all fours.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 426246de535be28b8e701069bef365ee146437e0abe70a0ff71353c266880f3e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Automaton.HunterAutomaton.ToggleLabel","option":"on-all-fours","toggleable":true}'
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 30
+    Uuid: 
+    Json: '{"key":"BaseSpeed","predicate":["on-all-fours"],"selector":"land","value":30}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.vxbQ1Yw4qwgjTzqo
+    SourceId: 
+    Slug: kholo
+    DisplayName: Kholo
+  ParentAncestryAsset: {fileID: 11400000, guid: 6f5915ed51340204f8f369633de42202, type: 2}
+  GrantedFeatures: []

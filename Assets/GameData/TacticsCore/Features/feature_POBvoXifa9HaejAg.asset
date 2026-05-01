@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_POBvoXifa9HaejAg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: POBvoXifa9HaejAg
+  Slug: animal-order
+  DisplayName: Animal Order
+  IconPath: icons/creatures/abilities/bear-roar-bite-brown-green.webp
+  Description: You have a strong connection to beasts, always feeling like you understood
+    them (and they you) better than your own people. You stand for the animals of
+    nature, a powerful animal companion at your side. Order Skill Athletics Druid
+    Feat @UUID[Compendium.pf2e.feats-srd.Item.Animal Companion] Order Spell @UUID[Compendium.pf2e.spells-srd.Item.Heal
+    Animal] Anathema Commit wanton cruelty to animals or kill animals unnecessarily.
+    (This doesn't prevent you from defending yourself against animals or killing
+    them cleanly for food).
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 99b454b407033edc9308d2fd387f319075c8c56cb7c13214a7636fd279f695f2
+  Traits:
+  - druid
+  TraitsLower:
+  - druid
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","predicate":[{"not":"feat:order-explorer:animal-order"}],"value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Animal Companion
+    Json: '{"key":"GrantItem","predicate":[{"or":["class:druid","feat:order-explorer:animal-order"]}],"uuid":"Compendium.pf2e.feats-srd.Item.Animal
+      Companion"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Animal Companion
+    SourceId: 
+    DisplayName: Animal Companion
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

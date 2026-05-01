@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_7nbKDBGvwSx9T27G
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 7nbKDBGvwSx9T27G
+  Slug: arcane-school
+  DisplayName: Arcane School
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: Most wizards acquire their knowledge of spells from a formal educational
+    institution, such as the Arcanamirium or the Magaambya. At 1st level, you choose
+    your arcane school, which grants you magical abilities. You gain additional spells
+    and spell slots from the curriculum taught at the school you attended. Some wizards
+    follow the school of unified magical theory, which attempts to forge a new school
+    by studying independently and drawing information from a multitude of texts and
+    tutors. Though a wizard with this approach lacks the focus of formal training,
+    they have greater flexibility.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 16f1da60daff535f93442fc0c0a16fa761ffc353850ef8c50f80256b92ad5ac2
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:wizard-arcane-school",{"or":[{"and":["class:wizard","item:tag:wizard-arcane-school"]},{"and":["item:tag:wizard-arcane-school",{"not":"item:tag:class-archetype"}]}]}]},"flag":"arcaneSchool","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Wizard.ArcaneSchool.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.arcaneSchool}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.arcaneSchool}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.arcaneSchool}'
+    SourceId: 
+    DisplayName: arcaneSchool}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_iWWg16f3re1YChiD
+  m_EditorClassIdentifier: 
+  SourceId: iWWg16f3re1YChiD
+  Slug: oenopion-ooze-tender
+  DisplayName: Oenopion-Ooze Tender
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Impossible Lands Your apprenticeship in one
+    of Oenopion's unorthodox arcane and alchemical academies instilled in you a deep
+    reservoir of mostly reliable esoteric knowledge, not to mention a deep resentment
+    born of countless hours spent mucking ooze pens and feeding helpless creatures
+    to ravenous, belching jellies and gelatinous puddings. Choose two attribute boosts.
+    One must be to Constitution or Intelligence , and one is a free attribute boost.
+    You're trained in the Crafting skill and the Ooze Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious
+    Knowledge] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 89640fd8fa8d37dfb92ff76b0eff57edf44910fa920291384685f5275682fc2c
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Ooze Lore
+    Rank: 1
+  LoreSkills:
+  - Ooze Lore
+  GrantedFeats:
+  - SourceKey: x4wlr
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

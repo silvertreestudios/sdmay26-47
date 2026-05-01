@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_e0VhUyjz1clW3sC4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: e0VhUyjz1clW3sC4
+  Slug: wilding-steward
+  DisplayName: Wilding Steward
+  IconPath: icons/magic/nature/beam-hand-leaves-green.webp
+  Description: When your patron appeared before you, they moved with the grace and
+    ferocity of the wilderness, their voice the creaking of trees and the sound of
+    hoof against unspoiled earth. They might have been a dryad queen or a primeval
+    beast, but it seemed all of nature was theirs to defend. Spell List primal Patron
+    Skill Nature Lesson of Wild Speech Your patron has taught you the complexities
+    of nonverbal speech, letting you influence and call animals and plants to you.
+    You gain the @UUID[Compendium.pf2e.spells-srd.Item.Wilding Word] hex cantrip
+    and your familiar learns your choice of @UUID[Compendium.pf2e.spells-srd.Item.Summon
+    Animal] or @UUID[Compendium.pf2e.spells-srd.Item.Summon Plant or Fungus]. Familiar
+    of Keen Senses Your familiar has glinting eyes, twitching ears, or some other
+    sign of a beast's powerful senses. When you Cast or Sustain a hex, your familiar
+    gains your choice of an imprecise scent, tremorsense, or wavesense, with a range
+    of 60 feet until the start of your next turn, and it can immediately Point Out
+    as a free action.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ec2f2d274c0b0ad7b5808a7ae4210bebb1b7e3a7fb30ae6563dcda59470cb756
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"primal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"primal"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.KeenSenses.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.KeenSenses.Title"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Familiar of Keen Senses]"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.KeenSenses.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.KeenSenses.Title"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Familiar of Keen Senses]"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

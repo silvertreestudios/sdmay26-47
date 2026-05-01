@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Z8WpDAdAXyefLB7Q
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Z8WpDAdAXyefLB7Q
+  Slug: second-implement
+  DisplayName: Second Implement
+  IconPath: systems/pf2e/icons/features/classes/second-implement.webp
+  Description: You've added another implement of power to your toolkit. You choose
+    a second implement, which must be a different type of implement than your first.
+    You gain the initiate benefit of your new implement. While you're holding an
+    implement in one hand, you can quickly switch it with another implement you're
+    wearing to use an action from the implement you're switching to. To do so, you
+    can Interact as a free action immediately before executing the implement's action.
+    This allows you to meet requirements of having an implement in hand to use its
+    action. For example, if you had your lantern implement in one hand, a weapon
+    in the other, and a chalice implement you were wearing, you could swap your lantern
+    for your chalice to use its reaction.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 634d2acd32f92d5a5fdaef43d5b97f862ac7541633977c09ce807efcdfc9e5d2
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:thaumaturge-implement"]},"flag":"implement","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.SecondImplement"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.implement}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.implement}"}'
+  Category: 2
+  Level: 5
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.implement}'
+    SourceId: 
+    DisplayName: implement}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

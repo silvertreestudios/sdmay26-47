@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_1MHXjNczVZfVvDP6
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 1MHXjNczVZfVvDP6
+  Slug: supreme-incarnation
+  DisplayName: Supreme Incarnation
+  IconPath: icons/creatures/magical/construct-golem-stone-blue.webp
+  Description: You become a nexus between the mortal and spiritual realms through
+    which your apparition can embody its full might. You gain a 10th-rank apparition
+    spell slot. In addition to heightened versions of your apparition spells, you
+    can use this slot to cast @UUID[Compendium.pf2e.spells-srd.Item.Avatar]. When
+    you cast avatar in this way, you do not become an avatar of a deity; rather,
+    your primary attuned apparition incarnates itself using your body, transforming
+    you into the avatar described in your primary attuned apparition's entry.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1b0694d7995c435c9fcabde786ff12914f299cd0cac2414475fcd4bc272eab7c
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

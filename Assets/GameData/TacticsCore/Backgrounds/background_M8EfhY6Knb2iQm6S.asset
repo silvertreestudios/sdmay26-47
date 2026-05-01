@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_M8EfhY6Knb2iQm6S
+  m_EditorClassIdentifier: 
+  SourceId: M8EfhY6Knb2iQm6S
+  Slug: press-ganged-g-g
+  DisplayName: Press-Ganged (G&G)
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Was that five shots or six? Maybe it doesn't really matter in the
+    end, because after those nice folks paid for all your drinks, you woke up to
+    find yourself on the lowest rung of the ladder. Whether you're now a crewmate
+    on a ship, a conscript in an army, or something worse, you've nowhere to go but
+    up. This background generally requires buy-in from the entire group to tell a
+    story allowing you to play a character starting their adventuring due to circumstances
+    outside their own control. However, you can also play a character who was once
+    press-ganged and has since escaped that life. If you do, press-ganged doesn't
+    have the uncommon trait, and it has the same mechanical effects either way. Choose
+    two attribute boosts. One must be to Strength or Constitution , and one is a
+    free attribute boost. You're trained in the Athletics skill and the Labor Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Armor Assist] skill
+    feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: b3e68279a7a9a4c3c9c919449d1a5406645571345426cf0bf0bfd637348bf5a7
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Labor Lore
+    Rank: 1
+  LoreSkills:
+  - Labor Lore
+  GrantedFeats:
+  - SourceKey: 7kapn
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Armor Assist
+    SourceId: 
+    DisplayName: Armor Assist
+    Level: 1
+    ResolvedFeature: {fileID: 0}

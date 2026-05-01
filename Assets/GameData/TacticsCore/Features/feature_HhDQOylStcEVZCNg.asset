@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_HhDQOylStcEVZCNg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: HhDQOylStcEVZCNg
+  Slug: mortal-harvest
+  DisplayName: Mortal Harvest
+  IconPath: icons/weapons/sickles/sickle-wrapped-engraved-green.webp
+  Description: "Usage a sickle or any weapon from the axe, flail, or polearm group
+    This weapon, once used for felling trees or crops, now harvests lives instead.
+    Immanence The mortal harvest deals 1 persistent spirit damage per weapon damage
+    die to creatures it Strikes. Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.Reap
+    the Field] 1 (transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.24k7qCV8S95yYK3y
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 78346fd173a2462650f4beefc53bdf4b961224746de41bd3d635e51da980e20f
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"mortal-harvest"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.MortalHarvest.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"mortal-harvest"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.MortalHarvest.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"mortal-harvest"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Reap the Field
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Reap the Field"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"mortal-harvest-origin"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"predicate":[{"or":["item:base:sickle","item:group:axe","item:group:flail","item:group:polearm"]},{"not":"item:trait:consumable"}],"types":["weapon"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["mortal-harvest-origin:existing"]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:0",{"nor":["item:magical","item:trait:consumable"]},{"or":["item:base:sickle","item:group:axe","item:group:flail","item:group:polearm"]}],"itemType":"weapon"},"flag":"grantedIkon","key":"ChoiceSet","predicate":["mortal-harvest-origin:granted"]}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    Json: '{"key":"GrantItem","predicate":["mortal-harvest-origin:granted"],"uuid":"{item|flags.pf2e.rulesSelections.grantedIkon}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["mortal-harvest-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["mortal-harvest-origin:granted","item:granter:slug:mortal-harvest"]}]}],"property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:mortal-harvest"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["mortal-harvest-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["mortal-harvest-origin:granted","item:granter:slug:mortal-harvest"]}]}],"property":"other-tags","value":"physical-ikon:mortal-harvest"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:mortal-harvest"],"priority":121,"property":"traits","value":"divine"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.HhDQOylStcEVZCNg
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:mortal-harvest"],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.HhDQOylStcEVZCNg
+      inline]"}]}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@weapon.system.damage.dice"'
+    Uuid: 
+    Json: '{"damageCategory":"persistent","damageType":"spirit","key":"FlatModifier","predicate":["item:tag:physical-ikon:mortal-harvest","divine-spark:mortal-harvest"],"selector":"weapon-damage","slug":"barrows-edge-immanence","tags":["exemplar"],"value":"@weapon.system.damage.dice"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:mortal-harvest","item:slug:reap-the-field"]},{"not":"divine-spark:mortal-harvest"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"exemplar-spirit-damage","predicate":["divine-spark:mortal-harvest"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Reap the Field
+    SourceId: 
+    DisplayName: Reap the Field
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    SourceId: 
+    DisplayName: grantedIkon}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

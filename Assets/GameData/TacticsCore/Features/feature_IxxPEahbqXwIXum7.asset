@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_IxxPEahbqXwIXum7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: IxxPEahbqXwIXum7
+  Slug: field-discovery
+  DisplayName: Field Discovery
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: You learn a discovery listed in your research field.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 538e2bba42231e8de5381403745f1e2a2f2c229681a744d6bea52863b4259944
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{actor|flags.pf2e.alchemist.fieldDiscovery}'
+    Json: '{"key":"GrantItem","uuid":"{actor|flags.pf2e.alchemist.fieldDiscovery}"}'
+  Category: 2
+  Level: 5
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{actor|flags.pf2e.alchemist.fieldDiscovery}'
+    SourceId: 
+    DisplayName: fieldDiscovery}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

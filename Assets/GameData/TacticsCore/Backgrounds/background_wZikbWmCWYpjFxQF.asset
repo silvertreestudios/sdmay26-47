@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_wZikbWmCWYpjFxQF
+  m_EditorClassIdentifier: 
+  SourceId: wZikbWmCWYpjFxQF
+  Slug: wanted-witness
+  DisplayName: Wanted Witness
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You saw something you shouldn''t have, plain and simple. The shame
+    is that you don''t even know what it is, exactly, that you saw. After moving
+    to Alkenstar, you swiftly fell in love with the City of Smog, but you found it
+    difficult to get a foothold in the fast-paced metropolis. Luckily, a chance invitation
+    promised good work for someone with your unique social talents. You went to an
+    inconspicuous chamber in a humble tower somewhere in the Capital District. There,
+    you met some clearly powerful, clearly corrupt members of the Alkenstar elite.
+    Among the faces you recognized were the notorious mogul Ambrost Mugland and the
+    steely-eyed shieldmarshal Anjelique Loveless. Before you were asked to leave,
+    you made quite an impression-but not a good one. Not only did you not make the
+    cut for whatever kinds of jobs were on offer that day, but you soon discovered
+    that you couldn''t get a room at any inn in the city, and there were wanted posters
+    with your name on them plastered all over town. Friends and families turned their
+    backs on you, afraid to get involved. Clearly, someone at that meeting-Mugland,
+    maybe, or perhaps Loveless- believed you were a liability, and they had you excised
+    from Alkenstar society. All you want is to be able to walk the streets without
+    fearing for your life, and there''s only one way to make that happen: find the
+    villains responsible for your predicament and get them to undo the curse now
+    attached to your name. Choose two attribute boosts. One must be to Constitution
+    or Charisma , and one is a free attribute boost. You''re trained in the Society
+    skill and the Alkenstar Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Read
+    Lips] skill feat.'
+  SourceTitle: Pathfinder Outlaws of Alkenstar Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 03c1827fe403086f3d5368b464d3e2f7c2ce8a2aef4304f6b69858ba7edc7f56
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Alkenstar Lore
+    Rank: 1
+  LoreSkills:
+  - Alkenstar Lore
+  GrantedFeats:
+  - SourceKey: wk57a
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Read Lips
+    SourceId: 
+    DisplayName: Read Lips
+    Level: 1
+    ResolvedFeature: {fileID: 0}

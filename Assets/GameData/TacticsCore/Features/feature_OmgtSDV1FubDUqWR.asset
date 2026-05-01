@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_OmgtSDV1FubDUqWR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: OmgtSDV1FubDUqWR
+  Slug: way-of-the-spellshot
+  DisplayName: Way of the Spellshot
+  IconPath: systems/pf2e/icons/features/classes/way-of-the-spellshot.webp
+  Description: 'You''ve learned the intricacies of magic and technology, blending
+    the two together with deadly results. You combine a knowledge of arcane theories
+    with a strong connection to your chosen weapon that allows you to manifest unique
+    effects, combining deadly skill with a firearm alongside an array of moderate
+    spellcasting. You can imbue energy into your weapon and conjure bullets from
+    thin air. As you progress, you eventually learn to phase bullets through walls
+    or even to teleport yourself along the path of your bullets. You must select
+    @UUID[Compendium.pf2e.feats-srd.Item.Spellshot Dedication] as your 2nd-level
+    class feat. Prerequisites You must be a gunslinger. Spellshot Adjustments Instead
+    of choosing a way from the options listed in the gunslinger class, you have the
+    way of the spellshot. It has the following way skill, slinger''s reload, and
+    deeds. You gain these abilities at the same levels as normal for the class. You
+    use Intelligence for your class DC. Way Skill Arcana Slinger''s Reload @UUID[Compendium.pf2e.actionspf2e.Item.Thoughtful
+    Reload] Deeds Initial @UUID[Compendium.pf2e.actionspf2e.Item.Energy Shot]; Advanced
+    @UUID[Compendium.pf2e.actionspf2e.Item.Recall Ammunition]; Greater @UUID[Compendium.pf2e.actionspf2e.Item.Dispelling
+    Bullet]'
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 2e0cc77f7826e611323f6300a928bc49044c5790f231897b2d417a2781722c75
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"ability":"int","force":true,"key":"FlatModifier","selector":"gunslinger","type":"ability"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Thoughtful Reload
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Thoughtful
+      Reload"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Energy Shot
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Energy Shot"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Spellshot Dedication
+    Json: '{"flag":"spellshotDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Spellshot
+      Dedication"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.arcana.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.arcana.rank","value":1}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Thoughtful Reload
+    SourceId: 
+    DisplayName: Thoughtful Reload
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Energy Shot
+    SourceId: 
+    DisplayName: Energy Shot
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Spellshot Dedication
+    SourceId: 
+    DisplayName: Spellshot Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

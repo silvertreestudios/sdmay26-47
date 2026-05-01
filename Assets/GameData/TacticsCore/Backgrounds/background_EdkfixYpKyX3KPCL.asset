@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_EdkfixYpKyX3KPCL
+  m_EditorClassIdentifier: 
+  SourceId: EdkfixYpKyX3KPCL
+  Slug: supportive-sponsor
+  DisplayName: Supportive Sponsor
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were responsible for caring for someone's needs, be it a sibling
+    or other familial relation, a friend fallen on hard times, or someone who just
+    needed a helping hand at a time when you were there to offer assistance. The
+    satisfaction you get from protecting another, from helping them course-correct
+    from a self-destructive habit, or from assisting them in their recovery from
+    a disaster is more than enough for you, and the idea of being paid for such a
+    service is unsettling and unsavory. When presented with a problem that's beyond
+    your immediate ability to address or resolve, you'll spend days researching methods
+    to provide what help the person needs, either educating yourself on how to provide
+    the aid yourself or by arranging for others to step in to support the person
+    in question. Choose two attribute boosts. One must be to Constitution or Wisdom
+    , and one is a free attribute boost. You're trained in the Medicine skill and
+    the Herbalism Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Battle
+    Medicine] skill feat. If you have the Guardian persona trait, you also become
+    trained in the Library Lore skill.
+  SourceTitle: Pathfinder Curtain Call Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 0c0dd2bc5dc0913e9e3e0ea889c2493fc3451af117744a2955d994a8638a05dd
+  Traits:
+  - persona-guardian
+  TraitsLower:
+  - persona-guardian
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.campaign-effects.Item.Persona Trait
+    Json: '{"key":"GrantItem","predicate":[{"not":"feature:persona-trait"}],"uuid":"Compendium.pf2e.campaign-effects.Item.Persona
+      Trait"}'
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Herbalism Lore
+    Rank: 1
+  LoreSkills:
+  - Herbalism Lore
+  GrantedFeats:
+  - SourceKey: b3M6Z
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

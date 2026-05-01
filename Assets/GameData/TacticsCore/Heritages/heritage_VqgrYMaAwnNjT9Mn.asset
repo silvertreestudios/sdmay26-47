@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_VqgrYMaAwnNjT9Mn
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: VqgrYMaAwnNjT9Mn
+  Slug: enchanting-lily
+  DisplayName: Enchanting Lily
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: "You smell ever so sweet\u2014a delicate, floral scent like the intoxicating
+    fragrance of lilies and the soft scent of lilacs. You're trained in Diplomacy
+    (or another skill if you were already trained in Diplomacy). You also gain a
+    +1 circumstance bonus to checks to @UUID[Compendium.pf2e.actionspf2e.Item.Make
+    an Impression] if the target can smell your fragrance."
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 6f1e0f0a718df26bb53c9307bcb04a6bd1f40ab717e9904bda8c1da48a73621f
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.diplomacy.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.diplomacy.rank","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:make-an-impression","enchanting-lily"],"selector":"diplomacy","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.tSurOqRcfumadTfr
+    SourceId: 
+    Slug: ghoran
+    DisplayName: Ghoran
+  ParentAncestryAsset: {fileID: 11400000, guid: 5ba316e3f579b40409993fb6d0334eac, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_hXM5jXezIki1cMI2
+  m_EditorClassIdentifier: 
+  SourceId: hXM5jXezIki1cMI2
+  Slug: tripkee
+  DisplayName: Tripkee
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/grippli.svg
+  Description: 'Tripkees are a shy and cautious people who generally seek to avoid
+    being drawn into the affairs of others. Despite their cautious outlook and small
+    stature, adventurous tripkees still take bold and noble action when the situation
+    demands it. @UUID[Compendium.pf2e.journals.JournalEntry.45SK8rdbbxvEHfMn.JournalEntryPage.FhIJtKcINEe7fipX]'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: a84ee87029c5875c9bf053d8bd33efa7470d974301abff02e08ba354b45f7d6e
+  Traits:
+  - grippli
+  - humanoid
+  TraitsLower:
+  - grippli
+  - humanoid
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 01000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: grippli
+    DisplayName: Grippli
+  AdditionalLanguageOptions:
+  - Id: boggard
+    DisplayName: Boggard
+  - Id: chthonian
+    DisplayName: Chthonian
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: iruxi
+    DisplayName: Iruxi
+  - Id: thalassic
+    DisplayName: Thalassic
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 3lJFy
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Natural Climber
+    SourceId: 
+    DisplayName: Natural Climber
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 7b09dab1e9dc0c746a356359b1458167, type: 2}
+  - {fileID: 11400000, guid: 9bf1596830e74c54a95acac0485377c4, type: 2}
+  - {fileID: 11400000, guid: d9de3af55f1aba0418a5169c1e89cc3c, type: 2}
+  - {fileID: 11400000, guid: 5f414e634b411584da41994394bec692, type: 2}
+  - {fileID: 11400000, guid: cc78a13a099b8ef4fb13679ed399a7c8, type: 2}
+  - {fileID: 11400000, guid: 739176996f9f6db4c84c9e10245b6630, type: 2}

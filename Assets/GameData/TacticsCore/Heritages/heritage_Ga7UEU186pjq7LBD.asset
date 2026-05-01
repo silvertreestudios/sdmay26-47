@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_Ga7UEU186pjq7LBD
+  m_EditorClassIdentifier: 
+  SourceId: Ga7UEU186pjq7LBD
+  Slug: talos
+  DisplayName: Talos
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your physical features reflect the influence a zuhra or other metal
+    elemental has had over your bloodline. Your skin likely has a metallic sheen,
+    ranging from the dull luster of raw ore to the gleaming polish of a new blade,
+    with the wear of age or hardship taking the form of tarnish, rust, or scouring.
+    Your hair might resemble spun gold, coiled steel, copper wiring, or braided chains.
+    You gain the talos trait, in addition to the traits from your ancestry. You gain
+    resistance to electricity equal to half your level (minimum 1). You can cast
+    the @UUID[Compendium.pf2e.spells-srd.Item.Detect Metal] cantrip as an arcane
+    innate spell at will. A cantrip is heightened to a spell rank equal to half your
+    level rounded up. You can choose from talos feats, geniekin feats, and feats
+    from your ancestry whenever you gain an ancestry feat.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 63217370f703d2412a2886d548b11de63e9cb7d2846b108e2c7a4ab5ece98837
+  Traits:
+  - talos
+  TraitsLower:
+  - talos
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"electricity","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

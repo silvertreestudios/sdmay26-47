@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_oEm937kNrP5sXxFD
+  m_EditorClassIdentifier: 
+  SourceId: oEm937kNrP5sXxFD
+  Slug: emancipated
+  DisplayName: Emancipated
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Until recently, the nation of Ravounel was part of the larger nation
+    of Cheliax, where the church of Asmodeus is the law and slaves are traded freely
+    in the open market. You had the poor fortune to be born into slavery, but the
+    good luck to have grown up in the city of Kintargo. When Ravounel seceded from
+    Cheliax, the leaders of this new nation freed all slaves, and you've wasted no
+    time in exploring and establishing your new life. How and why you've come to
+    Breachill is left to you to decide-but the fact that you feel empowered to determine
+    your own destiny continues to drive you! The chance to become an adventurer has
+    excited you for some time, as you hope to build a new life for yourself as a
+    hero rewarded with fame and fortune. Joining the Call for Heroes is a great opportunity
+    to find a group to adventure with. Choose two attribute boosts. One must be to
+    Dexterity or Charisma , and one is a free attribute boost. You're trained in
+    the Stealth skill and the Kintargo Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Terrain
+    Stalker] skill feat.
+  SourceTitle: Pathfinder Age of Ashes Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 5c33729c3ca95ffb4386d6d732c70906efd85b2a176cfa18e105ef646e01ebc5
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Kintargo Lore
+    Rank: 1
+  LoreSkills:
+  - Kintargo Lore
+  GrantedFeats:
+  - SourceKey: qbuex
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Stalker
+    SourceId: 
+    DisplayName: Terrain Stalker
+    Level: 1
+    ResolvedFeature: {fileID: 0}

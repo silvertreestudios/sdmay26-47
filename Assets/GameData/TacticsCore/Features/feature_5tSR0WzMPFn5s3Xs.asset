@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_5tSR0WzMPFn5s3Xs
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 5tSR0WzMPFn5s3Xs
+  Slug: the-oscillating-wave
+  DisplayName: The Oscillating Wave
+  IconPath: systems/pf2e/icons/features/classes/the-oscillating-wave.webp
+  Description: 'At the heart of all things is energy. Though it may change its form
+    or resting place, it is eternal, fundamental, the purest of building blocks.
+    Your powers let you shift energy-either concentrating it in a single point to
+    explosive end or freezing objects by plundering it away-in an endless oscillation
+    of temperature. Granted Spells 1st: @UUID[Compendium.pf2e.spells-srd.Item.Breathe
+    Fire] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Heat Metal] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Fireball]
+    4th: @UUID[Compendium.pf2e.spells-srd.Item.Fire Shield] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Cone
+    of Cold] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Flame Vortex] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Fiery
+    Body] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Polar Ray] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Falling
+    Stars] Standard Psi Cantrips @UUID[Compendium.pf2e.spells-srd.Item.Ignition]
+    You can drastically increase the heat against targets at a distance. When using
+    ignition as a ranged attack, increase the range to 60 feet. When using ignition
+    as a melee attack, your reach increases by 5 feet. Your ignition also gains the
+    following amp. Amp You project pure heat that causes a target to combust. The
+    initial damage changes to 1d10 fire damage plus 1 fire splash damage. When using
+    amped ignition as a melee attack, increase the damage dice of the initial damage
+    from d10s to d12s. You are not harmed by splash damage from amped ignition .
+    Amp Heightened (+1) Instead of using ignition''s normal heightened entry, the
+    initial damage increases by 1d10 (1d12 for melee) and the splash damage increases
+    by 1. The persistent fire damage on a critical hit increases by 1d4. @UUID[Compendium.pf2e.spells-srd.Item.Frostbite]
+    You can freeze people from even farther away. The range of your frostbite increases
+    to 120 feet. Your frostbite also gains the following amp. Amp You drain thermal
+    energy at a distance, using what you plunder to replenish yourself. The orb deals
+    3d4 cold damage. You gain temporary Hit Points equal to half the damage the target
+    takes (after applying resistances and the like). You lose any remaining temporary
+    Hit Points after 1 minute. Amp Heightened (+1) The initial damage increases by
+    2d4 instead of 1d4. The weakness on a critical failure increases by 1. Unique
+    Psi Cantrips surface: @UUID[Compendium.pf2e.spells-srd.Item.Thermal Stasis] Amp
+    The spell''s duration becomes 1 minute. deeper: @UUID[Compendium.pf2e.spells-srd.Item.Entropic
+    Wheel] Amp You gain two motes instead of one when you Cast the Spell and each
+    time the wheel gains another mote. deepest: @UUID[Compendium.pf2e.spells-srd.Item.Redistribute
+    Potential] Amp You can affect the flow of energy on a much grander scale. Instead
+    of two 5-foot squares, you create two 10 foot bursts. They still must be adjacent
+    to one another and can overlap. A creature in both areas can still be affected
+    by only one of your choice. The spell''s damage increases to 6d6. The conditions
+    last for 1 minute. Amp Heightened (+1) Increase the damage by 2d6 instead of
+    1d4. Conservation of Energy Energy can''t be created or destroyed, only transferred
+    or changed. Whenever you use your magic to add or remove energy, you must then
+    balance it with the opposing force. The first time in an encounter that you cast
+    a granted spell or standard psi cantrip from your conscious mind, decide whether
+    you''re adding energy or removing it. Once you add energy, you must remove energy
+    the next time you cast one of these spells. When you Refocus, you restore yourself
+    to a neutral state, allowing you to once again freely choose whether you add
+    or remove energy on your next spell. Adding Energy: The ability gains the fire
+    trait, any damage it deals is fire damage, and any resistance it grants is to
+    cold damage. It loses any traits matching damage types it no longer deals. Removing
+    Energy: The ability gains the cold trait, any damage it deals is cold damage,
+    and any resistance it grants is to fire damage. It loses any traits matching
+    damage types it no longer deals. Fiery body grants ray of frost instead of produce
+    flame when cast this way. Mindshift: When you use an action that has the mindshift
+    trait, you can choose to add or remove energy to it instead of making it mental.
+    Alter it as normal for adding or removing energy and change any save it requires
+    to a Reflex save.'
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 39a1b796c53daddef964cd75b78909eacd2c180c522fa8e79d5244df02ff93b6
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:psychic","spellcasting:tradition:occult",{"or":["item:slug:frostbite","item:slug:ignition"]}],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Frostbite"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Frostbite.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Frostbite.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:frostbite","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Frostbite"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Frostbite.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Frostbite.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Ignition"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Ignition.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Ignition.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:ignition","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Ignition"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Ignition.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Ignition.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.ThermalStasis","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:thermal-stasis","item:tag:amped",{"not":"alternate-amp"}],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.ThermalStasis","title":"PF2E.TraitAmp"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.EntropicWheel","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:entropic-wheel","item:tag:amped",{"not":"alternate-amp"}],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.EntropicWheel","title":"PF2E.TraitAmp"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.RedistributePotential.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.RedistributePotential.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:redistribute-potential","item:tag:amped",{"not":"alternate-amp"}],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.RedistributePotential.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.RedistributePotential.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: upgrade
+    Value: 10
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"upgrade","predicate":["item:slug:redistribute-potential","item:tag:amped",{"not":"alternate-amp"}],"property":"area-size","value":10}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: override
+    Value: '"ceil(@actor.level/2)"'
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"override","predicate":["item:slug:ignition","item:tag:amped",{"not":"alternate-amp"}],"property":"dice-number","selectors":["spell-damage"],"value":"ceil(@actor.level/2)"}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: 10
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"upgrade","predicate":["item:slug:ignition","item:tag:amped",{"not":"alternate-amp"},{"not":"item:melee"}],"property":"dice-faces","selectors":["spell-damage"],"value":10}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: 12
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"upgrade","predicate":["item:slug:ignition","item:tag:amped","item:melee",{"not":"alternate-amp"}],"property":"dice-faces","selectors":["spell-damage"],"value":12}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@spell.rank"'
+    Uuid: 
+    Json: '{"damageCategory":"splash","hideIfDisabled":true,"key":"FlatModifier","predicate":["item:slug:ignition","item:tag:amped",{"not":"alternate-amp"}],"selector":"spell-damage","value":"@spell.rank"}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"diceNumber":"@spell.rank","dieSize":"d4","hideIfDisabled":true,"key":"DamageDice","predicate":["item:slug:frostbite","item:tag:amped",{"not":"alternate-amp"}],"selector":"spell-damage"}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: '"max(6,2*@spell.rank - 4)"'
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"upgrade","predicate":["item:slug:redistribute-potential","item:tag:amped",{"not":"alternate-amp"}],"property":"dice-number","selectors":["spell-damage"],"value":"max(6,2*@spell.rank
+      - 4)"}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: 6
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"upgrade","predicate":["item:slug:redistribute-potential","item:tag:amped",{"not":"alternate-amp"}],"property":"dice-faces","selectors":["spell-damage"],"value":6}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Psychic.OscillatingWave.ConservationOfEnergyLabel","option":"conservation-of-energy","placement":"spellcasting","predicate":["class:psychic"],"suboptions":[{"label":"PF2E.SpecificRule.Psychic.OscillatingWave.AddEnergy","value":"fire"},{"label":"PF2E.SpecificRule.Psychic.OscillatingWave.RemoveEnergy","value":"cold"}],"toggleable":true}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.conservationOfEnergy}"'
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"override","predicate":[{"or":["item:slug:breathe-fire","item:slug:cone-of-cold","item:slug:fireball","item:slug:fiery-body","item:slug:fire-shield","item:slug:flame-vortex","item:slug:frostbite","item:slug:heat-metal","item:slug:ignition","item:slug:polar-ray"]}],"property":"damage-type","selectors":["spell-damage"],"slug":"base","value":"{item|flags.pf2e.rulesSelections.conservationOfEnergy}"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Psychic.OscillatingWave.Mindshift","option":"mindshift:add-remove-energy","predicate":["class:psychic"],"toggleable":true}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.conservationOfEnergy}"'
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"override","predicate":["item:tag:mindshifted","mindshift:add-remove-energy"],"property":"damage-type","selectors":["inline-damage"],"value":"{item|flags.pf2e.rulesSelections.conservationOfEnergy}"}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.conservationOfEnergy}"'
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"override","predicate":["dice:slug:mindshift","dice:damage:type:mental","mindshift:add-remove-energy"],"property":"damage-type","selectors":["strike-damage"],"value":"{item|flags.pf2e.rulesSelections.conservationOfEnergy}"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.psychic.dedication.psiCantrips
+    Mode: override
+    Value: '[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Ignition","predicate":[{"not":"selected-psi-cantrip:ignition"}],"value":"ignition"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Frostbite","predicate":[{"not":"selected-psi-cantrip:frostbite"}],"value":"frostbite"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.ThermalStasis","predicate":["feat:psi-development"],"value":"thermal-stasis"}]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.psychic.dedication.psiCantrips","predicate":["feat:psychic-dedication"],"priority":10,"value":[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Ignition","predicate":[{"not":"selected-psi-cantrip:ignition"}],"value":"ignition"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Frostbite","predicate":[{"not":"selected-psi-cantrip:frostbite"}],"value":"frostbite"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.ThermalStasis","predicate":["feat:psi-development"],"value":"thermal-stasis"}]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":"flags.pf2e.psychic.dedication.psiCantrips","flag":"dedicationCantrip","key":"ChoiceSet","predicate":["feat:psychic-dedication"],"prompt":"PF2E.SpecificRule.Prompt.PsiCantrip","rollOption":"selected-psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["feat:psychic-dedication","spellcasting:tradition:occult","item:slug:{item|flags.pf2e.rulesSelections.dedicationCantrip}"],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.fireShield.resistance
+    Mode: override
+    Value: '"fire"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.fireShield.resistance","predicate":["conservation-of-energy:cold"],"priority":70,"value":"fire"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

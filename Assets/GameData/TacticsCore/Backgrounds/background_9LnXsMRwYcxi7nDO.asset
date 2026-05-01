@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_9LnXsMRwYcxi7nDO
+  m_EditorClassIdentifier: 
+  SourceId: 9LnXsMRwYcxi7nDO
+  Slug: bekyar-restorer
+  DisplayName: Bekyar Restorer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Mwangi Expanse Though many Bekyars worship demons,
+    you seek to pave a different path for yourself and your kindred, while also attempting
+    to change other Mwangi's treatment of your culture. Choose two attribute boosts.
+    One must be to Wisdom or Charisma , and one is a free attribute boost. You're
+    trained in the Diplomacy skill and the Abyss Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Impression] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a15089a7d564086f3bddd1173b10f9c929551978589181f078d8362197d45f68
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Abyss Lore
+    Rank: 1
+  LoreSkills:
+  - Abyss Lore
+  GrantedFeats:
+  - SourceKey: n8ngr
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

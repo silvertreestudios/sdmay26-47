@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using PathfinderTactics.Spells.Effects;
+using TacticsGame.Spells.Effects;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Services
+namespace TacticsGame.Spells.Services
 {
     /// <summary>
     /// Iterates a spell's effects by phase.

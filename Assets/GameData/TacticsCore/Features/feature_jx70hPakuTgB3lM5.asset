@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_jx70hPakuTgB3lM5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: jx70hPakuTgB3lM5
+  Slug: gate-junction
+  DisplayName: Gate Junction
+  IconPath: systems/pf2e/icons/spells/elemental-annihilation-wave.webp
+  Description: Gate Junctions When you gain a gate junction, you develop a specialized
+    kinetic technique. Choose one benefit from the gate junction table for one of
+    your kinetic elements. A critical blast junction happens when you get a critical
+    success with an Elemental Blast of the kinetic element. An elemental resistance
+    grants you resistance to damage while your kinetic aura is active. This resistance
+    is equal to your level, and it applies to damage of any listed type or that comes
+    from a creature or effect that has any of the listed traits. At 17th level, you
+    gain immunity to effects with any of the listed traits. This doesn't make you
+    immune to creatures with such a trait. You can voluntarily forgo this resistance,
+    immunity, or both if you want an effect to work on you. You can choose an impulse
+    junction instead of one of the listed junctions. Impulse junctions are listed
+    under Single Gate. An aura junction adds an effect to your kinetic aura when
+    you Channel Elements. A skill junction makes you trained in the listed skill
+    and grants you the listed skill feat. If you were already trained in the listed
+    skill, you instead become trained in a skill of your choice. While your kinetic
+    aura is active, you gain a +1 status bonus to the listed skill; the bonus increases
+    to +2 at 10th level and +3 at 17th level. You can select each gate junction only
+    once, unless noted otherwise, but you can have the same type of junction for
+    multiple elements. You can always choose not to use a gate junction when it would
+    normally occur. If you have multiple junctions that would apply at the same time
+    - such as kinetic aura junctions for different elements - you can apply any number
+    of them. (Though note that you can use only one impulse junction per round.)
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 27a7a7a3a4952c6c1d83bf5c5d81a81bffaafc12c481296103a46ef47ef39337
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":"flags.pf2e.kineticist.elements","flag":"element","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.ExpandElement"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.SpecificRule.Kineticist.KineticGate.Junction.Aura","predicate":[{"not":"junction:{item|flags.pf2e.rulesSelections.element}:aura"}],"value":"aura"},{"label":"PF2E.SpecificRule.Kineticist.KineticGate.Junction.CriticalBlast","predicate":[{"not":"junction:{item|flags.pf2e.rulesSelections.element}:critical"}],"value":"critical"},{"label":"PF2E.SpecificRule.Kineticist.KineticGate.Junction.ElementalResistance","predicate":[{"not":"junction:{item|flags.pf2e.rulesSelections.element}:resistance"}],"value":"resistance"},{"label":"PF2E.SpecificRule.Kineticist.KineticGate.Junction.Impulse","predicate":[{"not":"junction:{item|flags.pf2e.rulesSelections.element}:impulse"}],"value":"impulse"},{"label":"PF2E.SpecificRule.Kineticist.KineticGate.Junction.Skill","predicate":[{"not":"junction:{item|flags.pf2e.rulesSelections.element}:skill"}],"value":"skill"}],"flag":"junction","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Junction"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"junction:{item|flags.pf2e.rulesSelections.element}:{item|flags.pf2e.rulesSelections.junction}"}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

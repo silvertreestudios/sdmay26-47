@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Combat.Spells
+namespace TacticsGame.Combat.Spells
 {
     public static class AoESolver
     {
@@ -79,7 +79,7 @@ namespace PathfinderTactics.Combat.Spells
         }
 
         /// <summary>
-        /// Volumetric 3D Cone Algorithm. Lots of pain and suffering was endured to get this right.
+        /// Volumetric 3D Cone Algorithm.
         /// </summary>
         public static List<Vector3Int> GetConeVoxels(
             Vector3Int origin,
@@ -206,7 +206,10 @@ namespace PathfinderTactics.Combat.Spells
                     for (int z = -radiusTiles; z <= radiusTiles; z++)
                     {
                         Vector3Int targetVoxel = center + new Vector3Int(x, y, z);
-                        if (PF2E_Core.GetPF2eDistance3D(center, targetVoxel) <= radiusTiles)
+                        if (
+                            TacticsRuleset_Core.GetTacticsRulesetDistance3D(center, targetVoxel)
+                            <= radiusTiles
+                        )
                         {
                             if (LineOfSightUtility.HasLineOfEffect(center, targetVoxel))
                                 validVoxels.Add(targetVoxel);
@@ -250,7 +253,7 @@ namespace PathfinderTactics.Combat.Spells
             {
                 if (voxel == origin)
                     continue;
-                if (PF2E_Core.GetPF2eDistance3D(origin, voxel) > lengthTiles)
+                if (TacticsRuleset_Core.GetTacticsRulesetDistance3D(origin, voxel) > lengthTiles)
                     break;
                 if (!LineOfSightUtility.HasLineOfEffect(origin, voxel))
                     break;

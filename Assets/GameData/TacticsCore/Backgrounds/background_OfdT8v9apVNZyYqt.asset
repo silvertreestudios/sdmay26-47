@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_OfdT8v9apVNZyYqt
+  m_EditorClassIdentifier: 
+  SourceId: OfdT8v9apVNZyYqt
+  Slug: highborn-snoop
+  DisplayName: Highborn Snoop
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "The machinations and scheming of King's Crown have trained you to
+    be on the lookout for those who seem out of place. You've learned to spot when
+    the person pouring your tea has sword calluses\u2014or when the person wearing
+    a guard's uniform doesn't. Choose two attribute boosts. One must be Dexterity
+    or Intelligence , and the other is a free boost. You're trained in the Society
+    skill, and the Guild Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Courtly
+    Graces] skill feat."
+  SourceTitle: Pathfinder Lost Omens Highhelm
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: dba13b2d128985ecdd1d0754e112f8cc716577a1abb8aa9cb9bd9ec7c9202f6c
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Guild Lore
+    Rank: 1
+  LoreSkills:
+  - Guild Lore
+  GrantedFeats:
+  - SourceKey: uYjAM
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Courtly Graces
+    SourceId: 
+    DisplayName: Courtly Graces
+    Level: 1
+    ResolvedFeature: {fileID: 0}

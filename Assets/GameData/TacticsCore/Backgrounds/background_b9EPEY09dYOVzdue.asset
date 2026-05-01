@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_b9EPEY09dYOVzdue
+  m_EditorClassIdentifier: 
+  SourceId: b9EPEY09dYOVzdue
+  Slug: shadow-war-survivor
+  DisplayName: Shadow War Survivor
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Countless factions have fought for influence in Absalom for millennia,
+    and for decades these groups worked through the Pathfinder Society to better
+    control the City at the Center of the World. Perhaps you were ones of these agents
+    who clashed with other operatives during the so-called Shadow War. Or you might
+    have been an unintended victim of these clandestine clashes, inspiring you to
+    join the Society and stop the conflict from within. Whatever the reason, navigating
+    the Shadow War has left you politically savvy and informed. Choose two attribute
+    boosts. One must be to Wisdom or Charisma , and one is a free attribute boost.
+    You're trained in the Society skill and the Absalom Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Streetwise] skill feat. Special You can
+    select this background only if you have earned credit for at least 5 First Edition
+    scenarios from Season 1 of the Pathfinder Society organized play campaign.
+  SourceTitle: Organized Play Foundation
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 51c88609f0bfec7bb4f395196205efea661b27e5d29e23db0a768cf63301f1db
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Absalom Lore
+    Rank: 1
+  LoreSkills:
+  - Absalom Lore
+  GrantedFeats:
+  - SourceKey: sziit
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Streetwise
+    SourceId: 
+    DisplayName: Streetwise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

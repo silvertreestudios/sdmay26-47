@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_QnL7hqUi9HPenrbC
+  m_EditorClassIdentifier: 
+  SourceId: QnL7hqUi9HPenrbC
+  Slug: newcomer-in-need
+  DisplayName: Newcomer In Need
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're a Gokan native in a bad spot, and you're going to need a miracle
+    to get you out of your current fix. Miracles are in short supply, but the title
+    of Ruby Phoenix Champion might just do the trick. Maybe you need the prize money
+    to pay for a relative's expensive operation or to free your family from debt
+    to Golden League gangsters. Or maybe there's a particular prize in Hao Jin's
+    vault that could literally save your life - an amulet you can use to flee to
+    the farthest corners of the multiverse or even an artifact that could resurrect
+    you if you die, just like the Ruby Phoenix. The tough circumstances of your upbringing
+    in one of Goka's more downtrodden neighborhoods - such as industrial Oldtown,
+    the slums of the Scales district, or even the crime-ridden undercity taught you
+    lessons of self-reliance and how to quickly make friends in unlikely circumstances.
+    You've scraped together an entry into the Ruby Phoenix Tournament's prequalifier
+    with a team you can trust. Now all that's left is to pull off the impossible
+    and win this thing once and for all. Choose two attribute boosts. One must be
+    to Constitution or Dexterity , and one is a free attribute boost. You're trained
+    in Society and the Goka Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Streetwise]
+    skill feat.
+  SourceTitle: Pathfinder Fists of the Ruby Phoenix Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 8b7ed892cf28860c552392337bd44f69ebf17ca8b63973bff60db0bc0daa5730
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Goka
+    Rank: 1
+  LoreSkills:
+  - Goka
+  GrantedFeats:
+  - SourceKey: rj5hr
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Streetwise
+    SourceId: 
+    DisplayName: Streetwise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

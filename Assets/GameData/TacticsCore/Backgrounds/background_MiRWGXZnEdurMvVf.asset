@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_MiRWGXZnEdurMvVf
+  m_EditorClassIdentifier: 
+  SourceId: MiRWGXZnEdurMvVf
+  Slug: eldritch-anatomist
+  DisplayName: Eldritch Anatomist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You're a trained physician who can ably tend wounds of many kinds.
+    But more than a practitioner, you're a scholar. Some cultures shape flesh to
+    extreme degrees, creating aberrations from humanoid forms. The fleshforges of
+    distant Nex practice this fleshwarping, as do certain subterranean societies
+    you hope to one day study\u2014preferably from a safe and clinical distance.
+    Choose two attribute boosts. One must be to Intelligence or Wisdom , and one
+    is a free attribute boost. You're trained in the Medicine skill and the Fleshwarp
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance] skill
+    feat with Medicine."
+  SourceTitle: Pathfinder Abomination Vaults Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 57aa6d208d9954f8449c77d5cba82936f083cda273638b1d7a1b069d0efa911e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"medicine"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fleshwarp Lore
+    Rank: 1
+  LoreSkills:
+  - Fleshwarp Lore
+  GrantedFeats: []

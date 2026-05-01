@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ln2Y1a4SxlU9sizX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ln2Y1a4SxlU9sizX
+  Slug: alchemical-sciences-methodology
+  DisplayName: Alchemical Sciences Methodology
+  IconPath: icons/sundries/books/book-embossed-jewel-blue-red.webp
+  Description: Your methodology emphasizes chemical and alchemical analysis, collecting
+    information from unusual particles and fluids found on the scene. You possess
+    enough alchemical know-how to whip up a few tinctures to help you with your cases.
+    You're trained in Crafting and gain the @UUID[Compendium.pf2e.feats-srd.Item.Alchemical
+    Crafting] skill feat. You start with a standard formula book, which contains
+    the formulas for two common 1st-level alchemical items of your choice (these
+    must be elixirs or tools), in addition to the formulas gained from Alchemical
+    Crafting. Each time you gain a level, you learn the formula for one common alchemical
+    elixir or alchemical tool of any level of item you can create. During your daily
+    preparations, you can create a number of versatile vials equal to your Intelligence
+    modifier. Statistics for versatile vials appear in the alchemist class. You gain
+    the @UUID[Compendium.pf2e.actionspf2e.Item.Quick Tincture] action, which you
+    can use to turn one of these vials into an elixir or alchemical tool for which
+    you know the formula. If you have the ability to create versatile vials from
+    more than one source (such as the alchemist multiclass archetype), you can use
+    any of your versatile vials for any ability you have that requires them.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f7ae5822935b5ad5d0dc50837369b24f068e42a450a64c48b1b1837daf247446
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.crafting.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.crafting.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Alchemical Crafting
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Alchemical Crafting"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Quick Tincture
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Quick Tincture"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Formula Book (Blank)
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Formula
+      Book (Blank)"}'
+  - Key: SpecialResource
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"itemUUID":"Compendium.pf2e.equipment-srd.Item.Versatile Vial","key":"SpecialResource","label":"PF2E.SpecificRule.Alchemist.VersatileVials","level":"ternary(gte(@actor.level,
+      18), 18, ternary(gte(@actor.level, 12), 12, ternary(gte(@actor.level, 4), 4,
+      1)))","max":"@actor.system.abilities.int.mod","slug":"versatile-vials"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Alchemical Crafting
+    SourceId: 
+    DisplayName: Alchemical Crafting
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Quick Tincture
+    SourceId: 
+    DisplayName: Quick Tincture
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Formula Book (Blank)
+    SourceId: 
+    DisplayName: Formula Book (Blank)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

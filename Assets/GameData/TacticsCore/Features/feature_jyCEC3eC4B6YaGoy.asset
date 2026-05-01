@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_jyCEC3eC4B6YaGoy
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: jyCEC3eC4B6YaGoy
+  Slug: extract-element
+  DisplayName: Extract Element
+  IconPath: systems/pf2e/icons/spells/disapperance.webp
+  Description: Creatures with a strong tie to your element might be troublesome for
+    you to deal with, at least until you've learned to turn their elemental nature
+    to your advantage. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Extract
+    Element] action.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: cb2cc75269006601a0ec7102d6de62b4985eccad766407d716d8a67aa460e76b
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Extract Element
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Extract
+      Element"}'
+  Category: 2
+  Level: 3
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Extract Element
+    SourceId: 
+    DisplayName: Extract Element
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_x3fFxtLogoy5hZfe
+  m_EditorClassIdentifier: 
+  SourceId: x3fFxtLogoy5hZfe
+  Slug: medicinal-clocksmith
+  DisplayName: Medicinal Clocksmith
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: While others might have looked to clockwork as a mechanical innovation,
+    you see the potential in the technology to improve the health of patients. You
+    might be an experienced field medic who reached for a scrapped construct to help
+    a wounded soldier, or a vanguard surgeon who's found replacing organs with clockwork
+    more effective than repairing them. Perhaps you've also worked to "optimize"
+    organic bodies with fine machinery, with or without the permission of your patients.
+    Choose two attribute boosts. One must be to Intelligence or Wisdom , and one
+    is a free attribute boost. You're trained in the Medicine skill and the Engineering
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Risky Surgery]
+    skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: e9081522cf67804c3b017e708ba76c155f5e24262c40a453966b17205b1c04db
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering
+    Rank: 1
+  LoreSkills:
+  - Engineering
+  GrantedFeats:
+  - SourceKey: woff0
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Risky Surgery
+    SourceId: 
+    DisplayName: Risky Surgery
+    Level: 1
+    ResolvedFeature: {fileID: 0}

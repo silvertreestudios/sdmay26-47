@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_aisuJF1A98bHfkLH
+  m_EditorClassIdentifier: 
+  SourceId: aisuJF1A98bHfkLH
+  Slug: whispering-way-scion
+  DisplayName: Whispering Way Scion
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Eye of Dread Your family has long been associated
+    with the enigmatic death cult known as the Whispering Way, which was recently
+    responsible for the terrible devastation in the nation of Lastwall. Whether or
+    not you have followed in their footsteps, you know many of the philosophy's secrets.
+    Choose two attribute boosts. One must be to Intelligence or Wisdom , and one
+    is a free attribute boost. You're trained in the Religion skill and the Undead
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Student of the
+    Canon] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: fbaf022e2afd957b75e3cd969a97e300c1a523b13f6ec4b190545bddd27251d7
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead Lore
+    Rank: 1
+  LoreSkills:
+  - Undead Lore
+  GrantedFeats:
+  - SourceKey: v396h
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Student of the Canon
+    SourceId: 
+    DisplayName: Student of the Canon
+    Level: 1
+    ResolvedFeature: {fileID: 0}

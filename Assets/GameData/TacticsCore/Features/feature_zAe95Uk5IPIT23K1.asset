@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_zAe95Uk5IPIT23K1
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: zAe95Uk5IPIT23K1
+  Slug: great-fortitude-psychic
+  DisplayName: Great Fortitude (Psychic)
+  IconPath: icons/magic/life/cross-explosion-burst-green.webp
+  Description: Your mind holds your body to a subconscious mental image of yourself.
+    Your proficiency rank for Fortitude saves increases to expert.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 577b830e375e41af9c855fc198f058836e429c92f3b0dfc5670de50d076be5f4
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules: []
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 2
+  FocusPointDelta: 0

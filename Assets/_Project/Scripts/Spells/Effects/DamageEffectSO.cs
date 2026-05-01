@@ -1,20 +1,20 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data.PF2e;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Data.TacticsRuleset;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Effects
+namespace TacticsGame.Spells.Effects
 {
     /// <summary>
     /// Resolution Phase: Rolls damage dice and applies damage to affected targets.
     /// Supports PF2e basic save scaling: CritFail=double, Fail=full, Success=half, CritSuccess=zero.
     /// Routes through UnitHealth.ApplyDamage so existing reactions (Shield Block) still trigger.
     /// </summary>
-    [CreateAssetMenu(menuName = "PF2e/Spell Effects/Damage")]
+    [CreateAssetMenu(menuName = "TacticsRuleset/Spell Effects/Damage")]
     public class DamageEffectSO : SpellEffectSO
     {
         [Header("Damage Configuration")]
-        [Tooltip("If true, uses PF2e basic save damage scaling.")]
+        [Tooltip("If true, use basic save damage scaling.")]
         public bool IsBasicSave;
 
         [Tooltip("If true, this is a spell attack (uses the attack roll degree for damage).")]

@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_7s57JDCaiYYCAdFx
+  m_EditorClassIdentifier: 
+  SourceId: 7s57JDCaiYYCAdFx
+  Slug: druid
+  DisplayName: Druid
+  IconPath: systems/pf2e/icons/classes/druid.webp
+  Description: "The power of nature is impossible to resist. It can bring ruin to
+    the stoutest fortress in minutes, reducing even the mightiest works to rubble,
+    burning them to ash, burying them beneath an avalanche of snow, or drowning them
+    beneath the waves. It can provide endless bounty and breathtaking splendor to
+    those who respect it\u2014and an agonizing death to those who take it too lightly.
+    You are one of those who hear nature's call. You stand in awe of the majesty
+    of its power and give yourself over to its service. Druid"
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 0e5fb740eeb1b96b6f979b4c57381232b16df651f89705346ad5fad4a2d5315a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 8
+  KeyAttributes: 05000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 2
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 5zf6s
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Anathema (Druid)
+    SourceId: nfBn8QB6HVdzpTFV
+    DisplayName: Anathema (Druid)
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 2054c90ea96eff1449b8af139a7fc3fe, type: 2}
+  - SourceKey: ObylJ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Druid Spellcasting
+    SourceId: b8pnRxGuNzG0buuh
+    DisplayName: Druid Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: e2d63bd8ab7e93e42ac69ab0454eebd8, type: 2}
+  - SourceKey: g63pa
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Druidic Order
+    SourceId: 8STJEFVJISujgpMR
+    DisplayName: Druidic Order
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 37dad884e8562944c999db05cf7b6167, type: 2}
+  - SourceKey: gPFcb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Wildsong
+    SourceId: RiAGlnnp4S21BAG3
+    DisplayName: Wildsong
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d360054f2ef64924c92f7e200eb5153c, type: 2}
+  - SourceKey: ixkp9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  - SourceKey: mjeZi
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Voice of Nature
+    SourceId: d5BFFHXFJYKs5LXr
+    DisplayName: Voice of Nature
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 29c0f8362beca6547879e800a1b35e8f, type: 2}
+  GrantedFeatures:
+  - SourceKey: 5zf6s
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Anathema (Druid)
+    SourceId: nfBn8QB6HVdzpTFV
+    DisplayName: Anathema (Druid)
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 2054c90ea96eff1449b8af139a7fc3fe, type: 2}
+  - SourceKey: 6cq7c
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Expertise
+    SourceId: FCEp9jjxxgRJDJV3
+    DisplayName: Medium Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 73197a4a7743ecd498d5be602ed09454, type: 2}
+  - SourceKey: LCR42
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: TUOeATt52P43r5W0
+    DisplayName: Reflex Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 539148cfddca53c4488f47d820d2f718, type: 2}
+  - SourceKey: ObylJ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Druid Spellcasting
+    SourceId: b8pnRxGuNzG0buuh
+    DisplayName: Druid Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: e2d63bd8ab7e93e42ac69ab0454eebd8, type: 2}
+  - SourceKey: QkvgC
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Wild Willpower
+    SourceId: yqaRnXFjRnFWsWvY
+    DisplayName: Wild Willpower
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: bd49b986de626be4cb5a6370096e6cc9, type: 2}
+  - SourceKey: XOa0H
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: ZdbqS
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Fortitude Expertise
+    SourceId: F57Na5VxfBp56kke
+    DisplayName: Fortitude Expertise
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 64c77f7441a8f224c810d356bfbb2f73, type: 2}
+  - SourceKey: bic0m
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Spellcaster
+    SourceId: l1InYvhnQSz6Ucxc
+    DisplayName: Master Spellcaster
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4bf880905a2203248baa95088d309fcb, type: 2}
+  - SourceKey: g63pa
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Druidic Order
+    SourceId: 8STJEFVJISujgpMR
+    DisplayName: Druidic Order
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 37dad884e8562944c999db05cf7b6167, type: 2}
+  - SourceKey: gPFcb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Wildsong
+    SourceId: RiAGlnnp4S21BAG3
+    DisplayName: Wildsong
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d360054f2ef64924c92f7e200eb5153c, type: 2}
+  - SourceKey: ifwyc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Spellcaster
+    SourceId: Hfaa7TuLn3nE8lr3
+    DisplayName: Legendary Spellcaster
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: f940d7779f91b714099ce8d9e2809a2a, type: 2}
+  - SourceKey: ixkp9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  - SourceKey: jfaqa
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: mjeZi
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Voice of Nature
+    SourceId: d5BFFHXFJYKs5LXr
+    DisplayName: Voice of Nature
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 29c0f8362beca6547879e800a1b35e8f, type: 2}
+  - SourceKey: ycbpi
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Spellcaster
+    SourceId: cD3nSupdCvONuHiE
+    DisplayName: Expert Spellcaster
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 3e7fd61908df4a14290ae0cc0e240ad8, type: 2}
+  - SourceKey: zird8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Primal Hierophant
+    SourceId: nzgb43mQmLgaqDoQ
+    DisplayName: Primal Hierophant
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 42eecd71756fd904e8b2d20e57aaa2ef, type: 2}
+  - SourceKey: zsmsu
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}

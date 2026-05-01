@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_LH2xktS54P9aa2uY
+  m_EditorClassIdentifier: 
+  SourceId: LH2xktS54P9aa2uY
+  Slug: amateur-director
+  DisplayName: Amateur Director
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You grew up a child of the theater. Perhaps your parents were actors
+    or directors, or maybe you fell in with a theater crowd at a young age. Perhaps
+    you and your siblings shared a tradition of putting on plays for your parents
+    or, if you were an only child, maybe you directed your toys and stuffed animals
+    in elaborate productions that played out in your mind. Whatever the case, as
+    you grew older, you found that you were most comfortable helping to organize
+    and facilitate the goals and dreams of others\u2014and not just in the role of
+    being a director for a stage production. You've always derived satisfaction from
+    being the one in charge of something and helping others get organized so as to
+    accomplish something significant. Yet for whatever reason, this never quite grew
+    into your job; you've never actually made money directing, or if you have, it
+    was never enough to allow you to abandon your other responsibilities. Still,
+    the experience you've gained at this amateur work has given you some impressive
+    skills and self-confidence. Choose two attribute boosts. One must be to Wisdom
+    or Charisma , and one is a free attribute boost. You're trained in the Diplomacy
+    skill and the Theater Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Impression] skill feat. If you have the Leader persona trait, you also become
+    trained in the Scribing Lore skill."
+  SourceTitle: Pathfinder Curtain Call Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: e9ac49310c46fe0a8424160b62e49f4bcbf55df4b489ea772b7746bd44e7cba5
+  Traits:
+  - persona-leader
+  TraitsLower:
+  - persona-leader
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.campaign-effects.Item.Persona Trait
+    Json: '{"key":"GrantItem","predicate":[{"not":"feature:persona-trait"}],"uuid":"Compendium.pf2e.campaign-effects.Item.Persona
+      Trait"}'
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Theater Lore
+    Rank: 1
+  LoreSkills:
+  - Theater Lore
+  GrantedFeats:
+  - SourceKey: 5P4ir
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

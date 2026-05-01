@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_30qVs46dVNflgQNx
+  m_EditorClassIdentifier: 
+  SourceId: 30qVs46dVNflgQNx
+  Slug: inventor
+  DisplayName: Inventor
+  IconPath: systems/pf2e/icons/classes/inventor.webp
+  Description: Any tinkerer can follow a diagram to make a device, but you invent
+    the impossible! Every strange contraption you dream up is a unique experiment
+    pushing the edge of possibility, a mysterious machine that seems to work for
+    only you. You're always on the verge of the next great breakthrough, and every
+    trial and tribulation is another opportunity to test and tune. If you can dream
+    it, you can build it. Inventor
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classes
+  Rarity: uncommon
+  SourceJsonHash: f58ade7d15b9e4cb309f00794f79d5e1f39af830e3f539403877c8d67059acca
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.inventor.explode
+    Mode: override
+    Value: '"fire"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.inventor.explode","priority":49,"value":"fire"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["self:action:trait:unstable"],"selector":"strike-attack-roll","text":"PF2E.SpecificRule.Inventor.Unstable.Note","title":"PF2E.TraitUnstable"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["unstable-check"],"selector":["flat-check"],"text":"PF2E.SpecificRule.Inventor.Unstable.FlatCheck.Failure","title":"PF2E.Check.Result.Degree.Check.failure"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["criticalFailure"],"predicate":["unstable-check"],"selector":["flat-check"],"text":"PF2E.SpecificRule.Inventor.Unstable.FlatCheck.CriticalFailure","title":"PF2E.Check.Result.Degree.Check.criticalFailure"}'
+  HitPointsPerLevel: 8
+  KeyAttributes: 04000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 43sk5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Peerless Inventor
+    SourceId: JH6um0St37UrjLNG
+    DisplayName: Peerless Inventor
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 97e0cdb92d84a5148bd3ffa0b1c829c0, type: 2}
+  - SourceKey: havjj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  - SourceKey: p0u0x
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Explode
+    SourceId: pEm1RTNuzzQVKkR0
+    DisplayName: Explode
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 641ebb52446bbe0458f61a06db50b475, type: 2}
+  - SourceKey: paomt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Overdrive
+    SourceId: oP5zM5Yu41xcx3iu
+    DisplayName: Overdrive
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 3f75ef77d21fdaa43a37331ff595724e, type: 2}
+  - SourceKey: y9fo7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Innovation
+    SourceId: jIAgXe2FetAKBwt7
+    DisplayName: Innovation
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 29d7fbad9aa53fb459ab260aea2d1307, type: 2}
+  GrantedFeatures:
+  - SourceKey: 1doue
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Inventor Weapon Expertise
+    SourceId: 0NyPgi6UACMTmAGE
+    DisplayName: Inventor Weapon Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 29a7f1a1206ff384bb80f8fc02f3ae54, type: 2}
+  - SourceKey: 1hSW2
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Anvil's Hardness
+    SourceId: O04RZa20X6fcbLAy
+    DisplayName: Anvil's Hardness
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: cc50c6d4406c6694cb00aa575d403f94, type: 2}
+  - SourceKey: 43sk5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Peerless Inventor
+    SourceId: JH6um0St37UrjLNG
+    DisplayName: Peerless Inventor
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 97e0cdb92d84a5148bd3ffa0b1c829c0, type: 2}
+  - SourceKey: 5prut
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Expertise (Inventor)
+    SourceId: esyKPSDbFQPB4lhq
+    DisplayName: Medium Armor Expertise (Inventor)
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 116b62903032532498ce600dc40aad5e, type: 2}
+  - SourceKey: 6Qexc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: 72ph9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Complete Reconfiguration
+    SourceId: j0klWHkH3AxUAgok
+    DisplayName: Complete Reconfiguration
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: e4804f5d94c86a34692582944c8d0db9, type: 2}
+  - SourceKey: 7aqni
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Overdrive
+    SourceId: SXv9bJFbntDOMRIL
+    DisplayName: Master Overdrive
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: ba35f72e2dc611a4aa2ad191162973f9, type: 2}
+  - SourceKey: XFLRf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Offensive Boost
+    SourceId: F8oXHnu9iNTcpXbJ
+    DisplayName: Offensive Boost
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: ee866bdea51a78d47ba5b63c33eaf724, type: 2}
+  - SourceKey: XTXsD
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: TUOeATt52P43r5W0
+    DisplayName: Reflex Expertise
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 539148cfddca53c4488f47d820d2f718, type: 2}
+  - SourceKey: cqq8h
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Mastery
+    SourceId: cGMSYAErbUG5E8X2
+    DisplayName: Medium Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: c6659f86a85d58d4d91186d1b048953f, type: 2}
+  - SourceKey: d0g4j
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: 
+    DisplayName: Greater Weapon Specialization (Level 15)
+    Level: 15
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: ebysz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Revolutionary Innovation
+    SourceId: tXbadIT3LzwuSR19
+    DisplayName: Revolutionary Innovation
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 67a2c1311d86081428b28b662414bb2b, type: 2}
+  - SourceKey: f46jt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Inventive Mastery
+    SourceId: Uu8VnpAo3XZZEKPd
+    DisplayName: Inventive Mastery
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: fa2a70a3484c6864ebf2123d1b679a1f, type: 2}
+  - SourceKey: g4pqo
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: havjj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  - SourceKey: hu0ip
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Breakthrough Innovation
+    SourceId: 78HIjRbGoONMpF31
+    DisplayName: Breakthrough Innovation
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: c130ede886d73de4a8a9cda276c5e949, type: 2}
+  - SourceKey: ihpyc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Inventive Expertise
+    SourceId: mQVC1iDyNi2tfsF8
+    DisplayName: Inventive Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: b66e9f969d50f004fa0e77b73f57ecfd, type: 2}
+  - SourceKey: n7f3b
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Overdrive
+    SourceId: o1omL2LdHvjEwh3P
+    DisplayName: Legendary Overdrive
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 2de65534d4ea6d04d9e8d59c571f9f64, type: 2}
+  - SourceKey: ng6mg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Infinite Invention
+    SourceId: rOaLbipkComjc6qh
+    DisplayName: Infinite Invention
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: d74c93040ca404b44a85b92976e0770d, type: 2}
+  - SourceKey: p0u0x
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Explode
+    SourceId: pEm1RTNuzzQVKkR0
+    DisplayName: Explode
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 641ebb52446bbe0458f61a06db50b475, type: 2}
+  - SourceKey: paomt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Overdrive
+    SourceId: oP5zM5Yu41xcx3iu
+    DisplayName: Overdrive
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 3f75ef77d21fdaa43a37331ff595724e, type: 2}
+  - SourceKey: ptf4a
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reconfigure
+    SourceId: J46wcNqKXvtokBD1
+    DisplayName: Reconfigure
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 1728592f36c8caf4db084a23cbe8a991, type: 2}
+  - SourceKey: tkc99
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Overdrive
+    SourceId: YMKxN56w617BYwu4
+    DisplayName: Expert Overdrive
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 144852e1c077f8c4686db5057199e7e1, type: 2}
+  - SourceKey: wAhlB
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Churning Mind
+    SourceId: VSbNezLoWtWRDok7
+    DisplayName: Churning Mind
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 8d707fdb5c3d6334ea626deaec209a83, type: 2}
+  - SourceKey: wg9yw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Inventor Weapon Mastery
+    SourceId: mJpPaoVlNmTK47x1
+    DisplayName: Inventor Weapon Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: f9a04e6a53755c7499aa94a089770eb2, type: 2}
+  - SourceKey: y9fo7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Innovation
+    SourceId: jIAgXe2FetAKBwt7
+    DisplayName: Innovation
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 29d7fbad9aa53fb459ab260aea2d1307, type: 2}

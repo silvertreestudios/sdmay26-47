@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_kLschzVZFoe3U63C
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: kLschzVZFoe3U63C
+  Slug: psychic-weapon-expertise
+  DisplayName: Psychic Weapon Expertise
+  IconPath: icons/skills/melee/hand-grip-staff-yellow-brown.webp
+  Description: Training and magic have improved your weapon technique. Your proficiency
+    rank for simple weapons and unarmed attacks increases to expert.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9a7531e0507cdc321ef4feeefda62ac62ae22965c81b479b73925b25dc1e18df
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

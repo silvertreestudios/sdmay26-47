@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_3KPZ7svIO6kmmEKH
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 3KPZ7svIO6kmmEKH
+  Slug: ruffian
+  DisplayName: Ruffian
+  IconPath: icons/skills/melee/strike-dagger-skull-white.webp
+  Description: 'You prefer the direct approach: strong-arming or intimidation. You
+    might be an enforcer for organized crime, a highway bandit, or a noble who bullies
+    others with threats of your family''s power. You use whatever tools you have
+    to get the job done. You can deal sneak attack damage with any weapon, not just
+    the weapons listed in the sneak attack class feature. This benefit doesn''t apply
+    to a simple weapon with a damage die greater than d8 or a martial or advanced
+    weapon with a damage die greater than d6. (Apply any abilities that alter the
+    damage die size first.) Critical hits you make with these weapons gain the weapon''s
+    critical specialization benefit if the target is @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard]
+    to you. You''re trained in Intimidation and medium armor. You can choose Strength
+    as your key attribute. When you gain light armor expertise, you also gain expert
+    proficiency in medium armor, and when you gain light armor mastery, you also
+    gain master proficiency in medium armor.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e220f698300a0079ef139e8ed0cb3214e30b4fdfb6da5b169358362a8b674e70
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"sneak-attack"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["item:category:simple",{"lte":["item:damage:die:faces",8]}]},{"and":[{"or":["item:category:martial","item:category:advanced"]},{"lte":["item:damage:die:faces",6]}]}]}],"property":"other-tags","value":"sneak-attack"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.intimidation.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.intimidation.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.defenses.medium.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.defenses.medium.rank","predicate":["feature:light-armor-expertise"],"value":2}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.defenses.medium.rank
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.defenses.medium.rank","predicate":["feature:light-armor-mastery"],"value":3}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["item:tag:sneak-attack","target:condition:off-guard",{"not":"item:category:unarmed"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: medium
+    Rank: 1
+  FocusPointDelta: 0

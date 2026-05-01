@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_UU4MOe7Lozt9V8tg
+  m_EditorClassIdentifier: 
+  SourceId: UU4MOe7Lozt9V8tg
+  Slug: seer-of-the-dead
+  DisplayName: Seer of the Dead
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You have long been gifted with the ability to see and speak with the
+    departed. This could have manifested at your birth or when a chance encounter
+    linked you inextricably to the spirits of the dead. Their constant presence might
+    feel like a curse, or it might provide you with welcome companionship. You gain
+    one ability boost. It must be to Constitution or Wisdom . You're trained in Religion
+    and Undead Lore. You gain the effects of the @UUID[Compendium.pf2e.spells-srd.Item.Spirit
+    Sense] spell at all times.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 6089a124a7ebe0ad3b40621f04a10915bf9f3c3e340469ab426845a7576b2f75
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead Lore
+    Rank: 1
+  LoreSkills:
+  - Undead Lore
+  GrantedFeats: []

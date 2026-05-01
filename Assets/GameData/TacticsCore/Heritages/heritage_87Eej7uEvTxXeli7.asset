@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_87Eej7uEvTxXeli7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 87Eej7uEvTxXeli7
+  Slug: riverside-tripkee
+  DisplayName: Riverside Tripkee
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your ancestors live in and on the water. You gain a 15-foot swim Speed.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 2d9d55aa337a5bf2bb01a6abe55f85e8ef57743a523880c6a691cf972d4133ff
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 15
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"swim","value":15}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.hXM5jXezIki1cMI2
+    SourceId: 
+    Slug: tripkee
+    DisplayName: Tripkee
+  ParentAncestryAsset: {fileID: 11400000, guid: 22df9819c61ea9443bd8eb1984c77367, type: 2}
+  GrantedFeatures: []

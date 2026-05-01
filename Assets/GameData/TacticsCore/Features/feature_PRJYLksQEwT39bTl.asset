@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_PRJYLksQEwT39bTl
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: PRJYLksQEwT39bTl
+  Slug: mystery
+  DisplayName: Mystery
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: 'An oracle wields divine power, but not from a single divine being.
+    This power could come from a potent concept or ideal, the attention of multiple
+    divine entities whose areas of concern all touch on that subject, or a direct
+    and dangerous conduit to raw divine power. This is the oracle''s mystery, a source
+    of divine magic not beholden to any deity. Choose the mystery that empowers your
+    magic. Your mystery grants you additional spells, and special focus spells called
+    revelation spells. Your mystery also gives you a unique cursebound ability that
+    lets you draw upon the divine, as well as dictating the effects of the oracular
+    curse that falls upon you when you touch too much of this power. @UUID[Compendium.pf2e.classfeatures.Item.Ancestors]
+    Voices of past generations teach and haunt you. @UUID[Compendium.pf2e.classfeatures.Item.Ashes]
+    You see all things in the world as fleeting and temporary, waiting to be purified
+    into their base essence: the ash left behind after a burning fire. @UUID[Compendium.pf2e.classfeatures.Item.Battle]
+    You embody the virtues upheld by heroes of legend. @UUID[Compendium.pf2e.classfeatures.Item.Blight]
+    A spring bud will wither, a mighty oak will crash to the forest floor, and a
+    callow youth will grow into maturity, then decline into old age. @UUID[Compendium.pf2e.classfeatures.Item.Bones]
+    Death always seems near, and the dead speak to you. @UUID[Compendium.pf2e.classfeatures.Item.Cosmos]
+    You draw power from the stars and the spaces between. @UUID[Compendium.pf2e.classfeatures.Item.Flames]
+    You dance with fire and do your best to remain unscorched by it. @UUID[Compendium.pf2e.classfeatures.Item.Life]
+    The teeming energies of life flow through you out into the world. @UUID[Compendium.pf2e.classfeatures.Item.Lore]
+    You gain access to unparalleled, overwhelming knowledge. @UUID[Compendium.pf2e.classfeatures.Item.Tempest]
+    Wind, waves, and storms rage at your beck and call. @UUID[Compendium.pf2e.classfeatures.Item.Time]
+    Whether by accident, fate, or purposeful meddling, you exist slightly outside
+    of time. Reading a Mystery Entry A mystery entry contains the following information,
+    followed by a description of that mystery''s curse. Granted Spells You automatically
+    add the spells listed here to your spell repertoire, as described in Spell Repertoire
+    on page 130. At 1st level, you gain a cantrip and a 1st-rank spell. You learn
+    the other spells on the list as soon as you gain the ability to cast oracle spells
+    of that rank. Revelation Spells You automatically gain your mystery''s initial
+    revelation spell at 1st level and can gain more by selecting the Advanced Revelation,
+    Greater Revelation, and Diverse Mystery oracle feats. These spells start on page
+    259. Related Domains These are the cleric domains associated with your mystery.
+    You gain domain spells, which you can cast as revelation spells, by taking the
+    Domain Acumen and Domain Fluency feats. At 11th level, the divine access class
+    feature also gives you additional slotted spells based on your domains. The domains
+    and their domain spells appear on page 372 of Player Core. Domains marked with
+    an asterisk (*) are found in Pathfinder Lost Omens Divine Mysteries. Mystery
+    Skill You become trained in the listed skill. A few mysteries make you trained
+    in more than one skill. Oracle Feat You gain this 1st-level oracle feat. This
+    is a cursebound feat, so using it aggravates your oracular curse.'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1ba7fe67d1f0793295cc43aa7d92465234d323721e89fd2690e6dbecf60ceda7
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:oracle-mystery",{"or":[{"and":["class:oracle","item:tag:oracle-mystery"]},{"and":["item:tag:oracle-mystery",{"not":"item:tag:class-archetype"}]}]}]},"flag":"mystery","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Oracle.Mystery.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.mystery}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.mystery}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.mystery}'
+    SourceId: 
+    DisplayName: mystery}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

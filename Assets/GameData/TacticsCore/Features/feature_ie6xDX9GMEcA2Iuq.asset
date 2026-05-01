@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ie6xDX9GMEcA2Iuq
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ie6xDX9GMEcA2Iuq
+  Slug: raging-resistance
+  DisplayName: Raging Resistance
+  IconPath: icons/skills/social/intimidation-impressing.webp
+  Description: Repeated exposure and toughened skin allow you to fend off harm. While
+    raging, you gain resistance equal to 3 + your Constitution modifier to damage
+    types based on your instinct. See specific instincts for more information.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 82a12b821e295d5f460dde0742447c813c46299f1a0da0ac622577dfc751a11c
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules: []
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

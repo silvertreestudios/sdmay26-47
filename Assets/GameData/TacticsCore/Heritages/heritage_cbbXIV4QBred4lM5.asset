@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_cbbXIV4QBred4lM5
+  m_EditorClassIdentifier: 
+  SourceId: cbbXIV4QBred4lM5
+  Slug: dragonblood
+  DisplayName: Dragonblood
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're descended in some way from a dragon. Your physical features
+    might show this outwardly, with a pair of draconic horns, patches of scaly skin,
+    or even a tail, or you might develop an internal reserve of draconic power. You
+    gain the dragonblood trait, in addition to the traits from your ancestry. Add
+    Draconic to your ancestry's list of additional languages (allowing you to choose
+    it as a language if your Intelligence modifier is positive). When you roll a
+    success on a saving throw against a fear effect, you get a critical success instead.
+    You can choose from dragonblood feats and feats from your ancestry whenever you
+    gain an ancestry feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 14d7ecec98de4f65a7c282366fd2ed5f912e00648e85b782a6541eca9881e6be
+  Traits:
+  - dragonblood
+  TraitsLower:
+  - dragonblood
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"actorFlag":true,"choices":[{"label":"PF2E.Dragon.Adamantine","value":{"damageType":"bludgeoning","dragon":"adamantine","save":"reflex","shape":"cone","speed":"burrow","tradition":"primal"}},{"label":"PF2E.Dragon.Conspirator","value":{"damageType":"poison","dragon":"conspirator","save":"fortitude","shape":"cone","speed":"climb","tradition":"occult"}},{"label":"PF2E.Dragon.Diabolic","value":{"damageType":"fire","dragon":"diabolic","save":"reflex","shape":"cone","tradition":"divine"}},{"label":"PF2E.Dragon.Empyreal","value":{"damageType":"spirit","dragon":"empyreal","save":"reflex","shape":"cone","tradition":"divine"}},{"label":"PF2E.Dragon.Fortune","value":{"damageType":"force","dragon":"fortune","save":"reflex","shape":"cone","tradition":"arcane"}},{"label":"PF2E.Dragon.Horned","value":{"damageType":"poison","dragon":"horned","save":"fortitude","shape":"cone","speed":"swim","tradition":"primal"}},{"label":"PF2E.Dragon.Mirage","value":{"damageType":"mental","dragon":"mirage","save":"will","shape":"cone","speed":"climb","tradition":"arcane"}},{"label":"PF2E.Dragon.Omen","value":{"damageType":"mental","dragon":"omen","save":"will","shape":"cone","tradition":"occult"}}],"flag":"dragonblood","key":"ChoiceSet"}'
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["item:trait:fear"],"selector":"saving-throw"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

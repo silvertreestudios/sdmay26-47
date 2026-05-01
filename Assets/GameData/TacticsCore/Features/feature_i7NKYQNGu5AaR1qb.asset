@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_i7NKYQNGu5AaR1qb
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: i7NKYQNGu5AaR1qb
+  Slug: lead-constitution
+  DisplayName: Lead Constitution
+  IconPath: icons/commodities/materials/bowl-powder-grey.webp
+  Description: You have gunpowder in your veins. Your proficiency rank for Fortitude
+    saves increases to master. When you roll a success on a Fortitude save, you get
+    a critical success instead.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e94768d308b8bc5134fd9d0f5c8efa46580dac7a5dac29b1d1a1c41bbeba5a4f
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"fortitude"}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 3
+  FocusPointDelta: 0

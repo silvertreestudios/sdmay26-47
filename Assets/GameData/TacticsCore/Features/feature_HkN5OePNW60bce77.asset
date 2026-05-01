@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_HkN5OePNW60bce77
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: HkN5OePNW60bce77
+  Slug: the-cunning
+  DisplayName: The Cunning
+  IconPath: icons/creatures/mammals/humanoid-fox-cat-archer.webp
+  Description: Why race a hare across a meadow, or a salmon up a waterfall? Why face
+    a titan in a test of strength? Wouldn't it be better to best your foes with a
+    bit of creativity? After all, the stories that echo throughout history are always
+    those where wits and trickery, rather than raw talent or power, win the day.
+    You are trained in Deception. After you Spark Transcendence, you can @UUID[Compendium.pf2e.actionspf2e.Item.Create
+    a Diversion] or @UUID[Compendium.pf2e.actionspf2e.Item.Feint] as a free action.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8e0d1731a4afd7fa10951194e4f3d1d662b7b07b3559e397954db64298723a28
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.deception.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.deception.rank","value":1}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"the-cunning"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.TheCunning.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:the-cunning"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.TheCunning.Description"}]}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

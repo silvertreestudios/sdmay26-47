@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_4xDghsFgGldaNj9Y
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 4xDghsFgGldaNj9Y
+  Slug: adept-benefit-bell
+  DisplayName: Adept Benefit (Bell)
+  IconPath: icons/tools/instruments/bell-gold.webp
+  Description: Your bell resonates powerfully, causing the effect to last longer.
+    The conditions from @UUID[Compendium.pf2e.actionspf2e.Item.Ring Bell] last 3
+    rounds instead of 1 round.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 06b95837829bd857fb8988029a2e794bc2844296d2f5f283a8c67056666aaa44
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.paragonChoices
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Bell.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Bell)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.paragonChoices","priority":20,"value":{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Bell.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Bell)"}}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"{item|description}"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","label":"PF2E.SpecificRule.Thaumaturge.Implement.Adept.Label","mode":"add","predicate":["item:slug:ring-bell"],"property":"description","value":[{"text":"{item|description}"}]}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

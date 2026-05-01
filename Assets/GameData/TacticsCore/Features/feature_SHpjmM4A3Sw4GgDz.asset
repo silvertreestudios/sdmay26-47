@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_SHpjmM4A3Sw4GgDz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: SHpjmM4A3Sw4GgDz
+  Slug: light-armor-mastery
+  DisplayName: Light Armor Mastery
+  IconPath: icons/equipment/chest/breastplate-rivited-red.webp
+  Description: Your skill with light armor improves, increasing your ability to dodge
+    blows. Your proficiency ranks for light armor and unarmored defense increase
+    to master.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 496f3fa888f6f211d32d07c2c57caa5dd017290c94aecc748a7ca279d846dd26
+  Traits:
+  - investigator
+  - kineticist
+  - rogue
+  - swashbuckler
+  TraitsLower:
+  - investigator
+  - kineticist
+  - rogue
+  - swashbuckler
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: light
+    Rank: 3
+  - Target: unarmored
+    Rank: 3
+  FocusPointDelta: 0

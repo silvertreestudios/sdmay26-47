@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_1vgFGSnn0DIBmK7j
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 1vgFGSnn0DIBmK7j
+  Slug: chalice
+  DisplayName: Chalice
+  IconPath: systems/pf2e/icons/features/classes/chalice.webp
+  Description: 'Chalice implements are vessels that fill with liquid, associating
+    them with healing, nourishment, and life. Your chalice might be a traditional
+    cup or goblet, but it could also be a small amphora, a polished gourd, or even
+    a hollowed-out skull. Chalice implements are associated with the astrological
+    signs of the mother and the newlyweds, as well as the sea dragon. Initiate Benefit
+    While holding your chalice, you can drink from it or feed its liquid to an ally
+    to improve their health. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Drink
+    from the Chalice] action. Adept Benefit The life essence shed from blood empowers
+    your chalice. If you or an ally within 30 feet takes piercing or slashing damage
+    from a foe''s critical hit or takes persistent bleed damage, Drinking from the
+    Chalice before the end of your next turn grants that injured creature greater
+    restoration to make up for its lost vitality. On a sip, the temporary Hit Points
+    granted to the creature increase to 2 + your Charisma modifier + your level.
+    When drained, the chalice heals the creature 5 Hit Points for each level you
+    have. @UUID[Compendium.pf2e.feat-effects.Item.Effect: Chalice Adept Benefit (Self)]
+    Intensify Vulnerability Your reinforced chalice can collect a creature''s life
+    force to become empowered. If you succeed at a Strike against the target of your
+    Exploit Vulnerability, you increase the effect if someone Drinks from the Chalice
+    before the end of that turn. Add an additional half your level to the temporary
+    HP if the drinker sips, or add your level to the HP regained if the drinker drains
+    the chalice. This effect isn''t cumulative if you hit with more than one Strike.
+    Paragon Benefit When you or an ally drain the chalice, the overwhelming vitality
+    it''s collected helps you overcome many ailments. Reduce the drinker''s @UUID[Compendium.pf2e.conditionitems.Item.Clumsy],
+    @UUID[Compendium.pf2e.conditionitems.Item.Enfeebled], @UUID[Compendium.pf2e.conditionitems.Item.Frightened],
+    @UUID[Compendium.pf2e.conditionitems.Item.Stupefied], and @UUID[Compendium.pf2e.conditionitems.Item.Stunned]
+    values by 1. (This reduces the stunned condition only if it has a condition value,
+    not when it has a duration.) The drinker also reduces its @UUID[Compendium.pf2e.conditionitems.Item.Drained]
+    value by 1, but it can reduce its drained condition by Drinking from the Chalice
+    only once per day. In addition, the chalice attempts to counteract all poisons,
+    diseases, and curses afflicting the drinker, using half your level rounded up
+    as the counteract rank and your class DC - 10 as the counteract modifier. If
+    the chalice fails to counteract a given affliction for a drinker, it can''t attempt
+    to counteract that affliction again until midnight.'
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f20eca51adb87d5c767fbce4fed87db3a2db36049df696f63fa360ffd3d10667
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Chalice Implement
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Chalice
+      Implement"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.initiateBenefit
+    Mode: override
+    Value: '"Compendium.pf2e.classfeatures.Item.Initiate Benefit (Chalice)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.initiateBenefit","predicate":["feat:thaumaturge-dedication"],"value":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Chalice)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Chalice)
+    Json: '{"key":"GrantItem","predicate":["class:thaumaturge"],"uuid":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Chalice)"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.adeptChoices
+    Mode: add
+    Value: '{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-chalice"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Chalice)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.adeptChoices","predicate":["class:thaumaturge"],"priority":20,"value":{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-chalice"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Chalice)"}}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Chalice Implement
+    SourceId: 
+    DisplayName: Chalice Implement
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Chalice)
+    SourceId: 
+    DisplayName: Initiate Benefit (Chalice)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

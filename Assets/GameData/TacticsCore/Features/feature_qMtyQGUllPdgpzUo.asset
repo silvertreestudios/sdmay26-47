@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_qMtyQGUllPdgpzUo
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: qMtyQGUllPdgpzUo
+  Slug: revitalizing-rage
+  DisplayName: Revitalizing Rage
+  IconPath: icons/magic/air/wind-vortex-swirl-red.webp
+  Description: Your rage sustains you more frequently, leaving you ready to jump
+    into battle anew. Instead of needing to wait 1 minute before you can gain temporary
+    Hit Points from Rage again, you need only to spend at least one full turn not
+    in a Rage.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 83d4f5d08adcec5a79e10a7e65073a35c931edc7c8cd84b92749056e077f5969
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

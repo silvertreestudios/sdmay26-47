@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_tZBb3Kh4nJcNoUFI
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: tZBb3Kh4nJcNoUFI
+  Slug: lore
+  DisplayName: Lore
+  IconPath: icons/sundries/scrolls/scroll-symbol-sun-brown.webp
+  Description: 'Knowledge and information come freely to you. You might use this
+    lore to gain power or perhaps to understand the divine mysteries of the multiverse.
+    You might have a conduit to the fabled Akashic Record, maintain a subtle telepathic
+    connection to the collective subconscious of all living creatures, or follow
+    in the footsteps of deities such as Abadar, Irori, Nethys, Irori''s scholarly
+    nephew Gruhastha, the fey triune goddess of fate Magdh, or the aeon god figure
+    known as the Monad. Granted Spells cantrip: @UUID[Compendium.pf2e.spells-srd.Item.Read
+    Aura] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Mindlink] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Hypercognition]
+    6th: @UUID[Compendium.pf2e.spells-srd.Item.Never Mind] Revelation Spells initial:
+    @UUID[Compendium.pf2e.spells-srd.Item.Brain Drain] advanced: @UUID[Compendium.pf2e.spells-srd.Item.Access
+    Lore] greater: @UUID[Compendium.pf2e.spells-srd.Item.Dread Secret] Related Domains
+    knowledge, magic, secrecy, truth Mystery Skill Occultism and one Lore skill of
+    your choice Oracle Feat @UUID[Compendium.pf2e.feats-srd.Item.Whispers of Weakness]
+    @UUID[Compendium.pf2e.classfeatures.Item.Curse of Torrential Knowledge]'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9983dfd993741788ce78c79d11ceccc46afc8f3f9829f672cbc57a8995677d92
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.occultism.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.occultism.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Whispers of Weakness
+    Json: '{"key":"GrantItem","predicate":["class:oracle"],"uuid":"Compendium.pf2e.feats-srd.Item.Whispers
+      of Weakness"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Curse of Torrential Knowledge
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Curse of
+      Torrential Knowledge"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Whispers of Weakness
+    SourceId: 
+    DisplayName: Whispers of Weakness
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Curse of Torrential Knowledge
+    SourceId: 
+    DisplayName: Curse of Torrential Knowledge
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

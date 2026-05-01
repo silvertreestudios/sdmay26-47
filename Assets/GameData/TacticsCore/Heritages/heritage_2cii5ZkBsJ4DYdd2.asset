@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_2cii5ZkBsJ4DYdd2
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 2cii5ZkBsJ4DYdd2
+  Slug: cactus-leshy
+  DisplayName: Cactus Leshy
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Spines cover your body. You gain a spine unarmed attack that deals
+    1d6 piercing damage. Your spines are in the brawling group and have the finesse
+    and unarmed traits.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 8c6bd7adc230e850c6e1e8e47ee4832065cf1c8cd6e2a16748f622fbf7103e35
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/spine.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Spine","range":null,"traits":["finesse","unarmed"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cdhgByGG1WtuaK73
+    SourceId: 
+    Slug: leshy
+    DisplayName: Leshy
+  ParentAncestryAsset: {fileID: 11400000, guid: 2c3ed83876c3e8f42b39718765568df8, type: 2}
+  GrantedFeatures: []

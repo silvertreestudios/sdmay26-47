@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_qIOKqT93h6CX6V4k
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: qIOKqT93h6CX6V4k
+  Slug: complex-simplicity
+  DisplayName: Complex Simplicity
+  IconPath: systems/pf2e/icons/features/classes/complex-simplicity.webp
+  Description: 'Increase your innovation''s weapon damage die by one step (d4 to
+    d6, d6 to d8, d8 to d10, d10 to d12). In addition, it gains two of the following
+    traits of your choice: versatile B, versatile P, versatile S, or razing.'
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 91b52ed08415fbdd34f0976f4f6e58902757441fe91ddac67a845f0e8b7b945e
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: upgrade
+    Value: 
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"upgrade","property":"damage-dice-faces"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitRazing","predicate":[{"not":"weapon-innovation:trait:razing"}],"value":"razing"},{"label":"PF2E.TraitVersatileB","predicate":[{"nor":["weapon-innovation:damage:type:bludgeoning","weapon-innovation:trait:versatile-b"]}],"value":"versatile-b"},{"label":"PF2E.TraitVersatileP","predicate":[{"nor":["weapon-innovation:damage:type:piercing","weapon-innovation:trait:versatile-p"]}],"value":"versatile-p"},{"label":"PF2E.TraitVersatileS","predicate":[{"nor":["weapon-innovation:damage:type:slashing","weapon-innovation:trait:versatile-s"]}],"value":"versatile-s"}],"flag":"complexSimplicityFirstTrait","key":"ChoiceSet","predicate":[{"or":[{"nor":["weapon-innovation:damage:type:bludgeoning","weapon-innovation:trait:versatile-b"]},{"nor":["weapon-innovation:damage:type:piercing","weapon-innovation:trait:versatile-p"]},{"nor":["weapon-innovation:damage:type:slashing","weapon-innovation:trait:versatile-s"]},{"not":"weapon-innovation:trait:razing"}]}],"prompt":"PF2E.SpecificRule.Prompt.Trait","rollOption":"complex-simplicity-first-trait"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitRazing","predicate":[{"nor":["weapon-innovation:trait:razing","complex-simplicity-first-trait:razing"]}],"value":"razing"},{"label":"PF2E.TraitVersatileB","predicate":[{"nor":["weapon-innovation:damage:type:bludgeoning","weapon-innovation:trait:versatile-b","complex-simplicity-first-trait:versatile-b"]}],"value":"versatile-b"},{"label":"PF2E.TraitVersatileP","predicate":[{"nor":["weapon-innovation:damage:type:piercing","weapon-innovation:trait:versatile-p","complex-simplicity-first-trait:versatile-p"]}],"value":"versatile-p"},{"label":"PF2E.TraitVersatileS","predicate":[{"nor":["weapon-innovation:damage:type:slashing","weapon-innovation:trait:versatile-s","complex-simplicity-first-trait:versatile-s"]}],"value":"versatile-s"}],"flag":"complexSimplicitySecondTrait","key":"ChoiceSet","predicate":[{"or":[{"nor":["weapon-innovation:damage:type:bludgeoning","weapon-innovation:trait:versatile-b"]},{"nor":["weapon-innovation:damage:type:piercing","weapon-innovation:trait:versatile-p"]},{"nor":["weapon-innovation:damage:type:slashing","weapon-innovation:trait:versatile-s"]},{"not":"weapon-innovation:trait:razing"}]}],"prompt":"PF2E.SpecificRule.Prompt.Trait","rollOption":"complex-simplicity-second-trait"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{item|flags.pf2e.rulesSelections.complexSimplicityFirstTrait}"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"{item|flags.pf2e.rulesSelections.complexSimplicityFirstTrait}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{item|flags.pf2e.rulesSelections.complexSimplicitySecondTrait}"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"{item|flags.pf2e.rulesSelections.complexSimplicitySecondTrait}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

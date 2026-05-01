@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_ap25MWBuFGwwhYIG
+  m_EditorClassIdentifier: 
+  SourceId: ap25MWBuFGwwhYIG
+  Slug: aspiring-free-captain
+  DisplayName: Aspiring Free-Captain
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - High Seas You seek to join the Free Captains
+    of the Shackles and have learned everything you need to know about sailing and
+    bossing people around. Now you just need a crew and a ship. Choose two attribute
+    boosts. One must be to Wisdom or Charisma , and one is a free attribute boost.
+    You're trained in the Intimidation skill and the Sailing Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Group Coercion] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 372be4af9d5d23d0f9d32e2a9398572a69d8dab6c75ef707640c1e0f1926df4b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Sailing Lore
+    Rank: 1
+  LoreSkills:
+  - Sailing Lore
+  GrantedFeats:
+  - SourceKey: zw1bc
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

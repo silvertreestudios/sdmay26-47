@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_tarfuEXmi0E0Enfy
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: tarfuEXmi0E0Enfy
+  Slug: shadow-rat
+  DisplayName: Shadow Rat
+  IconPath: systems/pf2e/icons/features/ancestry/shadow-rat.webp
+  Description: Your ancestors lived in dark spaces underground, granting you dark
+    fur and a vaguely unnatural mien. You gain the trained proficiency rank in Intimidation
+    and can use Intimidation to @UUID[Compendium.pf2e.actionspf2e.Item.Coerce] animals.
+    When you @UUID[Compendium.pf2e.actionspf2e.Item.Demoralize] an animal, you don't
+    take a penalty for not sharing a language with it. If you would automatically
+    become trained in Intimidation (from your background or class, for example),
+    you become trained in another skill of your choice. Animals' attitudes toward
+    you begin one degree worse than normal, usually starting at unfriendly instead
+    of indifferent for domesticated animals, and hostile instead of unfriendly for
+    wild animals.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: eecc0b2c8d8440cdb3f523b11c2428471a3197d8b7d590f1045b32d8ec198c26
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.intimidation.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.intimidation.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.P6PcVnCkh4XMdefw
+    SourceId: 
+    Slug: ratfolk
+    DisplayName: Ratfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 0157a504d77a04745a45fb09b6f01d67, type: 2}
+  GrantedFeatures: []

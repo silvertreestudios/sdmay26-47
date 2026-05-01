@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_PLMmDXJCDdMS0V5C
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: PLMmDXJCDdMS0V5C
+  Slug: lesson-of-calamity
+  DisplayName: Lesson of Calamity
+  IconPath: systems/pf2e/icons/spells/daydreamers-curse.webp
+  Description: You gain the @UUID[Compendium.pf2e.spells-srd.Item.Stumbling Curse]
+    hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Ill Omen].
+  SourceTitle: 'Pathfinder #169: Kindled Magic'
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: add110ff0b17cd958705fcdc3592172a66d8c2d58c253ba7e2a66acd6239a6a9
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 2
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

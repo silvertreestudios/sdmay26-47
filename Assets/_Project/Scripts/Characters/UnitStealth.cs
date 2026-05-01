@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Manages the detection states (Observed, Hidden, Concealed, etc.)
@@ -162,11 +162,11 @@ namespace PathfinderTactics.Characters
             if (unit == null)
                 return 0;
 
-            UnitStatsSO stats = unit.GetStats();
+            IUnitDataProvider stats = unit.GetStats();
             int dexMod = unit.GetAbilityModifier(AbilityScore.DEX);
 
-            if (stats != null && stats.stealth != 0)
-                return stats.stealth;
+            if (stats != null && stats.GetStealth() != 0)
+                return stats.GetStealth();
 
             // Fallback: Dex modifier only.
             return dexMod;

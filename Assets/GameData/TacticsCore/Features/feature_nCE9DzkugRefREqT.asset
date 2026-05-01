@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_nCE9DzkugRefREqT
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: nCE9DzkugRefREqT
+  Slug: eidolon-transcendence
+  DisplayName: Eidolon Transcendence
+  IconPath: systems/pf2e/icons/features/classes/eidolon-transcendence.webp
+  Description: Your connection with your eidolon approaches its peak, granting your
+    eidolon access to a powerful new ability depending on its type, as described
+    in Eidolon Abilities in each eidolon's entry. This ability also increases one
+    of the eidolon's ability scores by 2.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9c57554e8bd23ef7b26e5d31383851a4f8b36d2ec959774e557a4f304059d81f
+  Traits:
+  - summoner
+  TraitsLower:
+  - summoner
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

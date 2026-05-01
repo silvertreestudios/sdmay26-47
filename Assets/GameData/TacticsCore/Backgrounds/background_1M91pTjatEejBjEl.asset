@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_1M91pTjatEejBjEl
+  m_EditorClassIdentifier: 
+  SourceId: 1M91pTjatEejBjEl
+  Slug: hired-killer
+  DisplayName: Hired Killer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Your life truly began after your first kill. Maybe you killed in self-defense,
+    maybe it was a crime of passion, or maybe it was just an accident and you were
+    a kid in the wrong place at the wrong time. In the end, the why doesn't matter.
+    You got away with it. And then you found that maybe it didn't bother you as much
+    as it should have. And maybe, just maybe, you had a talent you could use to forge
+    a life for yourself. A blood-soaked talent and a blood-soaked life, sure. But
+    it's yours. Choose two attribute boosts. One boost must be to Strength or Dexterity
+    , and one is a free attribute boost. You're trained in the Stealth skill and
+    the Underworld Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Terrain
+    Stalker] skill feat, choosing a terrain appropriate for where you make your kills.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 53a43a9e1914805cb62dd9bd9be0e843d7f655d547c75ce818b62715bb2dfa0a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: p53i3
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Stalker
+    SourceId: 
+    DisplayName: Terrain Stalker
+    Level: 1
+    ResolvedFeature: {fileID: 0}

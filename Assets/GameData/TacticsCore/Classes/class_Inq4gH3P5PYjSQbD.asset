@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_Inq4gH3P5PYjSQbD
+  m_EditorClassIdentifier: 
+  SourceId: Inq4gH3P5PYjSQbD
+  Slug: psychic
+  DisplayName: Psychic
+  IconPath: systems/pf2e/icons/default-icons/class.svg
+  Description: The mind can perceive truths hidden to fine-tuned instruments, house
+    more secrets than any tome, and move objects and hearts more deftly than any
+    lever. By delving into both the conscious and subconscious aspects of your inner
+    self, you have awoken to the might of psychic magic, allowing you to cast spells
+    not through incantations or gestures but by the power of your will alone. While
+    the thin line between your mind and reality means that a single errant thought
+    could have unintended consequences for yourself and your companions, you know
+    that anything is possible, if you can imagine it. Psychic
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 9b7647c5a785e7a6c4d3203a0ccb055bef3d6d85b6d859b0af2f241cb48d6be3
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 6
+  KeyAttributes: 
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 0
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 1
+  LevelOneFeatures:
+  - SourceKey: 0x9ff
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Psychic Spellcasting
+    SourceId: iXwqJyBsjJNrKJae
+    DisplayName: Psychic Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 7a727523c2aaaff4dac2b431f73d90f3, type: 2}
+  - SourceKey: 362nc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Psi Cantrips and Amps
+    SourceId: 1tyNn9sduyexXLfL
+    DisplayName: Psi Cantrips and Amps
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 625c5def1b462df46af7a1bfce52fe01, type: 2}
+  - SourceKey: 4aeg4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Unleash Psyche
+    SourceId: HwUps0waR29bwlTI
+    DisplayName: Unleash Psyche
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 6435bf8cc022e594e8a0aa4719bbe3eb, type: 2}
+  - SourceKey: 5iq7q
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Subconscious Mind
+    SourceId: 79ZetrRF6S01P4Vf
+    DisplayName: Subconscious Mind
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: aceee2f6292b4cd4487dcf777c8b291d, type: 2}
+  - SourceKey: 62vs3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Conscious Mind
+    SourceId: 0fv6NVMZZ0peGL9e
+    DisplayName: Conscious Mind
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 8700f344bf98e764db5bd4a9c6aae9bc, type: 2}
+  - SourceKey: vM8ge
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  GrantedFeatures:
+  - SourceKey: 0x9ff
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Psychic Spellcasting
+    SourceId: iXwqJyBsjJNrKJae
+    DisplayName: Psychic Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 7a727523c2aaaff4dac2b431f73d90f3, type: 2}
+  - SourceKey: 2EiQN
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: 362nc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Psi Cantrips and Amps
+    SourceId: 1tyNn9sduyexXLfL
+    DisplayName: Psi Cantrips and Amps
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 625c5def1b462df46af7a1bfce52fe01, type: 2}
+  - SourceKey: 4aeg4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Unleash Psyche
+    SourceId: HwUps0waR29bwlTI
+    DisplayName: Unleash Psyche
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 6435bf8cc022e594e8a0aa4719bbe3eb, type: 2}
+  - SourceKey: 5iq7q
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Subconscious Mind
+    SourceId: 79ZetrRF6S01P4Vf
+    DisplayName: Subconscious Mind
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: aceee2f6292b4cd4487dcf777c8b291d, type: 2}
+  - SourceKey: 62vs3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Conscious Mind
+    SourceId: 0fv6NVMZZ0peGL9e
+    DisplayName: Conscious Mind
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 8700f344bf98e764db5bd4a9c6aae9bc, type: 2}
+  - SourceKey: azay0
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Signature Spells
+    SourceId: VKRjmXxBFLrJK01c
+    DisplayName: Signature Spells
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 136a8a6c0baf816409514c7fd81ee427, type: 2}
+  - SourceKey: b90rt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Clarity of Focus
+    SourceId: k9MeSdp2DbGd1hFz
+    DisplayName: Clarity of Focus
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: c53a3f564718e514eae40f686eaeb4dd, type: 2}
+  - SourceKey: czyth
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Precognitive Reflexes
+    SourceId: Ftz5jVa9X6aXybkC
+    DisplayName: Precognitive Reflexes
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 6b1db9430a5c0f54186e19b11cb70c51, type: 2}
+  - SourceKey: dyf7k
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Spellcaster
+    SourceId: cD3nSupdCvONuHiE
+    DisplayName: Expert Spellcaster
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 3e7fd61908df4a14290ae0cc0e240ad8, type: 2}
+  - SourceKey: erk9s
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Great Fortitude (Psychic)
+    SourceId: zAe95Uk5IPIT23K1
+    DisplayName: Great Fortitude (Psychic)
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 3810df4bca2ba62469df864dc3d22392, type: 2}
+  - SourceKey: f5qsu
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Extrasensory Perception
+    SourceId: wOl7EeF7S6i753Ef
+    DisplayName: Extrasensory Perception
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 144e9c35eaf48b244bfb7e5cccf6b232, type: 2}
+  - SourceKey: gshsr
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Walls of Will
+    SourceId: Kf9lSN6pVS2Hy4KI
+    DisplayName: Walls of Will
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 3ea157121f6d4de4996f52131a659c95, type: 2}
+  - SourceKey: i827f
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Personal Barrier
+    SourceId: MtHLCQGD6OW98WC2
+    DisplayName: Personal Barrier
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: b08df8c1a05f0894896157056f69526b, type: 2}
+  - SourceKey: jl328
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Psychic Weapon Specialization
+    SourceId: a58MGVX2L589sC9g
+    DisplayName: Psychic Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 30341289579776f4fb220627dfe95f70, type: 2}
+  - SourceKey: kb1jw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Spellcaster
+    SourceId: l1InYvhnQSz6Ucxc
+    DisplayName: Master Spellcaster
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4bf880905a2203248baa95088d309fcb, type: 2}
+  - SourceKey: l1k6k
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Fortress of Will
+    SourceId: Hw6Ji7Fgx0XkVkac
+    DisplayName: Fortress of Will
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 23c2583cdabc5d440ab3096d7acd2573, type: 2}
+  - SourceKey: my3iq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Infinite Mind
+    SourceId: mZwD2brwXlyR9RAR
+    DisplayName: Infinite Mind
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: c39f459050316a4499f33348cfd9d778, type: 2}
+  - SourceKey: n84cn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Spellcaster
+    SourceId: Hfaa7TuLn3nE8lr3
+    DisplayName: Legendary Spellcaster
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: f940d7779f91b714099ce8d9e2809a2a, type: 2}
+  - SourceKey: vM8ge
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}

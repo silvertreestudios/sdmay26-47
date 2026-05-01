@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_tyrBwBTzo5t9Zho7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: tyrBwBTzo5t9Zho7
+  Slug: doctrine
+  DisplayName: Doctrine
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: 'Even among followers of the same deity, approaches vary. At 1st level,
+    you select cloistered cleric or warpriest and gain the benefits of its first
+    doctrine. At 3rd level and every four levels thereafter, you gain another benefit
+    from your doctrine. @UUID[Compendium.pf2e.classfeatures.Item.Cloistered Cleric]
+    @UUID[Compendium.pf2e.classfeatures.Item.Warpriest]'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ca4a0cc9ce0348f1ded07bbe4b12c4514418dd20812754fb0e1d8b823389d411
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:cleric-doctrine",{"or":[{"and":["class:cleric","item:tag:cleric-doctrine"]},{"and":["item:tag:cleric-doctrine",{"not":"item:tag:class-archetype"}]}]}]},"flag":"doctrine","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Cleric.Doctrine.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.doctrine}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.doctrine}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.doctrine}'
+    SourceId: 
+    DisplayName: doctrine}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

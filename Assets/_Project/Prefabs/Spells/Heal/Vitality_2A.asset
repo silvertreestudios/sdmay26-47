@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 
   Slug: 
-  ElementName: Heal
+  ElementName: Heal 2
   Icon: {fileID: 0}
   Description: Release a surge of life at a distance. Restores 1d8 + 8 HP to a living
     creature or deals 1d8 vitality damage to an undead creature within 30 feet.

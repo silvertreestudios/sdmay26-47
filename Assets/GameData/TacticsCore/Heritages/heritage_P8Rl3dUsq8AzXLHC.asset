@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_P8Rl3dUsq8AzXLHC
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: P8Rl3dUsq8AzXLHC
+  Slug: sturdy-skeleton
+  DisplayName: Sturdy Skeleton
+  IconPath: icons/commodities/bones/bone-foot-bird-brown.webp
+  Description: Certain hazardous conditions are not suitable for the average skeleton,
+    so a necromancer might choose to reanimate the bones of a dwarf, orc, or other
+    creature with a reputation for sturdiness. You have 10 Hit Points instead of
+    6 and gain the @UUID[Compendium.pf2e.feats-srd.Item.Diehard] feat.
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 189bb364785694b8961ec0cf40e10118f95d6dbe048905dbcf3da6f2284ae450
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Diehard
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Diehard"}'
+  - Key: ActiveEffectLike
+    Path: system.attributes.ancestryhp
+    Mode: override
+    Value: 10
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.attributes.ancestryhp","value":10}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.58rL5sg2y4arW1i5
+    SourceId: 
+    Slug: skeleton
+    DisplayName: Skeleton
+  ParentAncestryAsset: {fileID: 11400000, guid: 05a9768c91264d64fa563771eb10af03, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Diehard
+    SourceId: 
+    DisplayName: Diehard
+    Level: 0
+    ResolvedFeature: {fileID: 0}

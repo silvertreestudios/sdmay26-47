@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Data;
-using PathfinderTactics.Grid;
+using TacticsGame.Characters;
+using TacticsGame.Data;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Actions
+namespace TacticsGame.Actions
 {
     public abstract class BaseAction : MonoBehaviour
     {

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_6v4Rj7wWfOH1882r
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 6v4Rj7wWfOH1882r
+  Slug: flurry
+  DisplayName: Flurry
+  IconPath: icons/skills/melee/strike-polearm-light-orange.webp
+  Description: "You have trained to unleash a devastating flurry of attacks upon
+    your prey. Your multiple attack penalty for attacks against your hunted prey
+    is \u20133 (\u20132 with an agile attack) on your second attack of the turn instead
+    of \u20135, and \u20136 (\u20134 with an agile attack) on your third or subsequent
+    attack of the turn, instead of \u201310."
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b5744ade86fd1a82fab5d5e293153443477f41f0a501ece77024a8f90ed32a7b
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: MultipleAttackPenalty
+    Path: 
+    Mode: 
+    Value: -2
+    Uuid: 
+    Json: '{"key":"MultipleAttackPenalty","predicate":["agile","target:mark:hunted-prey"],"selector":"attack","value":-2}'
+  - Key: MultipleAttackPenalty
+    Path: 
+    Mode: 
+    Value: -3
+    Uuid: 
+    Json: '{"key":"MultipleAttackPenalty","predicate":["target:mark:hunted-prey",{"not":"agile"}],"selector":"attack","value":-3}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

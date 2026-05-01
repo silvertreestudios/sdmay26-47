@@ -1,11 +1,11 @@
 using System;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
-using PathfinderTactics.Items;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Grid;
+using TacticsGame.Items;
 using UnityEngine;
 
-namespace PathfinderTactics.Reactions
+namespace TacticsGame.Reactions
 {
     public class ReactiveStrike : BaseReaction
     {
@@ -34,7 +34,7 @@ namespace PathfinderTactics.Reactions
 
                 // Triggered by leaving a square.
                 // Check if the square being left is within our reach.
-                int dist = PF2E_Core.GetPF2eDistance3D(
+                int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
                     moveEvent.StartLayeredPos,
                     unit.CurrentLayeredPosition
                 );
@@ -47,7 +47,7 @@ namespace PathfinderTactics.Reactions
                 if (!unit.IsEnemy(manipulateEvent.SourceUnit))
                     return false;
 
-                int dist = PF2E_Core.GetPF2eDistance3D(
+                int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
                     manipulateEvent.SourceUnit.CurrentLayeredPosition,
                     unit.CurrentLayeredPosition
                 );
@@ -59,7 +59,7 @@ namespace PathfinderTactics.Reactions
                 if (!unit.IsEnemy(rangedEvent.SourceUnit))
                     return false;
 
-                int dist = PF2E_Core.GetPF2eDistance3D(
+                int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
                     rangedEvent.SourceUnit.CurrentLayeredPosition,
                     unit.CurrentLayeredPosition
                 );
@@ -71,7 +71,7 @@ namespace PathfinderTactics.Reactions
                 if (!unit.IsEnemy(moveActionEvent.SourceUnit))
                     return false;
 
-                int dist = PF2E_Core.GetPF2eDistance3D(
+                int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
                     moveActionEvent.SourceUnit.CurrentLayeredPosition,
                     unit.CurrentLayeredPosition
                 );
@@ -111,7 +111,7 @@ namespace PathfinderTactics.Reactions
 
             Proficiency weaponProf = Proficiency.Trained; // Assume trained for now
 
-            int attackBonus = PF2E_Core.CalculateAttackRollModifier(
+            int attackBonus = TacticsRuleset_Core.CalculateAttackRollModifier(
                 unit,
                 attackStat,
                 attackStatMod,
@@ -123,7 +123,7 @@ namespace PathfinderTactics.Reactions
 
             int d20 = UnityEngine.Random.Range(1, 21);
             int targetAC = target.GetArmorClass(unit, AttackType.Melee);
-            Degree degree = PF2E_Core.CheckResult(d20, attackBonus, targetAC);
+            Degree degree = TacticsRuleset_Core.CheckResult(d20, attackBonus, targetAC);
 
             if (degree >= Degree.Success)
             {

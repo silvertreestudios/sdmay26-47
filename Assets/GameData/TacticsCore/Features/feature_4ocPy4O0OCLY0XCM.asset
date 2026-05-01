@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_4ocPy4O0OCLY0XCM
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 4ocPy4O0OCLY0XCM
+  Slug: alchemical-weapon-expertise
+  DisplayName: Alchemical Weapon Expertise
+  IconPath: icons/consumables/potions/potion-round-stopped-yellow-green.webp
+  Description: You've trained to more effectively wield the weapons you find in your
+    lab. Your proficiency ranks for simple weapons, alchemical bombs, and unarmed
+    attacks increase to expert.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: cf64ee73baa1a51b5726ebb0937c463a85d365e0befc66f57ac4ed6824419fb4
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.weapon-base-alchemical-bomb.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.weapon-base-alchemical-bomb.rank","value":2}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

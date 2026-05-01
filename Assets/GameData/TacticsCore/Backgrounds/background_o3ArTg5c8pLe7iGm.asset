@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_o3ArTg5c8pLe7iGm
+  m_EditorClassIdentifier: 
+  SourceId: o3ArTg5c8pLe7iGm
+  Slug: song-of-the-deep
+  DisplayName: Song of the Deep
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: During a sea voyage, you washed overboard, ingested sea water, and
+    drowned. Merfolk, kelpies, sea serpents, or another magical denizen of the sea
+    pulled your unconscious body from the briny depths. Having spent so much time
+    underwater, your lungs were filled with salt water. To restore your ability to
+    breathe, they exhaled into your lungs and shared the ability to breathe underwater
+    in the process. You came back with the ability to breathe water, as well as a
+    newfound knowledge of your time beneath the waves. You gain one ability boost.
+    It must be to Strength , Constitution , or Charisma . You're trained in the Athletics
+    skill and the Ocean Lore skill. You have the ability to breathe underwater. Special
+    You can choose to lose the ability to breathe air when you take this background,
+    making you only able to breathe underwater. If you do, you gain a second ability
+    boost, which is a free attribute boost.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: f30807dc132c144ed29b95e139a50512b88281ae3ec35dc40c16314d8895702e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 060000000300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Ocean Lore
+    Rank: 1
+  LoreSkills:
+  - Ocean Lore
+  GrantedFeats: []

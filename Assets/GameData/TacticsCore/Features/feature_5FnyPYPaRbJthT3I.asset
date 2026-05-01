@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_5FnyPYPaRbJthT3I
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 5FnyPYPaRbJthT3I
+  Slug: advanced-vials-bomber
+  DisplayName: Advanced Vials (Bomber)
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: You can mix special ingredients into your vials, such as magical dust
+    or flakes of precious minerals. When you create a versatile vial, you can choose
+    to have it treated as one special material of your choice, chosen from adamantine,
+    cold iron, and dawnsilver. If you're wearing or wielding an item of a different
+    precious material when you make the vial, you can choose that material instead.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 64984148203a271cdfe1ac9e598a0d747981dab5de0bb4a46bb4e35618aa4a38
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Alchemist.ResearchField.AdvancedVials","option":"bomber-advanced-vials","suboptions":[{"label":"PF2E.PreciousMaterialAdamantine","value":"adamantine"},{"label":"PF2E.PreciousMaterialColdIron","value":"cold-iron"},{"label":"PF2E.PreciousMaterialDawnsilver","value":"dawnsilver"},{"label":"PF2E.PreciousMaterialAbysium","value":"abysium"},{"label":"PF2E.PreciousMaterialDjezet","value":"djezet"},{"label":"PF2E.PreciousMaterialDuskwood","value":"duskwood"},{"label":"PF2E.PreciousMaterialInubrix","value":"inubrix"},{"label":"PF2E.PreciousMaterialKeepStone","value":"keep-stone"},{"label":"PF2E.PreciousMaterialNoqual","value":"noqual"},{"label":"PF2E.PreciousMaterialOrichalcum","value":"orichalcum"},{"label":"PF2E.PreciousMaterialPeachwood","value":"peachwood"},{"label":"PF2E.PreciousMaterialSiccatite","value":"siccatite"},{"label":"PF2E.PreciousMaterialSilver","value":"silver"},{"label":"PF2E.PreciousMaterialSisterstoneDusk","value":"sisterstone-dusk"},{"label":"PF2E.PreciousMaterialSisterstoneScarlet","value":"sisterstone-scarlet"},{"label":"PF2E.PreciousMaterialSloughstone","value":"sloughstone"},{"label":"PF2E.PreciousMaterialSovereignSteel","value":"sovereign-steel"},{"label":"PF2E.PreciousMaterialWarpglass","value":"warpglass"}],"toggleable":true}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"{item|flags.pf2e.rulesSelections.bomberAdvancedVials}"'
+    Uuid: 
+    Json: '{"definition":["item:slug:versatile-vial"],"key":"AdjustStrike","mode":"add","predicate":["bomber-advanced-vials"],"property":"materials","value":"{item|flags.pf2e.rulesSelections.bomberAdvancedVials}"}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

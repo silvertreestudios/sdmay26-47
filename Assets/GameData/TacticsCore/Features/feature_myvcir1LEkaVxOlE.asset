@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_myvcir1LEkaVxOlE
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: myvcir1LEkaVxOlE
+  Slug: master-tricks
+  DisplayName: Master Tricks
+  IconPath: icons/weapons/swords/swords-short.webp
+  Description: You've mastered a rogue's fighting moves. Your proficiency ranks increase
+    to master for all simple weapons, martial weapons, and unarmed attacks.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f37e402672883f7f549d88aac9eb5b22857dc459dc33d2245f2ffb103181ec2f
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules: []
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: martial
+    Rank: 3
+  - Target: simple
+    Rank: 3
+  - Target: unarmed
+    Rank: 3
+  FocusPointDelta: 0

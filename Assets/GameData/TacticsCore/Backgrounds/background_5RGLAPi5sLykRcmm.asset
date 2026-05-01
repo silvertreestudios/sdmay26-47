@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_5RGLAPi5sLykRcmm
+  m_EditorClassIdentifier: 
+  SourceId: 5RGLAPi5sLykRcmm
+  Slug: animal-whisperer
+  DisplayName: Animal Whisperer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You have always felt a connection to animals, and it was only a small
+    leap to learn to train them. As you travel, you continuously encounter different
+    creatures, befriending them along the way. Choose two attribute boosts. One must
+    be to Wisdom or Charisma , and one is a free attribute boost. You're trained
+    in the Nature skill and a Lore skill related to one terrain inhabited by animals
+    you like (such as Plains Lore or Swamp Lore). You gain the @UUID[Compendium.pf2e.feats-srd.Item.Train
+    Animal] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: fb3fd7484029d4972d49eb1329288600d7a898c8f1b3ba023e1bf63ebbae8ade
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: e036p
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Train Animal
+    SourceId: 
+    DisplayName: Train Animal
+    Level: 1
+    ResolvedFeature: {fileID: 0}

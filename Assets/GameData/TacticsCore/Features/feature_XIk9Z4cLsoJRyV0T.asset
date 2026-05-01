@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_XIk9Z4cLsoJRyV0T
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: XIk9Z4cLsoJRyV0T
+  Slug: life-draining
+  DisplayName: Life-Draining
+  IconPath: icons/magic/nature/thorns-hand-glow-green.webp
+  Description: 'The flourishing plant life that covers your body is a part of you,
+    but it draws nutrients from your blood, making you weaker the more the flowers
+    grow. As the plants grow, you need to spend more and more time recuperating.
+    Recuperating in the sunshine lowers this duration, as it feeds the flowers, speeding
+    your recovery. @UUID[Compendium.pf2e.feat-effects.Item.Effect: Life-Draining]
+    Mild Backlash You become Drained 1 as the plants feed off your life force. This
+    condition lasts until you spend 3 consecutive actions to rest and do nothing.
+    Moderate Backlash You become Drained 2 and @UUID[Compendium.pf2e.conditionitems.Item.Fatigued]
+    until you spend 20 minutes recuperating by resting and doing nothing. If you
+    spend this time basking in sunshine, it instead takes 10 minutes. Severe Backlash
+    You become Drained 3 until you spend 2 hours napping. While napping, you''re
+    @UUID[Compendium.pf2e.conditionitems.Item.Unconscious] and can''t take actions
+    or engage in exploration activities, but a creature can wake you with a single
+    action with the manipulate trait. If you spend this time napping in natural sunlight,
+    it instead takes 1 hour. You''re fatigued until you can get a full night''s rest.'
+  SourceTitle: 'Pathfinder #202: Severed at the Root'
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f083428d66bf863541832e8fb1685b5cfbe563cadd4db5262a1753113f94770f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

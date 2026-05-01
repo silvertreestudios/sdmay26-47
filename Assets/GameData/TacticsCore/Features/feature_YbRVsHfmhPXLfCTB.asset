@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_YbRVsHfmhPXLfCTB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: YbRVsHfmhPXLfCTB
+  Slug: initiate-benefit-wand
+  DisplayName: Initiate Benefit (Wand)
+  IconPath: icons/weapons/wands/wand-skull-feathers.webp
+  Description: Your wand slowly collects ambient magic, which you can project at
+    a foe in a barely controlled display of charged energy. When you gain this implement,
+    choose whether your wand is attuned to cold, electricity, or fire. You gain the
+    @UUID[Compendium.pf2e.actionspf2e.Item.Fling Magic] activity.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 871fa872c080a361c378323aaae4645b4ee91d274a8b5812b42ad4685c8e3cb6
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Fling Magic
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Fling Magic"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitCold","value":"cold"},{"label":"PF2E.TraitElectricity","value":"electricity"},{"label":"PF2E.TraitFire","value":"fire"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.DamageType","rollOption":"wand-initiate-damage-type"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Fling Magic
+    SourceId: 
+    DisplayName: Fling Magic
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

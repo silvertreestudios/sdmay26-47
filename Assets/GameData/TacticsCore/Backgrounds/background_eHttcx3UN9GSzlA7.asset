@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_eHttcx3UN9GSzlA7
+  m_EditorClassIdentifier: 
+  SourceId: eHttcx3UN9GSzlA7
+  Slug: child-of-the-colony
+  DisplayName: Child of the Colony
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Talmandor's Bounty's first year was fraught with hardship and peril,
+    and many of the original settlers\u2014including your parents\u2014returned to
+    the mainland at the earliest opportunity. However, you have nothing but fond
+    memories of your time on Ancorato! Your carefree days in the colony were spent
+    climbing trees, picking berries, and wondering at the island's natural splendor.
+    You might even fondly remember some of the original settlers from that time who
+    are still in town. Now that you're grown, you've returned to the colony to recapture
+    that childhood magic (and hopefully avoid the dangers that forced your family
+    to leave the island in the first place). Choose two attribute boosts. One must
+    be to Strength or Wisdom , and one is a free attribute boost. You're trained
+    in the Survival skill and the Island Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Survey
+    Wildlife] skill feat. In addition, work with your GM to select one business in
+    town. You have a connection to the owner or someone who works there and get a
+    10% discount on goods and services from that establishment."
+  SourceTitle: Pathfinder Shades of Blood Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 6766c719da171d1b0b89ba2b233facc3da974d2d029c7df4a9d26158eaf86c5c
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Island Lore
+    Rank: 1
+  LoreSkills:
+  - Island Lore
+  GrantedFeats:
+  - SourceKey: x4rq4
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Survey Wildlife
+    SourceId: 
+    DisplayName: Survey Wildlife
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_tf3edMCyS15GhFPx
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: tf3edMCyS15GhFPx
+  Slug: hooded-nagaji
+  DisplayName: Hooded Nagaji
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You bear the hooded head of a spitting cobra, and like such cobras,
+    you can shoot streams of venom from your mouth. You gain a venomous spit ranged
+    unarmed attack with a range increment of 10 feet that deals 1d4 poison damage.
+    On a critical hit, the target takes persistent poison damage equal to the number
+    of weapon damage dice. Your spit doesn't have a weapon group or a critical specialization
+    effect.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 0dafe287cf43d8e7f2ad5ce805f22f98cc62ad7451281ac18f2813b382fe1356
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"poison","dice":1,"die":"d4"}},"img":"icons/magic/water/tendrils-ice-growth.webp","key":"Strike","label":"PF2E.SpecificRule.Nagaji.VenomSpit.StrikeLabel","predicate":[{"not":"feat:venom-spit"}],"range":{"increment":10},"traits":["unarmed"]}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["criticalSuccess"],"predicate":[{"not":"feat:venom-spit"}],"selector":"{item|_id}-damage","text":"PF2E.SpecificRule.Nagaji.VenomSpit.CriticalNote","title":"{item|name}"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.J7T7bDLaQGoY1sMF
+    SourceId: 
+    Slug: nagaji
+    DisplayName: Nagaji
+  ParentAncestryAsset: {fileID: 11400000, guid: 7bfce613ccdb85048969c9b87f6da958, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_JuKD6k7nDwfO0Ckv
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: JuKD6k7nDwfO0Ckv
+  Slug: giant-instinct
+  DisplayName: Giant Instinct
+  IconPath: icons/creatures/magical/humanoid-horned-rider.webp
+  Description: "Your rage gives you the raw power and size of a giant. This doesn't
+    necessarily mean you revere giants\u2014you might scoff at them or even aspire
+    to slay them! You could instead seem like a giant to other people due to your
+    exceptional strength or larger-than-life emotions and ego. Instinct Ability\u2014Titan
+    Mauler You can use a weapon built for a Large creature if you are Small or Medium
+    (both normally and when raging). If you're not Small or Medium, you can use a
+    weapon built for a creature one size larger than you. You start with one such
+    weapon, which you receive for free. It must be a common melee or ranged weapon,
+    it must have a Price of 9 gp or less (not including the Price adjustment for
+    being a larger weapon), and it must be common or you must otherwise have access
+    to it. It is your personal weapon and has no value if sold unless you later add
+    runes to it, and it has the normal Bulk for a weapon of its size. When wielding
+    a larger weapon in combat, increase your additional damage from Rage from 2 to
+    6, but you have the Clumsy 1 condition because of the weapon's unwieldy size.
+    You can't remove this clumsy condition or ignore its penalties by any means while
+    wielding the weapon. Specialization Ability (7th) Increase the damage from Rage
+    when using a larger weapon from 6 to 10; if you have greater weapon specialization,
+    increase it from 10 to 18. Raging Resistance (9th) You resist bludgeoning damage
+    and your choice of cold, electricity, or fire, chosen when you gain raging resistance."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: acac74ce77ba7100152cd374ce3157bd6e518718c3f2b019e48f60bcb979993f
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitCold","value":"cold"},{"label":"PF2E.TraitElectricity","value":"electricity"},{"label":"PF2E.TraitFire","value":"fire"}],"flag":"energy","key":"ChoiceSet","predicate":["feature:giant-instinct","class:barbarian"],"prompt":"PF2E.SpecificRule.Barbarian.Giant.Prompt"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+3"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feature:raging-resistance"],"type":["{item|flags.pf2e.rulesSelections.energy}","bludgeoning"],"value":"@actor.abilities.con.mod+3"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+8"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feat:unstoppable-juggernaut"],"type":["{item|flags.pf2e.rulesSelections.energy}","bludgeoning"],"value":"@actor.abilities.con.mod+8"}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 6
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":[{"or":["class:barbarian","feat:instinct-ability"]},"item:oversized"],"selector":"strike-damage","slug":"rage","value":6}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 10
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian",{"gte":["self:level",7]},"item:oversized"],"selector":"strike-damage","slug":"rage","value":10}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 18
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian","feature:greater-weapon-specialization","item:oversized"],"selector":"strike-damage","slug":"rage","value":18}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

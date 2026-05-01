@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_zLYqrQdheciiW2nm
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: zLYqrQdheciiW2nm
+  Slug: curse-of-the-mortal-warrior
+  DisplayName: Curse of the Mortal Warrior
+  IconPath: icons/skills/melee/sword-stuck-glowing-pink.webp
+  Description: "You thrive in the thick of battle, but your mystery's sheer focus
+    on the physical and material leaves your soul weak against the tricks of spellcraft.
+    You smell faintly of steel and blood no matter how you try to remove or mask
+    the scent, you appear more imposing and muscular than you actually are, and you
+    hear the faint clash and clamor of battle in the distance at all times. Cursebound
+    1 Spells have an easier time wounding you. You gain weakness 2 to any damage
+    dealt by a spell. Any immunity or resistance you have to spells is suppressed.
+    This applies only to spells, not other magical abilities. Cursebound 2 You take
+    a \u20131 status penalty to saving throws against spells. Cursebound 3 Your weakness
+    to spells is equal to your level. Cursebound 4 Your status penalty to saving
+    throws against spells increases to \u20132."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 02d1573d06a1f4aa6c945a2d5885b14c2be77c5c5bb66ea454b9a6d6727b3500
+  Traits:
+  - curse
+  - divine
+  - oracle
+  TraitsLower:
+  - curse
+  - divine
+  - oracle
+  RawRules:
+  - Key: Weakness
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.conditions.cursebound.value,3),@actor.level,2)"'
+    Uuid: 
+    Json: '{"key":"Weakness","predicate":["self:condition:cursebound"],"type":"spells","value":"ternary(gte(@actor.conditions.cursebound.value,3),@actor.level,2)"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.conditions.cursebound.value,4),-2,-1)"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["item:spell",{"gte":["self:condition:cursebound",2]}],"selector":"saving-throw","type":"status","value":"ternary(gte(@actor.conditions.cursebound.value,4),-2,-1)"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

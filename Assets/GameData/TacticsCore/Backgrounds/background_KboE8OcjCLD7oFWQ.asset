@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_KboE8OcjCLD7oFWQ
+  m_EditorClassIdentifier: 
+  SourceId: KboE8OcjCLD7oFWQ
+  Slug: beast-blessed
+  DisplayName: Beast Blessed
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You once freed a magical beast from captivity and, whether it was
+    intentional or a byproduct of another action, the grateful creature bestowed
+    a blessing of freedom upon you. Your blessing manifests physically, perhaps as
+    elongated canines, fingernails that grow to a sharp point, excess body hair,
+    or some other feature. This physical manifestation is cosmetic and provides no
+    benefit. Choose two attribute boosts. One must be to Dexterity or Wisdom , and
+    one is a free attribute boost. You are trained in the Survival skill. You gain
+    the @UUID[Compendium.pf2e.actionspf2e.Item.Bestial Clarity] reaction.
+  SourceTitle: Pathfinder Lost Omens Firebrands
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 6314012e2a9761c6855adc6cfe6afdac09d27d284a97310f39dfe2aaf88e3cac
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Bestial Clarity
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Bestial Clarity"}'
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats: []

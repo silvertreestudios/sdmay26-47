@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_gsyTHkbGRaiHgs6p
+  m_EditorClassIdentifier: 
+  SourceId: gsyTHkbGRaiHgs6p
+  Slug: firebrand-follower
+  DisplayName: Firebrand Follower
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were once rescued or liberated from a hopeless situation by a
+    group of Firebrands, and you have since aspired to become a Firebrand to continue
+    their legacy. You still follow news of their adventures, and you hope to one
+    day meet your heroes as comrades. Choose two attribute boosts. One must be to
+    Strength or Charisma , and one is a free attribute boost. You are trained in
+    your choice of the Athletics or Performance skill as well as the Firebrand Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance] skill feat
+    in your chosen skill.
+  SourceTitle: Pathfinder Lost Omens Firebrands
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: e9d38aad7fdac7c7f6b6fd34e038ef69c08874059cbb7ff98c105eb57e50240a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Athletics","value":"athletics"},{"label":"PF2E.Skill.Performance","value":"performance"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"{item|flags.pf2e.rulesSelections.skill}"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Firebrand Lore
+    Rank: 1
+  LoreSkills:
+  - Firebrand Lore
+  GrantedFeats: []

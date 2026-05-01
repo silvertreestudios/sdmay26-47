@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_9ItMYxEkvxqBHrV1
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 9ItMYxEkvxqBHrV1
+  Slug: unlimited-esoterica
+  DisplayName: Unlimited Esoterica
+  IconPath: systems/pf2e/icons/features/classes/unlimited-esoterica.webp
+  Description: Your understanding of your esoterica becomes so complete that you
+    can access your mystic tools without even thinking. You can use Exploit Vulnerability
+    or Intensify Vulnerability as a free action, rather than a single action, though
+    still with a frequency of only once per round.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 36e137541e528af49288c7ad6fe4dc6ff8338a98f047230ca05f95fd784e418b
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_BFOsMnWfXL1oaWkY
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: BFOsMnWfXL1oaWkY
+  Slug: steelskin-hobgoblin
+  DisplayName: Steelskin Hobgoblin
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: When you are cut or burned, your body responds by forming tough but
+    flexible callouses over the site of the injury. Over time, this makes the most
+    vulnerable sections of your body harder and more resistant to damage. Many steelskin
+    hobgoblins intentionally use blades and flame to scar themselves in intricate
+    patterns, though this isn't universal. Your flat check to recover from persistent
+    physical (including bleed), energy, or poison damage is DC 13 (rather than DC
+    15), or @Check[flat|dc:8] when provided particularly effective assistance.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 2aaae062ed4a0fa20c6009acaf20b6bc3d24ce14aa1d2962e87a3f7d27c2c2ab
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: downgrade
+    Value: 13
+    Uuid: 
+    Json: '{"itemType":"condition","key":"ItemAlteration","mode":"downgrade","predicate":[{"or":["item:damage:category:energy","item:damage:category:physical","item:damage:type:poison"]}],"property":"pd-recovery-dc","value":13}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.piNLXUrm9iaGqD2i
+    SourceId: 
+    Slug: hobgoblin
+    DisplayName: Hobgoblin
+  ParentAncestryAsset: {fileID: 11400000, guid: f8564f2408134d941bdb53b696e95741, type: 2}
+  GrantedFeatures: []

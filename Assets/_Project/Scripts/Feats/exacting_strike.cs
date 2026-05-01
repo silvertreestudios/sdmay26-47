@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
-using PathfinderTactics.Items;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Combat;
+using TacticsGame.Core;
+using TacticsGame.Grid;
+using TacticsGame.Items;
 using TMPro;
 using UnityEngine;
 
-namespace PathfinderTactics.Feats
+namespace TacticsGame.Feats
 {
     public class exacting_strike : BaseAction, FeatBase
     {
@@ -68,7 +68,12 @@ namespace PathfinderTactics.Feats
 
                     foreach (GridNode node in column)
                     {
-                        if (PF2E_Core.GetPF2eDistance3D(unitPos, node.Coordinates) <= range)
+                        if (
+                            TacticsRuleset_Core.GetTacticsRulesetDistance3D(
+                                unitPos,
+                                node.Coordinates
+                            ) <= range
+                        )
                         {
                             if (added.Add(node.Coordinates))
                                 rangePositions.Add(node.Coordinates);
@@ -250,7 +255,7 @@ namespace PathfinderTactics.Feats
             bool isAgileWeapon = weapon.HasTrait(WeaponTrait.Agile);
             bool isFinesseWeapon = weapon.HasTrait(WeaponTrait.Finesse);
 
-            int level = stats.level;
+            int level = stats.GetLevel();
 
             int strengthMod = unit.GetAbilityModifier(AbilityScore.STR);
             int dexMod = unit.GetAbilityModifier(AbilityScore.DEX);
@@ -268,7 +273,7 @@ namespace PathfinderTactics.Feats
             else if (attacksMade >= 2)
                 mapPenalty = isAgileWeapon ? -8 : -10;
 
-            int attackBonus = PF2E_Core.CalculateAttackRollModifier(
+            int attackBonus = TacticsRuleset_Core.CalculateAttackRollModifier(
                 unit,
                 attackStat,
                 attackStatMod,
@@ -298,7 +303,7 @@ namespace PathfinderTactics.Feats
             int finalAC = baseAC + coverBonus;
 
             int d20 = UnityEngine.Random.Range(1, 21);
-            Degree result = PF2E_Core.CheckResult(d20, attackBonus, finalAC);
+            Degree result = TacticsRuleset_Core.CheckResult(d20, attackBonus, finalAC);
 
             Debug.Log(
                 $"<b>[EXACTING STRIKE]</b> Rolled {d20} + {attackBonus} vs AC {finalAC} -> <color={(result == Degree.Success || result == Degree.CriticalSuccess ? "green" : "red")}>{result}</color>"
@@ -394,7 +399,10 @@ namespace PathfinderTactics.Feats
                         if (testPos == unitPos)
                             continue;
 
-                        if (PF2E_Core.GetPF2eDistance3D(unitPos, testPos) > range)
+                        if (
+                            TacticsRuleset_Core.GetTacticsRulesetDistance3D(unitPos, testPos)
+                            > range
+                        )
                             continue;
 
                         Unit target = grid.GetUnitAt(testPos);

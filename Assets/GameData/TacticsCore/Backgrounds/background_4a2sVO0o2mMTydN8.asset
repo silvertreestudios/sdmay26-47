@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_4a2sVO0o2mMTydN8
+  m_EditorClassIdentifier: 
+  SourceId: 4a2sVO0o2mMTydN8
+  Slug: local-scion
+  DisplayName: Local Scion
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're from Breachill and have lived there most, if not all, of your
+    life. You might be the son or daughter of a well-known local adventuring family,
+    or a family with a storied tradition of military or other martial service. You
+    likely also have some sort of skill with your hands, as the people of Breachill
+    are very self-sufficient. The Call for Heroes is one of your hometown's most
+    iconic traditions, and you want to attend so you can prove your own merits to
+    the council-beyond simply those of your family's name. Choose two attribute boosts.
+    One must be to Constitution or Charisma , and one is a free attribute boost.
+    You're trained in the Crafting skill and the Breachill Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Specialty Crafting] skill feat.
+  SourceTitle: Pathfinder Age of Ashes Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 5e96cf95dc281db735d59d47670c7332c1a2c29a1aab884e33d2631d125069f2
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Breachill Lore
+    Rank: 1
+  LoreSkills:
+  - Breachill Lore
+  GrantedFeats:
+  - SourceKey: e8pnw
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    SourceId: 
+    DisplayName: Specialty Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

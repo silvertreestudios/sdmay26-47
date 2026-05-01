@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Acts as an Event Bridge between the Animator and the C# logic.

@@ -1,8 +1,8 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Combat
+namespace TacticsGame.Combat
 {
     /// <summary>
     /// Static class for resolving high-level PF2e combat rules.

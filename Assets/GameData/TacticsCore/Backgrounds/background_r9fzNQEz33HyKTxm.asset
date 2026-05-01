@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_r9fzNQEz33HyKTxm
+  m_EditorClassIdentifier: 
+  SourceId: r9fzNQEz33HyKTxm
+  Slug: pilgrim
+  DisplayName: Pilgrim
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: In your youth, you made several pilgrimages to important shrines and
+    sacred sites. You might have been a mendicant friar, a seller of religious relics
+    (real or fraudulent), or just a simple farmer following the dictates of your
+    faith. Whatever the aims of your wanderings now, your faith still protects you
+    on the road. Choose two attribute boosts. One must be to Wisdom or Charisma ,
+    and one is a free attribute boost. You're trained in the Religion skill and the
+    Lore skill for your patron deity. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Pilgrim's
+    Token] skill feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 2814adbba707ad93281255f04c1a3d62069bb30a8606d6f237de5b5cb7f2b861
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Deity> Lore
+    Rank: 1
+  LoreSkills:
+  - <Deity> Lore
+  GrantedFeats:
+  - SourceKey: 1cme1
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pilgrim's Token
+    SourceId: 
+    DisplayName: Pilgrim's Token
+    Level: 1
+    ResolvedFeature: {fileID: 0}

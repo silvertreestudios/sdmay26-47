@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_MhXHEh7utEfxBwmc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: MhXHEh7utEfxBwmc
+  Slug: thickcoat-shoony
+  DisplayName: Thickcoat Shoony
+  IconPath: systems/pf2e/icons/features/ancestry/thickcoat-shoony.webp
+  Description: You are a rare shoony who hails from colder climes. You gain cold
+    resistance equal to half your level (minimum 1), and you treat environmental
+    cold effects as if they were one step less extreme (incredible cold becomes extreme,
+    extreme cold becomes severe, and so on). You don't need to succeed at a flat
+    check to target a concealed creature if that creature is @UUID[Compendium.pf2e.conditionitems.Item.Concealed]
+    only by snow. Unless you wear protective gear or take shelter, environmental
+    heat effects are one step more extreme for you.
+  SourceTitle: 'Pathfinder #153: Life''s Long Shadows'
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 8e11ab3b24d741c4874d3046e2894ffe5572c633f11191eabaebfc6c5a4c4e5a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"cold","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.q6rsqYARyOGXZA8F
+    SourceId: 
+    Slug: shoony
+    DisplayName: Shoony
+  ParentAncestryAsset: {fileID: 11400000, guid: 2637afd2b1c063f4f87f6d958797ae40, type: 2}
+  GrantedFeatures: []

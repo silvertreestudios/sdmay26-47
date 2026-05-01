@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_LzYi0OuOoypNb6jd
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: LzYi0OuOoypNb6jd
+  Slug: panache
+  DisplayName: Panache
+  IconPath: icons/commodities/treasure/crown-gold-laurel-wreath.webp
+  Description: 'You care as much about the way you accomplish something as whether
+    you actually accomplish it in the first place. When you perform an action with
+    particular style, you can leverage this moment of verve to perform spectacular,
+    deadly maneuvers. This heightened state of flair is called panache. @UUID[Compendium.pf2e.feat-effects.Item.Effect:
+    Panache] You gain panache by performing actions that have the bravado trait.
+    @UUID[Compendium.pf2e.actionspf2e.Item.Tumble Through] and additional actions
+    determined by your swashbuckler''s style gain the bravado trait when you use
+    them. The GM might determine that a check to perform a particularly daring action,
+    such as swinging on a chandelier or sliding down a drapery, can gain the bravado
+    trait. These checks typically involve at least a single action and a non-trivial
+    DC. Normally, you gain and use panache only in combat encounters; when an encounter
+    ends, you lose panache. Powerful finisher actions, including @UUID[Compendium.pf2e.actionspf2e.Item.Confident
+    Finisher], can be used only while you have panache and cause you to lose your
+    panache.'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: db91970ba7048cc7cb57ee86295214614884b8f8bff810eb7e07fe1fdd12cf00
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["success","criticalSuccess"],"predicate":["item:trait:bravado",{"not":"panache"}],"selector":["skill-check","strike-attack-roll"],"text":"PF2E.SpecificRule.Swashbuckler.Panache","title":"PF2E.Check.Result.Degree.Check.success"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["item:trait:bravado",{"not":"panache"}],"selector":["skill-check","strike-attack-roll"],"text":"PF2E.SpecificRule.Swashbuckler.PanacheFailure","title":"PF2E.Check.Result.Degree.Check.failure"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"item:trait:bravado","predicate":["action:tumble-through"],"selector":"skill-check"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

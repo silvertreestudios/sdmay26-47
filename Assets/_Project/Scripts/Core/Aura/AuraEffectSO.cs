@@ -1,10 +1,10 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.ScriptableObjects
+namespace TacticsGame.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "New Aura", menuName = "PathfinderTactics/Aura Effect")]
+    [CreateAssetMenu(fileName = "New Aura", menuName = "TacticsGame/Aura Effect")]
     public class AuraEffectSO : ScriptableObject
     {
         [Header("General Settings")]

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_wySB9VHOW1v3TX1L
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: wySB9VHOW1v3TX1L
+  Slug: infused-reagents
+  DisplayName: Infused Reagents
+  IconPath: icons/commodities/treasure/broach-pink-orbs.webp
+  Description: You infuse reagents with your own alchemical essence, allowing you
+    to create alchemical items at no cost. Each day during your daily preparations,
+    you gain a number of batches of infused reagents equal to your level + your Intelligence
+    modifier. You can use these reagents for either advanced alchemy or Quick Alchemy,
+    described below. Together, these infused reagents have light Bulk. As soon as
+    you make your next daily preparations, your infused reagents from the previous
+    day's preparations are instantly destroyed, and nonpermanent effects of your
+    previous day's infused items immediately end. While infused reagents are physical
+    objects, they can't be duplicated, preserved, or created in any way other than
+    your daily preparations. Any such artificial reagents lack the infusion and are
+    useless for advanced alchemy or Quick Alchemy.
+  SourceTitle: Pathfinder Core Rulebook
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 53ca426be5ddd945df04b5cc47142c2907c4b176145e56b408d3067a084777d4
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.resources.crafting.infusedReagents.max
+    Mode: upgrade
+    Value: '"@actor.level + @actor.abilities.int.mod"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.resources.crafting.infusedReagents.max","predicate":["class:alchemist"],"value":"@actor.level
+      + @actor.abilities.int.mod"}'
+  - Key: ActiveEffectLike
+    Path: system.resources.crafting.infusedReagents.max
+    Mode: upgrade
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.resources.crafting.infusedReagents.max","predicate":[{"not":"class:alchemist"}],"value":"@actor.level"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

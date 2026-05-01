@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_eFsD7W6hnK33jlDQ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: eFsD7W6hnK33jlDQ
+  Slug: sewer-rat
+  DisplayName: Sewer Rat
+  IconPath: systems/pf2e/icons/features/ancestry/sewer-rat.webp
+  Description: You come from a long line of ratfolk with a community based in the
+    sewers beneath a large settlement. You are immune to the disease putrid plague.
+    You gain a +1 circumstance bonus to saving throws against diseases and poisons.
+    If you roll a success on a saving throw against a disease or poison, you get
+    a critical success instead. If you have a different ability that would improve
+    the save in this way (such as the @UUID[Compendium.pf2e.classfeatures.Item.Battle
+    Hardened] fighter class feature), if you roll a critical failure on the save
+    you get a failure instead.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ec475f2003b26b373a2110d726cbec25e8f6eb82ee43580fa190f06bf65b60c8
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":[{"or":["item:trait:disease","item:trait:poison"]}],"selector":"saving-throw"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["item:trait:disease","item:trait:poison"]}],"selector":"saving-throw","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.P6PcVnCkh4XMdefw
+    SourceId: 
+    Slug: ratfolk
+    DisplayName: Ratfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 0157a504d77a04745a45fb09b6f01d67, type: 2}
+  GrantedFeatures: []

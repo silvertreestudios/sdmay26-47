@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_1PHDn7WJFtR3NgTr
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 1PHDn7WJFtR3NgTr
+  Slug: blight
+  DisplayName: Blight
+  IconPath: icons/magic/nature/leaf-glow-triple-orange-purple.webp
+  Description: "A spring bud will wither, a mighty oak will crash to the forest floor,
+    and a callow youth will grow into maturity, then decline into old age. You know
+    none of these things are cause for alarm or sadness. Decay is an essential part
+    of nature's cycle, as the old pass away to make room for, or to nourish, the
+    new. After all, the flower must fall for the seed to grow, and the toppled tree
+    not only makes room for new saplings to flourish, but also forms a home for many
+    types of flora, fauna, and fungi. Disease, poison, and rot\u2014these are all
+    tools to dispose of creatures that have come to the end of their usefulness that
+    rest in your hands. You might wield them to bring an end to lingering suffering
+    or to spread contagion over once-thriving lands. Well-meaning doctors, persistent
+    healers, or zealous adventurers may try to stand in your way, but blight will
+    spread in the end. If you follow a deity, you might work toward the sinister
+    ends of Rider of Disease Apollyon, the demon lord Cyth-V'sug, or the parasitic
+    Ghlaunder. You might find allies among followers of Groetus or the cults of the
+    Outer Gods. If you see your calling as part of the cycle of existence, you might
+    venerate monitor demigods such as Mother Vulture or commune with nature. Granted
+    Spells cantrip: @UUID[Compendium.pf2e.spells-srd.Item.Caustic Blast] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Noxious
+    Vapors] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Fungal Infestation] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Toxic
+    Cloud] Revelation Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Ulcerous
+    Canker] advanced: @UUID[Compendium.pf2e.spells-srd.Item.Purging Toxins] greater:
+    @UUID[Compendium.pf2e.spells-srd.Item.Accelerated Decomposition] Related Domains
+    death, decay, disorientation, plague Mystery Skill Nature Oracle Feat @UUID[Compendium.pf2e.feats-srd.Item.Whispers
+    of Weakness] @UUID[Compendium.pf2e.classfeatures.Item.Curse of Inevitable Rot]"
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f5f29f41e9f37ec62b6bf1bdc12563f03b0ce453b00cfe0ec330d6b261cd038c
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Whispers of Weakness
+    Json: '{"key":"GrantItem","predicate":["class:oracle"],"uuid":"Compendium.pf2e.feats-srd.Item.Whispers
+      of Weakness"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Curse of Inevitable Rot
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Curse of
+      Inevitable Rot"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Whispers of Weakness
+    SourceId: 
+    DisplayName: Whispers of Weakness
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Curse of Inevitable Rot
+    SourceId: 
+    DisplayName: Curse of Inevitable Rot
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

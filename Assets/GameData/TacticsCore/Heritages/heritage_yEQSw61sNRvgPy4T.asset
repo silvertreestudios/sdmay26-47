@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_yEQSw61sNRvgPy4T
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: yEQSw61sNRvgPy4T
+  Slug: hopeful-athamaru
+  DisplayName: Hopeful Athamaru
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have begun to prepare yourself to become an athamaru matriarch,
+    and are likely stepping outside of your community to better prepare yourself
+    as a leader. As part of the physical change, you are substantially taller than
+    you once were. Instead of Medium, your size is Large. In addition, you instill
+    your allies with a feeling of hopefulness. You have a 10-foot aura that grants
+    any ally in it a +1 circumstance bonus to saving throws against fear; this is
+    an emotion and mental effect.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: d00fb445f032d5b6e908af1fb5840c6846f93f9e7b79581a19b68706e4ea79e9
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: CreatureSize
+    Path: 
+    Mode: 
+    Value: '"large"'
+    Uuid: 
+    Json: '{"key":"CreatureSize","value":"large"}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"allies","uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Hopeful Athamaru"}],"key":"Aura","radius":10,"traits":["emotion","mental"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.Cg1AMgp3zrGmimWd
+    SourceId: 
+    Slug: athamaru
+    DisplayName: Athamaru
+  ParentAncestryAsset: {fileID: 11400000, guid: 2ee95b5b79f6b7640b2e6a86a1e1ebe0, type: 2}
+  GrantedFeatures: []

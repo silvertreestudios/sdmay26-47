@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2dd8c8ce25e394197be78e39183700, type: 3}
+  m_Name: Skeleton_Warrior_Skeleton_Warrior_LegLeft
+  m_EditorClassIdentifier: 
+  PartID: skeleton_warrior_skeleton_warrior_legleft
+  DisplayName: Skeleton Warrior LegLeft
+  Slot: 4
+  Icon: {fileID: 0}
+  IsStaticMesh: 0
+  SharedMesh: {fileID: -3159427785657517314, guid: 4061f53e6ed0b714ea917332fa5aa900, type: 3}
+  Materials:
+  - {fileID: -8468983757882266563, guid: 9ea8f4c0b215f224baaa9e78ef5fc0af, type: 3}

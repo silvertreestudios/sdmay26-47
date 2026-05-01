@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_Mmezbef0c1fbJaVV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: Mmezbef0c1fbJaVV
+  Slug: impersonator-android
+  DisplayName: Impersonator Android
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your body was augmented with processes and an appearance intended
+    to blend in with humans more easily. You become trained in Deception (or another
+    skill if you're already trained in Deception). You don't require a disguise kit
+    when attempting Deception checks to @UUID[Compendium.pf2e.actionspf2e.Item.Impersonate]
+    a human. In addition, you gain a +4 circumstance bonus to Impersonate checks
+    to pretend that you're a human version of yourself, rather than an android. This
+    bonus doesn't apply to other checks to Impersonate humans.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: fd4d4646bb8f9c61a01b26e06795015d899f9230c92d09279150ffa7f043132c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 4
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Impersonator Android (to Impersonate a
+      human version of yourself)","predicate":["action:impersonate","disguise:human-self"],"selector":"deception","type":"circumstance","value":4}'
+  - Key: ActiveEffectLike
+    Path: system.skills.deception.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.deception.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GfLwE884NoRC7cRi
+    SourceId: 
+    Slug: android
+    DisplayName: Android
+  ParentAncestryAsset: {fileID: 11400000, guid: b29540a7fcf84b248ab504583b2d0fea, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_l1InYvhnQSz6Ucxc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: l1InYvhnQSz6Ucxc
+  Slug: master-spellcaster
+  DisplayName: Master Spellcaster
+  IconPath: icons/skills/trades/academics-book-study-purple.webp
+  Description: Animist Your affinity with the apparitions you bond to has further
+    enhanced the potency of your magic. Your proficiency ranks for spell attack modifier
+    and spell DC increase to master. Bard You pluck the threads of magic like the
+    strings of a harp. Your proficiency ranks for spell attack modifiers and spell
+    DCs increase to master. Druid Primal magic answers your command. Your proficiency
+    ranks for spell attack modifier and spell DC increase to master. Magus You fortify
+    your spells with masterful prowess. Your proficiency ranks for arcane spell attack
+    rolls and spell DCs increase to master. Oracle You truly understand the deep
+    and complex divine power within your mystery. Your proficiency ranks for divine
+    spell attack rolls and spell DCs increase to master. Psychic You've gained access
+    to the deepest corners of your own mind. Your proficiency ranks for occult spell
+    attack rolls and spell DCs increase to master. Sorcerer You have achieved mastery
+    over the magic in your blood. Your proficiency ranks for spell attack modifier
+    and spell DC for spells of your bloodline's tradition increase to master. Summoner
+    Your connection to your eidolon is strong enough to grant you mastery over associated
+    spells. Your proficiency ranks for spell attack modifier and spell DC for spells
+    of your eidolon's tradition increase to master. Witch You've achieved mastery
+    over your patron's magic. Your proficiency ranks for spell attack modifier and
+    spell DC increase to master. Wizard You command superlative spellcasting ability.
+    Your proficiency ranks for spell attack modifier and spell DC increase to master.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a8ca20f3835081095ffb87b6c618f19498e043ad9d8dfbadb407a941655dd086
+  Traits:
+  - animist
+  - bard
+  - druid
+  - magus
+  - oracle
+  - psychic
+  - sorcerer
+  - summoner
+  - witch
+  - wizard
+  TraitsLower:
+  - animist
+  - bard
+  - druid
+  - magus
+  - oracle
+  - psychic
+  - sorcerer
+  - summoner
+  - witch
+  - wizard
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '[{"text":"PF2E.SpecificRule.ClassFeatures.Spellcaster.{actor|class.slug}.Master"}]'
+    Uuid: 
+    Json: '{"itemId":"{item|id}","key":"ItemAlteration","mode":"override","property":"description","value":[{"text":"PF2E.SpecificRule.ClassFeatures.Spellcaster.{actor|class.slug}.Master"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{actor|class.slug}"'
+    Uuid: 
+    Json: '{"itemId":"{item|id}","key":"ItemAlteration","mode":"add","property":"traits","value":"{actor|class.slug}"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: spellcasting
+    Rank: 3
+  FocusPointDelta: 0

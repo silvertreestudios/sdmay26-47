@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_dGiMAdZEQoXQWJbn
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: dGiMAdZEQoXQWJbn
+  Slug: kinetic-expertise
+  DisplayName: Kinetic Expertise
+  IconPath: icons/magic/water/wave-water-teal.webp
+  Description: Your kinetic gate grows stronger, making your elements harder to resist.
+    The power flowing from you is even harder to resist. Your proficiency rank for
+    your kineticist class DC increases to expert.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0f7b26fd00b6338117bacbe579c2dcd0ce065c21e40ba5d31286e3541ef6ec34
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules: []
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: kineticist
+    Rank: 2
+  FocusPointDelta: 0

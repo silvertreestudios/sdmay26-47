@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_piNLXUrm9iaGqD2i
+  m_EditorClassIdentifier: 
+  SourceId: piNLXUrm9iaGqD2i
+  Slug: hobgoblin
+  DisplayName: Hobgoblin
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/hobgoblin.svg
+  Description: Taller and stronger than their goblin kin, hobgoblins are equals in
+    strength and size to humans, with broad shoulders and long, powerful arms. Hobgoblin
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: f25e2d0b9af50ec028ac4e280c4e496bae30517948f9753d72d399747fd4483f
+  Traits:
+  - hobgoblin
+  - humanoid
+  TraitsLower:
+  - hobgoblin
+  - humanoid
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 04000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 05000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: goblin
+    DisplayName: Goblin
+  AdditionalLanguageOptions:
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: halfling
+    DisplayName: Halfling
+  - Id: jotun
+    DisplayName: Jotun
+  - Id: kholo
+    DisplayName: Kholo
+  - Id: orcish
+    DisplayName: Orcish
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: ff9916c48910d304aa9227d0ef7e8b16, type: 2}
+  - {fileID: 11400000, guid: a25d47724b475a840820ab1a06f6de92, type: 2}
+  - {fileID: 11400000, guid: 6b1174c1388b0c942ba03861807e7ee1, type: 2}
+  - {fileID: 11400000, guid: f178f194a13deda439dab8cdc241b218, type: 2}
+  - {fileID: 11400000, guid: 1b7569b6773f557499182d1b7c92f7d4, type: 2}
+  - {fileID: 11400000, guid: cde61c43dfdff524c8ea986d26264f3d, type: 2}
+  - {fileID: 11400000, guid: bbeaf0d9d985ecb4b9fccc68f6623ed3, type: 2}

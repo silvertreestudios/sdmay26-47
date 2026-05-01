@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ndSCXO9Dg57fmZIY
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ndSCXO9Dg57fmZIY
+  Slug: noble-branch
+  DisplayName: Noble Branch
+  IconPath: icons/weapons/staves/staff-nature.webp
+  Description: "Usage a staff, bo staff, fighting stick, khakkara, or any weapon
+    in the spear or polearm weapon group This humble stick-like weapon has an elegant
+    simplicity to it, affording you reliable strikes over flashy maneuvers. Immanence
+    The noble branch deals 2 additional spirit damage per weapon damage die to creatures
+    it Strikes. Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.Strike,
+    Breathe, Rend] 1 (spirit, transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.oaJeGdGPmHiNT5mP
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5d7c2f8270eb292341e01b558eef1616bf695b35d8dacd9e08d43c663aa2ffdc
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"noble-branch"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.NobleBranch.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"noble-branch"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.NobleBranch.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"noble-branch"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Strike, Breathe, Rend
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Strike, Breathe,
+      Rend"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"noble-branch-origin"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"predicate":[{"or":["item:base:staff","item:base:bo-staff","item:base:fighting-stick","item:base:khakkara","item:group:spear","item:group:polearm"]},{"not":"item:trait:consumable"}],"types":["weapon"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["noble-branch-origin:existing"]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:0",{"nor":["item:magical","item:trait:consumable"]},{"or":["item:base:staff","item:base:bo-staff","item:base:fighting-stick","item:base:khakkara","item:group:spear","item:group:polearm"]}],"itemType":"weapon"},"flag":"grantedIkon","key":"ChoiceSet","predicate":["noble-branch-origin:granted"]}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    Json: '{"key":"GrantItem","predicate":["noble-branch-origin:granted"],"uuid":"{item|flags.pf2e.rulesSelections.grantedIkon}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["noble-branch-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["noble-branch-origin:granted","item:granter:slug:noble-branch"]}]}],"property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:noble-branch"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["noble-branch-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["noble-branch-origin:granted","item:granter:slug:noble-branch"]}]}],"property":"other-tags","value":"physical-ikon:noble-branch"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:noble-branch"],"priority":121,"property":"traits","value":"divine"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.ndSCXO9Dg57fmZIY
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:noble-branch"],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.ndSCXO9Dg57fmZIY
+      inline]"}]}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"2*@weapon.system.damage.dice"'
+    Uuid: 
+    Json: '{"damageType":"spirit","key":"FlatModifier","predicate":["item:tag:physical-ikon:noble-branch","divine-spark:noble-branch"],"selector":"weapon-damage","slug":"barrows-edge-immanence","tags":["exemplar"],"value":"2*@weapon.system.damage.dice"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:noble-branch","item:slug:strike-breathe-rend"]},{"not":"divine-spark:noble-branch"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"exemplar-spirit-damage","predicate":["divine-spark:noble-branch"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Strike, Breathe, Rend
+    SourceId: 
+    DisplayName: Strike, Breathe, Rend
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    SourceId: 
+    DisplayName: grantedIkon}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

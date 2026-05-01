@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_IOcjPmcemrQFFb2b
+  m_EditorClassIdentifier: 
+  SourceId: IOcjPmcemrQFFb2b
+  Slug: time-traveler
+  DisplayName: Time Traveler
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You come from a different time. Whether by your own doing or a terrible
+    accident, powerful magic has resulted in you coming to this time from the future
+    or from the past, but you are unable to return. You might be from New Thassilon,
+    an entire nation of time travelers. Choose two attribute boosts. One must be
+    to Dexterity or Intelligence , and one is a free attribute boost. You are trained
+    in three Lore skills of your choice that represent your knowledge from your old
+    time. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Bend Time] free action.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 074556d84e21c432dc3cd0c11252ee6bfff9dc03ebf7367db398c9ad040a416b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Bend Time
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Bend Time"}'
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Three Different> Lore
+    Rank: 1
+  LoreSkills:
+  - <Three Different> Lore
+  GrantedFeats: []

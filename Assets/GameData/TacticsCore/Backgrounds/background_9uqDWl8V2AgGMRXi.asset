@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_9uqDWl8V2AgGMRXi
+  m_EditorClassIdentifier: 
+  SourceId: 9uqDWl8V2AgGMRXi
+  Slug: propaganda-promoter
+  DisplayName: Propaganda Promoter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'The ghost king Geb has returned to a more active role in leading
+    his nation after thousands of years, and it''s shocking that some people in the
+    nation haven''t heard that. You helped the Celebrants plan parades, exciting
+    displays like circuses, news missives, and more to help push messages of loyalty
+    to the nation. Even though most Celebrants are followers of Urgathoa, deity of
+    gluttony and undeath, you might follow a different faith (or no faith at all);
+    more important is helping Celebrants spread their message. You started to see
+    that propaganda was often timed to help the Celebrants, in addition to the nation
+    as a whole, and you saw just how powerful the right message at the right time
+    can be. You are still well-regarded by the Celebrants. Your party gains 1 Reputation
+    Point with the Celebrants at the start of the campaign. Choose two attribute
+    boosts. One must be to Charisma or Dexterity , and one is a free attribute boost.
+    You''re trained in your choice of the Acrobatics or Performance skill. You gain
+    a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Steady Balance] if you chose
+    Acrobatics or @UUID[Compendium.pf2e.feats-srd.Item.Impressive Performance] if
+    you chose Performance. You''re also trained in Urgathoa Lore.'
+  SourceTitle: Pathfinder Blood Lords Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 8e9086a273e49026b5b3fd1be7c9f490788928c68215c3b8d630df8365484c1b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Acrobatics","value":"acrobatics"},{"label":"PF2E.Skill.Performance","value":"performance"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"propaganda-promoter"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Steady Balance
+    Json: '{"key":"GrantItem","predicate":["propaganda-promoter:acrobatics"],"uuid":"Compendium.pf2e.feats-srd.Item.Steady
+      Balance"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Impressive Performance
+    Json: '{"key":"GrantItem","predicate":["propaganda-promoter:performance"],"uuid":"Compendium.pf2e.feats-srd.Item.Impressive
+      Performance"}'
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Urhathoa
+    Rank: 1
+  LoreSkills:
+  - Urhathoa
+  GrantedFeats: []

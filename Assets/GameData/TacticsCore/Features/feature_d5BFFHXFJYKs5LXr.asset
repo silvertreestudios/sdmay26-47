@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_d5BFFHXFJYKs5LXr
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: d5BFFHXFJYKs5LXr
+  Slug: voice-of-nature
+  DisplayName: Voice of Nature
+  IconPath: icons/creatures/amphibians/treefrog-leaf-green.webp
+  Description: You gain your choice of the @UUID[Compendium.pf2e.feats-srd.Item.Animal
+    Empathy] or @UUID[Compendium.pf2e.feats-srd.Item.Plant Empathy] druid feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b79ac314431789366fdac2313be4a6c50c2215204f6641072321352b0a0ccfa5
+  Traits:
+  - druid
+  TraitsLower:
+  - druid
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"value":"Compendium.pf2e.feats-srd.Item.Animal
+      Empathy"},{"value":"Compendium.pf2e.feats-srd.Item.Plant Empathy"}],"flag":"feat","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.LevelOneClassFeat"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.feat}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.feat}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.feat}'
+    SourceId: 
+    DisplayName: feat}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

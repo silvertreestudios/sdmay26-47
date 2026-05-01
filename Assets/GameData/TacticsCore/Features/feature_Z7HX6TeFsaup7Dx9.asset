@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Z7HX6TeFsaup7Dx9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Z7HX6TeFsaup7Dx9
+  Slug: greater-weapon-specialization
+  DisplayName: Greater Weapon Specialization
+  IconPath: icons/skills/melee/hand-grip-sword-orange.webp
+  Description: Your damage from weapon specialization increases to 4 with weapons
+    and unarmed attacks in which you're an expert, 6 if you're a master, and 8 if
+    you're legendary.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 61d6630fd45fcbfcbe51ba68cefc8813d96e0602202bbe967a9aad45b524a878
+  Traits:
+  - champion
+  - fighter
+  - gunslinger
+  - inventor
+  - investigator
+  - magus
+  - monk
+  - ranger
+  - rogue
+  - swashbuckler
+  - thaumaturge
+  TraitsLower:
+  - champion
+  - fighter
+  - gunslinger
+  - inventor
+  - investigator
+  - magus
+  - monk
+  - ranger
+  - rogue
+  - swashbuckler
+  - thaumaturge
+  RawRules:
+  - Key: AdjustModifier
+    Path: 
+    Mode: multiply
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"multiply","relabel":"PF2E.GreaterWeaponSpecialization","selector":"strike-damage","slug":"weapon-specialization","value":2}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_TRqoeYfGAFjQbviF
+  m_EditorClassIdentifier: 
+  SourceId: TRqoeYfGAFjQbviF
+  Slug: sprite
+  DisplayName: Sprite
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/sprite.svg
+  Description: Sprites are diminutive, whimsical, and exuberant creatures from the
+    fey realm known as the First World. They love playing pranks, exploring new things,
+    and embracing everything to do with magic. Sprite
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 52dcecc9cde5e891fa9881f3d191969949df57fea64e81a25ed813a0735fb1cf
+  Traits:
+  - fey
+  - sprite
+  TraitsLower:
+  - fey
+  - sprite
+  RawRules: []
+  HitPoints: 6
+  Speed: 20
+  Reach: 0
+  Size: 0
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 04000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 01000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: fey
+    DisplayName: Fey
+  AdditionalLanguageOptions:
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: empyrean
+    DisplayName: Empyrean
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: jotun
+    DisplayName: Jotun
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: uu6ze
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Magical Strikes
+    SourceId: 
+    DisplayName: Magical Strikes
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 7579a453d60dc22498b931d65453cfad, type: 2}
+  - {fileID: 11400000, guid: 4ceca5d339d2dc749adc16ae79d5e02a, type: 2}
+  - {fileID: 11400000, guid: 1734f7f07288fd445b58445d465ade49, type: 2}
+  - {fileID: 11400000, guid: 058335d358ddf25439304c16336659e4, type: 2}
+  - {fileID: 11400000, guid: 4e58bab49e9fd8f4eaf6cfccbec60087, type: 2}
+  - {fileID: 11400000, guid: fba7df3c0f13cac45a708ab6b0e609db, type: 2}
+  - {fileID: 11400000, guid: c1a224b387ee782448f4ab90144b9d5e, type: 2}
+  - {fileID: 11400000, guid: 5c21fbb3e340ddf48b1b4c78e04f0ece, type: 2}
+  - {fileID: 11400000, guid: 4746c98ee86389d46a40fbec42fac84c, type: 2}
+  - {fileID: 11400000, guid: e7c9bdb7240916c4cac8cc89d2175d41, type: 2}

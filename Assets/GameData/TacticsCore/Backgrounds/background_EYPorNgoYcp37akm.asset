@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_EYPorNgoYcp37akm
+  m_EditorClassIdentifier: 
+  SourceId: EYPorNgoYcp37akm
+  Slug: magical-misfit
+  DisplayName: Magical Misfit
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You don't understand folks who claim that magical talent is some sort
+    of burden or great responsibility; you've always used your magic to cause trouble
+    and to escape the consequences. Whether becoming an adventurer is your attempt
+    to make amends or just a new way to make some mischief, you're excited to see
+    where it takes you, and you still delight in using your skills to get out of
+    trouble. Choose two attribute boosts. One must be to Intelligence or Dexterity
+    , and one is a free attribute boost. You're trained in Arcana and Underworld
+    Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Trick Magic Item] skill
+    feat.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f1362723ea1ecd712fc9b9f53a572cf7e0654dcec6bf241e033f48ed996e18d1
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: lu6zt
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Trick Magic Item
+    SourceId: 
+    DisplayName: Trick Magic Item
+    Level: 1
+    ResolvedFeature: {fileID: 0}

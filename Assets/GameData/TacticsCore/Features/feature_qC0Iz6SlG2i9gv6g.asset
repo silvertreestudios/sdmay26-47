@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_qC0Iz6SlG2i9gv6g
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: qC0Iz6SlG2i9gv6g
+  Slug: field-discovery-chirurgeon
+  DisplayName: Field Discovery (Chirurgeon)
+  IconPath: icons/consumables/potions/potion-tube-corked-red.webp
+  Description: 'Your medicinal elixirs are quite fortifying. When a creature drinks
+    an infused elixir with the healing trait that you have created, that creature
+    gains a number of temporary Hit Points equal to your Intelligence modifier (minimum
+    0); these temporary Hit Points last for 1 minute. @UUID[Compendium.pf2e.feat-effects.Item.Effect:
+    Field Discovery (Chirurgeon)]'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a96eb84a94176c16ce1659b7321591739725d92bd75f1a5c7ef79950b2b32235
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

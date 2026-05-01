@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_By1y7HCfVPgX2GmI
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: By1y7HCfVPgX2GmI
+  Slug: ragdyan-vanara
+  DisplayName: Ragdyan Vanara
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Keepers of traditions and tellers of ancient tales, your family traces
+    its lineage to those born directly from Ragdya's whims. When you speak, others
+    are inclined to listen to you, perhaps due to the divine spark of your connection
+    to Ragdya. You gain one cantrip from the divine spell list; this cantrip can't
+    deal damage or otherwise cause direct harm. You can cast this spell as a divine
+    innate spell at will. A cantrip is heightened to a spell rank equal to half your
+    level rounded up.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 803693488eefeeb6f59f722a83c595eebf70dba9f75f2c5d2e2a88e4efa256a6
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cLtOGIkuSSa4UDHY
+    SourceId: 
+    Slug: vanara
+    DisplayName: Vanara
+  ParentAncestryAsset: {fileID: 11400000, guid: 7789c15146276d844a6b43feecba1956, type: 2}
+  GrantedFeatures: []

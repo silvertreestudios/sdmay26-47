@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_WxcbLvufI6JBpLt0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: WxcbLvufI6JBpLt0
+  Slug: spindly-anadi
+  DisplayName: Spindly Anadi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your limbs are exceptionally long in both forms, allowing you to skitter
+    about with surprising agility. Your Speed increases from 25 to 30 feet.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: fbbab829ed02acfca383dcda695de66c62a07e1c8a09123419ef3f136b3cbd55
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 5
+    Uuid: 
+    Json: '{"key":"FlatModifier","selector":"land-speed","value":5}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TQEqWqc7BYiadUdY
+    SourceId: 
+    Slug: anadi
+    DisplayName: Anadi
+  ParentAncestryAsset: {fileID: 11400000, guid: 31b1e69965ce06c4dbcc3db72b86dd27, type: 2}
+  GrantedFeatures: []

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     /// <summary>
     /// Common grid contract for units, doors, hazards, and interactables.

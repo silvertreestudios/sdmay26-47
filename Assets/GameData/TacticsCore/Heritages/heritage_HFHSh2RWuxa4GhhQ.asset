@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_HFHSh2RWuxa4GhhQ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: HFHSh2RWuxa4GhhQ
+  Slug: benthic-azarketi
+  DisplayName: Benthic Azarketi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your heritage traces to azarketis living deep beneath the sea, and
+    you can handle the chilling depths more easily than most. You gain resistance
+    to cold equal to half your level, and you don't treat environmental cold as one
+    degree more severe when you are wet. You adapt to pressure changes from being
+    deep underwater automatically without ill effect.
+  SourceTitle: Pathfinder Lost Omens Absalom, City of Lost Omens
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: f2de095ea14bb6fb9dfcec963c43f31936cc180bcfad15aa2f57bfaec3727f57
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"floor(@actor.level/2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"cold","value":"floor(@actor.level/2)"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.yFoojz6q3ZjvceFw
+    SourceId: 
+    Slug: azarketi
+    DisplayName: Azarketi
+  ParentAncestryAsset: {fileID: 11400000, guid: 35691cbce9f238047a56788acb89af44, type: 2}
+  GrantedFeatures: []

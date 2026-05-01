@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_7mpMGhVoaPANJnZ8
+  m_EditorClassIdentifier: 
+  SourceId: 7mpMGhVoaPANJnZ8
+  Slug: sarangay
+  DisplayName: Sarangay
+  IconPath: systems/pf2e/icons/default-icons/ancestry.svg
+  Description: Sarangay are carabao-headed people who have long survived deep in
+    the forests across Tian Xia. Many adventurers have thought them to be monsters
+    at first, but sarangay are nothing more than a thriving society who value their
+    community and their souls above all else. Their cultures are built upon the intense
+    desire to protect their communities and their chosen leader. Their horns are
+    said to be a crescent moon, and their towering statures are said to have come
+    from their ancestors being stretched so far up to reach their Father Moon while
+    their Mother Earth kept them close to her bosom. They revere the great Father
+    Moon, their First Ancestor, and endeavor to protect and exalt nature above all
+    else, for they understand that they're part of it. Sarangay
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 3b2ac89dfee9bd9e776058a1fb9b86469747d534b4c16b862d74089e7ef6652e
+  Traits:
+  - humanoid
+  - sarangay
+  TraitsLower:
+  - humanoid
+  - sarangay
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 0
+  CustomSense: 
+  AttributeBoosts:
+  - Options: 01000000
+  - Options: 06000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 05000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  AdditionalLanguageOptions:
+  - Id: empyrean
+    DisplayName: Empyrean
+  - Id: fey
+    DisplayName: Fey
+  - Id: nagaji
+    DisplayName: Nagaji
+  - Id: petran
+    DisplayName: Petran
+  - Id: pyric
+    DisplayName: Pyric
+  - Id: sussuran
+    DisplayName: Sussuran
+  - Id: thalassic
+    DisplayName: Thalassic
+  - Id: yaksha
+    DisplayName: Yaksha
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: PIA9y
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Head Gem
+    SourceId: 
+    DisplayName: Head Gem
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: bPf5G
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Horns (Sarangay)
+    SourceId: 
+    DisplayName: Horns (Sarangay)
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 8fed4e3608882e84fb5bcba0753befad, type: 2}
+  - {fileID: 11400000, guid: 4af1702c7a0a59844a385a484607f23b, type: 2}
+  - {fileID: 11400000, guid: af3e8ff075aaf69459263387f6210cb3, type: 2}
+  - {fileID: 11400000, guid: ec42503e5929d79498a1a634ab7c360a, type: 2}
+  - {fileID: 11400000, guid: d6021c39a9b21ca42a4ae74bdceb821a, type: 2}

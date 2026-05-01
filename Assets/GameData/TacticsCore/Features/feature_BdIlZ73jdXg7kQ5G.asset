@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_BdIlZ73jdXg7kQ5G
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: BdIlZ73jdXg7kQ5G
+  Slug: paragon-benefit-amulet
+  DisplayName: Paragon Benefit (Amulet)
+  IconPath: icons/commodities/treasure/token-gold-gem-purple.webp
+  Description: Your amulet provides sanctuary even against wide-scale attacks. When
+    you use @UUID[Compendium.pf2e.actionspf2e.Item.Amulet's Abeyance], you target
+    yourself and all allies within 15 feet. Each target gains both the initial resistance
+    against the triggering damage and the lingering resistance from your amulet's
+    adept benefit; the allies gain the lingering resistance even if they would not
+    have taken any of the initial triggering damage. If the foe's attack deals multiple
+    damage types, each target can separately choose the damage type to gain lingering
+    resistance against.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: cf1ad5623537bf6823ecac23ff4228b305545c77c23d31f5923e7d9f967d2a65
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

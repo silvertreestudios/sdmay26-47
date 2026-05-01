@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0x76o5OxgEmvqIDp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0x76o5OxgEmvqIDp
+  Slug: champion-s-aura
+  DisplayName: Champion's Aura
+  IconPath: icons/magic/control/buff-flight-wings-runes-blue-white.webp
+  Description: You're surrounded by an aura in a 15-foot emanation. It has the aura
+    and divine traits. Any follower of your deity within the aura immediately knows
+    you're a champion of your deity. This aura is used as the range for your champion's
+    reaction and for various other effects. You can suppress or resume the aura as
+    a single action, which has the concentrate trait, and it ends if you fall @UUID[Compendium.pf2e.conditionitems.Item.Unconscious].
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 592d1ff70db8d920542edf9772670b0269f4b750727491c0aa61e1b688402132
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: true
+    Uuid: 
+    Json: '{"key":"RollOption","option":"champions-aura","toggleable":true,"value":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.champion.aura
+    Mode: override
+    Value: 15
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.champion.aura","value":15}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Aura","predicate":["champions-aura",{"not":"self:condition:unconscious"}],"radius":"@actor.flags.pf2e.champion.aura","slug":"champions-aura"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

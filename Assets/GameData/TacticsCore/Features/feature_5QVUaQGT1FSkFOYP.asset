@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_5QVUaQGT1FSkFOYP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 5QVUaQGT1FSkFOYP
+  Slug: curse-of-inevitable-rot
+  DisplayName: Curse of Inevitable Rot
+  IconPath: icons/magic/nature/tree-spirit-black.webp
+  Description: "Your magic is a constant reminder that all creatures will eventually
+    submit to the ravages of time and the environment. You are suffused with an aura
+    of decay. Leaves wilt and insects fall out of the sky as you pass, silverware
+    tarnishes in your hands, and the dregs of wine turn to vinegar in your goblet.
+    Cursebound 1 You gain weakness 2 to acid and poison damage. Cursebound 2 You
+    take a \u20131 status penalty to saving throws against diseases and poisons.
+    In addition, anyone attempting to Treat your Disease, Poison, or Wounds takes
+    a \u20131 status penalty to the associated skill check. Cursebound 3 Your weakness
+    to acid and poison damage increases to twice your level. Cursebound 4 Your status
+    penalty to saving throws against diseases and poisons and the status penalty
+    for anyone attempting to Treat your Disease, Poison, or Wounds increases to \u20132."
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 99770173c9301f8b7ccd908fc85d6491b1610ee15e7e4612d69d9baf15f19496
+  Traits:
+  - curse
+  - divine
+  - oracle
+  - poison
+  TraitsLower:
+  - curse
+  - divine
+  - oracle
+  - poison
+  RawRules:
+  - Key: Weakness
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.conditions.cursebound.value,3),(2*@actor.level),2)"'
+    Uuid: 
+    Json: '{"key":"Weakness","predicate":["self:condition:cursebound"],"type":["acid","poison"],"value":"ternary(gte(@actor.conditions.cursebound.value,3),(2*@actor.level),2)"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.conditions.cursebound.value,4),-2,-1)"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["item:trait:poison","item:trait:disease"]},{"gte":["self:condition:cursebound",2]}],"selector":"saving-throw","type":"status","value":"ternary(gte(@actor.conditions.cursebound.value,4),-2,-1)"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

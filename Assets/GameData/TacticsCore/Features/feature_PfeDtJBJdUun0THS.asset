@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_PfeDtJBJdUun0THS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: PfeDtJBJdUun0THS
+  Slug: fire-gate
+  DisplayName: Fire Gate
+  IconPath: icons/magic/fire/beam-jet-stream-spiral-yellow.webp
+  Description: 'Fire Gate Junction Critical Blast The target takes 1d6 persistent
+    fire damage. You gain an item bonus to this persistent damage equal to your item
+    bonus to impulse attack rolls, such as from a gate attenuator . Elemental Resistance
+    cold, fire Impulse Junction Increase the damage die size of fire damage dealt
+    by the impulse by one step. Aura Junction Enemies in your kinetic aura gain weakness
+    to fire from your fire impulses. The weakness is equal to half your level (minimum
+    weakness 1). Skill Junction Intimidation, @UUID[Compendium.pf2e.feats-srd.Item.Intimidating
+    Glare]'
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 20f2ef5c796331e587e1822d399a7157f79c564234fd552b3175cc0d8593eccb
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"lte":["item:level","parent:granter:level"]},"item:trait:impulse","item:trait:fire",{"not":"item:trait:composite"}],"itemType":"feat"},"flag":"impulseOne","key":"ChoiceSet","predicate":["class:kineticist"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseOne}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["class:kineticist"],"uuid":"{item|flags.pf2e.rulesSelections.impulseOne}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:1","item:trait:impulse","item:trait:fire"],"itemType":"feat"},"flag":"impulseTwo","key":"ChoiceSet","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:fire-gate"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseTwo}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:fire-gate"],"uuid":"{item|flags.pf2e.rulesSelections.impulseTwo}"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"kinetic-gate:fire","priority":10}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elements
+    Mode: add
+    Value: '{"label":"PF2E.TraitFire","value":"fire"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.kineticist.elements","value":{"label":"PF2E.TraitFire","value":"fire"}}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"junction:fire:impulse","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:fire-gate"]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.one
+    Mode: override
+    Value: '"fire"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.one","predicate":["kinetic-gate:first-element:fire-gate"],"value":"fire"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.two
+    Mode: override
+    Value: '"fire"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.two","predicate":["kinetic-gate:second-element:fire-gate"],"value":"fire"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.three
+    Mode: override
+    Value: '"fire"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.three","predicate":["parent:granter:gates-threshold"],"value":"fire"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.four
+    Mode: override
+    Value: '"fire"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.four","predicate":["parent:granter:second-gates-threshold"],"value":"fire"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.five
+    Mode: override
+    Value: '"fire"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.five","predicate":["parent:granter:third-gates-threshold"],"value":"fire"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.six
+    Mode: override
+    Value: '"fire"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.six","predicate":["parent:granter:fourth-gates-threshold"],"value":"fire"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["junction:fire:skill"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Intimidating
+      Glare"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.intimidation.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.intimidation.rank","predicate":["junction:fire:skill"],"value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,17), 3, ternary(gte(@actor.level,10), 2, 1))"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["junction:fire:skill","self:effect:kinetic-aura"],"selector":"intimidation","type":"status","value":"ternary(gte(@actor.level,17),
+      3, ternary(gte(@actor.level,10), 2, 1))"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["junction:fire:resistance","self:effect:kinetic-aura"],"type":["cold","fire"],"value":"@actor.level"}'
+  - Key: Immunity
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Immunity","predicate":["junction:fire:resistance",{"gte":["self:level",17]},"self:effect:kinetic-aura"],"type":["cold","fire"]}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"persistent","critical":true,"damageType":"fire","diceNumber":1,"dieSize":"d6","key":"DamageDice","label":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Label","predicate":["junction:fire:critical","item:trait:fire"],"selector":"elemental-blast-damage"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@blast.flags.pf2e.attackItemBonus"'
+    Uuid: 
+    Json: '{"critical":true,"damageCategory":"persistent","damageType":"fire","key":"FlatModifier","label":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Label","predicate":["junction:fire:critical","item:trait:fire"],"selector":"elemental-blast-damage","value":"@blast.flags.pf2e.attackItemBonus"}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: 
+    Uuid: 
+    Json: '{"key":"DamageAlteration","label":"PF2E.SpecificRule.Kineticist.KineticGate.Junction.ImpulseJunction","mode":"upgrade","predicate":[{"gte":["action:cost",2]},"item:trait:impulse","junction:fire:impulse","damage:type:fire"],"property":"dice-faces","selectors":["impulse-damage","inline-damage"]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elementalBlast.fire
+    Mode: override
+    Value: '{"damageTypes":["fire"],"dieFaces":6,"element":"fire","img":"systems/pf2e/icons/actions/elemental-blast/fire.webp","label":"PF2E.SpecificRule.Kineticist.Impulse.ElementalBlast.Label.Fire","range":60}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.elementalBlast.fire","predicate":["self:effect:kinetic-aura",{"not":"battle-form"}],"priority":19,"value":{"damageTypes":["fire"],"dieFaces":6,"element":"fire","img":"systems/pf2e/icons/actions/elemental-blast/fire.webp","label":"PF2E.SpecificRule.Kineticist.Impulse.ElementalBlast.Label.Fire","range":60}}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"enemies","uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Aura Junction (Fire)"}],"key":"Aura","level":"@actor.level","predicate":["self:effect:kinetic-aura","junction:fire:aura"],"priority":99,"radius":"@actor.flags.pf2e.kineticist.auraRadius","slug":"kinetic-aura","traits":["kineticist","primal"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseOne}'
+    SourceId: 
+    DisplayName: impulseOne}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseTwo}'
+    SourceId: 
+    DisplayName: impulseTwo}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2FUdcPsXwoWT1bms
+  m_EditorClassIdentifier: 
+  SourceId: 2FUdcPsXwoWT1bms
+  Slug: tech-reliant
+  DisplayName: Tech-Reliant
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Some event, be it an accident, attack, or disaster, has left you horribly
+    scarred by magic. Your body no longer tolerates magical healing, and you can't
+    use magic, forcing you to rely on gadgets and ingenuity where others trust in
+    spells and magical items. You might have been well-versed in magic before, or
+    barely familiar with its use. This event may have injured your body in visible
+    ways, but no matter the extent of your injuries, your body no longer interacts
+    with healing magic in any capacity. Choose two attribute boosts. One must be
+    to Constitution or Intelligence , and one is a free attribute boost. You're trained
+    in the Crafting skill and the Medicine skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Battle
+    Medicine] skill feat, and a +1 circumstance bonus to saving throws against spells.
+    Healing spells, healing magic items, and magical effects with the healing trait
+    have no effect on you.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: e625f498c586b47c97a4d4db6a74964965a2fca3af84fdfaea3cabfbdb912b1d
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["arcane","divine","primal","occult","item:type:spell"]}],"selector":"saving-throw","type":"circumstance","value":1}'
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: 5002m
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Obm4ItMIIr0whYeO
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Obm4ItMIIr0whYeO
+  Slug: implement-adept
+  DisplayName: Implement Adept
+  IconPath: systems/pf2e/icons/features/classes/implement-adept.webp
+  Description: You have deepened your connection to one of your implements, unlocking
+    its adept power. Choose one of your implements and gain the adept benefit for
+    that implement.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4d297fe8fc940f6cfb259c66faab8f6c760dbf592790e1f8e93e62f382859b44
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.paragonChoices
+    Mode: override
+    Value: '[]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.paragonChoices","priority":10,"value":[]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":"flags.pf2e.thaumaturge.adeptChoices","flag":"implementAdept","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.implementAdept}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.implementAdept}"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.implementAdept}'
+    SourceId: 
+    DisplayName: implementAdept}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_E4GZDMn4DYk6qSEV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: E4GZDMn4DYk6qSEV
+  Slug: school-of-battle-magic
+  DisplayName: School of Battle Magic
+  IconPath: icons/sundries/books/book-tooled-blue-yellow.webp
+  Description: "Magic is power, and there are always those who will use power for
+    the art of battle. You may have studied in the military of a nation of the brink
+    of war\u2014Cheliax and Andoran perhaps, or Geb and Nex. You summon whirling
+    energies that can lay waste to both soldiers and armies, while being sure not
+    to neglect arcane countermeasures for common tactical complications or the shields
+    and defenses that keep combatants alive on the battlefield. Curriculum cantrips:
+    @UUID[Compendium.pf2e.spells-srd.Item.Shield], @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic
+    Projectile] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Breathe Fire], @UUID[Compendium.pf2e.spells-srd.Item.Force
+    Barrage], @UUID[Compendium.pf2e.spells-srd.Item.Mystic Armor] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Mist],
+    @UUID[Compendium.pf2e.spells-srd.Item.Resist Energy] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Earthbind],
+    @UUID[Compendium.pf2e.spells-srd.Item.Fireball] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Fire], @UUID[Compendium.pf2e.spells-srd.Item.Weapon Storm] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Howling
+    Blizzard], @UUID[Compendium.pf2e.spells-srd.Item.Impaling Spike] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Chain
+    Lightning], @UUID[Compendium.pf2e.spells-srd.Item.Disintegrate] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Energy
+    Aegis], @UUID[Compendium.pf2e.spells-srd.Item.True Target] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Arctic
+    Rift], @UUID[Compendium.pf2e.spells-srd.Item.Desiccate] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Falling
+    Stars] School Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Force Bolt];
+    advanced: @UUID[Compendium.pf2e.spells-srd.Item.Energy Absorption]"
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2a14a0a8c7d7751fa9b2eb51bf735de1a2a551d279c87fbcfc11d3dbea60b4e6
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

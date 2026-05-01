@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_vEl3OBUsSmPh8b4N
+  m_EditorClassIdentifier: 
+  SourceId: vEl3OBUsSmPh8b4N
+  Slug: friendly-darkmoon-kobold
+  DisplayName: Friendly Darkmoon Kobold
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: It has taken time, but over the years, you've managed to find a place
+    among the citizens of Falcon's Hollow. While many still distrust kobolds, they
+    at least see you as a fellow villager, if not a friend, and you've got quite
+    the talent for quickly convincing larger groups of people that you mean them
+    no harm. Choose any two ability boosts. One must be to Wisdom or Charisma , and
+    one is a free attribute boost. You're trained in the Diplomacy skill and Kobold
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group Impression]
+    skill feat.
+  SourceTitle: 'Pathfinder Adventure: Crown of the Kobold King'
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: eb582973d96fa85b6e2f3a2f89a8fd47006ac722bb7883d4ce794049f830fb6b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Kobold
+    Rank: 1
+  LoreSkills:
+  - Kobold
+  GrantedFeats:
+  - SourceKey: EZShN
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_TALz3cU06Hb14Key
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: TALz3cU06Hb14Key
+  Slug: stylish-combatant
+  DisplayName: Stylish Combatant
+  IconPath: icons/skills/melee/maneuver-greatsword-yellow.webp
+  Description: You gain a +1 circumstance bonus to skill checks with the bravado
+    trait while in a combat encounter. While you have panache, you gain a +5-foot
+    status bonus to your Speeds.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d8f7bf9aeea54bc9d4d2953fe0ead60d3c214483b8d4ac540c64876352a54d90
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["item:trait:bravado",{"or":["encounter","feature:continuous-flair"]}],"selector":"skill-check","slug":"stylish-combatant-skill","type":"circumstance","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 5
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["self:effect:panache",{"and":["feature:vivacious-speed",{"not":"self:effect:panache"}]}]}],"selector":"speed","slug":"stylish-combatant-speed","type":"status","value":5}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

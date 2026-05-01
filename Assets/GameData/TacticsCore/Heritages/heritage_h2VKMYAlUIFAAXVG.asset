@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_h2VKMYAlUIFAAXVG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: h2VKMYAlUIFAAXVG
+  Slug: nyktera
+  DisplayName: Nyktera
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have batlike features, an affinity for batkind, and hearing that
+    is second to none. As long as you can hear normally, you can use the Seek action
+    to sense @UUID[Compendium.pf2e.conditionitems.Item.Undetected] creatures in a
+    @Template[cone|distance:60] instead of a @Template[cone|distance:30]. You also
+    gain a +2 circumstance bonus to locate undetected creatures that you could hear
+    within 30 feet with a Seek action.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: a7b8517f6f7ba69f48bc873d2330d300202ed85bf1b94a68ac73d07e199a2982
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"To seek undetected you can hear within
+      30 feet (Nyktera)","predicate":["action:seek","target:audible","target:condition:undetected","target:within-30"],"selector":"perception","type":"circumstance","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TRqoeYfGAFjQbviF
+    SourceId: 
+    Slug: sprite
+    DisplayName: Sprite
+  ParentAncestryAsset: {fileID: 11400000, guid: afedc73b20f7005478723c5b1a6b86f8, type: 2}
+  GrantedFeatures: []

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     /// <summary>
     /// Scene baker that converts TerrainBlock placements into layered grid nodes.

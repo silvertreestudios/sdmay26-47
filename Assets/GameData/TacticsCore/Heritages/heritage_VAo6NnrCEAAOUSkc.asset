@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_VAo6NnrCEAAOUSkc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: VAo6NnrCEAAOUSkc
+  Slug: resolute-fetchling
+  DisplayName: Resolute Fetchling
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: "Your ancestors have long dealt with the horrific\u2014in the Shadow
+    Plane or elsewhere\u2014and you bear their mental fortitude. When you roll a
+    success on a saving throw against an emotion effect, you get a critical success
+    instead."
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 6ffa09375a3ea76a97f0748fcf43390aa494780f19b75c1c0cbd0dc43a465a76
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["emotion"],"selector":"saving-throw","type":"skill"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.hIA3qiUsxvLZXrFP
+    SourceId: 
+    Slug: fetchling
+    DisplayName: Fetchling
+  ParentAncestryAsset: {fileID: 11400000, guid: c2bb1fdeb31da2345857e61e8354e1aa, type: 2}
+  GrantedFeatures: []

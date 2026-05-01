@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     public static class Pathfinding
     {

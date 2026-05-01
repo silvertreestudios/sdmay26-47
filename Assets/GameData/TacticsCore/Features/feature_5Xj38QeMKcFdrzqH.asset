@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_5Xj38QeMKcFdrzqH
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 5Xj38QeMKcFdrzqH
+  Slug: phlogistonic-regulator
+  DisplayName: Phlogistonic Regulator
+  IconPath: icons/magic/defensive/armor-shield-barrier-steel.webp
+  Description: A layer of insulation within your armor protects you from rapid temperature
+    fluctuations. You gain resistance equal to half your level to cold and fire damage.
+    When under the effects of Overdrive, the resistance increases by 2.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 889b2d026cc31eb146037f2c879c0b43c4a173acc31f1258542edff19d27f8d6
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"floor(@actor.level / 2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}"],"type":["cold","fire"],"value":"floor(@actor.level
+      / 2)"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"2 + floor(@actor.level / 2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}",{"or":["self:effect:overdrive-success","self:effect:overdrive-critical-success"]}],"type":["cold","fire"],"value":"2
+      + floor(@actor.level / 2)"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

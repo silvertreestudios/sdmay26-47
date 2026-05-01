@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_LIV2gH3ZUFlu0zu4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: LIV2gH3ZUFlu0zu4
+  Slug: curse-of-inclement-headwinds
+  DisplayName: Curse of Inclement Headwinds
+  IconPath: icons/magic/air/wind-tornado-funnel-damage-blue.webp
+  Description: The weather seems to always oppose you in ways large and small. Even
+    when you are calm and at rest, your hair and clothing are inconveniently blown
+    about by gentle winds, you are slightly damp from the faintest drizzle, and your
+    touch often comes with a static shock. When you have the @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]
+    condition, you are opposed by the elements, with the following effects. Cursebound
+    1 Lightning is drawn to you. You gain electricity weakness 2 and electricity
+    spells or effects that have additional effects for a creature wearing or holding
+    metal treat you as though you were wearing metal. Any immunity or resistance
+    you have to such spells and effects is suppressed. Cursebound 2 Blowing winds
+    impose a -2 circumstance penalty to ranged attack rolls you make. Cursebound
+    3 Your weakness to electricity is equal to 5 + your level. Cursebound 4 The raging
+    winds push you back, imposing a -10-foot status penalty to all your Speeds.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 7ac5e03c7bdedb5f51df3fddc9f38d2cd457ca6a77af1323c6df197b26f9508e
+  Traits:
+  - curse
+  - divine
+  - oracle
+  TraitsLower:
+  - curse
+  - divine
+  - oracle
+  RawRules:
+  - Key: Weakness
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.conditions.cursebound.value,3),5+@actor.level,2)"'
+    Uuid: 
+    Json: '{"key":"Weakness","predicate":["self:condition:cursebound"],"type":"electricity","value":"ternary(gte(@actor.conditions.cursebound.value,3),5+@actor.level,2)"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: -2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"gte":["self:condition:cursebound",2]}],"selector":"ranged-attack-roll","type":"circumstance","value":-2}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: -10
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:condition:cursebound:4"],"selector":"speed","value":-10}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_OtqOC3ElpF444qMe
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: OtqOC3ElpF444qMe
+  Slug: discarded-fleshwarp
+  DisplayName: Discarded Fleshwarp
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: "The biomancers and mutagenists who warped your form labeled you a
+    \"discard on discovery\"\u2014a euphemism for destroying you on sight. An anomaly
+    among anomalies, your body stubbornly repudiates the efforts of fleshcrafters
+    seeking to mold you to their grandiose visions, and your immune responses blunt
+    the worst effects of unwanted fleshwarping attempts. If you roll a success on
+    a saving throw against a transmutation effect, you get a critical success instead."
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: a9432d046cbb0f9fd923ec37b90dbb0717f84f0ef4ebb84fb11e0dce5a11dda8
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","outcome":["success"],"predicate":["transmutation"],"selector":"saving-throw","type":"save"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.FXlXmNBFiiz9oasi
+    SourceId: 
+    Slug: fleshwarp
+    DisplayName: Fleshwarp
+  ParentAncestryAsset: {fileID: 11400000, guid: 0a2d0aca9a4b5a7458e4d411a0bf9d0e, type: 2}
+  GrantedFeatures: []

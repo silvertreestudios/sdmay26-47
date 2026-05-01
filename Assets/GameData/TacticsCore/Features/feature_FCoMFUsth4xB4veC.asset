@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_FCoMFUsth4xB4veC
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: FCoMFUsth4xB4veC
+  Slug: liberation
+  DisplayName: Liberation
+  IconPath: icons/creatures/birds/songbird-yellow-flying.webp
+  Description: You will see all people free from bondage and prohibitions. Edicts
+    oppose slavery and tyranny, fight for others' freedom to make their own decisions,
+    respect choices others make for their own lives Anathema force or threaten someone
+    to act a certain way, engage in slavery or tyranny Champion's Reaction @UUID[Compendium.pf2e.actionspf2e.Item.Liberating
+    Step] Relentless Reaction (9th Level) You punish those who ensnare your allies.
+    If the triggering enemy was using any effects to make your ally @UUID[Compendium.pf2e.conditionitems.Item.Grabbed],
+    @UUID[Compendium.pf2e.conditionitems.Item.Restrained], @UUID[Compendium.pf2e.conditionitems.Item.Immobilized],
+    or @UUID[Compendium.pf2e.conditionitems.Item.Paralyzed] when you used Liberating
+    Step, that enemy takes persistent spirit damage equal to your Charisma modifier.
+    Exalted Reaction (11th Level) In addition to the ally affected by Liberating
+    Step, you and all other allies in your champion's aura can Step as a free action.
+    You and your allies gain the benefit even if the ally who benefited from Liberating
+    Step can't move.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ba5f0fef9ac607a7450cd364c07ea5eb6fe8e27dab6bfa7ba6f03faba16ced06
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Liberating Step
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"or":["class:champion","feat:champions-reaction"]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.actionspf2e.Item.Liberating
+      Step"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Liberating Step
+    SourceId: 
+    DisplayName: Liberating Step
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

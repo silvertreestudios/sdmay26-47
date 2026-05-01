@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_qRLRrHf0kzaJ7xt0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: qRLRrHf0kzaJ7xt0
+  Slug: way-of-the-pistolero
+  DisplayName: Way of the Pistolero
+  IconPath: systems/pf2e/icons/features/classes/way-of-the-pistolero.webp
+  Description: Whether you're a professional duelist or a pistol-twirling entertainer,
+    you have quick feet and quicker hands that never seem to let you down, and an
+    equally sharp wit and tongue that jab your foes. You might leave a hand free
+    or cultivate the ambidexterity for twin weapons. Either way, you stay close enough
+    to your enemies to leverage your superior reflexes while leaving enough space
+    to safely fire. Slinger's Reload @UUID[Compendium.pf2e.actionspf2e.Item.Raconteur's
+    Reload] Deeds Initial @UUID[Compendium.pf2e.actionspf2e.Item.Ten Paces]; Advanced
+    @UUID[Compendium.pf2e.actionspf2e.Item.Pistolero's Retort]; Greater @UUID[Compendium.pf2e.actionspf2e.Item.Grim
+    Swagger] Way Skill choose Deception or Intimidation
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5e4f6f0d421b7b9a9620d25765eecabd877da93368fb71b30fc5ce5d3a26f578
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Raconteur's Reload
+    Json: '{"key":"GrantItem","predicate":["class:gunslinger"],"uuid":"Compendium.pf2e.actionspf2e.Item.Raconteur''s
+      Reload"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Ten Paces
+    Json: '{"key":"GrantItem","predicate":["class:gunslinger"],"uuid":"Compendium.pf2e.actionspf2e.Item.Ten
+      Paces"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Deception","value":"deception"},{"label":"PF2E.Skill.Intimidation","value":"intimidation"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Raconteur's Reload
+    SourceId: 
+    DisplayName: Raconteur's Reload
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Ten Paces
+    SourceId: 
+    DisplayName: Ten Paces
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

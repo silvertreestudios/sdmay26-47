@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_T6p6lZnGupq3CX6A
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: T6p6lZnGupq3CX6A
+  Slug: adept-benefit-chalice
+  DisplayName: Adept Benefit (Chalice)
+  IconPath: icons/containers/kitchenware/goblet-jeweled-red.webp
+  Description: 'The life essence shed from blood empowers your chalice. If you or
+    an ally within 30 feet takes piercing or slashing damage from a foe''s critical
+    hit or takes persistent bleed damage, Drinking from the Chalice before the end
+    of your next turn grants that injured creature greater restoration to make up
+    for its lost vitality. On a sip, the temporary Hit Points granted to the creature
+    increase to 2 + your Charisma modifier + your level. When drained, the chalice
+    heals the creature 5 Hit Points for each level you have. @UUID[Compendium.pf2e.feat-effects.Item.Effect:
+    Chalice Adept Benefit (Self)]'
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2130c647294aee756e359465f8cf040710a4a1e10659cd9c329a945a6527444a
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.paragonChoices
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Chalice.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Chalice)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.paragonChoices","priority":20,"value":{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Chalice.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Chalice)"}}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":[{"or":[{"and":["origin:enemy","check:outcome:critical-success",{"or":["item:damage:type:piercing","item:damage:type:slashing"]}]},"item:damage:type:bleed"]}],"selector":"damage-received","text":"PF2E.SpecificRule.Thaumaturge.Implement.Chalice.Adept.Note","title":"{item|name}"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

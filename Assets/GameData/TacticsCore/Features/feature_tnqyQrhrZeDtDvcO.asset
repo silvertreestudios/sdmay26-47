@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_tnqyQrhrZeDtDvcO
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: tnqyQrhrZeDtDvcO
+  Slug: greater-field-discovery-toxicologist
+  DisplayName: Greater Field Discovery (Toxicologist)
+  IconPath: icons/commodities/bones/skull-hollow-white.webp
+  Description: When a creature fails its initial saving throw against an infused
+    injury poison you created, the wound sprays poison onto another creature adjacent
+    to it. The attacker who caused the injury chooses which creature, if there's
+    more than one, and can choose to forgo this effect. That creature is exposed
+    to the poison. The second creature doesn't spread the poison further.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8d81b47c6ed9c90199205497bfac28285a7b11869c56bc33f14ff3b0a7d539d3
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

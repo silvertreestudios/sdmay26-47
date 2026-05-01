@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_bDyb0k0rTfDTyhd8
+  m_EditorClassIdentifier: 
+  SourceId: bDyb0k0rTfDTyhd8
+  Slug: geb-crusader
+  DisplayName: Geb Crusader
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Impossible Lands You grew up considering the
+    existence of the undead nation of Geb an atrocity and trained to one day take
+    part in destroying it and putting its vile inhabitants to their final rest. Key
+    to your preparations is a thorough study of Pharasma, Urgathoa, and other undead-related
+    deities and their philosophies. Choose two attribute boosts. One must be to Constitution
+    or Wisdom , and one is a free attribute boost. You're trained in the Religion
+    skill and the Undead Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Student
+    of the Canon] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: c15f17850bd39edbdcf5bf9164c4e3e3adc6f02f6809099bf40527c8e9424cbd
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead Lore
+    Rank: 1
+  LoreSkills:
+  - Undead Lore
+  GrantedFeats:
+  - SourceKey: 9uslx
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Student of the Canon
+    SourceId: 
+    DisplayName: Student of the Canon
+    Level: 1
+    ResolvedFeature: {fileID: 0}

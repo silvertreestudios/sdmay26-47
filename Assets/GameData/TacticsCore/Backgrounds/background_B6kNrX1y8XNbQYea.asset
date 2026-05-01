@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_B6kNrX1y8XNbQYea
+  m_EditorClassIdentifier: 
+  SourceId: B6kNrX1y8XNbQYea
+  Slug: goldhand-arms-dealer
+  DisplayName: Goldhand Arms Dealer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're a dwarven agent of the Goldhand Lodge, a collection of dwarven
+    merchants based out of Dongun Hold who seeks to sell guns far and wide. High
+    King Anong Arunak hasn't expressed approval for such a method of distribution
+    yet, but in the meantime you're still out and about, talking up your wares and
+    occasionally providing visceral demonstrations of the overwhelming stopping power
+    of your firearms. These demonstrations and sales have given you a taste for adventure,
+    and the constant threat of piracy has convinced you of the importance of adventuring
+    with a group. Choose two attribute boosts. One must be to Dexterity or Charisma
+    , and one is a free attribute boost. You're trained in Diplomacy and Mercantile
+    Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group Impression] skill
+    feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 09ac86cbfc08839f17c3b29635e00925f4b0858f77006eda1f855c12206bd5f5
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mercantile Lore
+    Rank: 1
+  LoreSkills:
+  - Mercantile Lore
+  GrantedFeats:
+  - SourceKey: pu062
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

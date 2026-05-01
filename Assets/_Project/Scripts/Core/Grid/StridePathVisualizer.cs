@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Combat;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     public class StridePathVisualizer : MonoBehaviour
     {

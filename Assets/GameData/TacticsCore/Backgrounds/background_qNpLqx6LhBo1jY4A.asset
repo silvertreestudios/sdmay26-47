@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_qNpLqx6LhBo1jY4A
+  m_EditorClassIdentifier: 
+  SourceId: qNpLqx6LhBo1jY4A
+  Slug: blow-in
+  DisplayName: Blow-In
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You never expected to join a circus, but you were looking for a good
+    place to lie low for reasons of your own. The Circus of Wayward Wonders came
+    together with several different workers and performers a few months ago. Many
+    came from a circus in Escadar called the Celestial Menagerie, but not all of
+    them. It was easy to slip in among the roustabouts. Although you''d planned to
+    move on quickly, the circus folk have adopted you as one of their own, and they
+    don''t ask questions about your past. Choose two attribute boosts. One must be
+    to Dexterity or Charisma , and one is a free attribute boost. You''re trained
+    in your choice of the Deception or Thievery skills. You gain a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Lengthy
+    Diversion] if you chose Deception, or @UUID[Compendium.pf2e.feats-srd.Item.Subtle
+    Theft] if you chose Thievery. You are also trained in the Underworld Lore skill.'
+  SourceTitle: Pathfinder Extinction Curse Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 225c9e606af07ea9b55823ed13c7b550b12966872481486da222cbec4de9f0d4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Deception","value":"deception"},{"label":"PF2E.Skill.Thievery","value":"thievery"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"blow-in"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Lengthy Diversion
+    Json: '{"key":"GrantItem","predicate":["blow-in:deception"],"uuid":"Compendium.pf2e.feats-srd.Item.Lengthy
+      Diversion"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Subtle Theft
+    Json: '{"key":"GrantItem","predicate":["blow-in:thievery"],"uuid":"Compendium.pf2e.feats-srd.Item.Subtle
+      Theft"}'
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats: []

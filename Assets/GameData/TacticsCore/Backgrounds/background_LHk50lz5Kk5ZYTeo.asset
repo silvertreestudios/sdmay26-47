@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_LHk50lz5Kk5ZYTeo
+  m_EditorClassIdentifier: 
+  SourceId: LHk50lz5Kk5ZYTeo
+  Slug: abadar-s-avenger
+  DisplayName: Abadar's Avenger
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Hao Jin really has some nerve for a supposed disciple of Abadar. First,
+    she dares to start a collection of trinkets in hopes of emulating the great Abadar's
+    unsurpassable First Vault. As if that weren't enough, she also sets up a contest
+    to give away her most powerful treasures to anyone who can throw a punch! Abadar
+    hasn't directly told you as much, per se, but surely this kind of hubris can't
+    sit well with your beloved deity, regardless of Hao Jin's own supposed ties to
+    the Master of the First Vault. At the very least, someone's got to check out
+    this shoddy imitation of the First Vault and write a report for the church of
+    Abadar - and you've decided that someone is you. With or without the blessing
+    of an actual priest of Abadar, you've taken it upon yourself to investigate Hao
+    Jin's "wondrous" vault by winning her Ruby Phoenix Tournament. You read a few
+    flyers about the tournament's home city and joined the first team that could
+    handle your righteous zealotry, but any more preparation would be a waste of
+    time. You clearly have the divine will of Abadar on your side (but again, no
+    actual proof of this), which is all you'll need to win this tournament and dispel
+    any notions of Hao Jin's ties to your patron deity. Choose two attribute boosts.
+    One must be to Charisma or Wisdom , and one is a free attribute boost. You're
+    trained in Religion and the Goka Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance]
+    skill feat with Religion.
+  SourceTitle: Pathfinder Fists of the Ruby Phoenix Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 256afb6446e008f69e8da7f7763435fe2cfd34f27d555f9ab2459dde8b5e8b3d
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"religion"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Goka
+    Rank: 1
+  LoreSkills:
+  - Goka
+  GrantedFeats: []

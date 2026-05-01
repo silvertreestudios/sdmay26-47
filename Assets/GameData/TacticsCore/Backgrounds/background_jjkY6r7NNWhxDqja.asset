@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_jjkY6r7NNWhxDqja
+  m_EditorClassIdentifier: 
+  SourceId: jjkY6r7NNWhxDqja
+  Slug: once-bitten
+  DisplayName: Once Bitten
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: After an altercation with an undead creature, you feared you might
+    be infected. Either through medical intervention, luck, or misunderstanding how
+    undeath spreads, your fears abated. However, your brush with living death taught
+    you the value of life. You do whatever you can to avoid the end you thought you'd
+    been fated. Choose two attribute boosts. One must be to Dexterity or Wisdom ,
+    and one is a free attribute boost. You're trained in the Medicine skill and the
+    Undead Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Battle Medicine]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens Knights of Lastwall
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 982278030fccb10653b9e9813a13d1d5a351698fdfbb04690dbcd8f126d283a5
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead
+    Rank: 1
+  LoreSkills:
+  - Undead
+  GrantedFeats:
+  - SourceKey: q6qj2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

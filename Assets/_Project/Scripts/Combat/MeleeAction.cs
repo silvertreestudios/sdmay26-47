@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
-using PathfinderTactics.InputSystem;
-using PathfinderTactics.Items;
+using TacticsGame.Characters;
+using TacticsGame.Combat;
+using TacticsGame.Core;
+using TacticsGame.Grid;
+using TacticsGame.InputSystem;
+using TacticsGame.Items;
 using UnityEngine;
 
-namespace PathfinderTactics.Actions
+namespace TacticsGame.Actions
 {
     public class MeleeAction : BaseAction
     {
@@ -182,7 +182,7 @@ namespace PathfinderTactics.Actions
                 return;
             }
 
-            int driftDistance = PF2E_Core.GetChebyshevDistance3D(
+            int driftDistance = TacticsRuleset_Core.GetChebyshevDistance3D(
                 intendedTargetTile,
                 intendedTargetUnit.CurrentLayeredPosition
             );
@@ -239,7 +239,7 @@ namespace PathfinderTactics.Actions
             bool isAgileWeapon = weapon.HasTrait(WeaponTrait.Agile);
             bool isFinesseWeapon = weapon.HasTrait(WeaponTrait.Finesse);
 
-            int level = stats.level;
+            int level = stats.GetLevel();
             int strengthMod = unit.GetAbilityModifier(AbilityScore.STR);
             int dexMod = unit.GetAbilityModifier(AbilityScore.DEX);
             int attackStatMod = isFinesseWeapon ? Mathf.Max(strengthMod, dexMod) : strengthMod;
@@ -255,7 +255,7 @@ namespace PathfinderTactics.Actions
             else if (attacksMade >= 2)
                 mapPenalty = isAgileWeapon ? -8 : -10;
 
-            int attackBonus = PF2E_Core.CalculateAttackRollModifier(
+            int attackBonus = TacticsRuleset_Core.CalculateAttackRollModifier(
                 unit,
                 attackStat,
                 attackStatMod,
@@ -285,11 +285,23 @@ namespace PathfinderTactics.Actions
             CombatLogUtility.LogDefenseStage(targetUnit, acBreakdown, coverBonus);
             int finalAC = baseAC + coverBonus;
 
+            // Calculate the base static bonus (Level + Proficiency + Stat)
+            int baseStatBonus = TacticsRuleset_Core.CalculateModifier(
+                level,
+                weaponProf,
+                attackStatMod
+            );
+
+            // Calculate final attack bonus including MAP
+            int finalAttackBonus = baseStatBonus + mapPenalty;
+
             unit.IncrementAttacksThisTurn();
             int d20 = UnityEngine.Random.Range(1, 21);
 
-            CombatLogUtility.LogAttackStage(unit, this, d20, attackBonus, 0);
-            Degree result = PF2E_Core.CheckResult(d20, attackBonus, finalAC);
+            CombatLogUtility.LogAttackStage(unit, this, d20, baseStatBonus, mapPenalty);
+
+            // Check result using the combined bonus
+            Degree result = TacticsRuleset_Core.CheckResult(d20, finalAttackBonus, finalAC);
             CombatLogUtility.LogResult(result);
 
             if (result == Degree.Success || result == Degree.CriticalSuccess)
@@ -373,7 +385,7 @@ namespace PathfinderTactics.Actions
 
                 Vector3Int targetPos = target.CurrentLayeredPosition;
 
-                int dist = PF2E_Core.GetChebyshevDistance3D(attackerPos, targetPos);
+                int dist = TacticsRuleset_Core.GetChebyshevDistance3D(attackerPos, targetPos);
                 if (dist > reach)
                     continue;
 

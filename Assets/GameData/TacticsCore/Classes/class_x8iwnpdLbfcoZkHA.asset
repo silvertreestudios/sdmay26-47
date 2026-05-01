@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_x8iwnpdLbfcoZkHA
+  m_EditorClassIdentifier: 
+  SourceId: x8iwnpdLbfcoZkHA
+  Slug: champion
+  DisplayName: Champion
+  IconPath: systems/pf2e/icons/classes/champion.webp
+  Description: You are an emissary of a deity, a devoted servant who has taken up
+    a weighty mantle, and you adhere to a code that holds you apart from those around
+    you. While champions exist for every alignment, as a champion of good, you provide
+    certainty and hope to the innocent. You have powerful defenses that you share
+    freely with your allies and innocent bystanders, as well as holy power you use
+    to end the threat of evil. Your devotion even attracts the attention of holy
+    spirits who aid you on your journey. Champion
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: b759074a3550207eafc1460b8b2453a9e2062a36286ce801e2fa27f0253ae2ba
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 10
+  KeyAttributes: 0200000001000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 1
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 2
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 7OlZe
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Deity (Champion)
+    SourceId: ehL7mnkqxN5wIkgu
+    DisplayName: Deity (Champion)
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 50fac421e252cfc48838fe7dcc9fa90e, type: 2}
+  - SourceKey: 8tXhz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Cause
+    SourceId: D4k8wuq1ncHFCBZz
+    DisplayName: Cause
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 7c08c22c96496734d94630a57088a4e1, type: 2}
+  - SourceKey: Kj8pb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Devotion Spells
+    SourceId: Q1VfQZp49hkhY0HY
+    DisplayName: Devotion Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: ddf78f4d48394344c8757543ad0558ec, type: 2}
+  - SourceKey: THFFj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  GrantedFeatures:
+  - SourceKey: 06620
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Armor Expertise
+    SourceId: x5jaCJxsmD5sx3KB
+    DisplayName: Armor Expertise
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 09d2422847110404085adc1a9f327d38, type: 2}
+  - SourceKey: 1EIub
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Champion Expertise
+    SourceId: VgmfNKtQLgBaNi5r
+    DisplayName: Champion Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: e90535968a306964a879d4a1b2e6c03a, type: 2}
+  - SourceKey: 1lzo3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: TUOeATt52P43r5W0
+    DisplayName: Reflex Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 539148cfddca53c4488f47d820d2f718, type: 2}
+  - SourceKey: 467es
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Champion Mastery
+    SourceId: z5G0o04uV65zyxDB
+    DisplayName: Champion Mastery
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: d5d0838a11538294991f7194b2d75f44, type: 2}
+  - SourceKey: 5z8hr
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 7OlZe
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Deity (Champion)
+    SourceId: ehL7mnkqxN5wIkgu
+    DisplayName: Deity (Champion)
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 50fac421e252cfc48838fe7dcc9fa90e, type: 2}
+  - SourceKey: 8tXhz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Cause
+    SourceId: D4k8wuq1ncHFCBZz
+    DisplayName: Cause
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 7c08c22c96496734d94630a57088a4e1, type: 2}
+  - SourceKey: 967sh
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Armor
+    SourceId: voiSCh7ZXA2ogwiC
+    DisplayName: Legendary Armor
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 8cd6a94a6262c3e4fba37078dc7b4e6f, type: 2}
+  - SourceKey: F0OhR
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Exalted Reaction
+    SourceId: uptzvOLrZ3fctrl2
+    DisplayName: Exalted Reaction
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 77bb7d58cb743f14cadf1cad57e886ef, type: 2}
+  - SourceKey: Kj8pb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Devotion Spells
+    SourceId: Q1VfQZp49hkhY0HY
+    DisplayName: Devotion Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: ddf78f4d48394344c8757543ad0558ec, type: 2}
+  - SourceKey: THFFj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  - SourceKey: UVWUN
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Blessing of the Devoted
+    SourceId: ERwuazupczhUSZ73
+    DisplayName: Blessing of the Devoted
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 6180f3aa6ddbe8e4dad5d9c9e5df5b6d, type: 2}
+  - SourceKey: d0us1
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Divine Will
+    SourceId: xygfZopqXBJ6dKBA
+    DisplayName: Divine Will
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: e99b2565df27f694d8561370a656cc34, type: 2}
+  - SourceKey: gzf67
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Relentless Reaction
+    SourceId: 3XK573A7GH1rrLgO
+    DisplayName: Relentless Reaction
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 302ea40a014418544a71b9702a2d6ac3, type: 2}
+  - SourceKey: m8rj4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: nT8sV
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: pgk3u
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Armor Mastery
+    SourceId: CGB1TczFhQhdQxml
+    DisplayName: Armor Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 0f31acf69e68a4b4cb99a3fe02274e3b, type: 2}
+  - SourceKey: r3xJI
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Sacred Body
+    SourceId: AkIJrmsX3kjHqQ0b
+    DisplayName: Sacred Body
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 1f30f537d9248a24d83d9f175d3986dc, type: 2}
+  - SourceKey: r4pcs
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Hero's Defiance
+    SourceId: LzB6X9vOaq3wq1FZ
+    DisplayName: Hero's Defiance
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: ec8041283c68109429cf256e3f96c3a6, type: 2}
+  - SourceKey: rPn69
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: Z7HX6TeFsaup7Dx9
+    DisplayName: Greater Weapon Specialization
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: e8328fb7ab4419d479ca3cb33e9ee85b, type: 2}
+  - SourceKey: rwf2s
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Martial Weapon Mastery
+    SourceId: ejP4jVQkS48uKRFz
+    DisplayName: Weapon Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 72296cf886f10134f8a893bc0ff539aa, type: 2}

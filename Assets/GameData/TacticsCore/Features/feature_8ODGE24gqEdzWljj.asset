@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_8ODGE24gqEdzWljj
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 8ODGE24gqEdzWljj
+  Slug: curse-of-the-living-death
+  DisplayName: Curse of the Living Death
+  IconPath: icons/magic/death/skeleton-skull-soul-blue.webp
+  Description: "Your body is slowly decaying even though you are alive, and using
+    your powers furthers this unnatural living death, making you susceptible to both
+    void and vitality damage. You carry a touch of the grave about you, manifesting
+    as bloodless pallor, a faint smell of earth, or deathly cold skin. Cursebound
+    1 You gain weakness 2 to vitality and void damage. You can be hurt by both vitality
+    and void damage even if one or the other normally has no effect on you. Any immunity
+    or resistance you have to vitality or void is suppressed. Cursebound 2 You take
+    a \u20131 status penalty to Fortitude saves. Cursebound 3 Your weakness to vitality
+    and void damage is equal to 5 + your level. Cursebound 4 Your status penalty
+    to Fortitude saving throws increases to \u20132."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e48c484b66e9261d0a52532b6dfbaa7632ac8d82dea7a3c4b0ab14fb7311d903
+  Traits:
+  - curse
+  - divine
+  - oracle
+  - vitality
+  - void
+  TraitsLower:
+  - curse
+  - divine
+  - oracle
+  - vitality
+  - void
+  RawRules:
+  - Key: Weakness
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.conditions.cursebound.value,3),5+@actor.level,2)"'
+    Uuid: 
+    Json: '{"key":"Weakness","predicate":["self:condition:cursebound"],"type":["vitality","void"],"value":"ternary(gte(@actor.conditions.cursebound.value,3),5+@actor.level,2)"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.conditions.cursebound.value,4),-2,-1)"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"gte":["self:condition:cursebound",2]}],"selector":"fortitude","type":"status","value":"ternary(gte(@actor.conditions.cursebound.value,4),-2,-1)"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

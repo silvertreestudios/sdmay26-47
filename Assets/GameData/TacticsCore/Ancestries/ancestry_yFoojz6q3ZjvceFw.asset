@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_yFoojz6q3ZjvceFw
+  m_EditorClassIdentifier: 
+  SourceId: yFoojz6q3ZjvceFw
+  Slug: azarketi
+  DisplayName: Azarketi
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/azarketi.svg
+  Description: Azarketis, inheritors of a shattered empire's legacy, hold their proud
+    traditions close but still surface to interact with the rest of the world. The
+    aquatic humanoids of the Inner Sea share a somber and burdened history. Most
+    refer to these aquatic peoples as gillmen or sometimes Low Azlanti, though they
+    typically refer to themselves as azarketi, an Azlanti word that translates roughly
+    to "people of the seas." After Earthfall, these proud humans were mutated into
+    aquatic servants by their alghollthu foes. Feeling like they don't fully belong
+    with their human brethren nor with the sea that binds them, many azarketis struggle
+    for a sense of identity and purpose. Though they remain distrusted by the surface
+    dwellers, azarketis celebrate their unique lineage and their descent from the
+    venerated Azlanti culture. Azarketi
+  SourceTitle: Pathfinder Lost Omens Absalom, City of Lost Omens
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: d84df2ffa0718cf556bbddc32de64a191201e4ad49a2aaa222970215f093bb6f
+  Traits:
+  - amphibious
+  - azarketi
+  - humanoid
+  TraitsLower:
+  - amphibious
+  - azarketi
+  - humanoid
+  RawRules: []
+  HitPoints: 8
+  Speed: 20
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 03000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 05000000
+  StartingLanguages:
+  - Id: alghollthu
+    DisplayName: Alghollthu
+  - Id: common
+    DisplayName: Common
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: azlanti
+    DisplayName: Azlanti
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: thalassic
+    DisplayName: Thalassic
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: mfgye
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Hydration
+    SourceId: 
+    DisplayName: Hydration
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: pvkub
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Swim
+    SourceId: 
+    DisplayName: Swim
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: f240a9a05d996e8499785164b0890eb4, type: 2}
+  - {fileID: 11400000, guid: 7df4cbfd645f8a34fbad3868f10f3719, type: 2}
+  - {fileID: 11400000, guid: e78eec47178e1ac4cb65978e85061d23, type: 2}
+  - {fileID: 11400000, guid: ebc76654ee0be844682c732485c1b21b, type: 2}
+  - {fileID: 11400000, guid: 514f7a80a8fa85643a69113207f5cd70, type: 2}
+  - {fileID: 11400000, guid: 6de81bcc75aa0fe4f80cbdbd75da869b, type: 2}
+  - {fileID: 11400000, guid: d58c753155b382d42868a81232726eb4, type: 2}
+  - {fileID: 11400000, guid: cdd25e6f88dc2b5499f9157b58412a7d, type: 2}
+  - {fileID: 11400000, guid: bc59dde0ec9ac5440b4042cd3426868c, type: 2}

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_KO33MNyY9VqNQmbZ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: KO33MNyY9VqNQmbZ
+  Slug: wintertouched-human
+  DisplayName: Wintertouched Human
+  IconPath: systems/pf2e/icons/features/ancestry/wintertouched-human.webp
+  Description: The power of winter flows through you. This heritage is most common
+    among the Jadwiga of Irrisen, due to their descent from Baba Yaga, and certain
+    Erutaki touched by the spirits. You gain cold resistance equal to half your level
+    (minimum 1), and you treat environmental cold effects as if they were one step
+    less extreme (incredible cold becomes extreme, extreme cold becomes severe, and
+    so on).
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 2250114a5f7ac88f72dbf00d31f3ddcb7642c67bfed2963ce7b6df02d4790385
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"cold","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.IiG7DgeLWYrSNXuX
+    SourceId: 
+    Slug: human
+    DisplayName: Human
+  ParentAncestryAsset: {fileID: 11400000, guid: 4a3abab8c09a4f0438706848bea28ef6, type: 2}
+  GrantedFeatures: []

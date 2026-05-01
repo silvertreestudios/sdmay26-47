@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_lBSO9RuEUv2P4rnp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: lBSO9RuEUv2P4rnp
+  Slug: gandharva
+  DisplayName: Gandharva
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're descended from the self-proclaimed musicians, poets, and dancers
+    of the gods, with a body that's part humanoid and part horse or bird. If you
+    gain wings, they come in many different brilliant colors. Due to your celestial
+    connection, the tradition of any spells or magical abilities you gain from a
+    sprite heritage or ancestry feat is divine instead of its normal tradition. You
+    become trained in Performance (or another skill of your choice if you're already
+    trained in Performance), and you can cast @UUID[Compendium.pf2e.spells-srd.Item.Summon
+    Instrument] as a divine innate cantrip.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 74fc44c5361ac36fca4c642f665907d7648bbdc3dd4bdb8021568be19293d8c4
+  Traits:
+  - sprite
+  TraitsLower:
+  - sprite
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.performance.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.performance.rank","value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:summon-instrument","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:sprite"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:summon-instrument","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:sprite"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TRqoeYfGAFjQbviF
+    SourceId: 
+    Slug: sprite
+    DisplayName: Sprite
+  ParentAncestryAsset: {fileID: 11400000, guid: afedc73b20f7005478723c5b1a6b86f8, type: 2}
+  GrantedFeatures: []

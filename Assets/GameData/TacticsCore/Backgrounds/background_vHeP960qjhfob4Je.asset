@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_vHeP960qjhfob4Je
+  m_EditorClassIdentifier: 
+  SourceId: vHeP960qjhfob4Je
+  Slug: scavenger
+  DisplayName: Scavenger
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've made a living sorting through the things society throws away.
+    You might have scavenged simply to survive, or plied a trade as a ragpicker,
+    dung carter, or the like. While you've left that life behind, you still keep
+    one eye on the ground out of habit. Choose two attribute boosts. One must be
+    to Intelligence or Wisdom , and one is a free attribute boost. You're trained
+    in the Survival skill and the Lore skill for the settlement you grew up scavenging
+    in. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Forager] skill feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 29b5203ea863212c96aff18557b0b4d2bd52dec89d31866b106b26fd406d441b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <City> Lore
+    Rank: 1
+  LoreSkills:
+  - <City> Lore
+  GrantedFeats:
+  - SourceKey: y8g6e
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forager
+    SourceId: 
+    DisplayName: Forager
+    Level: 1
+    ResolvedFeature: {fileID: 0}

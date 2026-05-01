@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_q1OCPBAgYgvwy1Of
+  m_EditorClassIdentifier: 
+  SourceId: q1OCPBAgYgvwy1Of
+  Slug: megafauna-hunter
+  DisplayName: Megafauna Hunter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Life is only as meaningful as its risks, and the risks you're willing
+    to take are big indeed. Like Wipa's half-sister Panuaku, Mammoth Lord Merthig,
+    and Eiwa's great-grandnephew Pakano, you revel in the thrill of the hunt, especially
+    when it involves mortal combat with megafauna, dinosaurs, and other oversized
+    beasts. Though you're still early in your hunting career, your talent shows great
+    promise, and you have a natural knack for tracking and taking down big game such
+    as moose, saber-toothed tigers, and even wild mammoths. Choose two attribute
+    boosts. One must be to Strength or Dexterity , and one is a free attribute boost.
+    You're trained in the Athletics skill and the Hunting Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Titan Wrestler] skill feat.
+  SourceTitle: Pathfinder Quest for the Frozen Flame Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: afb013bcffc71a88ae2b9d9722b1c9fff1a19aeef9f8b19915c38fc862b371f2
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Hunting
+    Rank: 1
+  LoreSkills:
+  - Hunting
+  GrantedFeats:
+  - SourceKey: mtc96
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Titan Wrestler
+    SourceId: 
+    DisplayName: Titan Wrestler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

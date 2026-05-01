@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_e4FaENGKRD3fxZeJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: e4FaENGKRD3fxZeJ
+  Slug: wilderness-samsaran
+  DisplayName: Wilderness Samsaran
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your preceding lives have been reborn in various remote environments
+    away from major settlements in Tian Xia and beyond. Your past manifestations
+    have had to learn how to survive on their own, and you recall this will to survive
+    while possessing very little resources. You become trained in Survival. If you
+    would automatically become trained in Survival (from your background or class,
+    for example), you instead become trained in a skill of your choice. You can ignore
+    difficult terrain from trees, foliage, and undergrowth.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 129eeb8d86911fa2f93033404faf7b435aa63ccc06dcf6145100ea33451799d7
+  Traits:
+  - samsaran
+  TraitsLower:
+  - samsaran
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.survival.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.survival.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.l7vjMIbPAUvEIosU
+    SourceId: 
+    Slug: samsaran
+    DisplayName: Samsaran
+  ParentAncestryAsset: {fileID: 11400000, guid: 6ed453392861b0045861283779fea7f0, type: 2}
+  GrantedFeatures: []

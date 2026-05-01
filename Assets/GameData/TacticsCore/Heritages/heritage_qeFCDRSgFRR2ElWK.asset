@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_qeFCDRSgFRR2ElWK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: qeFCDRSgFRR2ElWK
+  Slug: deny-lady-nanbyo-s-charity
+  DisplayName: Deny Lady Nanbyo's Charity
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You swore a vow to release others from natural calamities. Your vow
+    grants you the strength to carry 1 more Bulk than normal before becoming encumbered
+    and up to a maximum of 2 more Bulk, as well as a +1 circumstance bonus to Athletics
+    checks to @UUID[Compendium.pf2e.actionspf2e.Item.Force Open] or @UUID[Compendium.pf2e.actionspf2e.Item.Escape].
+    Additional Edict do your utmost to aid or rescue those trapped or affected by
+    natural disasters
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 156fe64f33b14a87bf6e7949dc240de1146e38c6fa5a88bf6def2258c792b4bf
+  Traits:
+  - yaksha
+  TraitsLower:
+  - yaksha
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: inventory.bulk.encumberedAfterAddend
+    Mode: add
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"inventory.bulk.encumberedAfterAddend","value":1}'
+  - Key: ActiveEffectLike
+    Path: inventory.bulk.maxAddend
+    Mode: add
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"inventory.bulk.maxAddend","value":2}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["action:force-open","action:escape"]}],"selector":"athletics","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.k3zyr6du4gV0Ftuh
+    SourceId: 
+    Slug: yaksha
+    DisplayName: Yaksha
+  ParentAncestryAsset: {fileID: 11400000, guid: 0d16d30ba7c52c240bdc8a515d4d59e2, type: 2}
+  GrantedFeatures: []

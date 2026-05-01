@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_wB8xiQB4RDbzOOvR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: wB8xiQB4RDbzOOvR
+  Slug: monstrous-skeleton
+  DisplayName: Monstrous Skeleton
+  IconPath: icons/commodities/bones/skull-feline-grey.webp
+  Description: Inhuman skeletons are often created for both their deadly physical
+    attacks and their terrifying appearances. Beasts and monstrous humanoids with
+    the strangest skeletons tend to be the centerpiece of the collection of a necromancer
+    skilled enough to raise one. You gain a claw, horn, tail, or wing unarmed attack
+    that deals 1d6 damage. A claw deals slashing damage, a horn deals piercing damage,
+    and a tail or wing deals bludgeoning damage. This unarmed attack is in the brawling
+    group and has the finesse and unarmed traits.
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 2d931a331876bd7c7bf86f024f037719c4c5d0d3ad725abc5a1a875c89ebf90c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.BattleForm.Attack.Claw","value":"claw"},{"label":"PF2E.BattleForm.Attack.Horn","value":"horn"},{"label":"PF2E.BattleForm.Attack.Tail","value":"tail"},{"label":"PF2E.BattleForm.Attack.Wing","value":"wing"}],"flag":"primaryStrike","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Automaton.AutomatonArmament.Prompt","rollOption":"ancestry:skeleton:monstrous"}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"claw","category":"unarmed","damage":{"base":{"damageType":"slashing","dice":1,"die":"d6"}},"group":"brawling","img":"icons/commodities/claws/claw-bear-brown-grey.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Claw","predicate":["ancestry:skeleton:monstrous:claw"],"range":null,"slug":"claw","traits":["unarmed","finesse"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/horn.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Horn","predicate":["ancestry:skeleton:monstrous:horn"],"range":null,"slug":"horn","traits":["unarmed","finesse"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d6"}},"group":"brawling","img":"icons/creatures/abilities/tail-swipe-green.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Tail","predicate":["ancestry:skeleton:monstrous:tail"],"range":null,"slug":"tail","traits":["unarmed","finesse"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/wing.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Wing","predicate":["ancestry:skeleton:monstrous:wing"],"range":null,"slug":"wing","traits":["unarmed","finesse"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.58rL5sg2y4arW1i5
+    SourceId: 
+    Slug: skeleton
+    DisplayName: Skeleton
+  ParentAncestryAsset: {fileID: 11400000, guid: 05a9768c91264d64fa563771eb10af03, type: 2}
+  GrantedFeatures: []

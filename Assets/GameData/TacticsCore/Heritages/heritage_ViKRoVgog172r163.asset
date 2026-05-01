@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_ViKRoVgog172r163
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: ViKRoVgog172r163
+  Slug: vivacious-gnome
+  DisplayName: Vivacious Gnome
+  IconPath: systems/pf2e/icons/features/ancestry/vivacious-gnome.webp
+  Description: You have an incredibly strong connection to the vitality energy that
+    flows through the First World, making it harder to attack your life force with
+    void energy. You gain void resistance equal to half your level (minimum 1). When
+    you have the @UUID[Compendium.pf2e.conditionitems.Item.Doomed] condition, the
+    condition affects you as if its value was 1 lower than it actually is (doomed
+    1 has no effect, doomed 2 causes you to die at Dying 3, and so on).
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4710d6e5b678bddc09a79b1370f37bbbdfe861e741c43a0a8144fba5007dbd9e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"void","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.CYlfsYLJcBOgqKtD
+    SourceId: 
+    Slug: gnome
+    DisplayName: Gnome
+  ParentAncestryAsset: {fileID: 11400000, guid: fb1bbba28cbc5b74cae3db902c75b07b, type: 2}
+  GrantedFeatures: []

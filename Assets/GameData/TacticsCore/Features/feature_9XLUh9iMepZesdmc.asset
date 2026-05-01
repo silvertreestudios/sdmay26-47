@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_9XLUh9iMepZesdmc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 9XLUh9iMepZesdmc
+  Slug: weapon-expertise
+  DisplayName: Weapon Expertise
+  IconPath: icons/skills/melee/hand-grip-sword-red.webp
+  Description: Champion, Exemplar, Investigator, Magus You've dedicated yourself
+    to learning the intricacies of your weapons. Your proficiency ranks for simple
+    weapons, martial weapons, and unarmed attacks increase to expert. Druid, Kineticist
+    You've improved your combat skill. Your proficiency rank for simple weapons and
+    unarmed attacks increases to expert. Oracle You've dedicated yourself to learning
+    the intricacies of your weapons. Your proficiency ranks for simple weapons and
+    unarmed attacks increase to expert. Psychic Training and magic improved your
+    weapon technique. Your proficiency rank for simple weapons and unarmed attacks
+    increases to expert. Sorcerer You've improved your combat skill. Your proficiency
+    ranks for simple weapons and unarmed attacks increase to expert. Swashbuckler
+    You've dedicated yourself to learning the intricacies of your weapons. Your proficiency
+    ranks for simple weapons, martial weapons, and unarmed attacks increase to expert.
+    You gain access to the critical specialization effects of all weapons for which
+    you have expert proficiency. Witch, Wizard Through sheer experience, you've improved
+    your technique with your weapons. Your proficiency ranks for simple weapons and
+    unarmed attacks increase to expert.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 00faaa86e7834410aa4d19f6fe9a8c8e8fe1e5d7d9295ff613ffb9dc9813318e
+  Traits:
+  - champion
+  - druid
+  - exemplar
+  - investigator
+  - kineticist
+  - magus
+  - oracle
+  - psychic
+  - sorcerer
+  - swashbuckler
+  - witch
+  - wizard
+  TraitsLower:
+  - champion
+  - druid
+  - exemplar
+  - investigator
+  - kineticist
+  - magus
+  - oracle
+  - psychic
+  - sorcerer
+  - swashbuckler
+  - witch
+  - wizard
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.martial.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.martial.rank","predicate":[{"or":["class:champion","class:exemplar","class:investigator","class:magus","class:swashbuckler"]}],"value":2}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":[{"gte":["item:proficiency:rank",2]},"class:swashbuckler"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{actor|class.slug}"'
+    Uuid: 
+    Json: '{"itemId":"{item|id}","key":"ItemAlteration","mode":"add","property":"traits","value":"{actor|class.slug}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '[{"text":"PF2E.SpecificRule.ClassFeatures.WeaponExpertise.{actor|class.slug}.Description"}]'
+    Uuid: 
+    Json: '{"itemId":"{item|id}","key":"ItemAlteration","mode":"override","property":"description","value":[{"text":"PF2E.SpecificRule.ClassFeatures.WeaponExpertise.{actor|class.slug}.Description"}]}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

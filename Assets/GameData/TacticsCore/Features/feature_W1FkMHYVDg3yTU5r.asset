@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_W1FkMHYVDg3yTU5r
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: W1FkMHYVDg3yTU5r
+  Slug: double-debilitation
+  DisplayName: Double Debilitation
+  IconPath: icons/skills/wounds/injury-triple-slash-bleed.webp
+  Description: Your opportunistic attacks are particularly detrimental. When you
+    use @UUID[Compendium.pf2e.actionspf2e.Item.Debilitating Strike], you can apply
+    two debilitations simultaneously; removing one removes both.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 10d3c0cbc7e65f4b8ac0cc32ac27b11db4998f4215e7ed7a145f1796e2e87bbe
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Rogue.Debilitation.SecondLabel","mergeable":true,"option":"second-debilitation","suboptions":[{"label":"PF2E.SpecificRule.Rogue.Debilitation.Bloody.Label","predicate":[{"not":"debilitation:bloody"},"feat:bloody-debilitation"],"value":"bloody"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Clumsy.Label","predicate":[{"not":"debilitation:clumsy"},"feat:vicious-debilitations"],"value":"clumsy"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Critical.Label","predicate":[{"not":"debilitation:critical"},"feat:critical-debilitation"],"value":"critical"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Enfeebled.Label","predicate":[{"not":"debilitation:enfeebled"}],"value":"enfeebled"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.OffGuard.Label","predicate":[{"not":"debilitation:off-guard"},"feat:precise-debilitations"],"value":"off-guard"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.PrecisionDamage.Label","predicate":[{"not":"debilitation:precision-damage"},"feat:precise-debilitations"],"value":"precision-damage"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.PreventFlanking.Label","predicate":[{"not":"debilitation:prevent-flanking"},{"or":["feat:tactical-debilitations","feat:methodical-debilitations"]}],"value":"prevent-flanking"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.PreventReactions.Label","predicate":[{"not":"debilitation:prevent-reactions"},"feat:tactical-debilitations"],"value":"prevent-reactions"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.PreventStep.Label","predicate":[{"not":"debilitation:prevent-step"},"feat:eldritch-debilitations"],"value":"prevent-step"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.ReduceCover.Label","predicate":[{"not":"debilitation:reduce-cover"},"feat:methodical-debilitations"],"value":"reduce-cover"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.SpeedPenalty.Label","predicate":[{"not":"debilitation:speed-penalty"}],"value":"speed-penalty"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Stupefied.Label","predicate":[{"not":"debilitation:stupefied"},"feat:eldritch-debilitations"],"value":"stupefied"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Weakness.Label","predicate":[{"not":"debilitation:weakness"},"feat:vicious-debilitations"],"value":"weakness"}],"toggleable":true}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:speed-penalty","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.SpeedPenalty.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:enfeebled","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.Enfeebled.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:bloody","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.Bloody.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:clumsy","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.Clumsy.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:critical","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.Critical.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:off-guard","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.OffGuard.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:precision-damage","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.PrecisionDamage.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:prevent-flanking","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.PreventFlanking.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:speed-penalty","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.PreventReactions.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:prevent-step","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.PreventStep.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:reduce-cover","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.ReduceCover.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:stupefied","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.Stupefied.Note"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["second-debilitation:weakness","target:condition:off-guard"],"selector":"strike-damage","text":"PF2E.SpecificRule.Rogue.Debilitation.Weakness.Note"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

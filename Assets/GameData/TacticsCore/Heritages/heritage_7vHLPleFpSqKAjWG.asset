@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_7vHLPleFpSqKAjWG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 7vHLPleFpSqKAjWG
+  Slug: stormtossed-tengu
+  DisplayName: Stormtossed Tengu
+  IconPath: systems/pf2e/icons/features/ancestry/stormtossed-tengu.webp
+  Description: Whether due to a blessing from Hei Feng or hatching from your egg
+    during a squall, you are resistant to storms. You gain electricity resistance
+    equal to half your level (minimum 1). You automatically succeed at the flat check
+    to target a @UUID[Compendium.pf2e.conditionitems.Item.Concealed] creature if
+    that creature is concealed only by rain or fog.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 601452178f057e48cba541d487b069f12cdf8f178139d16e86c832b3e98ea692
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"electricity","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.18xDKYPDBLEv2myX
+    SourceId: 
+    Slug: tengu
+    DisplayName: Tengu
+  ParentAncestryAsset: {fileID: 11400000, guid: 0cda81b7def3071468d62aaaaf7b5263, type: 2}
+  GrantedFeatures: []

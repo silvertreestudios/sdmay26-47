@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_jP9ORt0jgY5VHyD3
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: jP9ORt0jgY5VHyD3
+  Slug: glacier-cavern-minotaur
+  DisplayName: Glacier Cavern Minotaur
+  IconPath: icons/magic/water/ice-crystal-white.webp
+  Description: Your fur grows thick and warm, well suited to the frozen mountains
+    in which you reside. You gain cold resistance equal to half your level (minimum
+    of 1). Environmental cold effects are one step less extreme for you.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 430dcffc4fa1b54ecc5352d3c693c6adcea5693061463fc34a9ea89c57d3bf3c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"cold","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.3wQ49DoWFYQgVsq6
+    SourceId: 
+    Slug: minotaur
+    DisplayName: Minotaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 1400257914fcf5548bdecbaa5f6cbb78, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_srcPBNjhq7FBSmi3
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: srcPBNjhq7FBSmi3
+  Slug: red-mantis-magic-school
+  DisplayName: Red Mantis Magic School
+  IconPath: icons/sundries/books/book-red-square.webp
+  Description: 'While any thug can commit a murder, proper assassination requires
+    finesse and guile. Deep within the Crimson Citadel, the Red Mantis assassins
+    have developed a specific selection of spells they teach to all magically capable
+    members. These spells complement the assassins'' clandestine and deadly methods.
+    Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Figment], @UUID[Compendium.pf2e.spells-srd.Item.Gouging
+    Claw] 1st @UUID[Compendium.pf2e.spells-srd.Item.Fleet Step], @UUID[Compendium.pf2e.spells-srd.Item.Illusory
+    Disguise], @UUID[Compendium.pf2e.spells-srd.Item.Sure Strike] 2nd @UUID[Compendium.pf2e.spells-srd.Item.Invisibility],
+    @UUID[Compendium.pf2e.spells-srd.Item.Mist] 3rd @UUID[Compendium.pf2e.spells-srd.Item.Clairaudience],
+    @UUID[Compendium.pf2e.spells-srd.Item.Paralyze] 4th @UUID[Compendium.pf2e.spells-srd.Item.Clairvoyance],
+    @UUID[Compendium.pf2e.spells-srd.Item.Translocate] 5th @UUID[Compendium.pf2e.spells-srd.Item.Hallucination],
+    @UUID[Compendium.pf2e.spells-srd.Item.Illusory Scene] 6th @UUID[Compendium.pf2e.spells-srd.Item.Mislead],
+    @UUID[Compendium.pf2e.spells-srd.Item.Phantasmal Calamity] 7th @UUID[Compendium.pf2e.spells-srd.Item.Duplicate
+    Foe], @UUID[Compendium.pf2e.spells-srd.Item.Project Image] 8th @UUID[Compendium.pf2e.spells-srd.Item.Disappearance],
+    @UUID[Compendium.pf2e.spells-srd.Item.Unrelenting Observation] 9th @UUID[Compendium.pf2e.spells-srd.Item.Phantasmagoria]
+    School Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Debilitating Terror];
+    advanced: @UUID[Compendium.pf2e.spells-srd.Item.Shroud of the Mantis]'
+  SourceTitle: 'Pathfinder Adventure: Prey for Death'
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 9dcc3c856af5b2a812197d107eefb70dc2078456769a737dc59d9f2c1e8da24a
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

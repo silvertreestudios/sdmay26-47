@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_MtH5bq0MhaMQbJEL
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: MtH5bq0MhaMQbJEL
+  Slug: murkeyed-azarketi
+  DisplayName: Murkeyed Azarketi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You live in murky waters and have grown accustomed to life in a low-visibility
+    environment. You need only a successful @Check[flat|dc:3] when targeting a concealed
+    creature and a successful @Check[flat|dc:9] when targeting a hidden creature.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 10e9a95ba168129808cee9375cb8217f231b5b5235247e02186bcc2cff376a95
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.yFoojz6q3ZjvceFw
+    SourceId: 
+    Slug: azarketi
+    DisplayName: Azarketi
+  ParentAncestryAsset: {fileID: 11400000, guid: 35691cbce9f238047a56788acb89af44, type: 2}
+  GrantedFeatures: []

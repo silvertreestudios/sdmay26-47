@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_4Vc8uXVHonrasFnU
+  m_EditorClassIdentifier: 
+  SourceId: 4Vc8uXVHonrasFnU
+  Slug: saboteur
+  DisplayName: Saboteur
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Whether you do it for personal enjoyment or at the behest of a mercenary
+    company or military organization, you have a knack for destroying things. You
+    have a sense for an object or structure's weak spots and know where to deliver
+    a hammer strike or alchemical bomb. You adventure to hone your skills or complete
+    a particular mission. Choose two attribute boosts. One must be to Strength or
+    Dexterity , and one is a free attribute boost. You're trained in the Thievery
+    skill and the Engineering Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Concealing
+    Legerdemain] skill feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 1b8c3df9065a5c4dbeae72b03440cfca21b91acd0b3ec55fb65e0a93bd25ee58
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 17
+    CustomSkillId: thievery
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering
+    Rank: 1
+  LoreSkills:
+  - Engineering
+  GrantedFeats:
+  - SourceKey: hb9mc
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Concealing Legerdemain
+    SourceId: 
+    DisplayName: Concealing Legerdemain
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_5likl5SAxQPrQ3KF
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 5likl5SAxQPrQ3KF
+  Slug: ranger-expertise
+  DisplayName: Ranger Expertise
+  IconPath: icons/skills/ranged/target-bullseye-arrow-yellow.webp
+  Description: You've gained techniques that improve your cunning and skill. Your
+    proficiency rank for your ranger DC increases to expert. If you have warden spells,
+    your proficiency rank for spell attacks and spell DCs increases to expert.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 615396f251efe44fac4a4b479fcdd163fb98fc7ee622623d2f1a0d972a61af40
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.spellcasting.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.spellcasting.rank","predicate":[{"or":["feat:initiate-warden","feature:vindicator"]}],"value":2}'
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: ranger
+    Rank: 2
+  FocusPointDelta: 0

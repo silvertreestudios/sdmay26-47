@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_erZPj5701KiVAqoi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: erZPj5701KiVAqoi
+  Slug: forge-blessed-dwarf
+  DisplayName: Forge-Blessed Dwarf
+  IconPath: icons/tools/smithing/furnace-fire-metal-orange.webp
+  Description: You are from a family in Highhelm that venerates a particular dwarven
+    deity above all others. Your birth was blessed by your family's patron deity,
+    granting you a fraction of their power. Choose one deity from the dwarven pantheon.
+    You can cast the 1st-rank spell they grant clerics (such as @UUID[Compendium.pf2e.spells-srd.Item.Soothe]
+    if your family's patron is Bolka) as an innate divine spell once per week.
+  SourceTitle: Pathfinder Lost Omens Highhelm
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ff35e569ff5e4c89101af1bd62bdbc90d80c99849bb805bea21eda0e80b4a733
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.BYj5ZvlXZdpaEgA6
+    SourceId: 
+    Slug: dwarf
+    DisplayName: Dwarf
+  ParentAncestryAsset: {fileID: 11400000, guid: 4282fdfe5a426e348be9aaaadc9be877, type: 2}
+  GrantedFeatures: []

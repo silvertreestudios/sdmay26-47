@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ZEUxZ4Ta1kDPHiq5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ZEUxZ4Ta1kDPHiq5
+  Slug: second-adept
+  DisplayName: Second Adept
+  IconPath: systems/pf2e/icons/features/classes/second-adept.webp
+  Description: You've improved your link to your second implement. You gain the adept
+    benefit of your second implement.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 65b9250e50a2a473acc9c652774f5e6d0024ea5504603c72be2fcc50af2bb059
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":"flags.pf2e.thaumaturge.adeptChoices","flag":"secondAdept","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.secondAdept}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.secondAdept}"}'
+  Category: 2
+  Level: 11
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.secondAdept}'
+    SourceId: 
+    DisplayName: secondAdept}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

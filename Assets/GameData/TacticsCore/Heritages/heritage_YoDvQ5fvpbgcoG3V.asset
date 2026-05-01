@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_YoDvQ5fvpbgcoG3V
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: YoDvQ5fvpbgcoG3V
+  Slug: deny-the-traitor-s-rebirth
+  DisplayName: Deny the Traitor's Rebirth
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You swore a vow to deliver others from rakshasas and asuras, whom
+    yaksha legends have condemned as corrupted kin. To counter their shadowy schemes,
+    your vow grants you darkvision and a +1 circumstance bonus to Perception checks
+    to @UUID[Compendium.pf2e.actionspf2e.Item.Seek] or Sense the Motives of rakshasas
+    and asuras. Additional Edict confront rakshasas and asuras you come across (as
+    long as you have a reasonable chance of success); in the unlikely event you find
+    a benevolent rakshasa or asura, you don't have to confront them
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 7a133711070d4bc13ba8b5e1fae88d847ea506dd2b7faf5fa4629c259ac4afbc
+  Traits:
+  - yaksha
+  TraitsLower:
+  - yaksha
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"darkvision"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["target:trait:asura","target:trait:rakshasa"]},{"or":["action:seek","action:sense-motive"]}],"selector":"perception","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.k3zyr6du4gV0Ftuh
+    SourceId: 
+    Slug: yaksha
+    DisplayName: Yaksha
+  ParentAncestryAsset: {fileID: 11400000, guid: 0d16d30ba7c52c240bdc8a515d4d59e2, type: 2}
+  GrantedFeatures: []

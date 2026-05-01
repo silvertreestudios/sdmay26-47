@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_PhqUBXLLkVXb6oUE
+  m_EditorClassIdentifier: 
+  SourceId: PhqUBXLLkVXb6oUE
+  Slug: taldan-schemer
+  DisplayName: Taldan Schemer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Shining Kingdoms Whether willing or unwilling,
+    you have been involved in the many cutthroat political intrigues within Taldor.
+    You might have been born into it as a member of the aristocracy, or you might
+    have taken an active role in the recent events of the War for the Crown. Choose
+    two attribute boosts. One must be to Charisma or Constitution , and one is a
+    free attribute boost. You're trained in the Diplomacy skill and the Politics
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Hobnobber] skill
+    feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 9419ad1bece5ec0c06c23a7c79d69275d46acb2a37b9cc96c637df2250d7f1bf
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Politics Lore
+    Rank: 1
+  LoreSkills:
+  - Politics Lore
+  GrantedFeats:
+  - SourceKey: eup60
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hobnobber
+    SourceId: 
+    DisplayName: Hobnobber
+    Level: 1
+    ResolvedFeature: {fileID: 0}

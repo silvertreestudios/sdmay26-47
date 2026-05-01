@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_AqhHif8mzYjlGMxJ
+  m_EditorClassIdentifier: 
+  SourceId: AqhHif8mzYjlGMxJ
+  Slug: sheriff
+  DisplayName: Sheriff
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You hold an official title of sheriff or deputy in a small community.
+    Those that would do harm to others flee your gaze, for they know it brings the
+    promise of castigation. You protect your town, watch over those who have placed
+    their trust in you, and make sure those that would do others harm are brought
+    to justice. Choose two attribute boosts. One must be to Dexterity or Charisma
+    , and one is a free attribute boost. You're trained in the Intimidation skill
+    and the Hunting Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Coercion] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 604bc8ec9d0c14166fbab90cd5b070d3c6f03e0b47e6b732f1498dba427b3bf8
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Hunting Lore
+    Rank: 1
+  LoreSkills:
+  - Hunting Lore
+  GrantedFeats:
+  - SourceKey: keeap
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

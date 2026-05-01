@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_N6KvTbaRsphc0Ymb
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: N6KvTbaRsphc0Ymb
+  Slug: mirror
+  DisplayName: Mirror
+  IconPath: systems/pf2e/icons/features/classes/Mirror.webp
+  Description: Mirror implements represent misdirection, illusion, and sleight of
+    hand, bending and shifting a perspective and the way you look at things. While
+    larger mirrors hold the same mystic connotations, thaumaturges always choose
+    small, portable, handheld mirrors as implements so they can use them easily while
+    adventuring. Mirror implements are associated with the harrow suit of keys, and
+    the astrological signs of the stranger and the swallow. Initiate Benefit You
+    learn how to use your mirror to project another version of yourself whose realness
+    is a matter of perspective. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Mirror's
+    Reflection] action. Adept Benefit Your mirror self shatters into punishing shards
+    when damaged. While Mirror's Reflection is in effect, when an enemy adjacent
+    to one of your spaces damages you, that version of you explodes into mirror shards.
+    This ends Mirror's Reflection (establishing the remaining version of you as the
+    real one) and deals slashing damage to all creatures in a @Template[emanation|distance:5]
+    around where your mirror self was. The damage is equal to 2 + half your level
+    or the damage of the triggering attack, whichever is lower. You're immune to
+    this damage. Intensify Vulnerability Reinforcing your mirror lets it play tricks
+    on your enemy's senses as it bends light this way or that. You become @UUID[Compendium.pf2e.conditionitems.Item.Concealed]
+    to the target of your Exploit Vulnerability as your mirror warps its perceptions.
+    As normal for concealment where your overall location is still obvious, you can't
+    use this concealment to @UUID[Compendium.pf2e.actionspf2e.Item.Hide] or @UUID[Compendium.pf2e.actionspf2e.Item.Sneak].
+    Paragon Benefit You've become so skilled at reflecting yourself that you can
+    combine making a reflection with your other movements to act right away. When
+    you use Mirror's Reflection, you can have one of your selves immediately @UUID[Compendium.pf2e.actionspf2e.Item.Interact],
+    @UUID[Compendium.pf2e.actionspf2e.Item.Seek], or @UUID[Compendium.pf2e.actionspf2e.Item.Strike].
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 37b1862a02e46f5ae51d0a37ba1944799d68dc1b72d25c96efb3a9cb52c3b2bd
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Mirror Implement
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Mirror
+      Implement"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.initiateBenefit
+    Mode: override
+    Value: '"Compendium.pf2e.classfeatures.Item.Initiate Benefit (Mirror)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.initiateBenefit","predicate":["feat:thaumaturge-dedication"],"value":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Mirror)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Mirror)
+    Json: '{"key":"GrantItem","predicate":["class:thaumaturge"],"uuid":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Mirror)"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.adeptChoices
+    Mode: add
+    Value: '{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-mirror"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Mirror)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.adeptChoices","predicate":["class:thaumaturge"],"priority":20,"value":{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-mirror"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Mirror)"}}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Mirror Implement
+    SourceId: 
+    DisplayName: Mirror Implement
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Mirror)
+    SourceId: 
+    DisplayName: Initiate Benefit (Mirror)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

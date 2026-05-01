@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_uNvD4XK1kdvGjQVo
+  m_EditorClassIdentifier: 
+  SourceId: uNvD4XK1kdvGjQVo
+  Slug: child-of-westcrown
+  DisplayName: Child of Westcrown
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Old Cheliax Whether you come from Westcrown
+    or elsewhere, you hold the values of pre-Thrune Cheliax dear. You disdain the
+    infernal government, but you are proud of your country and do not consider yourself
+    a rebel. Choose two attribute boosts. One must be to Strength or Charisma , and
+    one is a free attribute boost. You're trained in the Diplomacy skill and the
+    Westcrown Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Impression] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 4878d583ce715255ee0f032a005a21d2fa5a28e9adf438acafc363e4b065a6c6
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Westcrown Lore
+    Rank: 1
+  LoreSkills:
+  - Westcrown Lore
+  GrantedFeats:
+  - SourceKey: qpsao
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

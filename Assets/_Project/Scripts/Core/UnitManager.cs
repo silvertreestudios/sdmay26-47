@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 using UnityEngine;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     public class UnitManager : MonoBehaviour
     {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     public class GridCursor : MonoBehaviour
     {

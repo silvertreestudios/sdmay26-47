@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2sRZ6OsvHIpwGCAg
+  m_EditorClassIdentifier: 
+  SourceId: 2sRZ6OsvHIpwGCAg
+  Slug: planar-migrant
+  DisplayName: Planar Migrant
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'Your birthplace was on one of the elemental planes, but you traveled
+    to the Universe for some reason. Maybe you left on good terms, or maybe you were
+    driven out and hope to one day return. Maybe you were even exiled, and any mention
+    of it brings pain and resentment. In any case, nowhere has quite felt like home
+    since, and you''ve roamed the land, carrying your life''s possessions on your
+    back wherever you go. You adventure possibly in search of a place to belong or
+    a way to return to your plane of origin and settle unfinished business. Choose
+    two attribute boosts. One must be Dexterity or Constitution , and one is a free
+    attribute boost. You''re trained in the Athletics skill and one of the following
+    lore skills: Plane of Air Lore, Plane of Earth Lore, Plane of Fire Lore, Plane
+    of Metal Lore, Plane of Water Lore, or Plane of Wood Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Hefty
+    Hauler] and @UUID[Compendium.pf2e.feats-srd.Item.Prescient Planner] skill feats.'
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 20be77e927f4827a55934114e29b4f8e4fce4b4cd2bd0ecb3be59e7a57d86a48
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: De3Mi
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hefty Hauler
+    SourceId: 
+    DisplayName: Hefty Hauler
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: tSJ1W
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Prescient Planner
+    SourceId: 
+    DisplayName: Prescient Planner
+    Level: 3
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_6K6jJkjZ2MJYqQ6h
+  m_EditorClassIdentifier: 
+  SourceId: 6K6jJkjZ2MJYqQ6h
+  Slug: bellflower-agent
+  DisplayName: Bellflower Agent
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Old Cheliax You joined a secret society dedicated
+    to freeing halfling slaves, most likely from the cruelty of Chelish reign. You
+    know how to smuggle people in and out of countries. Choose two attribute boosts.
+    One must be to Dexterity or Charisma , and one is a free attribute boost. You're
+    trained in the Stealth skill and the Underworld Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced
+    Smuggler] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 8dd94ed63599540256b698df61fb12445f69c1a548764fc62cc68b395f5b2908
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: 8k49h
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Smuggler
+    SourceId: 
+    DisplayName: Experienced Smuggler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

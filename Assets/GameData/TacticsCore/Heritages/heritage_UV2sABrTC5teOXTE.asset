@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_UV2sABrTC5teOXTE
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: UV2sABrTC5teOXTE
+  Slug: strong-blooded-dwarf
+  DisplayName: Strong-Blooded Dwarf
+  IconPath: systems/pf2e/icons/features/ancestry/strong-blooded-dwarf.webp
+  Description: Your blood runs hearty and strong, and you can shake off toxins. You
+    gain poison resistance equal to half your level (minimum 1), and each of your
+    successful saving throws against a poison affliction reduces its stage by 2,
+    or by 1 for a virulent poison. Each critical success against an ongoing poison
+    reduces its stage by 3, or by 2 for a virulent poison.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 2960b30077a41220446b59b9dacdc099fceacef23255b349f685cc89a542e99a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["success","criticalSuccess"],"predicate":["poison"],"selector":"saving-throw","text":"PF2E.SpecificRule.Dwarf.StrongBloodedDwarf.Note","title":"{item|name}"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"poison","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.BYj5ZvlXZdpaEgA6
+    SourceId: 
+    Slug: dwarf
+    DisplayName: Dwarf
+  ParentAncestryAsset: {fileID: 11400000, guid: 4282fdfe5a426e348be9aaaadc9be877, type: 2}
+  GrantedFeatures: []

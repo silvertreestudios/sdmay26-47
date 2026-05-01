@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+
+    <ui:VisualElement class="carousel-container" name="CarouselRoot">
+        <ui:Label name="Lbl_Category" text="Category" class="carousel-label" />
+
+        <ui:Button name="Btn_Left" text="&lt;" class="carousel-btn" />
+        <ui:Label name="Lbl_Value" text="None" class="carousel-value" />
+        <ui:Button name="Btn_Right" text="&gt;" class="carousel-btn" />
+    </ui:VisualElement>
+</ui:UXML>

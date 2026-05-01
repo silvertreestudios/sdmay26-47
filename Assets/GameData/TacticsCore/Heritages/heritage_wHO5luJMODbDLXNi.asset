@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_wHO5luJMODbDLXNi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: wHO5luJMODbDLXNi
+  Slug: bright-fetchling
+  DisplayName: Bright Fetchling
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your body proves that shadow can't exist without light. Perhaps your
+    eyes glow brighter or your veins occasionally pulse with light. You emit dim
+    light within 5 feet of you. You can activate or suppress this ability as an action,
+    which has the concentrate trait. Additionally, you can force fragments of your
+    shadow to glow and cast @UUID[Compendium.pf2e.spells-srd.Item.Light] as an occult
+    innate cantrip. Cantrips are heightened to a spell rank equal to half your level
+    rounded up.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 03e75b5c67de56a9c496fac68140876f47e707f936adbb254c6a1bee56db65b5
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: TokenLight
+    Path: 
+    Mode: 
+    Value: '{"color":"#c4abab","dim":5,"shadows":0.2}'
+    Uuid: 
+    Json: '{"key":"TokenLight","predicate":["bright-fetchling"],"value":{"color":"#c4abab","dim":5,"shadows":0.2}}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"bright-fetchling","toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:light","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:fetchling"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:light","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:fetchling"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.hIA3qiUsxvLZXrFP
+    SourceId: 
+    Slug: fetchling
+    DisplayName: Fetchling
+  ParentAncestryAsset: {fileID: 11400000, guid: c2bb1fdeb31da2345857e61e8354e1aa, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0mJTp4LdEHBLInoe
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0mJTp4LdEHBLInoe
+  Slug: divine-defense
+  DisplayName: Divine Defense
+  IconPath: icons/creatures/abilities/wings-birdlike-blue.webp
+  Description: Your training and your deity protect you from harm. Your proficiency
+    rank in unarmored defense increases to expert.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 89bd6115fd2ca48f95451adac20b074c6fcfa7f9cb5531665f74bdd556aa8902
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules: []
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: unarmored
+    Rank: 2
+  FocusPointDelta: 0

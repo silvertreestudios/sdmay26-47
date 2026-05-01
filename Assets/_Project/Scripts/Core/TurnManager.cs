@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     public class TurnManager : MonoBehaviour
     {
@@ -62,7 +62,7 @@ namespace PathfinderTactics.Core
                 // Get Perception (default to 0 if stats missing)
                 int perceptionBonus = 0;
                 if (unit.GetStats() != null)
-                    perceptionBonus = unit.GetStats().perception;
+                    perceptionBonus = unit.GetStats().GetPerceptionModifier();
 
                 int roll = UnityEngine.Random.Range(1, 21) + perceptionBonus;
                 initiativeRolls[unit] = roll;

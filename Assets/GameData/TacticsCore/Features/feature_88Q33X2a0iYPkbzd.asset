@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_88Q33X2a0iYPkbzd
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 88Q33X2a0iYPkbzd
+  Slug: mighty-rage
+  DisplayName: Mighty Rage
+  IconPath: icons/magic/symbols/mask-yellow-orange.webp
+  Description: Your rage intensifies and lets you hit harder at the start of a fight.
+    Your proficiency rank for your barbarian class DC increases to expert. In addition,
+    when you use Quick-Tempered, the first Strike you make during your first turn
+    deals additional damage equal to your @UUID[Compendium.pf2e.actionspf2e.Item.Rage]
+    damage.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d647c317d1c7e7ee0ed72baa4495aa121b29f101b41f32b1386577016c258e53
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"mighty-rage-attack","toggleable":true}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: multiply
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"multiply","predicate":["mighty-rage-attack"],"priority":95,"selector":"strike-damage","slug":"rage","value":2}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: barbarian
+    Rank: 2
+  FocusPointDelta: 0

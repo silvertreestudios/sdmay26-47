@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_T8SlgHjj0hVjKW2Q
+  m_EditorClassIdentifier: 
+  SourceId: T8SlgHjj0hVjKW2Q
+  Slug: sponsored-by-family
+  DisplayName: Sponsored by Family
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'Several members of your family have studied at the Magaambya, although
+    not all of them have graduated as lore-speakers (or even advanced past initiates
+    to become attendants). Your family has decided that you''re an excellent candidate
+    to join their ranks. Although lore-speakers of the Magaambya know they are supported
+    by the strength of thousands of graduates who have come before them, you can
+    take the smaller, more personal comfort in the support of your family. Choose
+    two attribute boosts. One must be to Intelligence or Charisma , and one is a
+    free attribute boost. You''re trained in your choice of the Diplomacy or Society
+    skill. You gain a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Hobnobber]
+    if you chose Diplomacy or @UUID[Compendium.pf2e.feats-srd.Item.Eye for Numbers]
+    if you chose Society. You''re also trained in Magaambya Lore. Your recommended
+    primary branch is the Uzunjati.'
+  SourceTitle: Pathfinder Strength of Thousands Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 99c7f839548203a5a5fe0aad91d636d6a66816da5c673643ed6fce9f3941a545
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Diplomacy","value":"diplomacy"},{"label":"PF2E.Skill.Society","value":"society"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"family"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Hobnobber
+    Json: '{"key":"GrantItem","predicate":["family:diplomacy"],"uuid":"Compendium.pf2e.feats-srd.Item.Hobnobber"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Eye for Numbers
+    Json: '{"key":"GrantItem","predicate":["family:society"],"uuid":"Compendium.pf2e.feats-srd.Item.Eye
+      for Numbers"}'
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Magaambya Lore
+    Rank: 1
+  LoreSkills:
+  - Magaambya Lore
+  GrantedFeats: []

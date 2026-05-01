@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_pJkQlFTvpQ5GjZ5e
+  m_EditorClassIdentifier: 
+  SourceId: pJkQlFTvpQ5GjZ5e
+  Slug: centaur
+  DisplayName: Centaur
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/centaur.svg
+  Description: Centaurs are proud nomads who range far and wide across their ancestral
+    territories, protecting their lands from exploitation and intrusion. They are
+    survivalists who forge tight bonds with family and community and stand firm in
+    the face of danger. Many are skilled hunters, trackers, and warriors who do battle
+    with bow, steel, and hooves. Brave and stubborn, they're willing to challenge
+    even the fiercest foes and largest forces to protect their homes, kin, and the
+    land within their domain. Centaur
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 7105c408fb79b1f87348834697ba04ec88fe4191302f355e845da7fd23db1e54
+  Traits:
+  - beast
+  - centaur
+  - humanoid
+  TraitsLower:
+  - beast
+  - centaur
+  - humanoid
+  RawRules: []
+  HitPoints: 8
+  Speed: 30
+  Reach: 5
+  Size: 3
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 01000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 06000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: fey
+    DisplayName: Fey
+  AdditionalLanguageOptions:
+  - Id: arboreal
+    DisplayName: Arboreal
+  - Id: cyclops
+    DisplayName: Cyclops
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: elven
+    DisplayName: Elven
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: halfling
+    DisplayName: Halfling
+  - Id: jotun
+    DisplayName: Jotun
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: TaKbB
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Mount
+    SourceId: 
+    DisplayName: Mount
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: fRFKM
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Robust
+    SourceId: 
+    DisplayName: Robust
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 5074fc88c1110d7419b014ebfe433caf, type: 2}
+  - {fileID: 11400000, guid: 951e0beadb1652741a4055d0133f3131, type: 2}
+  - {fileID: 11400000, guid: 01566fd2fec3daa4a94e6247018fc628, type: 2}
+  - {fileID: 11400000, guid: 15dbbe820782f474195dd60fc4ec7f91, type: 2}
+  - {fileID: 11400000, guid: 156728304d1a248429b7a25d7dedcc4a, type: 2}
+  - {fileID: 11400000, guid: 1dd26b7b5572ee040a867e8b364e4e86, type: 2}

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_4lp8oG9A3zuqhPBS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 4lp8oG9A3zuqhPBS
+  Slug: bard-weapon-expertise
+  DisplayName: Bard Weapon Expertise
+  IconPath: icons/skills/melee/hand-grip-sword-red.webp
+  Description: You have become thoroughly adept with bardic weapons. Your proficiency
+    rank for martial weapons, simple weapons, and unarmed attacks increases to expert.
+    When you critically succeed at an attack roll using one of these weapons or an
+    unarmed attack while one of your compositions is active, you apply the critical
+    specialization effect for that weapon or unarmed attack.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: bbbcaa610e44ee9cdacc8af1dc8c7945f1a6f96ff32c64f9d2f54783fa48900f
+  Traits:
+  - bard
+  TraitsLower:
+  - bard
+  RawRules:
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":[{"gte":["item:proficiency:rank",2]},{"or":["courageous-anthem:origin:signature:{actor|signature}","hymn-of-healing:origin:signature:{actor|signature}","silvers-refrain:origin:signature:{actor|signature}","song-of-strength:origin:signature:{actor|signature}","uplifting-overture:origin:signature:{actor|signature}","rallying-anthem:origin:signature:{actor|signature}","triple-time:origin:signature:{actor|signature}"]}]}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: martial
+    Rank: 2
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

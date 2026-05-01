@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ZFWmfZezeJDWSMFA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ZFWmfZezeJDWSMFA
+  Slug: lesson-of-vows
+  DisplayName: Lesson of Vows
+  IconPath: icons/sundries/documents/document-symbol-eye.webp
+  Description: Words have power, and those who use them to deceive should be prepared
+    to face the consequences. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Censure
+    Falsehoods] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Ring
+    of Truth].
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 91e672fc1da05e04aab4d0d70b671c0fce782f3af0c9aafc2049b48edada63ab
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 6
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

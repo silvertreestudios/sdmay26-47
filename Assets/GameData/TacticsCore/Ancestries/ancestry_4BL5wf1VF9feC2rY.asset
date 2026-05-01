@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_4BL5wf1VF9feC2rY
+  m_EditorClassIdentifier: 
+  SourceId: 4BL5wf1VF9feC2rY
+  Slug: kitsune
+  DisplayName: Kitsune
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/kitsune.svg
+  Description: Kitsune are a charismatic and witty people with a connection to the
+    spiritual that grants them many magical abilities, chiefly the power to shapechange
+    into other forms. Whether they pass unseen among other peoples or hold their
+    tails high, kitsune are clever observers of the societies around them. Kitsune
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 05c88f220f0abd956235743ca64e68b76e67e6a92d134334ee5c9e54f0f0decf
+  Traits:
+  - humanoid
+  - kitsune
+  TraitsLower:
+  - humanoid
+  - kitsune
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '[{"text":"PF2E.SpecificRule.ChangeShape.Kitsune"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"override","predicate":["item:slug:change-shape"],"property":"description","value":[{"text":"PF2E.SpecificRule.ChangeShape.Kitsune"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:change-shape"],"property":"traits","value":"divine"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.NPCAbility.ChangeShape.Label","mergeable":true,"option":"change-shape","predicate":[{"not":"non-tailless-form"}],"suboptions":[{"label":"PF2E.NPCAbility.ChangeShape.Form.Tailless","value":"tailless"}],"toggleable":true}'
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  AdditionalLanguageOptions:
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: halfling
+    DisplayName: Halfling
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: lzwB0
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Change Shape
+    SourceId: 
+    DisplayName: Change Shape
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 6bd484a99cc7efb46be28eab9844fe65, type: 2}
+  - {fileID: 11400000, guid: d74dd718b0938714d9edf5a7830fdda3, type: 2}
+  - {fileID: 11400000, guid: d8c25412eb7d83f4097e395b37670371, type: 2}
+  - {fileID: 11400000, guid: d79d63c42d79eda4780f87d93af773e3, type: 2}
+  - {fileID: 11400000, guid: 143407021849af141ad6e9450bc42ccb, type: 2}
+  - {fileID: 11400000, guid: 00d8ee7eea9051a49809e350ffc83f31, type: 2}

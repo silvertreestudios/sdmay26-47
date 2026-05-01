@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_i6y4DiKvqitdE0PW
+  m_EditorClassIdentifier: 
+  SourceId: i6y4DiKvqitdE0PW
+  Slug: quick
+  DisplayName: Quick
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Impossible Lands Staying alive among the scheming,
+    ravenous undead of Geb required a deep knowledge of their motivations, capabilities,
+    and weaknesses. More often than not, it also required the ability to weave alibis
+    and life-preserving half-truths capable of swaying a stilled heart. Choose two
+    attribute boosts. One must be to Charisma or Constitution , and one is a free
+    attribute boost. You're trained in the Deception skill and the Undead Lore skill.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Charming Liar] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 66b2ab8d4df93826b93e3c3d25ce75c658fe6ea97a6409493893ecd775870949
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead Lore
+    Rank: 1
+  LoreSkills:
+  - Undead Lore
+  GrantedFeats:
+  - SourceKey: 3y6lg
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Charming Liar
+    SourceId: 
+    DisplayName: Charming Liar
+    Level: 1
+    ResolvedFeature: {fileID: 0}

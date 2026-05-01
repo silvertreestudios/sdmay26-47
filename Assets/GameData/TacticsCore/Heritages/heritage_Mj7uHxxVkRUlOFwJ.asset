@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_Mj7uHxxVkRUlOFwJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: Mj7uHxxVkRUlOFwJ
+  Slug: hillock-halfling
+  DisplayName: Hillock Halfling
+  IconPath: systems/pf2e/icons/features/ancestry/hillock-halfling.webp
+  Description: Accustomed to a calm life in the hills, your people find rest and
+    relaxation especially replenishing, particularly when indulging in creature comforts.
+    When you regain Hit Points overnight, add your level to the Hit Points regained.
+    When anyone uses the Medicine skill to Treat your Wounds, you can eat a snack
+    to add your level to the Hit Points you regain from their treatment.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 7110ec61d2a8901f1edca113fabf7d9bd3f4b93102ff922f469c0f05dc3f8bf6
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.attributes.hp.recoveryAddend
+    Mode: add
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.attributes.hp.recoveryAddend","value":"@actor.level"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:treat-wounds"],"selector":"healing-received","value":"@actor.level"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GgZAHbrjnzWOZy2v
+    SourceId: 
+    Slug: halfling
+    DisplayName: Halfling
+  ParentAncestryAsset: {fileID: 11400000, guid: 27cca46a5c2df4845ab39fbaa79aad34, type: 2}
+  GrantedFeatures: []

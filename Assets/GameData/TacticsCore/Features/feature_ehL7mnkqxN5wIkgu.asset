@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ehL7mnkqxN5wIkgu
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ehL7mnkqxN5wIkgu
+  Slug: deity-champion
+  DisplayName: Deity (Champion)
+  IconPath: systems/pf2e/icons/features/classes/deity.webp
+  Description: "As a champion, you are a warrior in the name of a deity you revere
+    above all others. Choose one deity. Skill You become trained in the divine skill
+    listed for your deity. As normal, if you're already trained in that skill, you
+    become trained in a different skill of your choice. Anathema Champions care deeply
+    about the edicts and anathema they take from their deity, sanctification, and
+    cause. As with any implementation of edicts and anathema in the rules, these
+    are a tool for roleplaying between you, the GM, and the other players at the
+    table\u2014you're still playing a nuanced character, not strictly following a
+    script. Acts fundamentally opposed to your deity's ideals are anathema to your
+    faith. Learning or casting spells, committing acts, and using items that are
+    anathema to your deity remove you from your deity's good graces. Similarly, using
+    items, spells, or actions that are anathema to the tenets or goals of your faith
+    could interfere with your connection to your deity. For example, assisting with
+    a ritual that raises undead would be anathema to Pharasma, the goddess of death.
+    Many actions that are anathema don't appear in any deity's formal list. For borderline
+    cases, you and your GM determine which acts are anathema. If you perform enough
+    acts that are anathema to your deity, you lose the magical abilities that come
+    from your connection to your deity. The class features that you lose are determined
+    by the GM, but they likely include your holy or unholy trait, your focus pool,
+    and your blessing of the devoted. These abilities can be regained only if you
+    repent by conducting an atone ritual. If your deity doesn't require the specific
+    sanctification you had, your GM might let you retrain your sanctification and
+    cause while still following the same deity. Sanctification Depending on your
+    deity, their sanctification can make you holy or unholy. This commits you to
+    one side of a struggle over souls. Whether you become holy, unholy, or neither
+    will limit your choice of causes, devotion spells, and feats. If you \"can be\"
+    holy or unholy according to your deity's sanctification entry, you make that
+    choice, and if you \"must be\" holy or unholy, you gain the trait automatically.
+    If the deity lists \"none,\" you can choose only options that don't require the
+    holy or unholy trait. If you are holy or unholy and gain the opposing trait in
+    some way, you lose the previous trait until you atone. Unholy sanctification
+    for a champion can be extremely disruptive to a typical game and should be a
+    player character option only in appropriate adventures or campaigns where the
+    group collectively decides to embrace them. Unholy sanctification and causes
+    are uncommon options. Holy: You gain the holy trait and add that trait to any
+    Strikes you make. You gain the edict, \"Do not knowingly harm innocents or fail
+    to prevent harm to an innocent if your direct intervention could save them\"
+    and the anathema \"Commit murder.\" Even if your game includes behavior outside
+    the Pathfinder baseline, the acts listed there are anathema to you. Unholy: You
+    gain the unholy trait and add that trait to any Strikes you make. You gain the
+    edict, \"Do not put another's needs before your own or those of your deity\"
+    and the anathema \"Commit an entirely altruistic act, such as giving something
+    away in charity\" and \"Put anyone's needs before those of your deity.\" None
+    of these prevents you from performing acts others might consider helpful, but
+    these acts must be done with the expectation that they ultimately further your
+    own goals or those of your deity"
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1825bc0589d1103dc5603f35af484d61430fb415ec35cca5f51d7f71ce58c5a6
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"or":["item:category:deity","item:category:pantheon"]}],"itemType":"deity"},"flag":"deity","key":"ChoiceSet","predicate":[{"not":"deity"}],"priority":99,"prompt":"PF2E.SpecificRule.Prompt.Deity"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.deity}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"not":"deity"}],"uuid":"{item|flags.pf2e.rulesSelections.deity}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitHoly","predicate":[{"or":["deity:primary:sanctification:can:holy","deity:primary:sanctification:must:holy"]}],"value":"holy"},{"label":"PF2E.TraitUnholy","predicate":[{"or":["deity:primary:sanctification:can:unholy","deity:primary:sanctification:must:unholy"]}],"value":"unholy"},{"label":"PF2E.NoneOption","predicate":[{"nor":["deity:primary:sanctification:must:holy","deity:primary:sanctification:must:unholy"]}],"value":"none"}],"key":"ChoiceSet","predicate":[{"nor":["sanctification:none","sanctification:holy","sanctification:unholy"]}],"prompt":"PF2E.SpecificRule.Prompt.Sanctification","rollOption":"sanctification","slug":"sanctification"}'
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["{item|flags.pf2e.rulesSelections.sanctification}"],"key":"ActorTraits","predicate":[{"not":"sanctification:none"}]}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"{item|flags.pf2e.rulesSelections.sanctification}"'
+    Uuid: 
+    Json: '{"key":"AdjustStrike","mode":"add","predicate":[{"not":"sanctification:none"}],"property":"traits","value":"{item|flags.pf2e.rulesSelections.sanctification}"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Deific Weapon
+    Json: '{"key":"GrantItem","predicate":["class:champion"],"uuid":"Compendium.pf2e.classfeatures.Item.Deific
+      Weapon"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Champion's Aura
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Champion''s
+      Aura"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.deity}'
+    SourceId: 
+    DisplayName: deity}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Deific Weapon
+    SourceId: 
+    DisplayName: Deific Weapon
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Champion's Aura
+    SourceId: 
+    DisplayName: Champion's Aura
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

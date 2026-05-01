@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_ppBGlWl0UkBKkJgE
+  m_EditorClassIdentifier: 
+  SourceId: ppBGlWl0UkBKkJgE
+  Slug: feybound
+  DisplayName: Feybound
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You have spent time in the First World or another realm of the fey
+    and aren't entirely the same person you were before. Perhaps you made a purchase
+    at the legendary Witchmarket or partook deeply of fey food and wine. Whatever
+    the case, willingly or inadvertently, you made a bargain with the fey, the benefits
+    of which come at a price. Choose two attribute boosts. One must be to Dexterity
+    or Charisma , and one is a free attribute boost. You are trained in Fey Lore
+    and gain the @UUID[Compendium.pf2e.actionspf2e.Item.Fey's Fortune] free action.
+    You must follow some rule or limitation as part of your pact with the fey. If
+    you violate the rule, you lose Fey's Fortune until you receive the effects of
+    a successful @UUID[Compendium.pf2e.spells-srd.Item.Atone] ritual using the Nature
+    skill. The exact limitation is up to you and the GM, but the most common requirement
+    is that you must fulfill a single request from any fey who knows your name.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 62dcad79d7b2e9650749110d589a505343a0673b7b6f307a252e56ebd8a5c069
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Fey's Fortune
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Fey''s Fortune"}'
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fey Lore
+    Rank: 1
+  LoreSkills:
+  - Fey Lore
+  GrantedFeats: []

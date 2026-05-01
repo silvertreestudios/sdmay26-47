@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_8STJEFVJISujgpMR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 8STJEFVJISujgpMR
+  Slug: druidic-order
+  DisplayName: Druidic Order
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: 'Upon becoming a druid, you align yourself with a druidic order, which
+    grants you a class feat, an order spell (see below), and an additional trained
+    skill tied to your order While you''ll always be a member of your initial order,
+    it''s not unheard of for a druid to request to study with other orders in search
+    of greater understanding of the natural world, and PC druids are among the most
+    likely to blend the powers of different orders. Order spells are a type of focus
+    spell. It costs 1 Focus Point to cast a focus spell, and you start with a focus
+    pool of 1 Focus Point. You refill your focus pool during your daily preparations,
+    and you can regain 1 Focus Point by spending 10 minutes using the Refocus activity
+    to commune with local nature spirits or otherwise tend to the wilderness in a
+    way befitting your order. Focus spells are automatically heightened to half your
+    level rounded up, much like cantrips. Focus spells don''t require spell slots,
+    and you can''t cast them using spell slots. Certain feats give you more focus
+    spells. The maximum Focus Points your focus pool can hold is equal to the number
+    of focus spells you have, but can never be more than 3 points. Order Skill You
+    become trained in the listed skill. If you''re already trained in that skill,
+    you become trained in a different skill of your choice. Druid Feat You gain this
+    1st-level druid feat. Order Spell You automatically gain the listed order spell
+    at 1st level. Anathema Add this anathema to those for all druids. @UUID[Compendium.pf2e.classfeatures.Item.Animal
+    Order] @UUID[Compendium.pf2e.classfeatures.Item.Flame Order] @UUID[Compendium.pf2e.classfeatures.Item.Leaf
+    Order] @UUID[Compendium.pf2e.classfeatures.Item.Stone Order] @UUID[Compendium.pf2e.classfeatures.Item.Storm
+    Order] @UUID[Compendium.pf2e.classfeatures.Item.Untamed Order] @UUID[Compendium.pf2e.classfeatures.Item.Wave
+    Order]'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 28124d0c1adb220c0111f5da4a745ef59cf3693b3e0e840600c41764a6986b2a
+  Traits:
+  - druid
+  TraitsLower:
+  - druid
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:druid-order",{"or":[{"and":["class:druid","item:tag:druid-order"]},{"and":["item:tag:druid-order",{"not":"item:tag:class-archetype"}]}]}]},"flag":"druidicOrder","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Druid.DruidicOrder.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.druidicOrder}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.druidicOrder}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.druidicOrder}'
+    SourceId: 
+    DisplayName: druidicOrder}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

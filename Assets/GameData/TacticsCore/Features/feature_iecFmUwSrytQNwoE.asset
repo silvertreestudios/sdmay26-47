@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_iecFmUwSrytQNwoE
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: iecFmUwSrytQNwoE
+  Slug: skybearer-s-belt
+  DisplayName: Skybearer's Belt
+  IconPath: icons/equipment/waist/belt-buckle-spiral-blue.webp
+  Description: "Usage worn belt This girdle wraps around your waist, magnifying your
+    strength to the point you feel you could carry the sky itself. Immanence Strength
+    flows forth. You can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Disarm],
+    @UUID[Compendium.pf2e.actionspf2e.Item.Grapple], @UUID[Compendium.pf2e.actionspf2e.Item.Shove],
+    or @UUID[Compendium.pf2e.actionspf2e.Item.Trip] creatures up to two sizes larger
+    than you, and you gain a +1 circumstance bonus to checks for these actions and
+    to your saving throws to resist these actions. Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.Bear
+    Allies' Burdens] 1 (transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.ukt9Dr4qmj9pUQII
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 672d7019ca48c4b8961c0e7a3fbe03ab490577d2aeb74003065a625c50a8147c
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"skybearers-belt"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.SkybearersBelt.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"skybearers-belt"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.SkybearersBelt.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"skybearers-belt"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Bear Allies' Burdens
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Bear Allies''
+      Burdens"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"skybearers-belt-origin"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Skybearer's Belt
+    Json: '{"alterations":[{"mode":"add","property":"other-tags","value":"physical-ikon"},{"mode":"add","property":"other-tags","value":"physical-ikon:skybearers-belt"}],"key":"GrantItem","predicate":["skybearers-belt-origin:granted"],"uuid":"Compendium.pf2e.equipment-srd.Item.Skybearer''s
+      Belt"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"types":["equipment"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["skybearers-belt-origin:existing"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:skybearers-belt"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"other-tags","value":"physical-ikon:skybearers-belt"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.iecFmUwSrytQNwoE
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"equipment","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:skybearers-belt","skybearers-belt-origin:existing",{"not":"item:slug:skybearers-belt"}],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.iecFmUwSrytQNwoE
+      inline]"}]}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["divine-spark:skybearers-belt",{"or":["action:disarm","action:grapple","action:shove","action:trip"]}],"selector":["athletics","reflex-dc","fortitude-dc"],"type":"circumstance","value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:skybearers-belt","item:slug:bear-allies-burdens"]},{"not":"divine-spark:skybearers-belt"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"traits","value":"divine"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Bear Allies' Burdens
+    SourceId: 
+    DisplayName: Bear Allies' Burdens
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Skybearer's Belt
+    SourceId: 
+    DisplayName: Skybearer's Belt
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

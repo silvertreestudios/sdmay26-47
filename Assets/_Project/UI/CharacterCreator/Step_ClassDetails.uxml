@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+    <ui:Style src="CreatorTheme.uss" />
+
+    <ui:ScrollView class="step-container detail-panel-scroll">
+
+        <ui:VisualElement class="step-header">
+            <ui:VisualElement class="step-header__group">
+                <ui:Label text="CLASS DETAILS" class="header-text header-text--accent" />
+                <ui:Label name="Lbl_ClassDetailsHeader" text="Choose trained skills and review your level 1 class features." class="subhead-text" />
+            </ui:VisualElement>
+            <ui:Label text="STEP 07 / 10" class="badge" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="detail-section">
+            <ui:Label text="TRAINED SKILLS" class="summary-block__title" />
+            <ui:VisualElement name="ClassSkillContainer" class="chip-row" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="detail-section">
+            <ui:Label text="PROFICIENCIES" class="summary-block__title" />
+            <ui:Label name="Lbl_ClassProficiencies" text="-" class="detail-text" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="detail-section">
+            <ui:Label text="LEVEL 1 FEATURES" class="summary-block__title" />
+            <ui:Label name="Lbl_ClassLevelOneFeatures" text="-" class="detail-text" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="detail-section">
+            <ui:Label text="SPELLS" class="summary-block__title" />
+            <ui:VisualElement name="SpellChoiceContainer" />
+        </ui:VisualElement>
+
+    </ui:ScrollView>
+</ui:UXML>

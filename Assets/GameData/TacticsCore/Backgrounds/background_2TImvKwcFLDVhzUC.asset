@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2TImvKwcFLDVhzUC
+  m_EditorClassIdentifier: 
+  SourceId: 2TImvKwcFLDVhzUC
+  Slug: circuit-judge
+  DisplayName: Circuit Judge
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're a circuit judge, a courtroom on horseback who serves a group
+    of communities out in the Mana Wastes or a similar backwoods region. You show
+    up every couple of months, hear the cases that have piled up since your last
+    visit, give verdicts, and then it's on to the next town in your itinerary. It's
+    not the easiest life in the world, but it's an interesting one, and you hear
+    some mighty strange cases. Chances are, it was one of those cases that set you
+    on the road to adventure. Choose two attribute boosts. One must be to Intelligence
+    or Wisdom , and one is a free attribute boost. You're trained in Deception and
+    Legal Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Lie to Me] skill
+    feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 3c552a46b31d5d7acff5125dc902b39f7039cb33f23ad009def369ea736cb982
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Legal Lore
+    Rank: 1
+  LoreSkills:
+  - Legal Lore
+  GrantedFeats:
+  - SourceKey: zkeri
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Lie to Me
+    SourceId: 
+    DisplayName: Lie To Me
+    Level: 1
+    ResolvedFeature: {fileID: 0}

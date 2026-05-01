@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_igMHwREgpM9GsvLs
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: igMHwREgpM9GsvLs
+  Slug: order-of-the-gate
+  DisplayName: Order of the Gate
+  IconPath: icons/sundries/books/book-red-exclamation.webp
+  Description: 'Favored Weapon @UUID[Compendium.pf2e.equipment-srd.Item.Dagger] The
+    Hellknight signifers of the Order of the Gate seek to prevent lawlessness of
+    all types through the use of their considerable spellcasting prowess and command
+    of fiendish outsiders. Lesser Benefit @UUID[Compendium.pf2e.feats-srd.Item.Locate
+    Lawbreakers] Greater Benefit @UUID[Compendium.pf2e.feats-srd.Item.Devil Allies]'
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ad01b4f3264a1fe098e36c124e2923feb35bda612093b88f95901484a899a220
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

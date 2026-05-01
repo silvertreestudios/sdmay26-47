@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ILGq8LQBnwsAz2jK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ILGq8LQBnwsAz2jK
+  Slug: steward-of-stone-and-fire
+  DisplayName: Steward of Stone and Fire
+  IconPath: icons/environment/wilderness/cave-entrance-mountain.webp
+  Description: 'Stewards of stone and fire linger near volcanoes and deep places
+    near the heart of the earth, hot springs where the water is too scorchingly hot
+    to allow casual enjoyment, and other places where the barrier between fire and
+    earth is thin or nonexistent, though particularly old rock formations, canyons,
+    and other natural features of earth may also spawn or attract them. Stewards
+    of stone and fire are quick to anger and slow to forget. Apparition Skills Mountain
+    Lore, Volcano Lore Apparition Spells Cantrip @UUID[Compendium.pf2e.spells-srd.Item.Ignition]
+    1st @UUID[Compendium.pf2e.spells-srd.Item.Interposing Earth] 2nd @UUID[Compendium.pf2e.spells-srd.Item.Exploding
+    Earth] 3rd @UUID[Compendium.pf2e.spells-srd.Item.Fireball] 4th @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Fire] 5th @UUID[Compendium.pf2e.spells-srd.Item.Wall of Stone] 6th @UUID[Compendium.pf2e.spells-srd.Item.Petrify]
+    7th @UUID[Compendium.pf2e.spells-srd.Item.Volcanic Eruption] 8th @UUID[Compendium.pf2e.spells-srd.Item.Earthquake]
+    9th @UUID[Compendium.pf2e.spells-srd.Item.Falling Stars] Vessel Spell @UUID[Compendium.pf2e.spells-srd.Item.Earth''s
+    Bile] Avatar Blood of Planets Speed 50 feet, burrow Speed 50 feet, ignore difficult
+    terrain and greater difficult terrain Melee 1 avalanche of molten stone (reach
+    15 feet, versatile B), Damage @Damage[(6d10+6)[fire]] Ranged 1 cleansing eruption
+    (fire, range 120 feet), Damage @Damage[(6d6+6)[fire]]'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4b354a2e5d070b9311e5fcf9c9334672e0aa55103c6f1f2fbebb8854ce0eeb39
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_5gqcEsJ4gkE6W5jj
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 5gqcEsJ4gkE6W5jj
+  Slug: steadfast-tanuki
+  DisplayName: Steadfast Tanuki
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your pride in your true tanuki form knows no bounds. You gain your
+    choice of @UUID[Compendium.pf2e.feats-srd.Item.Everyday Form] or @UUID[Compendium.pf2e.feats-srd.Item.Teakettle
+    Form] as a bonus ancestry feat.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 25965834085a64742274a2660c7f487434b6c179e05c343d75494df1d055f660
+  Traits:
+  - tanuki
+  TraitsLower:
+  - tanuki
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"value":"Compendium.pf2e.feats-srd.Item.Everyday
+      Form"},{"value":"Compendium.pf2e.feats-srd.Item.Teakettle Form"}],"flag":"steadfastTanuki","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Feat"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.steadfastTanuki}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.steadfastTanuki}"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pILFsoGsUQkVF5dZ
+    SourceId: 
+    Slug: tanuki
+    DisplayName: Tanuki
+  ParentAncestryAsset: {fileID: 11400000, guid: 840e89a1b8dc79245ba086473020388f, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.steadfastTanuki}'
+    SourceId: 
+    DisplayName: steadfastTanuki}
+    Level: 0
+    ResolvedFeature: {fileID: 0}

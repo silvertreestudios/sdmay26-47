@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_malYpr0CYL4fDGhr
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: malYpr0CYL4fDGhr
+  Slug: deductive-improvisation
+  DisplayName: Deductive Improvisation
+  IconPath: systems/pf2e/icons/features/classes/deductive-improvisation.webp
+  Description: You use your skills at deduction to perform whatever task is necessary
+    to solve the case. You can attempt any check that requires you to be trained
+    in a skill, even if you're untrained in it; you can attempt any check that requires
+    you to have expert proficiency in a skill so long as you're trained in it; and
+    you can attempt any check that requires you to have master proficiency in a skill
+    as long as you have expert proficiency in it.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 247c9c15938c454539fdf7cb698eef6cf3fc7468786fd96f6c46579ccde5020c
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

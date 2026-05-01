@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_5rFzX6JK6CXLFxUP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 5rFzX6JK6CXLFxUP
+  Slug: elemental-school
+  DisplayName: Elemental School
+  IconPath: icons/magic/symbols/elements-air-earth-fire-water.webp
+  Description: If you choose an elemental school, your curriculum spells can be any
+    spells that you have access to and that have your chosen element's trait. Your
+    school spells are the elemental focus spells of your chosen element, with the
+    1st-rank spell as your initial school spell and the 3rd-rank spell as the advanced
+    school spell.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9048e8f72ab9f4154d410f94bacf34a9aebeaab393320243735656958605d9ec
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitAir","predicate":["elementalist:inner-sea-elementalism"],"value":"air"},{"label":"PF2E.TraitEarth","predicate":[{"or":["elementalist:inner-sea-elementalism","elementalist:elemental-cycle"]}],"value":"earth"},{"label":"PF2E.TraitFire","predicate":[{"or":["elementalist:inner-sea-elementalism","elementalist:elemental-cycle"]}],"value":"fire"},{"label":"PF2E.TraitMetal","predicate":["elementalist:elemental-cycle"],"value":"metal"},{"label":"PF2E.TraitWater","predicate":[{"or":["elementalist:inner-sea-elementalism","elementalist:elemental-cycle"]}],"value":"water"},{"label":"PF2E.TraitWood","predicate":["elementalist:elemental-cycle"],"value":"wood"}],"flag":"element","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Elementalist.Wizard.ElementalSchool.Prompt"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

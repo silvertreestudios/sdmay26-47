@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_etkuQkjkNLPLnjkA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: etkuQkjkNLPLnjkA
+  Slug: wellspring-gnome
+  DisplayName: Wellspring Gnome
+  IconPath: systems/pf2e/icons/features/ancestry/wellspring-gnome.webp
+  Description: Some other source of magic has a greater hold on you than the primal
+    magic of your fey lineage does. This connection might come from an occult plane
+    or an ancient occult song; a deity, celestial, or fiend; magical effluent left
+    behind by a mage war; or ancient rune magic. Choose arcane, divine, or occult.
+    You gain one cantrip from that magical tradition's spell list. You can cast this
+    spell as an innate spell at will, as a spell of your chosen tradition. A cantrip
+    is heightened to a spell rank equal to half your level rounded up. Whenever you
+    gain a primal innate spell from a gnome ancestry feat, change its tradition from
+    primal to your chosen tradition.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: fbd822a83015243726dde054099904e48b1a9aa285a32af01541be81ef39a882
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.CYlfsYLJcBOgqKtD
+    SourceId: 
+    Slug: gnome
+    DisplayName: Gnome
+  ParentAncestryAsset: {fileID: 11400000, guid: fb1bbba28cbc5b74cae3db902c75b07b, type: 2}
+  GrantedFeatures: []

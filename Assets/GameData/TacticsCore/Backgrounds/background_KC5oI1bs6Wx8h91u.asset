@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_KC5oI1bs6Wx8h91u
+  m_EditorClassIdentifier: 
+  SourceId: KC5oI1bs6Wx8h91u
+  Slug: deputy
+  DisplayName: Deputy
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: While your life may have taken some twists and turns in the intervening
+    years, you were once deputized as the lawful protector of a community. While
+    the role was temporary and you've since turned in your badge, that responsibility
+    shaped you. Whenever a community is in trouble, and the sheriff is nowhere to
+    be found, residents call on you to capture a criminal, rescue the mayor's offspring
+    from bandits, or go toe to toe with outlaws. Choose two attribute boosts. One
+    must be to Dexterity or Wisdom , and one is a free attribute boost. You're trained
+    in the Survival skill and the Hunting Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced
+    Tracker] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 9ca81441313632c7361503d1497aab31f481d0ad877fa781c8e72d606dd6cecb
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Hunting Lore
+    Rank: 1
+  LoreSkills:
+  - Hunting Lore
+  GrantedFeats:
+  - SourceKey: 02x6c
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Tracker
+    SourceId: 
+    DisplayName: Experienced Tracker
+    Level: 1
+    ResolvedFeature: {fileID: 0}

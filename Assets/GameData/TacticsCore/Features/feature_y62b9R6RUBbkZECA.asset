@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_y62b9R6RUBbkZECA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: y62b9R6RUBbkZECA
+  Slug: manifold-alloy
+  DisplayName: Manifold Alloy
+  IconPath: icons/commodities/metal/ingot-hammered-silver.webp
+  Description: You've devised several alloys that contain useful properties of various
+    metals, and you replace a number of parts of your weapon or its ammunition with
+    pieces from these alloys. Your weapon innovation is cold iron and silver. This
+    means you deal more damage to a variety of supernatural creatures, such as demons,
+    devils, and fey.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 80be2ba1daa5ef85d1c9d4da623488a40f5d402a728c93b0e5b1d46c721497ab
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"cold-iron"'
+    Uuid: 
+    Json: '{"definition":["item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}"],"key":"AdjustStrike","mode":"add","property":"materials","value":"cold-iron"}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"silver"'
+    Uuid: 
+    Json: '{"definition":["item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}"],"key":"AdjustStrike","mode":"add","property":"materials","value":"silver"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

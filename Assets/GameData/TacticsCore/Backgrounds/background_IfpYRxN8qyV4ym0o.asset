@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_IfpYRxN8qyV4ym0o
+  m_EditorClassIdentifier: 
+  SourceId: IfpYRxN8qyV4ym0o
+  Slug: purveyor-of-the-bizarre
+  DisplayName: Purveyor of the Bizarre
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Golden Road Whether in Katapesh or one of the
+    bustling markets along the Path of Salt, you've spent enough time buying and
+    selling ancient or unusual items to give you an instinctive ability to quickly
+    sort valuable trinkets from worthless baubles. Choose two attribute boosts. One
+    must be to Intelligence or Wisdom , and one is a free attribute boost. You're
+    trained in the Arcana skill and the Mercantile Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Identification] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a383c4afea8073f6cc45732aba0745d3d100084c73429bb5424ad38ca53277a4
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mercantile Lore
+    Rank: 1
+  LoreSkills:
+  - Mercantile Lore
+  GrantedFeats:
+  - SourceKey: hwrfy
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Identification
+    SourceId: 
+    DisplayName: Quick Identification
+    Level: 1
+    ResolvedFeature: {fileID: 0}

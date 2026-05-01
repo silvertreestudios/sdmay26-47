@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_r2ZRAcoDp6EdwNrh
+  m_EditorClassIdentifier: 
+  SourceId: r2ZRAcoDp6EdwNrh
+  Slug: free-spirit
+  DisplayName: Free Spirit
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You've always lived your life straying from the path laid before
+    you. Like a leaf blowing in the wind, your journey takes you where it will, providing
+    you with a lifestyle free from the bonds of expectation. While you might have
+    friends and family in specific towns or cities, you've chosen not to put down
+    roots in favor of going wherever\u2014and doing whatever\u2014you want. Choose
+    two attribute boosts. One must be to Wisdom or Charisma , and one is a free attribute
+    boost. You are trained in the Survival skill and a Lore skill about a specific
+    settlement or terrain you have traveled through. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Forager]
+    skill feat."
+  SourceTitle: Pathfinder Lost Omens Firebrands
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: bcfd2eeba45b14c6f88444afeb39cd96543020d728b652390ef80c870376a4bf
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Settlement or Terrain
+    Rank: 1
+  LoreSkills:
+  - Settlement or Terrain
+  GrantedFeats:
+  - SourceKey: OzGrH
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forager
+    SourceId: 
+    DisplayName: Forager
+    Level: 1
+    ResolvedFeature: {fileID: 0}

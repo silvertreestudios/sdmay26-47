@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_ynObDI0VbZ4sqeMI
+  m_EditorClassIdentifier: 
+  SourceId: ynObDI0VbZ4sqeMI
+  Slug: ex-mendevian-crusader
+  DisplayName: Ex-Mendevian Crusader
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: When the Great Quake rumbled across the eastern lands and opened the
+    rift that southerners called "the Worldwound," you answered the call to arms
+    to fight back the demonic hordes. What you saw during the war changed you forever-so
+    much so that you became a wanderer, hermit, or other voluntary outcast. When
+    you came upon the Broken Tusk following, you determined you'd finally found a
+    people whose values and traditions made you feel whole again. The Broken Tusk
+    was supposedly once a much bigger following, and so you've joined them in the
+    hopes of helping them heal old wounds and rebuild in the shadow of loss. In the
+    process, perhaps this new family will help you do the same. Choose two attribute
+    boosts. One must be to Constitution or Wisdom , and one is a free attribute boost.
+    You're trained in the Religion skill and the Demon Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Pilgrim's
+    Token] skill feat.
+  SourceTitle: Pathfinder Quest for the Frozen Flame Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 7e33569c289631c7e9a73e104059e2fa1fa5617e69994a3428f13b03c36fad00
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Demon
+    Rank: 1
+  LoreSkills:
+  - Demon
+  GrantedFeats:
+  - SourceKey: eu46h
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pilgrim's Token
+    SourceId: 
+    DisplayName: Pilgrim's Token
+    Level: 1
+    ResolvedFeature: {fileID: 0}

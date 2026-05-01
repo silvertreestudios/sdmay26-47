@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_RI2UHuUZd3TC1OE8
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: RI2UHuUZd3TC1OE8
+  Slug: curse-of-engulfing-flames
+  DisplayName: Curse of Engulfing Flames
+  IconPath: icons/magic/fire/flame-burning-skull-orange.webp
+  Description: Fires flare noticeably (though not dangerously) in your presence,
+    you occasionally smoke slightly, and your body is almost painfully hot to the
+    touch. When you have the @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]
+    condition, you catch fire, taking persistent fire damage equal to your cursebound
+    value. The flames shed light like a torch, and if you enter an environment where
+    they could not burn (such as underwater), you simply seethe with flameless heat.
+    The flames subside when you begin Refocusing to assuage your curse or if you
+    fall @UUID[Compendium.pf2e.conditionitems.Item.Unconscious], but they resume
+    if your Refocus activity is interrupted or when you return to consciousness.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 67de6c362aba43af60617f92720d746733ba869d1a2797ec692ce3cb64ec79c9
+  Traits:
+  - curse
+  - divine
+  - fire
+  - oracle
+  TraitsLower:
+  - curse
+  - divine
+  - fire
+  - oracle
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Persistent Damage
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"override","property":"persistent-damage","value":{"damageType":"fire","formula":"1"}}],"inMemoryOnly":true,"key":"GrantItem","onDeleteActions":{"grantee":"restrict"},"predicate":["self:condition:cursebound:1"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.conditionitems.Item.Persistent
+      Damage"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Persistent Damage
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"override","property":"persistent-damage","value":{"damageType":"fire","formula":"2"}}],"inMemoryOnly":true,"key":"GrantItem","onDeleteActions":{"grantee":"restrict"},"predicate":["self:condition:cursebound:2"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.conditionitems.Item.Persistent
+      Damage"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Persistent Damage
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"override","property":"persistent-damage","value":{"damageType":"fire","formula":"3"}}],"inMemoryOnly":true,"key":"GrantItem","onDeleteActions":{"grantee":"restrict"},"predicate":["self:condition:cursebound:3"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.conditionitems.Item.Persistent
+      Damage"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Persistent Damage
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"override","property":"persistent-damage","value":{"damageType":"fire","formula":"4"}}],"inMemoryOnly":true,"key":"GrantItem","onDeleteActions":{"grantee":"restrict"},"predicate":["self:condition:cursebound:4"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.conditionitems.Item.Persistent
+      Damage"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.conditionitems.Item.Persistent Damage
+    SourceId: 
+    DisplayName: Persistent Damage
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.conditionitems.Item.Persistent Damage
+    SourceId: 
+    DisplayName: Persistent Damage
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.conditionitems.Item.Persistent Damage
+    SourceId: 
+    DisplayName: Persistent Damage
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.conditionitems.Item.Persistent Damage
+    SourceId: 
+    DisplayName: Persistent Damage
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_lgo65ldX7WkXC8Ir
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: lgo65ldX7WkXC8Ir
+  Slug: devise-a-stratagem
+  DisplayName: Devise a Stratagem
+  IconPath: systems/pf2e/icons/features/classes/devise-a-stratagem.webp
+  Description: You can play out a battle in your head, using brains rather than brawn
+    to execute an attack. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Devise
+    a Stratagem] action.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 95b199fde6ce0737992b4ab1e463307324777c7db23422e863326bd12f50a9a0
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Devise a Stratagem
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Devise a Stratagem"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Devise a Stratagem
+    SourceId: 
+    DisplayName: Devise a Stratagem
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

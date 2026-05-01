@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_bYooavyooaCqdhYJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: bYooavyooaCqdhYJ
+  Slug: tempest-sun-mages
+  DisplayName: Tempest-Sun Mages
+  IconPath: icons/magic/nature/tree-bare-glow-yellow.webp
+  Description: 'Tempest-Sun Mages prize physical courage as well as intellectual
+    bravery. They feel called to defend against threats of all kinds, from tyranny
+    and invasion to intellectual subversion and bullying. Generally having a keen
+    sense of justice, they stand up for the downtrodden and step up whenever danger
+    presents itself. Their classes often feature heated debates that occasionally
+    spill over into rivalries and duels outside of class. Seeing themselves as the
+    direct heirs to the power that the Ten Magic Warriors used to transform the world,
+    Tempest-Sun Mages tend to see magic as a fundamental power in the service of
+    a larger purpose to extend justice and create a better world, focusing on magic
+    that invokes the power of the sun and strengthens their own resolve. Additional
+    Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Ignition] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Breathe
+    Fire], @UUID[Compendium.pf2e.spells-srd.Item.Fleet Step] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Blazing
+    Bolt] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Fireball] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Fly]
+    5th: @UUID[Compendium.pf2e.spells-srd.Item.Elemental Form] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Force] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Fiery Body] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Monstrosity
+    Form] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Implosion]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 719d77f596a4c9b723ebd1d63257c891f709a1bd1576ddc093602e320477e0a6
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

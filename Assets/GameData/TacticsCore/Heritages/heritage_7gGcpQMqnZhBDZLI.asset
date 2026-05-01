@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_7gGcpQMqnZhBDZLI
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 7gGcpQMqnZhBDZLI
+  Slug: adaptive-anadi
+  DisplayName: Adaptive Anadi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You descend from a line of anadi who worked to perfect their transformation
+    magic, allowing them to integrate into a wider variety of cultures. Choose a
+    common, Medium humanoid ancestry. Your human form is replaced with a form that
+    matches this choice. You also gain the @UUID[Compendium.pf2e.feats-srd.Item.Adopted
+    Ancestry] feat for your chosen humanoid ancestry.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4f6feb45102bf7a54b456295882f869c7b1258ce202c7bb5da9b776099e2a53b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Adopted Ancestry
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Adopted Ancestry"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TQEqWqc7BYiadUdY
+    SourceId: 
+    Slug: anadi
+    DisplayName: Anadi
+  ParentAncestryAsset: {fileID: 11400000, guid: 31b1e69965ce06c4dbcc3db72b86dd27, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Adopted Ancestry
+    SourceId: 
+    DisplayName: Adopted Ancestry
+    Level: 0
+    ResolvedFeature: {fileID: 0}

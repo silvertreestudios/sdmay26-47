@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_tBI15UqeQH7PLzAK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: tBI15UqeQH7PLzAK
+  Slug: initiate-benefit-lantern
+  DisplayName: Initiate Benefit (Lantern)
+  IconPath: icons/sundries/lights/lantern-iron-lit-yellow.webp
+  Description: While you hold your lantern, its burning light leaves secrets no place
+    to hide. You can light or extinguish your lantern as a free action once each
+    turn with nothing but a thought, which has the concentrate trait. The lantern
+    shines bright light out to 20 feet and dim light out 20 feet further; this has
+    the evocation, light, and magical traits (the counteract rank against magical
+    darkness is equal to half your level rounded up). The lantern's magical light
+    attempts to reveal the unseen. You and your allies in the lantern's area of bright
+    light gain a +1 status bonus to visual Perception checks to notice anything that
+    is also within the bright light, and a +1 status bonus to checks to Recall Knowledge
+    against creatures within the bright light, as the light exposes their true natures.
+    During exploration, even if you aren't Searching, the GM rolls a secret check
+    for you to find traps, environmental hazards, haunts, and secrets (such as secret
+    doors). The GM rolls each time a given hazard or secret comes within 20 feet
+    of you and within the lantern's bright light. These effects have the divination,
+    magical, and revelation traits.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 797b16defba814d07c205abbb3dedf84d330d8edf955885bd4ed1774603794e3
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"disabledIf":[{"not":"implement:lantern:equipped"}],"key":"RollOption","label":"PF2E.SpecificRule.Thaumaturge.Implement.Lantern.LightToggle","option":"light-lantern-implement","toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.lantern
+    Mode: override
+    Value: 20
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.lantern","value":20}'
+  - Key: TokenLight
+    Path: 
+    Mode: 
+    Value: '{"alpha":0.2,"animation":{"intensity":2,"speed":3,"type":"pulse"},"bright":"@actor.flags.pf2e.thaumaturge.lantern","color":"#fff285","dim":"2*@actor.flags.pf2e.thaumaturge.lantern"}'
+    Uuid: 
+    Json: '{"key":"TokenLight","predicate":["light-lantern-implement"],"value":{"alpha":0.2,"animation":{"intensity":2,"speed":3,"type":"pulse"},"bright":"@actor.flags.pf2e.thaumaturge.lantern","color":"#fff285","dim":"2*@actor.flags.pf2e.thaumaturge.lantern"}}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"allies","uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Lantern"}],"key":"Aura","predicate":["light-lantern-implement"],"radius":"@actor.flags.pf2e.thaumaturge.lantern"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

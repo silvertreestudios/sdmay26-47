@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_sJzi16AkcZrfa7oo
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: sJzi16AkcZrfa7oo
+  Slug: demagogue-s-calling
+  DisplayName: Demagogue's Calling
+  IconPath: icons/environment/people/cleric-grey.webp
+  Description: Words flow freely from a font within your soul. When you attempt a
+    check to @UUID[Compendium.pf2e.actionspf2e.Item.Coerce] or @UUID[Compendium.pf2e.actionspf2e.Item.Make
+    an Impression], you can spend a Mythic Point to attempt the check at mythic proficiency.
+    The first time each day that you critically succeed on a check to Coerce a creature
+    who isn't your ally, @UUID[Compendium.pf2e.actionspf2e.Item.Create a Diversion]
+    using your words, or Make an Impression on an indifferent or unfriendly audience,
+    you regain a Mythic Point. Edicts tell stories to audiences who have never heard
+    them before, use words rather than weapons to resolve conflicts Anathema interrupt
+    someone telling a story, resort to violent action without trying to defuse the
+    situation with your words
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 066aeae7a3d1a1da6fbc1956c3f58decc0345033572cde1d83f67ef94c8fbb3a
+  Traits:
+  - calling
+  - mythic
+  TraitsLower:
+  - calling
+  - mythic
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Rewrite Fate"}'
+  Category: 0
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    SourceId: 
+    DisplayName: Rewrite Fate
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

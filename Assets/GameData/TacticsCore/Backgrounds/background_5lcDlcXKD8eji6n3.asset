@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_5lcDlcXKD8eji6n3
+  m_EditorClassIdentifier: 
+  SourceId: 5lcDlcXKD8eji6n3
+  Slug: astrological-augur
+  DisplayName: Astrological Augur
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: During your formative years, you learned the stars are a gateway to
+    mystical power or glimpses into the future. Perhaps you grew up surrounded by
+    Iruxi culture or were raised in one of the remaining Lirgeni sanctuaries. You've
+    studied the constellations, using their alignment to predict fortune (or misfortune)
+    and gaining magical powers unlike any of the other astrologers you know. Your
+    readings might primarily focus on the Cosmic Caravan, or perhaps you use other
+    stars to guide you, like the zodiac of Tian Xia. Choose two attribute boosts.
+    One must be to Wisdom or Charisma, and one is a free attribute boost. You're
+    trained in Astrology Lore. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Augury]
+    as a divine innate spell once per week, and the spell's effects can see up to
+    1 hour in the future rather than 30 minutes.
+  SourceTitle: Pathfinder Lost Omens Travel Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 0142bc022e2d46f2b0a37cbfe2a96a11e82f58b8e9aa3891007c0e982cda89ea
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Astrology Lore
+    Rank: 1
+  LoreSkills:
+  - Astrology Lore
+  GrantedFeats: []

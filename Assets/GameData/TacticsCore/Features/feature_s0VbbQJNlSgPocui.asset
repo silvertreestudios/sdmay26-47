@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_s0VbbQJNlSgPocui
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: s0VbbQJNlSgPocui
+  Slug: composition-spells
+  DisplayName: Composition Spells
+  IconPath: icons/tools/instruments/pipe-flue-tan.webp
+  Description: You can infuse your performances with magic to create unique effects
+    called compositions. Compositions are a special type of spell that often require
+    you to use the Performance skill when casting them. Composition spells are a
+    type of focus spell. It costs 1 Focus Point to cast a focus spell, and you start
+    with a focus pool of 1 Focus Point. You refill your focus pool during your daily
+    preparations, and you can regain 1 Focus Point by spending 10 minutes using the
+    Refocus activity to perform, write a new composition, or otherwise engage your
+    muse. Focus spells are automatically heightened to half your level rounded up,
+    much like cantrips. Focus spells don't require spell slots, and you can't cast
+    them using spell slots. Taking feats can give you more focus spells and increase
+    the size of your focus pool, though your focus pool can never hold more than
+    3 Focus Points. You learn the @UUID[Compendium.pf2e.spells-srd.Item.Counter Performance]
+    composition spell, protecting against auditory and visual effects. Composition
+    Cantrips Composition cantrips are special composition spells that don't cost
+    Focus Points, so you can use them as often as you like. Composition cantrips
+    are in addition to the cantrips you choose with bard spellcasting. Unlike other
+    cantrips, you can't swap out composition cantrips gained from bard feats at a
+    later level, unless you swap out the specific feat via retraining. You learn
+    the @UUID[Compendium.pf2e.spells-srd.Item.Courageous Anthem] composition cantrip,
+    which boosts your allies' attacks, damage, and defense against fear.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 56c9868e86b7ebf0c06de29aba761f4a4887e5fe3362714cc0ba0266d893bff2
+  Traits:
+  - bard
+  TraitsLower:
+  - bard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

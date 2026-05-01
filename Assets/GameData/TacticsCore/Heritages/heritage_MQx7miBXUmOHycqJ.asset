@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_MQx7miBXUmOHycqJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: MQx7miBXUmOHycqJ
+  Slug: laborer-android
+  DisplayName: Laborer Android
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your body is adapted to endure physical hardships or perform hard
+    labor for long periods of time. You become trained in Athletics (or another skill
+    if you're already trained in Athletics), and you gain the @UUID[Compendium.pf2e.feats-srd.Item.Hefty
+    Hauler] skill feat.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 630142afda71ea60e3ebb93106233361408833ef22fc735110c0c90d4653df6b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Hefty Hauler
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Hefty Hauler"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GfLwE884NoRC7cRi
+    SourceId: 
+    Slug: android
+    DisplayName: Android
+  ParentAncestryAsset: {fileID: 11400000, guid: b29540a7fcf84b248ab504583b2d0fea, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hefty Hauler
+    SourceId: 
+    DisplayName: Hefty Hauler
+    Level: 0
+    ResolvedFeature: {fileID: 0}

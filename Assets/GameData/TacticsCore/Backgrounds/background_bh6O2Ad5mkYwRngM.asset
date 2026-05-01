@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_bh6O2Ad5mkYwRngM
+  m_EditorClassIdentifier: 
+  SourceId: bh6O2Ad5mkYwRngM
+  Slug: hermean-expatriate
+  DisplayName: Hermean Expatriate
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - High Seas You have been exiled from Hermea,
+    perhaps of your own accord or perhaps because you didn't measure up. However,
+    you take with you some of the benefits of the excellent education afforded to
+    its citizenry. Choose two attribute boosts. One must be to Intelligence or Charisma
+    , and one is a free attribute boost. You're trained in the Society skill and
+    the Dragon Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Skill
+    Training] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f37a7694f46e6e4b088a382ba6baaecf18c0795379152bbca3ed07e73c43504c
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Dragon Lore
+    Rank: 1
+  LoreSkills:
+  - Dragon Lore
+  GrantedFeats:
+  - SourceKey: kbvzp
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Skill Training
+    SourceId: 
+    DisplayName: Skill Training
+    Level: 1
+    ResolvedFeature: {fileID: 0}

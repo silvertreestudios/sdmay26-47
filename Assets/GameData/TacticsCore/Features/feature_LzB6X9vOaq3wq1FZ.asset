@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_LzB6X9vOaq3wq1FZ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: LzB6X9vOaq3wq1FZ
+  Slug: hero-s-defiance
+  DisplayName: Hero's Defiance
+  IconPath: icons/skills/melee/unarmed-punch-fist-yellow-red.webp
+  Description: You can defy fate and continue fighting as long as you have divine
+    energy. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Hero's Defiance] devotion
+    spell.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ce3595100582678cf426df663db8a35c78c3a479cdd7aa3a7d4048011a059865
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

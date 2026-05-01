@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_mBH1L01kYmB8EL56
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: mBH1L01kYmB8EL56
+  Slug: empty-sky-kitsune
+  DisplayName: Empty Sky Kitsune
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your spirit is open to the secrets of beyond, granting you greater
+    access to kitsune magic. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Kitsune
+    Spell Familiarity] ancestry feat. Your alternate form is a common Medium humanoid
+    ancestry prevalent where you grew up (typically human), called a tailless form.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 0c49ba3b5746dcb1d30699b18a3889bdb8298d3a8c65f66bb730a795ad3fe12f
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Kitsune Spell Familiarity
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Kitsune Spell
+      Familiarity"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.4BL5wf1VF9feC2rY
+    SourceId: 
+    Slug: kitsune
+    DisplayName: Kitsune
+  ParentAncestryAsset: {fileID: 11400000, guid: dc102657926b46045b2c6589b973e7e3, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Kitsune Spell Familiarity
+    SourceId: 
+    DisplayName: Kitsune Spell Familiarity
+    Level: 0
+    ResolvedFeature: {fileID: 0}

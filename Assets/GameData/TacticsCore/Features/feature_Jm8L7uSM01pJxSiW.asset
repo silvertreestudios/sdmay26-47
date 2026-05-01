@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Jm8L7uSM01pJxSiW
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Jm8L7uSM01pJxSiW
+  Slug: unfailing-bow
+  DisplayName: Unfailing Bow
+  IconPath: icons/skills/ranged/target-bullseye-arrow-glowing.webp
+  Description: "Usage a ranged weapon The shots fired by this weapon seem guided
+    by divine accuracy, finding the swiftest targets. Immanence The unfailing bow
+    deals 1 additional spirit damage per weapon damage die to creatures it Strikes,
+    or 1d4 additional spirit damage per weapon die on a critical hit. Transcendence\u2014
+    @UUID[Compendium.pf2e.actionspf2e.Item.Arrow Splits Arrow] 1 (transcendence)
+    @Embed[Compendium.pf2e.actionspf2e.Item.cCCOjU9ihfrn0spp inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0c0a0a72284dfbd85bf830e447f33a74d5f700034a8663e4afd4216a752e04aa
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"unfailing-bow"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.UnfailingBow.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"unfailing-bow"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.UnfailingBow.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"unfailing-bow"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Arrow Splits Arrow
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Arrow Splits
+      Arrow"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"unfailing-bow-origin"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:0",{"gte":["item:range-increment",1]},{"nor":["item:trait:consumable","item:magical"]}],"itemType":"weapon"},"flag":"grantedIkon","key":"ChoiceSet","predicate":["unfailing-bow-origin:granted"]}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    Json: '{"key":"GrantItem","predicate":["unfailing-bow-origin:granted"],"uuid":"{item|flags.pf2e.rulesSelections.grantedIkon}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"predicate":["item:ranged"],"types":["weapon"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["unfailing-bow-origin:existing"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["unfailing-bow-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["unfailing-bow-origin:granted","item:granter:slug:unfailing-bow"]}]}],"property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:unfailing-bow"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["unfailing-bow-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["unfailing-bow-origin:granted","item:granter:slug:unfailing-bow"]}]}],"property":"other-tags","value":"physical-ikon:unfailing-bow"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:unfailing-bow"],"priority":121,"property":"traits","value":"divine"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.Jm8L7uSM01pJxSiW
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:unfailing-bow"],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.Jm8L7uSM01pJxSiW
+      inline]"}]}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@weapon.system.damage.dice"'
+    Uuid: 
+    Json: '{"damageType":"spirit","key":"FlatModifier","predicate":["item:tag:physical-ikon:unfailing-bow","divine-spark:unfailing-bow",{"not":"check:outcome:critical-success"}],"selector":"weapon-damage","tags":["exemplar"],"value":"@weapon.system.damage.dice"}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"critical":true,"damageType":"spirit","diceNumber":"@weapon.system.damage.dice","dieSize":"d4","key":"DamageDice","predicate":["divine-spark:unfailing-bow"],"selector":"weapon-damage","tags":["exemplar"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:unfailing-bow","item:slug:arrow-splits-arrow"]},{"not":"divine-spark:unfailing-bow"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"exemplar-spirit-damage","predicate":["divine-spark:unfailing-bow"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Arrow Splits Arrow
+    SourceId: 
+    DisplayName: Arrow Splits Arrow
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    SourceId: 
+    DisplayName: grantedIkon}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

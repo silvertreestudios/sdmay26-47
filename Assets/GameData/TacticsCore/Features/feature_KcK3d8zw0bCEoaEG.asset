@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_KcK3d8zw0bCEoaEG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: KcK3d8zw0bCEoaEG
+  Slug: deadly-strike
+  DisplayName: Deadly Strike
+  IconPath: icons/environment/settlement/watchtower-silhouette-yellow.webp
+  Description: Through precise calculation, you've found the perfect way for your
+    weapon to deal damage on a well-placed strike. Your innovation gains the deadly
+    d8 trait. If your innovation was already deadly, increase the die by up to two
+    die sizes (d6 to d10, d8 to d12), to a maximum of deadly d12.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e484965facfead22e58c29b5a44a41a330e4f4b70a628259f9510038c0cb7659
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"deadly-d12"'
+    Uuid: 
+    Json: '{"definition":["item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}",{"or":["item:trait:deadly-d10","item:trait:deadly-d8"]}],"key":"AdjustStrike","mode":"add","property":"weapon-traits","value":"deadly-d12"}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"deadly-d10"'
+    Uuid: 
+    Json: '{"definition":["item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}","item:trait:deadly-d6"],"key":"AdjustStrike","mode":"add","priority":111,"property":"weapon-traits","value":"deadly-d10"}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"deadly-d6"'
+    Uuid: 
+    Json: '{"definition":["item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}",{"not":"item:trait:deadly"}],"key":"AdjustStrike","mode":"add","priority":112,"property":"weapon-traits","value":"deadly-d6"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

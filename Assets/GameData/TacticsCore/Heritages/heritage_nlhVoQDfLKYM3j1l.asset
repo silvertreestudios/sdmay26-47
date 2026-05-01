@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_nlhVoQDfLKYM3j1l
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: nlhVoQDfLKYM3j1l
+  Slug: swimming-animal
+  DisplayName: Swimming Animal
+  IconPath: icons/creatures/fish/fish-marlin-swordfight-blue.webp
+  Description: "You are an aquatic animal who is most comfortable in the water. You
+    may spend much of your time in the water like an alligator, seal, whale, or dolphin,
+    or you may require the water to breathe like a fish or some crustaceans. You
+    have one animal attack of your choice (typically claw, jaws, or tail; see the
+    sidebar). Choose if you are aquatic or water-dwelling. Aquatic: You gain the
+    aquatic trait and you have a swim Speed of 30 feet. The aquatic trait means you
+    breathe water but not air, and your bludgeoning and slashing unarmed Strikes
+    don't take the usual \u20132 penalty for being underwater. Water-dwelling: You
+    can hold your breath underwater for 10 minutes before needing air. You have a
+    swim Speed of 20 feet, and if you can move on land, you have base Speed of 20
+    feet."
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 5f997050523d459c7dec2e36757ca3f6df3f30b8994049a3afe4d90fe03246d0
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitAquatic","value":"aquatic"},{"label":"PF2E.SpecificRule.AwakenedAnimal.SwimmingAnimal.WaterDwelling","value":"water-dwelling"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.AwakenedAnimal.SwimmingAnimal.Prompt","rollOption":"swimming-animal"}'
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 30
+    Uuid: 
+    Json: '{"key":"BaseSpeed","predicate":["swimming-animal:aquatic"],"selector":"swim","value":30}'
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 20
+    Uuid: 
+    Json: '{"key":"BaseSpeed","predicate":["swimming-animal:water-dwelling"],"selector":"swim","value":20}'
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 20
+    Uuid: 
+    Json: '{"key":"BaseSpeed","predicate":["swimming-animal:water-dwelling"],"selector":"land","value":20}'
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["aquatic"],"key":"ActorTraits","predicate":["swimming-animal:aquatic"]}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: override
+    Value: 
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"override","predicate":["swimming-animal:aquatic"],"selector":"strike-attack-roll","slug":"aquatic-combat","suppress":true}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.ancestryfeatures.Item.Animal Attack
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.ancestryfeatures.Item.Animal
+      Attack"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.remainingAir.rounds
+    Mode: upgrade
+    Value: '"100"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"flags.pf2e.remainingAir.rounds","predicate":["swimming-animal:water-dwelling"],"value":"100"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GFOgV3MzWkYwJoJW
+    SourceId: 
+    Slug: awakened-animal
+    DisplayName: Awakened Animal
+  ParentAncestryAsset: {fileID: 11400000, guid: c58a1d5658e5e884f91f290571161519, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Animal Attack
+    SourceId: 
+    DisplayName: Animal Attack
+    Level: 0
+    ResolvedFeature: {fileID: 0}

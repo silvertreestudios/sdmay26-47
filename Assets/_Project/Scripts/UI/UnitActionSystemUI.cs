@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Combat;
+using TacticsGame.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     public class UnitActionSystemUI : MonoBehaviour
     {

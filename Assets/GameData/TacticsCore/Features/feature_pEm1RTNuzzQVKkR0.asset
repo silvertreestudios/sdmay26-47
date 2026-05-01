@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_pEm1RTNuzzQVKkR0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: pEm1RTNuzzQVKkR0
+  Slug: explode
+  DisplayName: Explode
+  IconPath: icons/magic/fire/explosion-mushroom-nuke-orange.webp
+  Description: Your innovation is a creation barely held together by your own engineering,
+    always on the edge of completely falling apart. Though this adds risk, it also
+    means you can coax it to perform far beyond its design specifications using special
+    unstable actions. See the definition of the unstable trait and how it affects
+    your innovation. While inventors can learn various unstable actions over their
+    career, all at least know how to make their innovation @UUID[Compendium.pf2e.actionspf2e.Item.Explode].
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 13157f50a8becbc7b1fc0ea66948fb290027b11718286a7172a9e8657f74a067
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Explode
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Explode"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Inventor.Unstable.Note"}]'
+    Uuid: 
+    Json: '{"itemType":"feat","key":"ItemAlteration","label":"PF2E.TraitUnstable","mode":"add","predicate":["item:trait:unstable",{"not":"self:effect:unstable-check-failure"}],"property":"description","value":[{"text":"PF2E.SpecificRule.Inventor.Unstable.Note"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Inventor.Unstable.Note"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","label":"PF2E.TraitUnstable","mode":"add","predicate":["item:trait:unstable",{"not":"self:effect:unstable-check-failure"}],"property":"description","value":[{"text":"PF2E.SpecificRule.Inventor.Unstable.Note"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Explode
+    SourceId: 
+    DisplayName: Explode
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

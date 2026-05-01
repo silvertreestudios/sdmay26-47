@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     /// <summary>
     /// Component used by GridBaker to create layered nodes from scene objects.

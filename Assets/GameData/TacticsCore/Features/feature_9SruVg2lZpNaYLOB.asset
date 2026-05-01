@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_9SruVg2lZpNaYLOB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 9SruVg2lZpNaYLOB
+  Slug: debilitating-strike
+  DisplayName: Debilitating Strike
+  IconPath: icons/skills/melee/strike-sword-blood-red.webp
+  Description: When taking advantage of an opening, you both hinder and harm your
+    foe. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Debilitating Strike]
+    free action.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9b1415b57b899ff9eba2172edba27f66a3be6c44da9da1504de1cac6ab2eb17f
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Debilitating Strike
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Debilitating
+      Strike"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Rogue.Debilitation.Label","mergeable":true,"option":"debilitation","suboptions":[{"label":"PF2E.SpecificRule.Rogue.Debilitation.Bloody.Label","predicate":["feat:bloody-debilitation"],"value":"bloody"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Clumsy.Label","predicate":["feat:vicious-debilitations"],"value":"clumsy"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Critical.Label","predicate":["feat:critical-debilitation"],"value":"critical"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Enfeebled.Label","value":"enfeebled"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.OffGuard.Label","predicate":["feat:precise-debilitations"],"value":"off-guard"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.PrecisionDamage.Label","predicate":["feat:precise-debilitations"],"value":"precision-damage"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.PreventFlanking.Label","predicate":[{"or":["feat:tactical-debilitations","feat:methodical-debilitations"]}],"value":"prevent-flanking"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.PreventReactions.Label","predicate":["feat:tactical-debilitations"],"value":"prevent-reactions"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.PreventStep.Label","predicate":["feat:eldritch-debilitations"],"value":"prevent-step"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.ReduceCover.Label","predicate":["feat:methodical-debilitations"],"value":"reduce-cover"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.SpeedPenalty.Label","value":"speed-penalty"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Stupefied.Label","predicate":["feat:eldritch-debilitations"],"value":"stupefied"},{"label":"PF2E.SpecificRule.Rogue.Debilitation.Weakness.Label","predicate":["feat:vicious-debilitations"],"value":"weakness"}],"toggleable":true}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:speed-penalty","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.SpeedPenalty.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:enfeebled","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Enfeebled.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:bloody","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Bloody.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:clumsy","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Clumsy.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:critical","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Critical.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:off-guard","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.OffGuard.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:precision-damage","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.PrecisionDamage.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:prevent-flanking","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.PreventFlanking.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:prevent-reactions","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.PreventReactions.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:prevent-step","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.PreventStep.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:reduce-cover","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.ReduceCover.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:stupefied","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Stupefied.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["debilitation:weakness","target:condition:off-guard"],"selector":"strike-damage","text":"<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Trigger]</p>\n<p>@Localize[PF2E.SpecificRule.Rogue.Debilitation.Weakness.Note]</p>","title":"PF2E.SpecificRule.Rogue.Debilitation.Title"}'
+  Category: 2
+  Level: 9
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Debilitating Strike
+    SourceId: 
+    DisplayName: Debilitating Strike
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data.PF2e;
-using PathfinderTactics.Grid;
-using PathfinderTactics.InputSystem;
-using PathfinderTactics.Reactions;
-using PathfinderTactics.Spells.Services;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Data.TacticsRuleset;
+using TacticsGame.Grid;
+using TacticsGame.InputSystem;
+using TacticsGame.Reactions;
+using TacticsGame.Spells.Services;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     /// <summary>
     /// Runtime action component attached to units that can cast spells.
@@ -148,7 +148,10 @@ namespace PathfinderTactics.Spells
                             continue;
 
                         // Range Check
-                        if (PF2E_Core.GetPF2eDistance3D(unitPos3D, testPos3D) > range)
+                        if (
+                            TacticsRuleset_Core.GetTacticsRulesetDistance3D(unitPos3D, testPos3D)
+                            > range
+                        )
                             continue;
 
                         // Line of Effect Check
@@ -334,12 +337,11 @@ namespace PathfinderTactics.Spells
             var visuals = unit.GetComponentInChildren<UnitVisuals>();
             Transform handTransform = (visuals != null) ? visuals.GetHandTransform() : transform;
             Vector3 handPos = handTransform.position;
-            Vector3 targetPos = activeContext.TargetPosition; // Default to cell center
+            var gridSystem = ServiceLocator.Get<GridSystem>();
+            Vector3 targetPos = gridSystem.GetWorldPosition(activeContext.TargetPosition); // Proper world center
 
-            // If we have a unit target, aim for center
-            Unit targetUnit = ServiceLocator
-                .Get<GridSystem>()
-                .GetUnitAt(activeContext.TargetPosition);
+            // If we have a unit target, aim for their visual center instead of the floor
+            Unit targetUnit = gridSystem.GetUnitAt(activeContext.TargetPosition);
             if (targetUnit != null)
             {
                 targetPos = targetUnit.transform.position + Vector3.up;
@@ -400,10 +402,10 @@ namespace PathfinderTactics.Spells
             // Hit VFX
             if (activeContext.SpellData.HitVFXPrefab != null)
             {
-                Vector3 hitPos = activeContext.TargetPosition;
-                Unit targetUnit = ServiceLocator
-                    .Get<GridSystem>()
-                    .GetUnitAt(activeContext.TargetPosition);
+                var gridSystem = ServiceLocator.Get<GridSystem>();
+                Vector3 hitPos = gridSystem.GetWorldPosition(activeContext.TargetPosition);
+
+                Unit targetUnit = gridSystem.GetUnitAt(activeContext.TargetPosition);
                 if (targetUnit != null)
                     hitPos = targetUnit.transform.position + Vector3.up;
 

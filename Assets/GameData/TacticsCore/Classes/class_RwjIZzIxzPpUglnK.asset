@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_RwjIZzIxzPpUglnK
+  m_EditorClassIdentifier: 
+  SourceId: RwjIZzIxzPpUglnK
+  Slug: wizard
+  DisplayName: Wizard
+  IconPath: systems/pf2e/icons/classes/wizard.webp
+  Description: You are an eternal student of the secrets of the universe, using your
+    mastery of magic to cast powerful spells. You treat magic like a science, cross-referencing
+    the latest texts on practical spellcraft with ancient tomes to discover and understand
+    arcane magic. Yet magical theory is vast, and there's no way you can study it
+    all. Most wizards learn through formal schooling, with their curriculum informing
+    a specific rubric, although particularly driven researchers sometimes piece together
+    their own theories. Wizard
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: e3aa77c2325950e9a9325abdb2f16bb6795afe36074017b1e26e08500124c273
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 6
+  KeyAttributes: 04000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 0
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 2
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 13v1o
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Wizard Spellcasting
+    SourceId: S6WW4Yyg4XonXGHD
+    DisplayName: Wizard Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 3f3b5b43f138aac4a80ada3426a1a2e1, type: 2}
+  - SourceKey: 3XT0E
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Arcane School
+    SourceId: 7nbKDBGvwSx9T27G
+    DisplayName: Arcane School
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 0ff6f1c55d4ff3246ae1ccf7d98b2e9d, type: 2}
+  - SourceKey: 45yt7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Arcane Bond
+    SourceId: au0lwQ1nAcNQwcGh
+    DisplayName: Arcane Bond
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 4be1294c0e820874fac97d1dbe9755ed, type: 2}
+  - SourceKey: QLL2z
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Arcane Thesis
+    SourceId: M89l9FOnjHe63wD7
+    DisplayName: Arcane Thesis
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 37aaf7924a3a842459f46587938fb27f, type: 2}
+  GrantedFeatures:
+  - SourceKey: 13v1o
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Wizard Spellcasting
+    SourceId: S6WW4Yyg4XonXGHD
+    DisplayName: Wizard Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 3f3b5b43f138aac4a80ada3426a1a2e1, type: 2}
+  - SourceKey: 3XT0E
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Arcane School
+    SourceId: 7nbKDBGvwSx9T27G
+    DisplayName: Arcane School
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 0ff6f1c55d4ff3246ae1ccf7d98b2e9d, type: 2}
+  - SourceKey: 45yt7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Arcane Bond
+    SourceId: au0lwQ1nAcNQwcGh
+    DisplayName: Arcane Bond
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 4be1294c0e820874fac97d1dbe9755ed, type: 2}
+  - SourceKey: 5x1uf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 6jpgb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: 7bbgv
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Spellcaster
+    SourceId: cD3nSupdCvONuHiE
+    DisplayName: Expert Spellcaster
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 3e7fd61908df4a14290ae0cc0e240ad8, type: 2}
+  - SourceKey: EmM9t
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: QLL2z
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Arcane Thesis
+    SourceId: M89l9FOnjHe63wD7
+    DisplayName: Arcane Thesis
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 37aaf7924a3a842459f46587938fb27f, type: 2}
+  - SourceKey: c3blc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Spellcaster
+    SourceId: Hfaa7TuLn3nE8lr3
+    DisplayName: Legendary Spellcaster
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: f940d7779f91b714099ce8d9e2809a2a, type: 2}
+  - SourceKey: djzu5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Archwizard's Spellcraft
+    SourceId: ZjwJHmjPrSs6VDez
+    DisplayName: Archwizard's Spellcraft
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 53fd3a5b50ee4124fb0cde39535fd900, type: 2}
+  - SourceKey: eZd7C
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Prodigious Will
+    SourceId: j5TZw3xoIo6Lz0Re
+    DisplayName: Prodigious Will
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: afdb1c75b753dab4f9436c27638b877c, type: 2}
+  - SourceKey: fqsfu
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Spellcaster
+    SourceId: l1InYvhnQSz6Ucxc
+    DisplayName: Master Spellcaster
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4bf880905a2203248baa95088d309fcb, type: 2}
+  - SourceKey: oNOEz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: TUOeATt52P43r5W0
+    DisplayName: Reflex Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 539148cfddca53c4488f47d820d2f718, type: 2}
+  - SourceKey: p9c01
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Magical Fortitude
+    SourceId: 70jqXP2eS4tRZ0Ok
+    DisplayName: Magical Fortitude
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: d288b7bd0da9d46439de4efa4661c8a4, type: 2}
+  - SourceKey: ytft4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Defensive Robes
+    SourceId: gU7epgcPSm0TD1UK
+    DisplayName: Defensive Robes
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: ff44964321aa36141b0277efd089c9e2, type: 2}

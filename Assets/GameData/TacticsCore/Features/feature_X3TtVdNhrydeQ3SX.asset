@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_X3TtVdNhrydeQ3SX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: X3TtVdNhrydeQ3SX
+  Slug: subtle-dampeners
+  DisplayName: Subtle Dampeners
+  IconPath: systems/pf2e/icons/features/classes/subtle-dampeners.webp
+  Description: You've designed your armor to help you blend in and dampen noise slightly.
+    When you send your armor into overdrive, the dampeners increase their effect,
+    improving your Stealth. When under the effects of Overdrive, you gain a +1 circumstance
+    bonus to Stealth checks. If you're a master in Crafting, this increases to a
+    +2 circumstance bonus.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: c096340f5766a43743ca8d0868c07c96963ff7210788ce210cd763a3f99f5235
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["armor:id:{actor|flags.pf2e.innovationId}","armor-innovation:subterfuge-suit",{"or":["self:effect:overdrive-success","self:effect:overdrive-critical-success"]}],"selector":"stealth","slug":"subtle-dampeners","type":"circumstance","value":1}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":[{"gte":["skill:crafting:rank",3]}],"selector":"stealth","slug":"subtle-dampeners","value":2}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

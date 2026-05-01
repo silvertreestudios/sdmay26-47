@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_cCy8vsZENlwiAyZ6
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: cCy8vsZENlwiAyZ6
+  Slug: twilight-halfling
+  DisplayName: Twilight Halfling
+  IconPath: systems/pf2e/icons/features/ancestry/twilight-halfling.webp
+  Description: Your ancestors performed many secret acts under the concealing cover
+    of dusk, whether for good or ill, and over time they developed the ability to
+    see in twilight beyond even the usual keen sight of halflings. You gain low-light
+    vision.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 6be9d230f994607e5f8c7d778fb152be04f5d860f2fe474124a18892c0051c9e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"low-light-vision"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GgZAHbrjnzWOZy2v
+    SourceId: 
+    Slug: halfling
+    DisplayName: Halfling
+  ParentAncestryAsset: {fileID: 11400000, guid: 27cca46a5c2df4845ab39fbaa79aad34, type: 2}
+  GrantedFeatures: []

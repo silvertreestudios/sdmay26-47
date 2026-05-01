@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_B89BCo6LtI3SJq54
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: B89BCo6LtI3SJq54
+  Slug: sweetbreath-kholo
+  DisplayName: Sweetbreath Kholo
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're a striped, pale-furred kholo with oddly pleasant breath, which
+    you can use to entrance your prey. You are trained in Diplomacy (or another skill
+    if you were already trained in Diplomacy). You also gain a +1 circumstance bonus
+    to checks to @UUID[Compendium.pf2e.actionspf2e.Item.Make an Impression] if the
+    target can smell your breath.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: aaefbc331f5fbfda490e992daf30f0c5f71f7b7b36f3f0206271d891a88517c0
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.diplomacy.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.diplomacy.rank","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:make-an-impression","sweet-breath"],"selector":"diplomacy","slug":"sweetbreath-kholo","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.vxbQ1Yw4qwgjTzqo
+    SourceId: 
+    Slug: kholo
+    DisplayName: Kholo
+  ParentAncestryAsset: {fileID: 11400000, guid: 6f5915ed51340204f8f369633de42202, type: 2}
+  GrantedFeatures: []

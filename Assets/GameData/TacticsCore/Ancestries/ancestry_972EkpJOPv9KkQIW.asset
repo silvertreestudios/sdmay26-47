@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_972EkpJOPv9KkQIW
+  m_EditorClassIdentifier: 
+  SourceId: 972EkpJOPv9KkQIW
+  Slug: catfolk
+  DisplayName: Catfolk
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/catfolk.svg
+  Description: Curious and gregarious wanderers, catfolk combine the features of
+    felines and humanoids in both appearance and temperament. They enjoy learning
+    new things, collecting new tales and trinkets, and ensuring their loved ones
+    are safe and happy. Catfolk view themselves as the chosen guardians of natural
+    places in the world and are often recklessly brave, even in the face of overwhelming
+    opposition. They believe that strong communities, breadth of experience, and
+    continual self-improvement aid them in this fight. Catfolk
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: c63b51c05a6f9c6d638df364022fa21c3b7110fdb62be88db6087fb5338b89ef
+  Traits:
+  - catfolk
+  - humanoid
+  TraitsLower:
+  - catfolk
+  - humanoid
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 02000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 05000000
+  StartingLanguages:
+  - Id: amurrun
+    DisplayName: Amurrun
+  - Id: common
+    DisplayName: Common
+  AdditionalLanguageOptions:
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: halfling
+    DisplayName: Halfling
+  - Id: iruxi
+    DisplayName: Iruxi
+  - Id: jotun
+    DisplayName: Jotun
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: iyksy
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Land on Your Feet
+    SourceId: 
+    DisplayName: Land on Your Feet
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: b2244894b1eefbd409ebb04ab0c84ad5, type: 2}
+  - {fileID: 11400000, guid: e71563bf0800c124ba71f6d4e93e2743, type: 2}
+  - {fileID: 11400000, guid: 5f358890752daf8429dec17cf78e5eac, type: 2}
+  - {fileID: 11400000, guid: 139b6cdf4f4c0e64bbafb4925be504a4, type: 2}
+  - {fileID: 11400000, guid: 3bed30c96793e3b45b54fec7fa9915dc, type: 2}
+  - {fileID: 11400000, guid: 4d6a1e338934c9949b7374d14ad49c78, type: 2}
+  - {fileID: 11400000, guid: dfa2b0129e3ee0848b3c267050ad7e34, type: 2}
+  - {fileID: 11400000, guid: ee9a775225836454e905ecc301140a30, type: 2}

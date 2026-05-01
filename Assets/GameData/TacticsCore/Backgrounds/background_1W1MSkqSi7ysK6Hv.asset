@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_1W1MSkqSi7ysK6Hv
+  m_EditorClassIdentifier: 
+  SourceId: 1W1MSkqSi7ysK6Hv
+  Slug: bachuan-revolutionary
+  DisplayName: Bachuan Revolutionary
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Access Bachuan origin Your heart yearns for change and burns for your
+    people. You refuse to conform to the laws that bind you, so you rebel in flashy
+    ways. Your hair is either shaved or grown wild and loose. Your clothes don't
+    conform to Bachuan's society, often cut out in garish shapes and dyed in vivid
+    colors. Your call for change is a dire battle, and not every rebellion is well
+    equipped. Whether you choose to fight another day or bring your cause on your
+    adventures, that's up to you. Choose two attribute boosts. One must be to Wisdom
+    or Strength , and one is a free attribute boost. You're trained in Society and
+    Law Lore. You gain the Sign Language skill feat.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: a236fd282bf4ea37adfbc81eb5ae0503e2be734011796ef283a6c8f0d3ac0559
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Law Lore
+    Rank: 1
+  LoreSkills:
+  - Law Lore
+  GrantedFeats:
+  - SourceKey: weFRp
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Sign Language
+    SourceId: 
+    DisplayName: Sign Language
+    Level: 1
+    ResolvedFeature: {fileID: 0}

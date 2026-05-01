@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_g8xUX7DAu2ShZ90Q
+  m_EditorClassIdentifier: 
+  SourceId: g8xUX7DAu2ShZ90Q
+  Slug: empty-whispers
+  DisplayName: Empty Whispers
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You knew someone once, and now you know only a life stitched together
+    and healed over, nary even a scar remaining. You hear voices of souls that have
+    fallen through the cracks of reality, creatures who have been removed from memory,
+    banished planar entities, and similar. Their whispers guide you. Choose two attribute
+    boosts. One must be to Intelligence or Wisdom , and one is a free attribute boost.
+    You're trained in the Occultism skill and the Planar Rift Lore skill. You get
+    a Planar Rift Lore check to sense planar rifts, even if you aren't specifically
+    Investigating or Searching for them, as well as locations where magic has been
+    used to remove the memory of an object or creature from existence.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 1b83261a2a6ad78dd6cff3b84f4fab86c4566eebff812b692f77eceb4c0bd5b0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Planar Rift
+    Rank: 1
+  LoreSkills:
+  - Planar Rift
+  GrantedFeats: []

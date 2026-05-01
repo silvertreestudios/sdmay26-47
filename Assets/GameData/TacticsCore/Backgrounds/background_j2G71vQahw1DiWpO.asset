@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_j2G71vQahw1DiWpO
+  m_EditorClassIdentifier: 
+  SourceId: j2G71vQahw1DiWpO
+  Slug: cursed
+  DisplayName: Cursed
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You are the victim of a personal or hereditary curse. Through great
+    effort and occult study, you have learned to fend off the curse's worst effects
+    and, by extension, you can protect yourself against other harmful magic. However,
+    the curse still hangs over you and sometimes manifests in dangerous ways. Choose
+    two attribute boosts. One must be to Intelligence or Charisma , and one is a
+    free attribute boost. You are trained in Occultism and Curse Lore. You gain the
+    @UUID[Compendium.pf2e.actionspf2e.Item.Warding Sign] reaction. You and the GM
+    should determine the full effects of the curse, though you've staved most of
+    them off for now. The GM determines the curse's lingering manifestations on you,
+    which usually include at least a constant or very frequent thematic effect and
+    occasional more dangerous effects.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 5b9a20462b5be4b76315b92cf47ab194a07d4bdca0d0a9af49db128a3dc00740
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Warding Sign
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Warding Sign"}'
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Curse Lore
+    Rank: 1
+  LoreSkills:
+  - Curse Lore
+  GrantedFeats: []

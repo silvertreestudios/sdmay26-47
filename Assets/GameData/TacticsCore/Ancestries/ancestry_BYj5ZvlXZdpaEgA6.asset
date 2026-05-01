@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_BYj5ZvlXZdpaEgA6
+  m_EditorClassIdentifier: 
+  SourceId: BYj5ZvlXZdpaEgA6
+  Slug: dwarf
+  DisplayName: Dwarf
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/dwarf.svg
+  Description: Dwarves have a well-earned reputation as a stoic and stern people,
+    ensconced within citadels and cities carved from solid rock. While some see them
+    as dour and humorless crafters of stone and metal, dwarves and those who have
+    spent time among them understand their unbridled zeal for their work, caring
+    far more about quality than quantity. To a stranger, they can seem untrusting
+    and clannish, but to their friends and family, they are warm and caring, their
+    halls filled with the sounds of laughter and hammers hitting anvils. Dwarf
+  SourceTitle: Pathfinder Player Core
+  SourcePack: ancestries
+  Rarity: common
+  SourceJsonHash: c227cf96fad8bfd2eb77e33ea4527bfc371539bc50ed014886d0d82c7ba512f8
+  Traits:
+  - dwarf
+  - humanoid
+  TraitsLower:
+  - dwarf
+  - humanoid
+  RawRules: []
+  HitPoints: 10
+  Speed: 20
+  Reach: 5
+  Size: 2
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 06000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: dwarven
+    DisplayName: Dwarven
+  AdditionalLanguageOptions:
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: jotun
+    DisplayName: Jotun
+  - Id: orcish
+    DisplayName: Orcish
+  - Id: petran
+    DisplayName: Petran
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 5vjeq
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Clan Dagger
+    SourceId: 
+    DisplayName: Clan Dagger
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: ad9513ec387b16c41a4d11ee0f8816e5, type: 2}
+  - {fileID: 11400000, guid: 46431ae8c035f8245b0bace7e7e450ad, type: 2}
+  - {fileID: 11400000, guid: c112eded3eb435f4db7bad322f17b22c, type: 2}
+  - {fileID: 11400000, guid: 8d793f66aa7248c46b59744fe2616bb3, type: 2}
+  - {fileID: 11400000, guid: a1e748157d4a57c459232e0ad595e4ee, type: 2}
+  - {fileID: 11400000, guid: f2c55df51c161404fb216ef35d473caa, type: 2}
+  - {fileID: 11400000, guid: 4d53cf5f643402c408e124dca886094b, type: 2}
+  - {fileID: 11400000, guid: 3fc0af1cf5a3ff340b0ff24470cc3a67, type: 2}
+  - {fileID: 11400000, guid: a3b2d6c12f9265142a02c45f5549b547, type: 2}

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_oCnyGRvkfjTsZXcX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: oCnyGRvkfjTsZXcX
+  Slug: eidolon-weapon-specialization
+  DisplayName: Eidolon Weapon Specialization
+  IconPath: systems/pf2e/icons/features/classes/eidolon-weapon-specialization.webp
+  Description: Your eidolon has learned how to inflict greater injuries with its
+    unarmed attacks. It deals 2 additional damage with unarmed attacks in which it's
+    an expert. This damage increases to 3 if it's a master, and 4 if it's legendary.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a37cb5d8700fbd230cd3048e2c15f800248927353db6b9d024ffc82029f6a2c0
+  Traits:
+  - summoner
+  TraitsLower:
+  - summoner
+  RawRules: []
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_dSYel8ABTevOc5YA
+  m_EditorClassIdentifier: 
+  SourceId: dSYel8ABTevOc5YA
+  Slug: clockfighter
+  DisplayName: Clockfighter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: While others choose to use their engineering ability to heal the injured
+    or make brilliant innovations, you've used your skill to repair and modify clockwork
+    constructs that battle in gladiatorial combat. You know how to get a crowd electrified
+    for your clockwork gladiator, win or lose, and you know how to repair it when
+    it gets damaged. These skills serve you well as an adventurer. Choose two attribute
+    boosts. One must be to Intelligence or Charisma , and one is a free attribute
+    boost. You're trained in the Crafting skill and the Gladiatorial Lore skill.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced Professional] skill
+    feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 8e6efe889296f5ac8e2406867f240ba39698334e32270e780a77c2d4b2404095
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Gladitorial
+    Rank: 1
+  LoreSkills:
+  - Gladitorial
+  GrantedFeats:
+  - SourceKey: 48cj5
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Professional
+    SourceId: 
+    DisplayName: Experienced Professional
+    Level: 1
+    ResolvedFeature: {fileID: 0}

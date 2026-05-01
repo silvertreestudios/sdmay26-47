@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_0ZfBP7Tp2P3WN7Dp
+  m_EditorClassIdentifier: 
+  SourceId: 0ZfBP7Tp2P3WN7Dp
+  Slug: amnesiac
+  DisplayName: Amnesiac
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Your background is... well... honestly, you can't remember! You might
+    have inklings deep within your mind, undercurrents of unusual emotions or unexpected
+    responses to certain people or situations, but ultimately you don't know who
+    you once were. You might be adventuring specifically to help discover yourself.
+    It's up to you and the GM how to handle the truth of your character's backstory.
+    You could leave it to the GM so it's a secret, work together with the GM, or
+    even choose to leave it undecided until later. In any case, you and your GM should
+    determine a few noteworthy details about your character or their belongings to
+    get the first clues to your past. You gain three free attribute boosts. You choose
+    two, and the GM chooses the third based on their first inklings of your character's
+    possible history.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 849fa1880e5173e91179019538e0c0b9b7dca3783d411ad710421b268551bdb0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 00000000
+  - Options: 00000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: GM choice free skill boost
+    Rank: 1
+  LoreSkills:
+  - GM choice free skill boost
+  GrantedFeats: []

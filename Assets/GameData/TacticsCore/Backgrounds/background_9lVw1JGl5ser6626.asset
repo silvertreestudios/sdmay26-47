@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_9lVw1JGl5ser6626
+  m_EditorClassIdentifier: 
+  SourceId: 9lVw1JGl5ser6626
+  Slug: criminal
+  DisplayName: Criminal
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: As an unscrupulous independent or as a member of an underworld organization,
+    you lived a life of crime. You might have become an adventurer to seek redemption,
+    to escape the law, or simply to get access to bigger and better loot. Choose
+    two attribute boosts. One must be to Dexterity or Intelligence , and one is a
+    free attribute boost. You're trained in the Stealth skill and the Underworld
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced Smuggler]
+    skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: e5e15c36d9c49acdc636555135997ec500c0b6edf6c23dff0486f0b6ac1ac553
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: 19grf
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Smuggler
+    SourceId: 
+    DisplayName: Experienced Smuggler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

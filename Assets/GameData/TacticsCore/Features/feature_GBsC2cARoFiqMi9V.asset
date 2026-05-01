@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_GBsC2cARoFiqMi9V
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: GBsC2cARoFiqMi9V
+  Slug: wizard-weapon-expertise
+  DisplayName: Wizard Weapon Expertise
+  IconPath: icons/skills/melee/hand-grip-staff-blue.webp
+  Description: Through a combination of magic and training, you've learned how to
+    wield wizard weapons more effectively. You gain expert proficiency in the club,
+    crossbow, dagger, heavy crossbow, staff, and unarmed attacks.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 97b4250941d1b2a28c1082334f880d1993d1f58164f539d2ecd575143bde252f
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.weapon-base-club.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.weapon-base-club.rank","value":2}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.weapon-base-crossbow.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.weapon-base-crossbow.rank","value":2}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.weapon-base-dagger.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.weapon-base-dagger.rank","value":2}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.weapon-base-heavy-crossbow.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.weapon-base-heavy-crossbow.rank","value":2}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.weapon-base-staff.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.weapon-base-staff.rank","value":2}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

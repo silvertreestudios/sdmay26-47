@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_pUkUC8HHom2DmYzz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: pUkUC8HHom2DmYzz
+  Slug: elemental-magic
+  DisplayName: Elemental Magic
+  IconPath: systems/pf2e/icons/features/classes/elemental-magic.webp
+  Description: 'You''re a spellcaster who specializes in harnessing the elements.
+    Though you might feel a kinship for one element over the others, you''re capable
+    of shaping many of them. Due to your specialization in elemental magic, you have
+    a smaller, more focused spell list than other spellcasters, though your magic
+    is drawn from multiple traditions. If you choose this class archetype, you must
+    select the @UUID[Compendium.pf2e.feats-srd.Item.Elementalist Dedication] as your
+    2nd-level class feat. Elementalist Adjustments: Replace your spell list with
+    the elemental spell list. Your actual magical tradition is unchanged, but you
+    choose your spells from the elemental list instead. You must choose an elemental
+    philosophy (detailed below), which determines which spells and other elemental
+    magic you can use. Druid Elementalist Adjustments: If you''re a druid of the
+    storm order and air is in your elemental philosophy, you can choose to replace
+    your starting order spell, @UUID[Compendium.pf2e.spells-srd.Item.Tempest Surge],
+    with @UUID[Compendium.pf2e.spells-srd.Item.Updraft]. Elemental Sorcerer Adjustments:
+    If you''re a sorcerer with the elemental bloodline, you can replace your initial
+    bloodline spell with an initial elemental focus spell, and your advanced bloodline
+    spell with an advanced elemental focus spell. The initial and advanced elemental
+    focus spells you select must have the same trait as your elemental bloodline.
+    Wizard Elementalist Adjustments: If you''re a wizard, you can either choose to
+    be a @UUID[Compendium.pf2e.classfeatures.Item.School of Unified Magical Theory]
+    or to follow an arcane school dedicated to one element from your elemental philosophy.
+    If you choose an elemental school, your curriculum spells can be any spells that
+    you have access to and that have your chosen element''s trait. Your school spells
+    are the elemental focus spells of your chosen element, with the 1st-rank spell
+    as your initial school spell and the 3rd- rank spell as the advanced school spell.
+    Elemental Philosophy Choose an elemental philosophy, which determines which elements
+    you can use. The options available are as follows. Elemental Cycle: Earth, fire,
+    metal, water, wood Inner Sea Elementalism: Air, earth, fire, water Every elementalist
+    has the spells from the universal elemental spells list. Your choice of elemental
+    philosophy affects your other spells. Your personal list also contains any spell
+    that shares one or more traits with those in your elemental philosophy, and doesn''t
+    have any traits that aren''t in your elemental philosophy. For example, an elemental
+    cycle elementalist could choose a spell with both the earth and fire traits,
+    but not one with the air and fire traits, while an inner sea elementalist could
+    choose either of those, but not a spell with metal and fire traits. You can''t
+    take elementalist feats or use elementalist abilities for an element you''re
+    unable to attune to. For example, an Inner Sea elementalist couldn''t select
+    the @UUID[Compendium.pf2e.feats-srd.Item.Reverberating Spell] feat, use @UUID[Compendium.pf2e.feats-srd.Item.Redirect
+    Elements] against a metal or wood spell, or choose a metal or wood ability for
+    their @UUID[Compendium.pf2e.feats-srd.Item.Elemental Familiar]. Elementalist
+    Focus Spells Air initial: @UUID[Compendium.pf2e.spells-srd.Item.Updraft]; advanced:
+    @UUID[Compendium.pf2e.spells-srd.Item.Powerful Inhalation] Earth initial: @UUID[Compendium.pf2e.spells-srd.Item.Crushing
+    Ground]; advanced: @UUID[Compendium.pf2e.spells-srd.Item.Stone Lance] Fire initial:
+    @UUID[Compendium.pf2e.spells-srd.Item.Wildfire]; advanced: @UUID[Compendium.pf2e.spells-srd.Item.Combustion]
+    Metal initial: @UUID[Compendium.pf2e.spells-srd.Item.Serrate]; advanced: @UUID[Compendium.pf2e.spells-srd.Item.Repel
+    Metal] Water initial: @UUID[Compendium.pf2e.spells-srd.Item.Rising Surf]; advanced:
+    @UUID[Compendium.pf2e.spells-srd.Item.Pulverizing Cascade] Wood initial: @UUID[Compendium.pf2e.spells-srd.Item.Arms
+    of Nature]; advanced: @UUID[Compendium.pf2e.spells-srd.Item.Wood Walk]'
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b32573c488d31bc59e1ddad0215b60cd8d4acd8a9509e1a693b93842f0b0b5be
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.SpecificRule.Elementalist.Philosophy.ElementalCycle","value":"elemental-cycle"},{"label":"PF2E.SpecificRule.Elementalist.Philosophy.InnerSea","value":"inner-sea-elementalism"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Elementalist.Philosophy.Prompt","rollOption":"elementalist"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:druid-order",{"not":"item:tag:class-archetype"}]},"flag":"druidicOrder","key":"ChoiceSet","predicate":["class:druid"],"prompt":"PF2E.SpecificRule.Druid.DruidicOrder.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.druidicOrder}'
+    Json: '{"key":"GrantItem","predicate":["class:druid"],"uuid":"{item|flags.pf2e.rulesSelections.druidicOrder}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:witch-elementalist-patron",{"not":"item:tag:class-archetype"}]},"flag":"patron","key":"ChoiceSet","predicate":["class:witch"],"prompt":"PF2E.SpecificRule.Witch.Patron.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.patron}'
+    Json: '{"key":"GrantItem","predicate":["class:witch"],"uuid":"{item|flags.pf2e.rulesSelections.patron}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:sorcerer-bloodline",{"not":"item:tag:class-archetype"}]},"flag":"bloodline","key":"ChoiceSet","predicate":["class:sorcerer"],"prompt":"PF2E.SpecificRule.Sorcerer.Bloodline.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.bloodline}'
+    Json: '{"key":"GrantItem","predicate":["class:sorcerer"],"uuid":"{item|flags.pf2e.rulesSelections.bloodline}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:magus-hybrid-study",{"not":"item:tag:class-archetype"}]},"flag":"hybridStudy","key":"ChoiceSet","predicate":["class:magus"],"prompt":"PF2E.SpecificRule.Magus.HybridStudy.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.hybridStudy}'
+    Json: '{"key":"GrantItem","predicate":["class:magus"],"uuid":"{item|flags.pf2e.rulesSelections.hybridStudy}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:wizard-elemental-school",{"not":"item:tag:class-archetype"}]},"flag":"arcaneSchool","key":"ChoiceSet","predicate":["class:wizard"],"prompt":"PF2E.SpecificRule.Wizard.ArcaneSchool.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.arcaneSchool}'
+    Json: '{"key":"GrantItem","predicate":["class:wizard"],"uuid":"{item|flags.pf2e.rulesSelections.arcaneSchool}"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Elementalist Dedication
+    Json: '{"flag":"elementalistDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Elementalist
+      Dedication"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.druidicOrder}'
+    SourceId: 
+    DisplayName: druidicOrder}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.patron}'
+    SourceId: 
+    DisplayName: patron}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.bloodline}'
+    SourceId: 
+    DisplayName: bloodline}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.hybridStudy}'
+    SourceId: 
+    DisplayName: hybridStudy}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.arcaneSchool}'
+    SourceId: 
+    DisplayName: arcaneSchool}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Elementalist Dedication
+    SourceId: 
+    DisplayName: Elementalist Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

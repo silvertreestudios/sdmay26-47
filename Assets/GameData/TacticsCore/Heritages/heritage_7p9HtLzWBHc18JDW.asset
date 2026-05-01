@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_7p9HtLzWBHc18JDW
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 7p9HtLzWBHc18JDW
+  Slug: deep-rat
+  DisplayName: Deep Rat
+  IconPath: systems/pf2e/icons/features/ancestry/deep-rat.webp
+  Description: Your ancestors lived deeper underground than other ratfolk, granting
+    you the ability to see in the dark. You gain darkvision.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: f2d642d283efdab515d20f48bc47d058511854c70be805c3b94b065b7fa5f463
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"darkvision"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.P6PcVnCkh4XMdefw
+    SourceId: 
+    Slug: ratfolk
+    DisplayName: Ratfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 0157a504d77a04745a45fb09b6f01d67, type: 2}
+  GrantedFeatures: []

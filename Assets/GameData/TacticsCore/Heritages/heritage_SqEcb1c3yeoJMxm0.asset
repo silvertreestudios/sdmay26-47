@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_SqEcb1c3yeoJMxm0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: SqEcb1c3yeoJMxm0
+  Slug: great-kholo
+  DisplayName: Great Kholo
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're an imposing, powerful kholo, with tawny fur and brown spots
+    on your hide. You gain 10 Hit Points from your ancestry instead of 8 and gain
+    a +1 circumstance bonus to Athletics checks to @UUID[Compendium.pf2e.actionspf2e.Item.Reposition],
+    @UUID[Compendium.pf2e.actionspf2e.Item.Shove], or @UUID[Compendium.pf2e.actionspf2e.Item.Trip].
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 3269ba13b5fbb4c9303683ff246eef7831b20e82a15ceecd6d133496fe73e28a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["action:shove","action:trip","action:reposition"]}],"selector":"athletics","type":"circumstance","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.attributes.ancestryhp
+    Mode: override
+    Value: 10
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.attributes.ancestryhp","value":10}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.vxbQ1Yw4qwgjTzqo
+    SourceId: 
+    Slug: kholo
+    DisplayName: Kholo
+  ParentAncestryAsset: {fileID: 11400000, guid: 6f5915ed51340204f8f369633de42202, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_yEfHCwsbsbP6K13Q
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: yEfHCwsbsbP6K13Q
+  Slug: heavy-construction
+  DisplayName: Heavy Construction
+  IconPath: icons/equipment/shoulder/pauldron-segmented-steel-worn.webp
+  Description: "Power Suit only You've expanded your innovation into a heavy bulwark,
+    and your groundbreaking design ensures you don't take any of the drawbacks for
+    such heavy defenses. Your innovation becomes heavy armor, and your proficiency
+    in your innovation armor (but no other heavy armor) advances to be equal to your
+    proficiency in medium armor. If your Strength modifier is at least +3, you remove
+    the Speed penalty entirely instead of reducing it to \u20135 feet. The armor's
+    adjusted statistics are: AC Bonus +5; Dex Cap +1; Check Penalty \u20132; Speed
+    Penalty \u201310 feet; Strength +3; Bulk 3; Group composite; Armor Traits bulwark,
+    entrench."
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 37f07c64f677d660386bf19ae59ed6fc89e96bb7819fb7a7530966b21bac2c6e
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: MartialProficiency
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"definition":["item:id:{actor|flags.pf2e.innovationId}"],"key":"MartialProficiency","kind":"defense","label":"PF2E.Item.Armor.Base.power-suit","sameAs":"medium"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '"heavy"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.innovationId}","key":"ItemAlteration","mode":"override","property":"category","value":"heavy"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: -10
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.innovationId}","key":"ItemAlteration","mode":"override","predicate":[{"lt":["attribute:str:mod",3]}],"property":"speed-penalty","value":-10}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: 3
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.innovationId}","key":"ItemAlteration","mode":"override","property":"strength","value":3}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"bulwark"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.innovationId}","key":"ItemAlteration","mode":"add","property":"traits","value":"bulwark"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '"entrench-melee"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.innovationId}","key":"ItemAlteration","mode":"override","property":"traits","value":"entrench-melee"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: 3
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.innovationId}","key":"ItemAlteration","mode":"override","property":"bulk","value":3}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_mRvyq7G0rqRP1EAr
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: mRvyq7G0rqRP1EAr
+  Slug: wellspring-magic
+  DisplayName: Wellspring Magic
+  IconPath: systems/pf2e/icons/features/classes/wellspring-magic.webp
+  Description: You regain magic power quickly, but it can be difficult for you to
+    control. You must select @UUID[Compendium.pf2e.feats-srd.Item.Wellspring Mage
+    Dedication] as your 2nd-level class feat. Wellspring Mage Adjustments You learn
+    spells as normal for your class, but change your spontaneous spellcasting in
+    the following ways. You can cast fewer spells each day unless you gain more spells
+    thanks to your wellspring. Reduce your number of spell slots of each spell rank
+    by 1. Reduce the number of cantrips you gain from your class by 1. A wellspring
+    of magic fills you with power that's not fully under your control. When you roll
+    initiative for a non-trivial combat encounter, as well as in other high-stress
+    situations of the GM's choice, magic wells up within you. Attempt a @Check[flat|dc:6]
+    check. Critical Success You temporarily recover an expended spell slot of any
+    rank of your choice. The temporary spell slot lasts for 1 minute, and if you
+    don't use it by then, you experience an immediate @UUID[Compendium.pf2e.rollable-tables.RollTable.Wellspring
+    Surges]. Success As critical success, except you randomly determine the rank
+    of spell slot from among your top three spell ranks (or all your ranks of spell
+    slots if you have fewer than three). The slot lasts 3 rounds instead of 1 minute.
+    Failure You generate a wellspring surge , with a spell rank chosen randomly among
+    your top three ranks of spell slots (or all your ranks if you have fewer than
+    three). You can gain a temporary spell slot no more than twice per day. If you
+    would gain a temporary spell slot for a rank that has no expended spell slots,
+    there's no effect. If you use a temporary slot to cast a spell with a duration,
+    the spell ends whenever you would have lost the slot if its duration hasn't yet
+    elapsed. If you roll for wellspring magic while you currently have a temporary
+    spell slot, you automatically fail the flat check. WELLSPRING SURGES When your
+    wellspring magic goes out of control, it becomes a wellspring surge. Typically,
+    this happens when you fail the flat check from wellspring magic, but other wellspring
+    mage feats have effects that sometimes cause you to generate a wellspring surge,
+    or might even cause your foes to do so. Roll [[/r 1d20]]{1d20} and use the @UUID[Compendium.pf2e.rollable-tables.RollTable.Wellspring
+    Surges] rolltable to determine the surge's effect. If the effect calls for a
+    damage type, the GM chooses the type based on the types of spells you know or
+    your current location. The wellspring surge uses your spell DC. You have no control
+    over the way your wellspring surge manifests. You are the point of origin for
+    your wellspring surges, and you are not excluded from their effects. If you force
+    a foe to generate a surge, they are the origin point of that surge instead. If
+    your wellspring was granted by a being like a god or muse, the entity's intentions
+    might sometimes alter the results of wellspring surges, or move the point of
+    origin for an area to any point within 30 feet if the GM determines this fits
+    the situation. For example, instead of uncontrolled damage, the entity might
+    choose to damage only creatures opposing its plan, even if they are your allies.
+    A wellspring surge always has the trait of your magical tradition, plus any traits
+    that appear in parentheses at the end of the surge's effects.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2b764218d4ad213b81243d11091fb8e52f2bf4d6842f40def8cf2b9e8d5fe0c1
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","selector":"initiative","text":"PF2E.SpecificRule.WellspringMage.Initiative","title":"{item|name}"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["criticalSuccess"],"predicate":["wellspring-magic"],"selector":"flat-check","text":"PF2E.SpecificRule.WellspringMage.CriticalSuccess","title":"{item|name}"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["success"],"predicate":["wellspring-magic"],"selector":"flat-check","text":"PF2E.SpecificRule.WellspringMage.Success","title":"{item|name}"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure","criticalFailure"],"predicate":["wellspring-magic"],"selector":"flat-check","text":"PF2E.SpecificRule.WellspringMage.Failure","title":"{item|name}"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Wellspring Mage Dedication
+    Json: '{"flag":"wellspringMageDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Wellspring
+      Mage Dedication"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:bard-muse",{"not":"item:tag:class-archetype"}]},"flag":"muses","key":"ChoiceSet","predicate":["class:bard"],"prompt":"PF2E.SpecificRule.Bard.Muse.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.muses}'
+    Json: '{"key":"GrantItem","predicate":["class:bard"],"uuid":"{item|flags.pf2e.rulesSelections.muses}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:oracle-mystery",{"not":"item:tag:class-archetype"}]},"flag":"mystery","key":"ChoiceSet","predicate":["class:oracle"],"prompt":"PF2E.SpecificRule.Oracle.Mystery.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.mystery}'
+    Json: '{"key":"GrantItem","predicate":["class:oracle"],"uuid":"{item|flags.pf2e.rulesSelections.mystery}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:sorcerer-bloodline",{"not":"item:tag:class-archetype"}]},"flag":"bloodline","key":"ChoiceSet","predicate":["class:sorcerer"],"prompt":"PF2E.SpecificRule.Sorcerer.Bloodline.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.bloodline}'
+    Json: '{"key":"GrantItem","predicate":["class:sorcerer"],"uuid":"{item|flags.pf2e.rulesSelections.bloodline}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Wellspring Mage Dedication
+    SourceId: 
+    DisplayName: Wellspring Mage Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.muses}'
+    SourceId: 
+    DisplayName: muses}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.mystery}'
+    SourceId: 
+    DisplayName: mystery}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.bloodline}'
+    SourceId: 
+    DisplayName: bloodline}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

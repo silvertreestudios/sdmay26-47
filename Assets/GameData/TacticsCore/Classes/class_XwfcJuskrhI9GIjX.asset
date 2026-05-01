@@ -1,0 +1,217 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_XwfcJuskrhI9GIjX
+  m_EditorClassIdentifier: 
+  SourceId: XwfcJuskrhI9GIjX
+  Slug: alchemist
+  DisplayName: Alchemist
+  IconPath: systems/pf2e/icons/classes/alchemist.webp
+  Description: There's no sight more beautiful to you than a strange brew bubbling
+    in a beaker, and you consume your ingenious elixirs with abandon. You're fascinated
+    by uncovering the secrets of science and the natural world, and you're constantly
+    experimenting in your lab or on the go with inventive concoctions for every eventuality.
+    You are fearless in the face of risk, hurling explosive or toxic creations at
+    your foes. Your unique path toward greatness is lined with alchemical brews that
+    push your mind and body to their limits. Alchemist
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 79813584ae23f943a8f9c42bdbdb681449c52772bf7399f9d3c8d40b3c2e0305
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.weapon-base-alchemical-bomb.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.weapon-base-alchemical-bomb.rank","value":1}'
+  HitPointsPerLevel: 8
+  KeyAttributes: 04000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 1
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  - Group: 4
+    CustomGroupName: Alchemical Bombs
+    Rank: 1
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 4bdrn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Alchemy
+    SourceId: w3aS3tsvH2Ub6XMn
+    DisplayName: Alchemy
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 7702090335cc6de42ba4a20aa7c74c34, type: 2}
+  - SourceKey: b3ohx
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Research Field
+    SourceId: cU2ofQLj7pg6wTSi
+    DisplayName: Research Field
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d588858073e67a5439d0fde5883deba8, type: 2}
+  GrantedFeatures:
+  - SourceKey: 4bdrn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Alchemy
+    SourceId: w3aS3tsvH2Ub6XMn
+    DisplayName: Alchemy
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 7702090335cc6de42ba4a20aa7c74c34, type: 2}
+  - SourceKey: CJ528
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Chemical Hardiness
+    SourceId: PjuFdRe1moLd1VhP
+    DisplayName: Chemical Hardiness
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 7abe62abfd5c34b4cbaa239d0ea9b5cc, type: 2}
+  - SourceKey: JK2gV
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Alchemical Weapon Mastery
+    SourceId: basYH3RUrT7omPQk
+    DisplayName: Alchemical Weapon Mastery
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4e27609d331bd0548b934762c1085fac, type: 2}
+  - SourceKey: NY2Su
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: Q1cDZ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Explosion Dodger
+    SourceId: ZqNKqBJWagU1fg4A
+    DisplayName: Explosion Dodger
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 2863d8ab9b4ef7a4ab83044f2d794a77, type: 2}
+  - SourceKey: SWNkG
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Mastery
+    SourceId: cGMSYAErbUG5E8X2
+    DisplayName: Medium Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: c6659f86a85d58d4d91186d1b048953f, type: 2}
+  - SourceKey: aay1e
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Will Expertise
+    SourceId: NhcF2CbXA8R1UCg4
+    DisplayName: Will Expertise
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: e631da3eeac3888459d9fbba2d398d2c, type: 2}
+  - SourceKey: b3ohx
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Research Field
+    SourceId: cU2ofQLj7pg6wTSi
+    DisplayName: Research Field
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d588858073e67a5439d0fde5883deba8, type: 2}
+  - SourceKey: cNnDR
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Expertise
+    SourceId: FCEp9jjxxgRJDJV3
+    DisplayName: Medium Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 73197a4a7743ecd498d5be602ed09454, type: 2}
+  - SourceKey: enfdl
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: f4a0p
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Double Brew
+    SourceId: 76cwNLJEm4Yetnee
+    DisplayName: Double Brew
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 2e3caa9fa5bdbb347b8cd92d56b04783, type: 2}
+  - SourceKey: j5xnl
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Alchemical Weapon Expertise
+    SourceId: 4ocPy4O0OCLY0XCM
+    DisplayName: Alchemical Weapon Expertise
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: a96c14e2ff47ece4aa65ec00d901bb70, type: 2}
+  - SourceKey: l170j
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Field Discovery
+    SourceId: 
+    DisplayName: (Choice) Greater Field Discovery
+    Level: 13
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: plldb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Alchemical Expertise
+    SourceId: 3e1PlMXmlSwKoc6d
+    DisplayName: Alchemical Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: ac074fd0a1c501e4d8d3e509c0e943fa, type: 2}
+  - SourceKey: rpCw8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Abundant Vials
+    SourceId: tVxAFMBen8D516BQ
+    DisplayName: Abundant Vials
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 6e5415b22d2c0c14fa844fcc4947a707, type: 2}
+  - SourceKey: vOE57
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Advanced Vials
+    SourceId: X9oHc6wtyJB7gFzK
+    DisplayName: Advanced Vials
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 7a6ba9af33687ee47916468002c78341, type: 2}
+  - SourceKey: xzcdr
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Field Discovery
+    SourceId: IxxPEahbqXwIXum7
+    DisplayName: Field Discovery
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 989cb03b5bafe7945970110cdead5703, type: 2}
+  - SourceKey: yc9ak
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Powerful Alchemy
+    SourceId: 7JK2a1D3VeWDcObo
+    DisplayName: Powerful Alchemy
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: ad0727da478023743a3068111fc4e08d, type: 2}
+  - SourceKey: yy1uz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Alchemical Mastery
+    SourceId: eG7FBDjCdEFzW9V9
+    DisplayName: Alchemical Mastery
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 3ec053109a603b14ebb215df67b0657f, type: 2}

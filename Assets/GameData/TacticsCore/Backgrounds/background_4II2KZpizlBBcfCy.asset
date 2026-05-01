@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_4II2KZpizlBBcfCy
+  m_EditorClassIdentifier: 
+  SourceId: 4II2KZpizlBBcfCy
+  Slug: borderlands-pioneer
+  DisplayName: Borderlands Pioneer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You have long lived along the southern border of Brevoy, in the shadow
+    of the wilderness known as the Stolen Lands. Life has been hard, but through
+    hunting, trapping, trading, and coaxing crops from the ground, you've learned
+    how to survive on the rugged frontier. Whether because of your personal expertise
+    and familiarity with the borderlands or in order to reclaim your family's land,
+    you've joined the expedition into the Stolen Lands. Choose two attribute boosts.
+    One must be to Strength or Wisdom , and one is a free attribute boost. You're
+    trained in the Nature skill and a Lore skill associated with a particular type
+    of wilderness (choose from forest, hills, mountains, plains, rivers, or swamp).
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Train Animal] skill feat.
+  SourceTitle: Pathfinder Kingmaker Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 46f0a4141e2a0fc048bd58426257ed1aea904caf113ab6f96204f2d071be9b65
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: 9pyAP
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Train Animal
+    SourceId: 
+    DisplayName: Train Animal
+    Level: 1
+    ResolvedFeature: {fileID: 0}

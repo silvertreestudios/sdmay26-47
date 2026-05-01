@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_8YIA0jh64Ecz0TG6
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 8YIA0jh64Ecz0TG6
+  Slug: desecration
+  DisplayName: Desecration
+  IconPath: icons/magic/symbols/rune-sigil-horned-white-purple.webp
+  Description: "You always take what pleases you, no matter who it hurts, and you
+    spread a malign influence across all you touch. Edicts subvert or corrupt everything
+    in your path that is pure or holy, sow doubt among those holding ideals of purity
+    or holiness. Champion's Reaction @UUID[Compendium.pf2e.actionspf2e.Item.Selfish
+    Shield] Relentless Reaction (9th) If your Charisma modifier is +3 or greater,
+    your resistance against the triggering damage equals your Charisma modifier +
+    half your level. Exalted Reaction (11th) Each enemy in your champion's aura takes
+    a \u20131 status penalty to attack rolls against you until the start of your
+    next turn. @UUID[Compendium.pf2e.feat-effects.Item.Effect: Exalted Reaction (Desecrator)]"
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 6db6b5e8d8ec446cf56ed333bb4e16cb6aef83caa79d27f082762b35c731dffc
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Selfish Shield
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"or":["class:champion","feat:champions-reaction"]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.actionspf2e.Item.Selfish
+      Shield"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Selfish Shield
+    SourceId: 
+    DisplayName: Selfish Shield
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

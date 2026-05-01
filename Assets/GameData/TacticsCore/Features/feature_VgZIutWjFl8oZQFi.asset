@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_VgZIutWjFl8oZQFi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: VgZIutWjFl8oZQFi
+  Slug: expert-strikes
+  DisplayName: Expert Strikes
+  IconPath: icons/skills/melee/hand-grip-staff-yellow-brown.webp
+  Description: You've practiced martial arts and have now surpassed your former skill.
+    Your proficiency ranks for unarmed attacks and simple weapons increase to expert.
+    When you get a critical hit with an unarmed attack in the brawling group, you
+    get its critical specialization effect.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2b0f0acea106f901a6906010c4c880267c4aa6ca1f63024be72dea00698a2aeb
+  Traits:
+  - monk
+  TraitsLower:
+  - monk
+  RawRules:
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["item:category:unarmed","item:group:brawling"]}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0NyPgi6UACMTmAGE
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0NyPgi6UACMTmAGE
+  Slug: inventor-weapon-expertise
+  DisplayName: Inventor Weapon Expertise
+  IconPath: icons/skills/melee/hand-grip-sword-red.webp
+  Description: You develop tricks for using your weapons more effectively. Your proficiency
+    ranks for simple and martial weapons and unarmed attacks increase to expert.
+    If you have a @UUID[Compendium.pf2e.classfeatures.Item.Weapon Innovation], you
+    gain access to the critical specialization effect with your innovation.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5d20020c6791275e6230200d8f3b8361a8b86e310ab5efdbdb13fd3736f57982
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["feature:weapon-innovation","item:id:{actor|flags.pf2e.innovationId}"]}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: martial
+    Rank: 2
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

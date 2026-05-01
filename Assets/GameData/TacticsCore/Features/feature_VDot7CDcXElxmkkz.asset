@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_VDot7CDcXElxmkkz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: VDot7CDcXElxmkkz
+  Slug: dragon-instinct
+  DisplayName: Dragon Instinct
+  IconPath: icons/creatures/abilities/dragon-fire-breath-orange.webp
+  Description: "You summon the fury of a mighty dragon and manifest incredible abilities.
+    Perhaps your culture reveres draconic majesty, or you gained insights by drinking
+    or bathing in dragon's blood or watching a marauding wyrm burn your village.
+    Select a type of dragon from the Dragon Instincts table as your instinct's dragon
+    type. These are the dragons from Monster Core, but your GM might allow you to
+    choose dragons from other sources and determine their tradition and dragon breath
+    type. Instinct Ability\u2014Draconic Rage While raging, you can increase the
+    additional damage from Rage from 2 to 4 and change its damage type to match that
+    of your instinct's dragon breath instead of the damage type for your weapon or
+    unarmed attack. If you do this, your Rage action gains the trait matching your
+    dragon instinct's tradition, as well as the trait matching the damage type where
+    applicable. Specialization Ability (7th) When you use draconic rage, you increase
+    the additional damage from Rage from 4 to 8. If you have greater weapon specialization,
+    instead increase the damage from Rage when using draconic rage from 8 to 16.
+    Raging Resistance (9th) You resist piercing damage and the damage type of your
+    instinct's dragon breath. Dragon Instincts Dragon Tradition Dragon Breath Adamantine
+    Primal Bludgeoning Conspirator Occult Poison Diabolic Divine Fire Empyreal Divine
+    Spirit Fortune Arcane Force Horned Primal Poison Mirage Arcane Mental Omen Occult
+    Mental Black Arcane Line of Acid Blue Arcane Line of Electricity Green Arcane
+    Cone of Poison Red Arcane Cone of Fire White Arcane Cone of Cold Brass Arcane
+    Line of Fire Bronze Arcane Line of Electricity Copper Arcane Line of Acid Gold
+    Arcane Cone of Fire Silver Arcane Cone of Cold"
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 7b5bc241ab4ef1f3f8939ab2bd019bc8d9b91f75cf3362830278b453068fd650
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.Dragon.Adamantine","value":{"damageType":"bludgeoning","dragonType":"adamantine","tradition":"primal"}},{"label":"PF2E.Dragon.Conspirator","value":{"damageType":"poison","dragonType":"conspirator","tradition":"occult"}},{"label":"PF2E.Dragon.Diabolic","value":{"damageType":"fire","dragonType":"diabolic","tradition":"divine"}},{"label":"PF2E.Dragon.Empyreal","value":{"damageType":"spirit","dragonType":"empyreal","tradition":"divine"}},{"label":"PF2E.Dragon.Fortune","value":{"damageType":"force","dragonType":"fortune","tradition":"arcane"}},{"label":"PF2E.Dragon.Horned","value":{"damageType":"poison","dragonType":"horned","tradition":"primal"}},{"label":"PF2E.Dragon.Mirage","value":{"damageType":"mental","dragonType":"mirage","tradition":"arcane"}},{"label":"PF2E.Dragon.Omen","value":{"damageType":"mental","dragonType":"omen","tradition":"occult"}},{"label":"PF2E.Dragon.Forest","value":{"damageType":"piercing","dragonType":"forest","tradition":"primal"}},{"label":"PF2E.Dragon.Sea","value":{"damageType":"bludgeoning","dragonType":"sea","tradition":"arcane"}},{"label":"PF2E.Dragon.Sky","value":{"damageType":"electricity","dragonType":"sky","tradition":"divine"}},{"label":"PF2E.Dragon.Sovereign","value":{"damageType":"mental","dragonType":"sovereign","tradition":"occult"}},{"label":"PF2E.Dragon.Underworld","value":{"damageType":"fire","dragonType":"underworld","tradition":"arcane"}},{"label":"PF2E.Dragon.Brine","value":{"damageType":"acid","dragonType":"brine","tradition":"primal"}},{"label":"PF2E.Dragon.Cloud","value":{"damageType":"electricity","dragonType":"cloud","tradition":"primal"}},{"label":"PF2E.Dragon.Crystal","value":{"damageType":"fire","dragonType":"crystal","tradition":"primal"}},{"label":"PF2E.Dragon.Magma","value":{"damageType":"fire","dragonType":"magma","tradition":"primal"}},{"label":"PF2E.Dragon.Umbral","value":{"damageType":"void","dragonType":"umbral","tradition":"primal"}},{"label":"PF2E.Dragon.Black","value":{"damageType":"acid","dragonType":"black","tradition":"arcane"}},{"label":"PF2E.Dragon.Blue","value":{"damageType":"electricity","dragonType":"blue","tradition":"arcane"}},{"label":"PF2E.Dragon.Brass","value":{"damageType":"fire","dragonType":"brass","tradition":"arcane"}},{"label":"PF2E.Dragon.Bronze","value":{"damageType":"electricity","dragonType":"bronze","tradition":"arcane"}},{"label":"PF2E.Dragon.Copper","value":{"damageType":"acid","dragonType":"copper","tradition":"arcane"}},{"label":"PF2E.Dragon.Gold","value":{"damageType":"fire","dragonType":"gold","tradition":"arcane"}},{"label":"PF2E.Dragon.Green","value":{"damageType":"poison","dragonType":"green","tradition":"arcane"}},{"label":"PF2E.Dragon.Silver","value":{"damageType":"cold","dragonType":"silver","tradition":"arcane"}},{"label":"PF2E.Dragon.Red","value":{"damageType":"fire","dragonType":"red","tradition":"arcane"}},{"label":"PF2E.Dragon.White","value":{"damageType":"cold","dragonType":"white","tradition":"arcane"}}],"flag":"dragon","key":"ChoiceSet","prompt":"PF2E.SpecificRule.DragonDisciple.Prompt"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.barbarian.instinct.dragon.tradition
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.dragon.tradition}"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.barbarian.instinct.dragon.tradition","value":"{item|flags.pf2e.rulesSelections.dragon.tradition}"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.barbarian.instinct.dragon.dragonType
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.dragon.dragonType}"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.barbarian.instinct.dragon.dragonType","value":"{item|flags.pf2e.rulesSelections.dragon.dragonType}"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.barbarian.instinct.dragon.damageType
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.dragon.damageType}"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.barbarian.instinct.dragon.damageType","value":"{item|flags.pf2e.rulesSelections.dragon.damageType}"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: true
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Barbarian.Dragon.ToggleLabel","option":"draconic-rage","predicate":[{"or":["class:barbarian","feat:instinct-ability"]}],"toggleable":true,"value":true}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 4
+    Uuid: 
+    Json: '{"damageType":"{item|flags.pf2e.rulesSelections.dragon.damageType}","key":"AdjustModifier","mode":"upgrade","predicate":["draconic-rage"],"selectors":["strike-damage"],"slug":"rage","value":4}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 8
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["draconic-rage","class:barbarian",{"gte":["self:level",7]}],"selectors":["strike-damage"],"slug":"rage","value":8}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 16
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["draconic-rage","class:barbarian","feature:greater-weapon-specialization"],"selectors":["strike-damage"],"slug":"rage","value":16}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+3"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feature:raging-resistance"],"type":["piercing","{item|flags.pf2e.rulesSelections.dragon.damageType}"],"value":"@actor.abilities.con.mod+3"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+8"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feat:unstoppable-juggernaut"],"type":["piercing","{item|flags.pf2e.rulesSelections.dragon.damageType}"],"value":"@actor.abilities.con.mod+8"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{actor|flags.pf2e.barbarian.instinct.dragon.damageType}"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:rage"],"property":"traits","value":"{actor|flags.pf2e.barbarian.instinct.dragon.damageType}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{actor|flags.pf2e.barbarian.instinct.dragon.tradition}"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:rage"],"property":"traits","value":"{actor|flags.pf2e.barbarian.instinct.dragon.tradition}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

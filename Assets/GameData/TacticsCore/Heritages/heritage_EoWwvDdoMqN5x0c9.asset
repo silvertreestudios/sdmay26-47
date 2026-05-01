@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_EoWwvDdoMqN5x0c9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: EoWwvDdoMqN5x0c9
+  Slug: rite-of-light
+  DisplayName: Rite of Light
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your exoskeleton bears small shoots that can share life. When using
+    your @UUID[Compendium.pf2e.ancestryfeatures.Item.Sunlight Healing], you can restore
+    the Hit Points of an adjacent ally instead of yourself. That ally becomes temporarily
+    immune to all uses of Sunlight Healing for 1 day.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 3ac72a44fae90d02337b03b341cfc3a53635cf7748a3ceb5844fd8a1fdd6b548
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.tZn4qIHCUA6wCdnI
+    SourceId: 
+    Slug: conrasu
+    DisplayName: Conrasu
+  ParentAncestryAsset: {fileID: 11400000, guid: 4d28248b03c3e5142927268168e33101, type: 2}
+  GrantedFeatures: []

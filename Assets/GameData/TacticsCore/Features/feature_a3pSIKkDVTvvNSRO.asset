@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_a3pSIKkDVTvvNSRO
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: a3pSIKkDVTvvNSRO
+  Slug: way-of-the-drifter
+  DisplayName: Way of the Drifter
+  IconPath: systems/pf2e/icons/features/classes/way-of-the-drifter.webp
+  Description: You're a wanderer traveling from land to land with your gun and a
+    melee weapon as company. Maybe you learned to fight with blade and pistol as
+    a Shackles pirate, mastered the hand cannon and katana in Minkai, or practiced
+    with a hatchet and clan pistol in Dongun Hold. You win battles by relying on
+    mobility and flexible use of your weapons. Slinger's Reload @UUID[Compendium.pf2e.actionspf2e.Item.Reloading
+    Strike] Deeds Initial @UUID[Compendium.pf2e.actionspf2e.Item.Into the Fray];
+    Advanced @UUID[Compendium.pf2e.actionspf2e.Item.Finish The Job]; Greater @UUID[Compendium.pf2e.actionspf2e.Item.Drifter's
+    Wake] Way Skill Acrobatics
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 387ff8d8df4bb041f699e728b2218cb98e02ace2cd26d8d7816cb79f06d857b0
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Into the Fray
+    Json: '{"key":"GrantItem","predicate":["class:gunslinger"],"uuid":"Compendium.pf2e.actionspf2e.Item.Into
+      the Fray"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Reloading Strike
+    Json: '{"key":"GrantItem","predicate":["class:gunslinger"],"uuid":"Compendium.pf2e.actionspf2e.Item.Reloading
+      Strike"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.acrobatics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.acrobatics.rank","value":1}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Into the Fray
+    SourceId: 
+    DisplayName: Into the Fray
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Reloading Strike
+    SourceId: 
+    DisplayName: Reloading Strike
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_ns9BOvCyjdapYhI0
+  m_EditorClassIdentifier: 
+  SourceId: ns9BOvCyjdapYhI0
+  Slug: root-worker
+  DisplayName: Root Worker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Some ailments can't be cured by herbs alone. You learned ritual remedies
+    as well, calling on nature spirits to soothe aches and ward off the evil eye.
+    Taking up with adventurers has given you company on the road, as well as protection
+    from those who would brand you a fake\u2014or worse. Choose two attribute boosts.
+    One must be to Intelligence or Wisdom , and one is a free attribute boost. You're
+    trained in the Occultism skill and the Herbalism Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Root
+    Magic] skill feat."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 0163c7049919ae97664c87656a8ab6398a96c3ce7422247de948cae73a6effea
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Herbalism Lore
+    Rank: 1
+  LoreSkills:
+  - Herbalism Lore
+  GrantedFeats:
+  - SourceKey: rzhqp
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Root Magic
+    SourceId: 
+    DisplayName: Root Magic
+    Level: 1
+    ResolvedFeature: {fileID: 0}

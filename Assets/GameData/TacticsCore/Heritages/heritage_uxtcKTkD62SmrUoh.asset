@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_uxtcKTkD62SmrUoh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: uxtcKTkD62SmrUoh
+  Slug: shapewrought-fleshwarp
+  DisplayName: Shapewrought Fleshwarp
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: A victim of fleshwarping, you likely bear loose flesh, bony spurs,
+    or features of inhuman creatures sprouting from your skin. You have nevertheless
+    turned the psychic toll of your transformation into a strength. You gain resistance
+    to mental damage equal to half your level (minimum 1).
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: b0d2bfd188e84b36acee2bf905ce016981c4daa49dc718a43628d02db8a70077
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"mental","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.FXlXmNBFiiz9oasi
+    SourceId: 
+    Slug: fleshwarp
+    DisplayName: Fleshwarp
+  ParentAncestryAsset: {fileID: 11400000, guid: 0a2d0aca9a4b5a7458e4d411a0bf9d0e, type: 2}
+  GrantedFeatures: []

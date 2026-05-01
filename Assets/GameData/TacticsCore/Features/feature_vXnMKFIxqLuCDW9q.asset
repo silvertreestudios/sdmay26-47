@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_vXnMKFIxqLuCDW9q
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: vXnMKFIxqLuCDW9q
+  Slug: curse-of-ancestral-meddling
+  DisplayName: Curse of Ancestral Meddling
+  IconPath: icons/creatures/magical/spirit-undead-masked-blue.webp
+  Description: The ancestral spirits you commune with haunt you and meddle with your
+    belongings and actions, either out of a wellintentioned (but ultimately detrimental)
+    attempt to assist you, as punishment for your audacity in circumventing the traditional
+    means of achieving divine power, for their own amusement, or a mixture of the
+    above. When you have the @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]
+    condition, you are @UUID[Compendium.pf2e.conditionitems.Item.Clumsy] with a value
+    equal to your cursebound value as the spirits of your ancestors temporarily possess
+    you and vie for control in your mind, hindering your movements.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6dfb6b91781c9e774ba9be24a797f4058b0b29f07b6c41a18f09ee8524550048
+  Traits:
+  - curse
+  - divine
+  - oracle
+  - spirit
+  TraitsLower:
+  - curse
+  - divine
+  - oracle
+  - spirit
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Clumsy
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"override","property":"badge-value","value":"@actor.conditions.cursebound.value"}],"inMemoryOnly":true,"key":"GrantItem","onDeleteActions":{"grantee":"restrict"},"predicate":["self:condition:cursebound"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.conditionitems.Item.Clumsy"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.conditionitems.Item.Clumsy
+    SourceId: 
+    DisplayName: Clumsy
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

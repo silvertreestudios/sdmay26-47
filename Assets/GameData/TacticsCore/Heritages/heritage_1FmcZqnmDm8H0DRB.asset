@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_1FmcZqnmDm8H0DRB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 1FmcZqnmDm8H0DRB
+  Slug: budding-speaker-centaur
+  DisplayName: Budding Speaker Centaur
+  IconPath: icons/magic/nature/symbol-moon-stars-white.webp
+  Description: You were born with a spark of magic that could set you on the path
+    to becoming a Greenspeaker or Faithspeaker. Select divine or primal. If you selected
+    divine, you're a Faithspeaker. If you selected primal, you're a Greenspeaker.
+    This choice can't be changed. You gain one cantrip from the chosen spell list.
+    You can cast this spell as an innate spell at will. A cantrip is heightened to
+    a spell rank equal to half your level rounded up.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 13577a269cffbd704fde3f0d153507f4a649d927a4ba4b5de13c5a3fb01d1a96
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitDivine","value":"faithspeaker"},{"label":"PF2E.TraitPrimal","value":"greenspeaker"}],"key":"ChoiceSet","rollOption":"centaur-speaker"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pJkQlFTvpQ5GjZ5e
+    SourceId: 
+    Slug: centaur
+    DisplayName: Centaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 123a536b34b859a428fe590fb60ad26b, type: 2}
+  GrantedFeatures: []

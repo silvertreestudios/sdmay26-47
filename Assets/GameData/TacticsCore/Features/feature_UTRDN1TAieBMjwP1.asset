@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_UTRDN1TAieBMjwP1
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: UTRDN1TAieBMjwP1
+  Slug: order-of-the-godclaw
+  DisplayName: Order of the Godclaw
+  IconPath: systems/pf2e/icons/default-icons/feat.svg
+  Description: 'Favored Weapon @UUID[Compendium.pf2e.equipment-srd.Item.Morningstar]
+    The Order of the Godclaw''s Hellknights see their cause as a holy mandate from
+    @UUID[Compendium.pf2e.deities.Item.The Godclaw]. They seek to punish criminals
+    with a zeal rarely matched by others who enforce the law. Lesser Benefit @UUID[Compendium.pf2e.feats-srd.Item.Dedication
+    to the Five] Greater Benefit @UUID[Compendium.pf2e.feats-srd.Item.Blessing of
+    the Five]'
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 509ee9d22af67594ca1fde0b3b967e11debf55520ad648ae85883d9439896792
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

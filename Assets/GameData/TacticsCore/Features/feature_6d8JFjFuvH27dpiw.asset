@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_6d8JFjFuvH27dpiw
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 6d8JFjFuvH27dpiw
+  Slug: advanced-vials-chirurgeon
+  DisplayName: Advanced Vials (Chirurgeon)
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: When you use a field vial to heal a creature that has half its maximum
+    Hit Points or fewer, the coagulant trait doesn't apply to that healing.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 7b11fbd2ab03f6962bdf0effad0f45701ee1073ee6553bbf66b21f14836cd681
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

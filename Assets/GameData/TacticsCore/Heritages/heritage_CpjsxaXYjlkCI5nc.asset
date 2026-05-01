@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_CpjsxaXYjlkCI5nc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: CpjsxaXYjlkCI5nc
+  Slug: chrysanthemum-leshy
+  DisplayName: Chrysanthemum Leshy
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You look like a human child, though with a grand crown of chrysanthemums
+    growing from your head, ornate as an emperor's. These petals have medicinal properties,
+    granting you a +1 circumstance bonus to saving throws against poison. Furthermore,
+    during your daily preparations, you can harmlessly pluck a few petals from your
+    head and steep them in fresh water to create a single Lesser Antidote, which
+    takes the form of a tea. At level 6, you instead create a Moderate Antidote;
+    at level 10, a Greater Antidote; and at level 14, a Major Antidote. The tea loses
+    its effectiveness if not consumed before your next daily preparations.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 421e92899a7e4934ef0181550d6206017f6c0af539cc43fea2babebe700cf825
+  Traits:
+  - leshy
+  TraitsLower:
+  - leshy
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["item:trait:posion"],"selector":"saving-throw","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cdhgByGG1WtuaK73
+    SourceId: 
+    Slug: leshy
+    DisplayName: Leshy
+  ParentAncestryAsset: {fileID: 11400000, guid: 2c3ed83876c3e8f42b39718765568df8, type: 2}
+  GrantedFeatures: []

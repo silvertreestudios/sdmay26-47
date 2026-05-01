@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_syEkISIi0F9946zo
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: syEkISIi0F9946zo
+  Slug: assured-evasion
+  DisplayName: Assured Evasion
+  IconPath: systems/pf2e/icons/features/classes/improved-evasion.webp
+  Description: Your ability to elude danger is matchless. Your proficiency rank for
+    Reflex saves increases to legendary. When you roll a critical failure on a Reflex
+    save, you get a failure instead. When you roll a failure on a Reflex save against
+    a damaging effect, you take half damage.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b456c28566b5fcd55413064092d00a1b1b2a2880649f506dabec62eeee15bff2
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"reflex"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["damaging-effect"],"selector":"will","text":"PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Reflex","title":"{item|name}"}'
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: reflex
+    Rank: 4
+  FocusPointDelta: 0

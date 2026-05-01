@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_GoMoEtTu9uP7nxkg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: GoMoEtTu9uP7nxkg
+  Slug: omnirange-stabilizers
+  DisplayName: Omnirange Stabilizers
+  IconPath: systems/pf2e/icons/features/classes/blunt-shot.webp
+  Description: Ranged only You've modified your innovation to be dangerous and effective
+    at any range. If your innovation had the volley trait, remove the volley trait.
+    Otherwise, increase your innovation's range increment by 50 feet or an amount
+    equal to the weapon's base range increment, whichever is more
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 680d00e419518dbeff277b437aed9f5b6d7df8592a6a57d4870f657a5de5528c
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"removed-volley"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","predicate":["item:trait:volley"],"property":"other-tags","value":"removed-volley"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: remove
+    Value: '"volley-20"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"remove","predicate":["item:tag:removed-volley"],"property":"traits","value":"volley-20"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: remove
+    Value: '"volley-30"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"remove","predicate":["item:tag:removed-volley"],"property":"traits","value":"volley-30"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: remove
+    Value: '"volley-50"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"remove","predicate":["item:tag:removed-volley"],"property":"traits","value":"volley-50"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: remove
+    Value: '"volley-60"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"remove","predicate":["item:tag:removed-volley"],"property":"traits","value":"volley-60"}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: 50
+    Uuid: 
+    Json: '{"definition":["item:id:{actor|flags.pf2e.trackedItems.weaponInnovation}",{"not":"removed-volley"}],"key":"AdjustStrike","mode":"add","property":"range-increment","value":50}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

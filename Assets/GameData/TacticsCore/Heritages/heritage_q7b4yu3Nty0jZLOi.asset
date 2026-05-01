@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_q7b4yu3Nty0jZLOi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: q7b4yu3Nty0jZLOi
+  Slug: respite-of-a-thousand-roofs
+  DisplayName: Respite of a Thousand Roofs
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You swore a vow to shelter and feed the poor. Your vow grants you
+    adroitness with carpentry, cook pot, and cloth; you become trained in Crafting
+    and Cooking Lore, and you gain the @UUID[Compendium.pf2e.feats-srd.Item.Improvise
+    Tool] skill feat. Additional Edict help the impoverished to the extent you're
+    able by repairing their abodes and clothing or by feeding them
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c2a635b15b0e6cee1f57df6b892ab50c779e33a2597d72572d9f081cb12bc9e6
+  Traits:
+  - yaksha
+  TraitsLower:
+  - yaksha
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.crafting.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.crafting.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Improvise Tool
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Improvise Tool"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.k3zyr6du4gV0Ftuh
+    SourceId: 
+    Slug: yaksha
+    DisplayName: Yaksha
+  ParentAncestryAsset: {fileID: 11400000, guid: 0d16d30ba7c52c240bdc8a515d4d59e2, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Improvise Tool
+    SourceId: 
+    DisplayName: Improvise Tool
+    Level: 0
+    ResolvedFeature: {fileID: 0}

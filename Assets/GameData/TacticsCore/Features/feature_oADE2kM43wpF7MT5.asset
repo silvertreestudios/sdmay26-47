@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_oADE2kM43wpF7MT5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: oADE2kM43wpF7MT5
+  Slug: initiate-benefit-tome
+  DisplayName: Initiate Benefit (Tome)
+  IconPath: icons/sundries/books/book-symbol-yellow-grey.webp
+  Description: While you hold your tome, lines of text appear on the open pages,
+    revealing useful information. While you hold your tome, you gain a +1 circumstance
+    bonus to all skill checks to Recall Knowledge. During your daily preparations,
+    you can gain the trained proficiency rank in two skills of your choice until
+    you prepare again. You retain the benefit as long as the tome is on your person,
+    even if you aren't holding it. At 3rd level, you're an expert in one of the skills
+    and trained in the other, and at 5th level, you're an expert in both skills.
+    Since these proficiencies are temporary, you can't use them as a prerequisite
+    for a skill increase or a permanent character option like a feat.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 898adc2d04a6c2142fb1caa8044b977e706fb64d55f271c81caa6529e235ad38
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SpecificRule.Thaumaturge.Implement.Tome.Label","predicate":["action:recall-knowledge","implement:tome:equipped"],"selector":"skill-check","slug":"tome-recall-knowledge","type":"circumstance","value":1}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Thaumaturge.Implement.Tome.FirstSkillDropdown","option":"first-tome-skill","phase":"beforeDerived","suboptions":{"config":"skills","predicate":[{"or":["skill:{choice|value}:rank:0",{"and":[{"gte":["self:level",3]},{"lte":["skill:{choice|value}:rank",1]}]},{"and":["feature:adept-benefit-tome",{"lte":["skill:{choice|value}:rank",2]}]},{"and":["feature:paragon-benefit-tome",{"lte":["skill:{choice|value}:rank",3]}]}]}]},"toggleable":true}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Thaumaturge.Implement.Tome.SecondSkillDropdown","option":"second-tome-skill","phase":"beforeDerived","suboptions":{"config":"skills","predicate":[{"not":"first-tome-skill:{choice|value}"},{"or":["skill:{choice|value}:rank:0",{"and":[{"gte":["self:level",5]},{"lte":["skill:{choice|value}:rank",1]}]},{"and":["feature:adept-benefit-tome",{"lte":["skill:{choice|value}:rank",2]},{"gte":["self:level",9]}]},{"and":["feature:paragon-benefit-tome",{"lte":["skill:{choice|value}:rank",3]}]}]}]},"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank
+    Mode: upgrade
+    Value: '"ternary(gte(@actor.level,3),2,1)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank","phase":"beforeDerived","priority":50,"value":"ternary(gte(@actor.level,3),2,1)"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank","phase":"beforeDerived","predicate":["feature:adept-benefit-tome"],"priority":50,"value":3}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank
+    Mode: upgrade
+    Value: 4
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.firstTomeSkill}.rank","phase":"beforeDerived","predicate":["feature:paragon-benefit-tome"],"priority":50,"value":4}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank
+    Mode: upgrade
+    Value: '"ternary(gte(@actor.level,5),2,1)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank","phase":"beforeDerived","priority":50,"value":"ternary(gte(@actor.level,5),2,1)"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank","phase":"beforeDerived","predicate":["feature:adept-benefit-tome",{"gte":["self:level",9]}],"priority":50,"value":3}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank
+    Mode: upgrade
+    Value: 4
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.secondTomeSkill}.rank","phase":"beforeDerived","predicate":["feature:paragon-benefit-tome"],"priority":50,"value":4}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

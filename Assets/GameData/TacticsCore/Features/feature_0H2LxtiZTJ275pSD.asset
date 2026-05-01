@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0H2LxtiZTJ275pSD
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0H2LxtiZTJ275pSD
+  Slug: versatile-legend
+  DisplayName: Versatile Legend
+  IconPath: icons/skills/ranged/arrow-flying-broadhead-metal.webp
+  Description: You are nigh-unmatched with any weapon. Your proficiency ranks for
+    simple weapons, martial weapons, and unarmed attacks increase to legendary, and
+    your proficiency rank for advanced weapons increases to master. Your proficiency
+    rank for your fighter class DC increases to master.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d223f8316a025bd54948dc94fc4b1f93748ca8a0ba55355309bef02b0d9423ad
+  Traits:
+  - fighter
+  TraitsLower:
+  - fighter
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: advanced
+    Rank: 3
+  - Target: fighter
+    Rank: 3
+  - Target: martial
+    Rank: 4
+  - Target: simple
+    Rank: 4
+  - Target: unarmed
+    Rank: 4
+  FocusPointDelta: 0

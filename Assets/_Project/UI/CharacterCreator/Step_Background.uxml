@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+    <ui:Style src="CreatorTheme.uss" />
+
+    <ui:VisualElement class="step-container">
+
+        <ui:VisualElement class="step-header">
+            <ui:VisualElement class="step-header__group">
+                <ui:Label text="BACKGROUND" class="header-text header-text--accent" />
+                <ui:Label text="Your character's life before adventuring grants signature skills and traits." class="subhead-text" />
+            </ui:VisualElement>
+            <ui:Label text="STEP 04 / 10" class="badge" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="split-view-container">
+
+            <ui:VisualElement class="split-left">
+                <ui:VisualElement class="search-bar">
+                    <ui:TextField name="Search_Background" text="" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Grid_Backgrounds" class="paged-grid" style="flex-grow: 1;" />
+            </ui:VisualElement>
+
+            <ui:ScrollView class="split-right detail-panel-scroll">
+
+                <ui:VisualElement class="detail-section detail-section--header">
+                    <ui:Label name="Lbl_BackgroundName" text="Select a Background" class="detail-title" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="ATTRIBUTE BOOSTS" class="summary-block__title" />
+                    <ui:VisualElement name="BackgroundBoostContainer" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="TRAINING" class="summary-block__title" />
+                    <ui:Label name="Lbl_BackgroundTraining" text="-" class="detail-text detail-text--compact" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="GRANTED FEATS" class="summary-block__title" />
+                    <ui:Label name="Lbl_BackgroundFeats" text="-" class="detail-text detail-text--compact" />
+                </ui:VisualElement>
+
+                <ui:Label name="Lbl_BackgroundDescription" text="" class="detail-text detail-text--muted detail-text--small" />
+
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

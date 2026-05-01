@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_6F2fSFC1Eo1JdpY4
+  m_EditorClassIdentifier: 
+  SourceId: 6F2fSFC1Eo1JdpY4
+  Slug: poppet
+  DisplayName: Poppet
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/poppet.svg
+  Description: Poppets are small, basic constructs that typically help their owners
+    with simple tasks. Occasionally, poppets gain sapience, independence, and a spark
+    of life. Elevated beyond mere helpers or playthings, these poppets are free to
+    chart their own destinies. Poppet
+  SourceTitle: Pathfinder Lost Omens The Grand Bazaar
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: cc5faa7ea76df1830a93fc38a35af400d3d411c3f976a82f1a6da0e0a361335e
+  Traits:
+  - construct
+  - humanoid
+  TraitsLower:
+  - construct
+  - humanoid
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 06000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 02000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  AdditionalLanguageOptions:
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 3fzmc
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Constructed (Poppet)
+    SourceId: 
+    DisplayName: Constructed (Poppet)
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: giqow
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Flammable
+    SourceId: 
+    DisplayName: Flammable
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 376076ecc01b65342a28c72e13d741da, type: 2}
+  - {fileID: 11400000, guid: 3bd6606f25841f344a4fe5479aa8ead5, type: 2}
+  - {fileID: 11400000, guid: bc5bbe91726b5c34791f12eee1f3f64c, type: 2}
+  - {fileID: 11400000, guid: d71173552b2570b4780e3756c491f301, type: 2}
+  - {fileID: 11400000, guid: 0c299874cd5f2cc44a641e78b5888fd2, type: 2}
+  - {fileID: 11400000, guid: 0ba3d9380e42a8d40853a1affd0fea8d, type: 2}

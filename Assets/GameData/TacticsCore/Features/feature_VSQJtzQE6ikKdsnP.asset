@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_VSQJtzQE6ikKdsnP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: VSQJtzQE6ikKdsnP
+  Slug: first-implement-and-esoterica
+  DisplayName: First Implement and Esoterica
+  IconPath: systems/pf2e/icons/features/classes/first-implement-and-esoterica.webp
+  Description: 'Your implement is a special object of symbolic importance: your badge
+    as you treat with the supernatural and a powerful tool if things turn violent.
+    Choose an implement from the options presented below: @UUID[Compendium.pf2e.classfeatures.Item.Amulet]
+    @UUID[Compendium.pf2e.classfeatures.Item.Bell] @UUID[Compendium.pf2e.classfeatures.Item.Chalice]
+    @UUID[Compendium.pf2e.classfeatures.Item.Lantern] @UUID[Compendium.pf2e.classfeatures.Item.Mirror]
+    @UUID[Compendium.pf2e.classfeatures.Item.Regalia] @UUID[Compendium.pf2e.classfeatures.Item.Tome]
+    @UUID[Compendium.pf2e.classfeatures.Item.Wand] @UUID[Compendium.pf2e.classfeatures.Item.Weapon]
+    You begin play with a mundane item of that type, and you gain the initiate benefit
+    for that implement. While an implement is useful to you, it typically has no
+    value if sold. If you acquire a new object of the same general implement type,
+    you can switch your implement to the new object by spending 1 day of downtime
+    with the new item. As you advance as a thaumaturge, you will collect up to three
+    implements and unlock the hidden potential stored within each, so you can mix
+    and match their benefits to suit your situation. While your implements are your
+    primary tools in your dealings with the supernatural, you know the value of always
+    being prepared. You constantly collect and carry various smaller mystic objects,
+    bits of materials with paranormal affinities, and items used in folk practices:
+    your esoterica. These might include cold-iron nails, scraps of scrolls and scriptures,
+    fragments of bones purportedly from a saint, and other similar objects. You keep
+    your esoterica in easy-to-access places on your person and are well practiced
+    in brandishing your implement and esoterica together, so you can draw and use
+    esoterica with the same hand you''re using to wield an implement. Exploit Vulnerability
+    You know that every creature, no matter how obscure, has a weakness. By identifying
+    and empowering the right object, you can strike down even the most resilient
+    of monsters. You gain the Exploit Vulnerability action. You can attempt to Exploit
+    Vulnerabilities in one of two ways: either by invoking properties that repel
+    that type of creature, or by attempting a more improvisational, ad-hoc method
+    with your esoterica that can impose a custom weakness on any creature, albeit
+    one that usually isn''t as dire as a creature''s existing weakness. Mortal Weakness
+    After identifying a creature''s weakness, you use a thematically resonant bit
+    of esoterica to attune your attacks to your discovery. Your unarmed and weapon
+    Strikes activate the highest weakness you discovered with Exploit Vulnerability,
+    even though the damage type your weapon deals doesn''t change. This damage affects
+    the target of your Exploit Vulnerability, as well as any other creatures of the
+    exact same type, but not other creatures with the same weakness. For example,
+    when fighting a pack of werewolves, you might use silver shavings or crushed
+    moonstone to deal damage that applies their weakness to silver to your attacks
+    against any of the werewolves, but you wouldn''t apply this damage to any other
+    monsters with a weakness to silver. Personal Antithesis You improvise a custom
+    weakness on a creature by forcefully presenting and empowering a piece of esoterica
+    that repels it on an individual level; for instance, against a tyrant, you might
+    procure a broken chain that once held a captive. This causes the target creature,
+    and only the target creature, to gain a weakness against your unarmed and weapon
+    Strikes equal to 2 + half your level.'
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 898737c9ef87837ca9122c1a72694be90db2cfae1fcebcc898c3b4f8e34fe021
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.adeptChoices
+    Mode: override
+    Value: '[]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.adeptChoices","priority":10,"value":[]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:thaumaturge-implement"]},"flag":"implement","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.FirstImplement"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.implement}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.implement}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.implement}'
+    SourceId: 
+    DisplayName: implement}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

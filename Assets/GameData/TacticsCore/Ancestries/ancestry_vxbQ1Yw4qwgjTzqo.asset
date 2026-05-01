@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_vxbQ1Yw4qwgjTzqo
+  m_EditorClassIdentifier: 
+  SourceId: vxbQ1Yw4qwgjTzqo
+  Slug: kholo
+  DisplayName: Kholo
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/gnoll.svg
+  Description: 'Kholo have bad reputations as brutal raiders and demon-worshipers.
+    Many believe that kholo are witches, cannibals, and worse. The truth is more
+    complex. Kholo are eminently practical and pragmatic hunters and raiders. To
+    them, honor is just another word for pointless risk. Any loss of a kholo affects
+    not just the individual, but their packmates and kin as well. Wasting time on
+    anything but victory, whether it''s mercy or cruelty, is seen as little shy of
+    immoral. Kholo are masters of ambushes, tactical feints, and psychological warfare.
+    Equally misunderstood is the kholo practice of ancestor worship and endocannibalism.
+    Kholo consume their dead as a sign of reverence, holding a grand feast and transforming
+    the bones into art or weapons. Kholo extend this honor to respected foes, hoping
+    to bring their enemy''s cunning or strength into the clan. @UUID[Compendium.pf2e.journals.JournalEntry.45SK8rdbbxvEHfMn.JournalEntryPage.xBV8oGvecw7abZxc]'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 383f91c8c7f58cf0fab8562bebc8acc94eed14ae4a0685e4c2eb9f3da47ceefc
+  Traits:
+  - gnoll
+  - humanoid
+  TraitsLower:
+  - gnoll
+  - humanoid
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 01000000
+  - Options: 04000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 05000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: kholo
+    DisplayName: Kholo
+  AdditionalLanguageOptions:
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: iruxi
+    DisplayName: Iruxi
+  - Id: necril
+    DisplayName: Necril
+  - Id: orcish
+    DisplayName: Orcish
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: Awa7a
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Bite
+    SourceId: 
+    DisplayName: Bite
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 7a4203c827b546f4680ccd84d1c8b8c1, type: 2}
+  - {fileID: 11400000, guid: e7e2270444849a5479a6cfa9d3a1a7ba, type: 2}
+  - {fileID: 11400000, guid: 575c4e10a33d70141b5d03ea95e0e656, type: 2}
+  - {fileID: 11400000, guid: c912b8a55322b8e4eb35aa03ee4731fc, type: 2}
+  - {fileID: 11400000, guid: d17bba47ac071474f87de30beaf78193, type: 2}
+  - {fileID: 11400000, guid: 2de4d376b0e1a6545b7dfb93d5b19b2d, type: 2}
+  - {fileID: 11400000, guid: 333c017bfd942fe4a8bef7aad750238a, type: 2}

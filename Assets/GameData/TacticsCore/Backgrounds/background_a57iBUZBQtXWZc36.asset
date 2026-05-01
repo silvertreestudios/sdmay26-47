@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_a57iBUZBQtXWZc36
+  m_EditorClassIdentifier: 
+  SourceId: a57iBUZBQtXWZc36
+  Slug: dedicated-delver
+  DisplayName: Dedicated Delver
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'Filled with predators, pitfalls, and other perils, the Darklands
+    rightfully scares off most travelers. Not you! Whether you''re a veteran Darklands
+    caravanner, a cartographer seeking safer paths through dangerous territory, or
+    just a spelunker who loves to escape the surface and hear the caverns sing, you''re
+    adept at navigating underground obstacles and finding your way back to civilization.
+    Clan Tolorr specializes more in studying the past than extracting it from dangerous
+    areas. Its leader, Arghan Tolorr, was an avid explorer in his youth, and he''s
+    begun an initiative to befriend, recruit, and train subterranean daredevils who
+    can extract relics responsibly. You''re one of his candidates for this pilot
+    program. Helping administrate recruits is Ria, a gnome curator and close Tolorr
+    confidante who helped arrange your travel to Highhelm. Choose two attribute boosts.
+    One must be to Strength or Dexterity , and one is a free attribute boost. You''re
+    trained in either the Athletics skill or the Survival skill, and you''re trained
+    in the Cave Lore skill. If you selected Athletics, you gain the @UUID[Compendium.pf2e.feats-srd.Item.Combat
+    Climber] skill feat. If you chose Survival, you gain the Terrain Expertise (Underground)
+    skill feat. Connection: Ria, an oread gnome curator who studies rivethun traditions
+    Reputation Points: +0'
+  SourceTitle: Pathfinder Sky King's Tomb Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 2a9e911b21be0755e21df50fe7a16f1599b481cfd1ad7fdb210ad328a8b5d62d
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.Skill.Athletics","value":{"feat":"Compendium.pf2e.feats-srd.Item.Combat
+      Climber","skill":"athletics"}},{"label":"PF2E.Skill.Survival","value":{"feat":"Compendium.pf2e.feats-srd.Item.Terrain
+      Expertise","skill":"survival"}}],"flag":"dedicatedDiver","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.dedicatedDiver.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.dedicatedDiver.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.dedicatedDiver.feat}'
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"underground"},"uuid":"{item|flags.pf2e.rulesSelections.dedicatedDiver.feat}"}'
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Cave Lore
+    Rank: 1
+  LoreSkills:
+  - Cave Lore
+  GrantedFeats: []

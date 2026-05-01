@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_4BiGekRGfBRC7DoI
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 4BiGekRGfBRC7DoI
+  Slug: sailfish-merfolk
+  DisplayName: Sailfish Merfolk
+  IconPath: icons/creatures/fish/fish-shark-swimming.webp
+  Description: The lower half of your body resembles a powerful sailfish, complete
+    with a large dorsal fin. Using this fin, you can move through the water faster
+    and leap farther. Your swim Speed increases to 30 feet. When you attempt a @UUID[Compendium.pf2e.actionspf2e.Item.High
+    Jump] or @UUID[Compendium.pf2e.actionspf2e.Item.Long Jump], you gain a +1 circumstance
+    bonus to the Athletics check, and you can Swim instead of Striding before attempting
+    the jump.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 71198705a1cf6ced862444dd389e96699cf0f9e51a2a6907db759a77f71afd2e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 30
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"swim","value":30}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["action:high-jump","action:long-jump"]}],"selector":"athletics","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.FUqZRllwn6kmFA8K
+    SourceId: 
+    Slug: merfolk
+    DisplayName: Merfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: d28bdb5cc6dacfa4a8575ca73d51b040, type: 2}
+  GrantedFeatures: []

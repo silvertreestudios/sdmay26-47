@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_n2JN5Kiu7tOCAHPr
+  m_EditorClassIdentifier: 
+  SourceId: n2JN5Kiu7tOCAHPr
+  Slug: market-runner
+  DisplayName: Market Runner
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Keeleno Lathenar, the proprietor of Otari Market, is a grim and bitter
+    man. A werewolf named Jaul Mezmin mauled his wife, Ayla, to death 30 years ago.
+    Keeleno has never forgotten nor forgiven this attack, and he believes against
+    all odds that Jaul has evaded justice and is alive and well. Running errands
+    for Keeleno around town, you've gotten to know him almost as well as you know
+    Otari. Keeleno's suspicions have rubbed off on you a bit, so you keep a wary
+    eye on other people\u2014particularly around the full moon. Choose two attribute
+    boosts. One must be to Constitution or Charisma , and one is a free attribute
+    boost. You're trained in the Diplomacy skill and the Otari Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Hobnobber] skill feat."
+  SourceTitle: Pathfinder Abomination Vaults Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 4ab1424d784d96239231bad742f5895cce04c2023f10bed7f8c7cb9931e208e0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Otari Lore
+    Rank: 1
+  LoreSkills:
+  - Otari Lore
+  GrantedFeats:
+  - SourceKey: xtumr
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hobnobber
+    SourceId: 
+    DisplayName: Hobnobber
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_PeZi7E9lI4vz8EGY
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: PeZi7E9lI4vz8EGY
+  Slug: trackless-journey
+  DisplayName: Trackless Journey
+  IconPath: icons/magic/nature/root-vine-entangle-foot-green.webp
+  Description: When you move through natural terrains, you are hard to track. You
+    always gain the benefits of the @UUID[Compendium.pf2e.actionspf2e.Item.Cover
+    Tracks] action in such terrains, without moving at half your Speed.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8daaf1efb0ad518ee3aafa3f49584e12b0b39cb95bcd85077709c4ef36a69d66
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules: []
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

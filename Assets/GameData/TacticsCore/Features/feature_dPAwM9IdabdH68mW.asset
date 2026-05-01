@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_dPAwM9IdabdH68mW
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: dPAwM9IdabdH68mW
+  Slug: school-of-magical-technologies
+  DisplayName: School of Magical Technologies
+  IconPath: icons/commodities/tech/cog-brass.webp
+  Description: "At the height of ancient Azlant, the study of magical technologies\u2014better
+    known as magitech\u2014was considered among the most prestigious of arcane specializations,
+    and practitioners were both well regarded and well paid. While some magitech
+    specialists trained in academies or as apprentices, others studied at religious
+    cloisters dedicated to the worship of Amaznen, a now-dead god of invention and
+    magic. Today, practitioners are more likely to learn from scraps of ancient spellbooks,
+    forgotten lore unearthed in Azlanti ruins, or from a time-displaced graduate
+    like Anoreth Zorillen. Modern magitech schools exist today, divorced from their
+    ancient Azlanti origins but no less prestigious, including the famed Clockwork
+    Cathedral in Absalom and temples of Brigh, goddess of clockwork and invention.
+    As a student of magical technologies, you've learned the art of fusing magic
+    with mundane technology to create something truly unique. Curriculum cantrips:
+    @UUID[Compendium.pf2e.spells-srd.Item.Needle Darts], @UUID[Compendium.pf2e.spells-srd.Item.Shield]
+    1st: @UUID[Compendium.pf2e.spells-srd.Item.Mending], @UUID[Compendium.pf2e.spells-srd.Item.Runic
+    Weapon], @UUID[Compendium.pf2e.spells-srd.Item.Summon Construct] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Animated
+    Assault], @UUID[Compendium.pf2e.spells-srd.Item.Dismantle] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Shrink
+    Item], @UUID[Compendium.pf2e.spells-srd.Item.Wooden Double] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Creation],
+    @UUID[Compendium.pf2e.spells-srd.Item.Weapon Storm] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Impaling
+    Spike], @UUID[Compendium.pf2e.spells-srd.Item.Wall of Stone] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Field
+    of Razors], @UUID[Compendium.pf2e.spells-srd.Item.Petrify] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Beheading
+    Buzz Saw], @UUID[Compendium.pf2e.spells-srd.Item.Lifewood Cage] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Ferrous
+    Form], @UUID[Compendium.pf2e.spells-srd.Item.Quandary] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Resplendent
+    Mansion] School Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Augmented
+    Body] advanced: @UUID[Compendium.pf2e.spells-srd.Item.Conjured Clockwork]"
+  SourceTitle: 'Pathfinder #215: To Blot Out the Sun'
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 88d7e7a0e47382cb0ae186736da95d3d398de9860d7e2c036e9678f131918fe6
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

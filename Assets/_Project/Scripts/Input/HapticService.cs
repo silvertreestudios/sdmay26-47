@@ -1,9 +1,9 @@
 using System.Collections;
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PathfinderTactics.InputSystem
+namespace TacticsGame.InputSystem
 {
     /// <summary>
     /// Service for triggering controller haptic feedback.

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     [RequireComponent(typeof(Light))]
     public class TorchFlicker : MonoBehaviour

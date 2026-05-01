@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_qB7g1OiZ8v8zgvkL
+  m_EditorClassIdentifier: 
+  SourceId: qB7g1OiZ8v8zgvkL
+  Slug: wonder-taster
+  DisplayName: Wonder Taster
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Broken Lands Having once sampled Numerian fluids,
+    you've tasted knowledge beyond comprehension. You are driven to recapture that
+    astounding experience. Choose two attribute boosts. One must be to Intelligence
+    or Constitution , and one is a free attribute boost. You're trained in the Crafting
+    skill and the Alchemical Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Alchemical
+    Crafting] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 1c108d23651af5202b187502e3be177a2c0002595b7db7efe8a8c45171b2e563
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Alchemical Lore
+    Rank: 1
+  LoreSkills:
+  - Alchemical Lore
+  GrantedFeats:
+  - SourceKey: eclly
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Alchemical Crafting
+    SourceId: 
+    DisplayName: Alchemical Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

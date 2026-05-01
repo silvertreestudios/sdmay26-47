@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_RyOkmu0W9svavuAB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: RyOkmu0W9svavuAB
+  Slug: mastermind
+  DisplayName: Mastermind
+  IconPath: systems/pf2e/icons/features/classes/mastermind.webp
+  Description: 'You rely on your intellect to craft intricate schemes, planning 10
+    steps ahead where others might plan three. You might be a driven detective, a
+    spymaster in the service of a powerful house, or an aspiring crime lord or information
+    broker. If you successfully identify a creature using @UUID[Compendium.pf2e.actionspf2e.Item.Recall
+    Knowledge], that creature is @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard]
+    against your attacks until the start of your next turn; if you critically succeed,
+    it''s off-guard against your attacks for 1 minute. You''re trained in Society
+    and one of the following skills of your choice: Arcana, Nature, Occultism, or
+    Religion. You can choose Intelligence as your key attribute.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0157cd18da3391231fb048d3eb181bb17ad6ae0b19bc49432254469321038223
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.society.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.society.rank","value":1}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Arcana","value":"system.skills.arcana.rank"},{"label":"PF2E.Skill.Nature","value":"system.skills.nature.rank"},{"label":"PF2E.Skill.Occultism","value":"system.skills.occultism.rank"},{"label":"PF2E.Skill.Religion","value":"system.skills.religion.rank"}],"flag":"mastermind","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Rogue.TrainSkill.Prompt"}'
+  - Key: ActiveEffectLike
+    Path: '{item|flags.pf2e.rulesSelections.mastermind}'
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"{item|flags.pf2e.rulesSelections.mastermind}","value":1}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

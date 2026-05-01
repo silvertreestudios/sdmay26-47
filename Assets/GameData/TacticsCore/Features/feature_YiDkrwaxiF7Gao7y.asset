@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_YiDkrwaxiF7Gao7y
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: YiDkrwaxiF7Gao7y
+  Slug: weapon
+  DisplayName: Weapon
+  IconPath: icons/weapons/swords/greatsword-crossguard-flanged-purple.webp
+  Description: Weapon implements are the most direct and confrontational, representing
+    battle, struggle, and potentially violence. You can choose only a one-handed
+    weapon as an implement, which allows you to channel energies into your weapon
+    as well as hold your other implements once you gain them. Weapon implements are
+    associated with the harrow suit of hammers and the astrological signs of the
+    rider and the swordswoman. Initiate Benefit Your weapon trembles slightly in
+    your hand, seeking out your foe's weakness to it and interrupting their actions.
+    You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Implement's Interruption]
+    reaction. At 5th level, when you gain thaumaturgic weapon expertise, your instinctive
+    knowledge of your weapon implement also grants you the weapon's critical specialization
+    effect. Adept Benefit When your implement lashes out at your foe, even a close
+    miss brings the weapon close enough to do harm. When you use Implement's Interruption
+    and fail (but don't critically fail) the Strike, you deal 1 damage of the weapon's
+    normal type, possibly applying any bonus damage due to the target's weakness.
+    Intensify Vulnerability Your weapon is drawn to your enemy's vital spots, almost
+    of its own accord. You gain a +2 status bonus to attack rolls against the target
+    of your Exploit Vulnerability. Paragon Benefit The way your implement connects
+    to your foe makes its interruptions incredibly disruptive. You now disrupt the
+    triggering action on a hit with Implement's Interruption, rather than needing
+    a critical hit.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f00710d22849f82a6aa208c257bcb6130617a98d5187c74392c4ed686ff4c2e4
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"allowedDrops":{"label":"PF2E.SpecificRule.AllowedDrops.OneHandedWeapon","predicate":["item:usage:hands:1",{"not":"item:trait:consumable"}]},"choices":{"filter":["item:usage:hands:1",{"nor":["item:magical","item:trait:consumable"]}],"itemType":"weapon"},"flag":"weaponImplement","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Weapon"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.weaponImplement}'
+    Json: '{"flag":"weaponImplement","key":"GrantItem","track":true,"uuid":"{item|flags.pf2e.rulesSelections.weaponImplement}"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.weaponImplement
+    Mode: override
+    Value: '"{item|flags.pf2e.itemGrants.weaponImplement.id}"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.weaponImplement","priority":5,"value":"{item|flags.pf2e.itemGrants.weaponImplement.id}"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"implement-held","predicate":["weapon-implement:equipped"]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"implement:weapon:equipped","predicate":["weapon-implement:equipped"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"@Embed[Compendium.pf2e.classfeatures.Item.YiDkrwaxiF7Gao7y
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.itemGrants.weaponImplement.id}","key":"ItemAlteration","mode":"add","property":"description","value":[{"divider":true,"text":"@Embed[Compendium.pf2e.classfeatures.Item.YiDkrwaxiF7Gao7y
+      inline]"}]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.initiateBenefit
+    Mode: override
+    Value: '"Compendium.pf2e.classfeatures.Item.Initiate Benefit (Weapon)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.initiateBenefit","predicate":["feat:thaumaturge-dedication"],"value":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Weapon)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Weapon)
+    Json: '{"key":"GrantItem","predicate":["class:thaumaturge"],"uuid":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Weapon)"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.adeptChoices
+    Mode: add
+    Value: '{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-weapon"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Weapon)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.adeptChoices","predicate":["class:thaumaturge"],"priority":20,"value":{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-weapon"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Weapon)"}}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.weaponImplement}'
+    SourceId: 
+    DisplayName: weaponImplement}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Weapon)
+    SourceId: 
+    DisplayName: Initiate Benefit (Weapon)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

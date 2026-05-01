@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_T8YNd9Jg6XBJvNBQ
+  m_EditorClassIdentifier: 
+  SourceId: T8YNd9Jg6XBJvNBQ
+  Slug: union-representative
+  DisplayName: Union Representative
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You might have fought for fairer ore distribution for the Metalmaker's
+    Union, higher chef's pay in the Provisioners' Union, or better mercenary contracts
+    for the Union of Axe and Coin. Whatever the case, you have experience in the
+    high-stakes world of the negotiating table, experience that translates surprisingly
+    well to adventuring. Choose two attribute boosts. One must be to Intelligence
+    or Charisma , the other is a free boost. You're trained in the Diplomacy skill
+    and the Legal Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Contract
+    Negotiator] skill feat.
+  SourceTitle: Pathfinder Lost Omens Highhelm
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: d20e3b8cadc357ce9905bed008bf558d9229f68196e97528bc2a826118956de8
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Legal Lore
+    Rank: 1
+  LoreSkills:
+  - Legal Lore
+  GrantedFeats:
+  - SourceKey: WWbNU
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Contract Negotiator
+    SourceId: 
+    DisplayName: Contract Negotiator
+    Level: 1
+    ResolvedFeature: {fileID: 0}

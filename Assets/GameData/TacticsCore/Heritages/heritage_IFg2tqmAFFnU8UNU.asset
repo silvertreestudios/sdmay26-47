@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_IFg2tqmAFFnU8UNU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: IFg2tqmAFFnU8UNU
+  Slug: celestial-envoy-kitsune
+  DisplayName: Celestial Envoy Kitsune
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Whether due to Daikitsu's grace or faithful forebears, you have a
+    strong connection to the divine, affording you certain protections. You gain
+    the @UUID[Compendium.pf2e.actionspf2e.Item.Invoke Celestial Privilege] reaction.
+    Your alternate form is a common Medium humanoid ancestry prevalent where you
+    grew up (typically human), called a tailless form.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 08c64b27dc44d9f46381801b969a2f5dc1432208cbb8eea155d02e2a402eee75
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Invoke Celestial Privilege
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Invoke Celestial
+      Privilege"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.4BL5wf1VF9feC2rY
+    SourceId: 
+    Slug: kitsune
+    DisplayName: Kitsune
+  ParentAncestryAsset: {fileID: 11400000, guid: dc102657926b46045b2c6589b973e7e3, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Invoke Celestial Privilege
+    SourceId: 
+    DisplayName: Invoke Celestial Privilege
+    Level: 0
+    ResolvedFeature: {fileID: 0}

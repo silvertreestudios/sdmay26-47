@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_a9YjyQRNEOyespFf
+  m_EditorClassIdentifier: 
+  SourceId: a9YjyQRNEOyespFf
+  Slug: pyre-tender
+  DisplayName: Pyre Tender
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're experienced at building funeral pyres. You might have lit flaming
+    biers in the Land of the Linnorm Kings, tended the cremation pits of Cheliax
+    or Vudra, or been a backwoods charcoal burner, using the right mixture of alchemy
+    to act as an accelerant. However you worship, you know nothing sends off the
+    departed like flame. Choose two attribute boosts. One must be to Dexterity or
+    Intelligence , and one is a free attribute boost. You're trained in the Crafting
+    skill and the Funeral Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Alchemical
+    Crafting] skill feat.
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 2f915143a263d974cec85cb181599e4af0b1d0c709daac8e4e6f92e848619074
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Funeral
+    Rank: 1
+  LoreSkills:
+  - Funeral
+  GrantedFeats:
+  - SourceKey: y1mm1
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Alchemical Crafting
+    SourceId: 
+    DisplayName: Alchemical Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

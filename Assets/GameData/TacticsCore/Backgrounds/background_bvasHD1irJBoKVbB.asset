@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_bvasHD1irJBoKVbB
+  m_EditorClassIdentifier: 
+  SourceId: bvasHD1irJBoKVbB
+  Slug: runaway-noble
+  DisplayName: Runaway Noble
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: There are many reasons for noble blood to abandon their responsibilities.
+    Whether you fled for safety, for love, to sate a spontaneous spark of rebellion,
+    or to escape unbearable expectations, you've left your lavish life behind for
+    one of newfound experiences. However, how prepared you are for a life on the
+    road is something else entirely. Choose two attribute boosts. One must be to
+    Charisma or Intelligence , and one is a free attribute boost. You're trained
+    in Diplomacy, and either Genealogy Lore or Heraldry Lore. You gain the Bon Mot
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 513c58ce5e29d1b5d99080b916c8880c547ae1edb0bcd9fd016eadc15b18249f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: F2lxH
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Bon Mot
+    SourceId: 
+    DisplayName: Bon Mot
+    Level: 1
+    ResolvedFeature: {fileID: 0}

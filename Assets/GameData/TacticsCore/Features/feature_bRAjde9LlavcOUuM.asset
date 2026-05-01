@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_bRAjde9LlavcOUuM
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: bRAjde9LlavcOUuM
+  Slug: third-apparition
+  DisplayName: Third Apparition
+  IconPath: icons/magic/light/projectiles-trio-pink.webp
+  Description: You've learned to shelter more spirits, gaining access to more magic.
+    When you attune to apparitions during your daily preparations, you choose three
+    apparitions to attune to, with one of them being your primary apparition. The
+    number of Focus Points in your focus pool increases by 1 (maximum 3).
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4a7fea4ac9a2c892ece2bcf5b6b5ff7a111a6adb494c61178c6b8da360684971
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.resources.focus.max
+    Mode: add
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.resources.focus.max","priority":10,"value":1}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 1

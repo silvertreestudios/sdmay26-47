@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_V5qmKLmI3RL68RGb
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: V5qmKLmI3RL68RGb
+  Slug: hyper-boosters
+  DisplayName: Hyper Boosters
+  IconPath: icons/skills/ranged/cannon-barrel-firing-orange.webp
+  Description: You've improved your speed boosters' power through a breakthrough
+    that significantly increases the energy flow without risking exploding. You gain
+    a +10-foot status bonus to your Speed, which increases to a +20-foot status bonus
+    when you're in Overdrive. If you're legendary in Crafting, it instead increases
+    to a +30-foot status bonus when you're in Overdrive. You must have the speed
+    boosters modification to select this modification.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2e9e3e4194439c319f0b7f0e5c0a10df24b06bd5dda9662252e88579fc492992
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 10
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["armor:id:{actor|flags.pf2e.innovationId}"],"selector":"land-speed","slug":"hyper-boosters","type":"status","value":10}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 20
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":[{"or":["self:effect:overdrive-success","self:effect:overdrive-critical-success"]}],"selector":"land-speed","slug":"hyper-boosters","value":20}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 30
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["skill:crafting:rank:4",{"or":["self:effect:overdrive-success","self:effect:overdrive-critical-success"]}],"selector":"land-speed","slug":"hyper-boosters","value":30}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

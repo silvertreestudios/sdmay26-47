@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_rECRfbkVwHuG06vO
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: rECRfbkVwHuG06vO
+  Slug: lesson-of-snow
+  DisplayName: Lesson of Snow
+  IconPath: icons/magic/water/snowflake-ice-blue-white.webp
+  Description: You gain the @UUID[Compendium.pf2e.spells-srd.Item.Personal Blizzard]
+    hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Wall of Wind].
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 83929b63bd6bdf10b6ef01a4660bff8f11cf6a27a0107ad0e74eca27259f388a
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 6
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

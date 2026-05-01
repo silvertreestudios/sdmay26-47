@@ -1,4 +1,4 @@
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     /// <summary>
     /// How the spell selects its target(s) on the grid.

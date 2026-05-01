@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_wObrT6PytPdS5aUi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: wObrT6PytPdS5aUi
+  Slug: school-of-ars-grammatica
+  DisplayName: School of Ars Grammatica
+  IconPath: icons/sundries/books/book-eye-purple.webp
+  Description: "Runes and wards, numbers and letters\u2014they underpin all magic,
+    making them the logical subject for a wizard who studies fundamental forces.
+    Perhaps you studied at the Pathfinder Society's School of Spells or a similar
+    institution, but whether you're lacing your words with magic to compel others,
+    casting wards around your workshop, or destabilizing the very structure of an
+    opponent's spells, you know this unassuming school carries elegant power. Curriculum
+    cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Message], @UUID[Compendium.pf2e.spells-srd.Item.Sigil]
+    1st: @UUID[Compendium.pf2e.spells-srd.Item.Command], @UUID[Compendium.pf2e.spells-srd.Item.Disguise
+    Magic], @UUID[Compendium.pf2e.spells-srd.Item.Runic Body], @UUID[Compendium.pf2e.spells-srd.Item.Runic
+    Weapon] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Dispel Magic], @UUID[Compendium.pf2e.spells-srd.Item.Translate]
+    3rd: @UUID[Compendium.pf2e.spells-srd.Item.Enthrall], @UUID[Compendium.pf2e.spells-srd.Item.Veil
+    of Privacy] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Dispelling Globe], @UUID[Compendium.pf2e.spells-srd.Item.Suggestion]
+    5th: @UUID[Compendium.pf2e.spells-srd.Item.Sending], @UUID[Compendium.pf2e.spells-srd.Item.Truespeech]
+    6th: @UUID[Compendium.pf2e.spells-srd.Item.Repulsion], @UUID[Compendium.pf2e.spells-srd.Item.Spellwrack]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Contingency], @UUID[Compendium.pf2e.spells-srd.Item.Planar
+    Seal] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Quandary], @UUID[Compendium.pf2e.spells-srd.Item.Unrelenting
+    Observation] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Detonate Magic] School
+    Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Protective Wards]; advanced:
+    @UUID[Compendium.pf2e.spells-srd.Item.Rune of Observation]"
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d4e939c42599356eee2972d5d96ee84434883f3862e8c0d66be34204309c7d97
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

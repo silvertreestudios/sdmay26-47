@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_CFyrlDzkSXgI1OAI
+  m_EditorClassIdentifier: 
+  SourceId: CFyrlDzkSXgI1OAI
+  Slug: sideshow-scion
+  DisplayName: Sideshow Scion
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Ah, the circus! What child didn't at some point fantasize about running
+    away to join a troupe of clowns and daredevils and live a life on the road sharing
+    living quarters with strange animals and even stranger coworkers? In your case,
+    though, there was no need for fantasy, for you were born into the life. Your
+    parents or extended family have a long tradition in the sideshow, be it as part
+    of a traveling circus or as part of a more localized, year-round performance
+    on a city boardwalk or marketplace. Even if you were the inverse of the youth
+    who dreamed of running away, your childhood instead filled with visions of a
+    sedentary aristocratic life or the rough upbringing of the working class, the
+    sideshow skills and circus tricks you were exposed to seeped into your psyche.
+    Now and then, a turn of phrase that spills from your lips or an unexpected little
+    motion or act catches even your closest friends off guard. After all, what seems
+    normal to you is anything but to someone who didn't grow up in a sideshow! Choose
+    two attribute boosts. One must be to Constitution or Intelligence , and one is
+    a free attribute boost. You're trained in the Acrobatics skill and the Games
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Acrobatic Performer]
+    skill feat. If you have the Wildcard persona trait, you also become trained in
+    the Circus Lore skill.
+  SourceTitle: Pathfinder Curtain Call Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 88777db863e2423bf0f1b5ebfaa1cbac9200c33830e4fbad4c38621b645a74d7
+  Traits:
+  - persona-wildcard
+  TraitsLower:
+  - persona-wildcard
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.campaign-effects.Item.Persona Trait
+    Json: '{"key":"GrantItem","predicate":[{"not":"feature:persona-trait"}],"uuid":"Compendium.pf2e.campaign-effects.Item.Persona
+      Trait"}'
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 1
+    CustomSkillId: acrobatics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Games Lore
+    Rank: 1
+  LoreSkills:
+  - Games Lore
+  GrantedFeats:
+  - SourceKey: qoGNh
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Acrobatic Performer
+    SourceId: 
+    DisplayName: Acrobatic Performer
+    Level: 1
+    ResolvedFeature: {fileID: 0}

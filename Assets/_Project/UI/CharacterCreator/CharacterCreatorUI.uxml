@@ -1,0 +1,63 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/CharacterCreator/CreatorTheme.uss?fileID=7433441132597879392&amp;guid=e7ceafd2bbee17244a24a51454248c43&amp;type=3#CreatorTheme" />
+    <ui:VisualElement name="RootContainer" class="root-container">
+        <ui:VisualElement name="AppHeader" class="app-header">
+            <ui:Label text="Dungeon Crawl" class="app-header__title" />
+            <ui:Label text="//" class="app-header__crumb" />
+            <ui:Label name="Lbl_Crumb" text="CHARACTER FOUNDRY" class="app-header__crumb app-header__crumb--active" style="margin-left: 12px;" />
+            <ui:VisualElement style="flex-grow: 1;" />
+            <ui:Label name="Lbl_LevelTag" text="LEVEL 1" class="badge" />
+        </ui:VisualElement>
+        <ui:VisualElement name="AppShell" class="app-shell">
+            <ui:VisualElement name="Sidebar" class="layout-sidebar-left">
+                <ui:Label text="STEPS" class="sidebar-title" />
+                <ui:Button name="Btn_Visuals" text="Visuals" class="nav-node nav-node--active" />
+                <ui:Button name="Btn_Concept" text="Concept" class="nav-node" />
+                <ui:Button name="Btn_Ancestry" text="Ancestry" class="nav-node" />
+                <ui:Button name="Btn_Background" text="Background" class="nav-node" />
+                <ui:Button name="Btn_Class" text="Class" class="nav-node" />
+                <ui:Button name="Btn_FreeBoosts" text="Free Boosts" class="nav-node" />
+                <ui:Button name="Btn_ClassDetails" text="Class Details" class="nav-node" />
+                <ui:Button name="Btn_Equipment" text="Equipment" class="nav-node" />
+                <ui:Button name="Btn_Modifiers" text="Modifiers" class="nav-node" />
+                <ui:Button name="Btn_FinishingDetails" text="Finishing" class="nav-node" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentArea" class="layout-workspace-center" />
+            <ui:VisualElement name="PreviewPanel" class="layout-sidebar-right preview-panel">
+                <ui:Label name="Lbl_PreviewName" text="UNNAMED ADVENTURER" class="preview-name-tag preview-name-tag--accent" />
+                <ui:VisualElement name="PreviewFrame" class="preview-frame" style="margin-bottom: 20px;">
+                    <ui:VisualElement name="PreviewTextureArea" class="preview-texture-area" />
+                </ui:VisualElement>
+                <ui:VisualElement name="StatSummary" class="summary-block summary-block--stats-table">
+                    <ui:VisualElement class="stats-table-row stats-table-row--headers">
+                        <ui:Label text="HP" class="stats-table-header" />
+                        <ui:Label text="SPEED" class="stats-table-header" />
+                        <ui:Label text="CLASS DC" class="stats-table-header" />
+                        <ui:Label text="FOCUS" class="stats-table-header stat-row--last" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stats-table-row stats-table-row--values">
+                        <ui:Label name="Lbl_TotalHP" text="10" class="stats-table-value" />
+                        <ui:Label name="Lbl_Speed" text="25 ft" class="stats-table-value" />
+                        <ui:Label name="Lbl_ClassDC" text="10" class="stats-table-value" />
+                        <ui:Label name="Lbl_FocusPoints" text="0" class="stats-table-value stat-row--last" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="AppFooter" class="app-footer">
+            <ui:VisualElement class="app-footer__hints">
+                <ui:Label text="[A] CONFIRM" class="hint-label" />
+                <ui:Label text="[B] BACK" class="hint-label" />
+                <ui:Label text="[LB] PREVIOUS PAGE" class="hint-label" />
+                <ui:Label text="[RB] NEXT PAGE" class="hint-label" />
+                <ui:Label text="[LT] PREVIOUS STEP" class="hint-label" />
+                <ui:Label text="[RT] NEXT STEP" class="hint-label" />
+            </ui:VisualElement>
+            <ui:VisualElement class="app-footer__actions">
+                <ui:Button name="Btn_PreviousStep" text="&lt; PREVIOUS" class="btn btn--ghost" />
+                <ui:Button name="Btn_NextStep" text="NEXT &gt;" class="btn" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

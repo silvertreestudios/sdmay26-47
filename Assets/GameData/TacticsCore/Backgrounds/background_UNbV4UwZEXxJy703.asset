@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_UNbV4UwZEXxJy703
+  m_EditorClassIdentifier: 
+  SourceId: UNbV4UwZEXxJy703
+  Slug: sun-dancer
+  DisplayName: Sun Dancer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've been taught the Burning Mother's blessings could be invited
+    through dances done under its presence, such as in welcoming the first rays of
+    warmth in the spring. You could have been the apprentice of some primal caster
+    who wished to harness the sun's power for their incantations or lived in a community
+    who reveres the Daughter of the Cosmic Caravan through displays of veneration
+    for the sun. Whatever the case, you developed a supernatural connection to the
+    sun. Choose two attribute boosts. One must be to Charisma or Dexterity, and one
+    is a free attribute boost. You're trained in Performance. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Fascinating
+    Performance] skill feat. If you use this feat outdoors in direct sunlight, you
+    gain a +1 circumstance bonus to the skill check.
+  SourceTitle: Pathfinder Lost Omens Travel Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: a8e4ff8b8a9aa00eb9e8ade452dedd1242998e1cee2cd21747eb5c6417522e99
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"performance","key":"RollOption","label":"PF2E.SkillVariant.AttemptToFascinateOutdoorsInBrightSun","option":"fascinate-outdoors-in-bright-sun","toggleable":true}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SkillVariant.AttemptToFascinateOutdoorsInBrightSun","predicate":["fascinate-outdoors-in-bright-sun"],"selector":"performance","type":"circumstance","value":1}'
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: CC8hhkrq4zPv6VWG
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Fascinating Performance
+    SourceId: 
+    DisplayName: Fascinating Performance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

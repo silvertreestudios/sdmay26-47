@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_a9Q4iIiAZryVWN27
+  m_EditorClassIdentifier: 
+  SourceId: a9Q4iIiAZryVWN27
+  Slug: bounty-hunter
+  DisplayName: Bounty Hunter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Bringing in lawbreakers lined your pockets. Maybe you had an altruistic
+    motive and sought to bring in criminals to make the streets safer, or maybe the
+    coin was motivation enough. Your techniques for hunting down criminals transfer
+    easily to the life of an adventurer. Choose two attribute boosts. One must be
+    to Strength or Wisdom , and one is a free attribute boost. You're trained in
+    the Survival skill and the Legal Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced
+    Tracker] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: ca1f3162d61d1c4e49f1848d2521c0bbf6077844a9d9ff2f806e15a987fbf122
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Legal Lore
+    Rank: 1
+  LoreSkills:
+  - Legal Lore
+  GrantedFeats:
+  - SourceKey: 6ge8o
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Tracker
+    SourceId: 
+    DisplayName: Experienced Tracker
+    Level: 1
+    ResolvedFeature: {fileID: 0}

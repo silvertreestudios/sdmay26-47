@@ -1,15 +1,15 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data.PF2e;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Data.TacticsRuleset;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Effects
+namespace TacticsGame.Spells.Effects
 {
     /// <summary>
     /// Roll Phase: Each affected target rolls a saving throw vs the caster's spell DC.
     /// Results are stored in context.RollResults for downstream effects (Damage, Condition).
     /// </summary>
-    [CreateAssetMenu(menuName = "PF2e/Spell Effects/Saving Throw")]
+    [CreateAssetMenu(menuName = "TacticsRuleset/Spell Effects/Saving Throw")]
     public class SavingThrowEffectSO : SpellEffectSO
     {
         [Header("Save Configuration")]
@@ -34,7 +34,7 @@ namespace PathfinderTactics.Spells.Effects
 
                 int d20 = Random.Range(1, 21);
                 int total = d20 + saveMod;
-                Degree degree = PF2E_Core.CheckResult(d20, saveMod, spellDC);
+                Degree degree = TacticsRuleset_Core.CheckResult(d20, saveMod, spellDC);
 
                 context.RollResults[target] = new RollResult(d20, total, degree);
 
@@ -59,20 +59,20 @@ namespace PathfinderTactics.Spells.Effects
             switch (SaveType)
             {
                 case SavingThrowType.Fortitude:
-                    abilityScore = stats.constitution;
+                    abilityScore = stats.GetConstitution();
                     break;
                 case SavingThrowType.Reflex:
-                    abilityScore = stats.dexterity;
+                    abilityScore = stats.GetDexterity();
                     break;
                 case SavingThrowType.Will:
-                    abilityScore = stats.wisdom;
+                    abilityScore = stats.GetWisdom();
                     break;
                 default:
                     return 0;
             }
 
             int abilityMod = (abilityScore - 10) / 2;
-            return PF2E_Core.CalculateModifier(1, Proficiency.Trained, abilityMod);
+            return TacticsRuleset_Core.CalculateModifier(1, Proficiency.Trained, abilityMod);
         }
 
         public override string GetEditorSummary()

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_pGOlKz4Krnh7MyUM
+  m_EditorClassIdentifier: 
+  SourceId: pGOlKz4Krnh7MyUM
+  Slug: haunted
+  DisplayName: Haunted
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You are followed by a spirit or entity, either from childhood or since
+    a momentous event. You and others may have seen this entity. You have studied
+    esoteric subjects trying to understand your situation, but this presence in your
+    life remains a mystery. Whatever this entity is or wants, it influences your
+    life in subtle ways, and not always for the better. Sometimes the entity helps
+    you, but at other times, its influence is malevolent or harmful. The entity is
+    most likely to surface in stressful situations. Choose two attribute boosts.
+    One must be to Wisdom or Charisma , and one is a free attribute boost. You are
+    trained in Occultism and an additional skill in which the haunting entity is
+    well-versed, determined by the GM. Any time you attempt a skill check for the
+    entity's skill, the GM can offer you a +1 circumstance bonus to the check, as
+    though the entity were Aiding you. If you accept but fail the check, you are
+    Frightened 2 (Frightened 4 on a critical failure). The initial Frightened value
+    can't be reduced by effects that would reduce or prevent the condition (such
+    as a fighter's bravery).
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 0da18a41b0b6001fb2fc25b554aea7fe5d340044d538fd8a12eba4a24bf12207
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: GM choice free skill boost
+    Rank: 1
+  LoreSkills:
+  - GM choice free skill boost
+  GrantedFeats: []

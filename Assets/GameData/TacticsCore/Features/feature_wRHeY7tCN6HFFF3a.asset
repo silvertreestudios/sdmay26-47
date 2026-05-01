@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_wRHeY7tCN6HFFF3a
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: wRHeY7tCN6HFFF3a
+  Slug: lesson-of-death
+  DisplayName: Lesson of Death
+  IconPath: icons/commodities/biological/organ-heart-red.webp
+  Description: You gain the @UUID[Compendium.pf2e.spells-srd.Item.Curse of Death]
+    hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Raise Dead].
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e2950e2713771851583afc4c0058e621df94ff22aec44351578fc23e773d3fc1
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 10
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

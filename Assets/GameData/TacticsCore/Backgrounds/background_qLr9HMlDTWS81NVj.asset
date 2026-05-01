@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_qLr9HMlDTWS81NVj
+  m_EditorClassIdentifier: 
+  SourceId: qLr9HMlDTWS81NVj
+  Slug: cathedral-child
+  DisplayName: Cathedral Child
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You grew up in the shadow of the Sandpoint Cathedral, perhaps literally.
+    Abstalar Zantus, the caretaker of the cathedral, may be your adoptive father
+    or religious mentor. Though Abstalar worships Desna, the Sandpoint Cathedral
+    is multidenominational and includes chapels devoted to Abadar, Desna, Erastil,
+    Gozreh, Sarenrae, and Shelyn; so worshippers from all non-evil faiths are welcome
+    here. Regardless of your beliefs, faith has been and remains a strong part of
+    your life, and you've come to rely upon your faith to help you not only get through
+    dangers in your adventures, but navigate the sometimes complex social problems
+    that raise their ugly head in town. Conflicts between the cathedral and the Scarnettis
+    seem like they've been growing lately. You may live in one of the many apartments
+    set aside for acolytes in the cathedral itself, or you might have family or own
+    a small house elsewhere in town, but regardless of where you live, you've spent
+    many an hour in the cathedral helping Abstalar\u2014particularly when it comes
+    to copying religious texts or otherwise serving as a scribe. It's likely you
+    play the part of healer in the party, but the drive to join an adventuring group
+    itself may have even been inspired by Abstalar himself, who could have recognized
+    in you an eagerness for adventuring, even before you did. Choose two attribute
+    boosts. One must be to Wisdom or Charisma , and one is a free attribute boost.
+    You're trained in the Religion skill and the Scribing Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Battle Medicine] skill feat. Increase the
+    party's reputation with Sandpoint Cathedral by 1 and reduce the party's reputation
+    with the Scarnetti Consortium by 1."
+  SourceTitle: Pathfinder Seven Dooms for Sandpoint Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: ce0c30f7089668022c572ab4fb1b326bfaf350964c6d9fea3e7a231e7bf75ada
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Scribing Lore
+    Rank: 1
+  LoreSkills:
+  - Scribing Lore
+  GrantedFeats:
+  - SourceKey: oGAnp
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_SOan0fqyFTrkqJLV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: SOan0fqyFTrkqJLV
+  Slug: witch-lessons
+  DisplayName: Witch Lessons
+  IconPath: icons/equipment/head/hat-pointed-leather-pink.webp
+  Description: 'A witch''s knowledge from their patron comes in the form of lessons,
+    which you can learn by selecting feats like Basic Lesson. Each lesson grants
+    you a hex and teaches your familiar a new spell, adding it to the spells you
+    can prepare using your witch spellcasting. You gain this spell even if it''s
+    not on your tradition''s spell list. BASIC LESSONS You can select from these
+    lessons when a feat or another effect grants you a basic lesson. Lesson of Dreams
+    You gain the @UUID[Compendium.pf2e.spells-srd.Item.Veil of Dreams] hex, and your
+    familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Sleep]. Lesson of the Elements
+    You gain the @UUID[Compendium.pf2e.spells-srd.Item.Elemental Betrayal] hex. Your
+    familiar learns your choice of @UUID[Compendium.pf2e.spells-srd.Item.Breathe
+    Fire], @UUID[Compendium.pf2e.spells-srd.Item.Air Bubble], @UUID[Compendium.pf2e.spells-srd.Item.Hydraulic
+    Push], or @UUID[Compendium.pf2e.spells-srd.Item.Pummeling Rubble]. Lesson of
+    Life You gain the @UUID[Compendium.pf2e.spells-srd.Item.Life Boost] hex, and
+    your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Spirit Link]. Lesson
+    of Protection You gain the @UUID[Compendium.pf2e.spells-srd.Item.Blood Ward]
+    hex; your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Mystic Armor].
+    Lesson of Vengeance You gain the @UUID[Compendium.pf2e.spells-srd.Item.Needle
+    of Vengeance] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Phantom
+    Pain]. Uncommon Lesson of Calamity: You gain the @UUID[Compendium.pf2e.spells-srd.Item.Stumbling
+    Curse] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Ill
+    Omen]. GREATER LESSONS You can select from these lessons when a feat or other
+    effect grants you a greater lesson. Lesson of Mischief You gain the @UUID[Compendium.pf2e.spells-srd.Item.Deceiver''s
+    Cloak] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Mad
+    Monkeys]. Lesson of Shadow You gain the @UUID[Compendium.pf2e.spells-srd.Item.Malicious
+    Shadow] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Chilling
+    Darkness]. Lesson of Snow You gain the @UUID[Compendium.pf2e.spells-srd.Item.Personal
+    Blizzard] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Wind]. Lesson of Favors You gain the @UUID[Compendium.pf2e.spells-srd.Item.Return
+    the Favor] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Mind
+    of Menace]. Lesson of Decay All living things eventually decay, feeding fungus
+    and insect. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Mycological Malady]
+    hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Insect Form].
+    Lesson of the Flock Power flows when many work as one. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Sheltering
+    Wings] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Levitate].
+    Lesson of the Shark Learn the ways of this deadly oceanic predator. You gain
+    the @UUID[Compendium.pf2e.spells-srd.Item.Blood in the Water] hex, and your familiar
+    learns @UUID[Compendium.pf2e.spells-srd.Item.Feet to Fins]. MAJOR LESSONS You
+    can select from these lessons when a feat or other effect grants you a major
+    lesson. Lesson of Bargains You gain the @UUID[Compendium.pf2e.spells-srd.Item.Over
+    the Coals] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Subconscious
+    Suggestion]. Lesson of Death You gain the @UUID[Compendium.pf2e.spells-srd.Item.Curse
+    of Death] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Raise
+    Dead]. Lesson of Renewal You gain the @UUID[Compendium.pf2e.spells-srd.Item.Restorative
+    Moment] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Field
+    of Life]. Rare Lesson of Frozen Queen You gain the @UUID[Compendium.pf2e.spells-srd.Item.Glacial
+    Heart] hex and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Ice].'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ff276e52dc766210ae87d1b8e2efc7f3f999ca67d42e38d26d884dd8f0f87ffd
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

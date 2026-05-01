@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_7fCZTzmv5I2dI4sr
+  m_EditorClassIdentifier: 
+  SourceId: 7fCZTzmv5I2dI4sr
+  Slug: discarded-duplicate
+  DisplayName: Discarded Duplicate
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Someone created you for a specific purpose. Some important person,
+    be they a storied royal, a contentious politician, or a stark military leader,
+    needed a body double for their most dangerous appearances. Using a mixture of
+    fringe science and magic, you were commissioned and trained to emulate this person
+    in every way, and have stood in for them in countless deadly circumstances. You
+    may or may not know the reason behind your decommissioning, but whoever discarded
+    you didn't finish you off. Now, the world is yours to explore\u2014but \"you\"
+    may have a bold or brutish reputation, or the individual you were duplicating
+    may be long dead. Regardless of the fate of this individual, your way of life
+    has changed drastically. You and the GM can work out how to incorporate your
+    previous life into your story. The GM can keep this knowledge @UUID[Compendium.pf2e.conditionitems.Item.Hidden]
+    even from you, or you or another character know what happened. You and the GM
+    can also leave the information unspecified and fill it in later. You gain three
+    free attribute boosts. You choose two, and the GM chooses one based on the attributes
+    of the character you were built to duplicate."
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 54ebe231ca3e279fa82712fed6a6a030cb718b53f98eca9c2804e08030fa4107
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 00000000
+  - Options: 00000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

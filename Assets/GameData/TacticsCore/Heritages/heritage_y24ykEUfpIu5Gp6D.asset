@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_y24ykEUfpIu5Gp6D
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: y24ykEUfpIu5Gp6D
+  Slug: warrior-automaton
+  DisplayName: Warrior Automaton
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Sporting a bulkier, powerful design, your body has been designed for
+    combat. You have a bulky, humanoid shape. The damage die for your fist increases
+    to 1d6 instead of 1d4. You don't take a penalty when making a lethal attack with
+    your fist or any other unarmed attack.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: edddd3e41531ecd078a5c6fbc36169cd5f927594d71d761d51b904eb10cd41c9
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"fist":true,"key":"Strike"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: upgrade
+    Value: 
+    Uuid: 
+    Json: '{"itemId":"xxxxxxFISTxxxxxx","key":"ItemAlteration","mode":"upgrade","property":"damage-dice-faces"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.kYsBAJ103T44agJF
+    SourceId: 
+    Slug: automaton
+    DisplayName: Automaton
+  ParentAncestryAsset: {fileID: 11400000, guid: 5906443d70978d34f9849b4fc6b85c75, type: 2}
+  GrantedFeatures: []

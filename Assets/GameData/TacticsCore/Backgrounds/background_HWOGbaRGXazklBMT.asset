@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HWOGbaRGXazklBMT
+  m_EditorClassIdentifier: 
+  SourceId: HWOGbaRGXazklBMT
+  Slug: stargazer
+  DisplayName: Stargazer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Ever since you were a child, you've looked up at the night sky and
+    been filled with wonder by the host of celestial bodies that populate the cosmos.
+    Whether you approach your observations from a mystical perspective or through
+    a more scientific lens, when the opportunity to apprentice under the famed astronomer
+    Inizkar presented itself, you booked passage on the first boat to Ancorato. Once
+    you arrive in Talmandor's Bounty, you hope to continue your studies and perhaps
+    even view the heavens from an observatory built by the ancient Azlanti themselves.
+    Choose two attribute boosts. One must be to Intelligence or Wisdom , and one
+    is a free attribute boost. You're trained in your choice of the Arcana, Nature,
+    or Occultism skill, and gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance]
+    skill feat in your chosen skill. You're also trained in the Astronomy Lore skill.
+    In addition, you have an innate sense of time. You can ascertain the time accurate
+    to within the hour even without being able to see the sky.
+  SourceTitle: Pathfinder Shades of Blood Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: c6c691844df9fc5d5558046b66c0494c7c364c1621f59a7e3030b2d9f82d7e3c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Arcana","predicate":["skill:arcana:rank:0"],"value":"arcana"},{"label":"PF2E.Skill.Nature","predicate":["skill:nature:rank:0"],"value":"nature"},{"label":"PF2E.Skill.Occultism","predicate":["skill:occultism:rank:0"],"value":"occultism"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"{item|flags.pf2e.rulesSelections.skill}"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Astronomy Lore
+    Rank: 1
+  LoreSkills:
+  - Astronomy Lore
+  GrantedFeats: []

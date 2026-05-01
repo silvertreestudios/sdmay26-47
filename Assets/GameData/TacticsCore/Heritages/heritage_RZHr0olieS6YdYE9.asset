@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_RZHr0olieS6YdYE9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: RZHr0olieS6YdYE9
+  Slug: fodder-skeleton
+  DisplayName: Fodder Skeleton
+  IconPath: icons/commodities/bones/bones-stack-yellow.webp
+  Description: Humans, and those who are physically closest to them, are the favored
+    material of necromancers. They are readily available, and their physiology has
+    been studied the most extensively, so these skeletons can be easily mass-produced.
+    Despite their name, fodder skeletons make rather mobile foot soldiers due to
+    how efficiently they transfer necromantic energy within their bodies. You have
+    a base Speed of 30 feet, instead of 25 feet.
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 757a7b2e45f1bb1bc62c3c124b5081733d53a4fd79a053440f14fcf4e8265486
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 30
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"land","value":30}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.58rL5sg2y4arW1i5
+    SourceId: 
+    Slug: skeleton
+    DisplayName: Skeleton
+  ParentAncestryAsset: {fileID: 11400000, guid: 05a9768c91264d64fa563771eb10af03, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_G3GIfGLY1xSNqj17
+  m_EditorClassIdentifier: 
+  SourceId: G3GIfGLY1xSNqj17
+  Slug: almas-clerk
+  DisplayName: Almas Clerk
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You worked as a clerk at the Golden Cathedral of Almas in Andoran.
+    The Pathfinder Society's activities in the city, and its passionate defense of
+    its mission, inspired you to join the organization. You help the Society pursue
+    its goals and navigate the laws of Golarion's many locales. Choose two attribute
+    boosts. One must be to Intelligence or Charisma , and one is a free attribute
+    boost. You're trained in the Society skill and the Legal Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Glean Contents] skill feat. Additionally,
+    when you receive a mission briefing in the city of Almas, you know just how to
+    find the information you need. You gain a +2 circumstance bonus to your checks
+    to Gather Information or Recall Knowledge during the Getting Started segment
+    of such adventures. Be sure to remind your GM that you have a relevant background.
+  SourceTitle: 'Pathfinder Blog: Pathfinder Society Year 4 Rule Updates'
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 2a65a9c38bb035aaef96bb785d0c0a941743fa9cc6a874d8ea956680969c664d
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Legal Lore
+    Rank: 1
+  LoreSkills:
+  - Legal Lore
+  GrantedFeats:
+  - SourceKey: 3tvuc
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Glean Contents
+    SourceId: 
+    DisplayName: Glean Contents
+    Level: 1
+    ResolvedFeature: {fileID: 0}

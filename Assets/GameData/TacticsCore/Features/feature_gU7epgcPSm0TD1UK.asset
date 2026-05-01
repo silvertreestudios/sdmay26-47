@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_gU7epgcPSm0TD1UK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: gU7epgcPSm0TD1UK
+  Slug: defensive-robes
+  DisplayName: Defensive Robes
+  IconPath: icons/equipment/back/cloak-collared-pink-gold.webp
+  Description: The flow of magic and your defensive training combine to help you
+    get out of the way before an attack. Your proficiency rank in unarmored defense
+    increases to expert.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 599205d23b00b1b2f87731c3c2ea3c6c14cc5d229bebe8ddd4ab7ffbdb9ce126
+  Traits:
+  - sorcerer
+  - summoner
+  - witch
+  - wizard
+  TraitsLower:
+  - sorcerer
+  - summoner
+  - witch
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: unarmored
+    Rank: 2
+  FocusPointDelta: 0

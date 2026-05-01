@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Items
+namespace TacticsGame.Items
 {
     public abstract class ItemSO : ScriptableObject
     {

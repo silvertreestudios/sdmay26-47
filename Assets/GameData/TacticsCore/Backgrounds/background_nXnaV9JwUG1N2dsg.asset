@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_nXnaV9JwUG1N2dsg
+  m_EditorClassIdentifier: 
+  SourceId: nXnaV9JwUG1N2dsg
+  Slug: attention-addict
+  DisplayName: Attention Addict
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: A roaring crowd chanting your name. Your face plastered all over the
+    city. Fawning fans begging for your autograph. Jealous rivals. Endless fame.
+    The promise of all this and more is what drove you to enter this year's Ruby
+    Phoenix Tournament, and with your prodigious star power it's no wonder why they
+    selected you for the prequalifier on Danger Island. You've got champion stamped
+    all over you. Obviously, the organizers knew a winner when they saw one. It's
+    already clear that you'll be named Ruby Phoenix Champion - the challenges leading
+    up to your prize ceremony are mere formalities, but you're happy to indulge the
+    impassioned masses. After all, the people want a show, and what kind of celebrity
+    would you be if you denied them? You might even deign to compete in some fights,
+    too, as long as your hair doesn't get mussed. Choose two attribute boosts. One
+    must be to Strength or Charisma , and one is a free attribute boost. You're trained
+    in Performance and the Gladiatorial Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Impressive
+    Performance] skill feat
+  SourceTitle: Pathfinder Fists of the Ruby Phoenix Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: d3d2ee36b4449d1af2354f8f721a18a1ce17bf63a3ad2526877dc8d5dbe6b86e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Gladiatorial
+    Rank: 1
+  LoreSkills:
+  - Gladiatorial
+  GrantedFeats:
+  - SourceKey: iln6y
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Impressive Performance
+    SourceId: 
+    DisplayName: Impressive Performance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

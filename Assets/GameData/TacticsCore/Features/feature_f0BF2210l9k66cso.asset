@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_f0BF2210l9k66cso
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: f0BF2210l9k66cso
+  Slug: kinetic-aura
+  DisplayName: Kinetic Aura
+  IconPath: icons/magic/unholy/orb-swirling-teal.webp
+  Description: Through your kinetic gate, elements flow from an elemental plane to
+    orbit your person. The form and appearance of this kinetic aura are unique to
+    you. Examples include a chaotic wind orbiting the body, fragments of floating
+    gravel, colorful wicks of flame stars of raw metal always changing shape, floatin
+    snowflakes or splinters dancing in the air. If you can channel more than one
+    element, pieces of all your kinetic elements appear in the aura. You have the
+    @UUID[Compendium.pf2e.actionspf2e.Item.Channel Elements] action, which lets you
+    activate your kinetic aura.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 867fe4c90f1410ab059a5c1faa21dbb6efebb204d332e4c21568d79e815ba7c2
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Channel Elements
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Channel
+      Elements"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Kineticist.Overflow.Description","title":"PF2E.SpecificRule.Kineticist.Overflow.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"feat","key":"ItemAlteration","mode":"add","predicate":["item:trait:overflow"],"property":"description","value":[{"text":"PF2E.SpecificRule.Kineticist.Overflow.Description","title":"PF2E.SpecificRule.Kineticist.Overflow.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Channel Elements
+    SourceId: 
+    DisplayName: Channel Elements
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

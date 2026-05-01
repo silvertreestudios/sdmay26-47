@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_NWsZ0cIeghyzk9bU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: NWsZ0cIeghyzk9bU
+  Slug: sharp-eared-catfolk
+  DisplayName: Sharp-Eared Catfolk
+  IconPath: icons/creatures/mammals/humanoid-fox-cat-archer.webp
+  Description: You were born with big, expressive ears that move with your moods
+    and perk up at any unexpected sound. You gain a +2 circumstance bonus to locate
+    undetected creatures that you could hear within 30 feet with a @UUID[Compendium.pf2e.actionspf2e.Item.Seek]
+    action. As long as you're aware of a creature via sound, once per round, your
+    ears can help you @UUID[Compendium.pf2e.actionspf2e.Item.Point Out] the creature
+    to all allies as a free action.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 5fc0eb56b3e6745684c967b1476b0d1c1bec4a2a8ddda9555e9485646fcac663
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:seek",{"lte":["target:distance",30]}],"selector":"perception","type":"circumstance","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.972EkpJOPv9KkQIW
+    SourceId: 
+    Slug: catfolk
+    DisplayName: Catfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 44d614089b9f9a1489e79e108d8ebe69, type: 2}
+  GrantedFeatures: []

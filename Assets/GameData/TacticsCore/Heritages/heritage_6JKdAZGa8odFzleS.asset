@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_6JKdAZGa8odFzleS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 6JKdAZGa8odFzleS
+  Slug: farsight-goloma
+  DisplayName: Farsight Goloma
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your eyes have adapted to see more in less than favorable conditions.
+    You gain low-light vision.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 3d820869aac38e2284800213f59f79abe0e545ea55cad94752b60ca1b75e0b56
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"low-light-vision"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.c4secsSNG2AO7I5i
+    SourceId: 
+    Slug: goloma
+    DisplayName: Goloma
+  ParentAncestryAsset: {fileID: 11400000, guid: ea7c7786010caad46aa3cbd1ce98770e, type: 2}
+  GrantedFeatures: []

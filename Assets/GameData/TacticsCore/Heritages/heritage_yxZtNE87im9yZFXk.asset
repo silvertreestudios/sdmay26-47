@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_yxZtNE87im9yZFXk
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: yxZtNE87im9yZFXk
+  Slug: shadow-of-the-hermit
+  DisplayName: Shadow of the Hermit
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: "Your shadow seems somehow full of secrets and mysteries\u2014secrets
+    that it shares with you. Choose one cantrip from the occult spell list. You can
+    cast this spell as an occult innate spell at will. A cantrip is heightened to
+    a spell rank equal to half your level rounded up."
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 5f79b213c569c763485e4e2ced3344c294b571e3bf7462d10c605bbe7f2b6c57
+  Traits:
+  - wayang
+  TraitsLower:
+  - wayang
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.8FpI46oVxYVku04u
+    SourceId: 
+    Slug: wayang
+    DisplayName: Wayang
+  ParentAncestryAsset: {fileID: 11400000, guid: 487f3be479d01514492fe217183128bf, type: 2}
+  GrantedFeatures: []

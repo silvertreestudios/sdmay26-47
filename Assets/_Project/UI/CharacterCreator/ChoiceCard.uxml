@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+
+    <ui:VisualElement class="choice-card" name="ChoiceCardRoot">
+        <ui:Label name="Title" text="Choice Name" class="choice-card__title" />
+        <ui:Label name="Description" text="Description" class="choice-card__sub" />
+    </ui:VisualElement>
+</ui:UXML>

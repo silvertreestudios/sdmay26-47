@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_j0R1SyJP8k4G2Hkn
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: j0R1SyJP8k4G2Hkn
+  Slug: scavenger-strix
+  DisplayName: Scavenger Strix
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your ancestors originated from a land where food was scarce and threats
+    were many. You are trained in Survival. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Forager]
+    skill feat as a bonus feat. Your thoroughness when gathering food provides you
+    a +1 circumstance bonus to Survival checks to Subsist.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: bdab222c5dd8a0f4c3285ba2bdd649c975faeabdadd570a2ad62b12a1a858f02
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.survival.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.survival.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Forager
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Forager"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:subsist"],"selector":"survival","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GXcC6oVa5quzgNHD
+    SourceId: 
+    Slug: strix
+    DisplayName: Strix
+  ParentAncestryAsset: {fileID: 11400000, guid: c5ca5e206f445b84da8b58c948145126, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forager
+    SourceId: 
+    DisplayName: Forager
+    Level: 0
+    ResolvedFeature: {fileID: 0}

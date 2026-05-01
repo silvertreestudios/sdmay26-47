@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_n2LRzksKVSzOuzqN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: n2LRzksKVSzOuzqN
+  Slug: school-of-the-reclamation
+  DisplayName: School of the Reclamation
+  IconPath: icons/environment/wilderness/tomb-entrance.webp
+  Description: "Whether it's been lost to war, abandoned during calamity, or simply
+    buried by the ages, there is as much important knowledge to be found in the hidden
+    corners of the world as in the schools and libraries of the academy. Your study
+    of magic in the service of rediscovering lost knowledge for the Sarkoris Reclamation
+    has taught you that much that was once lost can still be found, but only if someone
+    is willing to seek it out and retrieve it. You've focused your magic on reaching
+    the world's hidden and forgotten places, whether they are found in a distant
+    ruin or the depths of a lost memory, and bringing their knowledge back to the
+    surface\u2014whatever the cost. Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic
+    Hand], @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Projectile] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Fleet
+    Step], @UUID[Compendium.pf2e.spells-srd.Item.Gust of Wind], @UUID[Compendium.pf2e.spells-srd.Item.Mending]
+    2nd: @UUID[Compendium.pf2e.spells-srd.Item.Knock], @UUID[Compendium.pf2e.spells-srd.Item.Mental
+    Map] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Locate], @UUID[Compendium.pf2e.spells-srd.Item.Overwhelming
+    Memory] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Bridge of Vines], @UUID[Compendium.pf2e.spells-srd.Item.Shape
+    Stone] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Mind Probe], @UUID[Compendium.pf2e.spells-srd.Item.Scouting
+    Eye] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Truesight], @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Force] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Restore Ground], @UUID[Compendium.pf2e.spells-srd.Item.Retrocognition]
+    8th: @UUID[Compendium.pf2e.spells-srd.Item.Pinpoint], @UUID[Compendium.pf2e.spells-srd.Item.Unrelenting
+    Observation] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Metamorphosis] School
+    Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Grasping Vine]; advanced:
+    @UUID[Compendium.pf2e.spells-srd.Item.Unsettling Knowledge]"
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: d419033adc5bf0bb0b01eae31c414b0068d372bed7a84e8dec81d21f816ca5b0
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

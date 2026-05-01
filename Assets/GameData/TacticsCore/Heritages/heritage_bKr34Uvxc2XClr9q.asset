@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_bKr34Uvxc2XClr9q
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: bKr34Uvxc2XClr9q
+  Slug: strong-oak
+  DisplayName: Strong Oak
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Most ghorans have bodies of pliable vines and tough stems, but you're
+    covered in sturdy, rough bark and your legs are stable as roots. You gain a +2
+    circumstance bonus on your Fortitude or Reflex DC against attempts to @UUID[Compendium.pf2e.actionspf2e.Item.Grapple]
+    or @UUID[Compendium.pf2e.actionspf2e.Item.Trip] you. This bonus also applies
+    to saving throws against effects that would Grab you, Restrain you, or knock
+    you @UUID[Compendium.pf2e.conditionitems.Item.Prone]. You also gain a +2 circumstance
+    bonus on Acrobatics checks to @UUID[Compendium.pf2e.actionspf2e.Item.Balance].
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: db38b3983b303c71a766f1d9bffbca263030e19a24cf7f66d660cb641aa3f7c6
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["action:grapple","action:trip","inflicts:grabbed","inflicts:restrained","inflicts:prone"]}],"selector":["fortitude","reflex"],"type":"circumstance","value":2}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:balance"],"selector":"acrobatics","type":"circumstance","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.tSurOqRcfumadTfr
+    SourceId: 
+    Slug: ghoran
+    DisplayName: Ghoran
+  ParentAncestryAsset: {fileID: 11400000, guid: 5ba316e3f579b40409993fb6d0334eac, type: 2}
+  GrantedFeatures: []

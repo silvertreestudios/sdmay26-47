@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_IObZEUz8wneEMgR3
+  m_EditorClassIdentifier: 
+  SourceId: IObZEUz8wneEMgR3
+  Slug: deckhand
+  DisplayName: Deckhand
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The rolling waves of the high seas, the constant sway of the deck
+    underfoot, and the creaking heights of a ship's rigging are as familiar to you
+    as solid ground. You might have worked on a simple fishing boat, a wealthy merchant's
+    galley, a mighty warship - or even a pirate's caravel. Whether your crew retired,
+    your ship sank, or you've turned to adventuring so you can keep all the treasure
+    for yourself, you still retain an excellent sense of balance and quick reflexes.
+    Choose two attribute boosts. One must be to Dexterity or Strength and one is
+    a free attribute boost. You're trained in the Acrobatics skill, and the Sailing
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Cat Fall] skill
+    feat.
+  SourceTitle: 'Pathfinder Beginner Box: Hero''s Handbook'
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 228461da02c4c30b35b01d137a2623aaca19d8e4ecf9de990f387db572131b07
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 1
+    CustomSkillId: acrobatics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Sailing Lore
+    Rank: 1
+  LoreSkills:
+  - Sailing Lore
+  GrantedFeats:
+  - SourceKey: 5i1qz
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Cat Fall
+    SourceId: 
+    DisplayName: Cat Fall
+    Level: 1
+    ResolvedFeature: {fileID: 0}

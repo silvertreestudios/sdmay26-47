@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_hIA3qiUsxvLZXrFP
+  m_EditorClassIdentifier: 
+  SourceId: hIA3qiUsxvLZXrFP
+  Slug: fetchling
+  DisplayName: Fetchling
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/fetchling.svg
+  Description: Once human and now something apart, fetchlings display the Shadow
+    Plane's ancient influence through monochrome complexions, glowing eyes, and the
+    casting of supernatural shadows. Fetchling
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 8d2bb4a50ed24da5a21d62874c770eb36476fe63eef71c5344e6dbc7bf9f061e
+  Traits:
+  - fetchling
+  - humanoid
+  TraitsLower:
+  - fetchling
+  - humanoid
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.colorDarkvision
+    Mode: override
+    Value: true
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.colorDarkvision","value":true}'
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: shadowtongue
+    DisplayName: Shadowtongue
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: dziriak
+    DisplayName: Dziriak
+  - Id: necril
+    DisplayName: Necril
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: 2fec1363a5c50564e8c3104b16c171d9, type: 2}
+  - {fileID: 11400000, guid: e64ea8eb235f28640aebd7d8e52ddc15, type: 2}
+  - {fileID: 11400000, guid: 3ed2bbd91fbf9c14d915395eecb7eb47, type: 2}
+  - {fileID: 11400000, guid: 2cbedb732423400429cc8b80f5c5166c, type: 2}
+  - {fileID: 11400000, guid: 7f2eefe2bf50f1c49893470d7ef8705f, type: 2}

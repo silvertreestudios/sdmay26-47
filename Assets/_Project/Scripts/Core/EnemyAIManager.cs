@@ -1,14 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
-using PathfinderTactics.Reactions;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Grid;
+using TacticsGame.Reactions;
 using UnityEngine;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     public class EnemyAIManager : MonoBehaviour
     {
@@ -207,7 +207,7 @@ namespace PathfinderTactics.Core
             Vector3Int targetPos3D = target.CurrentLayeredPosition;
             foreach (Vector3Int movePos in validMoves)
             {
-                int dist = PF2E_Core.GetPF2eDistance3D(movePos, targetPos3D);
+                int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(movePos, targetPos3D);
                 if (dist < closestDistance)
                 {
                     closestDistance = dist;
@@ -286,7 +286,7 @@ namespace PathfinderTactics.Core
                     if (health != null && health.IsDead)
                         continue;
 
-                    int dist = PF2E_Core.GetPF2eDistance3D(
+                    int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
                         enemyUnit.CurrentLayeredPosition,
                         playerUnit.CurrentLayeredPosition
                     );

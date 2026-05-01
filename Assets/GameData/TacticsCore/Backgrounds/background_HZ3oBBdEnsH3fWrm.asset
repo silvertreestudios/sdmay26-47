@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HZ3oBBdEnsH3fWrm
+  m_EditorClassIdentifier: 
+  SourceId: HZ3oBBdEnsH3fWrm
+  Slug: shory-seeker
+  DisplayName: Shory Seeker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've dedicated your life to unraveling the secrets of the ancient
+    Shory Empire, either through meticulous research or by traveling into dangerous
+    and distant ruins to track down long-lost artifacts. Choose two attribute boosts.
+    One must be to Dexterity or Intelligence , and one is a free attribute boost.
+    You're trained in the Crafting skill and the Shory Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Specialty
+    Crafting] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 29507bc62b5b064c25e409e149d9ce70f376d2d87c25916ef313caa69d007661
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Shory Lore
+    Rank: 1
+  LoreSkills:
+  - Shory Lore
+  GrantedFeats:
+  - SourceKey: 6x9px
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    SourceId: 
+    DisplayName: Specialty Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

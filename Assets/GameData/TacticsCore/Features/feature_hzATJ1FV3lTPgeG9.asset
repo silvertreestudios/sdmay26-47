@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_hzATJ1FV3lTPgeG9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: hzATJ1FV3lTPgeG9
+  Slug: gluttony
+  DisplayName: Gluttony
+  IconPath: icons/weapons/sickles/scythe-bone-jagged.webp
+  Description: 'The All-Encompassing invokes a deep emptiness in its users, encouraging
+    them to consume and consume, with nothing ever feeling like enough. Anathema
+    Use your magic to protect others or manipulate minds. Sin Spells cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Caustic
+    Blast], @UUID[Compendium.pf2e.spells-srd.Item.Void Warp] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Grim
+    Tendrils], @UUID[Compendium.pf2e.spells-srd.Item.Summon Undead] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Create
+    Food], @UUID[Compendium.pf2e.spells-srd.Item.Ghoulish Cravings] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Rouse
+    Skeletons], @UUID[Compendium.pf2e.spells-srd.Item.Vampiric Feast] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Seal
+    Fate], @UUID[Compendium.pf2e.spells-srd.Item.Vampiric Maiden] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Corrosive
+    Muck], @UUID[Compendium.pf2e.spells-srd.Item.Slither] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Disintegrate],
+    @UUID[Compendium.pf2e.spells-srd.Item.Vampiric Exsanguination] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Devouring
+    Void], @UUID[Compendium.pf2e.spells-srd.Item.Eclipse Burst] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Desiccate]
+    9th: @UUID[Compendium.pf2e.spells-srd.Item.Massacre] Initial School Spell @UUID[Compendium.pf2e.spells-srd.Item.All-Encompassing
+    Hunger]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: 976c23fb9bc35b664a3c7e0d7678a0b82faaaddf031ad29ce3c07efa0aeba3d7
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"runelord-sin-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"or":["item:slug:caustic-blast","item:slug:void-warp","item:slug:grim-tendrils","item:slug:summon-undead","item:slug:create-food","item:slug:ghoulish-cravings","item:slug:rouse-skeletons","item:slug:vampiric-feast","item:slug:seal-fate","item:slug:vampiric-maiden","item:slug:corrosive-muck","item:slug:slither","item:slug:disintegrate","item:slug:vampiric-exsanguination","item:slug:devouring-void","item:slug:eclipse-burst","item:slug:desiccate","item:slug:massacre"]}],"priority":118,"property":"other-tags","value":"runelord-sin-spell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

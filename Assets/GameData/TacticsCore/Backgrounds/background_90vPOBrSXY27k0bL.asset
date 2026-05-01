@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_90vPOBrSXY27k0bL
+  m_EditorClassIdentifier: 
+  SourceId: 90vPOBrSXY27k0bL
+  Slug: tyrant-witness
+  DisplayName: Tyrant Witness
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: When Tar-Baphon broke free of Gallowspire, you saw him emerge. When
+    the god-slaying lich obliterated Vigil and Roslar's Coffer, you scrambled to
+    safety. And when necrotic rainfall swept through the lands and the Gallowgarden
+    grew, you weathered the storms. Others talk of what the Whispering Tyrant's return
+    did to Lastwall, but you were there. And it changed you. Choose two attribute
+    boosts. One must be to Dexterity or Wisdom , and one is a free attribute boost.
+    You're trained in the Undead Lore skill. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Vitality
+    Lash] as a divine innate cantrip. As normal, the cantrip heightens to half your
+    level rounded up.
+  SourceTitle: Pathfinder Lost Omens Knights of Lastwall
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 64b0389f2ed83031a457d93e3952e98e28a35b65491f90d3f61d80f0939beb93
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead
+    Rank: 1
+  LoreSkills:
+  - Undead
+  GrantedFeats: []

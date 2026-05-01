@@ -1,9 +1,9 @@
 using System;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Core;
+using TacticsGame.Actions;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     public class UnitActionEconomy : MonoBehaviour
     {

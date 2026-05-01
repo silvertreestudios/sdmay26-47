@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_k7M9jedvt31AJ5ZR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: k7M9jedvt31AJ5ZR
+  Slug: fury-instinct
+  DisplayName: Fury Instinct
+  IconPath: icons/magic/unholy/silhouette-evil-horned-giant.webp
+  Description: "Your rage comes from a deep and purely personal well within you.
+    You use your rage as you choose. Instinct Ability\u2014Unstoppable Frenzy Increase
+    the additional damage from Rage from 2 to 3. You gain a bonus 1st-level barbarian
+    feat. Specialization Ability (7th) Increase the additional damage from Rage from
+    3 to 7. If you have greater weapon specialization, instead increase the additional
+    damage from Rage to 13. Raging Resistance (9th) You resist physical weapon damage,
+    but not physical damage from other sources (such as unarmed attacks)."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 579a3bb6d53406331b64acc1acfce63fa8495d2770a7e4f59b52f383e452f127
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:1","item:category:class","item:trait:barbarian",{"not":"item:draconic-arrogance"}],"itemType":"feat"},"flag":"furyInstinct","key":"ChoiceSet","predicate":["class:barbarian"],"prompt":"PF2E.SpecificRule.Prompt.LevelOneClassFeat"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.furyInstinct}'
+    Json: '{"key":"GrantItem","predicate":["class:barbarian"],"uuid":"{item|flags.pf2e.rulesSelections.furyInstinct}"}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian"],"selector":"strike-damage","slug":"rage","value":3}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 7
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian",{"gte":["self:level",7]}],"selector":"strike-damage","slug":"rage","value":7}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod + 3"'
+    Uuid: 
+    Json: '{"exceptions":[{"definition":[{"or":["item:type:melee","item:type:weapon"]},"item:category:unarmed"],"label":"PF2E.IWR.Custom.NonWeapons"}],"key":"Resistance","predicate":["self:effect:rage","feature:raging-resistance"],"type":"physical","value":"@actor.abilities.con.mod
+      + 3"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod + 8"'
+    Uuid: 
+    Json: '{"exceptions":[{"definition":[{"or":["item:type:melee","item:type:weapon"]},"item:category:unarmed"],"label":"PF2E.IWR.Custom.NonWeapons"}],"key":"Resistance","predicate":["self:effect:rage","feat:unstoppable-juggernaut"],"type":"physical","value":"@actor.abilities.con.mod
+      + 8"}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 13
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian","feature:greater-weapon-specialization"],"selector":"strike-damage","slug":"rage","value":13}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.furyInstinct}'
+    SourceId: 
+    DisplayName: furyInstinct}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

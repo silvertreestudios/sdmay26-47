@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_QZv2taQQAdeR8Vmg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: QZv2taQQAdeR8Vmg
+  Slug: flying-animal
+  DisplayName: Flying Animal
+  IconPath: icons/creatures/birds/corvid-flying-wings-purple.webp
+  Description: You are an animal that can take flight for long or sustained bursts,
+    such as an eagle, bat, bee, or flying squirrel. The awakening process has disrupted
+    your ability to fly as freely as you once did. What used to be an automatic process
+    is now one that you must apply some thought to until it becomes automatic once
+    again. You can still slow your descent, so you take no damage from falling, regardless
+    of the distance you fall. Most flying awakened animals choose the Take Flight
+    ancestry feat at 1st level to regain a limited ability to fly. You have a land
+    Speed of 20 feet and one animal attack of your choice (typically beak, claw,
+    jaws, talon, or wing).
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: cf626224555875b7bf7bacd19e225265c258bf09522d64210b82052bb466b023
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 20
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"land","value":20}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.ancestryfeatures.Item.Animal Attack
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.ancestryfeatures.Item.Animal
+      Attack"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GFOgV3MzWkYwJoJW
+    SourceId: 
+    Slug: awakened-animal
+    DisplayName: Awakened Animal
+  ParentAncestryAsset: {fileID: 11400000, guid: c58a1d5658e5e884f91f290571161519, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Animal Attack
+    SourceId: 
+    DisplayName: Animal Attack
+    Level: 0
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Zz7FPvmAaOpebHbu
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Zz7FPvmAaOpebHbu
+  Slug: liturgist
+  DisplayName: Liturgist
+  IconPath: icons/tools/instruments/harp-lap-brown.webp
+  Description: 'You draw forth your apparitions through the power of song and dance,
+    connecting the spiritual to the physical. These performances can be of your own
+    creation or follow the specific rites of your religion. Song of Invocation (1st):
+    You can sing out to the spirits to have them spin and twirl around you. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Circle of Spirits] feat. Dancing Invocation
+    (9th): The movement of your body grants power to your magic. When you @UUID[Compendium.pf2e.actionspf2e.Item.Leap],
+    Step, or @UUID[Compendium.pf2e.actionspf2e.Item.Tumble Through], you also Sustain
+    an apparition spell or vessel spell. Invocation of Praise (17th): Your liturgies
+    call to the spirits even in the heat of battle. When you roll initiative, you
+    can use Circle of Spirits as a free action. If your first action on your first
+    turn is to cast an apparition cantrip granted by your primary apparition, you
+    reduce the number of actions it takes to cast it by 1 (minimum 1 action).'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 913db0a220372a6dbdd80f5fd3ead8b99a874e47b91680b20431bc6cb265f089
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Circle of Spirits
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Circle of Spirits"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Circle of Spirits
+    SourceId: 
+    DisplayName: Circle of Spirits
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

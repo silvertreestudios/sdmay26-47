@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+    <ui:Style src="CreatorTheme.uss" />
+
+    <ui:VisualElement class="step-container">
+
+        <ui:VisualElement class="step-header">
+            <ui:VisualElement class="step-header__group">
+                <ui:Label text="ANCESTRY" class="header-text header-text--accent" />
+                <ui:Label text="Choose the lineage that defines your starting body, languages and base traits." class="subhead-text" />
+            </ui:VisualElement>
+            <ui:Label text="STEP 03 / 10" class="badge" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="split-view-container">
+
+            <!-- Left: search + paged card grid of ancestries -->
+            <ui:VisualElement class="split-left">
+                <ui:VisualElement class="search-bar">
+                    <ui:TextField name="Search_Ancestry" text="" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Grid_Ancestries" class="paged-grid" style="flex-grow: 1;" />
+            </ui:VisualElement>
+
+            <!-- Right: detail panel -->
+            <ui:ScrollView class="split-right detail-panel-scroll">
+
+                <ui:VisualElement class="detail-section detail-section--header">
+                    <ui:Label name="Lbl_AncestryName" text="Select an Ancestry" class="detail-title" />
+                    <ui:VisualElement class="detail-stat-strip">
+                        <ui:Label text="HP" class="detail-stat-strip__label" />
+                        <ui:Label name="Lbl_AncestryHP" text="-" class="detail-stat-strip__value" />
+                        <ui:Label text="SIZE" class="detail-stat-strip__label" />
+                        <ui:Label name="Lbl_AncestrySize" text="-" class="detail-stat-strip__value" />
+                        <ui:Label text="SPEED" class="detail-stat-strip__label" />
+                        <ui:Label name="Lbl_AncestrySpeed" text="-" class="detail-stat-strip__value" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="HERITAGE" class="summary-block__title" />
+                    <ui:VisualElement name="Grid_Heritages" class="detail-list" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="ATTRIBUTE CHOICES" class="summary-block__title" />
+                    <ui:VisualElement name="AncestryBoostContainer" />
+                    <ui:VisualElement name="AncestryFlawContainer" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="LANGUAGES &amp; FEATURES" class="summary-block__title" />
+                    <ui:VisualElement name="AncestryLanguageContainer" />
+                    <ui:Label name="Lbl_AncestryFeatures" text="-" class="detail-text detail-text--compact" />
+                </ui:VisualElement>
+
+                <ui:Label name="Lbl_AncestryDescription" text="" class="detail-text detail-text--muted detail-text--small" />
+
+            </ui:ScrollView>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_IaxmCkdsPlA52spu
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: IaxmCkdsPlA52spu
+  Slug: bones
+  DisplayName: Bones
+  IconPath: systems/pf2e/icons/features/classes/bones-mystery.webp
+  Description: "Your mystery imparts an understanding of death and undeath in all
+    their macabre complexity. You might have had a brush with death yourself\u2014maybe
+    even dying and returning to life\u2014or carry the touch of undeath in your blood.
+    If you commune with deities, you might speak with guardians of death like Pharasma
+    and the psychopomp ushers (the most powerful among creatures that guide souls
+    through the afterlife); a bringer of death like the Mantis God Achaekek or the
+    Horseman of the Apocalypse Charon; or a herald of undeath such as Urgathoa. Granted
+    Spells cantrip: @UUID[Compendium.pf2e.spells-srd.Item.Void Warp] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Grim
+    Tendrils] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.False Vitality] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Ghostly
+    Weapon] Revelation Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Soul
+    Siphon] advanced: @UUID[Compendium.pf2e.spells-srd.Item.Armor of Bones] greater:
+    @UUID[Compendium.pf2e.spells-srd.Item.Claim Undead] Related Domains death, decay,
+    undeath, vigil Mystery Skill Medicine Oracle Feat @UUID[Compendium.pf2e.feats-srd.Item.Nudge
+    the Scales] @UUID[Compendium.pf2e.classfeatures.Item.Curse of the Living Death]"
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9d454edd37411798c181ee49fdd6172f56e0b50d9ce6e7ab994f416acbc43427
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.medicine.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.medicine.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Nudge the Scales
+    Json: '{"key":"GrantItem","predicate":["class:oracle"],"uuid":"Compendium.pf2e.feats-srd.Item.Nudge
+      the Scales"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Curse of the Living Death
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Curse of
+      the Living Death"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Nudge the Scales
+    SourceId: 
+    DisplayName: Nudge the Scales
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Curse of the Living Death
+    SourceId: 
+    DisplayName: Curse of the Living Death
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

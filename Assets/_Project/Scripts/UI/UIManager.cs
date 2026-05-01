@@ -1,10 +1,10 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     public class UIManager : MonoBehaviour
     {

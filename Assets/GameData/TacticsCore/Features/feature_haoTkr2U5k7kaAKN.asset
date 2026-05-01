@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_haoTkr2U5k7kaAKN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: haoTkr2U5k7kaAKN
+  Slug: third-path-to-perfection
+  DisplayName: Third Path to Perfection
+  IconPath: systems/pf2e/icons/features/classes/third-path-to-perfection.webp
+  Description: You have made great progress in your personal studies of enlightenment.
+    Choose one of the saving throws you selected for path to perfection or second
+    path to perfection. Your proficiency rank for the chosen type of save increases
+    to legendary. When you roll a critical failure on the chosen type of save, you
+    get a failure instead. When you roll a failure on the chosen type of save against
+    an effect that deals damage, you take half damage.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b132d3ddcdaa9f1c6cdcb8c4f90dc4654fb71b434f9e5abbfb049a94aeb424a9
+  Traits:
+  - monk
+  TraitsLower:
+  - monk
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.SavesFortitude","predicate":["self:path-to-perfection:fortitude"],"value":"fortitude"},{"label":"PF2E.SavesReflex","predicate":["self:path-to-perfection:reflex"],"value":"reflex"},{"label":"PF2E.SavesWill","predicate":["self:path-to-perfection:will"],"value":"will"}],"flag":"pathToPerfection","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.PathToPerfection","rollOption":"third-path-to-perfection"}'
+  - Key: ActiveEffectLike
+    Path: system.saves.{item|flags.pf2e.rulesSelections.pathToPerfection}.rank
+    Mode: upgrade
+    Value: 4
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.saves.{item|flags.pf2e.rulesSelections.pathToPerfection}.rank","value":4}'
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"{item|flags.pf2e.rulesSelections.pathToPerfection}"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["damaging-effect","third-path-to-perfection:fortitude"],"selector":"fortitude","text":"PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Fortitude","title":"{item|name}"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["damaging-effect","third-path-to-perfection:reflex"],"selector":"reflex","text":"PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Reflex","title":"{item|name}"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["damaging-effect","third-path-to-perfection:will"],"selector":"will","text":"PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Will","title":"{item|name}"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

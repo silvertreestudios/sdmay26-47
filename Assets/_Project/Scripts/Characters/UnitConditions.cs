@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     public class UnitConditions : MonoBehaviour
     {

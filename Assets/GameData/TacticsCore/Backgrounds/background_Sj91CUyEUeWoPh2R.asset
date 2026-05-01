@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_Sj91CUyEUeWoPh2R
+  m_EditorClassIdentifier: 
+  SourceId: Sj91CUyEUeWoPh2R
+  Slug: toymaker
+  DisplayName: Toymaker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You delight in making little trinkets for children of all ages, and
+    seeing their faces light up thanks to one of your creations brings joy to your
+    heart. Perhaps you sell your wares from a particular shop or from the back of
+    a wagon as you travel from town to town. Choose two attribute boosts. One must
+    be to Intelligence or Charisma , and one is a free attribute boost. You're trained
+    in the Crafting skill and the Mercantile Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Specialty
+    Crafting] skill feat, choosing Artistry, Blacksmithing, Glassmaking, Leatherworking,
+    Tailoring, or Woodworking as your specialty.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: cb4d47995d3a51cd7cf35628c0ef783b03a608f33aa46f25627e75dfc859229a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.SpecialtyCrafting.Artistry","value":"artistry"},{"label":"PF2E.SpecificRule.SpecialtyCrafting.Blacksmithing","value":"blacksmithing"},{"label":"PF2E.SpecificRule.SpecialtyCrafting.Glassmaking","value":"glassmaking"},{"label":"PF2E.SpecificRule.SpecialtyCrafting.Leatherworking","value":"leatherworking"},{"label":"PF2E.SpecificRule.SpecialtyCrafting.Tailoring","value":"tailoring"},{"label":"PF2E.SpecificRule.SpecialtyCrafting.Woodworking","value":"woodworking"}],"flag":"toymaker","key":"ChoiceSet","prompt":"PF2E.SpecificRule.SpecialtyCrafting.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    Json: '{"key":"GrantItem","preselectChoices":{"specialtyCrafting":"{item|flags.pf2e.rulesSelections.toymaker}"},"uuid":"Compendium.pf2e.feats-srd.Item.Specialty
+      Crafting"}'
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mercantile
+    Rank: 1
+  LoreSkills:
+  - Mercantile
+  GrantedFeats: []

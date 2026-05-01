@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_GNidqGnSABx1rQUQ
+  m_EditorClassIdentifier: 
+  SourceId: GNidqGnSABx1rQUQ
+  Slug: missionary
+  DisplayName: Missionary
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You received training from clergy in a faraway temple, who sent you
+    out into the world to spread the faith. Although you are relatively new at this,
+    you are always on the lookout for new places in need of your deity's teachings
+    and guidance. When play begins, you are riding along in a caravan making your
+    way through sparsely populated regions of Isger, spreading the news of your faith
+    to those who will listen. Choose two attribute boosts. One must be to Constitution
+    or Wisdom , and one is a free attribute boost. You're trained in the Diplomacy
+    skill and the Scribing Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Impression] skill feat.
+  SourceTitle: 'Pathfinder Adventure: The Fall of Plaguestone'
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: cbbb190429f77664e2809a44cf52e74afba31421e2daa2786681e6a2b5793875
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Scribing Lore
+    Rank: 1
+  LoreSkills:
+  - Scribing Lore
+  GrantedFeats:
+  - SourceKey: f4hap
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

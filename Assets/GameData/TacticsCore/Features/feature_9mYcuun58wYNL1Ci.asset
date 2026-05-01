@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_9mYcuun58wYNL1Ci
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 9mYcuun58wYNL1Ci
+  Slug: scar-of-the-survivor
+  DisplayName: Scar of the Survivor
+  IconPath: icons/skills/wounds/injury-stapled-flesh-tan.webp
+  Description: "Usage imbued in the skin A scar on your body commemorates a time
+    someone tried to end your story and failed\u2014a testament to your resilience
+    and fortitude. Immanence Divine energy spreads outward from your scar, reinforcing
+    your flesh. You gain the benefits of the Diehard feat and a +1 status bonus to
+    Fortitude saving throws. Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.No
+    Scar but This] 1 (concentrate, healing, transcendence, vitality) @Embed[Compendium.pf2e.actionspf2e.Item.JdpUaQeNwoVr2VHL
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 04c33e1a33fdf7cfe5f26a0826b12156a486793feefe83fc491ff26ee4a57e64
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"scar-of-the-survivor"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.ScarOfTheSurvivor.Label","predicate":["parent:tag:body-ikon-feat"],"value":"scar-of-the-survivor"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.ScarOfTheSurvivor.Label","predicate":["parent:tag:body-ikon-feat"],"value":"scar-of-the-survivor"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.No Scar but This
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.No Scar but
+      This"}'
+  - Key: ActiveEffectLike
+    Path: system.attributes.dying.max
+    Mode: upgrade
+    Value: 5
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.attributes.dying.max","predicate":["divine-spark:scar-of-the-survivor"],"priority":51,"value":5}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["divine-spark:scar-of-the-survivor"],"selector":"fortitude","type":"status","value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:scar-of-the-survivor","item:slug:no-scar-but-this"]},{"not":"divine-spark:scar-of-the-survivor"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.No Scar but This
+    SourceId: 
+    DisplayName: No Scar but This
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

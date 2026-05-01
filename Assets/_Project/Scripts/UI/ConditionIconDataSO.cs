@@ -1,14 +1,11 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 using UnityEngine;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
-    [CreateAssetMenu(
-        fileName = "ConditionIconData",
-        menuName = "PathfinderTactics/UI/ConditionIconData"
-    )]
+    [CreateAssetMenu(fileName = "ConditionIconData", menuName = "TacticsGame/UI/ConditionIconData")]
     public class ConditionIconDataSO : ScriptableObject
     {
         [Serializable]

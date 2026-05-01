@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_dxWY1emPz8Jr0fyG
+  m_EditorClassIdentifier: 
+  SourceId: dxWY1emPz8Jr0fyG
+  Slug: lost-coast-local
+  DisplayName: Lost Coast Local
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You've very likely lived in Sandpoint your whole life\u2014if you
+    haven't, then you've got family who does, and you've spent many months visiting
+    them from your own home elsewhere on the Lost Coast. You might even be part of
+    one of the many caravans of journeying Varisians who often pass through town
+    during their travels. Regardless, your fondness for the climate, the terrain,
+    the lifestyle, and the wonder of the Lost Coast suffuses your very bones, and
+    at times you feel almost as if you were a fundamental part of the land itself.
+    You might have family ties to one of Sandpoint's original founding families,
+    which included the Kaijitsus, the Valdemars, the Scarnettis, and the Deverins,
+    although others were involved as well. Conversely, you might have family ties
+    to the indigenous Varisians who have long regarded this part of the Lost Coast
+    as home and who were part of the original accord with the Sandpoint Mercantile
+    Guild that ensured Varisians a place in town and the opportunity to profit from
+    Sandpoint's success. As such, your home might be anywhere in Sandpoint, and could
+    well be one of its larger buildings if your family has dwelled in town for long
+    enough. Choose two attribute boosts. One must be to Constitution or Wisdom ,
+    and one is a free attribute boost. You're trained in the Society skill and the
+    Sandpoint Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Hobnobber]
+    skill feat. Increase the party's reputation with Townsfolk by 1 and reduce the
+    party's reputation with Scarnetti Consortium by 1."
+  SourceTitle: Pathfinder Seven Dooms for Sandpoint Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 04ebddfe7538cfe26674cc564ed9d0c941ad01269464623b5a22af2950e78ebf
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Sandpoint Lore
+    Rank: 1
+  LoreSkills:
+  - Sandpoint Lore
+  GrantedFeats:
+  - SourceKey: 1Dram
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hobnobber
+    SourceId: 
+    DisplayName: Hobnobber
+    Level: 1
+    ResolvedFeature: {fileID: 0}

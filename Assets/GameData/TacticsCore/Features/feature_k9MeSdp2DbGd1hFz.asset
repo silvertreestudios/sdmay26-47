@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_k9MeSdp2DbGd1hFz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: k9MeSdp2DbGd1hFz
+  Slug: clarity-of-focus
+  DisplayName: Clarity of Focus
+  IconPath: systems/pf2e/icons/features/classes/clarity-of-focus.webp
+  Description: Your deepening connection to your mind grants you more power to fuel
+    your psi amps. Increase the number of Focus Points in your focus pool by 1. This
+    ability doesn't change the number of Focus Points you regain when you @UUID[Compendium.pf2e.actionspf2e.Item.Refocus].
+    As normal, this ability can't increase the size of your focus pool above 3 points.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 04f32da4d2eca5aefe5a16a6fb5bd89d34677c789c64ef488356d7350ee682cc
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.resources.focus.max
+    Mode: add
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.resources.focus.max","priority":10,"value":1}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 1

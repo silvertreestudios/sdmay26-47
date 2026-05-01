@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_LoeTd2SS6jfEgo1H
+  m_EditorClassIdentifier: 
+  SourceId: LoeTd2SS6jfEgo1H
+  Slug: genie-blessed
+  DisplayName: Genie-Blessed
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've sought out a powerful genie and requested their blessing, hoping
+    to increase your fortune. Your wish was vague, but fortune and the genie favored
+    you with a more powerful effect than an ordinary wish, granting you bits of wish-twisted
+    luck throughout the rest of your life. Meanwhile, other genies of the same kind
+    recognize you as one blessed by one of their most powerful nobles, and might
+    treat you with greater respect or envy. Choose two attribute boosts. One must
+    be to Charisma , and one is a free attribute boost. You're trained in the Diplomacy
+    skill and the Genie Lore skill. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Wish
+    for Luck] free action.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: d78660c9fadbe57fcdf4c0ad668f11524f64e33f1e3900cc5d809882dcdbee72
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Wish for Luck
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Wish
+      for Luck"}'
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Genie Lore
+    Rank: 1
+  LoreSkills:
+  - Genie Lore
+  GrantedFeats: []

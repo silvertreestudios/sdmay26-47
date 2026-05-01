@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_xxkszluN9icAiTO4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: xxkszluN9icAiTO4
+  Slug: first-doctrine-warpriest
+  DisplayName: First Doctrine (Warpriest)
+  IconPath: icons/equipment/chest/breastplate-helmet-metal.webp
+  Description: You're trained in light and medium armor, and you have expert proficiency
+    in Fortitude saves. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Shield
+    Block] general feat, a reaction to reduce damage with a shield. If your deity's
+    favored weapon is a simple weapon or an unarmed attack, you gain the @UUID[Compendium.pf2e.feats-srd.Item.Deadly
+    Simplicity] cleric feat. At 13th level, if you gain the @UUID[Compendium.pf2e.classfeatures.Item.Divine
+    Defense] class feature, you also gain expert proficiency in light and medium
+    armor.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 394653a636b563d06325a3b0543e86625fe8b16bcae173f0a65cf6416a4e46e8
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Shield Block
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Shield Block"}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.defenses.light.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.defenses.light.rank","predicate":[{"gte":["self:level",13]},"feature:divine-defense"],"value":2}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.defenses.medium.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.defenses.medium.rank","predicate":[{"gte":["self:level",13]},"feature:divine-defense"],"value":2}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Deadly Simplicity
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Deadly Simplicity"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Shield Block
+    SourceId: 
+    DisplayName: Shield Block
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Deadly Simplicity
+    SourceId: 
+    DisplayName: Deadly Simplicity
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 2
+  - Target: light
+    Rank: 1
+  - Target: medium
+    Rank: 1
+  FocusPointDelta: 0

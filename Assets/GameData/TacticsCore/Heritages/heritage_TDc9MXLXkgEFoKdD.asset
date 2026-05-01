@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_TDc9MXLXkgEFoKdD
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: TDc9MXLXkgEFoKdD
+  Slug: flexible-catfolk
+  DisplayName: Flexible Catfolk
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You've inherited flexibility beyond that of most humanoids. You don't
+    treat tight spaces that don't require you to Squeeze as difficult terrain. In
+    addition, you get a +1 circumstance bonus to checks when you attempt to Escape.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: a1a967c6d4c15622946a5f91fe74b93ffe0dde2e8ede71a9b5bef4b62e1e4ae4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"To Escape (Flexible Catfolk)","predicate":["action:escape"],"selector":["acrobatics","athletics","attack"],"type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.972EkpJOPv9KkQIW
+    SourceId: 
+    Slug: catfolk
+    DisplayName: Catfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 44d614089b9f9a1489e79e108d8ebe69, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HMIfr9N4rco1dzBO
+  m_EditorClassIdentifier: 
+  SourceId: HMIfr9N4rco1dzBO
+  Slug: reclaimed
+  DisplayName: Reclaimed
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: A unit of Crimson Reclaimers saved you from certain death in the Gravelands.
+    You spent time with one or more Crimson Reclaimers as they escorted you to safety,
+    and you've learned the ways of this faction of the Knights of Lastwall. You consider
+    yourself forever in their debt and defend their reputation unquestioningly against
+    any accusations of duplicity. Choose two attribute boosts. One must be to Constitution
+    or Charisma , and one is a free attribute boost. You're trained in the Intimidation
+    skill and the Crimson Reclaimers Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Coercion] skill feat.
+  SourceTitle: Pathfinder Lost Omens Knights of Lastwall
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 70a0c8ff2ef6dab9b3962fd7339ee87333422a5f11947c244d5e226bcecb8c4d
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Crimson Reclaimers
+    Rank: 1
+  LoreSkills:
+  - Crimson Reclaimers
+  GrantedFeats:
+  - SourceKey: 2e9z7
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

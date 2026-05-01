@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_GlejQr3rBh3sn8sL
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: GlejQr3rBh3sn8sL
+  Slug: river-azarketi
+  DisplayName: River Azarketi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You come from azarketis who abandoned the oceans for the fresh water
+    of inland life. The varied geography of rivers required you to develop advanced
+    physical skills to swim against rapids, leap through cascading waters, and deftly
+    navigate shallow and narrow channels. When you succeed at an Athletics check
+    to Swim, you get a critical success instead.
+  SourceTitle: Pathfinder Lost Omens Absalom, City of Lost Omens
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: bd2f45877071cf5eceb69bdda83ce450cfad20fb2d95c7e8175be64901450407
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["action:swim"],"selector":"athletics","text":"When
+      you succeed at an Athletics check to Swim, you get a critical success instead.","title":"{item|name}"}'
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["action:swim"],"selector":"athletics"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.yFoojz6q3ZjvceFw
+    SourceId: 
+    Slug: azarketi
+    DisplayName: Azarketi
+  ParentAncestryAsset: {fileID: 11400000, guid: 35691cbce9f238047a56788acb89af44, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_WxkZMlETXo165XnC
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: WxkZMlETXo165XnC
+  Slug: tangle-line
+  DisplayName: Tangle Line
+  IconPath: systems/pf2e/icons/features/classes/tangle-line.webp
+  Description: Thrown Only Your weapon has an extensible line that you can use to
+    knock your enemies over, recall the weapon to your hand and even parry attacks.
+    Your innovation gains the parry, ranged trip and tethered traits.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 40bfbc6589fea3f43ad0db32a0a119f7b025fed496a4ca847172babeb92375a1
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"parry"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"parry"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ranged-trip"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"ranged-trip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"tethered"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"tethered"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

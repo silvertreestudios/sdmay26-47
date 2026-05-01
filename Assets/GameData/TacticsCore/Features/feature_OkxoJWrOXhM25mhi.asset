@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_OkxoJWrOXhM25mhi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: OkxoJWrOXhM25mhi
+  Slug: muscular-exoskeleton
+  DisplayName: Muscular Exoskeleton
+  IconPath: icons/commodities/tech/metal-pistons.webp
+  Description: Your armor supports your muscles with a carefully crafted exoskeleton.
+    When you send your armor into overdrive, the exoskeleton supplements your feats
+    of athletics as well. When under the effects of Overdrive, you gain a +1 circumstance
+    bonus to Athletics checks; if you're a master in Crafting, this increases to
+    a +2 circumstance bonus.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: eb9c8ed74cdf801e4d749f979bf74807c7e488d87542043a4350d41f201135a2
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["armor:id:{actor|flags.pf2e.innovationId}","armor-innovation:power-suit",{"or":["self:effect:overdrive-success","self:effect:overdrive-critical-success"]}],"selector":"athletics","slug":"muscular-exoskeleton","type":"circumstance","value":1}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":[{"gte":["skill:crafting:rank",3]}],"selector":"athletics","slug":"muscular-exoskeleton","value":2}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
-using PathfinderTactics.ScriptableObjects;
+using TacticsGame.Core;
+using TacticsGame.Grid;
+using TacticsGame.ScriptableObjects;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Projects auras and applies effects to units within range.

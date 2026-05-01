@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_xvz5F7iYBWEIjz0r
+  m_EditorClassIdentifier: 
+  SourceId: xvz5F7iYBWEIjz0r
+  Slug: bibliophile
+  DisplayName: Bibliophile
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You love few things more than a good book, and as a result, Odd Stories
+    is your favorite shop in Otari. The bookseller Morlibint supplies you with fiction,
+    anthologies, and other delightful reads, and he's always eager to discuss his
+    latest finds with you. You know that imagination is the greatest magic, but a
+    working knowledge of actual magic helps, too. Choose two attribute boosts. One
+    must be to Intelligence or Charisma , and one is a free attribute boost. You're
+    trained in the Arcana skill and the Library Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Arcane
+    Sense] skill feat.
+  SourceTitle: Pathfinder Abomination Vaults Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: d48a68b55c0a74ed4a3ea5824da29e17597ee12478b6f7a940233bfd1c5caf4f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Library Lore
+    Rank: 1
+  LoreSkills:
+  - Library Lore
+  GrantedFeats:
+  - SourceKey: wsxkp
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Arcane Sense
+    SourceId: 
+    DisplayName: Arcane Sense
+    Level: 1
+    ResolvedFeature: {fileID: 0}

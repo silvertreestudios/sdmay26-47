@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_GI09dKNZVCPdSGZC
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: GI09dKNZVCPdSGZC
+  Slug: pride
+  DisplayName: Pride
+  IconPath: icons/weapons/hammers/hammer-double-engraved.webp
+  Description: 'The Crescent Scepter is endlessly convinced of its own superiority
+    and the ascendance of its users. If someone''s eyes show something else, clearly
+    their eyes are mistaken. Anathema Use your magic to change or create physical
+    things rather than their appearances. Sin Spells cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Bullhorn],
+    @UUID[Compendium.pf2e.spells-srd.Item.Figment] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Dizzying
+    Colors], @UUID[Compendium.pf2e.spells-srd.Item.Illusory Disguise] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Illusory
+    Creature], @UUID[Compendium.pf2e.spells-srd.Item.Invisibility] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Blindness],
+    @UUID[Compendium.pf2e.spells-srd.Item.Levitate] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Mirage],
+    @UUID[Compendium.pf2e.spells-srd.Item.Vision of Death] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Cloak
+    of Colors] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Phantasmal Calamity] 7th:
+    @UUID[Compendium.pf2e.spells-srd.Item.Mask of Terror], @UUID[Compendium.pf2e.spells-srd.Item.Project
+    Image] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Confusing Colors] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Overwhelming
+    Presence] Initial School Spell @UUID[Compendium.pf2e.spells-srd.Item.Crescent
+    Scepter]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: 17938ec5d110b7b7e8af8fa6d815e5d0bc76427585c826c8db83a3a78d58e558
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"runelord-sin-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"or":["item:slug:bullhorn","item:slug:figment","item:slug:dizzying-colors","item:slug:illusory-disguise","item:slug:illusory-creature","item:slug:invisibility","item:slug:blindness","item:slug:levitate","item:slug:mirage","item:slug:vision-of-death","item:slug:cloak-of-colors","item:slug:phantasmal-calamity","item:slug:mask-of-terror","item:slug:project-image","item:slug:confusing-colors","item:slug:overwhelming-presence"]}],"priority":118,"property":"other-tags","value":"runelord-sin-spell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

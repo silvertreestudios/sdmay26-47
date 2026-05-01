@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ZBFICTkzUjE4BDGJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ZBFICTkzUjE4BDGJ
+  Slug: school-of-protean-form
+  DisplayName: School of Protean Form
+  IconPath: icons/sundries/books/book-embossed-jewel-silver-green.webp
+  Description: 'The uninitiated often think of wizards as cerebral, focused on their
+    studies more than the body, yet your school of magic taught of the relationship
+    between the two. Your magic, whether learned at a storied institution like Kintargo''s
+    Alabaster Academy or someplace more sinister, like the Fleshforges of Nex, focuses
+    on the ways that living matter can be convinced into another shape for a time,
+    allowing you to polymorph a seed into a vine, a human into a beast, or a harmless
+    germ into a deadly toxin. Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Gouging
+    Claw], @UUID[Compendium.pf2e.spells-srd.Item.Tangle Vine] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Jump],
+    @UUID[Compendium.pf2e.spells-srd.Item.Pest Form], @UUID[Compendium.pf2e.spells-srd.Item.Spider
+    Sting] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Enlarge], @UUID[Compendium.pf2e.spells-srd.Item.Humanoid
+    Form] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Feet to Fins], @UUID[Compendium.pf2e.spells-srd.Item.Vampiric
+    Feast] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Mountain Resilience], @UUID[Compendium.pf2e.spells-srd.Item.Vapor
+    Form] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Elemental Form], @UUID[Compendium.pf2e.spells-srd.Item.Toxic
+    Cloud] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Cursed Metamorphosis], @UUID[Compendium.pf2e.spells-srd.Item.Petrify]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Duplicate Foe], @UUID[Compendium.pf2e.spells-srd.Item.Fiery
+    Body] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Desiccate], @UUID[Compendium.pf2e.spells-srd.Item.Monstrosity
+    Form] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Metamorphosis] School Spells
+    initial: @UUID[Compendium.pf2e.spells-srd.Item.Scramble Body]; advanced: @UUID[Compendium.pf2e.spells-srd.Item.Shifting
+    Form]'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e1de3c636bc374c86dc3677036b1b04118ca4ec4281617fa66445aca0de3e7c1
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

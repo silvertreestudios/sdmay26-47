@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_tqnrnXVTbdehohPL
+  m_EditorClassIdentifier: 
+  SourceId: tqnrnXVTbdehohPL
+  Slug: street-preacher
+  DisplayName: Street Preacher
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Forget the church orthodoxy and the stuffy cloisters-spreading the
+    word of your god to the people is your calling. You've preached on the street
+    corners and in public houses, to wanderers on the road and to captives in the
+    stocks. Adventuring can take you across the world. What vocation could better
+    serve to take your holy words to fresh ears? Choose two attribute boosts. One
+    must be to Wisdom or Charisma , and one is a free attribute boost. You're trained
+    in the Religion skill and the Lore skill for your patron deity. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Dubious Knowledge] skill feat.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: fee532e9461d45f1e7be1b55647bfb74c861ed136f07ef65d8e9bafcee3f33d1
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Deity> Lore
+    Rank: 1
+  LoreSkills:
+  - <Deity> Lore
+  GrantedFeats:
+  - SourceKey: uhfiz
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

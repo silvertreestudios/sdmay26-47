@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_w5801ArZQCU8IXnU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: w5801ArZQCU8IXnU
+  Slug: wishborn-poppet
+  DisplayName: Wishborn Poppet
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You were wished to life, either by a powerful spellcaster or by the
+    earnest desire of an innocent person who loved you very much. You're living proof
+    that a hopeful spirit can overcome any obstacle. If you roll a success on a saving
+    throw against an emotion or fear effect, you get a critical success instead.
+  SourceTitle: Pathfinder Lost Omens The Grand Bazaar
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: d4180dc3a0cb2224367ff9cca4921c3d90989fd6fa8d660c205831435143e819
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":[{"or":["emotion","fear"]}],"selector":"saving-throw","type":"save"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.6F2fSFC1Eo1JdpY4
+    SourceId: 
+    Slug: poppet
+    DisplayName: Poppet
+  ParentAncestryAsset: {fileID: 11400000, guid: 7e74619f4ea4ced419084d304988ab03, type: 2}
+  GrantedFeatures: []

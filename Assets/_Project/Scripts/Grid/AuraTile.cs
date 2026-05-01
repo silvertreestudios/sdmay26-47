@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     public class AuraTile : MonoBehaviour
     {

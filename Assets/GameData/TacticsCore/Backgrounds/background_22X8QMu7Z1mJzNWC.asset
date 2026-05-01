@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_22X8QMu7Z1mJzNWC
+  m_EditorClassIdentifier: 
+  SourceId: 22X8QMu7Z1mJzNWC
+  Slug: quick-refugee
+  DisplayName: Quick Refugee
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The living residents of Geb are known as the quick, and it is not,
+    overall, a very pleasant thing to be. While some of the quick choose to make
+    the best of their lot, or even thrive in Geb's undead-dominated society, you
+    decided that whatever terrors the outside world holds, they pale in comparison
+    to those that make up the Gebbite upper class. And considering that escape means
+    braving the Mana Wastes, you must have been very, very certain indeed. Choose
+    two attribute boosts. One must be to Dexterity or Wisdom , and one is a free
+    attribute boost. You're trained in Stealth and Undead Lore. When you Hide or
+    @UUID[Compendium.pf2e.actionspf2e.Item.Sneak] successfully, you are also @UUID[Compendium.pf2e.conditionitems.Item.Hidden]
+    or @UUID[Compendium.pf2e.conditionitems.Item.Concealed] from undeads' lifesense
+    and other special precise senses the undead possess.
+  SourceTitle: Pathfinder Wake the Dead #2
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 9470d43c6fc47b263b4c7f2f92373f4a39d1d05a5fcb3426fdc70df2494182ed
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead Lore
+    Rank: 1
+  LoreSkills:
+  - Undead Lore
+  GrantedFeats: []

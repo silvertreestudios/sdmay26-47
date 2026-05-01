@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_9uTdwJaj27F18ZDX
+  m_EditorClassIdentifier: 
+  SourceId: 9uTdwJaj27F18ZDX
+  Slug: razmiran-faithful
+  DisplayName: Razmiran Faithful
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Broken Lands You serve a living god who rules
+    upon the face of Golarion, and this gives your actions a divine mandate not to
+    be trifled with. Choose two attribute boosts. One must be to Strength or Charisma
+    , and one is a free attribute boost. You're trained in the Intimidation skill
+    and the Razmir Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Coercion] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f390a3778fe15625702b99fec46280125b73da5d42989edbfa5ae1d1e9c67a2f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Razmir Lore
+    Rank: 1
+  LoreSkills:
+  - Razmir Lore
+  GrantedFeats:
+  - SourceKey: s85v4
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_0WHhhWcbI0N7wFJx
+  m_EditorClassIdentifier: 
+  SourceId: 0WHhhWcbI0N7wFJx
+  Slug: self-made
+  DisplayName: Self-Made
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Some are born with everything they need in this life, but not you\u2014you
+    scraped everything you have together through hard work and sheer force of will.
+    You might have done hard manual labor to get where you are or apprenticed for
+    years to become a master of your craft. Choose two attribute boosts. One must
+    be to Strength or Wisdom , and one is a free attribute boost. You're trained
+    in the Athletics skill and a Lore skill related to how you've paved your own
+    way through the world. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Hefty
+    Hauler] skill feat."
+  SourceTitle: Pathfinder Triumph of The Tusk Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 40b9787d3278db2cd714f441e733bcfc76cd923a42290fb8d039c456a000efb9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: EQ4d6
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hefty Hauler
+    SourceId: 
+    DisplayName: Hefty Hauler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

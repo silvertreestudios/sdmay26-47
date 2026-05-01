@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_y0WZS51fSi6dILHq
+  m_EditorClassIdentifier: 
+  SourceId: y0WZS51fSi6dILHq
+  Slug: secular-medic
+  DisplayName: Secular Medic
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Golden Road You're from Rahadoum, where the
+    Laws of Mortality taught you to reject the gods, yet you've seen firsthand how
+    dangerous it can be to go without healing magic. As a result, you've thrown yourself
+    into the study of medicine, so you can save lives without saving souls. Choose
+    two attribute boosts. One must be to Wisdom or Dexterity , and one is a free
+    attribute boost. You're trained in the Medicine skill and the Anatomy Lore skill.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Battle Medicine] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f45ba01791fc721b0b7ae414621cb285456a7f4ba54d3abd0b0a3a06ef242c92
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Anatomy Lore
+    Rank: 1
+  LoreSkills:
+  - Anatomy Lore
+  GrantedFeats:
+  - SourceKey: 6fn06
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

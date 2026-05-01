@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_BoZ3nSssFYcwuLIT
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: BoZ3nSssFYcwuLIT
+  Slug: initial-creed
+  DisplayName: Initial Creed
+  IconPath: icons/skills/melee/weapons-crossed-swords-black.webp
+  Description: You're trained in light and medium armor, and you have expert proficiency
+    in Fortitude saves. You're trained in martial weapons. If your deity's favored
+    weapon is a simple weapon or an unarmed attack, you gain the @UUID[Compendium.pf2e.feats-srd.Item.Deadly
+    Simplicity] cleric feat. At 13th level when you gain the @UUID[Compendium.pf2e.classfeatures.Item.Divine
+    Defense] class feature, you also gain expert proficiency in light and medium
+    armor.
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b70b5168c93a3fd7111b4cc2c39481c4cac7d8172d2d6d26ef5a359599b957f9
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.defenses.light.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.defenses.light.rank","predicate":["feature:divine-defense"],"value":2}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.defenses.medium.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.defenses.medium.rank","predicate":["feature:divine-defense"],"value":2}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 2
+  - Target: light
+    Rank: 1
+  - Target: martial
+    Rank: 1
+  - Target: medium
+    Rank: 1
+  FocusPointDelta: 0

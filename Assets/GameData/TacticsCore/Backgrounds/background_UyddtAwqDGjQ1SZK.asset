@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_UyddtAwqDGjQ1SZK
+  m_EditorClassIdentifier: 
+  SourceId: UyddtAwqDGjQ1SZK
+  Slug: scholar-of-the-sky-key
+  DisplayName: Scholar of the Sky Key
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The unfamiliar technology of Numeria's Silver Mount still baffles
+    Society scholars, yet you are one of the innovators who discovered how to operate
+    a handful of these futuristic tools-possibly after surviving more than a few
+    explosions. The Society might have recruited you for your esoteric abilities,
+    or you might have sought out the Society's protection in escaping the covetously
+    vile Technic League. Even if your understanding of advanced technology is imperfect,
+    your hard-learned lessons are invaluable in deciphering and repairing gear. Choose
+    two attribute boosts. One must be to Constitution or Intelligence , and one is
+    a free attribute boost. You're trained in the Crafting skill and the Engineering
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick Repair] skill
+    feat. Special You can select this background only if you have earned credit for
+    at least 5 First Edition scenarios from Season 6 of the Pathfinder Society organized
+    play campaign.
+  SourceTitle: Organized Play Foundation
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: fbec19807e2cd0d9314b113e16b4038c3554939e17be70d71f8143d96eaafb56
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering Lore
+    Rank: 1
+  LoreSkills:
+  - Engineering Lore
+  GrantedFeats:
+  - SourceKey: htv8u
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Repair
+    SourceId: 
+    DisplayName: Quick Repair
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_RPU1aNfVz3ZbymvV
+  m_EditorClassIdentifier: 
+  SourceId: RPU1aNfVz3ZbymvV
+  Slug: scion-of-slayers
+  DisplayName: Scion of Slayers
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were born into a lineage of undead slayers. No mere occupation,
+    in your family slaying is a mantle of almost mystic responsibility passed from
+    parent to child. Over the generations, this single-minded focus has begun to
+    manifest in uncanny ways during combat. Choose two attribute boosts. One must
+    be to Strength or Intelligence , and one is a free attribute boost. You're trained
+    in the Athletics skill and the Undead Lore skill. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Vitality
+    Lash] as an innate divine cantrip. You can use Intelligence as your spellcasting
+    ability for this innate spell.
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 936ca43ec7b67a4217da17b47b4f9c60105fe004f5bb558e22cf81455ba97ed9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead
+    Rank: 1
+  LoreSkills:
+  - Undead
+  GrantedFeats: []

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_zwjoAOGkT44MmDKT
+  m_EditorClassIdentifier: 
+  SourceId: zwjoAOGkT44MmDKT
+  Slug: alloysmith
+  DisplayName: Alloysmith
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Blacksmithing might be an ancient profession, but you are its cutting
+    edge. You've studied the properties of different metals, experimented with them
+    by combining them, exposing them to different elements and processes, and have
+    even delved into the metaphysical nature of metal in your quest to master it.
+    You might have taken up adventuring to acquire more funding and materials or
+    to test your designs. Choose two attribute boosts. One must be to Strength or
+    Intelligence , and one is a free attribute boost. You're trained in the Crafting
+    skill and the Plane of Metal Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Specialty
+    Crafting] skill feat with the blacksmithing specialty.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 9b4d185718a77017386cc01b8c49fa574c26cf9a2babe9e20e67f85e395adb5a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    Json: '{"allowDuplicate":false,"key":"GrantItem","preselectChoices":{"specialtyCrafting":"blacksmithing"},"uuid":"Compendium.pf2e.feats-srd.Item.Specialty
+      Crafting"}'
+  AttributeBoosts:
+  - Options: 0400000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Plane of Metal Lore
+    Rank: 1
+  LoreSkills:
+  - Plane of Metal Lore
+  GrantedFeats: []

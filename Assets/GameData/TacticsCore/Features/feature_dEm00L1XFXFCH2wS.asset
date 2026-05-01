@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_dEm00L1XFXFCH2wS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: dEm00L1XFXFCH2wS
+  Slug: earth-gate
+  DisplayName: Earth Gate
+  IconPath: icons/magic/earth/barrier-stone-brown-green.webp
+  Description: 'Earth Gate Junction Critical Blast If the target is on the ground,
+    it''s knocked @UUID[Compendium.pf2e.conditionitems.Item.Prone]; if it isn''t
+    on the ground, it descends up to 20 feet (you choose the distance). Elemental
+    Resistance earth, poison Impulse Junction Fragments of stone float around you,
+    granting you a +1 circumstance bonus to AC until the start of your next turn.
+    Aura Junction Squares in the aura are difficult terrain fo your enemies, but
+    only if moving into the square would make the enemy farther away from you. Skill
+    Junction Athletics, @UUID[Compendium.pf2e.feats-srd.Item.Hefty Hauler]'
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 527860ee60d791c602d1043e4f3fe5f16fbe556e9fbcd5aa8a7ac5a899cf8d6b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"lte":["item:level","parent:granter:level"]},"item:trait:impulse","item:trait:earth",{"not":"item:trait:composite"}],"itemType":"feat"},"flag":"impulseOne","key":"ChoiceSet","predicate":["class:kineticist"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseOne}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["class:kineticist"],"uuid":"{item|flags.pf2e.rulesSelections.impulseOne}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:1","item:trait:impulse","item:trait:earth"],"itemType":"feat"},"flag":"impulseTwo","key":"ChoiceSet","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:earth-gate"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseTwo}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:earth-gate"],"uuid":"{item|flags.pf2e.rulesSelections.impulseTwo}"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"kinetic-gate:earth","priority":10}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elements
+    Mode: add
+    Value: '{"label":"PF2E.TraitEarth","value":"earth"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.kineticist.elements","value":{"label":"PF2E.TraitEarth","value":"earth"}}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"junction:earth:impulse","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:earth-gate"]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.one
+    Mode: override
+    Value: '"earth"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.one","predicate":["kinetic-gate:first-element:earth-gate"],"value":"earth"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.two
+    Mode: override
+    Value: '"earth"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.two","predicate":["kinetic-gate:second-element:earth-gate"],"value":"earth"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.three
+    Mode: override
+    Value: '"earth"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.three","predicate":["parent:granter:slug:gates-threshold"],"value":"earth"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.four
+    Mode: override
+    Value: '"earth"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.four","predicate":["parent:granter:slug:second-gates-threshold"],"value":"earth"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.five
+    Mode: override
+    Value: '"earth"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.five","predicate":["parent:granter:slug:third-gates-threshold"],"value":"earth"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.six
+    Mode: override
+    Value: '"earth"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.six","predicate":["parent:granter:slug:fourth-gates-threshold"],"value":"earth"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Hefty Hauler
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["junction:earth:skill"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Hefty
+      Hauler"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","predicate":["junction:earth:skill"],"value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,17), 3, ternary(gte(@actor.level,10), 2, 1))"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["junction:earth:skill","self:effect:kinetic-aura"],"selector":"athletics","type":"status","value":"ternary(gte(@actor.level,17),
+      3, ternary(gte(@actor.level,10), 2, 1))"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["junction:earth:resistance","self:effect:kinetic-aura"],"type":["earth","poison"],"value":"@actor.level"}'
+  - Key: Immunity
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Immunity","predicate":["junction:earth:resistance",{"gte":["self:level",17]},"self:effect:kinetic-aura"],"type":["earth","poison"]}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["criticalSuccess"],"predicate":["junction:earth:critical","item:trait:earth"],"selector":"elemental-blast-damage","text":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Earth","title":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Label"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":[{"gte":["action:cost",2]},"junction:earth:impulse","self:action:trait:impulse","self:action:trait:earth"],"selector":"impulse-attack-roll","text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Earth","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Earth","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"feat","key":"ItemAlteration","mode":"add","predicate":[{"gte":["item:action:cost",2]},"junction:earth:impulse","item:trait:impulse","item:trait:earth"],"property":"description","value":[{"text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Earth","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elementalBlast.earth
+    Mode: override
+    Value: '{"damageTypes":["bludgeoning","piercing"],"dieFaces":8,"element":"earth","img":"systems/pf2e/icons/actions/elemental-blast/earth.webp","label":"PF2E.SpecificRule.Kineticist.Impulse.ElementalBlast.Label.Earth","range":30}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.elementalBlast.earth","predicate":["self:effect:kinetic-aura",{"not":"battle-form"}],"priority":19,"value":{"damageTypes":["bludgeoning","piercing"],"dieFaces":8,"element":"earth","img":"systems/pf2e/icons/actions/elemental-blast/earth.webp","label":"PF2E.SpecificRule.Kineticist.Impulse.ElementalBlast.Label.Earth","range":30}}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseOne}'
+    SourceId: 
+    DisplayName: impulseOne}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseTwo}'
+    SourceId: 
+    DisplayName: impulseTwo}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hefty Hauler
+    SourceId: 
+    DisplayName: Hefty Hauler
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_kHvlHDq5hs2JDG0Y
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: kHvlHDq5hs2JDG0Y
+  Slug: born-of-item
+  DisplayName: Born of Item
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You were an object until the moon breathed life into you. Choose one
+    Lore skill related to what kind of tool you were; for instance, Cooking Lore
+    for a cleaver or Farming Lore for a rake. You become trained in this skill. Humanoid
+    Form You retain memories of the tasks you performed as an object. You gain a
+    +1 circumstance bonus to the Lore skill you obtained through this heritage. Yaoguai
+    Form Your time as a mindless object makes it harder to affect you mentally. If
+    you roll a success on a mental effect, you gain a critical success instead.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 5fc0b4dd1041e92310e71b47d39fa85be125b5a5fb1875b4683de9841fb66081
+  Traits:
+  - yaoguai
+  TraitsLower:
+  - yaoguai
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["item:trait:mental","change-shape:yaoguai"],"selector":"saving-throw"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.dnk0Rf7AUmyR5b8z
+    SourceId: 
+    Slug: yaoguai
+    DisplayName: Yaoguai
+  ParentAncestryAsset: {fileID: 11400000, guid: 046de30a5ff25694fa6fbcb820177564, type: 2}
+  GrantedFeatures: []

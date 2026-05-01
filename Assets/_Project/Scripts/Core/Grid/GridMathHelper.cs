@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Grid;
-using PathfinderTactics.Items;
+using TacticsGame.Characters;
+using TacticsGame.Grid;
+using TacticsGame.Items;
 using UnityEngine;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     /// <summary>
     /// Static helper class for PF2e-specific grid math, including flanking and threat detection.
@@ -61,7 +61,7 @@ namespace PathfinderTactics.Core
                 )
                 : target.CurrentLayeredPosition;
 
-            int distance = PF2E_Core.GetPF2eDistance3D(aPos3D, tPos3D);
+            int distance = TacticsRuleset_Core.GetTacticsRulesetDistance3D(aPos3D, tPos3D);
             if (distance > reachInTiles)
                 return false;
 

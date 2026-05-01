@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_KEG5KFNrXKhTsj6J
+  m_EditorClassIdentifier: 
+  SourceId: KEG5KFNrXKhTsj6J
+  Slug: money-counter
+  DisplayName: Money Counter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'The wealthiest of all the factions in Geb is the Tax Collectors Union,
+    but it''s the money counters in its banks and vaults that keep the numbers tallied.
+    You used to work as one of these drudges who counted other people''s money all
+    day, until you decided to slip some unaccounted coins into your own pocket. You
+    weren''t caught, but you knew it would only be a matter of time before you felt
+    the Union''s wrath if you remained employed. You took the next opportunity to
+    leave with both your official and unofficial final payments. The Tax Collectors
+    Union is unaware of your petty theft, and you remain in good standing with them.
+    Your party gains 1 Reputation Point with the Tax Collectors Union at the start
+    of the campaign. Choose two attribute boosts. One must be to Dexterity or Intelligence
+    , and one is a free attribute boost. You''re trained in your choice of the Society
+    or Thievery skill. You gain a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Eye
+    for Numbers] if you chose Society or @UUID[Compendium.pf2e.feats-srd.Item.Subtle
+    Theft] if you chose Thievery. You''re also trained in Accounting Lore.'
+  SourceTitle: Pathfinder Blood Lords Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: c2eeba469eca183584bf5389a1bba0d39baccd68ce1e9cc461ce99086fb6623b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Society","value":"society"},{"label":"PF2E.Skill.Thievery","value":"thievery"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"money-counter"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Eye for Numbers
+    Json: '{"key":"GrantItem","predicate":["money-counter:society"],"uuid":"Compendium.pf2e.feats-srd.Item.Eye
+      for Numbers"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Subtle Theft
+    Json: '{"key":"GrantItem","predicate":["money-counter:thievery"],"uuid":"Compendium.pf2e.feats-srd.Item.Subtle
+      Theft"}'
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Accounting Lore
+    Rank: 1
+  LoreSkills:
+  - Accounting Lore
+  GrantedFeats: []

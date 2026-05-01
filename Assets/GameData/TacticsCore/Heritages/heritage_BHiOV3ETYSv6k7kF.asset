@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_BHiOV3ETYSv6k7kF
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: BHiOV3ETYSv6k7kF
+  Slug: waxing-moon-sarangay
+  DisplayName: Waxing Moon Sarangay
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your ancestors dwelled in the swamps, fens, and flooded forests, where
+    they contended with fierce predators and formed raiding parties to claim scarce
+    resources. Blessed by the growing crescent, you're one of the eviscerators, and
+    you can overcome threats that lurk in murky waters as well as those that hunt
+    on land. You're a powerful swimmer with brown or gray fur and backward- or downward-curving
+    horns. You gain a +2 circumstance bonus to Athletics checks to @UUID[Compendium.pf2e.actionspf2e.Item.Long
+    Jump] or @UUID[Compendium.pf2e.actionspf2e.Item.Swim].
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: e273c6b10ef896739d8252ab6c0897696be11323eae1a0d0170b4706bb2586f6
+  Traits:
+  - sarangay
+  TraitsLower:
+  - sarangay
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["action:high-jump","action:swim"]}],"selector":"athletics","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.7mpMGhVoaPANJnZ8
+    SourceId: 
+    Slug: sarangay
+    DisplayName: Sarangay
+  ParentAncestryAsset: {fileID: 11400000, guid: 3b5aa169692386942ac6e90d44192e00, type: 2}
+  GrantedFeatures: []

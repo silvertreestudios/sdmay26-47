@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     // This file was debugged by AI to try to fix an edge case
     // where units were able to attack through walls.

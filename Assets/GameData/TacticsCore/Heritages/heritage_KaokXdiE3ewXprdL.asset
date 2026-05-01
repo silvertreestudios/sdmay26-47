@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_KaokXdiE3ewXprdL
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: KaokXdiE3ewXprdL
+  Slug: pine-leshy
+  DisplayName: Pine Leshy
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You excrete a thick, sticky sap from your bark-like flesh, making
+    it easier to climb and hold onto your gear. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Combat
+    Climber] feat as a bonus feat, and you gain a +2 circumstance bonus to your Reflex
+    DC against attempts to @UUID[Compendium.pf2e.actionspf2e.Item.Disarm] you.
+  SourceTitle: 'Pathfinder #176: Lost Mammoth Valley'
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ad1c8a4f6aafdbbdce0a4993ce659e6fe2cb1f0aeb4d757439cd6a0c3697eca1
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Combat Climber
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Combat Climber"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"hideIfDisabled":true,"key":"FlatModifier","predicate":["action:disarm"],"selector":"reflex","type":"circumstance","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cdhgByGG1WtuaK73
+    SourceId: 
+    Slug: leshy
+    DisplayName: Leshy
+  ParentAncestryAsset: {fileID: 11400000, guid: 2c3ed83876c3e8f42b39718765568df8, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Combat Climber
+    SourceId: 
+    DisplayName: Combat Climber
+    Level: 0
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_n2eJEjA8pnOMiuCm
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: n2eJEjA8pnOMiuCm
+  Slug: smokeworker-hobgoblin
+  DisplayName: Smokeworker Hobgoblin
+  IconPath: systems/pf2e/icons/features/ancestry/smokeworker-hobgoblin.webp
+  Description: Your family have been alchemists, engineers, and scientists for generations,
+    laboring on projects that bring smoke and fire to the field of battle. You gain
+    fire resistance equal to half your level (minimum 1). You automatically succeed
+    at the DC 5 flat check to target a @UUID[Compendium.pf2e.conditionitems.Item.Concealed]
+    creature if that creature is concealed only by smoke.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 218821d87edf2714be0c3e8a4bc8b2e6647aac0aab5e11a36245ffc7801af391
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"fire","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.piNLXUrm9iaGqD2i
+    SourceId: 
+    Slug: hobgoblin
+    DisplayName: Hobgoblin
+  ParentAncestryAsset: {fileID: 11400000, guid: f8564f2408134d941bdb53b696e95741, type: 2}
+  GrantedFeatures: []

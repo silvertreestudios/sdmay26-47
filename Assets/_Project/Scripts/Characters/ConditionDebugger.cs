@@ -1,7 +1,7 @@
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 using UnityEngine;
 
-namespace PathfinderTactics.DebugTools
+namespace TacticsGame.DebugTools
 {
     [RequireComponent(typeof(UnitConditions))]
     public class ConditionDebugger : MonoBehaviour

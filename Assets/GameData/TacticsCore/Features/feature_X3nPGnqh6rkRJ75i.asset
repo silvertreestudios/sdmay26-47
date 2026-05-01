@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_X3nPGnqh6rkRJ75i
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: X3nPGnqh6rkRJ75i
+  Slug: resurgent-maelstrom
+  DisplayName: Resurgent Maelstrom
+  IconPath: icons/magic/water/projectiles-ice-explosion.webp
+  Description: "While fate may conspire to strip you of your armaments, you're never
+    helpless. For you, anything can be a dangerous weapon, bolstered by the might
+    of towering waves and crushing tides. You know these tools are transient, and
+    so you think nothing of shattering and reforming them with your magic. Your attacks
+    with improvised weapons do not take the normal \u20132 item penalty. While you
+    wield an improvised weapon, streams of water flow from your limbs to surround
+    the weapon, granting it the water trait. These improvised weapons have a minimum
+    damage die of 1d6, or 1d4 if the improvised weapon is agile. Effects that apply
+    runes to your unarmed attacks, like @UUID[Compendium.pf2e.spells-srd.Item.Runic
+    Body] and Handwraps of Might Blows, also apply those runes to your non-magical
+    improvised weapons. The improvised weapon also gains an additional trait, depending
+    on how many hands it takes to wield. A one-handed improvised weapon gains the
+    backstabber trait; if it would already have the backstabber trait, double the
+    amount of additional precision damage. A two-handed improvised weapon gains the
+    forceful trait; if it would already have the forceful trait, treat the number
+    of weapon damage dice the weapon has as 1 higher for the purpose of calculating
+    the additional damage. While you're in Arcane Cascade stance , you can manipulate
+    the water around your improvised weapon, making it cut like a knife or bash with
+    the force of falling rocks. The weapon gains the versatile traits for the types
+    of damage that it doesn't normally deal. For instance, an improvised weapon that
+    normally deals bludgeoning damage gains the versatile P and versatile S traits.
+    Conflux Spell @UUID[Compendium.pf2e.spells-srd.Item.Turbulent Tide]"
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 707d1e3c028134f4b7a42155e8fc7b88020a4dbd2e612b62e59a15eca106bbee
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

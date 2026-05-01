@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_4wrSCyX6akmyo7Wj
+  m_EditorClassIdentifier: 
+  SourceId: 4wrSCyX6akmyo7Wj
+  Slug: investigator
+  DisplayName: Investigator
+  IconPath: systems/pf2e/icons/classes/investigator.webp
+  Description: You seek to uncover the truth, doggedly pursuing leads to reveal the
+    plots of devious villains, discover ancient secrets, or unravel other mysteries.
+    Your analytical mind quickly formulates solutions to complicated problems and
+    your honed senses identify even the most obscure clues. Wielding knowledge as
+    a weapon, you study the creatures and dangers you encounter to exploit their
+    weaknesses. Investigator
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 78172c67538d4cb21018be875e48f503e8bbb149e5d93b78e311e117b27cbf79
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 8
+  KeyAttributes: 04000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 4
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: fofuw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.On the Case
+    SourceId: 6FasgIXUJ1X8ekRn
+    DisplayName: On the Case
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: e59e61df1376dd14f860314ecbbbd4de, type: 2}
+  - SourceKey: o89io
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Methodology
+    SourceId: uhHg9BXBiHpL5ndS
+    DisplayName: Methodology
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d74c85cc98befd74dbf1e1b660594934, type: 2}
+  - SourceKey: skjy3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Devise a Stratagem
+    SourceId: lgo65ldX7WkXC8Ir
+    DisplayName: Devise a Stratagem
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 41803d8f42b385d44a6174c7428d26f1, type: 2}
+  - SourceKey: u3nsr
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Strategic Strike
+    SourceId: 2Fe4YZCvAr9Yf6w7
+    DisplayName: Strategic Strike
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 88c7c7da39426c148ad51b6c5e030ec3, type: 2}
+  GrantedFeatures:
+  - SourceKey: 0abc3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Deductive Improvisation
+    SourceId: malYpr0CYL4fDGhr
+    DisplayName: Deductive Improvisation
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 2c7d71c443ff86b4a9a435dba37b8fc0, type: 2}
+  - SourceKey: 71q10
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Legend
+    SourceId: 
+    DisplayName: Incredible Senses
+    Level: 13
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: Kk3kL
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Fortitude Expertise
+    SourceId: F57Na5VxfBp56kke
+    DisplayName: Fortitude Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 64c77f7441a8f224c810d356bfbb2f73, type: 2}
+  - SourceKey: OBbGY
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Dogged Will
+    SourceId: uuHRYE8Oljk1ORxJ
+    DisplayName: Dogged Will
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 11c4d2f380e264943bedb57bb9feeaa7, type: 2}
+  - SourceKey: fofuw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.On the Case
+    SourceId: 6FasgIXUJ1X8ekRn
+    DisplayName: On the Case
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: e59e61df1376dd14f860314ecbbbd4de, type: 2}
+  - SourceKey: gvvwp
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Martial Weapon Mastery
+    SourceId: ejP4jVQkS48uKRFz
+    DisplayName: Weapon Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 72296cf886f10134f8a893bc0ff539aa, type: 2}
+  - SourceKey: j15np
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: lqbki
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Keen Recollection
+    SourceId: DZWQspPi4IkfXV2E
+    DisplayName: Keen Recollection
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: abf3666b641d8084db95c24b3d2f1815, type: 2}
+  - SourceKey: ly271
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 
+    DisplayName: Vigilant Senses
+    Level: 7
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: mb94u
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Mastery
+    SourceId: 
+    DisplayName: Light Armor Mastery (Level 19)
+    Level: 19
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: o89io
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Methodology
+    SourceId: uhHg9BXBiHpL5ndS
+    DisplayName: Methodology
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d74c85cc98befd74dbf1e1b660594934, type: 2}
+  - SourceKey: oktpj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Investigator Expertise
+    SourceId: PFvB79O2VFdiAeSj
+    DisplayName: Investigator Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 38e1c8dbb58c17343ad07fe0729e4510, type: 2}
+  - SourceKey: pveXF
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Savvy Reflexes
+    SourceId: uTBiXs4zWkmRG7qF
+    DisplayName: Savvy Reflexes
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 98920d56391a4d6469d5760f93595f2b, type: 2}
+  - SourceKey: qwerc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Detective
+    SourceId: flEx8eY0NinF9XZU
+    DisplayName: Master Detective
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: c29fd89a44294f640b22b1372b7fa8bf, type: 2}
+  - SourceKey: rz4r2
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: 
+    DisplayName: Greater Weapon Specialization (Level 15)
+    Level: 15
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: skjy3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Devise a Stratagem
+    SourceId: lgo65ldX7WkXC8Ir
+    DisplayName: Devise a Stratagem
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 41803d8f42b385d44a6174c7428d26f1, type: 2}
+  - SourceKey: u3nsr
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Strategic Strike
+    SourceId: 2Fe4YZCvAr9Yf6w7
+    DisplayName: Strategic Strike
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 88c7c7da39426c148ad51b6c5e030ec3, type: 2}
+  - SourceKey: vv9fi
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Skillful Lessons
+    SourceId: dmK1wya8GBi9MmCB
+    DisplayName: Skillful Lessons
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 25758a61fcf7ddd4589333644a506c52, type: 2}
+  - SourceKey: vxchn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Expertise
+    SourceId: pZYkb12t5DSwtts7
+    DisplayName: Light Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 3bf7d337c0e817d4795134166770c383, type: 2}
+  - SourceKey: xvwjc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: xxAGJ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Dogged Will
+    SourceId: XFcCeBYqeXgfiA84
+    DisplayName: Greater Dogged Will
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: be2b18dafe2f0004cb4c8eec5d429c13, type: 2}

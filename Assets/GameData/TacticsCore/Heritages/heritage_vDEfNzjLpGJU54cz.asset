@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_vDEfNzjLpGJU54cz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: vDEfNzjLpGJU54cz
+  Slug: quillcoat-shisk
+  DisplayName: Quillcoat Shisk
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your body has adapted a defensive mechanism to break off your quills
+    in an attacker, allowing you to defend yourself against aggressive predators,
+    though it takes a while for the quills to grow back. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Barbed
+    Quills] reaction.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: fe004b3dbe9c1dbc9b980b7dca867074c1709bea20930db20fcfc69ee7e8a4bd
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Barbed Quills
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Barbed Quills"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.x1YinOddgUxwOLqP
+    SourceId: 
+    Slug: shisk
+    DisplayName: Shisk
+  ParentAncestryAsset: {fileID: 11400000, guid: 99c85d2314ba82d469243287e812686c, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Barbed Quills
+    SourceId: 
+    DisplayName: Barbed Quills
+    Level: 0
+    ResolvedFeature: {fileID: 0}

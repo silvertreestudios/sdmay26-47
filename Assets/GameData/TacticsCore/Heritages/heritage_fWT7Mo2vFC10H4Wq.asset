@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_fWT7Mo2vFC10H4Wq
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: fWT7Mo2vFC10H4Wq
+  Slug: songbird-strix
+  DisplayName: Songbird Strix
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You descend from a talented line of strix storytellers. From the highest
+    mountains and purest landscapes where your lungs fill with glorious clean air,
+    you trill, whistle, and croon sweet songs. While natural sounds make you predisposed
+    to sing, voices make you predisposed to mimicry. You receive a +1 circumstance
+    bonus on Deception checks to Impersonate a mimicked voice, where the sound of
+    the voice is the only factor; if you are a master in Deception, you gain a +2
+    circumstance bonus instead. You also gain a +1 circumstance bonus on Performance
+    checks to sing; if you are a master in Performance, you gain a +2 circumstance
+    bonus instead.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 0a6c00f05c6e65b1b58529f33ca0273bf3e5e2582f8b95bcbff9f79187dd9f0c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.system.skills.deception.rank,3),2,1)"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:impersonate","voice-only"],"selector":"deception","type":"circumstance","value":"ternary(gte(@actor.system.skills.deception.rank,3),2,1)"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.system.skills.performance.rank,3),2,1)"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:perform:singing"],"selector":"performance","type":"circumstance","value":"ternary(gte(@actor.system.skills.performance.rank,3),2,1)"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GXcC6oVa5quzgNHD
+    SourceId: 
+    Slug: strix
+    DisplayName: Strix
+  ParentAncestryAsset: {fileID: 11400000, guid: c5ca5e206f445b84da8b58c948145126, type: 2}
+  GrantedFeatures: []

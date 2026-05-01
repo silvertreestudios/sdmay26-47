@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_twayjFuXbsvyHUwy
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: twayjFuXbsvyHUwy
+  Slug: desert-rat
+  DisplayName: Desert Rat
+  IconPath: systems/pf2e/icons/features/ancestry/desert-rat.webp
+  Description: You are native to arid plains and likely grew up traveling the roads.
+    If you have both hands free, you can increase your Speed to 30 feet as you run
+    on all fours. In addition, environmental heat effects are one step less extreme
+    for you, and you can go 10 times longer than normal before you are affected by
+    starvation or thirst. However, unless you wear protective gear or take shelter,
+    environmental cold effects are one step more extreme for you.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 3612f4bf4b73ae2e7d82b361b3eb34bc71ffab00e334c4a0420de7f2e15e5731
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 5
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["hands-free:2"],"selector":"land-speed","value":5}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.P6PcVnCkh4XMdefw
+    SourceId: 
+    Slug: ratfolk
+    DisplayName: Ratfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 0157a504d77a04745a45fb09b6f01d67, type: 2}
+  GrantedFeatures: []

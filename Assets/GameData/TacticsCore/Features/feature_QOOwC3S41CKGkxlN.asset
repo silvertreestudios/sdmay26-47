@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_QOOwC3S41CKGkxlN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: QOOwC3S41CKGkxlN
+  Slug: vindicator
+  DisplayName: Vindicator
+  IconPath: icons/skills/ranged/arrow-flying-broadhead-metal.webp
+  Description: "You have been specially trained to use guile and magic to reveal
+    hidden threats. You must select Vindicator Dedication as your 2nd-level class
+    feat. Prerequisites: You must be a ranger. Vindicator Adjustments: You must choose
+    a deity to be a follower of, and you gain your deity's sanctification. You are
+    trained in Religion instead of Nature. You are trained in your deity's favored
+    weapon. If your deity's favored weapon is a simple weapon or unarmed attack with
+    a damage die smaller than d6, you gain the Deadly Simplicity feat. If your deity's
+    favored weapon is an advanced weapon, your proficiency with it is equal to your
+    proficiency with martial weapons. You must choose the vindication edge for your
+    hunter's edge. You learn warden spells as divine spells instead of primal spells,
+    and your spellcasting attribute is Wisdom. When you gain domain spells via the
+    Domain Initiate or Advanced Domain feats, they are warden spells for the purposes
+    of all your vindicator feats and abilities. Vindication Edge Your specialized
+    training gives you a unique edge that allows you to more effectively bring the
+    tools of your faith to bear against the monsters that lurk in the night or hide
+    among the faithful. You gain a +1 status bonus to your spell attack rolls against
+    your hunted prey, and they take a \u20131 status penalty to their saving throws
+    against divine spells you cast. You gain the vindicator's mark warden spell.
+    Trackless Journey 5th Vindicators can choose to gain the benefits of this class
+    feature in either urban or natural terrain, chosen at the time the class feature
+    is gained. Masterful Hunter 17th The masterful hunter class feature gives an
+    additional benefit based on your hunter's edge. Included here is the additional
+    benefit for the vindication edge."
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: fe99fd0ef44b98f570e7cb5cad0910bc1dd299fad9d453a6bae6be77bf0dfa68
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.religion.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.religion.rank","value":1}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"or":["item:category:deity","item:category:pantheon"]}],"itemType":"deity"},"flag":"deity","key":"ChoiceSet","predicate":[{"not":"deity"}],"prompt":"PF2E.SpecificRule.Prompt.Deity"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.deity}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"not":"deity"}],"uuid":"{item|flags.pf2e.rulesSelections.deity}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitHoly","predicate":[{"or":["deity:primary:sanctification:can:holy","deity:primary:sanctification:must:holy"]}],"value":"holy"},{"label":"PF2E.TraitUnholy","predicate":[{"or":["deity:primary:sanctification:can:unholy","deity:primary:sanctification:must:unholy"]}],"value":"unholy"},{"label":"PF2E.NoneOption","predicate":[{"nor":["deity:primary:sanctification:must:holy","deity:primary:sanctification:must:unholy"]}],"value":"none"}],"key":"ChoiceSet","predicate":[{"nor":["deity:primary:sanctification:none","sanctification:holy","sanctification:unholy"]}],"prompt":"PF2E.SpecificRule.Prompt.Sanctification","rollOption":"sanctification","slug":"sanctification"}'
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["holy"],"key":"ActorTraits","predicate":["sanctification:holy"]}'
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["unholy"],"key":"ActorTraits","predicate":["sanctification:unholy"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"fist":true,"key":"Strike","predicate":["deity:primary:favored-weapon:fist"]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.favoredWeaponRank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"flags.pf2e.favoredWeaponRank","predicate":["item:slug:vindicator"],"value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Deadly Simplicity
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Deadly Simplicity"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,17),2,1)"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SpecificRule.Ranger.Vindicator.Edge","predicate":["target:mark:hunted-prey","item:trait:divine"],"selector":"spell-attack","type":"status","value":"ternary(gte(@actor.level,17),2,1)"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect: Vindication
+      Edge]"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:hunt-prey"],"property":"description","value":[{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Vindication Edge]"}]}'
+  - Key: ActiveEffectLike
+    Path: system.skills.religion.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.religion.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Vindicator Dedication
+    Json: '{"flag":"vinidicatorDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Vindicator
+      Dedication"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.deity}'
+    SourceId: 
+    DisplayName: deity}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Deadly Simplicity
+    SourceId: 
+    DisplayName: Deadly Simplicity
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Vindicator Dedication
+    SourceId: 
+    DisplayName: Vindicator Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

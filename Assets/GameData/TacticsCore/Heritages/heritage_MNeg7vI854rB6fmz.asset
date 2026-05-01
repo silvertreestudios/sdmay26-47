@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_MNeg7vI854rB6fmz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: MNeg7vI854rB6fmz
+  Slug: waning-moon-sarangay
+  DisplayName: Waning Moon Sarangay
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your ancestors were named for the moon in transition, ever-changing
+    and ephemeral. They're the keepers of secret arts, just as the waning moon hides
+    its face, and their communities were highly regarded for their storytellers,
+    performers, and artists. You lived among your community on the outskirts of forests
+    or rivers, where many answers came as riddles, and you learned to see the world
+    from different perspectives. Your people are often red or fawn colored, with
+    prominent eyes and flat, compact horns. You become trained in your choice of
+    Acrobatics, Crafting, or Performance. Once per day, when you roll a critical
+    failure with the chosen skill, you can reroll the check, taking the new result,
+    even if it's worse. Rerolling in this way is a fortune effect.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: fcc85c96e67ced85e09f470c535e53faaf39d859f733e54c455c1d002a3d9693
+  Traits:
+  - sarangay
+  TraitsLower:
+  - sarangay
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Acrobatics","value":"acrobatics"},{"label":"PF2E.Skill.Crafting","value":"crafting"},{"label":"PF2E.Skill.Performance","value":"performance"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.7mpMGhVoaPANJnZ8
+    SourceId: 
+    Slug: sarangay
+    DisplayName: Sarangay
+  ParentAncestryAsset: {fileID: 11400000, guid: 3b5aa169692386942ac6e90d44192e00, type: 2}
+  GrantedFeatures: []

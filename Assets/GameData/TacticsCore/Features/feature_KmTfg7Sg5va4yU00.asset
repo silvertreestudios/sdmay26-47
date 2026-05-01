@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_KmTfg7Sg5va4yU00
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: KmTfg7Sg5va4yU00
+  Slug: perfected-form
+  DisplayName: Perfected Form
+  IconPath: icons/magic/unholy/strike-body-life-soul-purple.webp
+  Description: You have purged incompetence from your techniques. On your first Strike
+    of your turn, if you roll lower than 10, you can treat the attack roll as a 10.
+    This is a fortune effect.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 019a51a525025618cc1bf8cda10477b120a2d24e48a0c59b53667a063aacad7d
+  Traits:
+  - monk
+  TraitsLower:
+  - monk
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

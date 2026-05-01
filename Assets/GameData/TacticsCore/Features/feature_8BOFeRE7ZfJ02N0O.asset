@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_8BOFeRE7ZfJ02N0O
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 8BOFeRE7ZfJ02N0O
+  Slug: vivacious-speed
+  DisplayName: Vivacious Speed
+  IconPath: icons/equipment/feet/boots-leather-grey-gold.webp
+  Description: When you've made an impression, you move even faster than normal,
+    darting about the battlefield with incredible speed. Increase the status bonus
+    to your Speeds from stylish combatant to a +10-foot status bonus; this bonus
+    increases by 5 feet at 7th, 11th, 15th, and 19th levels. When you don't have
+    panache, you still get half this status bonus to your Speed, rounded down to
+    the nearest 5-foot increment.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e758acfb68512db28740f81b0aef7348bdcc808420a02e31ba68d4f39f035427
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: '"5*(floor((@actor.level + 5)/4))"'
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["self:effect:panache"],"selector":"speed","slug":"stylish-combatant-speed","value":"5*(floor((@actor.level
+      + 5)/4))"}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: '"5*(floor((@actor.level + 5)/8))"'
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":[{"not":"self:effect:panache"}],"selector":"speed","slug":"stylish-combatant-speed","value":"5*(floor((@actor.level
+      + 5)/8))"}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_maxaKunHAOKUrR4q
+  m_EditorClassIdentifier: 
+  SourceId: maxaKunHAOKUrR4q
+  Slug: writ-in-the-stars
+  DisplayName: Writ in the Stars
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Destiny has always intrigued you. Maybe you grew up in a family where
+    fortune-telling and divinations were a day-to-day part of life, or perhaps you
+    had your fortune told as a young adult and the results were so shockingly accurate
+    that you became a believer. The mysteries of what might lie in store for us all
+    have long intrigued you, and you're always eager to debate whether or not we
+    have free will or if destiny is predetermined\u2014be it for one side or the
+    other. You may see the failure of prophecy that began with the onset of the Age
+    of Lost Omens as a dire indication of some sort of horrible cosmic mistake. Conversely,
+    you could view this age as new era of freedom where reality is finally admitting
+    that each person is free to determine their own path to the future. You still
+    own a small token from your childhood that you view as a lucky charm, but whatever
+    your beliefs are today, many of your fortunes have foretold that great things
+    lie in store for you in the future, and you can't wait to find out what they
+    might be! This background is associated with the suit of Stars. Choose two attribute
+    boosts. One must be to Wisdom , and one is a free attribute boost. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Pilgrim's Token] skill feat (this token
+    need not be from a faith and could simply be a good luck charm) and are trained
+    in the Fortune-Telling Lore skill. You also gain the @UUID[Compendium.pf2e.actionspf2e.Item.A
+    Quick Glimpse Beyond] free action."
+  SourceTitle: Pathfinder Stolen Fate Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 7d250b3487a1b3953a1509d11cdd5b894fd7b6301cdc0d145a883e8b9f088ce7
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.A Quick Glimpse Beyond
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.A
+      Quick Glimpse Beyond"}'
+  AttributeBoosts:
+  - Options: 05000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fortune-Telling Lore
+    Rank: 1
+  LoreSkills:
+  - Fortune-Telling Lore
+  GrantedFeats:
+  - SourceKey: wEMSL
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pilgrim's Token
+    SourceId: 
+    DisplayName: Pilgrim's Token
+    Level: 1
+    ResolvedFeature: {fileID: 0}

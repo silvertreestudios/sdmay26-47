@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Items;
+using TacticsGame.Actions;
+using TacticsGame.Items;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     public class UnitEquipment : MonoBehaviour
     {
@@ -82,6 +82,7 @@ namespace PathfinderTactics.Characters
         /// </summary>
         public void EquipOffHand(EquipmentSO equipment)
         {
+            Debug.Log($"[EQUIPMENT] EquipOffHand: {equipment?.itemName ?? "None"}");
             if (equipment == null)
             {
                 offHand = null;
@@ -115,6 +116,7 @@ namespace PathfinderTactics.Characters
 
         public void EquipArmor(ArmorSO armor)
         {
+            Debug.Log($"[EQUIPMENT] EquipArmor: {armor?.itemName ?? "None"}");
             equippedArmor = armor;
             NotifyEquipmentChanged();
         }
@@ -155,18 +157,31 @@ namespace PathfinderTactics.Characters
             if (handBone == null)
             {
                 Debug.LogWarning(
-                    $"Cannot spawn {equipment.itemName} visually: Humanoid Animator missing hand bone."
+                    $"Cannot spawn {equipment.itemName} visually: Humanoid Animator missing {(handSlot == 1 ? "RightHand" : "LeftHand")} bone on {gameObject.name}."
                 );
                 return;
             }
 
+            Debug.Log($"[EQUIPMENT] Spawning prefab {equipment.prefab.name} onto {handBone.name}");
             GameObject instance = Instantiate(equipment.prefab, handBone);
 
             WeaponGrip grip = instance.GetComponent<WeaponGrip>();
             if (grip != null)
             {
-                instance.transform.localPosition = grip.positionalOffset;
-                instance.transform.localEulerAngles = grip.rotationalOffset;
+                Vector3 pos = grip.positionalOffset;
+                Vector3 rot = grip.rotationalOffset;
+
+                if (handSlot == 2) // Off Hand (Left Hand) mirroring
+                {
+                    // Mirror position on X axis
+                    pos.x = -pos.x;
+                    // Mirror rotation on Y and Z axes to flip for the left hand
+                    rot.y = -rot.y;
+                    rot.z = -rot.z;
+                }
+
+                instance.transform.localPosition = pos;
+                instance.transform.localEulerAngles = rot;
             }
             else
             {
@@ -183,6 +198,10 @@ namespace PathfinderTactics.Characters
             {
                 animator.SetInteger("WeaponType", weaponData.weaponAnimType);
             }
+
+            Debug.Log(
+                $"[EQUIPMENT] Spawned {equipment.itemName} in {(handSlot == 1 ? "Main" : "Off")} hand."
+            );
         }
 
         public void AddToInventory(ItemSO item, int quantity = 1)

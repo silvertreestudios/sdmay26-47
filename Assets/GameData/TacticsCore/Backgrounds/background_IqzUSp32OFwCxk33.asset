@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_IqzUSp32OFwCxk33
+  m_EditorClassIdentifier: 
+  SourceId: IqzUSp32OFwCxk33
+  Slug: kaiju-stalker
+  DisplayName: Kaiju Stalker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "The lands of Tian Xia can be as dangerous as they are beautiful,
+    and like any land, it calls for hunters. A normal hunter's game varies in size,
+    with the deadliest quarries possessing venomous fangs or a ferocious bite. A
+    monster hunter must be prepared for more supernatural maladies and terrors. As
+    a kaiju stalker, you venture into the Wall of Heaven, Valashmai Jungle, or another
+    land where the bounties are much bigger. A mere scale or feather is your grandest
+    trophy\u2014the survival of your community your ultimate prize. Choose two attribute
+    boosts. One must be to Strength or Dexterity , and one is a free attribute boost.
+    You're trained in Athletics and gain one Athletics skill feat of your choice,
+    best suited toward the style of hunting you prefer. You're trained in Kaiju Lore.
+    When rolling a Recall Knowledge check using Kaiju Lore and you have sight of
+    one item that belongs to the kaiju you're attempting to Recall Knowledge about,
+    you gain a +1 circumstance bonus to the skill check. The item can range from
+    a scale to slime, to a footprint, or to crafted or harvested goods."
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: a7cf7018569912df1396eb274420736f6f6e936e5a1c042cadab2b6fda7eebcc
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Kaiju Lore
+    Rank: 1
+  LoreSkills:
+  - Kaiju Lore
+  GrantedFeats: []

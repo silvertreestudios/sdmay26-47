@@ -1,4 +1,4 @@
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     /// <summary>
     /// Filter applied by each SpellEffectSO to determine which units it affects.

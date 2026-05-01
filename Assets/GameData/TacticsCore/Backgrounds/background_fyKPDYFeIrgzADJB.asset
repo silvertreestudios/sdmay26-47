@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_fyKPDYFeIrgzADJB
+  m_EditorClassIdentifier: 
+  SourceId: fyKPDYFeIrgzADJB
+  Slug: alkenstar-outlaw
+  DisplayName: Alkenstar Outlaw
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're an outlaw whose first crime was stealing the guns from Alkenstar's
+    Gunworks which allowed you to commence a crime spree of epic proportions. You
+    don't know where your road ends, but it's probably going to be a bloody affair.
+    The life of an adventurer might even be a relief compared to a life forever on
+    the run from Alkenstar authorities and their allies. Choose two attribute boosts.
+    One boost must be to Dexterity or Constitution , and one is a free attribute
+    boost. You're trained in Thievery and Underworld Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Subtle
+    Theft] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: c13f32d8bcf3b2ade744aae9d49e94382f0bbc127f0763b38a4eccc48e6b3fb7
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 17
+    CustomSkillId: thievery
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: lkc9f
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Subtle Theft
+    SourceId: 
+    DisplayName: Subtle Theft
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_571c1aGnvNVwfF6b
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 571c1aGnvNVwfF6b
+  Slug: oracular-clarity
+  DisplayName: Oracular Clarity
+  IconPath: icons/sundries/lights/candle-lit-angelic.webp
+  Description: You now fully grasp the nature of the divine power behind your mystery,
+    allowing you to work magic akin to miracles. Add two common 10th-rank divine
+    spells to your repertoire. You gain a single 10th-rank spell slot you can use
+    to cast one of those two spells using oracle spellcasting. You don't gain more
+    10th-rank spells as you level up, unlike other spell slots, and you can't use
+    10th-rank slots with abilities that give you more spell slots or that let you
+    cast spells without expending spell slots. You can take the @UUID[Compendium.pf2e.feats-srd.Item.Oracular
+    Providence] feat to gain a second slot.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: fc22e5bc4f9138b1c1b30118fbfe86ea1d371db198559689a65139b0f9c0f3b8
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

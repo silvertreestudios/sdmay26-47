@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_isJhIPhT4MsjJvoq
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: isJhIPhT4MsjJvoq
+  Slug: fishseeker-shoony
+  DisplayName: Fishseeker Shoony
+  IconPath: systems/pf2e/icons/features/ancestry/fishseeker-shoony.webp
+  Description: You come from a long line of fisherfolk and have inherited the quick
+    reflexes necessary to nab and reel in big game. If you roll a success on an attempt
+    to @UUID[Compendium.pf2e.actionspf2e.Item.Grab an Edge], you get a critical success
+    instead; if you roll a critical failure, you get a failure instead. A creature
+    that rolls a failure on a check to @UUID[Compendium.pf2e.actionspf2e.Item.Disarm]
+    you gets a critical failure instead.
+  SourceTitle: 'Pathfinder #153: Life''s Long Shadows'
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 0e8ddbfff84bfafd54049e250510fd4d90cb956316452fb1bc505ce9d92051fb
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["action:grab-an-edge"],"selector":"reflex","type":"save"}'
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["action:grab-an-edge"],"selector":"reflex","type":"save"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["action:grab-an-edge"],"selector":"reflex","text":"PF2E.SpecificRule.Shoony.FishseekerShoony.Note","title":"{item|name}"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.q6rsqYARyOGXZA8F
+    SourceId: 
+    Slug: shoony
+    DisplayName: Shoony
+  ParentAncestryAsset: {fileID: 11400000, guid: 2637afd2b1c063f4f87f6d958797ae40, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_2Fe4YZCvAr9Yf6w7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 2Fe4YZCvAr9Yf6w7
+  Slug: strategic-strike
+  DisplayName: Strategic Strike
+  IconPath: systems/pf2e/icons/features/classes/strategic-strike.webp
+  Description: When you strike carefully and with forethought, you deal a telling
+    blow. When making a Strike that adds your Intelligence modifier on your attack
+    roll due to Devising a Stratagem, you deal an additional 1d6 precision damage.
+    As your investigator level increases, so too does the deadliness of your strategic
+    strike. Increase the number of dice by one at 5th, 9th, 13th, and 17th levels.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2768703db6983384b50b0758a3da0435e2819930d4ad6ca84f09124c9a8e4428
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"precision","diceNumber":"floor((@actor.level+3)/4)","dieSize":"d6","key":"DamageDice","predicate":["check:substitution:devise-a-stratagem"],"selector":"strike-damage"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

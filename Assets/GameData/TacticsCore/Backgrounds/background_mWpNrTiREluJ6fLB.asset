@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_mWpNrTiREluJ6fLB
+  m_EditorClassIdentifier: 
+  SourceId: mWpNrTiREluJ6fLB
+  Slug: able-carter
+  DisplayName: Able Carter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You worked for many years as a hauler within Geb, either on your
+    own or with a larger operation that shipped goods across Geb''s ancient roads.
+    In either case, you were loosely affiliated with the Carters Consortium, and
+    you might have even been part of that faction when allegations of Pharasma worship
+    among its leaders caused the faction''s sharp drop in significance. Yet the goods
+    still need to be moved from ports to warehouses or from town to town, and that
+    was your business. You''ve seen a lot of Geb in your time, and you''re good at
+    interacting with the quick and the dead alike, but you''ve given up the shipping
+    business for more lucrative opportunities. The Carters Consortium values your
+    past work, especially because so few people are sticking by them today. Your
+    party gains 1 Reputation Point with the Carters Consortium at the start of the
+    campaign. Choose two attribute boosts. One must be to Strength or Charisma ,
+    and one is a free attribute boost. You''re trained in your choice of the Deception
+    or Diplomacy skill. You gain a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Charming
+    Liar] if you chose Deception or @UUID[Compendium.pf2e.feats-srd.Item.Hobnobber]
+    if you chose Diplomacy. You''re also trained in a Lore skill with one of Geb''s
+    cities: Graydirge, Mechitar, or Yled.'
+  SourceTitle: Pathfinder Blood Lords Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 7d09562d2e5fb7b0cd54c91c32a3c3acb4a67c02708338d98faf5e5db8f99c56
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Deception","value":"deception"},{"label":"PF2E.Skill.Diplomacy","value":"diplomacy"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"able-carter"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Charming Liar
+    Json: '{"key":"GrantItem","predicate":["able-carter:deception"],"uuid":"Compendium.pf2e.feats-srd.Item.Charming
+      Liar"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Hobnobber
+    Json: '{"key":"GrantItem","predicate":["able-carter:diplomacy"],"uuid":"Compendium.pf2e.feats-srd.Item.Hobnobber"}'
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

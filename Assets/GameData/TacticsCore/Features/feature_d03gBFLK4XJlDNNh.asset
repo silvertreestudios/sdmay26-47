@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_d03gBFLK4XJlDNNh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: d03gBFLK4XJlDNNh
+  Slug: curse-of-the-sky-s-call
+  DisplayName: Curse of the Sky's Call
+  IconPath: icons/magic/nature/moon-crescent.webp
+  Description: Your body is drawn toward the heavens, making you lighter and less
+    substantial than you should be. Your eyes glow with starry light, and your hair
+    and clothing float and drift around you. When you have the @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]
+    condition, you are @UUID[Compendium.pf2e.conditionitems.Item.Enfeebled] with
+    a value equal to your cursebound value, and you take a status penalty to saves
+    and DCs against all forms of forced movement equal to your cursebound value
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e3ea6cfc11799d073e038f8c5f1bda2475f7f335890cf66aa0d2566ad68b6fb3
+  Traits:
+  - curse
+  - divine
+  - oracle
+  TraitsLower:
+  - curse
+  - divine
+  - oracle
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Enfeebled
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"override","property":"badge-value","value":"@actor.conditions.cursebound.value"}],"inMemoryOnly":true,"key":"GrantItem","onDeleteActions":{"grantee":"restrict"},"predicate":["self:condition:cursebound"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.conditionitems.Item.Enfeebled"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"-@actor.conditions.cursebound.value"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["forced-movement","self:condition:cursebound"],"selector":"saving-throw","type":"status","value":"-@actor.conditions.cursebound.value"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.conditionitems.Item.Enfeebled
+    SourceId: 
+    DisplayName: Enfeebled
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

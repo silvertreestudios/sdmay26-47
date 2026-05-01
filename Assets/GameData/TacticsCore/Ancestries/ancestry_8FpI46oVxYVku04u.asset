@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_8FpI46oVxYVku04u
+  m_EditorClassIdentifier: 
+  SourceId: 8FpI46oVxYVku04u
+  Slug: wayang
+  DisplayName: Wayang
+  IconPath: systems/pf2e/icons/default-icons/ancestry.svg
+  Description: Wayangs are diasporic sojourners from the Netherworld where they lived
+    and worked alongside their allies, lightweaving d'ziriaks. Both peoples shared
+    affinities for artistic expression and spiritual introspection, inspiring each
+    other's sensitivities to color, form, and function; they also bolstered each
+    other's defense against rampaging dragons, oni, and undead. This idyll collapsed
+    from divine meddling; some say when Abadar sentenced Zon-Kuthon to exile in the
+    Netherworld, the Midnight Lord's deific presence distorted the plane into a nightmarish
+    domain, while others accounts ascribe fiendish sources to this doom. Wayang
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 3d15dbf63a444aab45a84412ae21ce4b30c5e2c7648cf2cc8643fd6c93570d20
+  Traits:
+  - humanoid
+  - shadow
+  - wayang
+  TraitsLower:
+  - humanoid
+  - shadow
+  - wayang
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.colorDarkvision
+    Mode: override
+    Value: true
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.colorDarkvision","value":true}'
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 06000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 03000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: shadowtongue
+    DisplayName: Shadowtongue
+  - Id: wayang
+    DisplayName: Wayang
+  AdditionalLanguageOptions:
+  - Id: dziriak
+    DisplayName: Dziriak
+  - Id: diabolic
+    DisplayName: Diabolic
+  - Id: minaten
+    DisplayName: Minaten
+  - Id: nagaji
+    DisplayName: Nagaji
+  - Id: thalassic
+    DisplayName: Thalassic
+  - Id: vudrani
+    DisplayName: Vudrani
+  - Id: yaksha
+    DisplayName: Yaksha
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: b89094695eee8304e925922eedee7314, type: 2}
+  - {fileID: 11400000, guid: d41af858a40342046942ee72f0820bff, type: 2}
+  - {fileID: 11400000, guid: 51853141be2cbf8448fd7efa4fe5fdae, type: 2}
+  - {fileID: 11400000, guid: d6a63087be087c44b886c8767befb9af, type: 2}
+  - {fileID: 11400000, guid: bfab2e42d93cbdb4fa03ebae08abdbea, type: 2}

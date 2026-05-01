@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_N0CRYmDCw8bgNxLl
+  m_EditorClassIdentifier: 
+  SourceId: N0CRYmDCw8bgNxLl
+  Slug: hunted-by-the-night
+  DisplayName: Hunted by the Night
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You're being hunted\u2014by a vampire no less! What you did to offend
+    this nocturnal predator hardly matters now. All you know is that when your bandolier
+    of garlic bulbs, holy water, and religious icons failed to deter your pursuer,
+    you had no other choice but to put as much distance between you and them as possible.
+    You set sail for the Andoren colony of Talmandor's Bounty, where you hope a vast
+    ocean and an island known for its sun-filled days will keep you safe. Choose
+    two attribute boosts. One must be to Dexterity or Intelligence , and one is a
+    free attribute boost. You're trained in the Stealth skill and the Vampire Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious Knowledge] skill
+    feat. In addition, you begin play ready to protect yourself from your supernatural
+    stalker. You have a religious symbol, a wooden stake and mallet, and a vial of
+    @UUID[Compendium.pf2e.equipment-srd.Item.Holy Water]."
+  SourceTitle: Pathfinder Shades of Blood Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 54982568094e9f6fa7a278fadae504dd46e0d8d8fdd6e79cc00f34c197b19404
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Religious Symbol (Wooden)
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Religious
+      Symbol (Wooden)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Holy Water
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Holy Water"}'
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Vampire Lore
+    Rank: 1
+  LoreSkills:
+  - Vampire Lore
+  GrantedFeats:
+  - SourceKey: wIYIR
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

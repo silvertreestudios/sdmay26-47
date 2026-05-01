@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_09iL38CZZEa0q0Mt
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 09iL38CZZEa0q0Mt
+  Slug: arcane-cascade
+  DisplayName: Arcane Cascade
+  IconPath: systems/pf2e/icons/features/classes/arcane-cascade.webp
+  Description: 'After you wield magic, you can enter a special stance to make your
+    attacks more effective. @UUID[Compendium.pf2e.actionspf2e.Item.Arcane Cascade]'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 810f716c43c6bba2b27d4801e2b338ea34f299453a9566d8e53a0ec48827a558
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Arcane Cascade
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Arcane Cascade"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.arcaneCascade.damageType
+    Mode: override
+    Value: '"untyped"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.arcaneCascade.damageType","priority":-100,"value":"untyped"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Arcane Cascade
+    SourceId: 
+    DisplayName: Arcane Cascade
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HsAZDAPpqynArFAp
+  m_EditorClassIdentifier: 
+  SourceId: HsAZDAPpqynArFAp
+  Slug: magaambya-academic
+  DisplayName: Magaambya Academic
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Mwangi Expanse You studied magic at the prestigious
+    Magaambya academy in Nantambu, learning magical traditions dating back to Old-
+    Mage Jatembe and earning a pedigree respected by magical scholars almost everywhere.
+    Choose two attribute boosts. One must be to Intelligence or Charisma , and one
+    is a free attribute boost. You're trained in your choice of either the Arcana
+    or Nature skill, as well as the Academia Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Recognize
+    Spell] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 77b8c73361da7452e418954134176f7378bb4781baebae26034b7bf86f61636b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Arcana","value":"arcana"},{"label":"PF2E.Skill.Nature","value":"nature"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Academia Lore
+    Rank: 1
+  LoreSkills:
+  - Academia Lore
+  GrantedFeats:
+  - SourceKey: cq4ht
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Recognize Spell
+    SourceId: 
+    DisplayName: Recognize Spell
+    Level: 1
+    ResolvedFeature: {fileID: 0}

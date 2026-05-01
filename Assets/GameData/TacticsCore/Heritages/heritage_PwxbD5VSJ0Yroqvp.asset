@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_PwxbD5VSJ0Yroqvp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: PwxbD5VSJ0Yroqvp
+  Slug: liminal-fetchling
+  DisplayName: Liminal Fetchling
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You come from a line of fetchlings with a closer connection to the
+    Ethereal and Shadow Planes, and you share those realms' affinity with the in-between
+    and unseen. You gain a +1 circumstance bonus to locate @UUID[Compendium.pf2e.conditionitems.Item.Undetected]
+    creatures within 60 feet when using the Seek action. Your flat check to target
+    @UUID[Compendium.pf2e.conditionitems.Item.Concealed] creatures is @Check[flat|dc:3]
+    instead of DC 5, and your flat check to target undetected creatures is @Check[flat|dc:9]
+    instead of DC 11.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 602a2bcfc1dab71ef464bed8ef7e183ac0a633ff7917fcff5e84ffdcd668c4ca
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"To Seek undetected within 60 feet (Liminal
+      Fetchling)","predicate":["action:seek","target:condition:undetected","target:within-60"],"selector":"perception","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.hIA3qiUsxvLZXrFP
+    SourceId: 
+    Slug: fetchling
+    DisplayName: Fetchling
+  ParentAncestryAsset: {fileID: 11400000, guid: c2bb1fdeb31da2345857e61e8354e1aa, type: 2}
+  GrantedFeatures: []

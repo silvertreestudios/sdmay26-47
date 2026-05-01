@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_Lp7ywxabmm88Gei6
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: Lp7ywxabmm88Gei6
+  Slug: observant-halfling
+  DisplayName: Observant Halfling
+  IconPath: systems/pf2e/icons/features/ancestry/observant-halfling.webp
+  Description: Your finely honed senses quickly clue you in to danger or trickery.
+    You gain a +1 circumstance bonus to your Perception DC, though not to your Perception
+    checks.
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 53db46de5b14b606e779a3b5ff3af0fa02ee259aa0d0d801a553223a2cb77596
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","selector":"perception-dc","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GgZAHbrjnzWOZy2v
+    SourceId: 
+    Slug: halfling
+    DisplayName: Halfling
+  ParentAncestryAsset: {fileID: 11400000, guid: 27cca46a5c2df4845ab39fbaa79aad34, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_aYWPtW5T4Lx07Occ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: aYWPtW5T4Lx07Occ
+  Slug: school-of-thassilonian-rune-magic
+  DisplayName: School of Thassilonian Rune Magic
+  IconPath: icons/magic/symbols/rune-sigil-rough-white-teal.webp
+  Description: 'This curriculum, taught at a few select academies in New Thassilon,
+    can be learned only by wizards with the runelord class archetype. You have begun
+    to study one of the seven runes of sin, granting you great power but at the cost
+    of anathematic magic. All runelords gain the below curriculum and school spells.
+    In addition, you must choose one of the seven sins to specialize in. You add
+    your sin''s spells and initial school spells to your curriculum. The addictive
+    nature of sin magic prevents you from using magic in ways aligned with other
+    sins, represented by that sin''s anathema. Casting a sin spell never invokes
+    the anathema of its school of sin. Unlike other wizards, some of your curriculum
+    spells may be spells that don''t typically appear on the arcane spell list (marked
+    with an asterisk). You still cast these spells as arcane spells, the unifying
+    knowledge of sin bridging the gap between disparate magics. Curriculum cantrips:
+    @UUID[Compendium.pf2e.spells-srd.Item.Detect Magic], @UUID[Compendium.pf2e.spells-srd.Item.Sigil]
+    1st: @UUID[Compendium.pf2e.spells-srd.Item.Mystic Armor], @UUID[Compendium.pf2e.spells-srd.Item.Runic
+    Body], @UUID[Compendium.pf2e.spells-srd.Item.Runic Weapon], @UUID[Compendium.pf2e.spells-srd.Item.Sure
+    Strike] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Darkvision], @UUID[Compendium.pf2e.spells-srd.Item.See
+    the Unseen] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Clairaudience], @UUID[Compendium.pf2e.spells-srd.Item.Veil
+    of Privacy] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Clairvoyance], @UUID[Compendium.pf2e.spells-srd.Item.Fly]
+    5th: @UUID[Compendium.pf2e.spells-srd.Item.Mind Probe], @UUID[Compendium.pf2e.spells-srd.Item.Sending]
+    6th: @UUID[Compendium.pf2e.spells-srd.Item.Scrying], @UUID[Compendium.pf2e.spells-srd.Item.Truesight]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Contingency], @UUID[Compendium.pf2e.spells-srd.Item.Spell
+    Riposte] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Unrelenting Observation],
+    @UUID[Compendium.pf2e.spells-srd.Item.Hidden Mind] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Foresight]
+    Advanced School Spell @UUID[Compendium.pf2e.spells-srd.Item.Personal Runewell]
+    @UUID[Compendium.pf2e.classfeatures.Item.Envy] @UUID[Compendium.pf2e.classfeatures.Item.Gluttony]
+    @UUID[Compendium.pf2e.classfeatures.Item.Greed] @UUID[Compendium.pf2e.classfeatures.Item.Lust]
+    @UUID[Compendium.pf2e.classfeatures.Item.Pride] @UUID[Compendium.pf2e.classfeatures.Item.Sloth]
+    @UUID[Compendium.pf2e.classfeatures.Item.Wrath]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: f83d9a8ed54a0fb65bae07bdde437c6f672791dfd8640f411b620cb25e1a0a42
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"value":"Compendium.pf2e.classfeatures.Item.Envy"},{"value":"Compendium.pf2e.classfeatures.Item.Gluttony"},{"value":"Compendium.pf2e.classfeatures.Item.Greed"},{"value":"Compendium.pf2e.classfeatures.Item.Lust"},{"value":"Compendium.pf2e.classfeatures.Item.Pride"},{"value":"Compendium.pf2e.classfeatures.Item.Sloth"},{"value":"Compendium.pf2e.classfeatures.Item.Wrath"}],"flag":"sin","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Wizard.Runelord.Sin.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.sin}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.sin}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"runelord-curriculum-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"or":["item:tag:runelord-sin-spell","item:slug:detect-magic","item:slug:sigil","item:slug:mystic-armor","item:slug:runic-body","item:slug:runic-weapon","item:slug:sure-strike","item:slug:darkvision","item:slug:see-the-unseen","item:slug:clairaudience","item:slug:veil-of-privacy","item:slug:clairvoyance","item:slug:fly","item:slug:mind-probe","item:slug:sending","item:slug:scrying","item:slug:truesight","item:slug:contingency","item:slug:spell-riposte","item:slug:unrelenting-observation","item:slug:seize-soul","item:slug:foresight"]}],"priority":119,"property":"other-tags","value":"runelord-curriculum-spell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.sin}'
+    SourceId: 
+    DisplayName: sin}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

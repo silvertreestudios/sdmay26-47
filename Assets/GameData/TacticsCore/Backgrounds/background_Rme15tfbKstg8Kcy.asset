@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_Rme15tfbKstg8Kcy
+  m_EditorClassIdentifier: 
+  SourceId: Rme15tfbKstg8Kcy
+  Slug: star-athlete
+  DisplayName: Star Athlete
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Whatever the sport, be it basilisk, kickball, wrestling, footraces,
+    stickball, canoeing, or foot volleyball, you either have played it or are keen
+    to try it. You probably missed some classes due to practice or competitions,
+    and irate professors might dismiss you as lazy or incapable of learning. These
+    assumptions ignore the countless hours you've dedicated to athletic excellence.
+    Choose two attribute boosts. One must be to Strength or Dexterity , and one is
+    a free attribute boost. You're trained in Athletics. You're also trained in the
+    Games Lore skill or a Lore skill associated with your school. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance]
+    skill feat with Athletics.
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: e00ad524e0735f6750a368967d14d2a438d31823a45d9fe9a4b3e3251af8c640
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"athletics"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Games Lore
+    Rank: 1
+  LoreSkills:
+  - Games Lore
+  GrantedFeats: []

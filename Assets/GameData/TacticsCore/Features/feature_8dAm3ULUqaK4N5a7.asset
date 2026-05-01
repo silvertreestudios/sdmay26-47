@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_8dAm3ULUqaK4N5a7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 8dAm3ULUqaK4N5a7
+  Slug: the-tangible-dream
+  DisplayName: The Tangible Dream
+  IconPath: systems/pf2e/icons/features/classes/the-tangible-dream.webp
+  Description: "You pull colors and shapes from the depth of your mind, projecting
+    impossible creations into the world as tapestries of astral thread or sculptures
+    of force and light. Granted Spells 1st: @UUID[Compendium.pf2e.spells-srd.Item.Dizzying
+    Colors] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Mirror Image] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Sea
+    of Thought] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Containment] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Etheric
+    Shards] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Blade Barrier] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Project
+    Image] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Confusing Colors] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Prismatic
+    Sphere] Standard Psi Cantrips @UUID[Compendium.pf2e.spells-srd.Item.Figment]
+    Your minor illusions shift and dance. The range of figment increases to 60 feet.
+    When you Sustain the spell, you can move the apparent sound or vision up to 15
+    feet. You can then attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Create a
+    Diversion] as usual. Those creatures who disbelieved the illusion aren't affected
+    by this diversion. Your figment also gains the following amp. Amp When you amp
+    the spell, you can create a particularly distracting illusion as part of its
+    normal effects. Choose an unoccupied square within the spell's range. The illusion
+    in that square provides flanking for a single melee attack made before the beginning
+    of your next turn. If you Sustain the spell, the details of the illusion change
+    and shift to keep your enemies unsettled; the flanking illusion's duration extends
+    until the beginning of your next turn and you can move it to any unoccupied square
+    in the spell's range. The flanking illusion can't provide its benefit against
+    any creature who has disbelieved the figment. @UUID[Compendium.pf2e.spells-srd.Item.Shield]
+    Your shield spell can be deployed on behalf of others. When you cast shield ,
+    you can choose a target ally within 30 feet to gain the benefits of the spell
+    instead of you. The option to Shield Block with the spell is up to you and uses
+    your reaction, not the target's. Your shield also gains the following amp. Amp
+    You create a layered barrier of three shields to improve your defenses. The duration
+    increases to sustained up to 1 minute. The shield still lowers at the start of
+    each of your turns, but you can raise it again when you Sustain the Spell. When
+    you Shield Block with this spell, one of the three layers breaks and you cease
+    to gain the bonus to AC, but the spell doesn't end. You can keep using the spell
+    until the final layer breaks; once it does, the spell ends and you can't cast
+    shield or amped shield again for 10 minutes. You can choose to break additional
+    layers when you Shield Block with this spell to improve your defenses. If you
+    break two layers instead of one, increase the Hardness to 1-1/2 \xD7 the normal
+    amount (7 at 1st level, 15 at 3rd level, 22 at 5th level, 30 at 7th level, and
+    37 at 9th level). If you break all three layers, increase the Hardness to double
+    the normal amount. Unique Psi Cantrips surface: @UUID[Compendium.pf2e.spells-srd.Item.Imaginary
+    Weapon] Amp You form multiple force weapons to lash out at multiple foes. You
+    make two imaginary weapon Strikes, each against a different target. Your multiple
+    attack penalty doesn't increase until you've made both Strikes. Amp Heightened
+    (+1) The damage increases by 2d8 instead of 1d8. deeper: @UUID[Compendium.pf2e.spells-srd.Item.Astral
+    Rain] Amp The area changes to a @Template[burst|distance:5], and you can Sustain
+    the Spell up to 1 minute. The first time each round that you Sustain the Spell,
+    you can move the burst up to 20 feet. deepest: @UUID[Compendium.pf2e.spells-srd.Item.Hologram
+    Cage] Amp Force walls make the cage's barrier physical as well as visual. Each
+    10-foot-by-10-foot section of the cage's wall has AC 10, Hardness equal to double
+    the spell's level, and HP equal to quadruple the spell's level. The spell is
+    disrupted if any of its walls would pass through a creature when you cast it."
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: bb95457a7fa8a8de85a512791b1a97ff85caa8e1798a7b5a57a00c8486202e66
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:psychic","spellcasting:tradition:occult",{"or":["item:slug:figment","item:slug:shield"]}],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Figment"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Figment","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:figment","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Figment"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Figment","title":"PF2E.TraitAmp"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Shield"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Shield.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Shield.BaseTwo"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"@UUID[Compendium.pf2e.spell-effects.Item.Spell
+      Effect: Shield (Amped)]"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:shield","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Shield"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Shield.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Shield.BaseTwo"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"@UUID[Compendium.pf2e.spell-effects.Item.Spell
+      Effect: Shield (Amped)]"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.ImaginaryWeapon.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.ImaginaryWeapon.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:imaginary-weapon"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.ImaginaryWeapon.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.ImaginaryWeapon.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.AstralRain","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:astral-rain"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.AstralRain","title":"PF2E.TraitAmp"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.HologramCage","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:hologram-cage"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.HologramCage","title":"PF2E.TraitAmp"}]}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"diceNumber":"@spell.rank - 1","dieSize":"d8","hideIfDisabled":true,"key":"DamageDice","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:imaginary-weapon"],"selector":"spell-damage"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.psychic.dedication.psiCantrips
+    Mode: override
+    Value: '[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Figment","predicate":[{"not":"selected-psi-cantrip:figment"}],"value":"figment"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Shield","predicate":[{"not":"selected-psi-cantrip:shield"}],"value":"shield"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.ImaginaryWeapon","predicate":["feat:psi-development"],"value":"imaginary-weapon"}]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.psychic.dedication.psiCantrips","predicate":["feat:psychic-dedication"],"priority":10,"value":[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Figment","predicate":[{"not":"selected-psi-cantrip:figment"}],"value":"figment"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Shield","predicate":[{"not":"selected-psi-cantrip:shield"}],"value":"shield"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.ImaginaryWeapon","predicate":["feat:psi-development"],"value":"imaginary-weapon"}]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":"flags.pf2e.psychic.dedication.psiCantrips","flag":"dedicationCantrip","key":"ChoiceSet","predicate":["feat:psychic-dedication"],"prompt":"PF2E.SpecificRule.Prompt.PsiCantrip","rollOption":"selected-psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["feat:psychic-dedication","spellcasting:tradition:occult","item:slug:{item|flags.pf2e.rulesSelections.dedicationCantrip}"],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

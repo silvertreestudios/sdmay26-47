@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_G9Gwfi8ZIva52uGp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: G9Gwfi8ZIva52uGp
+  Slug: jinxed-halfling
+  DisplayName: Jinxed Halfling
+  IconPath: systems/pf2e/icons/features/ancestry/jinxed-halfling.webp
+  Description: 'You were born with a strange blessing: bereft of the typical halfling
+    luck, you can instead manipulate the fortunes of others. You can never take the
+    @UUID[Compendium.pf2e.feats-srd.Item.Halfling Luck] feat, and you gain the @UUID[Compendium.pf2e.actionspf2e.Item.Jinx]
+    action.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 1e874d129689f11c92c8e94b553147f09e3027d207da6015bd786ce101f35bf7
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Jinx
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Jinx"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GgZAHbrjnzWOZy2v
+    SourceId: 
+    Slug: halfling
+    DisplayName: Halfling
+  ParentAncestryAsset: {fileID: 11400000, guid: 27cca46a5c2df4845ab39fbaa79aad34, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Jinx
+    SourceId: 
+    DisplayName: Jinx
+    Level: 0
+    ResolvedFeature: {fileID: 0}

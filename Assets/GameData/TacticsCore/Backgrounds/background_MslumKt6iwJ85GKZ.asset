@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_MslumKt6iwJ85GKZ
+  m_EditorClassIdentifier: 
+  SourceId: MslumKt6iwJ85GKZ
+  Slug: thuvian-unifier
+  DisplayName: Thuvian Unifier
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Golden Road You believe the city-states of Thuvia
+    should be united into one nation under the rule of your home city (most commonly
+    Aspenthar), and you're willing to do whatever it takes to make it happen. Choose
+    two attribute boosts. One must be to Strength or Charisma , and one is a free
+    attribute boost. You're trained in the Intimidation skill and the Politics Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick Coercion] skill
+    feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 667b8bbb59f9a1857d630eada98ae5dd75110cabcd2d8dcab2be976af2331ec4
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Politics Lore
+    Rank: 1
+  LoreSkills:
+  - Politics Lore
+  GrantedFeats:
+  - SourceKey: 5y5lm
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Coercion
+    SourceId: 
+    DisplayName: Quick Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

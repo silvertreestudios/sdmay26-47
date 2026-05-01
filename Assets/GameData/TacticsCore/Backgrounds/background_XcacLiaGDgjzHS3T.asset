@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_XcacLiaGDgjzHS3T
+  m_EditorClassIdentifier: 
+  SourceId: XcacLiaGDgjzHS3T
+  Slug: spotter
+  DisplayName: Spotter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: An eye for detail, a sense for the wind, and a strong trust in your
+    gut feelings. These qualities have set you apart from others when it comes to
+    assisting a sharpshooter with setting up the perfect shot against their target.
+    Elevation, velocity, and concealment-these are all vital factors that need to
+    be considered to pull off a feat of true marksmanship, and no sniper would be
+    able to function without an experienced spotter. Since your younger days, you've
+    put your skills as a spotter to work as an adventurer. Whether you're taking
+    your own shots now or spotting for others, your talents grant you an edge in
+    an adventuring career. Choose two attribute boosts. One must be to Dexterity
+    or Wisdom , and one is a free attribute boost. You're trained in the Stealth
+    skill and the Scouting Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Terrain
+    Stalker] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 1087f923e5a1c62d9a1cbc5c736dbd5efb6d4872be282882380aa5026bc43c5f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Scouting Lore
+    Rank: 1
+  LoreSkills:
+  - Scouting Lore
+  GrantedFeats:
+  - SourceKey: ku7lr
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Stalker
+    SourceId: 
+    DisplayName: Terrain Stalker
+    Level: 1
+    ResolvedFeature: {fileID: 0}

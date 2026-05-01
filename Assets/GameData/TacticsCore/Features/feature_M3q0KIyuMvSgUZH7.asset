@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_M3q0KIyuMvSgUZH7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: M3q0KIyuMvSgUZH7
+  Slug: vanguard-of-roaring-waters
+  DisplayName: Vanguard of Roaring Waters
+  IconPath: icons/magic/water/water-jet-wave-blue.webp
+  Description: 'Vanguards of roaring waters are found where rivers carve their way
+    through mountains, creating fearsome rapids. They can also be found near bays
+    where rivers meet the sea and create turbulent breakers and unpredictable undertows,
+    coastal reefs that tear the bottoms from unwary ships and isolate islands, or
+    anywhere else where water becomes violent and difficult to navigate safely. Vanguards
+    of roaring waters encourage chaos and are easily bored. Apparition Skills Mountain
+    Lore, River Lore Apparition Spells Cantrip @UUID[Compendium.pf2e.spells-srd.Item.Rousing
+    Splash] 1st @UUID[Compendium.pf2e.spells-srd.Item.Hydraulic Push] 2nd @UUID[Compendium.pf2e.spells-srd.Item.Mist]
+    3rd @UUID[Compendium.pf2e.spells-srd.Item.Crashing Wave] 4th @UUID[Compendium.pf2e.spells-srd.Item.Hydraulic
+    Torrent] 5th @UUID[Compendium.pf2e.spells-srd.Item.Control Water] 6th @UUID[Compendium.pf2e.spells-srd.Item.Personal
+    Ocean] 7th @UUID[Compendium.pf2e.spells-srd.Item.Dancing Fountain] 8th @UUID[Compendium.pf2e.spells-srd.Item.Whirlpool]
+    9th @UUID[Compendium.pf2e.spells-srd.Item.Wrathful Storm] Vessel Spell @UUID[Compendium.pf2e.spells-srd.Item.River
+    Carving Mountains] Avatar River that Splits the World Speed 50 feet, swim Speed
+    70 feet Melee 1 parting mountains (reach 15 feet, versatile S, water), Damage
+    @Damage[(6d10+6)[bludgeoning]] Ranged 1 crash into the sea (range 120 feet, versatile
+    P, water), Damage @Damage[(6d6+6)[bludgeoning]]'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e4d9d8119b1228fe7f35947898518fd60c50d5777bba97754169186b469ca78a
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

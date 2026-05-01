@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_XQjR07LkDedC7tkc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: XQjR07LkDedC7tkc
+  Slug: curse-of-torrential-knowledge
+  DisplayName: Curse of Torrential Knowledge
+  IconPath: icons/sundries/documents/document-symbol-circle-gold-red.webp
+  Description: You have a link to true divine knowledge, but your mortal mind struggles
+    to process and act on what you know. Loose materials around you, such as dust,
+    grains of rice, and droplets of water, slowly shift to form strange runes or
+    faint, indecipherable writing, and you sometimes speak unintelligible truths
+    or statements in unknown languages without realizing it. You take a status penalty
+    to Perception checks and Will saving throws equal to your @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]
+    value due to the torrential distractions of unasked-for knowledge flooding your
+    mind. If you are cursebound 4, you additionally can't speak, use linguistic effects,
+    or otherwise communicate with your allies. You can still cast spells, but you're
+    Stupefied 1.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 94ebf11c88e4945eea1450fab15a3e10d9b3f8c8c6ed76814846a24fec5c820a
+  Traits:
+  - curse
+  - divine
+  - oracle
+  TraitsLower:
+  - curse
+  - divine
+  - oracle
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"-@actor.conditions.cursebound.value"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:condition:cursebound"],"selector":["perception","will"],"type":"status","value":"-@actor.conditions.cursebound.value"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Stupefied
+    Json: '{"allowDuplicate":false,"inMemoryOnly":true,"key":"GrantItem","onDeleteActions":{"grantee":"restrict"},"predicate":["self:condition:cursebound:4"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.conditionitems.Item.Stupefied"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.conditionitems.Item.Stupefied
+    SourceId: 
+    DisplayName: Stupefied
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

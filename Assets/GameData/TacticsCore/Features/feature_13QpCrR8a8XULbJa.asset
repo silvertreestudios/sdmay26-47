@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_13QpCrR8a8XULbJa
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 13QpCrR8a8XULbJa
+  Slug: continuous-flair
+  DisplayName: Continuous Flair
+  IconPath: icons/equipment/head/hat-tricorn-pirate-black.webp
+  Description: While not equal to your panache in combat, you have a dramatic flair
+    about you in any situation. The circumstance bonus from Stylish Combatant applies
+    in exploration mode.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: dfe79e425b3608e4f86501c905c2fa63bb0fb05aff9bd157e6287c35f4e38094
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_cz9fwc6KSkqxD3Nn
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: cz9fwc6KSkqxD3Nn
+  Slug: sloth
+  DisplayName: Sloth
+  IconPath: icons/weapons/polearms/spear-simple-red-blue.webp
+  Description: 'The Reclined spreads a sense of restful peace to its users, the feeling
+    of rest after a hard day of work without the drudgery leading up to it. With
+    its magic, runelords can cut away even the smallest drudgery. Anathema Use your
+    magic to manipulate appearances or directly cause harm with the elements. Sin
+    Spells cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Hand], @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic
+    Projectile] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Sleep], @UUID[Compendium.pf2e.spells-srd.Item.Enfeeble]
+    2nd: @UUID[Compendium.pf2e.spells-srd.Item.Ghostly Carrier], @UUID[Compendium.pf2e.spells-srd.Item.Summon
+    Elemental] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Cozy Cabin], @UUID[Compendium.pf2e.spells-srd.Item.Slow]
+    4th: @UUID[Compendium.pf2e.spells-srd.Item.Dull Ambition], @UUID[Compendium.pf2e.spells-srd.Item.Translocate]
+    5th: @UUID[Compendium.pf2e.spells-srd.Item.Summon Dragon], @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic
+    Haul] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Collective Transposition] 7th:
+    @UUID[Compendium.pf2e.spells-srd.Item.Indolent Haze], @UUID[Compendium.pf2e.spells-srd.Item.Planar
+    Palace] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Quandary] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Resplendent
+    Mansion] Initial School Spell @UUID[Compendium.pf2e.spells-srd.Item.Reclined
+    Apport]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: 3b5dcf30c86a4cd6561c4a1c89a6d5e78c982d02d9b5f1a9dcbcf363bf301a05
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"runelord-sin-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"or":["item:slug:telekinetic-hand","item:slug:telekinetic-projectile","item:slug:sleep","item:slug:enfeeble","item:slug:ghostly-carrier","item:slug:summon-elemental","item:slug:cozy-cabin","item:slug:slow","item:slug:dull-ambition","item:slug:translocate","item:slug:summon-dragon","item:slug:telekinetic-haul","item:slug:collective-transposition","item:slug:indolent-haze","item:slug:planar-palace","item:slug:quandary","item:slug:resplendent-mansion"]}],"priority":118,"property":"other-tags","value":"runelord-sin-spell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

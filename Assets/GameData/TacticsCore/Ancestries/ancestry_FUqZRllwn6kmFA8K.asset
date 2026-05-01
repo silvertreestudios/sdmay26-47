@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_FUqZRllwn6kmFA8K
+  m_EditorClassIdentifier: 
+  SourceId: FUqZRllwn6kmFA8K
+  Slug: merfolk
+  DisplayName: Merfolk
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/merfolk.svg
+  Description: Merfolk live in every ocean of Golarion, infinite in their variety
+    and awe-inspiring in their majesty. They consider themselves, not without some
+    merit, the rulers of the sea. Among the tropical reefs of the Fever Sea, merfolk
+    build temples and palaces of brightly colored corals. Beneath the ice floes of
+    the Shining Sea, merfolk hunt seals and whales for food in small, standoffish
+    clans. In the Embaral Ocean, merfolk populate the great trading city of Alohmab,
+    built into the shell of a titanic snail that crawls across the ocean floor. Merfolk
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 85dafffbae5b03d726583e7a7d902a44faac72849ce247affd41f18c9fd9517f
+  Traits:
+  - amphibious
+  - humanoid
+  - merfolk
+  TraitsLower:
+  - amphibious
+  - humanoid
+  - merfolk
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 25
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"swim","value":25}'
+  HitPoints: 8
+  Speed: 5
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 06000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 03000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: thalassic
+    DisplayName: Thalassic
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: azlanti
+    DisplayName: Azlanti
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 1ZhYb
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Hydration (Merfolk)
+    SourceId: 
+    DisplayName: Hydration (Merfolk)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: T9WbI
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Aquatic Grace
+    SourceId: 
+    DisplayName: Aquatic Grace
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 3dbe4b6eae6e8f24fa6950c5946d9bd4, type: 2}
+  - {fileID: 11400000, guid: 6a777858b14954d4bb7726c2e636ff3c, type: 2}
+  - {fileID: 11400000, guid: fafddd817385e4c4cabe8b5d00fd8927, type: 2}
+  - {fileID: 11400000, guid: b469762ebb728b445b1841fc398c8b6f, type: 2}
+  - {fileID: 11400000, guid: c28a69a9fb9341a438eddf31820e21a4, type: 2}

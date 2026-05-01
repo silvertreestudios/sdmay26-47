@@ -1,4 +1,4 @@
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     /// <summary>
     /// Determines when a spell effect executes during resolution.

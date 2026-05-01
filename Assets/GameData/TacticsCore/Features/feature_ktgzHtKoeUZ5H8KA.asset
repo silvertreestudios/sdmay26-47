@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ktgzHtKoeUZ5H8KA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ktgzHtKoeUZ5H8KA
+  Slug: shadow-sheath
+  DisplayName: Shadow Sheath
+  IconPath: icons/containers/bags/pouch-leather-silver-grey.webp
+  Description: "Usage a holster or sheath shaped for a one-handed thrown weapon of
+    light Bulk or less With an infinite array of darts, throwing knives, or similar
+    weapons, you never need worry about being unarmed. You can spend 1 minute to
+    load a weapon meeting the shadow sheath's usage requirements into the sheath,
+    which is @UUID[Compendium.pf2e.conditionitems.Item.Hidden] somewhere on your
+    person. @UUID[Compendium.pf2e.feat-effects.Item.Effect: Shadow Sheath Weapon]
+    As long as the shadow sheath is on your person, you can Interact to draw an exact
+    copy of the weapon from thin air. These copies retain the runes and abilities
+    of the hidden weapon, though if you use any limited-use abilities (such as talismans
+    or Activations with a frequency limit), they count against the weapon's normal
+    usages. A copy disappears shortly after leaving your hand (or being used for
+    a thrown Strike). Immanence You can Interact to draw a weapon from the shadow
+    sheath as a free action. Your Strikes with a weapon produced from the shadow
+    sheath deal 2 additional spirit damage per weapon damage die, which increases
+    to 3 per die if the target is @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard].
+    Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.Liar's Hidden Blade]
+    1 (spirit, transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.egXlMyYLBthoQSgh
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: fb0077d6f257eaeb7597f3df7d04d641420b0e34acd2c67376b32eea08d05255
+  Traits:
+  - extradimensional
+  - ikon
+  TraitsLower:
+  - extradimensional
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"shadow-sheath"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.ShadowSheath.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"shadow-sheath"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.ShadowSheath.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"shadow-sheath"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Liar's Hidden Blade
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Liar''s Hidden
+      Blade"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Ikon.ShadowSheath.LoadNote"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Shadow Sheath Weapon]"}]'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"not":"self:effect:shadow-sheath-weapon"},{"or":["item:bulk:negligible","item:bulk:light"]},"item:usage:hands:1","item:trait:thrown"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Ikon.ShadowSheath.LoadNote"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Shadow Sheath Weapon]"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:shadow-sheath","item:slug:liars-hidden-blade"]},{"not":"divine-spark:shadow-sheath"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"exemplar-spirit-damage","predicate":[{"and":["self:effect:shadow-sheathe-weapon","divine-spark:shadow-sheath"]}],"priority":51}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Liar's Hidden Blade
+    SourceId: 
+    DisplayName: Liar's Hidden Blade
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

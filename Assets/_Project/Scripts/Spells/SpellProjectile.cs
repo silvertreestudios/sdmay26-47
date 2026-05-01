@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     /// <summary>
     /// Handles the visual travel of a spell projectile from caster to target.

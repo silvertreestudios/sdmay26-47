@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_TYvzNoL5ldmB5F76
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: TYvzNoL5ldmB5F76
+  Slug: melixie
+  DisplayName: Melixie
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have the features of a bee, butterfly, or other insect that loves
+    sweets. You can ask questions of and receive answers from arthropods (insects,
+    spiders, scorpions, crabs, and similar invertebrate animals), as well as use
+    Diplomacy to Make an Impression on and Request things of them. Most bees, butterflies,
+    moths, and beetles have an @UUID[Compendium.pf2e.conditionitems.Item.Indifferent]
+    or @UUID[Compendium.pf2e.conditionitems.Item.Friendly] starting attitude toward
+    you and give you time to make your case, though other arthropods react to you
+    like any other adventurer.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: d971b6cece9e8fe2760b5ebca53fe6957cad46a98d4011c6468b1305efca4c0f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TRqoeYfGAFjQbviF
+    SourceId: 
+    Slug: sprite
+    DisplayName: Sprite
+  ParentAncestryAsset: {fileID: 11400000, guid: afedc73b20f7005478723c5b1a6b86f8, type: 2}
+  GrantedFeatures: []

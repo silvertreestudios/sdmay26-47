@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HrWEyXTgIj16Z1RR
+  m_EditorClassIdentifier: 
+  SourceId: HrWEyXTgIj16Z1RR
+  Slug: reborn-soul
+  DisplayName: Reborn Soul
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were given a second opportunity at life by mysterious forces in
+    the Lands of Second Souls. You remember your life before your death and now live
+    with an extra lifetime of knowledge. Choose two attribute boosts. One must be
+    to Constitution or Intelligence , and one is a free attribute boost. You become
+    trained in two Lore skills, which you and your GM choose from Lore skills associated
+    with your past life. At 3rd level, 7th level, and 15th level, you receive skill
+    increases, which you can apply only to these Lore skills. In certain situations
+    analogous to your past life, fragments of memories resurface, potentially helping
+    or distracting you. The GM can offer you a +1 circumstance bonus on skill checks
+    with either of these Lore skills or on other skill checks that echo your past
+    life. If you accept but fail the check, you're Stupefied 1 for 1 minute by the
+    mental distraction of your past-life memories, or Stupefied 2 for 1 minute on
+    a critical failure.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 71a6b5db4ac6a89ad06b20d2bf2529da2f4e626df4c93903453035660cf4e7be
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_WEzgrxBRFBGdj8Hx
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: WEzgrxBRFBGdj8Hx
+  Slug: wavediver-tengu
+  DisplayName: Wavediver Tengu
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're one of the rare tengu who can cut through water like a bird
+    through air, and you often lurk in rivers or oceans where few expect you. You
+    gain a swim Speed of 15 feet.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 28a8601536981a0a3008dcfe662fb470223eb6593a1e7204699764e4122feb5e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 15
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"swim","value":15}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.18xDKYPDBLEv2myX
+    SourceId: 
+    Slug: tengu
+    DisplayName: Tengu
+  ParentAncestryAsset: {fileID: 11400000, guid: 0cda81b7def3071468d62aaaaf7b5263, type: 2}
+  GrantedFeatures: []

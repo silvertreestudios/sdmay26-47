@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_2jsWmnKtidCTpaQV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 2jsWmnKtidCTpaQV
+  Slug: venomshield-nagaji
+  DisplayName: Venomshield Nagaji
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your intrinsic connection to nagas and mundane serpents grants you
+    an innate resistance to toxins of every sort. You gain resistance to poison equal
+    to half your level (minimum 1 resistance), and you gain a +1 circumstance bonus
+    to all saving throws against poison.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4fa9d6940454d8a8084835dc84e0eae7baeb6fbc23703146920c0d52b2bc1f2e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"poison","value":"max(1,floor(@actor.level/2))"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["poison"],"selector":"saving-throw","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.J7T7bDLaQGoY1sMF
+    SourceId: 
+    Slug: nagaji
+    DisplayName: Nagaji
+  ParentAncestryAsset: {fileID: 11400000, guid: 7bfce613ccdb85048969c9b87f6da958, type: 2}
+  GrantedFeatures: []

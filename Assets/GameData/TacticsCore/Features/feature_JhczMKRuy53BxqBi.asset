@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_JhczMKRuy53BxqBi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: JhczMKRuy53BxqBi
+  Slug: emerald-boughs
+  DisplayName: Emerald Boughs
+  IconPath: icons/magic/nature/tree-bare-glow-yellow.webp
+  Description: "Emerald Boughs value the societies and natural communities of the
+    present day, seeking to understand the world as it is and how magic operates
+    therein. Emphasizing camaraderie and sociality, these students tend to be the
+    ones that most eagerly embrace the Magaambya's \"practical magic\" curriculum
+    where they leave campus and work within communities. While some of these students
+    have been accused of spying for the school, espionage is not an official part
+    of their curriculum. Magic that can serve or sway others\u2014as well as magic
+    that reveals knowledge or allows access to it\u2014is, instead, at the heart
+    of this curriculum. Additional Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Summon
+    Instrument] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Charm], @UUID[Compendium.pf2e.spells-srd.Item.Disguise
+    Magic] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Revealing Light] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Hypnotize]
+    4th: Confusion 5th: @UUID[Compendium.pf2e.spells-srd.Item.Scouting Eye] 6th:
+    @UUID[Compendium.pf2e.spells-srd.Item.Scrying] 7th: @UUID[Compendium.pf2e.spells-srd.Item.True
+    Target] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Disappearance] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Foresight]"
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: d9e5b0f1705b8ee7ce4af1247e4a008e7da1f9b5ac6adc95b4501f3139d77d26
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

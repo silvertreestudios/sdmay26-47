@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_YtOm245r8GFSFYeD
+  m_EditorClassIdentifier: 
+  SourceId: YtOm245r8GFSFYeD
+  Slug: summoner
+  DisplayName: Summoner
+  IconPath: systems/pf2e/icons/classes/summoner.webp
+  Description: You can magically beckon a powerful being called an eidolon to your
+    side, serving as the mortal conduit that anchors it to the world. Whether your
+    eidolon is a friend, a servant, or even a personal god, your connection to it
+    marks you as extraordinary, shaping the course of your life dramatically. Summoner
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 59b6ed07a0fd087052d98bfd7918d556bbea4f6bc03e34340a6797d08c97714e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 10
+  KeyAttributes: 06000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 0
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills: []
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 0669p
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon
+    SourceId: qOEpe596B0UjhcG0
+    DisplayName: Eidolon
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: a97797dd81730134ca55488b22e2917a, type: 2}
+  - SourceKey: ahde7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Evolution Feat
+    SourceId: IPcdQAwJk0aZe5mg
+    DisplayName: Evolution Feat
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: f850639be5325f54c8088c47615d72f7, type: 2}
+  - SourceKey: in8hs
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Summoner Spellcasting
+    SourceId: gWcN75VNpSZ4FqNb
+    DisplayName: Summoner Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 4e88e710466c22745b4df6a91785d6c1, type: 2}
+  - SourceKey: n4075
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  - SourceKey: xf0v4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Link Spells
+    SourceId: wguqw300DB5XdD8W
+    DisplayName: Link Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 986bc2c8f504bda40b1d50f2a2f2b81b, type: 2}
+  GrantedFeatures:
+  - SourceKey: 0669p
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon
+    SourceId: qOEpe596B0UjhcG0
+    DisplayName: Eidolon
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: a97797dd81730134ca55488b22e2917a, type: 2}
+  - SourceKey: 1xme9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon Defensive Expertise
+    SourceId: 2CZPYoyWih6zYTcb
+    DisplayName: Eidolon Defensive Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: f668a92dceb7f1942925c5566acadd02, type: 2}
+  - SourceKey: 2x8il
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 3wf5r
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Spellcaster
+    SourceId: cD3nSupdCvONuHiE
+    DisplayName: Expert Spellcaster
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 3e7fd61908df4a14290ae0cc0e240ad8, type: 2}
+  - SourceKey: 4jbpz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Instant Manifestation
+    SourceId: H0iWhiyP0QqgmAKs
+    DisplayName: Instant Manifestation
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 7964ce9aefeb40b498037775d131e862, type: 2}
+  - SourceKey: 4mev6
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shared Vigilance
+    SourceId: QiMlJ33kNEoyh1M0
+    DisplayName: Shared Vigilance
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: eb0e485bae77d3748ba49643dd9cd138, type: 2}
+  - SourceKey: 65k1a
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon Unarmed Mastery
+    SourceId: NIzHfVcVMhDmvA49
+    DisplayName: Eidolon Unarmed Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: a19b2bfa72df35645977ea70a66d29dd, type: 2}
+  - SourceKey: 826s9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shared Resolve
+    SourceId: eZPfHVz14j42jCnS
+    DisplayName: Shared Resolve
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 6c469387e9f1659418730a0177d47492, type: 2}
+  - SourceKey: 94ch1
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Unlimited Signature Spells
+    SourceId: P34Jx6i4GJGoqTtG
+    DisplayName: Unlimited Signature Spells
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 39f0e01ee01cb9c4ba560e6f0872a04e, type: 2}
+  - SourceKey: ahde7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Evolution Feat
+    SourceId: IPcdQAwJk0aZe5mg
+    DisplayName: Evolution Feat
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: f850639be5325f54c8088c47615d72f7, type: 2}
+  - SourceKey: bqrgn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Twin Juggernauts
+    SourceId: q1Y12Pg2gQg2FJPR
+    DisplayName: Twin Juggernauts
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 99ab5be68eefc234d8c465e9a157165e, type: 2}
+  - SourceKey: g50u2
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Eidolon Specialization
+    SourceId: B5SyM7qHrU0gTGR0
+    DisplayName: Greater Eidolon Specialization
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: d60e38eaf95475c4d9316b1b0e574204, type: 2}
+  - SourceKey: g64e0
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Defensive Robes
+    SourceId: gU7epgcPSm0TD1UK
+    DisplayName: Defensive Robes
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: ff44964321aa36141b0277efd089c9e2, type: 2}
+  - SourceKey: hl9zz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Simple Weapon Expertise
+    SourceId: itTk4dBouzz89vs9
+    DisplayName: Simple Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 235c28e068aecdb4d96dda2fa540418b, type: 2}
+  - SourceKey: in8hs
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Summoner Spellcasting
+    SourceId: gWcN75VNpSZ4FqNb
+    DisplayName: Summoner Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 4e88e710466c22745b4df6a91785d6c1, type: 2}
+  - SourceKey: n4075
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  - SourceKey: oig4n
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon Unarmed Expertise
+    SourceId: pda6iUaU9waXId5Q
+    DisplayName: Eidolon Unarmed Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: cc73ea1a63f21544e8fba6d003fa98d6, type: 2}
+  - SourceKey: okzqp
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon Symbiosis
+    SourceId: skQBrwRwJW2K6ACj
+    DisplayName: Eidolon Symbiosis
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: c766faa227eaddb4f9440d58763d6664, type: 2}
+  - SourceKey: ongtl
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Spellcaster
+    SourceId: l1InYvhnQSz6Ucxc
+    DisplayName: Master Spellcaster
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 4bf880905a2203248baa95088d309fcb, type: 2}
+  - SourceKey: pz5oe
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon Weapon Specialization
+    SourceId: oCnyGRvkfjTsZXcX
+    DisplayName: Eidolon Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 19c3be5109960ac4fb8a96cf9fbb6c3b, type: 2}
+  - SourceKey: q00uy
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon Transcendence
+    SourceId: nCE9DzkugRefREqT
+    DisplayName: Eidolon Transcendence
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 68930747ebc223a44b5a1c0d7a943d20, type: 2}
+  - SourceKey: vbbxr
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eidolon Defensive Mastery
+    SourceId: 0WvI8KM5m0SaZ3MH
+    DisplayName: Eidolon Defensive Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 8ed06ec2ddd5f5748bb53cd152d9b48e, type: 2}
+  - SourceKey: vr2ao
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shared Reflexes
+    SourceId: dZNAXTQovlWVvAyX
+    DisplayName: Shared Reflexes
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 0b8cdbee37176c840aa75df5b937b9e6, type: 2}
+  - SourceKey: xf0v4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Link Spells
+    SourceId: wguqw300DB5XdD8W
+    DisplayName: Link Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 986bc2c8f504bda40b1d50f2a2f2b81b, type: 2}

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_fctFBBqWwwwdbgdx
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: fctFBBqWwwwdbgdx
+  Slug: furious-footfalls
+  DisplayName: Furious Footfalls
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: The urge to fight drives you ever forward. You gain a +5-foot status
+    bonus to your Speed. This bonus increases to +10 feet while you're raging.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 902025a7acfaa0b3bfcdd10444e1386181741225277330d8131022674c053db7
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 5
+    Uuid: 
+    Json: '{"key":"FlatModifier","selector":"land-speed","slug":"furious-footfalls","type":"status","value":5}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 10
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["self:effect:rage"],"selector":"land-speed","slug":"furious-footfalls","value":10}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

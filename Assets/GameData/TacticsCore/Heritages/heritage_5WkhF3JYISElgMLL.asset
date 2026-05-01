@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_5WkhF3JYISElgMLL
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 5WkhF3JYISElgMLL
+  Slug: kanchil
+  DisplayName: Kanchil
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: "You have the head of a mouse deer and hooves instead of feet, with
+    a reputation for being clever and persuasive\u2014able to get yourself out of
+    sticky situations with wordplay and a bit of luck. You become trained in Deception
+    (or another skill if you were already trained in Deception). You gain a +1 circumstance
+    bonus to Deception checks to Lie when specifically attempting to avoid danger
+    or punishment (such as trying to convince a dragon not to eat you), to Deception
+    DCs against @UUID[Compendium.pf2e.actionspf2e.Item.Sense Motive] checks to uncover
+    such lies, and to initiative rolls when you roll Deception for initiative."
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: ed6db780841d033c473272097ef6e20e169fb64e90c0930ff40f7f6e34cd7d48
+  Traits:
+  - sprite
+  TraitsLower:
+  - sprite
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":[{"and":[{"or":["action:lie","action:sense-motive"]},"to-avoid-danger"]},"initiative"]}],"selector":"deception","type":"circumstance","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.deception.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.deception.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TRqoeYfGAFjQbviF
+    SourceId: 
+    Slug: sprite
+    DisplayName: Sprite
+  ParentAncestryAsset: {fileID: 11400000, guid: afedc73b20f7005478723c5b1a6b86f8, type: 2}
+  GrantedFeatures: []

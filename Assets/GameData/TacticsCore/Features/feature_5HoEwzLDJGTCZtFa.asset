@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_5HoEwzLDJGTCZtFa
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 5HoEwzLDJGTCZtFa
+  Slug: battledancer
+  DisplayName: Battledancer
+  IconPath: systems/pf2e/icons/features/classes/battledancer-style.webp
+  Description: To you, a fight is a kind of performance art, and you command your
+    foes' attention with mesmerizing motions. You are trained in Performance and
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Fascinating Performance] skill
+    feat. When you @UUID[Compendium.pf2e.actionspf2e.Item.Perform], the action gains
+    the bravado trait.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 64b3ab1c2dac55dd3d8fa0f8176e3831b3674157687508acaf7c6904b01ace22
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.performance.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.performance.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Fascinating Performance
+    Json: '{"key":"GrantItem","predicate":["class:swashbuckler"],"uuid":"Compendium.pf2e.feats-srd.Item.Fascinating
+      Performance"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["success","criticalSuccess"],"predicate":["finisher","feature:exemplary-finisher"],"selector":"strike-attack-roll","text":"PF2E.SpecificRule.ExemplaryFinisher.Battledancer","title":"PF2E.SpecificRule.ExemplaryFinisher.Name"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"skill-check","key":"RollOption","option":"item:trait:bravado","predicate":["action:perform"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Fascinating Performance
+    SourceId: 
+    DisplayName: Fascinating Performance
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

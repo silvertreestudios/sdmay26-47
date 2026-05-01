@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_HWEgF7Gmoq55VhTL
+  m_EditorClassIdentifier: 
+  SourceId: HWEgF7Gmoq55VhTL
+  Slug: lizardfolk
+  DisplayName: Lizardfolk
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/lizardfolk.svg
+  Description: Lizardfolk are consummate survivors, heirs to empires considered ancient
+    even by the elves. Lizardfolk
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: c80bd87c94c1d4f93dba4512dc996549ef5fdfa7a7de51e7e8284052c0cf7571
+  Traits:
+  - humanoid
+  - lizardfolk
+  TraitsLower:
+  - humanoid
+  - lizardfolk
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 0
+  CustomSense: 
+  AttributeBoosts:
+  - Options: 01000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 04000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: iruxi
+    DisplayName: Iruxi
+  AdditionalLanguageOptions:
+  - Id: amurrun
+    DisplayName: Amurrun
+  - Id: boggard
+    DisplayName: Boggard
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: jotun
+    DisplayName: Jotun
+  - Id: thalassic
+    DisplayName: Thalassic
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: ry9ai
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Aquatic Adaptation
+    SourceId: 
+    DisplayName: Aquatic Adaptation
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: xkzsg
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Claws
+    SourceId: 
+    DisplayName: Claws
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 330c422f80c27f5458db433e27db61f8, type: 2}
+  - {fileID: 11400000, guid: 80e8bc22cbab94345bd61ed025ba0e7f, type: 2}
+  - {fileID: 11400000, guid: 0476e2bc7c9795c47af7081775f29ba7, type: 2}
+  - {fileID: 11400000, guid: 8a90164202d1b464a847575427567dff, type: 2}
+  - {fileID: 11400000, guid: a6221bc2670282d45841a270e5e0325e, type: 2}
+  - {fileID: 11400000, guid: 590f24ed4e087c2429e33a5731ae3d2d, type: 2}
+  - {fileID: 11400000, guid: 1cd74f40dcd7c9d49b6a0a5b5308f34e, type: 2}
+  - {fileID: 11400000, guid: 67cb6ba8f31f01749afe4d5afd5b609e, type: 2}
+  - {fileID: 11400000, guid: 69805d93818a8ab4da5eabc85e9f371f, type: 2}

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_VdwNvQwq9sHflEwe
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: VdwNvQwq9sHflEwe
+  Slug: intensify-vulnerability
+  DisplayName: Intensify Vulnerability
+  IconPath: systems/pf2e/icons/features/classes/intensify-vulnerability.webp
+  Description: You've learned to use your implement to further assault a creature
+    whose vulnerabilities you're exploiting. You gain the intensify vulnerability
+    benefit of all of your implements, as well as the @UUID[Compendium.pf2e.actionspf2e.Item.Intensify
+    Vulnerability] action.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a4a54d48c23597b5f619226efae2ab4bef39b3361ff320e5d072c1703bdae8aa
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Intensify Vulnerability
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Intensify
+      Vulnerability"}'
+  Category: 2
+  Level: 9
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Intensify Vulnerability
+    SourceId: 
+    DisplayName: Intensify Vulnerability
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

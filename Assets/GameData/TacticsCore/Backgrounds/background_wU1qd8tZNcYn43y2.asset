@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_wU1qd8tZNcYn43y2
+  m_EditorClassIdentifier: 
+  SourceId: wU1qd8tZNcYn43y2
+  Slug: lost-and-alone
+  DisplayName: Lost and Alone
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were training to become a knight in Lastwall when the Whispering
+    Tyrant escaped his imprisonment and destroyed the nation. It was only by dumb
+    luck that you are alive at all, but the memories of that fateful day haunt your
+    dreams. When play begins, you have boarded a caravan heading toward a new town,
+    having worn out your welcome at the taverns and inns of Elidir. Choose two attribute
+    boosts. One must be to Strength or Charisma , and one is a free attribute boost.
+    You're trained in the Intimidation skill, and the Warfare Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating Glare] skill feat.
+  SourceTitle: 'Pathfinder Adventure: The Fall of Plaguestone'
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 1861d5050551149071639f7a05766cbb4b75a9ac89c5d4312e7c4231fa9c965c
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare Lore
+    Rank: 1
+  LoreSkills:
+  - Warfare Lore
+  GrantedFeats:
+  - SourceKey: od1ci
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

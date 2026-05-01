@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_0w8QWZdorISJk4al
+  m_EditorClassIdentifier: 
+  SourceId: 0w8QWZdorISJk4al
+  Slug: silk-farmer
+  DisplayName: Silk Farmer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Access Tian Xia origin You've studied and mastered the art of sericulture.
+    The cultivation of silkworms to produce silk is an important industry that requires
+    an intense amount of study and care. The unchanging routine of a silk farmer
+    could make any adventure an epic one by comparison, and perhaps that prospect
+    led you toward adventuring. Choose two attribute boosts. One must be to Wisdom
+    or Intelligence , and one is a free attribute boost. You're trained in Crafting
+    skill and Sericulture Lore. You gain the Specialty Crafting skill feat.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: a2e7af440612d4b033d34310541614729434d58c8f845b2b420195ae6062c37b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Sericulture Lore
+    Rank: 1
+  LoreSkills:
+  - Sericulture Lore
+  GrantedFeats:
+  - SourceKey: Z81gi
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    SourceId: 
+    DisplayName: Specialty Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

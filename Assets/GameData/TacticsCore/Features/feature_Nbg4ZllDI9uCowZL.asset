@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Nbg4ZllDI9uCowZL
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Nbg4ZllDI9uCowZL
+  Slug: hefty-composition
+  DisplayName: Hefty Composition
+  IconPath: systems/pf2e/icons/features/classes/hefty-composition.webp
+  Description: Blunt surfaces and sturdy construction make your weapon hefty and
+    mace-like. Your innovation gains the shove, razing, and versatile B traits.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: de1bc6f63746b5e983be84b0431314b4180008251da98ba3fa49027ce828a31f
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"shove"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"shove"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"razing"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"razing"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"versatile-b"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"versatile-b"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

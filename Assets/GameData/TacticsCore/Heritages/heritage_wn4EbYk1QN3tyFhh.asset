@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_wn4EbYk1QN3tyFhh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: wn4EbYk1QN3tyFhh
+  Slug: deep-orc
+  DisplayName: Deep Orc
+  IconPath: systems/pf2e/icons/features/ancestry/deep-orc.webp
+  Description: Your calloused hands and red eyes speak to a life spent in the deep
+    darkness of mountain caverns, where you learned to battle on rocky cliffs and
+    survive with minimal resources. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Terrain
+    Expertise] skill feat for underground terrain and the @UUID[Compendium.pf2e.feats-srd.Item.Combat
+    Climber] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 757a2ed52a770715e100ecdd01e6396c2b69328d102591f85ca1ca3edcef85ea
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Terrain Expertise
+    Json: '{"key":"GrantItem","preselectChoices":{"terrain":"underground"},"uuid":"Compendium.pf2e.feats-srd.Item.Terrain
+      Expertise"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Combat Climber
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Combat Climber"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.lSGWXjcbOa6O5fTx
+    SourceId: 
+    Slug: orc
+    DisplayName: Orc
+  ParentAncestryAsset: {fileID: 11400000, guid: f28dd4f71da56d6429f6bc69289d034a, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Expertise
+    SourceId: 
+    DisplayName: Terrain Expertise
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Combat Climber
+    SourceId: 
+    DisplayName: Combat Climber
+    Level: 0
+    ResolvedFeature: {fileID: 0}

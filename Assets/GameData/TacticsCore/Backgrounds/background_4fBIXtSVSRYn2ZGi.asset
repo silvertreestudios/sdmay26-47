@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_4fBIXtSVSRYn2ZGi
+  m_EditorClassIdentifier: 
+  SourceId: 4fBIXtSVSRYn2ZGi
+  Slug: goblinblood-orphan
+  DisplayName: Goblinblood Orphan
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Old Cheliax Your family, whether goblin, hobgoblin,
+    or human, died in the Goblinblood Wars. Though you were marked by these losses,
+    you managed to survive through your own resilience and resourcefulness. Choose
+    two attribute boosts. One must be to Dexterity or Constitution , and one is a
+    free attribute boost. You're trained in the Survival skill and the Goblin Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance] skill feat
+    with Survival.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 32d2ab1cede82ab9e0e250f547be3ad3756eb3c1eab9685248b3eb9e4bc8d74e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"survival"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0300000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Goblin Lore
+    Rank: 1
+  LoreSkills:
+  - Goblin Lore
+  GrantedFeats: []

@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_ChAoT1V3Nc4sKXz4
+  m_EditorClassIdentifier: 
+  SourceId: ChAoT1V3Nc4sKXz4
+  Slug: corpse-stitcher
+  DisplayName: Corpse Stitcher
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The number of zombies working across Geb as farmhands, laborers, or
+    shambling soldiers seems nearly uncountable. None of these zombies can do their
+    work if they fall to pieces, so the Reanimators maintain legions of surgeons
+    and tailors to keep zombies stitched together and suitable for service. You were
+    one of these corpse stitchers, working long hours to ensure that Geb's mindless
+    workforce could perform at its best. On the day you saw some of your friends
+    come under your needle, you realized how expendable Geb's fleshy population truly
+    is, and you decided that you should seek out a different line of work. The Reanimators
+    appreciate your past service. Your party gains 1 Reputation Point with the Reanimators
+    at the start of the campaign. Choose two attribute boosts. One must be to Constitution
+    or Wisdom , and one is a free attribute boost. You're trained in the Medicine
+    skill. You gain your choice of either the @UUID[Compendium.pf2e.feats-srd.Item.Risky
+    Surgery] or @UUID[Compendium.pf2e.feats-srd.Item.Stitch Flesh] skill feats. You're
+    also trained in Zombie Lore.
+  SourceTitle: Pathfinder Blood Lords Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 81408a4297797b6a2129829b60618caf4856df62f2a3bba724ce4c5d3cebda02
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"value":"Compendium.pf2e.feats-srd.Item.Risky
+      Surgery"},{"value":"Compendium.pf2e.feats-srd.Item.Stitch Flesh"}],"flag":"feat","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.SkillFeat"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.feat}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.feat}"}'
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Zombie Lore
+    Rank: 1
+  LoreSkills:
+  - Zombie Lore
+  GrantedFeats: []

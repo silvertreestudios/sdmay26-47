@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2wGmG7ntcnkvtw8l
+  m_EditorClassIdentifier: 
+  SourceId: 2wGmG7ntcnkvtw8l
+  Slug: lost-loved-one
+  DisplayName: Lost Loved One
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You see your life as naturally divided into two chapters: in one,
+    the love-limned, halcyon days of yesteryear, in the other, the day you lost the
+    person most important to you, plus every aching moment thereafter. When you saw
+    a vision of your lost loved one in a glowing portal on the night of the Missing
+    Moment, you knew it was too good to be true. But you couldn''t help yourself,
+    either, so you walked through the door, one grasping hand outstretched in anticipation.
+    You don''t know what happened on the other side of the arch, but your hand seems
+    to. Like a ghostly fragment of your missing loved one, you can summon an ethereal
+    hand to reach out from your body. Though it''s a pale imitation of the warmth
+    you once felt in your dearly departed''s presence, you do find this new hand
+    somehow comforting, in a way. Your deviant abilities are of the wraith classification.
+    You gain the Ghostly Grasp deviant feat. As a quirk, whenever you use a deviant
+    ability, a low, rattling moan emanates from some unseen maw in your vicinity.
+    Choose two attribute boosts. One must be to Wisdom or Charisma , and one is a
+    free attribute boost. You''re trained in the Society skill and the Genealogy
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Multilingual] skill
+    feat.'
+  SourceTitle: Pathfinder Gatewalkers Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 08fd8cfc86da0f26951bcb402f373fc5237ff33e52dd22374553b4e6b994c03c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Ghostly Grasp (Deviant)
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Ghostly Grasp
+      (Deviant)"}'
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Genealogy Lore
+    Rank: 1
+  LoreSkills:
+  - Genealogy Lore
+  GrantedFeats:
+  - SourceKey: GSnz8
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Multilingual
+    SourceId: 
+    DisplayName: Multilingual
+    Level: 1
+    ResolvedFeature: {fileID: 0}

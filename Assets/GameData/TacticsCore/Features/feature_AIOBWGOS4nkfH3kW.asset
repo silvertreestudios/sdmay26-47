@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_AIOBWGOS4nkfH3kW
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: AIOBWGOS4nkfH3kW
+  Slug: muses
+  DisplayName: Muses
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: 'As a bard, you select one muse at 1st level. This muse leads you
+    to great things and might be someone you know, a supernatural creature, location,
+    deity, philosophy, or captivating mystery. Depending on the type of inspiration
+    you receive, your 1st-level muse grants you a specific 1st-level bard feat and
+    adds a spell to your repertoire. In addition to this, each muse opens the door
+    to many later bard feats. If one type of inspiration is not enough to represent
+    your muse, consider the @UUID[Compendium.pf2e.feats-srd.Item.Multifarious Muse]
+    feat. @UUID[Compendium.pf2e.classfeatures.Item.Enigma] @UUID[Compendium.pf2e.classfeatures.Item.Maestro]
+    @UUID[Compendium.pf2e.classfeatures.Item.Polymath] @UUID[Compendium.pf2e.classfeatures.Item.Warrior]'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e4ba3bbde1fa86adb878c98026410aa9341772305e069632449e21761c81430d
+  Traits:
+  - bard
+  TraitsLower:
+  - bard
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:bard-muse",{"or":[{"and":["class:bard","item:tag:bard-muse"]},{"and":["item:tag:bard-muse",{"not":"item:tag:class-archetype"}]}]}]},"flag":"muses","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Bard.Muse.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.muses}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.muses}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.muses}'
+    SourceId: 
+    DisplayName: muses}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

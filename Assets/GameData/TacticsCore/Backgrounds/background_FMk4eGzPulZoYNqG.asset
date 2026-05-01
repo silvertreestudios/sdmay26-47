@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_FMk4eGzPulZoYNqG
+  m_EditorClassIdentifier: 
+  SourceId: FMk4eGzPulZoYNqG
+  Slug: empty-hand-loyalist
+  DisplayName: Empty Hand Loyalist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The orcs have had a long history of violence that brings some orcs
+    pride, but for you it's a mark of shame. You see the path of reconciliation that
+    Ardax is paving and find hope in the chance to transform your people's ways into
+    one that moves away from stereotypes of brutality. Choose two attribute boosts.
+    One must be to Charisma or Strength , and one is a free attribute boost. You're
+    trained in the Intimidation skill and the Belkzen Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Coercion] skill feat.
+  SourceTitle: Pathfinder Triumph of The Tusk Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 92517fc3bff145aa80e6b5d6ae8fd28e2fa892da40d0d178eb482c10136f9fe0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Belkzen Lore
+    Rank: 1
+  LoreSkills:
+  - Belkzen Lore
+  GrantedFeats:
+  - SourceKey: HoaaD
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Coercion
+    SourceId: 
+    DisplayName: Quick Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

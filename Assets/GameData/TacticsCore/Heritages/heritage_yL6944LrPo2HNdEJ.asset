@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_yL6944LrPo2HNdEJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: yL6944LrPo2HNdEJ
+  Slug: ancient-blooded-dwarf
+  DisplayName: Ancient-Blooded Dwarf
+  IconPath: systems/pf2e/icons/features/ancestry/ancient-blooded-dwarf.webp
+  Description: Dwarven heroes of old could shrug off their enemies' magic, and some
+    of that resistance manifests in you. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Call
+    on Ancient Blood] reaction.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: d383805a41c8eea17a7c657bcffbfe9301bf0aae93afacbb5a9f1280313fa5a2
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Call on Ancient Blood
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Call on Ancient
+      Blood"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.BYj5ZvlXZdpaEgA6
+    SourceId: 
+    Slug: dwarf
+    DisplayName: Dwarf
+  ParentAncestryAsset: {fileID: 11400000, guid: 4282fdfe5a426e348be9aaaadc9be877, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Call on Ancient Blood
+    SourceId: 
+    DisplayName: Call on Ancient Blood
+    Level: 0
+    ResolvedFeature: {fileID: 0}

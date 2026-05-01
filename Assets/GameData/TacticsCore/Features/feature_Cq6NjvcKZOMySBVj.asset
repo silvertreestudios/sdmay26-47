@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Cq6NjvcKZOMySBVj
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Cq6NjvcKZOMySBVj
+  Slug: incredible-movement
+  DisplayName: Incredible Movement
+  IconPath: systems/pf2e/icons/features/classes/incredible-movement.webp
+  Description: You move like the wind. You gain a +10-foot status bonus to your Speed
+    whenever you're not wearing armor. The bonus increases by 5 feet for every 4
+    levels you have beyond 3rd.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f6683de7160ce11aa955a6561b91bf382c5c08190ec871d414c3815a36389468
+  Traits:
+  - monk
+  TraitsLower:
+  - monk
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"5*floor((@actor.level + 5) / 4)"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"not":"self:armored"}],"selector":"land-speed","slug":"incredible-movement","type":"status","value":"5*floor((@actor.level
+      + 5) / 4)"}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

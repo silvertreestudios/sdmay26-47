@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_q6rsqYARyOGXZA8F
+  m_EditorClassIdentifier: 
+  SourceId: q6rsqYARyOGXZA8F
+  Slug: shoony
+  DisplayName: Shoony
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/shoony.webp
+  Description: Diminutive humanoids who resemble squat, bipedal dogs, shoonies are
+    sometimes mistaken for weak and insular pacifists. However, their sheer perseverance,
+    incredible work ethic, and resourceful use of diplomacy make shoonies far from
+    helpless. Shoony
+  SourceTitle: 'Pathfinder #153: Life''s Long Shadows'
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 82b403c8626c6c4dfe9e4c5894e370af57bc8bc5a5f2f089ec250c4680e07a1c
+  Traits:
+  - humanoid
+  - shoony
+  TraitsLower:
+  - humanoid
+  - shoony
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 02000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 03000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: shoony
+    DisplayName: Shoony
+  AdditionalLanguageOptions:
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: halfling
+    DisplayName: Halfling
+  - Id: petran
+    DisplayName: Petran
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 82kag
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Blunt Snout
+    SourceId: 
+    DisplayName: Blunt Snout
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 40bc3c9020622ab48b1c6db4241963dc, type: 2}
+  - {fileID: 11400000, guid: 54e1e459c0062514d926c4aa3a9496f4, type: 2}
+  - {fileID: 11400000, guid: 1d589ec4f4e84ec46a4bf3b2c400d8e8, type: 2}
+  - {fileID: 11400000, guid: 95976c316c033cb4da0570c1d39b0325, type: 2}

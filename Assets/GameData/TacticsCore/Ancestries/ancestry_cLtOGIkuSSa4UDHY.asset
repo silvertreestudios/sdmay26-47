@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_cLtOGIkuSSa4UDHY
+  m_EditorClassIdentifier: 
+  SourceId: cLtOGIkuSSa4UDHY
+  Slug: vanara
+  DisplayName: Vanara
+  IconPath: systems/pf2e/icons/default-icons/ancestry.svg
+  Description: Vanaras are inquisitive and mischievous monkey-like humanoids with
+    short, soft fur, expressive eyes, and long, prehensile tails. Their handlike
+    feet and agile builds serve them well in the jungle realms where most vanaras
+    live. Vanara
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: ad10cc65ecd8e497277d354b1d8c18d123a8ba7f86f92dccf2f5e3e5c41692f0
+  Traits:
+  - humanoid
+  - vanara
+  TraitsLower:
+  - humanoid
+  - vanara
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 0
+  CustomSense: 
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: vanara
+    DisplayName: Vanara
+  AdditionalLanguageOptions:
+  - Id: diabolic
+    DisplayName: Diabolic
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 6bSm3
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Prehensile Tail
+    SourceId: 
+    DisplayName: Prehensile Tail
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: e9a6807dba5ddbd4e8ac5fe228558edf, type: 2}
+  - {fileID: 11400000, guid: 3dd4e4a8a16f51442b8fab2fdb33c8bd, type: 2}
+  - {fileID: 11400000, guid: ca7f646b47b6fd4419a963a15c5c0146, type: 2}
+  - {fileID: 11400000, guid: d1a45a72fbeeb2c448d7082bfce18147, type: 2}

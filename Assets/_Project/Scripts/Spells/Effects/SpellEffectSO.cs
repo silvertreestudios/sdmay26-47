@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     /// <summary>
     /// Abstract base for all composable spell effects.

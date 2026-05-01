@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Upf1LXtWNJ6eB5sm
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Upf1LXtWNJ6eB5sm
+  Slug: flexible-spell-preparation
+  DisplayName: Flexible Spell Preparation
+  IconPath: icons/magic/unholy/hand-marked-pink.webp
+  Description: This class feature alters your spellcasting class feature (such as
+    Arcane Spellcasting for the wizard or Divine Spellcasting for the cleric). If
+    you choose this class archetype, you must select @UUID[Compendium.pf2e.feats-srd.Item.Flexible
+    Spellcaster Dedication] as your 2nd-level class feat. You can cast fewer spells
+    each day. Your number of spell slots per day don't advance from 2 to 3 spells
+    at even levels. Reduce the number of cantrips you gain from your class by 2.
+    This archetype doesn't change the way you prepare cantrips. During your daily
+    preparations, you prepare a spell collection rather than preparing spells into
+    each spell slot individually. The number of spells in your spell collection each
+    day equals the total number of spell slots you get each day from your class spells.
+    Select these spells from the same source as normal, such as from a spellbook
+    for a wizard. You can cast any of the spells in your collection by using a spell
+    slot of an appropriate level. For instance, if you were level 1 and had @UUID[Compendium.pf2e.spells-srd.Item.Gentle
+    Landing] and @UUID[Compendium.pf2e.spells-srd.Item.Force Barrage] in your spell
+    collection, you could cast gentle landing twice that day, force barrage twice,
+    or each spell once. Extra spell slots you gain that have additional restrictions,
+    like the wizard's specialist school spells or the cleric's divine font spells,
+    don't change due to this archetype, nor do such spells count toward the number
+    of spells you place in your spell collection.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ecd47552ccf19fc755962234a3d20a766c7fe365cdc8e8cce074e32991cc88c3
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:cleric-doctrine",{"not":"item:tag:class-archetype"}]},"flag":"doctrine","key":"ChoiceSet","predicate":["class:cleric"],"prompt":"PF2E.SpecificRule.Cleric.Doctrine.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.doctrine}'
+    Json: '{"key":"GrantItem","predicate":["class:cleric"],"uuid":"{item|flags.pf2e.rulesSelections.doctrine}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:druid-order",{"not":"item:tag:class-archetype"}]},"flag":"druidicOrder","key":"ChoiceSet","predicate":["class:druid"],"prompt":"PF2E.SpecificRule.Druid.DruidicOrder.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.druidicOrder}'
+    Json: '{"key":"GrantItem","predicate":["class:druid"],"uuid":"{item|flags.pf2e.rulesSelections.druidicOrder}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:witch-patron",{"not":"item:tag:class-archetype"}]},"flag":"patron","key":"ChoiceSet","predicate":["class:witch"],"prompt":"PF2E.SpecificRule.Witch.Patron.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.patron}'
+    Json: '{"key":"GrantItem","predicate":["class:witch"],"uuid":"{item|flags.pf2e.rulesSelections.patron}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:wizard-arcane-school",{"not":"item:tag:class-archetype"}]},"flag":"arcaneSchool","key":"ChoiceSet","predicate":["class:wizard"],"prompt":"PF2E.SpecificRule.Wizard.ArcaneSchool.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.arcaneSchool}'
+    Json: '{"key":"GrantItem","predicate":["class:wizard"],"uuid":"{item|flags.pf2e.rulesSelections.arcaneSchool}"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Flexible Spellcaster Dedication
+    Json: '{"flag":"flexibleSpellcasterDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Flexible
+      Spellcaster Dedication"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.doctrine}'
+    SourceId: 
+    DisplayName: doctrine}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.druidicOrder}'
+    SourceId: 
+    DisplayName: druidicOrder}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.patron}'
+    SourceId: 
+    DisplayName: patron}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.arcaneSchool}'
+    SourceId: 
+    DisplayName: arcaneSchool}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Flexible Spellcaster Dedication
+    SourceId: 
+    DisplayName: Flexible Spellcaster Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,8 +1,8 @@
 using System;
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Represents an entity that can take damage or be healed.

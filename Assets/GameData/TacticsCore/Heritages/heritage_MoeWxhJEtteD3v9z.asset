@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_MoeWxhJEtteD3v9z
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: MoeWxhJEtteD3v9z
+  Slug: sanctuary-samsaran
+  DisplayName: Sanctuary Samsaran
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your past incarnations were reborn in sanctuaries in northern Zi Ha,
+    and you have recollections of being trained to concentrate and focus for long
+    periods of time. Your hazy flashbacks also reveal useful scripture in the books
+    your past lives had eagerly consumed. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Tap
+    the Past] action.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: b20bf3f31bb4eb1ce6057075d4b7b32c2ffd7a6824bc37f809067cc70ea64b01
+  Traits:
+  - samsaran
+  TraitsLower:
+  - samsaran
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Tap the Past
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Tap the Past"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.l7vjMIbPAUvEIosU
+    SourceId: 
+    Slug: samsaran
+    DisplayName: Samsaran
+  ParentAncestryAsset: {fileID: 11400000, guid: 6ed453392861b0045861283779fea7f0, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Tap the Past
+    SourceId: 
+    DisplayName: Tap the Past
+    Level: 0
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_6FsusoMYxxjyIkVh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 6FsusoMYxxjyIkVh
+  Slug: spell-repertoire-bard
+  DisplayName: Spell Repertoire (Bard)
+  IconPath: icons/sundries/books/book-symbol-spiral-silver-blue.webp
+  Description: The collection of spells you can cast is called your spell repertoire.
+    At 1st level, you learn two 1st-rank occult spells of your choice and five occult
+    cantrips of your choice. You choose these from the common spells from the occult
+    list or from other occult spells to which you have access. You can cast any spell
+    in your spell repertoire by using a spell slot of an appropriate spell rank.
+    You add to this spell repertoire as you increase in level. Each time you get
+    a spell slot (see the Bard Spells per Day table), you add a spell to your spell
+    repertoire of the same rank. At 2nd level, you select another 1st-rank spell;
+    at 3rd level, you select two 2nd-rank spells, and so on. When you add spells,
+    you might add a higher-rank version of a spell you already have, so you can cast
+    a heightened version of that spell. Though you gain them at the same rate, your
+    spell slots and the spells in your spell repertoire are separate. If a feat or
+    other ability adds a spell to your spell repertoire, it wouldn't give you another
+    spell slot, and vice versa. Swapping Spells In Your Repertoire As you gain new
+    spells in your repertoire, you might want to replace some of the spells you previously
+    learned. Each time you gain a level and learn new spells, you can swap out one
+    of your old spells for a different spell of the same rank. This spell can be
+    a cantrip. You can also swap out spells by retraining during downtime.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 95d7396142be6118e20a6ec929ad3846b9f437a7b5d0ce2ff8a0ec7a3b5a08b8
+  Traits:
+  - bard
+  TraitsLower:
+  - bard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

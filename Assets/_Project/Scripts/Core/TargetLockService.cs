@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Grid;
-using PathfinderTactics.InputSystem;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Combat;
+using TacticsGame.Grid;
+using TacticsGame.InputSystem;
 using UnityEngine;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     /// <summary>
     /// Handles unit-based targeting for melee/ranged strikes and single-target abilities.
@@ -251,10 +251,13 @@ namespace PathfinderTactics.Core
                     int layer = da.CompareTo(db);
                     if (layer != 0)
                         return layer;
-                    return PF2E_Core
-                        .GetPF2eDistance3D(attackerPos, a.CurrentLayeredPosition)
+                    return TacticsRuleset_Core
+                        .GetTacticsRulesetDistance3D(attackerPos, a.CurrentLayeredPosition)
                         .CompareTo(
-                            PF2E_Core.GetPF2eDistance3D(attackerPos, b.CurrentLayeredPosition)
+                            TacticsRuleset_Core.GetTacticsRulesetDistance3D(
+                                attackerPos,
+                                b.CurrentLayeredPosition
+                            )
                         );
                 }
             );

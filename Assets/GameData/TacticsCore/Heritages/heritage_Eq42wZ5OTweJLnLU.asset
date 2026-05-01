@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_Eq42wZ5OTweJLnLU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: Eq42wZ5OTweJLnLU
+  Slug: gutsy-halfling
+  DisplayName: Gutsy Halfling
+  IconPath: systems/pf2e/icons/features/ancestry/gutsy-halfling.webp
+  Description: Your family line is known for keeping a level head and staving off
+    fear when the chips were down. When you roll a success on a saving throw against
+    an emotion effect, you get a critical success instead.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 9d4e9b7ff70bd6881526487e36ed39cee83692ec500484324fd32c66847fd677
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["emotion"],"selector":"saving-throw","type":"save"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GgZAHbrjnzWOZy2v
+    SourceId: 
+    Slug: halfling
+    DisplayName: Halfling
+  ParentAncestryAsset: {fileID: 11400000, guid: 27cca46a5c2df4845ab39fbaa79aad34, type: 2}
+  GrantedFeatures: []

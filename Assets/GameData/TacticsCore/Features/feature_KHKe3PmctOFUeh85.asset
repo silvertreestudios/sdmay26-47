@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_KHKe3PmctOFUeh85
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: KHKe3PmctOFUeh85
+  Slug: lesson-of-protection
+  DisplayName: Lesson of Protection
+  IconPath: icons/skills/wounds/blood-cells-vessel-red-orange.webp
+  Description: You gain the @UUID[Compendium.pf2e.spells-srd.Item.Blood Ward] hex;
+    your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Mystic Armor].
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ca37ac3d7f5362ee48920bba138e970785a6f662274a3469ce1a7b332a2bb0f3
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 2
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

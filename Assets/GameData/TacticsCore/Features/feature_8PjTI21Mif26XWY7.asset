@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_8PjTI21Mif26XWY7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 8PjTI21Mif26XWY7
+  Slug: energetic-meltdown
+  DisplayName: Energetic Meltdown
+  IconPath: icons/magic/unholy/strike-body-explode-disintegrate.webp
+  Description: 'As you channel energy through your deviant abilities, some of it
+    turns back on you, spiking your body temperature or dancing across your skin.
+    @UUID[Compendium.pf2e.feat-effects.Item.Effect: Energetic Meltdown] Mild Backlash
+    You take [[/r @actor.level]]{damage equal to your level} as energy scours your
+    body. Moderate Backlash Energy wracks your body. After taking the damage, you
+    gain weakness to the energy type of your backlash until your next daily preparations.
+    The weakness is equal to one-third of your level. You also lose immunity to the
+    energy type if you had it, until your next daily preparations. Severe Backlash
+    Whatever furnace or well within you that provides the energy for your deviation
+    overloads completely, cascading out of you in an uncontrolled burst. You deal
+    [[/r (@actor.level)d6]]{1d6 damage per level} to all creatures in a @Template[emanation|distance:30]
+    with a @Check[fortitude|against:class-spell|basic] save. You automatically take
+    full damage without attempting a save.'
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5a8a5d24886aac84d9a90a6c48accf2ce431adc7cbcea0f13d61c71265947dc4
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

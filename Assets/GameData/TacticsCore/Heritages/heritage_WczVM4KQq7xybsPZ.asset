@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_WczVM4KQq7xybsPZ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: WczVM4KQq7xybsPZ
+  Slug: respite-of-loam-and-leaf
+  DisplayName: Respite of Loam and Leaf
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: 'You swore a vow to preserve the very foundation of sanctuary: the
+    great earth and all that grows upon it. Your vow grants you the land''s spiritual
+    power; you gain one cantrip from the primal spell list. You can cast this spell
+    as an innate primal spell at will. A cantrip is heightened to a spell rank equal
+    to half your level rounded up. Your roots in the world grant you the plant trait.
+    Additional Edict cure or remove blight and pollution from the plants and soil
+    you encounter'
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 375106b26563182596ee4f04314988d8386968a64970ae7905726f4f41090898
+  Traits:
+  - plant
+  - yaksha
+  TraitsLower:
+  - plant
+  - yaksha
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.k3zyr6du4gV0Ftuh
+    SourceId: 
+    Slug: yaksha
+    DisplayName: Yaksha
+  ParentAncestryAsset: {fileID: 11400000, guid: 0d16d30ba7c52c240bdc8a515d4d59e2, type: 2}
+  GrantedFeatures: []

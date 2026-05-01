@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_6xxXtgj3fcCi53lt
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 6xxXtgj3fcCi53lt
+  Slug: sandstrider-lizardfolk
+  DisplayName: Sandstrider Lizardfolk
+  IconPath: systems/pf2e/icons/features/ancestry/sandstrider-lizardfolk.webp
+  Description: Your thick scales help you retain water and combat the sun's glare.
+    You gain fire resistance equal to half your level (minimum 1). Environmental
+    heat effects are one step less extreme for you, and you can go 10 times as long
+    as normal before you are affected by starvation or thirst. However, unless you
+    wear protective gear or take shelter, environmental cold effects are one step
+    more extreme for you.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 7c9d4236a9c74fe5fce4f934ef59bd64bf51c110fc7ac649dbd2917040c68a25
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"fire","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.HWEgF7Gmoq55VhTL
+    SourceId: 
+    Slug: lizardfolk
+    DisplayName: Lizardfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 7582496f828cec24fa510bd6248a5ed3, type: 2}
+  GrantedFeatures: []

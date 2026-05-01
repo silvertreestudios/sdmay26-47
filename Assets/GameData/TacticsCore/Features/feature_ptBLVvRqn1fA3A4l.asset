@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ptBLVvRqn1fA3A4l
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ptBLVvRqn1fA3A4l
+  Slug: rope-shot
+  DisplayName: Rope Shot
+  IconPath: systems/pf2e/icons/features/classes/rope-shot.webp
+  Description: Ranged Only Your weapon can shoot projectiles that split into simple
+    ropes or nets around your foes' legs to trip your targets, and you can climb
+    using the grappling hooks built into the weapon. Your weapon innovation gains
+    the climbing and ranged trip traits, as well as the tethered trait if it is thrown.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b11f38ba7f7b047c0fad1c6edf4789204d9cbdee24946ba45e7673c1765f29d1
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"climbing"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"climbing"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ranged-trip"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"ranged-trip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"tethered"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","predicate":["item:trait:thrown"],"property":"traits","value":"tethered"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

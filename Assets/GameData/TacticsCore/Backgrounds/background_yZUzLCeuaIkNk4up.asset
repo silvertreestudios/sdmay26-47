@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_yZUzLCeuaIkNk4up
+  m_EditorClassIdentifier: 
+  SourceId: yZUzLCeuaIkNk4up
+  Slug: saved-by-clockwork
+  DisplayName: Saved by Clockwork
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Through bloody combat, a terrible accident, or purposeful sacrifice,
+    you've lost some piece of your body that has been replaced with a clockwork mechanism.
+    Whether your arm is now a whirring series of pumps, steel coils, and iron gears;
+    your heart a intricate crystal clock that requires winding every day; or your
+    lower leg a sculpted metal tube powered by adamantine springs and steam, part
+    of you needs regular maintenance and repair. You might have received instructions
+    from the brilliant inventor who saved you, or you might have woken up on a battlefield
+    with no memory of the procedure or the individuals involved. Regardless, you
+    possess the knowledge to take care of yourself-even if it's how to wind a key
+    in your own heart or reconstruct a mechanical foot. Choose two attribute boosts.
+    One must be to Strength or Intelligence , and one is a free attribute boost.
+    You're trained in the Crafting skill. Every day you must perform 10 minutes of
+    maintenance and wind up your clockwork parts, or you risk failure of the components,
+    with consequences depending on what you replaced (determined by you and the GM).
+    Your clockwork components allow you to react to danger with alacrity. You gain
+    a +2 circumstance bonus to initiative rolls.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 9723f294de3a01d5216856f4fa6ac93b887160185beffad5060c31d37d78a7a4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","selector":"initiative","type":"circumstance","value":2}'
+  AttributeBoosts:
+  - Options: 0400000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats: []

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_xYYhJtGhFSWNifcO
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: xYYhJtGhFSWNifcO
+  Slug: school-of-unified-magical-theory
+  DisplayName: School of Unified Magical Theory
+  IconPath: icons/sundries/books/book-rounded-teal.webp
+  Description: "You eschew the idea that magic can be neatly expressed by the teachings
+    of any single school or college, instead directing your self-study to pick up
+    the best of every school of magic. In doing so, you'll find the truths that lie
+    at the intersection of each school, coming closer to the ideal nature of arcane
+    magic. One day, you'll uncover that single elegant theory detailing all magic
+    (perhaps a theory bearing your name?), but until then, your studies continue.
+    No Curriculum You don't have a set curriculum, and so you don't have curriculum
+    spells and can't benefit from abilities that specifically affect them. Instead,
+    you gain an additional 1st-level wizard class feat, and you add one 1st-rank
+    spell of your choice to your spellbook to represent your diverse studies. Your
+    studies into the very nature of magic itself have let you use it more efficiently\u2014instead
+    of using @UUID[Compendium.pf2e.actionspf2e.Item.Drain Bonded Item] only once
+    per day, you can use it once per day for each rank of spell you can cast, recalling
+    a spell of that rank each time. School Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Hand
+    of the Apprentice]; advanced: @UUID[Compendium.pf2e.spells-srd.Item.Interdisciplinary
+    Incantation]"
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 7fc574e2c515b3f1cecbc9712472ea93e8954a6fb653aa2c20396eeaa7c87191
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:type:feat","item:trait:wizard","item:level:1"]},"flag":"feat","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Wizard.UnifiedMagicalTheory.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.feat}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.feat}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.feat}'
+    SourceId: 
+    DisplayName: feat}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

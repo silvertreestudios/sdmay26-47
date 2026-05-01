@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
-using PathfinderTactics.ScriptableObjects;
+using TacticsGame.Core;
+using TacticsGame.Grid;
+using TacticsGame.ScriptableObjects;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Manages the visual representation of auras for a unit.
@@ -175,7 +175,10 @@ namespace PathfinderTactics.Characters
 
                     foreach (GridNode node in column)
                     {
-                        int dist = PF2E_Core.GetPF2eDistance3D(center, node.Coordinates);
+                        int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
+                            center,
+                            node.Coordinates
+                        );
                         if (dist <= radius)
                             positions.Add(node.Coordinates);
                     }

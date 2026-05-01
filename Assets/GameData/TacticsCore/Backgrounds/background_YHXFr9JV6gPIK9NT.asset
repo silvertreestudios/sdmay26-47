@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_YHXFr9JV6gPIK9NT
+  m_EditorClassIdentifier: 
+  SourceId: YHXFr9JV6gPIK9NT
+  Slug: library-dweller
+  DisplayName: Library Dweller
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The library serves as your refuge from a world that isn't always welcoming
+    or reasonable. Knowledge pools in libraries, their collections accumulating occult
+    power as teachings, interpretations, deconstructions, and translations intertwine.
+    You've glimpsed these esoteric truths, perhaps prompted to by propitious instructors,
+    or you might have independently attained such epiphanies. Whatever the case,
+    you're a frequent pilgrim to archives and academies, and you seek patterns of
+    cosmic proofs within volumes and tomes. Choose two attribute boosts. One must
+    be to Constitution or Intelligence , and one is a free attribute boost. You're
+    trained in Occultism. You're also trained in the Library Lore skill or a Lore
+    skill associated with your school. You gain the Additional Lore skill feat.
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 0b275ee4c405eae78cb191c8932d6378593237562fa5d77005ecc037365de91b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Library Lore
+    Rank: 1
+  LoreSkills:
+  - Library Lore
+  GrantedFeats:
+  - SourceKey: MNhaX
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Additional Lore
+    SourceId: 
+    DisplayName: Additional Lore
+    Level: 1
+    ResolvedFeature: {fileID: 0}

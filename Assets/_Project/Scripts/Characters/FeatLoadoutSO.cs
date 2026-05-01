@@ -1,9 +1,8 @@
-﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
-
     [CreateAssetMenu(fileName = "FeatLoadoutSO", menuName = "Scriptable Objects/FeatLoadoutSO")]
     public class FeatLoadoutSO : ScriptableObject
     {
@@ -18,6 +17,7 @@ namespace PathfinderTactics.Characters
             public FeatSystem system;
             public string name;
         }
+
         [System.Serializable]
         private class FeatSystem
         {
@@ -77,8 +77,5 @@ namespace PathfinderTactics.Characters
             featNames.Add(featName);
             return true;
         }
-
-        
-
     }
 }

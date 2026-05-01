@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_3wQ49DoWFYQgVsq6
+  m_EditorClassIdentifier: 
+  SourceId: 3wQ49DoWFYQgVsq6
+  Slug: minotaur
+  DisplayName: Minotaur
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/minotaur.svg
+  Description: Minotaurs stalk complex passageways, whether natural or artificial,
+    and are masters of stone architecture. Inquisitive and steadfast, these bovine
+    humanoids spend their lives perfecting the pursuit that calls to them, which
+    can sometimes lead them far from the enclaves where they were raised. Minotaurs
+    are originally from the Iblydos archipelago but have spread far and wide across
+    Golarion, forming close-knit communities often near mountains or beneath the
+    surface of the earth. Though sometimes mistaken for simple brutes, minotaurs
+    have scholars and warriors alike. Those who can look past their appearance will
+    find an affinity for building and navigation, as well as creative problem-solving.
+    Minotaur
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: a19912d6daf12576b0474cd4165feb1bf908c64f0c3c1803f3764411ca4310ed
+  Traits:
+  - beast
+  - humanoid
+  - minotaur
+  TraitsLower:
+  - beast
+  - humanoid
+  - minotaur
+  RawRules: []
+  HitPoints: 10
+  Speed: 25
+  Reach: 5
+  Size: 3
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 01000000
+  - Options: 03000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 06000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: jotun
+    DisplayName: Jotun
+  AdditionalLanguageOptions:
+  - Id: cyclops
+    DisplayName: Cyclops
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: fey
+    DisplayName: Fey
+  - Id: petran
+    DisplayName: Petran
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: MZeAa
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Horns (Minotaur)
+    SourceId: 
+    DisplayName: Horns
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: ea59ca6e578e13e4db493975f4044293, type: 2}
+  - {fileID: 11400000, guid: 804fce964d6690143a125481cdae421b, type: 2}
+  - {fileID: 11400000, guid: 2deab5d0b05316d40bf83f6dcb944c28, type: 2}
+  - {fileID: 11400000, guid: fc6d3a83af5e23e4a83e6ed6f3a5c388, type: 2}
+  - {fileID: 11400000, guid: ed98c4545274fc24ab0f087f0d366c52, type: 2}
+  - {fileID: 11400000, guid: 7c09f2f2d7f26b94fa923f9d6fcd2e62, type: 2}

@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Perspective-based stealth renderer.

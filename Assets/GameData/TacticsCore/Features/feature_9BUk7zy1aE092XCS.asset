@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_9BUk7zy1aE092XCS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 9BUk7zy1aE092XCS
+  Slug: kinetic-quickness
+  DisplayName: Kinetic Quickness
+  IconPath: icons/magic/symbols/symbol-lightning-bolt.webp
+  Description: Your body flows with the elegance of a flame a wave, a breeze. Your
+    proficiency rank for Reflex saves increases to master. When you roll a success
+    on a Reflex save, you get a critical success instead.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: dbe0a23b643a8e9080f8e8cffd059830d7445f4a83afb6488662d425d557d8f4
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"reflex"}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: reflex
+    Rank: 3
+  FocusPointDelta: 0

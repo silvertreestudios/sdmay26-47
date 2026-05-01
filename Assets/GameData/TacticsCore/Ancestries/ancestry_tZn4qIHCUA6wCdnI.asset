@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_tZn4qIHCUA6wCdnI
+  m_EditorClassIdentifier: 
+  SourceId: tZn4qIHCUA6wCdnI
+  Slug: conrasu
+  DisplayName: Conrasu
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/conrasu.svg
+  Description: Conrasus are shards of cosmic force given consciousness who construct
+    intricate exoskeletons to interface with the mortal world. Both an integral part
+    of the underlying processes of the universe and strangely set apart, conrasus
+    look to aeons to understand their existence. Conrasu
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 9c1a702c9eb938c1235e4a40b1ad245dbcf07c643a5f859dff4505039f1494e2
+  Traits:
+  - aeon
+  - conrasu
+  - plant
+  TraitsLower:
+  - aeon
+  - conrasu
+  - plant
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"claw","category":"unarmed","damage":{"base":{"damageType":"slashing","dice":1,"die":"d4"}},"group":"brawling","img":"icons/commodities/claws/claw-bear-brown-grey.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Claw","predicate":["evened-hand:claw"],"traits":["agile","finesse","unarmed"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/branch.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Branch","predicate":["evened-hand:branch"],"traits":["backswing","unarmed"]}'
+  HitPoints: 10
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 0
+  CustomSense: 
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 06000000
+  StartingLanguages:
+  - Id: mwangi
+    DisplayName: Mwangi
+  - Id: rasu
+    DisplayName: Rasu
+  AdditionalLanguageOptions:
+  - Id: elven
+    DisplayName: Elven
+  - Id: empyrean
+    DisplayName: Empyrean
+  - Id: fey
+    DisplayName: Fey
+  - Id: iruxi
+    DisplayName: Iruxi
+  - Id: petran
+    DisplayName: Petran
+  - Id: utopian
+    DisplayName: Utopian
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: tdik1
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Sunlight Healing
+    SourceId: 
+    DisplayName: Sunlight Healing
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 3050db4920cc89a48930758dcfb82d37, type: 2}
+  - {fileID: 11400000, guid: 173fd9c9529deb74aba29667625f86a0, type: 2}
+  - {fileID: 11400000, guid: b0c69aaa2b5e3e345ba990d6b7e878c2, type: 2}
+  - {fileID: 11400000, guid: 7a0791c3258fc5747a92ac61a54c9f6b, type: 2}
+  - {fileID: 11400000, guid: 1fd00285eb3c94d4487967092114fe0a, type: 2}

@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_Z9li154CPNmun29Q
+  m_EditorClassIdentifier: 
+  SourceId: Z9li154CPNmun29Q
+  Slug: gunslinger
+  DisplayName: Gunslinger
+  IconPath: systems/pf2e/icons/classes/gunslinger.webp
+  Description: While some fear projectile weapons, you savor the searing flash, wild
+    kick, and cloying smoke that accompanies a gunshot, or snap of the cable and
+    telltale thunk of your crossbow just before your bolt finds purchase. Ready to
+    draw a bead on an enemy at every turn, you rely on your reflexes, steady hand,
+    and knowledge of your weapons to riddle your foes with holes. Gunslinger
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classes
+  Rarity: uncommon
+  SourceJsonHash: 3189a8ddb1915747a2820724f2483aa0cb7334bbdc60f81cd18544c60f1aa348
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: MartialProficiency
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"definition":["item:category:simple",{"or":["item:group:firearm","item:group:crossbow"]}],"key":"MartialProficiency","label":"PF2E.SpecificRule.MartialProficiency.SimpleFirearmsCrossbows","slug":"simple-firearms-crossbows","value":2}'
+  - Key: MartialProficiency
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"definition":["item:category:martial",{"or":["item:group:firearm","item:group:crossbow"]}],"key":"MartialProficiency","label":"PF2E.SpecificRule.MartialProficiency.MartialFirearmsCrossbows","slug":"martial-firearms-crossbows","value":2}'
+  - Key: MartialProficiency
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"definition":["item:category:advanced",{"or":["item:group:firearm","item:group:crossbow"]}],"key":"MartialProficiency","label":"PF2E.SpecificRule.MartialProficiency.AdvancedFirearmsCrossbows","slug":"advanced-firearms-crossbows","value":1}'
+  HitPointsPerLevel: 8
+  KeyAttributes: 02000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 1
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  - Group: 4
+    CustomGroupName: Simple Firearms, Martial Firearms
+    Rank: 2
+  TrainedSkills: []
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 8ndxn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Gunslinger's Way
+    SourceId: LDqVxLKrwEqSegiu
+    DisplayName: Gunslinger's Way
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b425b1c7028990d409086dd4a3463286, type: 2}
+  - SourceKey: An5aC
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Slinger's Precision
+    SourceId: vXbk7Nm1TOTTUNvF
+    DisplayName: Slinger's Precision
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 836a00011e5a5384089d03d965a25785, type: 2}
+  GrantedFeatures:
+  - SourceKey: 182it
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shootist's Edge
+    SourceId: RkofVX55ciXZyfAA
+    DisplayName: Shootist's Edge
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 7ace7dcc59d0da94584231675e9fe8b9, type: 2}
+  - SourceKey: 1qqd9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Gunslinger Expertise
+    SourceId: aKr6OE8vI2BsJzf1
+    DisplayName: Gunslinger Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 8121385172b09f547b86f57f843489fd, type: 2}
+  - SourceKey: 5m24f
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Deed
+    SourceId: yc9RuXXxmZ9YidH6
+    DisplayName: Greater Deed
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 6ef730acc4ec0b541819e22e0aa2c436, type: 2}
+  - SourceKey: 5vutv
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Advanced Deed
+    SourceId: 3JLW5vPshsJf3nCY
+    DisplayName: Advanced Deed
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: c8b8d59cd0f34f44bb6d99dd1d3ebf65, type: 2}
+  - SourceKey: 6sihc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Expertise
+    SourceId: FCEp9jjxxgRJDJV3
+    DisplayName: Medium Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 73197a4a7743ecd498d5be602ed09454, type: 2}
+  - SourceKey: 8ndxn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Gunslinger's Way
+    SourceId: LDqVxLKrwEqSegiu
+    DisplayName: Gunslinger's Way
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b425b1c7028990d409086dd4a3463286, type: 2}
+  - SourceKey: An5aC
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Slinger's Precision
+    SourceId: vXbk7Nm1TOTTUNvF
+    DisplayName: Slinger's Precision
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 836a00011e5a5384089d03d965a25785, type: 2}
+  - SourceKey: QEPUa
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Legend
+    SourceId: nLwPMPLRne1HnL00
+    DisplayName: Perception Legend
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 92f21d24f9a2332489b58c433c8658d8, type: 2}
+  - SourceKey: bskyv
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Mastery
+    SourceId: cGMSYAErbUG5E8X2
+    DisplayName: Medium Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: c6659f86a85d58d4d91186d1b048953f, type: 2}
+  - SourceKey: emlsp
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Gunslinging Legend
+    SourceId: ULOAZWZEokbJC6Rq
+    DisplayName: Gunslinging Legend
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 7b764855226021c419a6a64ed0bcc098, type: 2}
+  - SourceKey: epPK8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Blast Dodger
+    SourceId: Uz2Izzi5A8N6Dxjn
+    DisplayName: Blast Dodger
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: b7df31371a278fa499fbe7e5f26ed64c, type: 2}
+  - SourceKey: g1XUZ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Lead Constitution
+    SourceId: i7NKYQNGu5AaR1qb
+    DisplayName: Lead Constitution
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: a28735f4b4545a34f8b15c91a55d3935, type: 2}
+  - SourceKey: g7b2s
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: gfou8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Stubborn
+    SourceId: Wpdeh6EkcAKA60oH
+    DisplayName: Stubborn
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 7d2b37d1db188944dbd0ee38fab2d71d, type: 2}
+  - SourceKey: kh0qp
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Gunslinger Weapon Mastery
+    SourceId: 9nRT8aq05Fy2D3i3
+    DisplayName: Gunslinger Weapon Mastery
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: ef0d993b22f11f34b981748a73bc09e0, type: 2}
+  - SourceKey: vmzyj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 0npO4rPscGm0dX13
+    DisplayName: Perception Mastery
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 622e4b3f5ecccf94595d00a41a052a22, type: 2}
+  - SourceKey: zmmy3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: 
+    DisplayName: Greater Weapon Specialization (Level 15)
+    Level: 15
+    ResolvedFeature: {fileID: 0}

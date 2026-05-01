@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_0dv9Qun0pFdgroOs
+  m_EditorClassIdentifier: 
+  SourceId: 0dv9Qun0pFdgroOs
+  Slug: acupuncturist
+  DisplayName: Acupuncturist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Access Tian Xia origin You've studied qi and its abilities to heal
+    the body through assessment and regulating qi flow. You know occult techniques
+    that originated in Chu Ye before its masters were driven away when oni took over.
+    You might have encountered a master willing to teach an eager student or felt
+    the relief of its practice on your own body, taking your interest to greater
+    heights. Choose two attribute boosts. One must be to Wisdom or Dexterity , and
+    one is a free attribute boost. You're trained in Medicine and Acupuncture Lore.
+    You gain the Battle Medicine skill feat.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 2d69f9a11a71123c0fded81802899bc9ccf13469ae89782d22eaca44e4c68399
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Acupuncture Lore
+    Rank: 1
+  LoreSkills:
+  - Acupuncture Lore
+  GrantedFeats:
+  - SourceKey: ITVd8
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

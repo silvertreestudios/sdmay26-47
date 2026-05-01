@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2zYdTia5t7w6J2ey
+  m_EditorClassIdentifier: 
+  SourceId: 2zYdTia5t7w6J2ey
+  Slug: historical-reenactor
+  DisplayName: Historical Reenactor
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "To Clan Tolorr, history shouldn't be dry and boring; it deserves
+    to be engaging and made relevant to the living. You couldn't agree more! Whether
+    it's your hobby or career, you've developed a reputation for translating the
+    past into the present through demonstrations, period performances, acting out
+    famous events, donning replica armor, and other feats of living history\u2014filling
+    in a few historical blanks if it makes a better show. Having learned of your
+    passion, Clan Tolorr has sponsored your visit to Highhelm so that you can learn
+    from each other. It's a wonderful opportunity, and Tolorr puppetry arts, storytelling,
+    props, and historical rigor are the stuff of legends. Already, you've begun researching
+    dwarven history so that you're prepared for whatever lies ahead. Choose two attribute
+    boosts. One must be to Strength or Charisma , and one is a free attribute boost.
+    You're trained in either the Performance skill or the Society skill, and you're
+    trained in the Dwarf Lore skill. If you selected Performance, you gain the @UUID[Compendium.pf2e.feats-srd.Item.Impressive
+    Performance] skill feat. If you chose Society, you gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious
+    Knowledge] skill feat. Connection: Bulgra Veldollow, a matriarch in Clan Tolorr
+    and accomplished puppeteer Reputation Points: +0"
+  SourceTitle: Pathfinder Sky King's Tomb Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 65f935068d69b95cdb401cbc8b7a090069fb778a24a2ed2f3d1a1a1809b4bf02
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.Skill.Performance","value":{"feat":"Compendium.pf2e.feats-srd.Item.Impressive
+      Performance","skill":"performance"}},{"label":"PF2E.Skill.Society","value":{"feat":"Compendium.pf2e.feats-srd.Item.Dubious
+      Knowledge","skill":"society"}}],"flag":"historicalReenactor","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.historicalReenactor.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.historicalReenactor.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.historicalReenactor.feat}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.historicalReenactor.feat}"}'
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Dwarf Lore
+    Rank: 1
+  LoreSkills:
+  - Dwarf Lore
+  GrantedFeats: []

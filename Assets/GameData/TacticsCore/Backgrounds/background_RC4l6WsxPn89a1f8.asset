@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_RC4l6WsxPn89a1f8
+  m_EditorClassIdentifier: 
+  SourceId: RC4l6WsxPn89a1f8
+  Slug: raised-by-belief
+  DisplayName: Raised by Belief
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Whether in a monastery, a religious household, or just as part of
+    your everyday life, your upbringing was steeped in the traditions of a particular
+    deity. You might remain committed or you may have turned from your childhood
+    creed, but your skills are still founded in your devotion. Choose two attribute
+    boosts. One must be to an attribute specified in your deity's Divine Attribute
+    , and the other is a free attribute boost. You're trained in the deity's listed
+    Divine Skill and gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance] feat
+    with that skill. You gain a Lore skill related to your deity (Abadar Lore, for
+    example).
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 6b7c9191bc6f6b36cac3dffc77863240b79c3fbe4ab44b30e48689b02fd02827
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 00000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: ihbaq
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Assurance
+    SourceId: 
+    DisplayName: Assurance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_tcsSxwkl4wCsfO3k
+  m_EditorClassIdentifier: 
+  SourceId: tcsSxwkl4wCsfO3k
+  Slug: trade-consortium-underling
+  DisplayName: Trade Consortium Underling
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Absalom and Starstone Isle Your experience as
+    a ledger-keeper for one of Absalom's trade guilds has made you a canny investor
+    and shrewd entrepreneur. Choose two attribute boosts. One must be to Intelligence
+    or Wisdom , and one is a free attribute boost. You're trained in the Society
+    skill and the Business Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced
+    Professional] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 47ce22248f5fe79b813033e34dccf71b446e5709e4db6e2c425b40de79b10d00
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Business Lore
+    Rank: 1
+  LoreSkills:
+  - Business Lore
+  GrantedFeats:
+  - SourceKey: o2re4
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Professional
+    SourceId: 
+    DisplayName: Experienced Professional
+    Level: 1
+    ResolvedFeature: {fileID: 0}

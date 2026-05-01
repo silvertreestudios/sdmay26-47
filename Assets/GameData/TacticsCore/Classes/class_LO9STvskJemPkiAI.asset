@@ -1,0 +1,219 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_LO9STvskJemPkiAI
+  m_EditorClassIdentifier: 
+  SourceId: LO9STvskJemPkiAI
+  Slug: rogue
+  DisplayName: Rogue
+  IconPath: systems/pf2e/icons/classes/rogue.webp
+  Description: You are skilled and opportunistic. Using your sharp wits and quick
+    reactions, you take advantage of your opponents' missteps and strike where it
+    hurts most. You play a dangerous game, seeking thrills and testing your skills,
+    and likely don't care much for any laws that happen to get in your way. While
+    the path of every rogue is unique and riddled with danger, the one thing you
+    all share in common is the breadth and depth of your skills. Rogue
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 9e38bc18c5ca8b652b4c280b1e99085cd8925c70f41084318d816373aa3eb2a4
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 8
+  KeyAttributes: 02000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 7
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: HOjyM
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Rogue's Racket
+    SourceId: uGuCGQvUmioFV2Bd
+    DisplayName: Rogue's Racket
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: c3f447a7052e24f4f81611b4a3d32d61, type: 2}
+  - SourceKey: e9ikq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Sneak Attack
+    SourceId: j1JE61quDxdge4mg
+    DisplayName: Sneak Attack
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 81ae597291cea064da9518e2098146c6, type: 2}
+  - SourceKey: qx6de
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Surprise Attack
+    SourceId: w6rMqmGzhUahdnA7
+    DisplayName: Surprise Attack
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 77c926281cef00944ae114ff6ccb3b11, type: 2}
+  GrantedFeatures:
+  - SourceKey: 0kdn2
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 1nwhg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Tricks
+    SourceId: v8UNEJR5IDKi8yqa
+    DisplayName: Weapon Tricks
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 58e8a6451d922444a912707fbd69f12f, type: 2}
+  - SourceKey: 1zn3l
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Mastery
+    SourceId: SHpjmM4A3Sw4GgDz
+    DisplayName: Light Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 57321a107853f28438ee9bc534abb632, type: 2}
+  - SourceKey: 2xl4q
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Tricks
+    SourceId: myvcir1LEkaVxOlE
+    DisplayName: Master Tricks
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 1f5e613edaab44140b1f0b10e52f38b2, type: 2}
+  - SourceKey: 3YEZD
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 0npO4rPscGm0dX13
+    DisplayName: Perception Mastery
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 622e4b3f5ecccf94595d00a41a052a22, type: 2}
+  - SourceKey: 4al2i
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: Z7HX6TeFsaup7Dx9
+    DisplayName: Greater Weapon Specialization
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: e8328fb7ab4419d479ca3cb33e9ee85b, type: 2}
+  - SourceKey: 6ddtr
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Expertise
+    SourceId: pZYkb12t5DSwtts7
+    DisplayName: Light Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 3bf7d337c0e817d4795134166770c383, type: 2}
+  - SourceKey: BH4zJ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Evasive Reflexes
+    SourceId: oa3TJpPnvL98EUHh
+    DisplayName: Evasive Reflexes
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 97d64fabb33099246939d91f3d17f9ff, type: 2}
+  - SourceKey: HOjyM
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Rogue's Racket
+    SourceId: uGuCGQvUmioFV2Bd
+    DisplayName: Rogue's Racket
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: c3f447a7052e24f4f81611b4a3d32d61, type: 2}
+  - SourceKey: KvE3P
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Rogue Resilience
+    SourceId: fMHYzXEUMoWskKMF
+    DisplayName: Rogue Resilience
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 8d78d0c9d82fdc240b761dd33ad55d55, type: 2}
+  - SourceKey: bhpWk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Agile Mind
+    SourceId: xmZ7oeTDcQVXegUP
+    DisplayName: Agile Mind
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 88afc0fbf93502341a33421973f46d75, type: 2}
+  - SourceKey: cifjd
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Rogue Expertise
+    SourceId: f3Dh32EU4VsHu01b
+    DisplayName: Rogue Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 926dbcbe3bd391844944237d9d63ece5, type: 2}
+  - SourceKey: e9ikq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Sneak Attack
+    SourceId: j1JE61quDxdge4mg
+    DisplayName: Sneak Attack
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 81ae597291cea064da9518e2098146c6, type: 2}
+  - SourceKey: i7ZpY
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Rogue Reflexes
+    SourceId: BTpL6XvMk4jvVYYJ
+    DisplayName: Greater Rogue Reflexes
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 433ac60a9c6c5164a879e65ab70df69c, type: 2}
+  - SourceKey: nilrb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Debilitating Strike
+    SourceId: 
+    DisplayName: Debilitating Strikes
+    Level: 9
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: pfjze
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Double Debilitation
+    SourceId: W1FkMHYVDg3yTU5r
+    DisplayName: Double Debilitation
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 211d1f9af13fa7b4f9ac8b1c1601847d, type: 2}
+  - SourceKey: pvlD2
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Legend
+    SourceId: nLwPMPLRne1HnL00
+    DisplayName: Perception Legend
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 92f21d24f9a2332489b58c433c8658d8, type: 2}
+  - SourceKey: qx6de
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Surprise Attack
+    SourceId: w6rMqmGzhUahdnA7
+    DisplayName: Surprise Attack
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 77c926281cef00944ae114ff6ccb3b11, type: 2}
+  - SourceKey: sjjee
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Deny Advantage
+    SourceId: PNpmVmD21zViDtGC
+    DisplayName: Deny Advantage
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 2bf4c10cbcb67274caf1c1c5b7197100, type: 2}
+  - SourceKey: thypm
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Strike
+    SourceId: SUUdWG0t33VKa5q4
+    DisplayName: Master Strike
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: fa4f383527b51404ab43a4ea96927b79, type: 2}

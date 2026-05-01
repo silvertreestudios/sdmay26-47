@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_IGv5wS17AAi0U87W
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: IGv5wS17AAi0U87W
+  Slug: paragon-benefit-tome
+  DisplayName: Paragon Benefit (Tome)
+  IconPath: icons/sundries/books/book-symbol-yellow-grey.webp
+  Description: In addition to the other benefits, your tome's information alerts
+    you to ambushes and attacks from your foes. While holding your tome, you can
+    always roll a skill check for initiative against creatures or haunts using Esoteric
+    Lore. If you do, you gain a +3 circumstance bonus to your initiative roll. The
+    initiate benefit's circumstance bonus to Recall Knowledge from holding your tome
+    increases from +1 to +2. When you succeed at the Recall Knowledge check granted
+    by the tome's adept benefit, the bonus applies to all attack rolls you make before
+    the start of your next turn, not just your next one. Lastly, when you gain temporary
+    skill proficiencies, both are legendary.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a75e302dce10a2bde7c456415379ae5bfedd8e7356783d141d396a61ef422faf
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"disabledIf":[{"not":"implement:tome:equipped"}],"domain":"initiative","key":"RollOption","label":"PF2E.SpecificRule.Thaumaturge.Implement.Tome.Paragon.InitiativeToggle","option":"paragon-tome-initiative","toggleable":true}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 3
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SpecificRule.Thaumaturge.Implement.Tome.Paragon.InitiativeBonusLabel","predicate":["paragon-tome-initiative","check:statistic:base:esoteric-lore"],"selector":"initiative","type":"circumstance","value":3}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","selector":"skill-check","slug":"tome-recall-knowledge","value":2}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

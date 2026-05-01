@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_Cg1AMgp3zrGmimWd
+  m_EditorClassIdentifier: 
+  SourceId: Cg1AMgp3zrGmimWd
+  Slug: athamaru
+  DisplayName: Athamaru
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/athamaru.svg
+  Description: Athamarus are fish-like humanoids who form tight-knit undersea communities.
+    In small settlements, they engage in the subsistence farming of seaweed, train
+    eels to serve as mounts, and create elaborate works of coral art. Their interactions
+    with other aquatic ancestries are strained, as athamarus have suffered mistreatment
+    at their hands. However, they remain curious about potential connections and
+    what new opportunities may offer. Athamaru
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 1670dccb9d80fa0d03e1b6b96dfb746fccced10158c0f2f4f25fd57204e31a66
+  Traits:
+  - amphibious
+  - athamaru
+  - humanoid
+  TraitsLower:
+  - amphibious
+  - athamaru
+  - humanoid
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 25
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"swim","value":25}'
+  HitPoints: 8
+  Speed: 20
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 01000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 04000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: thalassic
+    DisplayName: Thalassic
+  AdditionalLanguageOptions:
+  - Id: alghollthu
+    DisplayName: Alghollthu
+  - Id: azlanti
+    DisplayName: Azlanti
+  - Id: fey
+    DisplayName: Fey
+  - Id: tien
+    DisplayName: Tien
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: c061d42221f1f7c44a0d8b8514d3d58d, type: 2}
+  - {fileID: 11400000, guid: ae60dc7eed75d504894c029aa893ec61, type: 2}
+  - {fileID: 11400000, guid: d64890b68023b3e4dac43768d14cac10, type: 2}
+  - {fileID: 11400000, guid: 50511105d4fb2f44e889f4ac70e9e737, type: 2}

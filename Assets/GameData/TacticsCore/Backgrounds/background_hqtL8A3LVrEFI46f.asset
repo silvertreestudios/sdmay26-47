@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_hqtL8A3LVrEFI46f
+  m_EditorClassIdentifier: 
+  SourceId: hqtL8A3LVrEFI46f
+  Slug: fey-friend
+  DisplayName: Fey Friend
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Many grow up hearing cautionary tales of mischievous fey, and with
+    good reason: from sprites' pranks to gremlins' sabotage to redcaps' outright
+    lethality, fey pose a real danger to the unwary. But not for you\u2014usually!
+    Whether you grew up near an enchanted wilderness, have visited the First World,
+    frequently deal with nature spirits, or even were a fey foundling raised by otherworldly
+    beings, you're well acquainted with fey, their myriad traditions, and their even
+    more numerous tricks. Fey and the Wildwood Lodge aren't the same thing, yet there's
+    enough overlap that you're sure to fit in at the upcoming Greenwood Gala. Choose
+    two attribute boosts. One must be to Charisma or Dexterity , and one is a free
+    attribute boost. You're trained in the Deception skill and the Fey Lore skill.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Charming Liar] skill feat."
+  SourceTitle: Pathfinder Wardens of Wildwood Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 463aadfc2f2760181ee39547a94fb11a948fadf57a58857f34f5114447a66bae
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fey Lore
+    Rank: 1
+  LoreSkills:
+  - Fey Lore
+  GrantedFeats:
+  - SourceKey: I45dc
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Charming Liar
+    SourceId: 
+    DisplayName: Charming Liar
+    Level: 1
+    ResolvedFeature: {fileID: 0}

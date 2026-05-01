@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_wtPywk3wqEg3iYOP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: wtPywk3wqEg3iYOP
+  Slug: wrath
+  DisplayName: Wrath
+  IconPath: icons/weapons/polearms/trident-curved-steel.webp
+  Description: 'The Vengeful Glare fills its users with a zealous rage and the restless
+    need to solve problems, which generally takes the form of cutting to the most
+    direct solution. Anathema Use your magic to protect or create. Sin Spells cantrips:
+    @UUID[Compendium.pf2e.spells-srd.Item.Frostbite], @UUID[Compendium.pf2e.spells-srd.Item.Ignition]
+    1st: @UUID[Compendium.pf2e.spells-srd.Item.Force Barrage], @UUID[Compendium.pf2e.spells-srd.Item.Thunderstrike]
+    2nd: @UUID[Compendium.pf2e.spells-srd.Item.Blistering Invective], @UUID[Compendium.pf2e.spells-srd.Item.Floating
+    Flame] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Fireball], @UUID[Compendium.pf2e.spells-srd.Item.Lightning
+    Bolt] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Ice Storm], @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Fire] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Howling Blizzard], @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Ice] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Blinding Fury], @UUID[Compendium.pf2e.spells-srd.Item.Disintegrate]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Eclipse Burst], @UUID[Compendium.pf2e.spells-srd.Item.Fiery
+    Body] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Earthquake] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Falling
+    Stars] Initial School Spell @UUID[Compendium.pf2e.spells-srd.Item.Vengeful Glare]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: c4b1ca3aedc07966ce1860be1e63aa550a8409c4a2ce07947e2c9f33770c9c7c
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"runelord-sin-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"or":["item:slug:frostbite","item:slug:ignition","item:slug:force-barrage","item:slug:thunderstrike","item:slug:blistering-invective","item:slug:floating-flame","item:slug:fireball","item:slug:lightning-bolt","item:slug:ice-storm","item:slug:wall-of-fire","item:slug:howling-blizzard","item:slug:wall-of-ice","item:slug:blinding-fury","item:slug:disintegrate","item:slug:eclipse-burst","item:slug:fiery-body","item:slug:earthquake","item:slug:falling-stars"]}],"priority":118,"property":"other-tags","value":"runelord-sin-spell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

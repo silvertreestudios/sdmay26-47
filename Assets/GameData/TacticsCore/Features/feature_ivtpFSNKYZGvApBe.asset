@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ivtpFSNKYZGvApBe
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ivtpFSNKYZGvApBe
+  Slug: uzunjati
+  DisplayName: Uzunjati
+  IconPath: icons/magic/nature/tree-bare-glow-yellow.webp
+  Description: 'Uzunjati are perhaps the most iconic Magaambyans, and certainly the
+    best known beyond the Mwangi Expanse, because they are the storytellers who roam
+    across Golarion gathering knowledge embedded in oral traditions and folklore.
+    While they often travel as widely as Rain-Scribes, their focus is substantially
+    different, for their exploration is always in service to collecting and preserving
+    the spoken knowledge of community and culture. In addition to the magic of their
+    own stories, they emphasize magic that protects and that affects others'' minds.
+    Additional Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Daze] 1st:
+    @UUID[Compendium.pf2e.spells-srd.Item.Mindlink], @UUID[Compendium.pf2e.spells-srd.Item.Ventriloquism]
+    2nd: @UUID[Compendium.pf2e.spells-srd.Item.Kgalaserke''s Axes] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Ibex''s
+    Harvest] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Telepathy] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Mind
+    Probe], @UUID[Compendium.pf2e.spells-srd.Item.Truespeech] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Mislead]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Retrocognition] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Hidden
+    Mind] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Phantasmagoria]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: cc58397be1d013aa71323a45f428f219d0260fe4d0d9a91361aa28574e4081de
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_1VdLr4Qm8fv1m4tM
+  m_EditorClassIdentifier: 
+  SourceId: 1VdLr4Qm8fv1m4tM
+  Slug: godless-graycloak
+  DisplayName: Godless Graycloak
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You were a member of a church once, and you saw some things among
+    Absalom''s religious elite that put you off piety for good. Maybe it was one
+    too many beggars turned away at the temple''s front door, or maybe it was a high-ranking
+    priests consistent abuses of power. What got to you most, though, was that according
+    to just about every belief system out there, sinners and saints, priests and
+    paupers were all alike in one key way: they never saw retribution or accolades
+    until buried 6 feet under. You wanted more from Absalom. You wanted more from
+    the world. You wanted justice now, on this plane, not in some indeterminate afterlife.
+    So you left the church and wandered the city, a ghost of your former self. You
+    finally found a like mind in Captain Runewulf, "the Unbeliever," whose reputation
+    and similar distaste for religion inspired you to join the Graycloaks. As a sworn
+    protector of the Ascendant Court, you didn''t differentiate between Sarenites
+    or Pharasmins, Iomedaeans or Norgorberites; if you saw someone in danger, you
+    put your life on the line to save them, whatever their place within or outside
+    a church. Your good record has earned you a transfer-temporary or not, the choice
+    is yours-to the newly formed Edgewatch, where you''ll use your authority to guard
+    the lives of not just Absalomians, but all who have come to your grand city to
+    experience its wonders. choose two attribute boosts. One must be to Constitution
+    or Wisdom , and one is a free attribute boost. You''re trained in the Religion
+    skill and your choice of a specific religion Lore skill (such as Iomedae Lore
+    or Norgorber Lore). You gain a +1 circumstance bonus to Deception, Diplomacy,
+    and Intimidation checks to @UUID[Compendium.pf2e.actionspf2e.Item.Interact] with
+    Graycloaks, priests, and clerics. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Identification] feat.'
+  SourceTitle: Pathfinder Agents of Edgewatch Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 6ad24566fd43788b5d5ed5935d486d35f07bc4e638a82f30af9425c38e038325
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Interacting with Graycloaks, priests, and
+      clerics (Godless Graycloak)","predicate":[{"or":["target:graycloak","target:priest","target:cleric"]}],"selector":["deception","diplomacy","intimidation"],"type":"circumstance","value":1}'
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Deity> Lore
+    Rank: 1
+  LoreSkills:
+  - <Deity> Lore
+  GrantedFeats:
+  - SourceKey: pf0s5
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Identification
+    SourceId: 
+    DisplayName: Quick Identification
+    Level: 1
+    ResolvedFeature: {fileID: 0}

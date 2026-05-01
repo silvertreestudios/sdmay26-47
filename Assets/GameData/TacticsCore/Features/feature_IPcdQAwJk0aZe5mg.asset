@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_IPcdQAwJk0aZe5mg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: IPcdQAwJk0aZe5mg
+  Slug: evolution-feat
+  DisplayName: Evolution Feat
+  IconPath: systems/pf2e/icons/features/classes/evolution-feat.webp
+  Description: Evolution feats are a special type of summoner class feat that allow
+    you to customize your eidolon through your shared link. You gain an evolution
+    feat for your eidolon at 1st level, representing the differences that make it
+    unique from other eidolons of its type. If you retrain this feat, the feat you
+    replace it with must also be an evolution feat.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8e6592823aaf3769e2d7bc054f10d264c0393fc365383d30469d9ae193b1ad57
+  Traits:
+  - summoner
+  TraitsLower:
+  - summoner
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"lte":["item:level",1]},"item:category:class","item:trait:evolution"],"itemType":"feat"},"flag":"evolutionFeat","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.EvolutionFeat"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.evolutionFeat}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.evolutionFeat}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.evolutionFeat}'
+    SourceId: 
+    DisplayName: evolutionFeat}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Actions;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     public class AoEVisualizer : MonoBehaviour
     {
@@ -42,7 +42,7 @@ namespace PathfinderTactics.Spells
             }
 
             var spell = spellAction.GetCurrentSpell();
-            if (spell.Area.Shape == Data.PF2e.AreaShape.None)
+            if (spell.Area.Shape == Data.TacticsRuleset.AreaShape.None)
             {
                 Clear();
                 return;
@@ -62,26 +62,26 @@ namespace PathfinderTactics.Spells
 
             switch (spell.Area.Shape)
             {
-                case Data.PF2e.AreaShape.Burst:
+                case Data.TacticsRuleset.AreaShape.Burst:
                     voxels = Combat.Spells.AoESolver.GetBurstVoxels(
                         cursorPos,
                         spell.Area.Radius * 5
                     );
                     break;
-                case Data.PF2e.AreaShape.Emanation:
+                case Data.TacticsRuleset.AreaShape.Emanation:
                     voxels = Combat.Spells.AoESolver.GetEmanationVoxels(
                         casterPos,
                         spell.Area.Radius * 5
                     );
                     break;
-                case Data.PF2e.AreaShape.Cone:
+                case Data.TacticsRuleset.AreaShape.Cone:
                     voxels = Combat.Spells.AoESolver.GetConeVoxels(
                         casterPos,
                         spell.Area.Radius * 5,
                         cursorPos
                     );
                     break;
-                case Data.PF2e.AreaShape.Line:
+                case Data.TacticsRuleset.AreaShape.Line:
                     voxels = Combat.Spells.AoESolver.GetLineVoxels(
                         casterPos,
                         spell.Area.Radius * 5,

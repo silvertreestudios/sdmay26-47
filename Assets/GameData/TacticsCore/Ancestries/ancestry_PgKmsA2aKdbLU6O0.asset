@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_PgKmsA2aKdbLU6O0
+  m_EditorClassIdentifier: 
+  SourceId: PgKmsA2aKdbLU6O0
+  Slug: elf
+  DisplayName: Elf
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/elf.svg
+  Description: "As an ancient people, elves have seen great change and have the perspective
+    that can come only from watching the arc of history. After leaving the world
+    in ancient times, they returned to a changed land, and they still struggle to
+    reclaim their ancestral homes, most notably from terrible demons that have invaded
+    parts of their lands. To some, the elves are objects of awe\u2014graceful and
+    beautiful, with immense talent and knowledge. Among themselves, however, the
+    elves place far more importance on personal freedom than on living up to these
+    ideals. Elf"
+  SourceTitle: Pathfinder Player Core
+  SourcePack: ancestries
+  Rarity: common
+  SourceJsonHash: cad6220a1311c838f9e4bfcaff99269a3110817db38c296633b21fd53b0c25af
+  Traits:
+  - elf
+  - humanoid
+  TraitsLower:
+  - elf
+  - humanoid
+  RawRules: []
+  HitPoints: 6
+  Speed: 30
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 04000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 03000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: elven
+    DisplayName: Elven
+  AdditionalLanguageOptions:
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: empyrean
+    DisplayName: Empyrean
+  - Id: fey
+    DisplayName: Fey
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: kholo
+    DisplayName: Kholo
+  - Id: orcish
+    DisplayName: Orcish
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: 79fbd4b5d9f990f45a001e3acbcc59fa, type: 2}
+  - {fileID: 11400000, guid: a5d7efbd7a68c854ab1bc496a373c454, type: 2}
+  - {fileID: 11400000, guid: 340b461550f31654cace63af1b242ba6, type: 2}
+  - {fileID: 11400000, guid: 8ba3be65885ab764c9927bd9f3aeb085, type: 2}
+  - {fileID: 11400000, guid: 8fe7cdacd51c7cc4887ca525b48c8c81, type: 2}
+  - {fileID: 11400000, guid: a0eeaf78ac6235a4fb403217232c8b1f, type: 2}
+  - {fileID: 11400000, guid: 77e92164c5532944594e2b2bd1a8287d, type: 2}

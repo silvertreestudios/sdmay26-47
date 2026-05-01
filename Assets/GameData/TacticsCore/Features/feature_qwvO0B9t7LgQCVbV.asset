@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_qwvO0B9t7LgQCVbV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: qwvO0B9t7LgQCVbV
+  Slug: bloodrager
+  DisplayName: Bloodrager
+  IconPath: icons/skills/wounds/blood-cells-vessel-red-orange.webp
+  Description: 'You use the power of ingested blood to generate magical power and
+    fuel you in combat, transforming you into a horrifyingly fearsome opponent. You
+    must select Bloodrager Dedication as your 2nd-level class feat. Prerequisites:
+    You must be a barbarian. Bloodrager Adjustments: You are trained in Athletics,
+    Medicine, and a number of additional skills equal to 2 plus your Intelligence
+    modifier, instead of your normal starting skill proficiencies. You must choose
+    the bloodrager instinct for your barbarian instinct. Bloodrager Instinct Drinking
+    the potent magical blood of supernatural creatures has changed you and awakened
+    magical power within you, along with a grim thirst. Blood Rage (Instinct Ability):
+    When raging, your physical attacks deal extra persistent bleed damage equal to
+    half your additional damage from Rage. When you Cast a Spell that requires a
+    spell attack roll while raging, apply the additional damage from Rage to that
+    spell, even on a failure. Specialization Ability: When using blood rage, increase
+    the additional damage from Rage from 2 to 4. If you have greater weapon specialization,
+    instead increase the damage from 4 to 8. Raging Resistance: You resist slashing
+    damage and persistent bleed damage, as well as damage dealt by the creature whose
+    blood you last drank using Harvest Blood (see below), regardless of the damage
+    type.'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a65c1ddbe6ce0d0e06b3f640784d7fde9e954d2c0429ddde1717e9dda79680a5
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["self:effect:rage",{"or":["class:barbarian","feat:instinct-ability"]}],"selectors":["strike-damage"],"slug":"rage","value":2}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 4
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian",{"gte":["self:level",7]}],"selector":"strike-damage","slug":"rage","value":4}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 8
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian","feature:greater-weapon-specialization"],"selector":"strike-damage","slug":"rage","value":8}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+3"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feature:raging-resistance"],"type":["bleed","slashing"],"value":"@actor.abilities.con.mod+3"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,13),4,ternary(gte(@actor.level,7),2,1))"'
+    Uuid: 
+    Json: '{"damageType":"bleed","key":"FlatModifier","predicate":["self:effect:rage"],"selector":"strike-damage","value":"ternary(gte(@actor.level,13),4,ternary(gte(@actor.level,7),2,1))"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,13),8,ternary(gte(@actor.level,7),4,2))"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:effect:rage"],"selector":"attack-spell-damage","slug":"blood-rage-spell","value":"ternary(gte(@actor.level,13),8,ternary(gte(@actor.level,7),4,2))"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["self:effect:rage"],"selector":"spell-attack-roll","text":"PF2E.SpecificRule.Barbarian.Bloodrager.SpellMiss","title":"PF2E.SpecificRule.Barbarian.Bloodrager.BloodRage"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Bloodrager Dedication
+    Json: '{"flag":"bloodragerDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Bloodrager
+      Dedication"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Bloodrager Dedication
+    SourceId: 
+    DisplayName: Bloodrager Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ySkTxnoNuDluk6Cb
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ySkTxnoNuDluk6Cb
+  Slug: antimagic-plating
+  DisplayName: Antimagic Plating
+  IconPath: icons/magic/light/beam-impact-deflect-teal.webp
+  Description: Whether you used some clever adaptation of the magic-negating skymetal
+    known as noqual or created magical protections of your own design, you've strengthened
+    your armor against magic. While wearing the armor, you gain a +1 circumstance
+    bonus to all saving throws against spells and to AC against spells. Against spells
+    that target the armor directly, you instead gain a +4 circumstance bonus to all
+    saving throws and to AC.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: dab7c5a7328d0f7e6a519a273836352a79a33992cd2b62516de17bc76a8bae19
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["armor:id:{actor|flags.pf2e.innovationId}","item:type:spell"],"selector":["ac","saving-throw"],"type":"circumstance","value":1}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

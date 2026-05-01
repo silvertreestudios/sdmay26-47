@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_yc9RuXXxmZ9YidH6
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: yc9RuXXxmZ9YidH6
+  Slug: greater-deed
+  DisplayName: Greater Deed
+  IconPath: systems/pf2e/icons/features/classes/greater-deed.webp
+  Description: You've mastered the pinnacle technique of your chosen way. You gain
+    the greater deed ability of the way you chose at 1st level.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 3aab609f1e7c8cb1ee5a6e69d27391da0444ac64fb9e5bee5421204f8b6a347b
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Drifter's Wake
+    Json: '{"key":"GrantItem","predicate":["feature:way-of-the-drifter"],"uuid":"Compendium.pf2e.actionspf2e.Item.Drifter''s
+      Wake"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Grim Swagger
+    Json: '{"key":"GrantItem","predicate":["feature:way-of-the-pistolero"],"uuid":"Compendium.pf2e.actionspf2e.Item.Grim
+      Swagger"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Ghost Shot
+    Json: '{"key":"GrantItem","predicate":["feature:way-of-the-sniper"],"uuid":"Compendium.pf2e.actionspf2e.Item.Ghost
+      Shot"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Dispelling Bullet
+    Json: '{"key":"GrantItem","predicate":["feature:way-of-the-spellshot"],"uuid":"Compendium.pf2e.actionspf2e.Item.Dispelling
+      Bullet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Siegebreaker
+    Json: '{"key":"GrantItem","predicate":["feature:way-of-the-vanguard"],"uuid":"Compendium.pf2e.actionspf2e.Item.Siegebreaker"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Break Them Down
+    Json: '{"key":"GrantItem","predicate":["feature:way-of-the-triggerbrand"],"uuid":"Compendium.pf2e.actionspf2e.Item.Break
+      Them Down"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Drifter's Wake
+    SourceId: 
+    DisplayName: Drifter's Wake
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Grim Swagger
+    SourceId: 
+    DisplayName: Grim Swagger
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Ghost Shot
+    SourceId: 
+    DisplayName: Ghost Shot
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Dispelling Bullet
+    SourceId: 
+    DisplayName: Dispelling Bullet
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Siegebreaker
+    SourceId: 
+    DisplayName: Siegebreaker
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Break Them Down
+    SourceId: 
+    DisplayName: Break Them Down
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0UKDEtZ7ffTEsqCK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0UKDEtZ7ffTEsqCK
+  Slug: gathered-lore
+  DisplayName: Gathered Lore
+  IconPath: systems/pf2e/icons/features/classes/gathered-lore.webp
+  Description: 'Many psychics are self-taught, frantically improvising how to best
+    control their abilities before their power overwhelms them. Not you. Tutored
+    by a mentor or classically trained at a facility for psychic development, you''ve
+    learned techniques and teachings for best harnessing the mind, cataloging each
+    expression of psychic power with a specific teaching, anecdote, or phrase. Your
+    thought components are mantras you associate with a given spell, which you mentally
+    repeat as you cast. You might silently utter a teaching of resilience as you
+    spin force into a barrier or hear the first three notes of a traveling song as
+    you slip through space. Mantra components often produce runes or symbols from
+    your learnings that are unique to each spell you cast, causing your spell manifestations
+    to resemble those of conventional spellcasters to a much greater degree than
+    those of other psychics. Key Ability Your key ability score is Intelligence.
+    Psyche Action @UUID[Compendium.pf2e.actionspf2e.Item.Recall the Teachings]'
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f82236014895be4e9c85207752fc393c613ecac6b71f198eba0d4b50849b9425
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Recall the Teachings
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Recall
+      the Teachings"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Recall the Teachings
+    SourceId: 
+    DisplayName: Recall the Teachings
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

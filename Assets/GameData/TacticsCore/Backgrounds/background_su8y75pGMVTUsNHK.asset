@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_su8y75pGMVTUsNHK
+  m_EditorClassIdentifier: 
+  SourceId: su8y75pGMVTUsNHK
+  Slug: thassilonian-traveler
+  DisplayName: Thassilonian Traveler
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Saga Lands You come from ancient Thassilon,
+    one of the citizens that appeared out of time alongside the city of Xin-Edasseril.
+    You know many things that have been long forgotten... along with many things
+    that are no longer correct. Choose two attribute boosts. One must be to Constitution
+    or Intelligence , and one is a free attribute boost. You're trained in the Arcana
+    skill and the Thassilon Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious
+    Knowledge] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: de8fbf1802d4ec463a01f27954fef2b229ca1a60b74f8d0f31aff6c1a5504bcd
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Thassilon Lore
+    Rank: 1
+  LoreSkills:
+  - Thassilon Lore
+  GrantedFeats:
+  - SourceKey: o51zt
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_DVtZab19D1vD3a0n
+  m_EditorClassIdentifier: 
+  SourceId: DVtZab19D1vD3a0n
+  Slug: post-guard-of-all-trades
+  DisplayName: Post Guard of All Trades
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Not all cops are passionate about their jobs. For some, the pursuit
+    of justice is just another way to pay the bills. Honestly, it was probably the
+    Post Guard's generous time-off policy that drew you to their service, and during
+    your yearly sabbaticals you've dabbled in hobbies as diverse as fishing, baking,
+    or even stand-up comedy. Even while on duty, you're probably idly fiddling with
+    a lucky coin or practicing magic tricks with a deck of cards. You probably irritate
+    your fellow guards a bit with your non sequiturs, casual attitude, and tendency
+    to daydream, but results don't lie, and more often than not you prove your worth
+    when the chips are down. For all the excitement of guarding Absalom's Postern
+    Gate, the Post Guard wasn't really the right fit for someone as distractible
+    as yourself, so your boss put in a "promotion" for you to transfer to the newly
+    formed Edgewatch. You're all for the reassignment, since it will put you smack
+    in the middle of the most entertaining and diverse gathering of the century,
+    the Radiant Festival. Choose two attribute boosts. One must be to Dexterity or
+    Intelligence , and one is a free attribute boost. You're trained in the Performance
+    skill, a Lore skill of your choice, and you gain a bonus language . You gain
+    a +1 circumstance bonus to Deception, Diplomacy, and Intimidation checks to @UUID[Compendium.pf2e.actionspf2e.Item.Interact]
+    with Post Guards. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious Knowledge]
+    skill feat.
+  SourceTitle: Pathfinder Agents of Edgewatch Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: d44567791ef8d797933f0802512aa68e3801903fbf89d22c381cb839a5a495c4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Interacting with Post Guards (Post Guard
+      of All Trades)","predicate":["target:post-guard"],"selector":["deception","diplomacy","intimidation"],"type":"circumstance","value":1}'
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Any> Lore
+    Rank: 1
+  LoreSkills:
+  - <Any> Lore
+  GrantedFeats:
+  - SourceKey: 8298f
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

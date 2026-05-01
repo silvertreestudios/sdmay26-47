@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_hqh4zKHYBtDE26g8
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: hqh4zKHYBtDE26g8
+  Slug: courageous-tanuki
+  DisplayName: Courageous Tanuki
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your heart beats with the courage of those who came before you, giving
+    you the kind of bravery only a tanuki can demonstrate. Whenever you gain the
+    @UUID[Compendium.pf2e.conditionitems.Item.Fleeing] condition, you also gain a
+    +10-foot circumstance bonus to your Speeds that lasts as long as you're fleeing.
+    When you have the fleeing condition, instead of having to spend all your actions
+    trying to escape, you can act normally for one action but must still spend the
+    remainder of your actions fleeing. You also gain the @UUID[Compendium.pf2e.actionspf2e.Item.Tactical
+    Retreat] ability.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4eeee22115c4669c7a1734e532cca12f1edd33530367f24a222fae5eb5f14e78
+  Traits:
+  - tanuki
+  TraitsLower:
+  - tanuki
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Tactical Retreat
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Tactical Retreat"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 10
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:condition:fleeing"],"selector":"speed","type":"circumstance","value":10}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pILFsoGsUQkVF5dZ
+    SourceId: 
+    Slug: tanuki
+    DisplayName: Tanuki
+  ParentAncestryAsset: {fileID: 11400000, guid: 840e89a1b8dc79245ba086473020388f, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Tactical Retreat
+    SourceId: 
+    DisplayName: Tactical Retreat
+    Level: 0
+    ResolvedFeature: {fileID: 0}

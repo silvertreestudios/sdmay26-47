@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_CMf0qluB0LXWReew
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: CMf0qluB0LXWReew
+  Slug: ancient-ash
+  DisplayName: Ancient Ash
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your memory is sharp and clear, and you remember so much. You remember
+    the calm before the storm and the soil after the rain, the acrid tang of magic
+    and the whisper of a song. You remember it all. You become trained in one skill
+    of your choice. At 5th level, you become an expert in that skill.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 1e5f99265b81026a70616a2a97f07c59eb0504dbd5f6d1305414e8c33da931df
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":{"config":"skills"},"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: '"ternary(gte(@actor.level,5),2,1)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":"ternary(gte(@actor.level,5),2,1)"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.tSurOqRcfumadTfr
+    SourceId: 
+    Slug: ghoran
+    DisplayName: Ghoran
+  ParentAncestryAsset: {fileID: 11400000, guid: 5ba316e3f579b40409993fb6d0334eac, type: 2}
+  GrantedFeatures: []

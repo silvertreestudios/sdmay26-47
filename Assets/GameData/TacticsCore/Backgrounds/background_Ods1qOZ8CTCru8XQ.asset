@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_Ods1qOZ8CTCru8XQ
+  m_EditorClassIdentifier: 
+  SourceId: Ods1qOZ8CTCru8XQ
+  Slug: conservator
+  DisplayName: Conservator
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Some history survives only so long as its physical remains do. You've
+    developed robust museum skills to identify relics, preserve artifacts, recreate
+    ancient technologies, and even rebuild shattered treasures\u2014often with painstaking
+    patience, a steady hand, and even a little magic. Your contributions don't end
+    there, as whether you've mastered diligent recordkeeping or helped uncover smuggling
+    rings that are looting archaeological sites, you've made an impression. Hearing
+    of your promising abilities, representatives from Clan Tolorr contacted you,
+    inviting you to study with their museum masters and share your own techniques,
+    all while helping preserve over 10,000 years of history! Choose two attribute
+    boosts. One must be to Dexterity or Intelligence , and one is a free attribute
+    boost. You're trained in either the Crafting skill or the Thievery skill, and
+    you're trained in either the Accounting Lore or the Underworld Lore skill. If
+    you selected Crafting, you gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Repair] skill feat. If you chose Thievery, you gain the Assurance (Thievery)
+    skill feat. Connection: Ria, an oread gnome curator who studies rivethun traditions
+    Reputation Points: +1"
+  SourceTitle: Pathfinder Sky King's Tomb Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: ee7b7e364cd32b1c0d831914a39b07e1812d7f22de4a9064c5075182936e5e36
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.Skill.Crafting","value":{"feat":"Compendium.pf2e.feats-srd.Item.Quick
+      Repair","skill":"crafting"}},{"label":"PF2E.Skill.Thievery","value":{"feat":"Compendium.pf2e.feats-srd.Item.Assurance","skill":"thievery"}}],"flag":"conservator","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.conservator.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.conservator.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.conservator.feat}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","preselectChoices":{"assurance":"thievery"},"uuid":"{item|flags.pf2e.rulesSelections.conservator.feat}"}'
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

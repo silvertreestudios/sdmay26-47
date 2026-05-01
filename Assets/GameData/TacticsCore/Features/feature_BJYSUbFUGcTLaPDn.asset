@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_BJYSUbFUGcTLaPDn
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: BJYSUbFUGcTLaPDn
+  Slug: masterful-hunter-precision
+  DisplayName: Masterful Hunter (Precision)
+  IconPath: icons/skills/ranged/target-bullseye-archer-orange.webp
+  Description: Masterful Hunter Upgrade Level 17 Your weapon mastery allows you to
+    hit your prey's vital areas multiple times. The second time in a round you hit
+    your hunted prey, you also deal 1d8 precision damage. At 19th level, your second
+    hit in a round against your hunted prey deals 2d8 precision damage, and your
+    third hit in a round against your hunted prey deals 1d8 precision damage.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 71f118c512104e8f6e79e3f8e39815c862575ad3625552e01a6778efb6083fcc
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"Second attack on hunted prey
+      this round","option":"second-attack","toggleable":true}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":18,"value":{"diceNumber":1}},{"start":19,"value":{"diceNumber":2}}]}'
+    Uuid: 
+    Json: '{"category":"precision","dieSize":"d8","key":"DamageDice","predicate":["second-attack"],"selector":"strike-damage","value":{"brackets":[{"end":18,"value":{"diceNumber":1}},{"start":19,"value":{"diceNumber":2}}]}}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"Third attack on hunted prey
+      this round","option":"third-attack","toggleable":true}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"start":19,"value":{"diceNumber":1}}]}'
+    Uuid: 
+    Json: '{"category":"precision","dieSize":"d8","key":"DamageDice","predicate":["third-attack"],"selector":"strike-damage","value":{"brackets":[{"start":19,"value":{"diceNumber":1}}]}}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

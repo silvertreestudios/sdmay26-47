@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+    <ui:Style src="CreatorTheme.uss" />
+
+    <ui:VisualElement class="step-container">
+
+        <ui:VisualElement class="step-header">
+            <ui:VisualElement class="step-header__group">
+                <ui:Label text="FREE BOOSTS" class="header-text header-text--accent" />
+                <ui:Label text="Pick four different attributes to receive a +1 boost. They cannot stack on the same attribute." class="subhead-text" />
+            </ui:VisualElement>
+            <ui:Label text="STEP 06 / 10" class="badge" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="detail-section">
+            <ui:Label text="ATTRIBUTE BOARD" class="summary-block__title" />
+            <ui:VisualElement name="FreeBoostContainer" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="detail-section">
+            <ui:Label text="CURRENT SELECTIONS" class="summary-block__title" />
+            <ui:Label name="Lbl_FreeBoostSummary" text="None selected" class="detail-text detail-text--ok" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

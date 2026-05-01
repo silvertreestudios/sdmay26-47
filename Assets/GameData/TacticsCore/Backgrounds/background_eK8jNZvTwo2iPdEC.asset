@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_eK8jNZvTwo2iPdEC
+  m_EditorClassIdentifier: 
+  SourceId: eK8jNZvTwo2iPdEC
+  Slug: awful-scab
+  DisplayName: Awful Scab
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prior to the Evisceration of 4707, the district of V'drysha was a
+    lovely borough on the southern edge of Ecanus. Now, it's the Awful, a vast morass
+    of spell-resistant flesh and sinew, ever threatening to engulf the city. You
+    were once a Scab working to push back its influence. It's a nasty, dangerous
+    job, and poorly paid as well, but at least you learned enough to mimic a viscerasuit,
+    the enchanted, airtight suit that protected you from the poisons and plagues
+    of the Awful. Choose two attribute boosts. One must be to Dexterity or Constitution
+    , and one is a free attribute boost. You're trained in Medicine and Fleshforged
+    Lore. You also know how to seal your clothing or armor like a viscerasuit. During
+    your daily preparations, you can seal your outfit. The first time each day you
+    are introduced to poison or disease without taking physical damage, the sealed
+    outfit attempts to counteract it using your Medicine modifier as the counteract
+    modifier.
+  SourceTitle: Pathfinder Wake the Dead #1
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 62ad33d8ccee8ca1e87d409ef5ffdb0725954b96b446263493674fc40b1570c0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fleshforged Lore
+    Rank: 1
+  LoreSkills:
+  - Fleshforged Lore
+  GrantedFeats: []

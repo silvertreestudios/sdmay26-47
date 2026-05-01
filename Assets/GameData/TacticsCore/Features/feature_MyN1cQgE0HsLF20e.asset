@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_MyN1cQgE0HsLF20e
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: MyN1cQgE0HsLF20e
+  Slug: tome
+  DisplayName: Tome
+  IconPath: icons/sundries/books/book-symbol-triangle-silver-purple.webp
+  Description: 'Tome implements embody lost knowledge and otherworldly insights.
+    While a weathered book is most common, tome implements can have as many different
+    form factors as there are ways to store knowledge, from carved clay tablets to
+    bundles of knotted cords. Tome implements are associated with the harrow suit
+    of books and the astrological signs of the stargazer and the underworld dragon.
+    Initiate Benefit @Embed[Compendium.pf2e.classfeatures.Item.oADE2kM43wpF7MT5 inline]
+    Adept Benefit @Embed[Compendium.pf2e.classfeatures.Item.gR8ODlO6au0laXo4 inline]
+    Intensify Vulnerability Your tome''s power not only reads a creature''s present
+    but even records its future actions. When you use Intensify Vulnerability, roll
+    a d20 and set the result aside. At any time until the start of your next turn,
+    you can use the d20 result you set aside for an attack roll to Strike the target
+    of your Exploit Vulnerability, instead of rolling a new d20; this is a fortune
+    effect. Paragon Benefit @Embed[Compendium.pf2e.classfeatures.Item.IGv5wS17AAi0U87W
+    inline]'
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d341a6dcd4f895b43f544840ff7fd45205da0ee7d0d98f9c4de75ae48a2af0ac
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Tome Implement
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Tome
+      Implement"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.initiateBenefit
+    Mode: override
+    Value: '"Compendium.pf2e.classfeatures.Item.Initiate Benefit (Tome)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.initiateBenefit","predicate":["feat:thaumaturge-dedication"],"value":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Tome)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Tome)
+    Json: '{"key":"GrantItem","predicate":["class:thaumaturge"],"uuid":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Tome)"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.adeptChoices
+    Mode: add
+    Value: '{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-tome"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Tome)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.adeptChoices","predicate":["class:thaumaturge"],"priority":20,"value":{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-tome"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Tome)"}}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Tome Implement
+    SourceId: 
+    DisplayName: Tome Implement
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Tome)
+    SourceId: 
+    DisplayName: Initiate Benefit (Tome)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

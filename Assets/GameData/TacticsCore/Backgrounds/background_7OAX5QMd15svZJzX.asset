@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_7OAX5QMd15svZJzX
+  m_EditorClassIdentifier: 
+  SourceId: 7OAX5QMd15svZJzX
+  Slug: relentless-dedication
+  DisplayName: Relentless Dedication
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Recruiters invite many candidates like you to train to be Knights
+    of Lastwall, but only a select few make the cut. Whereas others lose heart, your
+    perseverance paid off. Your commitment to the cause is so clear, it overcame
+    whatever disqualified your previous attempts to join the new Shining Crusade.
+    Choose two attribute boosts. One must be to Strength or Constitution , and one
+    is a free attribute boost. You're trained in the Warfare Lore skill, and you
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Canny Acumen] feat.
+  SourceTitle: Pathfinder Lost Omens Knights of Lastwall
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 64731b43499021a16cdb3e9053e74a856aa5dd322698d433e95470dad24ec259
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare
+    Rank: 1
+  LoreSkills:
+  - Warfare
+  GrantedFeats:
+  - SourceKey: su0e8
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Canny Acumen
+    SourceId: 
+    DisplayName: Canny Acumen
+    Level: 1
+    ResolvedFeature: {fileID: 0}

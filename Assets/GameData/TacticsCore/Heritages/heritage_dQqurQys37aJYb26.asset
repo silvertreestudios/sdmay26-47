@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_dQqurQys37aJYb26
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: dQqurQys37aJYb26
+  Slug: leaf-leshy
+  DisplayName: Leaf Leshy
+  IconPath: systems/pf2e/icons/features/ancestry/leafy-leshy.webp
+  Description: Your body is made mostly from natural foliage, and like a leaf tumbling
+    from a tree, you land from falls with particular grace. You take no damage from
+    falling, regardless of the distance you fall.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 32d20973cf40a540166c9acf809d2584979696b8898dac228d3741bd97de37e5
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cdhgByGG1WtuaK73
+    SourceId: 
+    Slug: leshy
+    DisplayName: Leshy
+  ParentAncestryAsset: {fileID: 11400000, guid: 2c3ed83876c3e8f42b39718765568df8, type: 2}
+  GrantedFeatures: []

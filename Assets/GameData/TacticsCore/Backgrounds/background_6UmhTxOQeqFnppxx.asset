@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_6UmhTxOQeqFnppxx
+  m_EditorClassIdentifier: 
+  SourceId: 6UmhTxOQeqFnppxx
+  Slug: guard
+  DisplayName: Guard
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You served in the guard, out of either patriotism or the need for
+    coin. Either way, you know how to get a difficult suspect to talk. However you
+    left the guard, you might think of adventuring as a way to use your skills on
+    a wider stage. Choose two attribute boosts. One must be to Strength or Charisma
+    , and one is a free attribute boost. You're trained in the Intimidation skill
+    and the Legal Lore or Warfare Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Coercion] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: e1134c101e49412dd715620580916a977f8452f090d44894cb97c3a33ecad361
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Legal or Warfare> Lore
+    Rank: 1
+  LoreSkills:
+  - <Legal or Warfare> Lore
+  GrantedFeats:
+  - SourceKey: zudho
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Coercion
+    SourceId: 
+    DisplayName: Quick Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

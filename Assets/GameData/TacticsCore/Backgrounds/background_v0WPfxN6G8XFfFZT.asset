@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_v0WPfxN6G8XFfFZT
+  m_EditorClassIdentifier: 
+  SourceId: v0WPfxN6G8XFfFZT
+  Slug: scholar
+  DisplayName: Scholar
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You have a knack for learning and sequestered yourself from the outside
+    world to learn all you could. You read about so many wondrous places and things
+    in your books, always dreaming about one day seeing the real things. Eventually,
+    that curiosity led you to leave your studies and become an adventurer. Choose
+    two attribute boosts. One must be to Intelligence or Wisdom , and one is a free
+    attribute boost. You're trained in your choice of the Arcana, Nature, Occultism,
+    or Religion skill, and gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance]
+    skill feat in your chosen skill. You're also trained in the Academia Lore skill.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a2182692fdbe749f76f55ffc3a013d45a85089f43814dfe45760a01be8d904d9
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.Skill.Arcana","value":"arcana"},{"label":"PF2E.Skill.Nature","value":"nature"},{"label":"PF2E.Skill.Occultism","value":"occultism"},{"label":"PF2E.Skill.Religion","value":"religion"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"{item|flags.pf2e.rulesSelections.skill}"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Academia Lore
+    Rank: 1
+  LoreSkills:
+  - Academia Lore
+  GrantedFeats: []

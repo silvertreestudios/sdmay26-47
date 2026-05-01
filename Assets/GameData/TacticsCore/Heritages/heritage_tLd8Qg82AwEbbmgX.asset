@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_tLd8Qg82AwEbbmgX
+  m_EditorClassIdentifier: 
+  SourceId: tLd8Qg82AwEbbmgX
+  Slug: dromaar
+  DisplayName: Dromaar
+  IconPath: systems/pf2e/icons/features/ancestry/half-orc.webp
+  Description: Orcish strength emboldens your bloodline. You have a green tinge to
+    your skin and other indicators of orc heritage. You gain the orc trait, the dromaar
+    trait, and low-light vision. When you gain an ancestry feat, you can choose from
+    dromaar and orc feats in addition to those from your ancestry.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 2175f34dce539e5b0789de678c956cc07892c646e5fc75c05e3095b5375cfec8
+  Traits:
+  - dromaar
+  TraitsLower:
+  - dromaar
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"low-light-vision"}'
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["orc"],"key":"ActorTraits"}'
+  - Key: ActiveEffectLike
+    Path: system.details.ancestry.versatile
+    Mode: override
+    Value: '"orc"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.details.ancestry.versatile","value":"orc"}'
+  - Key: ActiveEffectLike
+    Path: system.details.ancestry.countsAs
+    Mode: add
+    Value: '"dromaar"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.details.ancestry.countsAs","value":"dromaar"}'
+  - Key: ActiveEffectLike
+    Path: system.details.ancestry.countsAs
+    Mode: add
+    Value: '"orc"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.details.ancestry.countsAs","value":"orc"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

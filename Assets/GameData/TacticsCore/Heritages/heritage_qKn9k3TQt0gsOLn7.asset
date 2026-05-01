@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_qKn9k3TQt0gsOLn7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: qKn9k3TQt0gsOLn7
+  Slug: hardshell-surki
+  DisplayName: Hardshell Surki
+  IconPath: icons/creatures/invertebrates/snail-spiral-green.webp
+  Description: "Your carapace is much denser than that of other surkis, offering
+    you a suit of your very own armor. Your carapace is medium armor in the plate
+    armor group that grants a +4 item bonus to AC, a Dex cap of +1, a check penalty
+    of \u20132, a Speed penalty of \u20135 feet, a Strength value of +3, and has
+    the comfort trait. You can never wear other armor or remove your carapace. You
+    can etch armor runes onto your carapace. Evolution The magical circulatory system
+    that runs between your nodes has become a reinforcing network that strengthens
+    your carapace with magical energy. If you're struck by a critical hit that deals
+    physical damage, you can use your reaction to attempt a @Check[flat|dc:17]. If
+    successful, the attack becomes a normal hit. Evolution Your abdominal nodes can
+    project a field around you that guards you against the type of magic you're most
+    familiar with. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Dampening
+    Harmonics] action."
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c17f8ce1266abd01a048d2ad8822bcce0dc2ade9384f451298e241cd4c57348a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.surki.evolutions
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Surki.Evolutions.StrengthenedCarapace","predicate":[{"not":"evolution:strengthened-carapace"}],"value":"strengthened-carapace"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.surki.evolutions","value":{"label":"PF2E.SpecificRule.Surki.Evolutions.StrengthenedCarapace","predicate":[{"not":"evolution:strengthened-carapace"}],"value":"strengthened-carapace"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.surki.evolutions
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Surki.Evolutions.DampeningField","predicate":[{"not":"evolution:dampening-field"}],"value":"dampening-field"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.surki.evolutions","value":{"label":"PF2E.SpecificRule.Surki.Evolutions.DampeningField","predicate":[{"not":"evolution:dampening-field"}],"value":"dampening-field"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Dampening Harmonics
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["evolution:dampening-field"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.actionspf2e.Item.Dampening
+      Harmonics"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Hardshell Surki Carapace
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Hardshell
+      Surki Carapace"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.ALOmLePjbc37ca3Y
+    SourceId: 
+    Slug: surki
+    DisplayName: Surki
+  ParentAncestryAsset: {fileID: 11400000, guid: 6d7e7807c411e6e4399a245a37a57c47, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Dampening Harmonics
+    SourceId: 
+    DisplayName: Dampening Harmonics
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Hardshell Surki Carapace
+    SourceId: 
+    DisplayName: Hardshell Surki Carapace
+    Level: 0
+    ResolvedFeature: {fileID: 0}

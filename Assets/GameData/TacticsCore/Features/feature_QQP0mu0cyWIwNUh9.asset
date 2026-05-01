@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_QQP0mu0cyWIwNUh9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: QQP0mu0cyWIwNUh9
+  Slug: blessed-shield
+  DisplayName: Blessed Shield
+  IconPath: systems/pf2e/icons/features/classes/shield-ally.webp
+  Description: In your hands, a shield gains the minor Reinforcing rune. As you go
+    up in level, the shield gains the reinforcing rune of your level (lesser at 7th
+    level, moderate at 10th level, greater at 13th level, major at 16th level, and
+    supreme at 19th level). If your shield already has the appropriate reinforcing
+    rune for your level, or if it's a Sturdy Shield of the same level as the appropriate
+    reinforcing rune, the shield's Hardness instead increases by 1.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1d00438cc9d4cb21cdac8ec016b227fc2efdac7bf8d76948700746f9d8a6693b
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

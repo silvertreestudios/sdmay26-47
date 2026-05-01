@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_o1gGG36wpn9mxeop
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: o1gGG36wpn9mxeop
+  Slug: life
+  DisplayName: Life
+  IconPath: icons/commodities/flowers/lotus-pink.webp
+  Description: 'The never-ending flow of life force within living beings is palpable
+    to you. You might uphold the sanctity of life, or perhaps you seek to undermine
+    it. You might draw power from the collective vitality of the world''s living
+    creatures, hold some connection to Creation''s Forge, or revere a collection
+    of deities including Irori, Pharasma, Sarenrae, and the god of medicine Qi Zhong.
+    Granted Spells cantrip: @UUID[Compendium.pf2e.spells-srd.Item.Vitality Lash]
+    1st: @UUID[Compendium.pf2e.spells-srd.Item.Soothe] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.False
+    Vitality] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Grisly Growths] Revelation
+    Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Life Link] advanced: @UUID[Compendium.pf2e.spells-srd.Item.Delay
+    Affliction] greater: @UUID[Compendium.pf2e.spells-srd.Item.Life-Giving Form]
+    Related Domains death, healing, pain, soul Mystery Skill Medicine Oracle Feat
+    @UUID[Compendium.pf2e.feats-srd.Item.Nudge the Scales] @UUID[Compendium.pf2e.classfeatures.Item.Curse
+    of Outpouring Life]'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 200ec619edea5693b8894c07cc95266a2daf592a99abea2d4680387be77972ef
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.medicine.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.medicine.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Nudge the Scales
+    Json: '{"key":"GrantItem","predicate":["class:oracle"],"uuid":"Compendium.pf2e.feats-srd.Item.Nudge
+      the Scales"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Curse of Outpouring Life
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Curse of
+      Outpouring Life"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Nudge the Scales
+    SourceId: 
+    DisplayName: Nudge the Scales
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Curse of Outpouring Life
+    SourceId: 
+    DisplayName: Curse of Outpouring Life
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

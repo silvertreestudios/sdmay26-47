@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_gfXSF1TafBAmZo2u
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: gfXSF1TafBAmZo2u
+  Slug: grig
+  DisplayName: Grig
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have the hindquarters of a cricket and adore art and music. Your
+    cricket legs grant you a +2 circumstance bonus on Athletics checks to High Jump
+    or Long Jump, and you gain @UUID[Compendium.pf2e.spells-srd.Item.Ghost Sound]
+    as a primal innate cantrip.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: f88793efe496ddf69d89a57afca47b7ca75e4b72b20c931f06e60641d1c44b4f
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SkillVariant.HighJumpOrLongJump","predicate":[{"or":["action:high-jump","action:long-jump"]}],"selector":"athletics","type":"circumstance","value":2}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:ghost-sound","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:sprite"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:ghost-sound","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:sprite"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TRqoeYfGAFjQbviF
+    SourceId: 
+    Slug: sprite
+    DisplayName: Sprite
+  ParentAncestryAsset: {fileID: 11400000, guid: afedc73b20f7005478723c5b1a6b86f8, type: 2}
+  GrantedFeatures: []

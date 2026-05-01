@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_JJcaVijwRt9dsnac
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: JJcaVijwRt9dsnac
+  Slug: greater-field-discovery-chirurgeon
+  DisplayName: Greater Field Discovery (Chirurgeon)
+  IconPath: icons/commodities/bones/skull-hollow-white.webp
+  Description: When you use @UUID[Compendium.pf2e.classfeatures.Item.Quick Alchemy]
+    to create any type of elixir of life, the creature healed by the item regains
+    the maximum Hit Points possible, instead of rolling to determine the number of
+    Hit Points regained.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 139b08d0b437f3f7ee1bcdc85729dbf073c19613f6ff30b512ea627376f4ece1
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"inline-healing","key":"RollOption","option":"chirurgeon-greater-field-discovery","toggleable":true}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: downgrade
+    Value: 0
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"downgrade","predicate":["chirurgeon-greater-field-discovery",{"or":["item:slug:elixir-of-life-minor","item:slug:elixir-of-life-lesser","item:slug:elixir-of-life-moderate","item:slug:elixir-of-life-greater","item:slug:elixir-of-life-major","item:slug:elixir-of-life-true"]}],"property":"dice-number","selectors":["inline-healing"],"slug":"base","value":0}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 6
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["chirurgeon-greater-field-discovery",{"or":["item:slug:elixir-of-life-minor","item:slug:elixir-of-life-lesser","item:slug:elixir-of-life-moderate","item:slug:elixir-of-life-greater","item:slug:elixir-of-life-major","item:slug:elixir-of-life-true"]}],"selector":"inline-healing","slug":"chirurgeon-greater-field-discovery","value":6}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: multiply
+    Value: 3
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"multiply","predicate":["item:slug:elixir-of-life-lesser"],"selector":"inline-healing","slug":"chirurgeon-greater-field-discovery","value":3}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: multiply
+    Value: 5
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"multiply","predicate":["item:slug:elixir-of-life-moderate"],"selector":"inline-healing","slug":"chirurgeon-greater-field-discovery","value":5}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: multiply
+    Value: 7
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"multiply","predicate":["item:slug:elixir-of-life-greater"],"selector":"inline-healing","slug":"chirurgeon-greater-field-discovery","value":7}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: multiply
+    Value: 8
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"multiply","predicate":["item:slug:elixir-of-life-major"],"selector":"inline-healing","slug":"chirurgeon-greater-field-discovery","value":8}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: multiply
+    Value: 10
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"multiply","predicate":["item:slug:elixir-of-life-true"],"selector":"inline-healing","slug":"chirurgeon-greater-field-discovery","value":10}'
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

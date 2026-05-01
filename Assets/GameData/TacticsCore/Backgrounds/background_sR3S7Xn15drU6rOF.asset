@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_sR3S7Xn15drU6rOF
+  m_EditorClassIdentifier: 
+  SourceId: sR3S7Xn15drU6rOF
+  Slug: starwatcher
+  DisplayName: Starwatcher
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're one of Wrin Sivinxi's closest confidantes. You've spent many
+    long nights with her under the stars, learning the tales associated with the
+    Cosmic Caravan and how the heavens can predict the future. You know that Wrin
+    has paralyzing claustrophobia; she sees menace in angles and danger in confined
+    spaces, which is why her shop is an all domed canvas that opens to the sky. If
+    Wrin thinks there's trouble, you'll be the first to offer to help. Choose two
+    attribute boosts. One must be to Constitution or Intelligence , and one is a
+    free attribute boost. You're trained in the Occultism skill and the Astrology
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious Knowledge]
+    skill feat.
+  SourceTitle: Pathfinder Abomination Vaults Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 983afea20c56bd2f6e46b9cc6af93b4dbaf40ee086649856b4e13b7abd7e5a16
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Astrology Lore
+    Rank: 1
+  LoreSkills:
+  - Astrology Lore
+  GrantedFeats:
+  - SourceKey: az6xy
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

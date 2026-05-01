@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_cU2ofQLj7pg6wTSi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: cU2ofQLj7pg6wTSi
+  Slug: research-field
+  DisplayName: Research Field
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: Your inquiries into the alchemical nature of the universe have led
+    you to focus on a particular field of research. At 1st level, you choose your
+    research field. This choice gives you more formulas, a special benefit, other
+    abilities for your versatile vials, and other benefits as you level up.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 79faef2ef22a940d7e459f1af636c343157e539f7653a9627d52b06be7824e07
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:alchemist-research-field",{"or":[{"and":["class:alchemist","item:tag:alchemist-research-field"]},{"and":["item:tag:alchemist-research-field",{"not":"item:tag:class-archetype"}]}]}]},"flag":"researchField","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Alchemist.ResearchField.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.researchField}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.researchField}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.researchField}'
+    SourceId: 
+    DisplayName: researchField}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_CKU1sbFofcwZUJMx
+  m_EditorClassIdentifier: 
+  SourceId: CKU1sbFofcwZUJMx
+  Slug: ex-con-token-guard
+  DisplayName: Ex-Con Token Guard
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Not everyone starts life on easy street-your own experience is testament
+    to that. You took a wrong turn at some point early on and became a career criminal.
+    Perhaps you were a petty pickpocket, or maybe you've even murdered someone. Either
+    way, your crimes landed you with a transformative prison sentence in the Brine
+    prison. Only then did you realize that something needed to change. After your
+    release, you dedicated yourself to helping other downtrodden individuals and
+    those forced to resort to crime to survive. You joined the Coins District Guard,
+    but soon learned that this precinct was a haven for the very corruption you sought
+    to undo. Your efforts at reform never took root and you feared that your decision
+    to become an officer of the law was a huge mistake. You transferred to the Edgewatch,
+    the Precipice Quarter's new precinct, in the hope that you might meet others
+    who sought to help-not exploit-Absalom's misguided. Choose two attribute boosts.
+    One must be to Dexterity or Charisma , and one is a free attribute boost. You're
+    trained in the Thievery skill and your choice of Legal Lore or Underworld Lore.
+    You gain a +1 circumstance bonus to Deception, Diplomacy, and Intimidation checks
+    to @UUID[Compendium.pf2e.actionspf2e.Item.Interact] with Token Guards and convicted
+    criminals such as prison inmates. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Pickpocket]
+    skill feat.
+  SourceTitle: Pathfinder Agents of Edgewatch Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 12fcce6217e167ca22510b632ff3a884679e9e0eabdbb6d99d5983e654fa49e4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Interacting with Token Guards or convicted
+      criminals (Ex-Con Token Guard)","predicate":[{"or":["target:token-guard","target:convict"]}],"selector":["deception","diplomacy","intimidation"],"type":"circumstance","value":1}'
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 17
+    CustomSkillId: thievery
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Legal Lore or Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Legal Lore or Underworld Lore
+  GrantedFeats:
+  - SourceKey: 3tdk7
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pickpocket
+    SourceId: 
+    DisplayName: Pickpocket
+    Level: 1
+    ResolvedFeature: {fileID: 0}

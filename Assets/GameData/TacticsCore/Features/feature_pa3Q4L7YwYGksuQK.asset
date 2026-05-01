@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_pa3Q4L7YwYGksuQK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: pa3Q4L7YwYGksuQK
+  Slug: the-brave
+  DisplayName: The Brave
+  IconPath: icons/skills/melee/maneuver-greatsword-yellow.webp
+  Description: 'Your deeds show fearlessness: when a beast surfaces, you''re there
+    to fight it; when someone''s lost in the dark, you''re first to the rescue. You''re
+    trained in Athletics. After you Spark Transcendence, your body carries you forward,
+    allowing you to Stride up to half your Speed in a straight line toward one enemy
+    of your choice as a free action. Once you have used this ability on a given enemy,
+    you can''t use it against that enemy again for 10 minutes.'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 16ef95f3042d500913d73fdc593e402964233278ba2542d60fc7ed1c60a321fd
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","value":1}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"the-brave"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.TheBrave.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:the-brave"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.TheBrave.Description"}]}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

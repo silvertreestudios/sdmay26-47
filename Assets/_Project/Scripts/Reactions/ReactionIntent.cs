@@ -1,6 +1,6 @@
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 
-namespace PathfinderTactics.Reactions
+namespace TacticsGame.Reactions
 {
     public class ReactionIntent
     {

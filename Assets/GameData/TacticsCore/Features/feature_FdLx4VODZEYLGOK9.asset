@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_FdLx4VODZEYLGOK9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: FdLx4VODZEYLGOK9
+  Slug: the-inscribed-one
+  DisplayName: The Inscribed One
+  IconPath: icons/magic/symbols/rune-sigil-red-orange.webp
+  Description: No words passed your patron's lips in the moment you met; instead,
+    words and glyphs danced across their skin while symbols and numbers swam in the
+    depths of their eyes, spelling out their will in a torrent of words and wisdom.
+    Your patron might be a powerful archmage, or even one of their abandoned artifacts,
+    searching for a successor. Spell List arcane Patron Skill Arcana Lesson of Glyph's
+    Supremacy Your patron teaches that the written word can accomplish so much more
+    than it seems. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Discern Secrets]
+    hex and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Runic Weapon].
+    Familiar of Flowing Script Your familiar is covered in a pattern that looks similar
+    to letters in an unknown language, one that seems to draw attention even as it
+    eludes understanding. When you Cast or Sustain a hex, the letters begin to rapidly
+    change, causing a distraction. Until the start of your next turn, your familiar
+    can provide flanking for you and your allies as though it were able to attack
+    and had a reach of 5 feet; this is a visual effect.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 338eb047d73a654aee92f6eb624c5689a987a1b1ef1e8a33e6762681aca9a500
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.arcana.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.arcana.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"arcane"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"arcane"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.FlowingScript.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.FlowingScript.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.FlowingScript.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.FlowingScript.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

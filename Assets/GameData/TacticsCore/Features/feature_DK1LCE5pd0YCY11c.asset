@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_DK1LCE5pd0YCY11c
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: DK1LCE5pd0YCY11c
+  Slug: bell
+  DisplayName: Bell
+  IconPath: systems/pf2e/icons/features/classes/bell.webp
+  Description: Bells symbolize the power that sounds and emotions hold over others,
+    soothing with one tone and startling with another. Bells, drums, finger cymbals,
+    and other percussion instruments are most typical, but these implements can be
+    any type of portable musical instrument that is played with one hand. Bell implements
+    are associated with the astrological signs of the daughter and the blossom. Initiate
+    Benefit You can use your bell implement to create three different kinds of music,
+    each of which weakens a foe in a different way. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Ring
+    Bell] activity. Adept Benefit Your bell resonates powerfully, causing the effect
+    to last longer. The conditions from Ring Bell last 3 rounds instead of 1 round.
+    Intensify Vulnerability Your reinforced bell can reach into the most basal part
+    of the target's mind, priming it to be vulnerable to the bell's effects. When
+    you successfully Strike the target of your Exploit Vulnerability, your bell implement
+    plays a haunting tone and the creature takes a -2 status penalty on saves against
+    your Ring Bell for 1 round, or a -3 status penalty on a critical hit. This effect
+    has the auditory, emotion, and mental traits. Paragon Benefit With your mastery
+    of your bell, you can affect many foes with ease. All the condition values from
+    Ring Bell increase to 2 (or 3 on a critical failure). Ring Bell can trigger off
+    the Strike or spell of any enemy, not just the target of your Exploit Vulnerability;
+    however, in that case, the condition lasts only until the start of your next
+    turn.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b2c38a78b3702b953832b2a2178bf31b0dcd516a513010aba8b290a4debc349d
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Bell Implement
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Bell
+      Implement"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.initiateBenefit
+    Mode: override
+    Value: '"Compendium.pf2e.classfeatures.Item.Initiate Benefit (Bell)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.thaumaturge.initiateBenefit","predicate":["feat:thaumaturge-dedication"],"value":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Bell)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Bell)
+    Json: '{"key":"GrantItem","predicate":["class:thaumaturge"],"uuid":"Compendium.pf2e.classfeatures.Item.Initiate
+      Benefit (Bell)"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.adeptChoices
+    Mode: add
+    Value: '{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-bell"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Bell)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.adeptChoices","predicate":["class:thaumaturge"],"priority":20,"value":{"label":"{item|name}","predicate":[{"not":"feature:adept-benefit-bell"}],"value":"Compendium.pf2e.classfeatures.Item.Adept
+      Benefit (Bell)"}}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Bell Implement
+    SourceId: 
+    DisplayName: Bell Implement
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Initiate Benefit (Bell)
+    SourceId: 
+    DisplayName: Initiate Benefit (Bell)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

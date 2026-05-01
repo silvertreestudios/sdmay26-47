@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ub9gwFXnMuKvhnPL
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ub9gwFXnMuKvhnPL
+  Slug: order-of-the-nail
+  DisplayName: Order of the Nail
+  IconPath: systems/pf2e/icons/default-icons/feat.svg
+  Description: 'Favored Weapons @UUID[Compendium.pf2e.equipment-srd.Item.Halberd],
+    @UUID[Compendium.pf2e.equipment-srd.Item.Lance] Members of the Order of the Nail
+    see civilized society as an ideal and seek to unite all people within their cultural
+    baseline. They also seek to destroy anyone who does not accept Chelaxian culture
+    along with the wild beasts that threaten the safety of civilization. Lesser Benefit
+    @UUID[Compendium.pf2e.feats-srd.Item.Trailblazing Stride] Greater Benefit @UUID[Compendium.pf2e.feats-srd.Item.Reveal
+    Beasts]'
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ca8aad3e123b076a1f2859e8207b48337a8fe4d2050fb1044fd9a9fe88d85201
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

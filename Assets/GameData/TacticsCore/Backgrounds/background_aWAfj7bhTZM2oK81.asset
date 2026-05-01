@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_aWAfj7bhTZM2oK81
+  m_EditorClassIdentifier: 
+  SourceId: aWAfj7bhTZM2oK81
+  Slug: hookclaw-digger
+  DisplayName: Hookclaw Digger
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisites Kobold ancestry You are a digger from the Hookclaw kobold
+    tribe, born beneath the streets of Absalom, with muscles and mind hardened by
+    years spent tunneling through rock and earth and a confidence built upon your
+    pride in your draconic heritage. Choose two attribute boosts. One must be to
+    Strength or Charisma , and one is a free attribute boost. You're trained in the
+    Crafting skill, the Mining Lore skill, and the Engineering Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Improvise Tool] skill feat.
+  SourceTitle: 'Pathfinder Adventure: Little Trouble in Big Absalom'
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 88655588104c36100b22497f9b994bacb71681e90d860086fe49ce18c4872311
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mining Lore
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering Lore
+    Rank: 1
+  LoreSkills:
+  - Mining Lore
+  - Engineering Lore
+  GrantedFeats:
+  - SourceKey: o3zgv
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Improvise Tool
+    SourceId: 
+    DisplayName: Improvise Tool
+    Level: 1
+    ResolvedFeature: {fileID: 0}

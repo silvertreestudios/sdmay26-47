@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_PJxPNMEUTimop4Lq
+  m_EditorClassIdentifier: 
+  SourceId: PJxPNMEUTimop4Lq
+  Slug: osprey-scion
+  DisplayName: Osprey Scion
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You are the birth or adopted child of one of the five elders of Osprey
+    Cove, and your parent or guardian volunteers you to accompany Elder Ordwi on
+    her trip to Iron Harbor, hoping to get an unbiased account of events. If your
+    parent or guardian is Ordwi, then she values your companionship and insight and
+    wants you along on this important mission. Choose two attribute boosts. One must
+    be to Constitution or Charisma , and one is a free attribute boost. You're trained
+    in the Diplomacy skill and the Xin-Edasseril Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Hobnobber]
+    skill feat.
+  SourceTitle: 'Pathfinder Adventure: Rusthenge'
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 75d4ce6ad6cb222263a10d79e3f4644d13032a6767f488316552784a12690d62
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Xin-Edasseril Lore
+    Rank: 1
+  LoreSkills:
+  - Xin-Edasseril Lore
+  GrantedFeats:
+  - SourceKey: N5Duw
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hobnobber
+    SourceId: 
+    DisplayName: Hobnobber
+    Level: 1
+    ResolvedFeature: {fileID: 0}

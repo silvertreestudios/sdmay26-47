@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_k9P2mXRjyy5X24rH
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: k9P2mXRjyy5X24rH
+  Slug: witness-to-ancient-battles
+  DisplayName: Witness to Ancient Battles
+  IconPath: icons/sundries/flags/banner-standard-moon.webp
+  Description: 'Witnesses to ancient battles may be the lingering remnants of soldiers
+    who never returned from their last deployment or the restless souls of warriors
+    whose final contest left them unfulfilled. Or the apparitions may be valkyries
+    and other beings from beyond, naturally drawn to sites of death and battle, or
+    even the unquiet entity formed from a battlefield that saw so much death and
+    blood it gained a spiritual essence of its own. Witnesses to ancient battles
+    are often somber and grim. Apparition Skills Battlegrounds Lore, Heraldry Lore
+    Apparition Spells Cantrip @UUID[Compendium.pf2e.spells-srd.Item.Shield] 1st @UUID[Compendium.pf2e.spells-srd.Item.Sure
+    Strike] 2nd @UUID[Compendium.pf2e.spells-srd.Item.Enlarge] 3rd @UUID[Compendium.pf2e.spells-srd.Item.Ghostly
+    Weapon] 4th @UUID[Compendium.pf2e.spells-srd.Item.Weapon Storm] 5th @UUID[Compendium.pf2e.spells-srd.Item.Invoke
+    Spirits] 6th @UUID[Compendium.pf2e.spells-srd.Item.Phantasmal Calamity] 7th @UUID[Compendium.pf2e.spells-srd.Item.True
+    Target] 8th @UUID[Compendium.pf2e.spells-srd.Item.Canticle of Everlasting Grief]
+    9th @UUID[Compendium.pf2e.spells-srd.Item.Weapon of Judgment] Vessel Spell @UUID[Compendium.pf2e.spells-srd.Item.Embodiment
+    of Battle] Avatar General of Endless Battle Speed 70 feet, immune to @UUID[Compendium.pf2e.conditionitems.Item.Immobilized]
+    Melee 1 final strike (agile, fatal d12, reach 15 feet), Damage @Damage[(6d8+6)[slashing]]'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9e252d7b9df3ff966d314e9f4a46444a212bc9e8971a31f77beec63184e8b036
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

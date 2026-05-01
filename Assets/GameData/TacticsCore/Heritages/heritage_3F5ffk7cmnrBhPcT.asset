@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_3F5ffk7cmnrBhPcT
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 3F5ffk7cmnrBhPcT
+  Slug: liminal-catfolk
+  DisplayName: Liminal Catfolk
+  IconPath: icons/creatures/mammals/humanoid-cat-skulking-teal.webp
+  Description: You've inherited a closeness to the far corners of the world, where
+    the boundaries between dimensions grow thin. You can cast the @UUID[Compendium.pf2e.spells-srd.Item.Detect
+    Magic] cantrip as an occult innate spell at will. A cantrip is heightened to
+    half your level rounded up. You also gain a +1 circumstance bonus to Occultism
+    checks to @UUID[Compendium.pf2e.actionspf2e.Item.Recall Knowledge] about creatures
+    that originated on planes other than the Universe.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: b64261aa3be93ea24a8c44c04231bf5c0324c7e173ae1d05faf9553fdc316f3b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:recall-knowledge","target:not-from-universe"],"selector":"occultism","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.972EkpJOPv9KkQIW
+    SourceId: 
+    Slug: catfolk
+    DisplayName: Catfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 44d614089b9f9a1489e79e108d8ebe69, type: 2}
+  GrantedFeatures: []

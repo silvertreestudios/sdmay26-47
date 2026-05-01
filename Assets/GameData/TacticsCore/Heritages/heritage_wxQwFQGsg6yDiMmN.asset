@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_wxQwFQGsg6yDiMmN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: wxQwFQGsg6yDiMmN
+  Slug: leungli
+  DisplayName: Leungli
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have the head of a goldfish or carp and scales that come in an
+    auspicious combination of stark white, black, orange, red, and gold. If you gain
+    wings, they appear much like the wispy hairs of a dragon. You gain a swim Speed
+    of 10 feet and the amphibious trait. Like all creatures with the amphibious trait,
+    you can breathe both water and air.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: a2db76bac74b4c05d3762039b17c7ae9182074546cfafa0574c7267dedcc17ea
+  Traits:
+  - sprite
+  TraitsLower:
+  - sprite
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 10
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"swim","value":10}'
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["amphibious"],"key":"ActorTraits"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TRqoeYfGAFjQbviF
+    SourceId: 
+    Slug: sprite
+    DisplayName: Sprite
+  ParentAncestryAsset: {fileID: 11400000, guid: afedc73b20f7005478723c5b1a6b86f8, type: 2}
+  GrantedFeatures: []

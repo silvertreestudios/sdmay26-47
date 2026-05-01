@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_89LEOv97ZwsjnhNx
+  m_EditorClassIdentifier: 
+  SourceId: 89LEOv97ZwsjnhNx
+  Slug: gambler
+  DisplayName: Gambler
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The thrill of the win drew you into games of chance. This might have
+    been a lucrative sideline that paled in comparison to the real risks of adventuring,
+    or you might have fallen on hard times due to your gambling and pursued adventuring
+    as a way out of a spiral. Choose two attribute boosts. One must be to Dexterity
+    or Charisma , and one is a free attribute boost. You're trained in the Deception
+    skill and the Games Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Lie
+    to Me] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 896b952a82e7ff8758d3c890c1543e64a0daf64aa22d4411fb2767de357ec30a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Games Lore
+    Rank: 1
+  LoreSkills:
+  - Games Lore
+  GrantedFeats:
+  - SourceKey: yiu61
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Lie to Me
+    SourceId: 
+    DisplayName: Lie To Me
+    Level: 1
+    ResolvedFeature: {fileID: 0}

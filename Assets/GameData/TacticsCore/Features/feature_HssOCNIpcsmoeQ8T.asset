@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_HssOCNIpcsmoeQ8T
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: HssOCNIpcsmoeQ8T
+  Slug: warrior-of-legend
+  DisplayName: Warrior of Legend
+  IconPath: icons/weapons/polearms/spear-flared-blue.webp
+  Description: 'You have received a blessing that will ensure your ascension to legend,
+    and a curse that foretells your inevitable fall. You must select Warrior of Legend
+    Dedication as your 2nd-level class feat. Prerequisites: You must be a fighter.
+    Warrior of Legend Adjustments: You aren''t trained in heavy armor. The armor
+    expertise and armor mastery class features only improve your proficiency rank
+    for light armor, medium armor, and unarmored defense. You don''t gain Shield
+    Block as a class feature. You are trained in both Acrobatics and Athletics, rather
+    than one or the other. Choose one physical damage type, which becomes your cursed
+    weakness: bludgeoning, piercing, or slashing. You gain weakness to this damage
+    type equal to half your level (minimum 1). You gain @UUID[Compendium.pf2e.feats-srd.Item.Diehard]
+    as a bonus feat, but you become Doomed 2 whenever you take damage from your cursed
+    weakness (unless your doomed value is already higher). Your fighter weapon mastery
+    and weapon legend class features grant you increased proficiency in both spears
+    and polearms, but you can''t choose any other weapon group with these class features.'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0a670f1176f4e7f77e537a1e8b63a4ab3facbfe0f997e553ded4eb2de4eefbe8
+  Traits:
+  - fighter
+  TraitsLower:
+  - fighter
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"actorFlag":true,"adjustName":false,"choices":[{"label":"PF2E.TraitBludgeoning","value":"bludgeoning"},{"label":"PF2E.TraitSlashing","value":"slashing"},{"label":"PF2E.TraitPiercing","value":"piercing"}],"flag":"warriorOfLegendCursedWeakness","key":"ChoiceSet","prompt":"PF2E.SpecificRule.WarriorOfLegend.CursedWeakness.Prompt"}'
+  - Key: Weakness
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Weakness","type":"{actor|flags.pf2e.warriorOfLegendCursedWeakness}","value":"max(1,floor(@actor.level/2))"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Diehard
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Diehard"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Warrior of Legend Dedication
+    Json: '{"flag":"warriorOfLegendDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Warrior
+      of Legend Dedication"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Diehard
+    SourceId: 
+    DisplayName: Diehard
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Warrior of Legend Dedication
+    SourceId: 
+    DisplayName: Warrior of Legend Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

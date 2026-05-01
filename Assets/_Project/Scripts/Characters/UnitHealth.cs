@@ -1,10 +1,10 @@
 using System;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
-using PathfinderTactics.Reactions;
+using TacticsGame.Combat;
+using TacticsGame.Core;
+using TacticsGame.Reactions;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Component that tracks a Unit's current and maximum HP at runtime.
@@ -42,9 +42,20 @@ namespace PathfinderTactics.Characters
             {
                 unitConditions = gameObject.AddComponent<UnitConditions>();
             }
+        }
+
+        private void Start()
+        {
+            // Initialize from IUnitDataProvider
+            if (thisUnit != null && thisUnit.GetStats() != null)
+            {
+                baseMaxHealth = thisUnit.GetStats().GetMaxHP(null);
+            }
 
             currentMaxHealth = baseMaxHealth;
             currentHealth = currentMaxHealth;
+
+            OnHealthChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void OnEnable()
@@ -67,7 +78,7 @@ namespace PathfinderTactics.Characters
         // Drained Hook
         private void HandleDrainedChanged(int drainedValue)
         {
-            int level = 1; // TODO: Pull from UnitStatsSO later
+            int level = thisUnit.Level;
             int hpReduction = level * drainedValue;
 
             int oldMax = currentMaxHealth;
@@ -257,7 +268,7 @@ namespace PathfinderTactics.Characters
             int d20 = UnityEngine.Random.Range(1, 21);
             int dc = 10 + currentDying; // Default PF2e recovery DC
 
-            Degree result = PF2E_Core.CheckResult(d20, 0, dc);
+            Degree result = TacticsRuleset_Core.CheckResult(d20, 0, dc);
             Debug.Log($"[Recovery Check] Rolled {d20} vs DC {dc}. Result: {result}");
 
             int newDying = currentDying;

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_r0kYIbN06Cv8eNG3
+  m_EditorClassIdentifier: 
+  SourceId: r0kYIbN06Cv8eNG3
+  Slug: warrior
+  DisplayName: Warrior
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: In your younger days, you waded into battle as a mercenary, a warrior
+    defending a nomadic people, or a member of a militia or army. You might have
+    wanted to break away from the regimented structure of these forces, or you could
+    have always been as independent a warrior as you are now. Choose two attribute
+    boosts. One must be to Strength or Constitution , and one is a free attribute
+    boost. You're trained in the Intimidation skill and the Warfare Lore skill. You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating Glare] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a20cce6bb9963a811088f69625c346411568573e945416d33d8c11ddc5cf128a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare Lore
+    Rank: 1
+  LoreSkills:
+  - Warfare Lore
+  GrantedFeats:
+  - SourceKey: wkfyj
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

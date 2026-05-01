@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_moVRsnpjB5THCwxE
+  m_EditorClassIdentifier: 
+  SourceId: moVRsnpjB5THCwxE
+  Slug: street-urchin
+  DisplayName: Street Urchin
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You eked out a living by picking pockets on the streets of a major
+    city, never knowing where you'd find your next meal. While some adventure for
+    the glory, you do so to survive. Choose two attribute boosts. One must be to
+    Dexterity or Constitution , and one is a free attribute boost. You're trained
+    in the Thievery skill and a Lore skill for the city you lived in as a street
+    urchin (such as Absalom Lore or Magnimar Lore). You gain the @UUID[Compendium.pf2e.feats-srd.Item.Pickpocket]
+    skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: b50a580c1433e47e3c74ffd865fe34952a480e53163e3f1ca33059ed59bb4820
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 17
+    CustomSkillId: thievery
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <City> Lore
+    Rank: 1
+  LoreSkills:
+  - <City> Lore
+  GrantedFeats:
+  - SourceKey: jpni5
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pickpocket
+    SourceId: 
+    DisplayName: Pickpocket
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_RxNBBMFZwPA3Vlg3
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: RxNBBMFZwPA3Vlg3
+  Slug: shoreline-strix
+  DisplayName: Shoreline Strix
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're the descendant of strix who traveled to the coasts. Your feathers
+    are especially water-repellent and sleekly angled for diving, allowing you to
+    catch fish and other prey in the shallows. You are trained in Athletics, and
+    you gain the @UUID[Compendium.pf2e.feats-srd.Item.Underwater Marauder] skill
+    feat as a bonus skill feat.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 70514fea2e4f61e78f48ac635ef0426af9b82089dcd6f8590f4284c95259bf49
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Underwater Marauder
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Underwater Marauder"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GXcC6oVa5quzgNHD
+    SourceId: 
+    Slug: strix
+    DisplayName: Strix
+  ParentAncestryAsset: {fileID: 11400000, guid: c5ca5e206f445b84da8b58c948145126, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Underwater Marauder
+    SourceId: 
+    DisplayName: Underwater Marauder
+    Level: 0
+    ResolvedFeature: {fileID: 0}

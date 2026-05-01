@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_BRXXlw03K6ZeB2Li
+  m_EditorClassIdentifier: 
+  SourceId: BRXXlw03K6ZeB2Li
+  Slug: eidolon-contact
+  DisplayName: Eidolon Contact
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've come into contact with a disembodied being of magical essence
+    known as an eidolon. You might have forged a powerful conduit with that eidolon,
+    allowing you to manifest it as a summoner, but it's much more likely that you
+    lost contact over time, though not before learning a few half-remembered secrets.
+    If you lost contact, you might have become an adventurer to try to reach the
+    eidolon again, or to be sure that you're rid of it forever. Choose two attribute
+    boosts. One must be to Constitution or Charisma , and one is a free attribute
+    boost. You're trained in your choice of Arcana, Nature, Occultism, or Religion,
+    and a Lore skill for the creature associated with your contacted eidolon (such
+    as Angel Lore or Dragon Lore). You gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious
+    Knowledge] skill feat.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: e44ca3745c0731a9a54945fc7999b6e29d99b69fe8369d86da4b145a8e8e8538
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Arcana","value":"arcana"},{"label":"PF2E.Skill.Nature","value":"nature"},{"label":"PF2E.Skill.Occultism","value":"occultism"},{"label":"PF2E.Skill.Religion","value":"religion"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Eidolon Type> Lore
+    Rank: 1
+  LoreSkills:
+  - <Eidolon Type> Lore
+  GrantedFeats:
+  - SourceKey: fy5xi
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_cDElVLonQvUK3vVk
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: cDElVLonQvUK3vVk
+  Slug: whipfang-nagaji
+  DisplayName: Whipfang Nagaji
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have a long, flexible neck that can curl into a striking pose
+    like that of a snake. Your deceptively powerful muscles allow you to bite with
+    surprising distance and speed. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Raise
+    Neck] action.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 193d83778519849383b852eb8a32dfb2fdf42d8b7d489acb849860815261327a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Raise Neck
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Raise Neck"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.J7T7bDLaQGoY1sMF
+    SourceId: 
+    Slug: nagaji
+    DisplayName: Nagaji
+  ParentAncestryAsset: {fileID: 11400000, guid: 7bfce613ccdb85048969c9b87f6da958, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Raise Neck
+    SourceId: 
+    DisplayName: Raise Neck
+    Level: 0
+    ResolvedFeature: {fileID: 0}

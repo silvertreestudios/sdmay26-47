@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_5qUQOpdlNsJjpFVX
+  m_EditorClassIdentifier: 
+  SourceId: 5qUQOpdlNsJjpFVX
+  Slug: ruin-delver
+  DisplayName: Ruin Delver
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've looked through some of the smaller ruins in the Otari hinterlands
+    but have never quite built up the courage to check out the creepy lighthouse
+    called Gauntlight. You've heard that these ruins are pretty well picked over,
+    and mostly collapsed, but you always planned to some day explore them and perhaps
+    find some bauble left behind from the centuries-old battle where the Roseguard
+    slew an evil sorcerer. You know that the crumbled stone of old ruins has a tendency
+    to shift, so you'd better step lightly if you get the chance to explore Gauntlight.
+    Choose two attribute boosts. One must be to Dexterity or Intelligence , and one
+    is a free attribute boost. You're trained in Acrobatics and the Roseguard Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Cat Fall] skill feat.
+  SourceTitle: Pathfinder Abomination Vaults Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 818ce1c49417204f2c6e4baaa7ab3e51c9e170028482a471f380642568bcab69
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 1
+    CustomSkillId: acrobatics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Roseguard Lore
+    Rank: 1
+  LoreSkills:
+  - Roseguard Lore
+  GrantedFeats:
+  - SourceKey: 1jgzx
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Cat Fall
+    SourceId: 
+    DisplayName: Cat Fall
+    Level: 1
+    ResolvedFeature: {fileID: 0}

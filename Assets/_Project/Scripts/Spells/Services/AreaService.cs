@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data.PF2e;
-using PathfinderTactics.Grid;
+using TacticsGame.Core;
+using TacticsGame.Data.TacticsRuleset;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Services
+namespace TacticsGame.Spells.Services
 {
     /// <summary>
     /// Pure spatial math - converts AreaDefinitions into grid cell lists.
@@ -74,8 +74,8 @@ namespace PathfinderTactics.Spells.Services
                     int stepX = tx <= origin.x ? origin.x - tx + 1 : tx - origin.x;
                     int stepZ = tz <= origin.z ? origin.z - tz + 1 : tz - origin.z;
 
-                    // Calculate PF2e distance using alternating diagonal rule
-                    int dist = Pf2eGridDistance(stepX, stepZ);
+                    // Calculate distance using alternating diagonal rule
+                    int dist = RulesetGridDistance(stepX, stepZ);
 
                     if (dist <= radiusInFeet)
                     {
@@ -86,11 +86,11 @@ namespace PathfinderTactics.Spells.Services
         }
 
         /// <summary>
-        /// Calculates PF2e grid distance using the alternating diagonal rule.
+        /// Calculates grid distance using the alternating diagonal rule.
         /// dx and dz are in grid steps (each step = 5ft).
         /// Diagonal steps alternate 5ft and 10ft: 1st=5, 2nd=10, 3rd=5, 4th=10...
         /// </summary>
-        public static int Pf2eGridDistance(int dx, int dz)
+        public static int RulesetGridDistance(int dx, int dz)
         {
             int diagonal = Mathf.Min(dx, dz);
             int straight = Mathf.Max(dx, dz) - diagonal;
@@ -105,12 +105,12 @@ namespace PathfinderTactics.Spells.Services
         }
 
         /// <summary>
-        /// 3D PF2e distance in feet using the 2-step merge rule.
+        /// 3D distance in feet using the 2-step merge rule.
         /// Step 1: merge dx and dz horizontally (tiles).
         /// Step 2: merge horizontal result with dy (tiles).
         /// dx, dy, dz are in grid steps (tiles).
         /// </summary>
-        public static int Pf2eGridDistance3D(int dx, int dy, int dz)
+        public static int RulesetGridDistance3D(int dx, int dy, int dz)
         {
             int dHorizontalTiles = Mathf.Max(dx, dz) + Mathf.FloorToInt(Mathf.Min(dx, dz) / 2f);
             int totalTiles =
@@ -253,7 +253,7 @@ namespace PathfinderTactics.Spells.Services
                 {
                     for (int perp = 1; perp <= radius; perp++)
                     {
-                        if (Pf2eGridDistance(forward, perp) <= radiusFt)
+                        if (RulesetGridDistance(forward, perp) <= radiusFt)
                         {
                             cells.Add(
                                 new GridPosition(start.x + forward * dirX, start.z + perp * dirZ)
@@ -285,7 +285,7 @@ namespace PathfinderTactics.Spells.Services
                             if (stepPerp > forward)
                                 continue; // Stay within 90-degree wedge
 
-                            dist = Pf2eGridDistance(stepPerp, forward);
+                            dist = RulesetGridDistance(stepPerp, forward);
 
                             // Close the physical gap on the grid.
                             // The intersection sits strictly between two columns/rows.
@@ -302,7 +302,7 @@ namespace PathfinderTactics.Spells.Services
                             if (stepPerp > forward / 2)
                                 continue;
 
-                            dist = Pf2eGridDistance(stepPerp, forward);
+                            dist = RulesetGridDistance(stepPerp, forward);
                             gridOffsetPerp = perp; // Exactly aligned
                         }
 
@@ -333,7 +333,7 @@ namespace PathfinderTactics.Spells.Services
 
         /// <summary>
         /// Full 3D area calculation. Returns all affected voxels (Vector3Int) including
-        /// correct Y layers, filtered by PF2e 3D distance and Line of Effect.
+        /// correct Y layers, filtered by 3D distance and Line of Effect.
         /// </summary>
         public static List<Vector3Int> GetAffectedCells3D(
             Vector3Int origin,
@@ -372,7 +372,7 @@ namespace PathfinderTactics.Spells.Services
         }
 
         /// <summary>
-        /// 3D burst centered on an intersection point. Uses 2-step PF2e distance
+        /// 3D burst centered on an intersection point. Uses 2-step distance
         /// from the intersection to each node, with LoE check per tile.
         /// </summary>
         private static void AddBurstCells3D(
@@ -394,7 +394,7 @@ namespace PathfinderTactics.Spells.Services
                         int stepZ = tz <= origin.z ? origin.z - tz + 1 : tz - origin.z;
                         int stepY = Mathf.Abs(ty - origin.y);
 
-                        int dist = Pf2eGridDistance3D(stepX, stepY, stepZ);
+                        int dist = RulesetGridDistance3D(stepX, stepY, stepZ);
 
                         if (dist <= radiusInFeet)
                         {
@@ -410,7 +410,7 @@ namespace PathfinderTactics.Spells.Services
         }
 
         /// <summary>
-        /// 3D emanation centered on the caster's position. Uses PF2e 3D distance
+        /// 3D emanation centered on the caster's position. Uses 3D distance
         /// from caster to each node, with LoE check per tile.
         /// </summary>
         private static void AddEmanationCells3D(
@@ -431,7 +431,7 @@ namespace PathfinderTactics.Spells.Services
                             center.y + y,
                             center.z + z
                         );
-                        int dist = PF2E_Core.GetPF2eDistance3D(center, testPos);
+                        int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(center, testPos);
                         if (dist <= radius && LineOfSightUtility.HasLineOfEffect(center, testPos))
                         {
                             cells.Add(testPos);
@@ -568,7 +568,7 @@ namespace PathfinderTactics.Spells.Services
 
         /// <summary>
         /// 3D cone using the existing 2D template math, extended through Y levels.
-        /// For each (x,z) cell in the 2D cone, all Y nodes within PF2e 3D distance
+        /// For each (x,z) cell in the 2D cone, all Y nodes within 3D distance
         /// and LoE are included.
         /// </summary>
         private static void AddConeCells3D(
@@ -597,7 +597,10 @@ namespace PathfinderTactics.Spells.Services
                         if (testPos == start)
                             continue;
 
-                        int distFt = PF2E_Core.GetPF2eDistance3DInFeet(start, testPos);
+                        int distFt = TacticsRuleset_Core.GetTacticsRulesetDistance3DInFeet(
+                            start,
+                            testPos
+                        );
                         if (distFt <= radiusFt)
                         {
                             Vector3 dirToTest = ((Vector3)(testPos - start)).normalized;

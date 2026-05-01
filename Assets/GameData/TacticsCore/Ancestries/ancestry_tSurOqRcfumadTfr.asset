@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_tSurOqRcfumadTfr
+  m_EditorClassIdentifier: 
+  SourceId: tSurOqRcfumadTfr
+  Slug: ghoran
+  DisplayName: Ghoran
+  IconPath: systems/pf2e/icons/default-icons/ancestry.svg
+  Description: "These intelligent plant people, created by a long-dead druid, possess
+    a sort of immortality through their seeds\u2014unless these are destroyed by
+    external events other than merely the ravages of time. Ghoran"
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: fd42d63e31ab83cd6982816c0e71b3791ca85fee7738654c7b58a9b39437aad6
+  Traits:
+  - ghoran
+  - humanoid
+  - plant
+  TraitsLower:
+  - ghoran
+  - humanoid
+  - plant
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: fey
+    DisplayName: Fey
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: jotun
+    DisplayName: Jotun
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: Jpors
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Photosynthesis
+    SourceId: 
+    DisplayName: Photosynthesis
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 2d298beb37e9ae143be5eb79b6f1c818, type: 2}
+  - {fileID: 11400000, guid: ed9926ce69589b2449927f35f1492c74, type: 2}
+  - {fileID: 11400000, guid: e498790af659627449e326ba200f2e0d, type: 2}
+  - {fileID: 11400000, guid: 9452322ba62a5e34fa38bea785ab5b53, type: 2}

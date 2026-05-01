@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_gtLL1QoTepIo6qu4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: gtLL1QoTepIo6qu4
+  Slug: echoes-of-the-swords
+  DisplayName: Echoes of the Swords
+  IconPath: icons/weapons/swords/sword-winged-pink.webp
+  Description: The prowess of Swordmasters past flows through you. When you Climb,
+    @UUID[Compendium.pf2e.actionspf2e.Item.Force Open], @UUID[Compendium.pf2e.actionspf2e.Item.High
+    Jump], @UUID[Compendium.pf2e.actionspf2e.Item.Long Jump], or Swim, you can spend
+    a Mythic Point to make the check at mythic proficiency. The first time each day
+    that you critically succeed on an Athletics check while Climbing, Forcing Open,
+    High Jumping, Long Jumping, or Swimming, you regain a Mythic Point.
+  SourceTitle: 'Pathfinder Society Scenario #6-09: The Power of Legends'
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 959183bbf20779a0aa26bb5cf10a1b3dc3ef6a3a2d2a0df75e6c6390590201ec
+  Traits:
+  - calling
+  - mythic
+  TraitsLower:
+  - calling
+  - mythic
+  RawRules: []
+  Category: 0
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

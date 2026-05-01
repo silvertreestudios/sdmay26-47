@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_7dMDxvzGKbqoEAdX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 7dMDxvzGKbqoEAdX
+  Slug: natural-reflexes
+  DisplayName: Natural Reflexes
+  IconPath: icons/magic/symbols/symbol-lightning-bolt.webp
+  Description: You've honed your reflexes dodging falling trees and pounding hail.
+    Your proficiency rank for Reflex saves increases to master. When you roll a success
+    on a Reflex save, you get a critical success instead.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1b8d45012bf5bbc1af3f02888b59d928c1dfb530f187543e11b37083c68489b4
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["success"],"selector":"reflex","text":"PF2E.SpecificRule.SaveSuccessToCriticalSuccess.Reflex","title":"{item|name}"}'
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"reflex"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: reflex
+    Rank: 3
+  FocusPointDelta: 0

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_SJ3nNOI5A8A4hK0Q
+  m_EditorClassIdentifier: 
+  SourceId: SJ3nNOI5A8A4hK0Q
+  Slug: winter-s-child
+  DisplayName: Winter's Child
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Saga Lands Your or one of your ancestors hails
+    from Irrisen, and some spark of the icy region's magic has manifested itself
+    within your bones. The blood of Baba Yaga's legacy runs in your veins, and you
+    are at one with the mysteries and dangers of the frozen land. Choose two attribute
+    boosts. One must be to Constitution or Charisma , and one is a free attribute
+    boost. You're trained in the Arcana skill and the Weather Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Arcane Sense] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: ca43afdafe300e4de647695fa0dd1bd0c167a41dcc0eb3cfc94328916e0e6245
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Weather Lore
+    Rank: 1
+  LoreSkills:
+  - Weather Lore
+  GrantedFeats:
+  - SourceKey: k3n7x
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Arcane Sense
+    SourceId: 
+    DisplayName: Arcane Sense
+    Level: 1
+    ResolvedFeature: {fileID: 0}

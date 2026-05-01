@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_CCwTBSNTw0caN1jd
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: CCwTBSNTw0caN1jd
+  Slug: mutated-fleshwarp
+  DisplayName: Mutated Fleshwarp
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Transformed by uncontrolled magic, you originated in a the Mana Wastes
+    or another region similarly devastated by uncontrolled magic. Due to your toughened
+    or redundant organs, the DC for your checks to recover from persistent bleed
+    damage is 10 instead of 15, and it's reduced to @Check[flat|dc:5] instead of
+    10 if you have particularly effective assistance recovering from the persistent
+    damage.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 3b9a143fe894a8d07c37b6f1d162a28f72f8fa733edd2c20084ec595406ce546
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: downgrade
+    Value: 10
+    Uuid: 
+    Json: '{"itemType":"condition","key":"ItemAlteration","mode":"downgrade","predicate":["item:damage:type:bleed"],"property":"pd-recovery-dc","value":10}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.FXlXmNBFiiz9oasi
+    SourceId: 
+    Slug: fleshwarp
+    DisplayName: Fleshwarp
+  ParentAncestryAsset: {fileID: 11400000, guid: 0a2d0aca9a4b5a7458e4d411a0bf9d0e, type: 2}
+  GrantedFeatures: []

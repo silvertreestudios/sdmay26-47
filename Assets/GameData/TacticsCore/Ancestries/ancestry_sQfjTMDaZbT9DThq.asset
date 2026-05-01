@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_sQfjTMDaZbT9DThq
+  m_EditorClassIdentifier: 
+  SourceId: sQfjTMDaZbT9DThq
+  Slug: goblin
+  DisplayName: Goblin
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/goblin.svg
+  Description: The convoluted histories other people cling to don't interest goblins.
+    These small folk live in the moment, and they prefer tall tales over factual
+    records. The wars of a few decades ago might as well be from the ancient past.
+    Misunderstood by other people, goblins are happy how they are. Goblin virtues
+    are about being present, creative, and honest. They strive to lead fulfilled
+    lives, rather than worrying about how their journeys will end. To tell stories,
+    not nitpick the facts. To be small, but dream big. Goblin
+  SourceTitle: Pathfinder Player Core
+  SourcePack: ancestries
+  Rarity: common
+  SourceJsonHash: 7fd0c45c4784016b44bc09fa4e2d3643a8f2700161721e61eb951d7032512a9f
+  Traits:
+  - goblin
+  - humanoid
+  TraitsLower:
+  - goblin
+  - humanoid
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 02000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 05000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: goblin
+    DisplayName: Goblin
+  AdditionalLanguageOptions:
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: halfling
+    DisplayName: Halfling
+  - Id: kholo
+    DisplayName: Kholo
+  - Id: orcish
+    DisplayName: Orcish
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: 35298775ca7498348893c78e5841e785, type: 2}
+  - {fileID: 11400000, guid: 36909d88dd3938b4481491c2a44298ae, type: 2}
+  - {fileID: 11400000, guid: 30f3913c7369b2c48b9473ab560f0380, type: 2}
+  - {fileID: 11400000, guid: a041262146c28b34caa74a62d9897c3d, type: 2}
+  - {fileID: 11400000, guid: 043363997484d67428b715b6d9b0f647, type: 2}
+  - {fileID: 11400000, guid: 592aa22e73fabb348808de933354c57a, type: 2}
+  - {fileID: 11400000, guid: e02178a9511ab3d4fb507e2a06682d32, type: 2}
+  - {fileID: 11400000, guid: 821edd187daee6948bcfb32d4351e9d7, type: 2}

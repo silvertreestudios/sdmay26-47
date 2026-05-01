@@ -1,14 +1,14 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Effects
+namespace TacticsGame.Spells.Effects
 {
     /// <summary>
     /// Roll Phase: Marks all affected targets as auto-hit (Success) with no roll.
     /// Used by spells like Magic Missile that bypass attack rolls and saving throws.
     /// </summary>
-    [CreateAssetMenu(menuName = "PF2e/Spell Effects/Auto-Hit")]
+    [CreateAssetMenu(menuName = "TacticsRuleset/Spell Effects/Auto-Hit")]
     public class AutoHitEffectSO : SpellEffectSO
     {
         private void OnEnable()

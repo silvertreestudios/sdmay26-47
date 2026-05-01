@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_4naQmCXBl0007c2W
+  m_EditorClassIdentifier: 
+  SourceId: 4naQmCXBl0007c2W
+  Slug: touched-by-dahak
+  DisplayName: Touched by Dahak
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: '[Legacy - Age of Ashes] As the manifestation of Dahak was destroyed,
+    a shard of the dragon god''s wrathful nature infused you, resulting in a violent
+    temper, strange apocalyptic dreams, an obsession with dragon hunting, or some
+    other touch of his influence. Choose two attribute boosts. One must be to Strength
+    or Charisma , and one is a free attribute boost. You''re trained in the Athletics
+    skill and the Dragon Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Titan
+    Wrestler] skill feat.'
+  SourceTitle: 'Pathfinder #150: Broken Promises'
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: a8ac440a1f903b31281fb4357949615c7d16b674eb343d90a90e8dac218d9291
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Dragon Lore
+    Rank: 1
+  LoreSkills:
+  - Dragon Lore
+  GrantedFeats:
+  - SourceKey: uy8ld
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Titan Wrestler
+    SourceId: 
+    DisplayName: Titan Wrestler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

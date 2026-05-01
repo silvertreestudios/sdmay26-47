@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data;
+using TacticsGame.Actions;
+using TacticsGame.Core;
+using TacticsGame.Data;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     public class ActionMenuUI : MonoBehaviour
     {
@@ -63,7 +63,7 @@ namespace PathfinderTactics.UI
                 // If the action has a specific damage type, override the default icon
                 var actionDamageType = action.GetPrimaryDamageType();
                 if (
-                    actionDamageType != PathfinderTactics.Characters.DamageType.Untyped
+                    actionDamageType != TacticsGame.Characters.DamageType.Untyped
                     && uiDataConfig != null
                 )
                 {

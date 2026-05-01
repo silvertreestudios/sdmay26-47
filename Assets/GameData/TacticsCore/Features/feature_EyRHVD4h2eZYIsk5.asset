@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_EyRHVD4h2eZYIsk5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: EyRHVD4h2eZYIsk5
+  Slug: custodian-of-groves-and-gardens
+  DisplayName: Custodian of Groves and Gardens
+  IconPath: icons/environment/wilderness/tree-ash.webp
+  Description: 'Custodians of groves and gardens frequent tended greenery and farmlands
+    cared for by loving stewards, and other places of reflection and restoration
+    where green things grow. Some of these apparitions linger in the mortal realms
+    not because they have lost their way, but because they believe they have already
+    found Elysium. Others are the cultivated spiritual essence of the location itself.
+    Custodians of groves and gardens are peaceful, quiet, and averse to conflict.
+    Apparition Skills Farming Lore, Herbalism Lore Apparition Spells Cantrip @UUID[Compendium.pf2e.spells-srd.Item.Tangle
+    Vine] 1st @UUID[Compendium.pf2e.spells-srd.Item.Protector Tree] 2nd @UUID[Compendium.pf2e.spells-srd.Item.Gentle
+    Breeze] 3rd @UUID[Compendium.pf2e.spells-srd.Item.Safe Passage] 4th @UUID[Compendium.pf2e.spells-srd.Item.Peaceful
+    Bubble] 5th @UUID[Compendium.pf2e.spells-srd.Item.Truespeech] 6th @UUID[Compendium.pf2e.spells-srd.Item.Field
+    of Life] 7th @UUID[Compendium.pf2e.spells-srd.Item.Lifewood Cage] 8th @UUID[Compendium.pf2e.spells-srd.Item.Moment
+    of Renewal] 9th @UUID[Compendium.pf2e.spells-srd.Item.Nature''s Enmity] Vessel
+    Spell @UUID[Compendium.pf2e.spells-srd.Item.Garden of Healing] Avatar Peaceful
+    Reaches Speed 60 feet, ignore difficult terrain and greater difficult terrain
+    Melee 1 garden''s cradle (agile, nonlethal, reach 10 feet, trip), Damage @Damage[(6d6+6)[bludgeoning]]
+    plus Grab Ranged 1 impose peace (nonlethal, range 120 feet), Damage @Damage[(6d6+6)[mental]]'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 3a10a8a14bbb82305231c55e7bbac755071466ce55ed26989d2807861195fb92
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

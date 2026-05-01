@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_OhP7cqvNouFgHIdJ
+  m_EditorClassIdentifier: 
+  SourceId: OhP7cqvNouFgHIdJ
+  Slug: sewer-dragon
+  DisplayName: Sewer Dragon
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisites Kobold Ancestry You are one of the Sewer Dragons, born
+    in Absalom's sewers, strengthened by a life defending your territory. Choose
+    two attribute boosts. One must be to Dexterity or Intelligence , and one is a
+    free attribute boost. You're trained in the Crafting skill and the Kobold Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Snare Crafting] skill
+    feat.
+  SourceTitle: 'Pathfinder Society Quest #10: The Broken Scales'
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 1fcf5a4d1803cb7e61195cb8c7390b614b8df667f7f075629fa9fbaadea5da00
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Kobold Lore
+    Rank: 1
+  LoreSkills:
+  - Kobold Lore
+  GrantedFeats:
+  - SourceKey: 4w4bm
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Snare Crafting
+    SourceId: 
+    DisplayName: Snare Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

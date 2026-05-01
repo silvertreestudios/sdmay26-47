@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_lJAQPRT2t8IABR4v
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: lJAQPRT2t8IABR4v
+  Slug: mirrored-aegis
+  DisplayName: Mirrored Aegis
+  IconPath: icons/equipment/shield/heater-steel-spiral.webp
+  Description: "Usage any shield This shield is polished so brightly it can reflect
+    even spiritual and ethereal attacks. Immanence (aura) The mirrored aegis emits
+    an aura in a @Template[type:emanation|distance:15] that protects you and all
+    allies in the aura from harm, granting a +1 status bonus to AC. If the mirrored
+    aegis houses your divine spark for 10 uninterrupted minutes, it is restored to
+    full Hit Points. Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.Raise
+    the Walls] 1 (force, transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.IBEbFlMmDbGsrN4G
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: c660647b3f22c688d7b08139f27e086ad8568feb725e9c028938fbecd91e3bee
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"mirrored-aegis"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.MirroredAegis.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"mirrored-aegis"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.MirroredAegis.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"mirrored-aegis"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Raise the Walls
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Raise the
+      Walls"}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"allies","uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Mirrored Aegis"}],"key":"Aura","predicate":["divine-spark:mirrored-aegis"],"radius":15}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"mirrored-aegis-origin"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"types":["shield"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["mirrored-aegis-origin:existing"]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:0",{"not":"item:magical"}],"itemType":"shield"},"flag":"grantedIkon","key":"ChoiceSet","predicate":["mirrored-aegis-origin:granted"]}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    Json: '{"key":"GrantItem","predicate":["mirrored-aegis-origin:granted"],"uuid":"{item|flags.pf2e.rulesSelections.grantedIkon}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemType":"shield","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["mirrored-aegis-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["mirrored-aegis-origin:granted","item:granter:slug:mirrored-aegis"]}]}],"property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:mirrored-aegis"'
+    Uuid: 
+    Json: '{"itemType":"shield","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["mirrored-aegis-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["mirrored-aegis-origin:granted","item:granter:slug:mirrored-aegis"]}]}],"property":"other-tags","value":"physical-ikon:mirrored-aegis"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemType":"shield","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:mirrored-aegis"],"priority":121,"property":"traits","value":"divine"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.lJAQPRT2t8IABR4v
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"shield","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:mirrored-aegis"],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.lJAQPRT2t8IABR4v
+      inline]"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:mirrored-aegis","item:slug:raise-the-walls"]},{"not":"divine-spark:mirrored-aegis"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Raise the Walls
+    SourceId: 
+    DisplayName: Raise the Walls
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    SourceId: 
+    DisplayName: grantedIkon}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

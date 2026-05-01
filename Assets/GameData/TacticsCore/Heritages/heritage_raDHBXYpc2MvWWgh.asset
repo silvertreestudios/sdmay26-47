@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_raDHBXYpc2MvWWgh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: raDHBXYpc2MvWWgh
+  Slug: stoutheart-centaur
+  DisplayName: Stoutheart Centaur
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're a hardy centaur, firm of stance and strong of heart. You gain
+    10 Hit Points from your ancestry instead of 8 and gain a +1 circumstance bonus
+    to Acrobatics checks to @UUID[Compendium.pf2e.actionspf2e.Item.Balance] and to
+    your Reflex DC to avoid being tripped.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 097d2aa511bea687e370bd9877fcb601614ca97d83180886c4ede961ba7d7da0
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.attributes.ancestryhp
+    Mode: upgrade
+    Value: 10
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.attributes.ancestryhp","priority":51,"value":10}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:balance"],"selector":"acrobatics","type":"circumstance","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:trip"],"selector":"reflex-dc","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pJkQlFTvpQ5GjZ5e
+    SourceId: 
+    Slug: centaur
+    DisplayName: Centaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 123a536b34b859a428fe590fb60ad26b, type: 2}
+  GrantedFeatures: []

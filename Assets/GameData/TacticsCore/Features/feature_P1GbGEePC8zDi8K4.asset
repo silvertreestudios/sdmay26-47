@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_P1GbGEePC8zDi8K4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: P1GbGEePC8zDi8K4
+  Slug: advanced-rangefinder
+  DisplayName: Advanced Rangefinder
+  IconPath: icons/skills/targeting/crosshair-scope-sniper-green.webp
+  Description: Ranged Only A carefully tuned scope or targeting device makes your
+    weapon especially good at hitting weak points. Your innovation gains the backstabber
+    trait and increases its range increment by 20 feet.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 317b01c5876d5d0c665318001cd8baf479f29ecfd7be65266cf1d2921f87905c
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"backstabber"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"backstabber"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: 20
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"range-increment","value":20}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

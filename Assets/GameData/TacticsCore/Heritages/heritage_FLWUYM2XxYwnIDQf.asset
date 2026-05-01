@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_FLWUYM2XxYwnIDQf
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: FLWUYM2XxYwnIDQf
+  Slug: xyloshi
+  DisplayName: Xyloshi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have prominent neck muscles that allow you to use your facial
+    horn as a tool or weapon. You gain a horn unarmed attack that deals 1d6 piercing
+    damage. Your horn is in the brawling group, and has the finesse and unarmed traits.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 935fe90ce137a327ced9658f6e06961b7aa684ee0bcff080e35044689b46b4cc
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/horn.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Horn","predicate":[{"not":"feat:puncturing-horn"}],"range":null,"traits":["finesse","unarmed"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.dw2K1AJR9mQ25nDP
+    SourceId: 
+    Slug: kashrishi
+    DisplayName: Kashrishi
+  ParentAncestryAsset: {fileID: 11400000, guid: d86fd71f542a48c4fa8e13bce9c8218c, type: 2}
+  GrantedFeatures: []

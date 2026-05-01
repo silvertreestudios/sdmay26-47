@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_D3hTAqgwSank8OyO
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: D3hTAqgwSank8OyO
+  Slug: fey-touched-gnome
+  DisplayName: Fey-Touched Gnome
+  IconPath: systems/pf2e/icons/features/ancestry/fey-touched-gnome.webp
+  Description: The blood of the fey flows through your veins, saturating you with
+    their magic and making you truly one of them. You gain the fey trait, in addition
+    to the gnome and humanoid traits. Choose one cantrip from the primal spell list.
+    You can cast this spell as a primal innate spell at will. A cantrip is heightened
+    to a spell rank equal to half your level rounded up. You can change this cantrip
+    to a different one from the same list once per day by meditating to realign yourself
+    with the First World; this is a 10-minute activity that has the concentrate trait.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: b052ed446f523e891c56bedf59532c19b15a2241bcc8c496b2ac76b552af6521
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["fey"],"key":"ActorTraits"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.CYlfsYLJcBOgqKtD
+    SourceId: 
+    Slug: gnome
+    DisplayName: Gnome
+  ParentAncestryAsset: {fileID: 11400000, guid: fb1bbba28cbc5b74cae3db902c75b07b, type: 2}
+  GrantedFeatures: []

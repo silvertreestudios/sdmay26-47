@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_dbj1cbkYeAAdkDSM
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: dbj1cbkYeAAdkDSM
+  Slug: elementheart-kobold
+  DisplayName: Elementheart Kobold
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: 'When you hatched, you imprinted on a creature strongly associated
+    with one of the Elemental Planes, such as an elemental or genie. Choose air,
+    earth, fire, metal, water, or wood for your elemental benefactor. You gain resistance
+    equal to half your level (minimum 1) to the damage type associated with your
+    elemental benefactor: cold for air, electricity for earth, fire for fire, sonic
+    for metal, acid for water, or poison for wood.'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: b64a12468b17238956617b287fbf4336120bc29350a5a30657078902a95bb5ef
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitAir","value":"cold"},{"label":"PF2E.TraitEarth","value":"electricity"},{"label":"PF2E.TraitFire","value":"fire"},{"label":"PF2E.TraitMetal","value":"sonic"},{"label":"PF2E.TraitWater","value":"acid"},{"label":"PF2E.TraitWood","value":"poison"}],"flag":"element","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Element"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"{item|flags.pf2e.rulesSelections.element}","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.7oQxL6wgsokD3QXG
+    SourceId: 
+    Slug: kobold
+    DisplayName: Kobold
+  ParentAncestryAsset: {fileID: 11400000, guid: 91e4eebeb01118e4f8f1169cc3adbdff, type: 2}
+  GrantedFeatures: []

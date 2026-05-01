@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_tPL4lrGLCB5XbgeV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: tPL4lrGLCB5XbgeV
+  Slug: integrated-gauntlet
+  DisplayName: Integrated Gauntlet
+  IconPath: icons/weapons/fist/fist-katar-triple-gold-black.webp
+  Description: Combining your weapon with a gauntlet, you make it so you can quickly
+    switch between attacking with your weapon and tinkering using your hands. Your
+    innovation gains the free-hand trait. This cannot be used with weapons that have
+    the two-hand or fatal aim traits.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 23a12d641d3dae818dc5d4ecbd8ef9e5bd8d821844b11e506788bc30c2481e54
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"free-hand"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"free-hand"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_RdOzBNPKLTMUWrJs
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: RdOzBNPKLTMUWrJs
+  Slug: paradox-of-opposites
+  DisplayName: Paradox of Opposites
+  IconPath: icons/magic/death/skull-energy-light-white.webp
+  Description: "Life and death, good and evil, light and shadow, vitality and void
+    energy\u2014these diametrically opposed concepts exist everywhere, and your patron
+    walks the line between them. You first encountered your patron in a place or
+    situation of such duality, such as witnessing a baby being born in a cemetery
+    or feeling the natural light of a sunbeam in an otherwise dark cavern. There
+    is power to be derived from the interplay between seemingly antithetical ideas
+    and striking a balance between the two. Your patron could be a monitor demigod
+    interested in cultivating a cosmic balance or an entity that plays fast and loose
+    with morality. They are the difference between the two sides of the same coin
+    while also being the entirety of the coin. Spell List divine Patron Skill Religion
+    Lesson of the Twilit Soul For your patron, life and death and sleeping and waking
+    have the same meaning. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Trade
+    Death for Life] hex cantrip and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Sleep].
+    Familiar of Paired Perplexity Your familiar has twice as many of a small feature
+    than a normal creature would have, such a second tail or an extra pair of whiskers.
+    When you Cast or Sustain a hex, your familiar seems to double and be in two places
+    at once. One creature you choose within 20 feet of it is Stupefied 1 until the
+    start of your next turn; this is a visual effect."
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b38bd6902e8991b823736df9b3f462c18a6b03ec3a6a7e70246d004f279357cf
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.religion.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.religion.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"divine"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.PairedPerplexity.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.PairedPerplexity.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.PairedPerplexity.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.PairedPerplexity.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

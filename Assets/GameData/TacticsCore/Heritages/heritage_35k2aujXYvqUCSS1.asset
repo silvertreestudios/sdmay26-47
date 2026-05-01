@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_35k2aujXYvqUCSS1
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 35k2aujXYvqUCSS1
+  Slug: cavernstalker-kobold
+  DisplayName: Cavernstalker Kobold
+  IconPath: systems/pf2e/icons/features/ancestry/cavern-kobold.webp
+  Description: You hatched in a warren with narrow tunnels that was also home to
+    a being of primal earth energy, which has made you limber and flexible. When
+    Climbing rock walls, stalactites, and other natural stone features, you move
+    at half your Speed on a success and at full Speed on a critical success (and
+    you move at full Speed on a success if you have @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Climb]). This doesn't affect you if you're using a climb Speed. If you roll a
+    success on an Acrobatics check to @UUID[Compendium.pf2e.actionspf2e.Item.Squeeze],
+    you get a critical success instead.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: a5c6dde0128e8105f2981606f9fa61e3ebd1786bd682dc165f37d3c9dce33fc4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["action:climb","natural-stone"],"selector":"athletics","text":"When
+      you climb natural stone, you move at half your Speed on a success, and full
+      speed on a critical success.","title":"{item|name}"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["action:squeeze"],"selector":"acrobatics","text":"When
+      you roll a success to Squeeze, you get a critical success instead.","title":"{item|name}"}'
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["action:squeeze"],"selector":"acrobatics","type":"skill"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.7oQxL6wgsokD3QXG
+    SourceId: 
+    Slug: kobold
+    DisplayName: Kobold
+  ParentAncestryAsset: {fileID: 11400000, guid: 91e4eebeb01118e4f8f1169cc3adbdff, type: 2}
+  GrantedFeatures: []

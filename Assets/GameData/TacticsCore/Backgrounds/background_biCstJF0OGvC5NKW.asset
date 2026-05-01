@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_biCstJF0OGvC5NKW
+  m_EditorClassIdentifier: 
+  SourceId: biCstJF0OGvC5NKW
+  Slug: concordance-researcher
+  DisplayName: Concordance Researcher
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'Tasked by the Concordance of Elements to research a variety of enigmatic
+    planar phenomena, you''ve acquired very specific knowledge about the planes and
+    the interactions between them. While being a researcher is usually a peaceful
+    profession, the Concordance might require you to go out into the field and research
+    unstable planar situations. Choose two attribute boosts. One must be to Intelligence
+    or Wisdom , and one is a free attribute boost. You''re trained in four of the
+    following: Plane of Air Lore, Plane of Earth Lore, Plane of Fire Lore, Plane
+    of Metal Lore, Plane of Water Lore, or Plane of Wood Lore.'
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 931dc3b8e70550fed60c65fc174545f79870ef72c5cba9c33c1d63cbd5eae1af
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

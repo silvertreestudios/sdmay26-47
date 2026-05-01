@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_RGs4uR3CAvgbtBAA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: RGs4uR3CAvgbtBAA
+  Slug: greater-field-discovery-bomber
+  DisplayName: Greater Field Discovery (Bomber)
+  IconPath: icons/weapons/thrown/bomb-fuse-black-grey.webp
+  Description: You can increase the splash on your bombs to damage creatures within
+    10 feet, or 15 feet if you have @UUID[Compendium.pf2e.feats-srd.Item.Expanded
+    Splash].
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: de1734921be0cc952cb6c6ed8489e301ee38287f07430195a199ba872074cd78
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["item:trait:alchemical","item:trait:bomb","item:trait:splash"],"selector":"strike-damage","text":"PF2E.SpecificRule.Alchemist.ResearchField.Bomber.GreaterFieldDiscovery","title":"Bomber
+      (Greater Field Discovery)"}'
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

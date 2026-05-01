@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_vXbk7Nm1TOTTUNvF
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: vXbk7Nm1TOTTUNvF
+  Slug: slinger-s-precision
+  DisplayName: Slinger's Precision
+  IconPath: icons/skills/targeting/crosshair-bars-yellow.webp
+  Description: You deal an extra +2 precision damage with Strikes made using non-repeating
+    crossbows and you deal an extra 1d4 precision damage on Strikes using non-repeating
+    firearms. If you have gunslinging legend, you instead deal +3 additional precision
+    damage with Strikes using non-repeating crossbows and an additional 1d6 precision
+    damage with Strikes using non-repeating firearms. If you are using a combination
+    weapon whose ranged form is a firearm or crossbow, you use your proficiency with
+    firearms and crossbows for attacks made with the melee configuration of that
+    weapon.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 043708cfd94610f13b7b6cab3a7e0b5584c79467cd6d7b81f051ffa6c20fa76e
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"damageCategory":"precision","hideIfDisabled":true,"key":"FlatModifier","predicate":[{"not":"item:trait:repeating"}],"selector":"crossbow-weapon-group-damage","slug":"slingers-precision-crossbow","value":2}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["feature:gunslinging-legend"],"selector":"crossbow-weapon-group-damage","slug":"slingers-precision-crossbow","value":3}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"precision","diceNumber":1,"dieSize":"d4","hideIfDisabled":true,"key":"DamageDice","predicate":[{"not":"item:trait:repeating"}],"selector":"firearm-weapon-group-damage","slug":"slingers-precision-firearm"}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: 
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"upgrade","predicate":["feature:gunslinging-legend","dice:slug:slingers-precision-firearm"],"property":"dice-faces","selectors":["firearm-weapon-group-damage"]}'
+  - Key: MartialProficiency
+    Path: 
+    Mode: 
+    Value: '"@actor.system.proficiencies.attacks.advanced-firearms-crossbows.rank"'
+    Uuid: 
+    Json: '{"definition":["item:category:advanced","item:ranged-usage:trait:combination",{"or":["item:ranged-usage:group:crossbow","item:ranged-usage:group:firearm"]}],"key":"MartialProficiency","priority":41,"slug":"slingers-precision-advanced","value":"@actor.system.proficiencies.attacks.advanced-firearms-crossbows.rank","visible":false}'
+  - Key: MartialProficiency
+    Path: 
+    Mode: 
+    Value: '"@actor.system.proficiencies.attacks.martial-firearms-crossbows.rank"'
+    Uuid: 
+    Json: '{"definition":["item:category:martial","item:ranged-usage:trait:combination",{"or":["item:ranged-usage:group:crossbow","item:ranged-usage:group:firearm"]}],"key":"MartialProficiency","priority":41,"slug":"slingers-precision-martial","value":"@actor.system.proficiencies.attacks.martial-firearms-crossbows.rank","visible":false}'
+  - Key: MartialProficiency
+    Path: 
+    Mode: 
+    Value: '"@actor.system.proficiencies.attacks.simple-firearms-crossbows.rank"'
+    Uuid: 
+    Json: '{"definition":["item:category:simple","item:ranged-usage:trait:combination",{"or":["item:ranged-usage:group:crossbow","item:ranged-usage:group:firearm"]}],"key":"MartialProficiency","priority":41,"slug":"slingers-precision-simple","value":"@actor.system.proficiencies.attacks.simple-firearms-crossbows.rank","visible":false}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

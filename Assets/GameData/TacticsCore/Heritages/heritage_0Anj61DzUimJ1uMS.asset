@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_0Anj61DzUimJ1uMS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 0Anj61DzUimJ1uMS
+  Slug: elytron-surki
+  DisplayName: Elytron Surki
+  IconPath: icons/creatures/abilities/wings-birdlike-blue.webp
+  Description: The top layer of your carapace is especially mobile, and you can unfurl
+    it to catch the air gracefully as you fall. You take no damage from falling,
+    regardless of the distance you fall. Evolution Your shoulder nodes have evolved
+    into a pair of spines that you can energize to project a pair of glowing wings.
+    You can cast @UUID[Compendium.pf2e.spells-srd.Item.Fly] as an innate spell once
+    per day, targeting yourself; while your wings are energized, you shed bright
+    light in a 20-foot radius and dim light for the next 20 feet. Evolution Your
+    shoulder nodes have evolved into a fan of thin membranes that resonate when magic
+    is coursed through them. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Stridulating
+    Song] action.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: e499746e5a5a68a1c8b7ec1196db95670eeeacb829d81aa2be346917cd72168b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.surki.evolutions
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Surki.Evolutions.GlowingWings","predicate":[{"not":"evolution:glowing-wings"}],"value":"glowing-wings"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.surki.evolutions","value":{"label":"PF2E.SpecificRule.Surki.Evolutions.GlowingWings","predicate":[{"not":"evolution:glowing-wings"}],"value":"glowing-wings"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.surki.evolutions
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Surki.Evolutions.ResonatingMembranes","predicate":[{"not":"evolution:resonating-membranes"}],"value":"resonating-membranes"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.surki.evolutions","value":{"label":"PF2E.SpecificRule.Surki.Evolutions.ResonatingMembranes","predicate":[{"not":"evolution:resonating-membranes"}],"value":"resonating-membranes"}}'
+  - Key: TokenLight
+    Path: 
+    Mode: 
+    Value: '{"alpha":0.25,"animation":{"type":"flame"},"bright":20,"color":"#4ee9fd","dim":40,"luminosity":0.3,"saturation":-0.25}'
+    Uuid: 
+    Json: '{"key":"TokenLight","predicate":["self:effect:fly","evolution:glowing-wings"],"value":{"alpha":0.25,"animation":{"type":"flame"},"bright":20,"color":"#4ee9fd","dim":40,"luminosity":0.3,"saturation":-0.25}}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:fly","spellcasting:innate","evolution:glowing-wings"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:surki"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:fly","spellcasting:innate","evolution:glowing-wings"],"property":"other-tags","value":"ancestral-spell:surki"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Stridulating Song
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["evolution:resonating-membranes"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.actionspf2e.Item.Stridulating
+      Song"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.ALOmLePjbc37ca3Y
+    SourceId: 
+    Slug: surki
+    DisplayName: Surki
+  ParentAncestryAsset: {fileID: 11400000, guid: 6d7e7807c411e6e4399a245a37a57c47, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Stridulating Song
+    SourceId: 
+    DisplayName: Stridulating Song
+    Level: 0
+    ResolvedFeature: {fileID: 0}

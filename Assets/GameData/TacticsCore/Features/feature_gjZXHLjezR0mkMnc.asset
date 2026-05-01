@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_gjZXHLjezR0mkMnc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: gjZXHLjezR0mkMnc
+  Slug: horn-of-plenty
+  DisplayName: Horn of Plenty
+  IconPath: icons/commodities/bones/horn-carved-cornucopia-tan.webp
+  Description: "Usage a wallet, bag, or similar container of 1 Bulk you can wear
+    on your body Whether a bag, gourd, wallet, cornucopia, or similar food receptacle,
+    this ikon recalls the harvest and hearth. The receptacle can store up to 1 Bulk
+    of potions and elixirs, but no other items. The receptacle can't be opened except
+    by the ikon's immanence and transcendence abilities. Each day during your daily
+    preparations, the ikon produces one temporary Elixir of Life. You can choose
+    to have it make a different elixir or potion you know the formula for. The level
+    of any elixir or potion created by the horn must be your level or lower. The
+    number of elixirs the horn creates increases to two at 8th level and three at
+    16th level, and you can choose each item individually. These temporary items
+    vanish the next time you make your daily preparations, and any remaining effects
+    of the temporary items end. A temporary elixir or potion has no value. Immanence
+    The horn of plenty shimmers, allowing access to the stored consumables inside.
+    You can Interact to draw a consumable and drink it in a single action while your
+    divine spark rests within the horn. Other creatures can't access the contents
+    unless you allow them to. Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.Feed
+    the Masses] 1 (transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.PdEJEiPUP0FDaBki
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 979e75e125b21b563f401c507298a7c7b362102713bee7361a61c61c274a0655
+  Traits:
+  - extradimensional
+  - ikon
+  TraitsLower:
+  - extradimensional
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"horn-of-plenty"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.HornOfPlenty.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"horn-of-plenty"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.HornOfPlenty.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"horn-of-plenty"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Feed the Masses
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Feed the Masses"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"horn-of-plenty-origin"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Horn of Plenty
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"add","property":"other-tags","value":"physical-ikon"},{"mode":"add","property":"other-tags","value":"physical-ikon:horn-of-plenty"}],"key":"GrantItem","predicate":["horn-of-plenty-origin:granted"],"uuid":"Compendium.pf2e.equipment-srd.Item.Horn
+      of Plenty"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"types":["backpack"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["horn-of-plenty-origin:existing"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:horn-of-plenty"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","predicate":["horn-of-plenty-origin:existing"],"property":"other-tags","value":"physical-ikon:horn-of-plenty"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.gjZXHLjezR0mkMnc
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"backpack","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:horn-of-plenty","horn-of-plenty-origin:existing",{"not":"item:slug:horn-of-plenty"}],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.gjZXHLjezR0mkMnc
+      inline]"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:horn-of-plenty","item:slug:feed-the-masses"]},{"not":"divine-spark:horn-of-plenty"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"traits","value":"divine"}'
+  - Key: CraftingAbility
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"craftableItems":[{"or":["item:trait:elixir","item:trait:potion"]}],"isDailyPrep":true,"key":"CraftingAbility","maxSlots":"ternary(gte(@actor.level,16),3,ternary(gte(@actor.level,8),2,1))","slug":"horn-of-plenty"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Feed the Masses
+    SourceId: 
+    DisplayName: Feed the Masses
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Horn of Plenty
+    SourceId: 
+    DisplayName: Horn of Plenty
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

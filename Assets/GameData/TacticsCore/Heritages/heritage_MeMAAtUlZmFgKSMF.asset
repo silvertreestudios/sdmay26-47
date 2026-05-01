@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_MeMAAtUlZmFgKSMF
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: MeMAAtUlZmFgKSMF
+  Slug: elemental-heart-dwarf
+  DisplayName: Elemental Heart Dwarf
+  IconPath: systems/pf2e/icons/features/ancestry/elemental-heat-dwarf.webp
+  Description: 'Whether through a connection to Torag''s forge, the azers of the
+    Plane of Fire, or another source, you can exude a burst of energy. Mbe''ke and
+    Taralu dwarves of the Mwangi Expanse believe this heritage is a gift from dragons
+    or elemental spirits. Choose one of the following damage types: acid, cold, electricity,
+    or fire. Once chosen, this can''t be changed. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Energy
+    Emanation] activity.'
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 991cd86344b84fafbfe49904fcb0364403fcff120b8a0b5c4fc125a71478fac4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitAcid","value":"acid"},{"label":"PF2E.TraitCold","value":"cold"},{"label":"PF2E.TraitElectricity","value":"electricity"},{"label":"PF2E.TraitFire","value":"fire"}],"flag":"elementalHeartDwarf","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Dwarf.ElementalHeart.Prompt"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.elementalHeartDwarf.damageType
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.elementalHeartDwarf}"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.elementalHeartDwarf.damageType","value":"{item|flags.pf2e.rulesSelections.elementalHeartDwarf}"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Energy Emanation
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Energy Emanation"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.BYj5ZvlXZdpaEgA6
+    SourceId: 
+    Slug: dwarf
+    DisplayName: Dwarf
+  ParentAncestryAsset: {fileID: 11400000, guid: 4282fdfe5a426e348be9aaaadc9be877, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Energy Emanation
+    SourceId: 
+    DisplayName: Energy Emanation
+    Level: 0
+    ResolvedFeature: {fileID: 0}

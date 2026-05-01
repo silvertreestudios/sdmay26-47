@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_bHgGh3vtXL7fkhIy
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: bHgGh3vtXL7fkhIy
+  Slug: ghost-bull-minotaur
+  DisplayName: Ghost Bull Minotaur
+  IconPath: icons/creatures/magical/spirit-undead-horned-blue.webp
+  Description: Your fur is as pale as death, possibly from some connection you or
+    your family has to the afterlife, which lets you supernaturally find your way.
+    You can cast @UUID[Compendium.pf2e.spells-srd.Item.Know the Way] as an occult
+    innate spell at will. A cantrip is heightened to a spell rank equal to half your
+    level rounded up. In addition, you gain a +1 circumstance bonus against spells
+    or effects that cause the @UUID[Compendium.pf2e.conditionitems.Item.Confused]
+    condition.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: d167fc8a8051d5ba7dc758570cba0a9329b9a5f1047734da8e050e948d01c083
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["inflicts:confused"],"selector":"saving-throw","type":"circumstance","value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:know-the-way","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:minotaur"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:know-the-way","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:minotaur"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.3wQ49DoWFYQgVsq6
+    SourceId: 
+    Slug: minotaur
+    DisplayName: Minotaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 1400257914fcf5548bdecbaa5f6cbb78, type: 2}
+  GrantedFeatures: []

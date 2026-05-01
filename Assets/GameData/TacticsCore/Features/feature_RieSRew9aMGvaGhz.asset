@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_RieSRew9aMGvaGhz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: RieSRew9aMGvaGhz
+  Slug: of-verse-unbroken
+  DisplayName: Of Verse Unbroken
+  IconPath: icons/skills/trades/music-notes-sound-blue.webp
+  Description: Though you are a warrior, you respect the power of song, oratory,
+    and other arts, knowing it is these forces that make fights worth fighting. You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Energized Spark] feat for your
+    choice of sonic or vitality. When you critically succeed on a Strike, haunting
+    melodies play around the target, making them Stupefied 1 unless they succeed
+    on a @Check[will|against:exemplar] save against your class DC. When you Spark
+    Transcendence, your divine spark releases a sublime song that harmonizes with
+    your allies. Until the start of your next turn, any of your allies that starts
+    their turn within 30 feet of you can hum to Sustain one of their effects that
+    can be sustained. This is a free action triggered by the ally's turn beginning.
+    Your song then ends, and that ally can't benefit from this ability again for
+    10 minutes. This is an auditory and mental effect.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2d0626d51a2ff7af8895e694c6d88ab3b85333094feed35afa9c50bf261d581a
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitSonic","value":"sonic"},{"label":"PF2E.TraitVitality","value":"vitality"}],"flag":"energizedSpark","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Energized Spark
+    Json: '{"key":"GrantItem","preselectChoices":{"energizedSpark":"{item|flags.pf2e.rulesSelections.energizedSpark}"},"uuid":"Compendium.pf2e.feats-srd.Item.Energized
+      Spark"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"of-verse-unbroken"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.OfVerseUnbroken.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:of-verse-unbroken"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.OfVerseUnbroken.Description"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.CriticalSpecializationToggle","option":"epithet-critical-specialization","priority":51,"toggleable":true}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["epithet-critical-specialization"]}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alternate":true,"key":"CriticalSpecialization","predicate":["epithet-critical-specialization"],"text":"PF2E.SpecificRule.Exemplar.Epithet.OfVerseUnbroken.CriticalSpecialization"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Energized Spark
+    SourceId: 
+    DisplayName: Energized Spark
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

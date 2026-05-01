@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_jVW6185zu3VlWHot
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: jVW6185zu3VlWHot
+  Slug: paragon-benefit-wand
+  DisplayName: Paragon Benefit (Wand)
+  IconPath: icons/weapons/wands/wand-skull-feathers.webp
+  Description: Your mastery of your wand grants you increased versatility, range,
+    and area. The range of @UUID[Compendium.pf2e.actionspf2e.Item.Fling Magic] increases
+    to 180 feet. You gain the ability to choose between all three damage types (cold,
+    electricity, and fire) each time you use Fling Magic. When you Fling Magic, you
+    can choose to target a single creature or to affect all creatures in a @Template[burst|distance:20].
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 53ef9582b2303fdc132da0852b641fa6d34e933621f05ded9232ebe8fd441931
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Thaumaturge.Implement.Wand.Paragon.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","label":"PF2E.SpecificRule.Thaumaturge.Implement.Paragon.Label","mode":"add","predicate":["item:slug:fling-magic"],"property":"description","value":[{"text":"PF2E.SpecificRule.Thaumaturge.Implement.Wand.Paragon.Description"}]}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

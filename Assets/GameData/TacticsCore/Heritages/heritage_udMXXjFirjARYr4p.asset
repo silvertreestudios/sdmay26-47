@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_udMXXjFirjARYr4p
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: udMXXjFirjARYr4p
+  Slug: ant-kholo
+  DisplayName: Ant Kholo
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're a sharp-featured, big-eared kholo about 3 feet tall. Many are
+    skeptical that you are in fact a kholo. Your size is Small instead of Medium.
+    You are trained in Deception (or another skill if you were already trained in
+    Deception). You gain a +1 circumstance bonus to Deception checks to Lie when
+    specifically claiming innocence, to Deception DCs against @UUID[Compendium.pf2e.actionspf2e.Item.Sense
+    Motive] checks to uncover such lies, and to initiative checks when you roll Deception
+    for initiative.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: debefb1a42a50b8d1c2d3eaa7b5dda113a17e732460fddc30076abffe861a4f6
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["deception"],"selector":"initiative","type":"circumstance","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:lie"],"selector":"deception","type":"circumstance","value":1}'
+  - Key: CreatureSize
+    Path: 
+    Mode: 
+    Value: '"small"'
+    Uuid: 
+    Json: '{"key":"CreatureSize","value":"small"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.deception.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.deception.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.vxbQ1Yw4qwgjTzqo
+    SourceId: 
+    Slug: kholo
+    DisplayName: Kholo
+  ParentAncestryAsset: {fileID: 11400000, guid: 6f5915ed51340204f8f369633de42202, type: 2}
+  GrantedFeatures: []

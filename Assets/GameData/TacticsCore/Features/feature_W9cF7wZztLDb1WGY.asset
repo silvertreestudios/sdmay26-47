@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_W9cF7wZztLDb1WGY
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: W9cF7wZztLDb1WGY
+  Slug: tempest
+  DisplayName: Tempest
+  IconPath: icons/magic/water/pseudopod-swirl-blue.webp
+  Description: 'The fury of the wind and waves pounds in your heart, whether your
+    power flows from natural storms, a conduit to the elemental Planes of Air and
+    Water, or through reverence of deities such as Gozreh, the tengu god of storms
+    Hei Feng, the pirate queen Besmara, or the elemental lords of air and water.
+    Granted Spells cantrip: @UUID[Compendium.pf2e.spells-srd.Item.Electric Arc] 1st:
+    @UUID[Compendium.pf2e.spells-srd.Item.Thunderstrike] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Hydraulic
+    Torrent] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Chain Lightning] Revelation
+    Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Tempest Touch] advanced:
+    @UUID[Compendium.pf2e.spells-srd.Item.Thunderburst] greater: @UUID[Compendium.pf2e.spells-srd.Item.Tempest
+    Form] Related Domains air, cold, lightning, water Mystery Skill Nature Oracle
+    Feat @UUID[Compendium.pf2e.feats-srd.Item.Foretell Harm] @UUID[Compendium.pf2e.classfeatures.Item.Curse
+    of Inclement Headwinds]'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 7bd3b813a2707963a5c90a15d97d5af9435f275b5f2f8319a2d4d53187b2314c
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Foretell Harm
+    Json: '{"key":"GrantItem","predicate":["class:oracle"],"uuid":"Compendium.pf2e.feats-srd.Item.Foretell
+      Harm"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Curse of Inclement Headwinds
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Curse of
+      Inclement Headwinds"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Foretell Harm
+    SourceId: 
+    DisplayName: Foretell Harm
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Curse of Inclement Headwinds
+    SourceId: 
+    DisplayName: Curse of Inclement Headwinds
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

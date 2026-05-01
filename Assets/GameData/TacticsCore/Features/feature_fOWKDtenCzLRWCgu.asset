@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_fOWKDtenCzLRWCgu
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: fOWKDtenCzLRWCgu
+  Slug: advanced-vials-toxicologist
+  DisplayName: Advanced Vials (Toxicologist)
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: When you damage a creature with a versatile vial you've used as an
+    injury poison, that creature takes persistent poison damage equal to the vial's
+    splash damage in addition to the initial damage.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e85142627d021e69379413ffb6d470c13cdb52162bc6437142ae74c4dd6170c9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

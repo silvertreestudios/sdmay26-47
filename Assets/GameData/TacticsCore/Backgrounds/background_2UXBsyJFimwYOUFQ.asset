@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2UXBsyJFimwYOUFQ
+  m_EditorClassIdentifier: 
+  SourceId: 2UXBsyJFimwYOUFQ
+  Slug: thrill-seeker
+  DisplayName: Thrill-Seeker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You once survived a life-or-death situation and found it surprisingly
+    exhilarating, so now you chase that feeling of invincibility you only get when
+    dancing with death. Your desire for exhilaration has you scaling buildings, leaping
+    off rooftops, jumping chasms, and performing other deathdefying stunts. Choose
+    two attribute boosts. One must be to Strength or Constitution , and one is a
+    free attribute boost. You are trained in the Athletics skill and the Engineering
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Combat Climber]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens Firebrands
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: ff609738fe6bc216037a3f34ea83017ddd5106e62413a3b0de8d2731868cdc09
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering Lore
+    Rank: 1
+  LoreSkills:
+  - Engineering Lore
+  GrantedFeats:
+  - SourceKey: OciPK
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Combat Climber
+    SourceId: 
+    DisplayName: Combat Climber
+    Level: 1
+    ResolvedFeature: {fileID: 0}

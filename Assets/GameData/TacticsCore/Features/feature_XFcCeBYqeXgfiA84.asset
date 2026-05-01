@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_XFcCeBYqeXgfiA84
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: XFcCeBYqeXgfiA84
+  Slug: greater-dogged-will
+  DisplayName: Greater Dogged Will
+  IconPath: systems/pf2e/icons/features/feats/rampaging-form-frozen-wind.webp
+  Description: Your willpower becomes truly unbreakable. Your proficiency rank for
+    Will saves increases to legendary. When you roll a success at a Will save, you
+    get a critical success. When you roll a critical failure at a Will save, you
+    get a failure instead. When you roll a failure on a Will save against a damaging
+    effect, you take half damage.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b61082a8d6fc972a45f761d65737a9187c39e8a9180075fcf7ff5d9f6cd23051
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"will"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["damaging-effect"],"selector":"will","text":"PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Will","title":"{item|name}"}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: will
+    Rank: 4
+  FocusPointDelta: 0

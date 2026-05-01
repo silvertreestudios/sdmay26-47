@@ -1,4 +1,4 @@
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     public enum CoverType
     {

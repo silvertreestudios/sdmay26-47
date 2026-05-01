@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Dug1oaVYejLmYEFt
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Dug1oaVYejLmYEFt
+  Slug: perpetual-infusions-mutagenist
+  DisplayName: Perpetual Infusions (Mutagenist)
+  IconPath: icons/consumables/potions/potion-jug-corked-skull-poison-brown-green.webp
+  Description: You have learned how to create perpetual alchemical infusions that
+    can provide a near-infinite supply of certain simple items. You gain the ability
+    to create two 1st-level alchemical items using @UUID[Compendium.pf2e.classfeatures.Item.Quick
+    Alchemy] without spending a batch of infused reagents. The items you can select
+    depend on your research field and must be in your formula book. Each time you
+    gain a level, you can swap any number of your perpetual infusions with other
+    eligible infusions. Choose two 1st-level mutagens.
+  SourceTitle: Pathfinder Core Rulebook
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d02019a4e73ba68d555d037fb8ab6e721d6d44ed72a58641f3c3f91b033f389e
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

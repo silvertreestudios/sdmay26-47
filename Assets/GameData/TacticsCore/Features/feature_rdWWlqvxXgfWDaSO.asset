@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_rdWWlqvxXgfWDaSO
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: rdWWlqvxXgfWDaSO
+  Slug: the-silent-whisper
+  DisplayName: The Silent Whisper
+  IconPath: systems/pf2e/icons/features/classes/the-silent-whisper.webp
+  Description: "Every mind murmurs constantly, and the static from those nearby reverberates
+    in your head like wind through leaves. What better focus for your magic then,
+    than the very thoughts of those around you? Your versatile telepathic abilities
+    let you soothe and communicate with your allies or control your enemies. Granted
+    Spells 1st: @UUID[Compendium.pf2e.spells-srd.Item.Mindlink] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Stupefy]
+    3rd: @UUID[Compendium.pf2e.spells-srd.Item.Heroism] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Telepathy]
+    5th: @UUID[Compendium.pf2e.spells-srd.Item.Synaptic Pulse] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Sending]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Visions of Danger] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Uncontrollable
+    Dance] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Telepathic Demand] Standard
+    Psi Cantrips @UUID[Compendium.pf2e.spells-srd.Item.Daze] You can daze from a
+    great distance. The range increases to 120 feet. Your daze also gains the following
+    amp. Amp Your spell cracks the target's mental defenses, leaving it susceptible
+    to further psychic attack. The spell's damage changes to 1d10. If the target
+    fails its Will save, until the end of its next turn, it gains weakness 1 to mental
+    damage and takes a \u20131 status penalty to Will saves. On a critical failure,
+    the weakness is 3 (in addition to the target being Stunned 1). The weakness applies
+    before daze deals damage. Amp Heightened (+2) The spell's damage increases by
+    2d10, and the weakness on a failure or critical failure increases by 1. @UUID[Compendium.pf2e.spells-srd.Item.Message]
+    Your message is not so easily bound by obstacles. The spell can travel up to
+    120 feet to reach the target, bending around walls and obstacles; this means
+    you don't need a straight line of effect or line of sight to cast message as
+    long as you know the target's space and there is an unblocked path of 120 feet
+    or less that can reach them. It also gains the following amp. Amp Your telepathic
+    message allows you to coordinate your actions while you pass on information.
+    The target of the message can immediately spend its reaction to Step or Stride.
+    Amp Heightened (4th) The target of the message can choose to @UUID[Compendium.pf2e.actionspf2e.Item.Shove],
+    Strike, or @UUID[Compendium.pf2e.actionspf2e.Item.Trip] with its reaction instead.
+    Unique Psi Cantrips surface: @UUID[Compendium.pf2e.spells-srd.Item.Forbidden
+    Thought] Amp Your telepathic push is particularly shocking to those who resist
+    it. If the target fails its save, it's also Stunned 1. deeper: @UUID[Compendium.pf2e.spells-srd.Item.Shatter
+    Mind] Amp You increase the area of the spell to your choice of a @Template[cone|distance:30]
+    or @Template[cone|distance:60], and the damage dice for the spell change to d10s.
+    Creatures that fail are Stupefied 1 until the start of your next turn (or Stupefied
+    2 on a critical failure). deepest: @UUID[Compendium.pf2e.spells-srd.Item.Contagious
+    Idea] Amp You can choose to spread the thought from the second target to a third
+    target, in the same manner as spreading it from the first target to the second.
+    A pleasant thought grants twice as many temporary Hit Points (10, plus an additional
+    2 for each level heightened)."
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 89fa9b0c867342383dbe43286f9758bf969c9e4ff98663f9a846142b9313e6a4
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:psychic","spellcasting:tradition:occult",{"or":["item:slug:daze","item:slug:message"]}],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Daze"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Daze.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Daze.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusTwo"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:daze","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Daze"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Daze.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Daze.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusTwo"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Message"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Message.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Message.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedFourth"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:message","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.Message"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Message.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.Message.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedFourth"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.ForbiddenThought","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:forbidden-thought"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.ForbiddenThought","title":"PF2E.TraitAmp"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.ShatterMind","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:shatter-mind"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.ShatterMind","title":"PF2E.TraitAmp"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.ContagiousIdea","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:contagious-idea","item:tag:amped"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.ContagiousIdea","title":"PF2E.TraitAmp"}]}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: '"2 * ceil(@spell.rank / 2) - 1"'
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"upgrade","predicate":["item:slug:daze","item:tag:amped"],"property":"dice-number","selectors":["spell-damage"],"value":"2
+      * ceil(@spell.rank / 2) - 1"}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: 10
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"upgrade","predicate":["item:tag:amped",{"or":["item:slug:daze","item:slug:shatter-mind"]}],"property":"dice-faces","selectors":["spell-damage"],"value":10}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.psychic.dedication.psiCantrips
+    Mode: override
+    Value: '[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Daze","predicate":[{"not":"selected-psi-cantrip:daze"}],"value":"daze"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Message","predicate":[{"not":"selected-psi-cantrip:message"}],"value":"message"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.ForbiddenThought","predicate":["feat:psi-development"],"value":"forbidden-thought"}]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.psychic.dedication.psiCantrips","predicate":["feat:psychic-dedication"],"priority":10,"value":[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Daze","predicate":[{"not":"selected-psi-cantrip:daze"}],"value":"daze"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.Message","predicate":[{"not":"selected-psi-cantrip:message"}],"value":"message"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.ForbiddenThought","predicate":["feat:psi-development"],"value":"forbidden-thought"}]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":"flags.pf2e.psychic.dedication.psiCantrips","flag":"dedicationCantrip","key":"ChoiceSet","predicate":["feat:psychic-dedication"],"prompt":"PF2E.SpecificRule.Prompt.PsiCantrip","rollOption":"selected-psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["feat:psychic-dedication","spellcasting:tradition:occult","item:slug:{item|flags.pf2e.rulesSelections.dedicationCantrip}"],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

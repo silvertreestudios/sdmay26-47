@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_DR6okTFLHi3MYbzK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: DR6okTFLHi3MYbzK
+  Slug: oracular-samsaran
+  DisplayName: Oracular Samsaran
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your past lives have provided heightened insight to the spiritual
+    world and current and future events, as history repeats itself. Choose arcane,
+    divine, or occult. You gain one cantrip from that magical tradition's spell list.
+    You can Cast this Spell as an innate spell at will, as a spell of your chosen
+    tradition. A cantrip is heightened to a spell rank equal to half your level rounded
+    up.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 1df0d4cabe662f01e09403539bd9c9b955a9e78cd76042fcc2fef1a548d8aaa3
+  Traits:
+  - samsaran
+  TraitsLower:
+  - samsaran
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.l7vjMIbPAUvEIosU
+    SourceId: 
+    Slug: samsaran
+    DisplayName: Samsaran
+  ParentAncestryAsset: {fileID: 11400000, guid: 6ed453392861b0045861283779fea7f0, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_O3r84Uv6HytaSIbX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: O3r84Uv6HytaSIbX
+  Slug: blunt-shot
+  DisplayName: Blunt Shot
+  IconPath: systems/pf2e/icons/features/classes/blunt-shot.webp
+  Description: Ranged Only Your weapon innovation can file the edges off your ammunition
+    and adjust the blunt force of the shot to deliver an attack that can batter as
+    much as pierce, or even knock an opponent right off their feet. Your innovation
+    gains the concussive and ranged trip traits.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8ec8757c519b498bfe64a58e7a32703b59f6e0a4b5c2b5d1054da96e4015bdfb
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"concussive"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"concussive"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ranged-trip"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"ranged-trip"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

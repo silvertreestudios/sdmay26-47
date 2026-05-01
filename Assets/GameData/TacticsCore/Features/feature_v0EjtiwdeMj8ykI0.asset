@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_v0EjtiwdeMj8ykI0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: v0EjtiwdeMj8ykI0
+  Slug: untamed-order
+  DisplayName: Untamed Order
+  IconPath: icons/magic/nature/stealth-hide-beast-eyes-green.webp
+  Description: The uncontrollable call of the natural world courses through your
+    body. You might have been raised by a wild animal, or you might have come to
+    reject the artifices of cities after growing up in one. Now, primal magic grants
+    you the ability to wear the form of an untamed creature. Order Skill Intimidation
+    Druid Feat @UUID[Compendium.pf2e.feats-srd.Item.Untamed Form] Order Spell @UUID[Compendium.pf2e.spells-srd.Item.Untamed
+    Shift] Anathema Become fully domesticated by the temptations of civilization.
+    (This doesn't prevent you from buying and using processed goods or staying in
+    a city for an adventure, but you can never come to rely on these conveniences
+    or truly call such a place your permanent home.)
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f21c9c0fa4a3b39d8f234adda98035eb58492745590ead40d19acac30a4bf51a
+  Traits:
+  - druid
+  TraitsLower:
+  - druid
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.intimidation.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.intimidation.rank","predicate":[{"not":"feat:order-explorer:untamed-order"}],"value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Untamed Form
+    Json: '{"key":"GrantItem","predicate":[{"or":["class:druid","feat:order-explorer:untamed-order"]}],"uuid":"Compendium.pf2e.feats-srd.Item.Untamed
+      Form"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Untamed Form
+    SourceId: 
+    DisplayName: Untamed Form
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

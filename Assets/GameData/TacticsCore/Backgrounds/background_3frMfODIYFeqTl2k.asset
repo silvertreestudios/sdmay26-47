@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_3frMfODIYFeqTl2k
+  m_EditorClassIdentifier: 
+  SourceId: 3frMfODIYFeqTl2k
+  Slug: fortune-teller
+  DisplayName: Fortune Teller
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The strands of fate are clear to you, as you have learned many traditional
+    forms by which laypeople can divine the future. You might have used these skills
+    to guide your community, or simply to make money. But even the slightest peek
+    into these practices connects you to the occult mysteries of the universe. Choose
+    two attribute boosts. One must be to Intelligence or Charisma , and one is a
+    free attribute boost. You're trained in the Occultism skill and the Fortune-Telling
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Oddity Identification]
+    skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 4791378104ee1c07cd6a1e6f71fd07b8b7bf643dd5f554ffd853fd2927a82428
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fortune-Telling Lore
+    Rank: 1
+  LoreSkills:
+  - Fortune-Telling Lore
+  GrantedFeats:
+  - SourceKey: l6z49
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Oddity Identification
+    SourceId: 
+    DisplayName: Oddity Identification
+    Level: 1
+    ResolvedFeature: {fileID: 0}

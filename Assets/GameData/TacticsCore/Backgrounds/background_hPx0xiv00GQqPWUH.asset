@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_hPx0xiv00GQqPWUH
+  m_EditorClassIdentifier: 
+  SourceId: hPx0xiv00GQqPWUH
+  Slug: kalistrade-follower
+  DisplayName: Kalistrade Follower
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Shining Kingdoms You follow the philosophy of
+    the Prophecies of Kalistrade, seeking to build up your wealth in this life so
+    that you might meet the next world on your own terms. Choose two attribute boosts.
+    One must be to Constitution or Intelligence , and one is a free attribute boost.
+    You're trained in the Diplomacy skill and the Kalistrade Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Bargain Hunter] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 2b6f4ab93d82ee0a2529a0e1da1c72a17e4f6ffcd875cbab998372e9be3849db
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Kalistrade Lore
+    Rank: 1
+  LoreSkills:
+  - Kalistrade Lore
+  GrantedFeats:
+  - SourceKey: q5wjd
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Bargain Hunter
+    SourceId: 
+    DisplayName: Bargain Hunter
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_hzW7VoRDYsKJB8ku
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: hzW7VoRDYsKJB8ku
+  Slug: surgewise-fleshwarp
+  DisplayName: Surgewise Fleshwarp
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: The undulations of your body's cilia are hyper-attuned to wellsprings
+    of magic; they trill and thrum with insights into occult energies, and their
+    vibrations alert you to the presence of secrets. You gain the trained proficiency
+    rank in Occultism. If you're trained in Occultism, you instead become trained
+    in another skill of your choice. You also gain the @UUID[Compendium.pf2e.feats-srd.Item.Oddity
+    Identification] skill feat.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: fd69a273460cfc6b3e55f3818e516a043fd723e764f35fbb3612dacc01fd1721
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.occultism.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.occultism.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Oddity Identification
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Oddity Identification"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.FXlXmNBFiiz9oasi
+    SourceId: 
+    Slug: fleshwarp
+    DisplayName: Fleshwarp
+  ParentAncestryAsset: {fileID: 11400000, guid: 0a2d0aca9a4b5a7458e4d411a0bf9d0e, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Oddity Identification
+    SourceId: 
+    DisplayName: Oddity Identification
+    Level: 0
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_v319qChG1uAQkGEe
+  m_EditorClassIdentifier: 
+  SourceId: v319qChG1uAQkGEe
+  Slug: osprey-fisher
+  DisplayName: Osprey Fisher
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Fishing is Osprey Cove's number one profession, and you've apprenticed
+    under the best of them: Elder Anlorgog. You're also a keen study of boats and
+    ships, so Elder Ordwi wants you along on her trip to Iron Harbor to help her
+    evaluate the strength and purpose of the village's fleet\u2014particularly if
+    they're building ships meant for war. Choose two attribute boosts. One must be
+    to Strength or Dexterity , and one is a free attribute boost. You're trained
+    in the Crafting skill and the Sailing Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Repair] skill feat."
+  SourceTitle: 'Pathfinder Adventure: Rusthenge'
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 26c7dd43d4c8d99f03645e6edd4e55aa4396d2992d249db496761b81a29070fe
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Sailing Lore
+    Rank: 1
+  LoreSkills:
+  - Sailing Lore
+  GrantedFeats:
+  - SourceKey: NppYw
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Repair
+    SourceId: 
+    DisplayName: Quick Repair
+    Level: 1
+    ResolvedFeature: {fileID: 0}

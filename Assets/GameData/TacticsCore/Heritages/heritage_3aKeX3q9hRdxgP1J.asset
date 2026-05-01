@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_3aKeX3q9hRdxgP1J
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 3aKeX3q9hRdxgP1J
+  Slug: mottle-coat-centaur
+  DisplayName: Mottle-Coat Centaur
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: 'Your coat is mottled or striped, granting you natural camouflage
+    in your home environment. Select a terrain from the following: arctic, desert,
+    forest, mountain, plains, or swamp. In your selected terrain, you gain a +1 circumstance
+    bonus to Stealth checks to @UUID[Compendium.pf2e.actionspf2e.Item.Hide] or @UUID[Compendium.pf2e.actionspf2e.Item.Sneak]
+    and to Deception checks to @UUID[Compendium.pf2e.actionspf2e.Item.Feint].'
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 889da1d41d6b19b0126b47f01e3ec8b405a9e704a775d3e62dbafef545e177fa
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.Terrain.Arctic","value":"arctic"},{"label":"PF2E.Terrain.Desert","value":"desert"},{"label":"PF2E.Terrain.Forest","value":"forest"},{"label":"PF2E.Terrain.Mountain","value":"mountain"},{"label":"PF2E.Terrain.Plains","value":"plain"},{"label":"PF2E.Terrain.Swamp","value":"swamp"}],"flag":"terrain","key":"ChoiceSet","prompt":"PF2E.SpecificRule.TerrainExpertise.Prompt"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["terrain:{item|flags.pf2e.rulesSelections.terrain}",{"or":["action:hide","action:sneak","action:feint"]}],"selector":["stealth","deception"],"type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pJkQlFTvpQ5GjZ5e
+    SourceId: 
+    Slug: centaur
+    DisplayName: Centaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 123a536b34b859a428fe590fb60ad26b, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_k9d3rDhYnHwLI8XF
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: k9d3rDhYnHwLI8XF
+  Slug: paragon-benefit-lantern
+  DisplayName: Paragon Benefit (Lantern)
+  IconPath: icons/sundries/lights/lantern-iron-lit-yellow.webp
+  Description: In addition to the other benefits, your lantern reveals all things
+    as they truly are. The bright light increases to 40 feet, with dim light out
+    40 feet further. While you're holding your lantern, the GM rolls a secret counteract
+    check against any illusion or transmutation that comes within the lantern's bright
+    light, but only for the purpose of determining whether you and others can see
+    through it (for instance, if the check succeeds against a polymorph spell, you
+    can see the creature's true form, but you don't end the spell). Use half your
+    level rounded up as the counteract rank and your class DC - 10 as the counteract
+    modifier. On a failed counteract check, the lantern can't attempt to counteract
+    that illusion or polymorph effect again until midnight. You can choose to leave
+    any illusion or transmutation you discover intact, instead of counteracting it.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 001c922f5cabddc9a5a2f86b06e2b9e7ec956fc98e35d2f901b507cebb606d7c
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.lantern
+    Mode: upgrade
+    Value: 40
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"flags.pf2e.thaumaturge.lantern","priority":51,"value":40}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

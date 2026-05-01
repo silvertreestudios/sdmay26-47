@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_zhSGlVwl75CfVKfR
+  m_EditorClassIdentifier: 
+  SourceId: zhSGlVwl75CfVKfR
+  Slug: company-agent
+  DisplayName: Company Agent
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "When the Bountiful Venture Company first invested in the colony of
+    Talmandor's Bounty, the backers expected to see a return on their investment.
+    Nearly a decade later, the Company has yet to realize any profits, and so they've
+    sent you to Ancorato to see what might be done to remedy the situation. Your
+    employers place much of the blame on the colony's governor, Ramona Avandth, whose
+    stubborn refusal to accelerate the investors' repayment schedule has kept the
+    Company from the money it's rightfully due. While several of the Company's representatives\u2014including
+    your direct superior, Verner Tracewell\u2014have already landed on the island,
+    you're to serve in a more unofficial capacity, scouring the colony for mismanagement
+    in hopes Ramona will be unseated from her position and replaced by someone more
+    amenable to the Company's interests. Choose two attribute boosts. One must be
+    to Dexterity or Charisma , and one is a free attribute boost. You're trained
+    in the Deception skill and the Accounting Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Charming
+    Liar] skill feat."
+  SourceTitle: Pathfinder Shades of Blood Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: b72c7319f8986674b7da587d7f9685f6a44e1d58cf39972c7ea51b6b99c7d7d9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Accounting Lore
+    Rank: 1
+  LoreSkills:
+  - Accounting Lore
+  GrantedFeats:
+  - SourceKey: fDEYR
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Charming Liar
+    SourceId: 
+    DisplayName: Charming Liar
+    Level: 1
+    ResolvedFeature: {fileID: 0}

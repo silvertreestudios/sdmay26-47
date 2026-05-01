@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_LWoPiYHAyLp8pvYx
+  m_EditorClassIdentifier: 
+  SourceId: LWoPiYHAyLp8pvYx
+  Slug: broken-tusk-recruiter
+  DisplayName: Broken Tusk Recruiter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Your gifted tongue, friendly demeanor, and deep knowledge of Broken
+    Tusk culture and traditions make you an ideal recruiter for new followers. Whenever
+    Broken Tusks come upon weak, weary, or wandering souls, you're often the first
+    sent to meet these folks and determine if they would be a good fit for the following.
+    Choose two attribute boosts. One must be to Constitution or Charisma , and one
+    is a free attribute boost. You're trained in the Diplomacy skill and the Hillcross
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group Impression]
+    skill feat.
+  SourceTitle: Pathfinder Quest for the Frozen Flame Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: cb5c76bc62fcb4465256fa93e16a0570625740b66077cc1e54d483cc2eafd6c7
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Hillcross
+    Rank: 1
+  LoreSkills:
+  - Hillcross
+  GrantedFeats:
+  - SourceKey: saayb
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

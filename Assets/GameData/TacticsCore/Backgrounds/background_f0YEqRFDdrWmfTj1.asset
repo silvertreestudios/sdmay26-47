@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_f0YEqRFDdrWmfTj1
+  m_EditorClassIdentifier: 
+  SourceId: f0YEqRFDdrWmfTj1
+  Slug: portal-scholar
+  DisplayName: Portal Scholar
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Candlaron's legacy is one of the strongest elven legacies on Golarion
+    and beyond, for it was he who first created the aiudara\u2014the network of magical
+    portals that link Kyonin to Castrovel and so many other locations across Golarion.
+    Most of these portals are located in the Inner Sea region, where Candlaron spent
+    the majority of his time. Now that he's long gone, the particulars of how to
+    create new aiudara has eluded discovery, causing some elven scholars to believe
+    that there was something unique to Candlaron's mind or soul that allowed for
+    his ability to craft and enchant so many portals throughout different regions
+    and worlds. Even Treerazer himself hasn't cracked that magical code, although
+    not for lack of trying. At least one aiudara, the remote archway known now as
+    Tanglegate, lies deep in his territory. As one of countless scholars of these
+    portals, you've spent much of your time studying Candlaron's techniques, as well
+    as the complex fundamentals of a wide range of teleportation magics and effects.
+    Whether you seek to find a way to build portals of your own, hope to bolster
+    the aiudara network from further tampering from Treerazer, or are simply enthralled
+    by the supernatural rush of vanishing from reality only to reappear in the same
+    instant somewhere else, portals have long fascinated you. Choose two attribute
+    boosts. One must be to Dexterity or Intelligence , and one is a free attribute
+    boost. You're trained in the Arcana skill and the Architecture Lore skill. You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Arcane Sense] skill feat, and also
+    gain the @UUID[Compendium.pf2e.actionspf2e.Item.Restorative Teleportation] reaction."
+  SourceTitle: Pathfinder Spore War Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 29e9208a4f732b00724c07c309c9e6f00c27f3e14347c32606e7c2bcb242a663
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Restorative Teleportation
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Restorative
+      Teleportation"}'
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Architecture Lore
+    Rank: 1
+  LoreSkills:
+  - Architecture Lore
+  GrantedFeats:
+  - SourceKey: MGAky
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Arcane Sense
+    SourceId: 
+    DisplayName: Arcane Sense
+    Level: 1
+    ResolvedFeature: {fileID: 0}

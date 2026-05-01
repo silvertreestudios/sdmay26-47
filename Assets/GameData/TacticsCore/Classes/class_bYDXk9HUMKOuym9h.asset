@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_bYDXk9HUMKOuym9h
+  m_EditorClassIdentifier: 
+  SourceId: bYDXk9HUMKOuym9h
+  Slug: witch
+  DisplayName: Witch
+  IconPath: systems/pf2e/icons/classes/witch.webp
+  Description: "You command powerful magic, not through study or devotion, but as
+    an agent for an otherworldly patron that even you don't entirely understand.
+    This entity might be a covert divinity, a powerful fey, an ancient spirit, or
+    any other mighty supernatural being\u2014but its nature is likely as much a mystery
+    to you as it is to others. Through a special familiar, your patron grants you
+    versatile spells and powerful hexes to use as you see fit, though you're never
+    certain if you're merely serving your patron's larger plan. Witch"
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: c493bfb6a535f189882532bcd85fdb838faaf558c34082422f406d6903d2c7cd
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 6
+  KeyAttributes: 04000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 0
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills: []
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: q4i1v
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Witch Spellcasting
+    SourceId: zT6QiTMxxj8JYoN9
+    DisplayName: Witch Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 144463a3b790b3e4a9ae6c41308b2bb2, type: 2}
+  - SourceKey: rmucq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Familiar (Witch)
+    SourceId: yksPhweBZYVCsE1A
+    DisplayName: Familiar (Witch)
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 06251a3610740f54390365cabb411bfd, type: 2}
+  - SourceKey: sbys9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Hex Spells
+    SourceId: 
+    DisplayName: Hexes
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: tasue
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Patron
+    SourceId: KPtF29AaeX2sJW0K
+    DisplayName: Patron
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 48482788fb3320845837454a430476a9, type: 2}
+  GrantedFeatures:
+  - SourceKey: 568ec
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: 58uhg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Spellcaster
+    SourceId: l1InYvhnQSz6Ucxc
+    DisplayName: Master Spellcaster
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4bf880905a2203248baa95088d309fcb, type: 2}
+  - SourceKey: 5a5an
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Spellcaster
+    SourceId: Hfaa7TuLn3nE8lr3
+    DisplayName: Legendary Spellcaster
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: f940d7779f91b714099ce8d9e2809a2a, type: 2}
+  - SourceKey: 5jVMU
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: H4nN0
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Will of the Pupil
+    SourceId: FuVO8ksHI1B5ozVI
+    DisplayName: Will of the Pupil
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 8b93d809b45236744a7a6eadbe21cecd, type: 2}
+  - SourceKey: ac5cq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Defensive Robes
+    SourceId: gU7epgcPSm0TD1UK
+    DisplayName: Defensive Robes
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: ff44964321aa36141b0277efd089c9e2, type: 2}
+  - SourceKey: dmo5u
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: kQI3o
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: TUOeATt52P43r5W0
+    DisplayName: Reflex Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 539148cfddca53c4488f47d820d2f718, type: 2}
+  - SourceKey: q4i1v
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Witch Spellcasting
+    SourceId: zT6QiTMxxj8JYoN9
+    DisplayName: Witch Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 144463a3b790b3e4a9ae6c41308b2bb2, type: 2}
+  - SourceKey: rmucq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Familiar (Witch)
+    SourceId: yksPhweBZYVCsE1A
+    DisplayName: Familiar (Witch)
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 06251a3610740f54390365cabb411bfd, type: 2}
+  - SourceKey: sbys9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Hex Spells
+    SourceId: 
+    DisplayName: Hexes
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: tasue
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Patron
+    SourceId: KPtF29AaeX2sJW0K
+    DisplayName: Patron
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 48482788fb3320845837454a430476a9, type: 2}
+  - SourceKey: vkt9a
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Magical Fortitude
+    SourceId: 70jqXP2eS4tRZ0Ok
+    DisplayName: Magical Fortitude
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: d288b7bd0da9d46439de4efa4661c8a4, type: 2}
+  - SourceKey: vq6ja
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Spellcaster
+    SourceId: cD3nSupdCvONuHiE
+    DisplayName: Expert Spellcaster
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 3e7fd61908df4a14290ae0cc0e240ad8, type: 2}
+  - SourceKey: x762n
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Patron's Gift
+    SourceId: cDnFXfl3i5Z2l7JP
+    DisplayName: Patron's Gift
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: ec5a5f012c91e90479d9b55727a9922a, type: 2}

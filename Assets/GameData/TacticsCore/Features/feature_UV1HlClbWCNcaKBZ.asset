@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_UV1HlClbWCNcaKBZ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: UV1HlClbWCNcaKBZ
+  Slug: anathema-cleric
+  DisplayName: Anathema (Cleric)
+  IconPath: icons/magic/symbols/cross-circle-blue.webp
+  Description: Acts fundamentally opposed to your deity's alignment or ideals are
+    anathema to your faith. Learning or casting spells, committing acts, and using
+    items that are anathema to your deity remove you from your deity's good graces.
+    Casting spells with the evil trait is almost always anathema to good deities,
+    and casting good spells is likewise anathema to evil deities; similarly, casting
+    chaotic spells is anathema to lawful deities, and casting lawful spells is anathema
+    to chaotic deities. A neutral cleric who worships a neutral deity isn't limited
+    this way, but their alignment might change over time if they frequently cast
+    spells or use abilities with a certain alignment. Similarly, casting spells that
+    are anathema to the tenets or goals of your faith could interfere with your connection
+    to your deity. For example, casting a spell to create undead would be anathema
+    to @UUID[Compendium.pf2e.deities.Item.Pharasma], the goddess of death. For borderline
+    cases, you and your GM determine which acts are anathema. If you perform enough
+    acts that are anathema to your deity, or if your alignment changes to one not
+    allowed by your deity, you lose the magical abilities that come from your connection
+    to your deity. The class features that you lose are determined by the GM, but
+    they likely include your divine font and all divine spellcasting. These abilities
+    can be regained only if you demonstrate your repentance by conducting an @UUID[Compendium.pf2e.spells-srd.Item.Atone]
+    ritual.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0c9baefe897d9d10d5d13d1148840da1067082f537c40e2c3f2eaf00dca9bbee
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

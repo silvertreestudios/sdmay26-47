@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_mZqaKQkvadBbNubM
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: mZqaKQkvadBbNubM
+  Slug: compact-skeleton
+  DisplayName: Compact Skeleton
+  IconPath: icons/commodities/bones/skull-weird.webp
+  Description: For tasks that require a lighter touch, gnome, goblin, and halfling
+    remains are more suitable than a larger creature's. These smaller, nimbler skeletons
+    fit well in a traveling chest, can be forced through tight spaces, and more easily
+    avoid detection. Your size is Small instead of Medium. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Squeeze] feat, even if you aren't trained in Acrobatics. Tight spaces not tight
+    enough to require the Squeeze activity aren't difficult terrain for you.
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: f61330aecf87901b33fe8d44310412a606dd3fbbe524e061bbf03492d42f2ab5
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: CreatureSize
+    Path: 
+    Mode: 
+    Value: '"small"'
+    Uuid: 
+    Json: '{"key":"CreatureSize","value":"small"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Quick Squeeze
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Quick Squeeze"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.58rL5sg2y4arW1i5
+    SourceId: 
+    Slug: skeleton
+    DisplayName: Skeleton
+  ParentAncestryAsset: {fileID: 11400000, guid: 05a9768c91264d64fa563771eb10af03, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Squeeze
+    SourceId: 
+    DisplayName: Quick Squeeze
+    Level: 0
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_NXYce9NAHls2fcIf
+  m_EditorClassIdentifier: 
+  SourceId: NXYce9NAHls2fcIf
+  Slug: pathfinder-recruiter
+  DisplayName: Pathfinder Recruiter
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The Pathfinder Society's always on the lookout for talent, but that
+    talent rarely just stumbles into the Grand Lodge. Whether you're professionally
+    trained to encourage new recruits or the Society's own scouts identified your
+    potential and raised you from childhood, you're committed to expanding the Society's
+    roster. Choose two attribute boosts. One must be to Wisdom or Charisma , and
+    one is a free attribute boost. You're trained in the Diplomacy skill and a Lore
+    skill related to one city you've visited often. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Impression] skill feat.
+  SourceTitle: Pathfinder Lost Omens Pathfinder Society Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 66a8e29fa148925053b663ffcb20d603ede34a9d7a616c10284c442c6d4e95ae
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <City> Lore
+    Rank: 1
+  LoreSkills:
+  - <City> Lore
+  GrantedFeats:
+  - SourceKey: 2dltm
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

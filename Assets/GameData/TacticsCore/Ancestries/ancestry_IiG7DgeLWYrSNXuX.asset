@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_IiG7DgeLWYrSNXuX
+  m_EditorClassIdentifier: 
+  SourceId: IiG7DgeLWYrSNXuX
+  Slug: human
+  DisplayName: Human
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/human.svg
+  Description: As unpredictable and varied as any of Golarion's peoples, humans have
+    exceptional drive and the capacity to endure and expand. Though many civilizations
+    thrived before humanity rose to prominence, humans have built some of the greatest
+    and the most terrible societies throughout the course of history, and today they
+    are the most populous people in the realms around the Inner Sea. Human
+  SourceTitle: Pathfinder Player Core
+  SourcePack: ancestries
+  Rarity: common
+  SourceJsonHash: 994bcdea0919f6ca964246e8ba6f8d3234836fba58f927fe06b0fe3fb9e68cfc
+  Traits:
+  - human
+  - humanoid
+  TraitsLower:
+  - human
+  - humanoid
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 0
+  CustomSense: 
+  AttributeBoosts:
+  - Options: 00000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  AdditionalLanguageOptions: []
+  AdditionalLanguageCount: 1
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: 8c1a0cfa1daf8a94bae0bd21f19ce8f0, type: 2}
+  - {fileID: 11400000, guid: 38f02c1d2e6ab634988b929bdf3e7b70, type: 2}
+  - {fileID: 11400000, guid: 9af31b2f60caffd46a90a6d86529d876, type: 2}
+  - {fileID: 11400000, guid: ebbf9cf0a341cba418bb11b37833fed8, type: 2}
+  - {fileID: 11400000, guid: 9d68a1026f61aa04b9eb1ecc5dad8d4f, type: 2}

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_yvdSUIRU5uLr5eF2
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: yvdSUIRU5uLr5eF2
+  Slug: thaumaturgic-expertise
+  DisplayName: Thaumaturgic Expertise
+  IconPath: systems/pf2e/icons/features/classes/thaumaturgic-expertise.webp
+  Description: You've learned deeper secrets of the supernatural, and your abilities
+    are harder to resist. Your proficiency rank for your thaumaturge class DC increases
+    to expert. You also gain an additional skill increase, which you can apply only
+    to Arcana, Nature, Occultism, or Religion.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 868e888bb437658e979e559ab50e7546377e69d11e50e908550ba3bf4a8f752a
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules: []
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: thaumaturge
+    Rank: 2
+  FocusPointDelta: 0

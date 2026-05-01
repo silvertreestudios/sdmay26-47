@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_YZ2XPmx1WHyWtM0g
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: YZ2XPmx1WHyWtM0g
+  Slug: school-of-civic-wizardry
+  DisplayName: School of Civic Wizardry
+  IconPath: icons/sundries/books/book-embossed-steel-brown.webp
+  Description: "Whether you studied in Manaket's Occularium or the Academy of Applied
+    Magic, you learned that the fruits of arcane studies\u2014like any other field\u2014should
+    ultimately help the common citizen. You've learned the humble art of construction,
+    of finding lost people and things, of moving speedily among buildings and moats\u2014yet
+    these same arts can be turned to demolition, and the constructs you animate to
+    build bridges can just as easily tear them down. Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Prestidigitation],
+    @UUID[Compendium.pf2e.spells-srd.Item.Read Aura] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Hydraulic
+    Push], @UUID[Compendium.pf2e.spells-srd.Item.Pummeling Rubble], @UUID[Compendium.pf2e.spells-srd.Item.Summon
+    Construct] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Revealing Light], @UUID[Compendium.pf2e.spells-srd.Item.Water
+    Walk] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Cozy Cabin], @UUID[Compendium.pf2e.spells-srd.Item.Safe
+    Passage] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Creation], @UUID[Compendium.pf2e.spells-srd.Item.Unfettered
+    Movement] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Control Water], @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Stone] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Disintegrate], @UUID[Compendium.pf2e.spells-srd.Item.Wall
+    of Force] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Planar Palace], @UUID[Compendium.pf2e.spells-srd.Item.Retrocognition]
+    8th: @UUID[Compendium.pf2e.spells-srd.Item.Earthquake], @UUID[Compendium.pf2e.spells-srd.Item.Pinpoint]
+    9th: @UUID[Compendium.pf2e.spells-srd.Item.Foresight] School Spells initial:
+    @UUID[Compendium.pf2e.spells-srd.Item.Earthworks]; advanced: @UUID[Compendium.pf2e.spells-srd.Item.Community
+    Restoration]"
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: c151ef4528bf4fe5328dd7bdcc5e593c69cd2bd23c98906c63aa855b9c0f8e0b
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

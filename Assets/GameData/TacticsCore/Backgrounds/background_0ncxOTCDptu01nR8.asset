@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_0ncxOTCDptu01nR8
+  m_EditorClassIdentifier: 
+  SourceId: 0ncxOTCDptu01nR8
+  Slug: dauntless
+  DisplayName: Dauntless
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: As a child, you chose to face each of your deepest fears and, time
+    and again, emerged victorious. You have learned to conquer fear itself, and by
+    sheer force of will and determination, you're able to brush off frightening experiences
+    more easily than most. Others find it difficult to intimidate you into backing
+    down from whatever you've set your mind to. Choose two attribute boosts. One
+    must be to Wisdom or Charisma , and one is a free attribute boost. You are trained
+    in the Diplomacy skill. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Indomitable
+    Act] reaction.
+  SourceTitle: Pathfinder Lost Omens Firebrands
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: d72cc9fa780f14411423aa014948d3df91f579552a21703a9eecf9e108a86e02
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Indomitable Act
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Indomitable
+      Act"}'
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats: []

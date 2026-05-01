@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_ywNXVLZtwrAStyh1
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: ywNXVLZtwrAStyh1
+  Slug: elusive-vishkanya
+  DisplayName: Elusive Vishkanya
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your flexible body seems unnaturally fluid to some, though they can
+    rarely put a finger on what seems strange about you. You can escape foes with
+    ease. You gain a +1 circumstance bonus to checks to @UUID[Compendium.pf2e.actionspf2e.Item.Escape].
+    Additionally, you move twice as fast when Squeezing.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c59b1522e7b9c341c440b4859ef543db05d85468d181e9ce55cc568e9e061c88
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:escape"],"selector":["athletics","acrobatics"],"type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.u1VJEXsVlmh3Fyx0
+    SourceId: 
+    Slug: vishkanya
+    DisplayName: Vishkanya
+  ParentAncestryAsset: {fileID: 11400000, guid: 30dc95b74f6069247afe27e7048d5c79, type: 2}
+  GrantedFeatures: []

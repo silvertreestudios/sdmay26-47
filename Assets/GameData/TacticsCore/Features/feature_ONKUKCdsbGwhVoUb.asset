@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ONKUKCdsbGwhVoUb
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ONKUKCdsbGwhVoUb
+  Slug: avenger
+  DisplayName: Avenger
+  IconPath: icons/commodities/currency/coin-embossed-skull-gold.webp
+  Description: 'Trained far from watching eyes, you use stealth, intimidation, and
+    deadly bladework to root out threats to your church. You must select @UUID[Compendium.pf2e.feats-srd.Item.Avenger
+    Dedication] as your 2nd-level class feat. Prerequisites: You must be a rogue.
+    Avenger Adjustments: You must choose a deity to be a follower of. You are trained
+    in Intimidation, Religion, Stealth, the divine skill granted by your racket,
+    and a number of additional skills equal to 3 plus your Intelligence modifier,
+    instead of your normal starting skill proficiencies. You must choose the avenger
+    racket for your rogue''s racket. You do not gain the @UUID[Compendium.pf2e.classfeatures.Item.Surprise
+    Attack] class feature. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Hunt
+    Prey] action. Avenger Racket Trained to be a precise but brutal weapon by the
+    priests of your faith, you eschew complex trickery for swift and deadly efficiency.
+    Subtlety and deception have their uses, but when a false smile fails, your blades
+    have their own way of finding the truth. You are trained in your deity''s favored
+    weapon. Whenever you gain a class feature that grants you expert or greater proficiency
+    with simple or martial weapons, you also gain that proficiency rank with your
+    deity''s favored weapon. You can deal sneak attack damage to your prey with your
+    deity''s favored weapon, in addition to the weapons listed in the sneak attack
+    class feature. When you critically succeed at an attack roll using your deity''s
+    favored weapon and the target has the @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard]
+    condition, you also apply the weapon''s critical specialization effect. You''re
+    trained in your deity''s divine skill and medium armor; if you''re already trained
+    in your deity''s divine skill, you are instead trained in another skill of your
+    choice. You can choose Strength as your key attribute modifier. When you gain
+    light armor expertise, you also gain expert proficiency in medium armor, and
+    when you gain light armor mastery, you also gain master proficiency in medium
+    armor.'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6080503f76783c012752e647269d6f377c59aec314fc91da6adf36081b754a77
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.intimidation.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.intimidation.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.religion.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.religion.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Hunt Prey
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Hunt Prey"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":{"filter":[{"or":["item:category:deity","item:category:pantheon"]}],"itemType":"deity"},"flag":"deity","key":"ChoiceSet","predicate":[{"not":"deity"}],"prompt":"PF2E.SpecificRule.Prompt.Deity"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.deity}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"not":"deity"}],"uuid":"{item|flags.pf2e.rulesSelections.deity}"}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"fist":true,"key":"Strike","predicate":["deity:primary:favored-weapon:fist"]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.favoredWeaponRank
+    Mode: upgrade
+    Value: '"@actor.system.proficiencies.attacks.simple.rank"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"flags.pf2e.favoredWeaponRank","value":"@actor.system.proficiencies.attacks.simple.rank"}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.defenses.medium.rank
+    Mode: upgrade
+    Value: '"@actor.system.proficiencies.defenses.light.rank"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.defenses.medium.rank","value":"@actor.system.proficiencies.defenses.light.rank"}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["item:deity-favored","target:condition:off-guard"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"sneak-attack"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:deity-favored","target:mark:hunted-prey"],"property":"other-tags","value":"sneak-attack"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Avenger Dedication
+    Json: '{"flag":"avengerDedication","key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Avenger
+      Dedication"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Hunt Prey
+    SourceId: 
+    DisplayName: Hunt Prey
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.deity}'
+    SourceId: 
+    DisplayName: deity}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Avenger Dedication
+    SourceId: 
+    DisplayName: Avenger Dedication
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

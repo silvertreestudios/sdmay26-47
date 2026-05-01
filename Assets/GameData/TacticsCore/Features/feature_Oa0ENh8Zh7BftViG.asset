@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Oa0ENh8Zh7BftViG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Oa0ENh8Zh7BftViG
+  Slug: rain-scribes
+  DisplayName: Rain-Scribes
+  IconPath: icons/magic/nature/tree-bare-glow-yellow.webp
+  Description: 'Rain-Scribes, who seek to explore the world and especially its unknown
+    corners, draw the closest of all the branches to primal magic in their study
+    of the arcane. They also embrace the "practical magic" schooling that takes them
+    off of campus, often into the wilds of the Mwangi Expanse but sometimes beyond
+    to other continents on Golarion or even onto distant planes. Their course of
+    magical study includes connecting with and understanding nature, working with
+    the elements, summoning animals, and providing for their own survival. Additional
+    Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Light] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Mending],
+    @UUID[Compendium.pf2e.spells-srd.Item.Summon Animal] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Shape
+    Wood] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Cozy Cabin] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Liminal
+    Doorway], @UUID[Compendium.pf2e.spells-srd.Item.Unfettered Movement] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Magic
+    Passage], @UUID[Compendium.pf2e.spells-srd.Item.Summon Dragon] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Chain
+    Lightning] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Planar Palace] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Earthquake]
+    9th: @UUID[Compendium.pf2e.spells-srd.Item.Metamorphosis]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: f260148472751279586f300ddbf4489cfc5769a809acbee8336585d181e8c313
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

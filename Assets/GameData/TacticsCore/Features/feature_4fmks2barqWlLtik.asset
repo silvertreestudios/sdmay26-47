@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_4fmks2barqWlLtik
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 4fmks2barqWlLtik
+  Slug: cascade-bearers
+  DisplayName: Cascade Bearers
+  IconPath: icons/magic/nature/tree-bare-glow-yellow.webp
+  Description: 'Cascade Bearers spend considerable time studying the qualities of
+    magic itself as they seek to advance magical theory. They prize imagination and
+    often bring a sense of playful curiosity to what would otherwise be intense inquiries
+    at the borders of known magic. Of all the branches, these students are most likely
+    to become teachers and to continue their research after graduation. In fact,
+    some Cascade Bearers never leave the Magaambya, whether or not they attain an
+    official teaching or research post. Their coursework draws broadly across the
+    uses of magic, including attacking, protecting, manipulating objects, and seeing
+    through matter. Additional Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic
+    Projectile] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Force Barrage], @UUID[Compendium.pf2e.spells-srd.Item.Mystic
+    Armor] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Maneuver] 3rd:
+    @UUID[Compendium.pf2e.spells-srd.Item.Levitate] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Flicker]
+    5th: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Haul] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Cursed
+    Metamorphosis] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Contingency], @UUID[Compendium.pf2e.spells-srd.Item.Project
+    Image] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Pinpoint] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Detonate
+    Magic]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: e117e8e80308fb9f9918c078b062f8b38760af3836c3a197607cf11135320a64
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

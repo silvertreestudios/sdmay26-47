@@ -1,0 +1,215 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_YDRiP7uVvr9WRhOI
+  m_EditorClassIdentifier: 
+  SourceId: YDRiP7uVvr9WRhOI
+  Slug: barbarian
+  DisplayName: Barbarian
+  IconPath: systems/pf2e/icons/classes/barbarian.webp
+  Description: Rage consumes you in battle. You delight in wreaking havoc and using
+    powerful weapons to carve through your enemies, relying on astonishing durability
+    without needing complicated techniques or rigid training. Your rages draw upon
+    a vicious instinct, which you might associate with an animal, a spirit, or some
+    part of yourself. To many barbarians, brute force is a hammer and every problem
+    looks like a nail, whereas others try to hold back the storm of emotions inside
+    them and release their rage only when it matters most. Barbarian
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 0b2b1561c9676da8a4858cbc8b18c527b2f9ef7c24ec083b1cf189d54e3df2e6
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 12
+  KeyAttributes: 01000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: uhbeo
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Instinct
+    SourceId: dU7xRpg4kFd01hwZ
+    DisplayName: Instinct
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 6d5f6914e98e20648ab4f0d64618a87a, type: 2}
+  - SourceKey: xvavy
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Rage
+    SourceId: WZUCvxqbigXos1L9
+    DisplayName: Rage
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 2303f954d12b79d41a25e6bbb18960cd, type: 2}
+  - SourceKey: yyms9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Quick-Tempered
+    SourceId: 04lXNnt73rF3RNc4
+    DisplayName: Quick-Tempered
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: a8de7ac3abbeb5b4fb924e6e601d2ded, type: 2}
+  GrantedFeatures:
+  - SourceKey: 23vme
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Juggernaut
+    SourceId: TuL0UfqH14MtqYVh
+    DisplayName: Greater Juggernaut
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 9edb1c27c5106e849b5968d7e7f574d5, type: 2}
+  - SourceKey: 3gwvw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Brutality
+    SourceId: EEUTd0jAyfwTLzjk
+    DisplayName: Brutality
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: ad881f019c71e24478f60406e96ce5d2, type: 2}
+  - SourceKey: 7jt77
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Expertise
+    SourceId: FCEp9jjxxgRJDJV3
+    DisplayName: Medium Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 73197a4a7743ecd498d5be602ed09454, type: 2}
+  - SourceKey: FEGkn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: TUOeATt52P43r5W0
+    DisplayName: Reflex Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 539148cfddca53c4488f47d820d2f718, type: 2}
+  - SourceKey: GFrqD
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 0npO4rPscGm0dX13
+    DisplayName: Perception Mastery
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 622e4b3f5ecccf94595d00a41a052a22, type: 2}
+  - SourceKey: XxkXS
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Revitalizing Rage
+    SourceId: qMtyQGUllPdgpzUo
+    DisplayName: Revitalizing Rage
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 13daac94f9a2169408b43c6d50df3c84, type: 2}
+  - SourceKey: cJTLg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Mastery
+    SourceId: ejP4jVQkS48uKRFz
+    DisplayName: Weapon Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 72296cf886f10134f8a893bc0ff539aa, type: 2}
+  - SourceKey: e0sur
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Indomitable Will
+    SourceId: BZnqKnqKVImjSIFE
+    DisplayName: Indomitable Will
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: edbff544b6618ec4a9ad176dc271f8ab, type: 2}
+  - SourceKey: gfxqm
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Juggernaut
+    SourceId: OMZs5y16jZRW9KQK
+    DisplayName: Juggernaut
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: dd80e424e266d80469b63e0eb4c96a68, type: 2}
+  - SourceKey: iIH8y
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Furious Footfalls
+    SourceId: fctFBBqWwwwdbgdx
+    DisplayName: Furious Footfalls
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: f011fa0bc4caab0418e5ab0eca664eb3, type: 2}
+  - SourceKey: ihbgk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Devastator
+    SourceId: VLiT503OLOM3vaDx
+    DisplayName: Devastator
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 4c011327d3dc838469236ff42b42a334, type: 2}
+  - SourceKey: njgcl
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+      (Barbarian)
+    SourceId: 7JjhxMFo8DMwpGx0
+    DisplayName: Greater Weapon Specialization (Barbarian)
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 8e8df299cd57069499f0477c0edc28b2, type: 2}
+  - SourceKey: qh9xw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Mighty Rage
+    SourceId: 88Q33X2a0iYPkbzd
+    DisplayName: Mighty Rage
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 810cf5756bca4a24290c788c3c2de1e3, type: 2}
+  - SourceKey: rGBjw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Armor Mastery
+    SourceId: CGB1TczFhQhdQxml
+    DisplayName: Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 0f31acf69e68a4b4cb99a3fe02274e3b, type: 2}
+  - SourceKey: spb04
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: tp5pg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Raging Resistance
+    SourceId: ie6xDX9GMEcA2Iuq
+    DisplayName: Raging Resistance
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: effa0f261389c25448cd549e2f3df747, type: 2}
+  - SourceKey: uhbeo
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Instinct
+    SourceId: dU7xRpg4kFd01hwZ
+    DisplayName: Instinct
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 6d5f6914e98e20648ab4f0d64618a87a, type: 2}
+  - SourceKey: xvavy
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Rage
+    SourceId: WZUCvxqbigXos1L9
+    DisplayName: Rage
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 2303f954d12b79d41a25e6bbb18960cd, type: 2}
+  - SourceKey: yyms9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Quick-Tempered
+    SourceId: 04lXNnt73rF3RNc4
+    DisplayName: Quick-Tempered
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: a8de7ac3abbeb5b4fb924e6e601d2ded, type: 2}

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_o8QHrhc9MsWIoKUv
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: o8QHrhc9MsWIoKUv
+  Slug: fourth-gate-s-threshold
+  DisplayName: Fourth Gate's Threshold
+  IconPath: icons/magic/symbols/elements-air-earth-fire-water.webp
+  Description: 'You reach a new milestone in your odyssey to become in tune with
+    your kinetic gate and must decide how to expand the gate''s power. At 5th level
+    and every 4 levels thereafter, you choose to either expand the portal or fork
+    the path. Expand the Portal : Your gate attunes more precisely to one of your
+    elements. Gain an impulse feat of your level or lower for one of your kinetic
+    elements; if you have more than one element, you can choose a composite impulse.
+    You also gain a gate junction for one of your kinetic elements. If you have no
+    valid options for the feat-typically because you have one kinetic element and
+    devoted your class feats to gaining that element''s impulses-you can instead
+    select any kineticist class feat of your level or lower for which you meet the
+    prerequisites. Fork the Path : Your gate reaches to another elemental plane.
+    Add a new element of your choice to your kinetic elements. Gain an impulse feat
+    of your level or lower with the trait of that element. You can''t select a composite
+    impulse feat with this feat selection.'
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: bf49b69b4b41d4a4738974cc4ac491e50c599c3f2f9e7d0408d52845748b15a0
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.SpecificRule.Kineticist.KineticGate.ExpandThePortal.Label","value":"expand"},{"label":"PF2E.SpecificRule.Kineticist.KineticGate.ForkThePath.Label","value":"fork"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Threshold","rollOption":"kinetic-gate:fourth-threshold"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":"PF2E.SpecificRule.Kineticist.KineticGate.ExpandThePortal.Rename","choices":"flags.pf2e.kineticist.elements","flag":"element","key":"ChoiceSet","predicate":["kinetic-gate:fourth-threshold:expand"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.ExpandElement"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Gate Junction
+    Json: '{"key":"GrantItem","predicate":["kinetic-gate:fourth-threshold:expand"],"preselectChoices":{"element":"{item|flags.pf2e.rulesSelections.element}"},"uuid":"Compendium.pf2e.classfeatures.Item.Gate
+      Junction"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":"PF2E.SpecificRule.Kineticist.KineticGate.ForkThePath.Rename","choices":{"filter":["item:tag:kineticist-kinetic-gate"]},"flag":"elementFork","key":"ChoiceSet","predicate":["kinetic-gate:fourth-threshold:fork"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Element"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.elementFork}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.elementFork}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:rarity:common","item:trait:impulse",{"lte":["item:level",17]},{"or":[{"and":[{"or":["item:trait:{actor|flags.pf2e.kineticist.gate.one}","item:trait:{actor|flags.pf2e.kineticist.gate.two}","item:trait:{actor|flags.pf2e.kineticist.gate.three}","item:trait:{actor|flags.pf2e.kineticist.gate.four}","item:trait:{actor|flags.pf2e.kineticist.gate.five}","item:trait:{actor|flags.pf2e.kineticist.gate.six}"]},{"not":"item:trait:composite"}]},{"and":[{"not":{"xor":["item:trait:{actor|flags.pf2e.kineticist.gate.one}","item:trait:{actor|flags.pf2e.kineticist.gate.two}","item:trait:{actor|flags.pf2e.kineticist.gate.three}","item:trait:{actor|flags.pf2e.kineticist.gate.four}","item:trait:{actor|flags.pf2e.kineticist.gate.five}","item:trait:{actor|flags.pf2e.kineticist.gate.six}"]}},{"or":["item:trait:{actor|flags.pf2e.kineticist.gate.one}","item:trait:{actor|flags.pf2e.kineticist.gate.two}","item:trait:{actor|flags.pf2e.kineticist.gate.three}","item:trait:{actor|flags.pf2e.kineticist.gate.four}","item:trait:{actor|flags.pf2e.kineticist.gate.five}","item:trait:{actor|flags.pf2e.kineticist.gate.six}"]}]}]}],"itemType":"feat"},"flag":"impulseExpand","key":"ChoiceSet","predicate":["kinetic-gate:fourth-threshold:expand"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseExpand}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.impulseExpand}"}'
+  Category: 2
+  Level: 17
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Gate Junction
+    SourceId: 
+    DisplayName: Gate Junction
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.elementFork}'
+    SourceId: 
+    DisplayName: elementFork}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseExpand}'
+    SourceId: 
+    DisplayName: impulseExpand}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

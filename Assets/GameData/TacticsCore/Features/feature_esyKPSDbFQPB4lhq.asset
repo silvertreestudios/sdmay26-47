@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_esyKPSDbFQPB4lhq
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: esyKPSDbFQPB4lhq
+  Slug: medium-armor-expertise-inventor
+  DisplayName: Medium Armor Expertise (Inventor)
+  IconPath: icons/equipment/chest/breastplate-quilted-brown.webp
+  Description: You've learned to defend yourself better against attacks. Your proficiency
+    ranks for light armor, medium armor, and unarmored defense increase to expert.
+    If you have a medium or heavy armor innovation, you gain access to the critical
+    specialization effect with your armor innovation.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: eb8b3d0d7797fde0f99129868f3056c1927d2de55f2fa05103d19560a42ec6db
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: light
+    Rank: 2
+  - Target: medium
+    Rank: 2
+  - Target: unarmored
+    Rank: 2
+  FocusPointDelta: 0

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_VSyOvtgJ1ZNpIVgC
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: VSyOvtgJ1ZNpIVgC
+  Slug: rock-dwarf
+  DisplayName: Rock Dwarf
+  IconPath: systems/pf2e/icons/features/ancestry/rock-dwarf.webp
+  Description: Your ancestors lived and worked among the ancient stones of the mountains
+    or the depths of the earth. This makes you solid as a rock when you plant your
+    feet. You gain a +2 circumstance bonus to your Fortitude or Reflex DC against
+    attempts to @UUID[Compendium.pf2e.actionspf2e.Item.Reposition], @UUID[Compendium.pf2e.actionspf2e.Item.Shove],
+    or @UUID[Compendium.pf2e.actionspf2e.Item.Trip] you. This bonus also applies
+    to saving throws against spells or effects that attempt to force you to move
+    or knock you @UUID[Compendium.pf2e.conditionitems.Item.Prone]. In addition, if
+    any effect would force you to move 10 feet or more, you are moved only half the
+    distance.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4534b79a3007cf1aaca480ab18d72ef39017b02e6242564084f83eb376c90c88
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"hideIfDisabled":true,"key":"FlatModifier","label":"PF2E.SkillVariant.VsShoveOrTrip","predicate":[{"or":["action:shove","action:trip","action:reposition"]}],"selector":["fortitude","reflex"],"type":"circumstance","value":2}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SkillVariant.VsProne","predicate":["inflicts:prone"],"selector":"saving-throw","type":"circumstance","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.BYj5ZvlXZdpaEgA6
+    SourceId: 
+    Slug: dwarf
+    DisplayName: Dwarf
+  ParentAncestryAsset: {fileID: 11400000, guid: 4282fdfe5a426e348be9aaaadc9be877, type: 2}
+  GrantedFeatures: []

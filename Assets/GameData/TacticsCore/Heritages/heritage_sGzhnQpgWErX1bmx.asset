@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_sGzhnQpgWErX1bmx
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: sGzhnQpgWErX1bmx
+  Slug: vigilant-goloma
+  DisplayName: Vigilant Goloma
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You've learned to be aware of not just obvious physical dangers, but
+    also noticeable magical threats. You can cast the @UUID[Compendium.pf2e.spells-srd.Item.Detect
+    Magic] cantrip as an arcane innate spell at will. A cantrip is heightened to
+    a spell rank equal to half your level rounded up. In addition, your awareness
+    allows you to notice magical traps easier than others. Your proficiency rank
+    in Perception is considered one step better when attempting to detect magical
+    traps. (Trained is considered expert, expert is considered master, and master
+    is considered legendary).
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 03bd5f0e1a043d45cc7a7ae0184b6ca8bca23d70e76a803abd1ccee5fc3aa6b4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:detect-magic","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:goloma"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:detect-magic","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:goloma"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.c4secsSNG2AO7I5i
+    SourceId: 
+    Slug: goloma
+    DisplayName: Goloma
+  ParentAncestryAsset: {fileID: 11400000, guid: ea7c7786010caad46aa3cbd1ce98770e, type: 2}
+  GrantedFeatures: []

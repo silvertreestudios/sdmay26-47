@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_Je15UGsLWYaaGJSW
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: Je15UGsLWYaaGJSW
+  Slug: ghost-poppet
+  DisplayName: Ghost Poppet
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You awakened when a bit of another person's life force and a fragment
+    of their soul-possibly, but not always, at the moment of their death-found its
+    way into your constructed body. You don't remember anything more than vague flashes
+    of your "before life," but that life essence still protects you. You gain resistance
+    to void damage equal to half your level (minimum 1).
+  SourceTitle: Pathfinder Lost Omens The Grand Bazaar
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 8bf86ccf7cf620a4d42326d6de8889a8fb2d6b804be19a3d791ff39aca495646
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"void","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.6F2fSFC1Eo1JdpY4
+    SourceId: 
+    Slug: poppet
+    DisplayName: Poppet
+  ParentAncestryAsset: {fileID: 11400000, guid: 7e74619f4ea4ced419084d304988ab03, type: 2}
+  GrantedFeatures: []

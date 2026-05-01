@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_QK5ojonup9AQBg4O
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: QK5ojonup9AQBg4O
+  Slug: adept-benefit-lantern
+  DisplayName: Adept Benefit (Lantern)
+  IconPath: icons/sundries/lights/lantern-iron-lit-yellow.webp
+  Description: In addition to the initiate benefits, when you hold your lantern,
+    its light reveals the @UUID[Compendium.pf2e.conditionitems.Item.Invisible] and
+    the ethereal. The bright light increases to 30 feet, with dim light out 30 feet
+    further. While you're holding your lantern, invisible and ethereal creatures
+    within the bright light become visible as rippling distortions, though they're
+    still @UUID[Compendium.pf2e.conditionitems.Item.Concealed]. This doesn't give
+    you any special ability to affect a creature on the Ethereal Plane, but it ensures
+    you're aware of the creatures' presence.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ba728de4e5a182ec15e65d47533f19b77353334c45171de7b3721dddba503661
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.paragonChoices
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Lantern.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Lantern)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.paragonChoices","priority":20,"value":{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Lantern.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Lantern)"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.lantern
+    Mode: upgrade
+    Value: 30
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"flags.pf2e.thaumaturge.lantern","priority":51,"value":30}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Static helper for resolving PF2e Resistance, Weakness, and Immunity.

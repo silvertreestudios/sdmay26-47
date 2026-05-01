@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_vNWSzv36L1GBPPoc
+  m_EditorClassIdentifier: 
+  SourceId: vNWSzv36L1GBPPoc
+  Slug: hellknight-historian
+  DisplayName: Hellknight Historian
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The various Hellknight Orders intrigue you, whether you seek to become
+    one of their number yourself, wish to oppose their goals at every turn, or are
+    merely inspired by or curious to learn more about them. You've heard that when
+    the Order of the Nail abandoned Citadel Altaerein, they left behind the deed
+    to the castle so anyone brave enough to explore the ruins and the defenses no
+    doubt left behind would be rewarded with ownership of the abandoned fortress.
+    You decided to join the Call for Heroes to hoping to gain an opportunity to explore
+    Citadel Altaerein. Choose two attribute boosts. One must be to Strength or Intelligence
+    , and one is a free attribute boost. You're trained in the Society skill and
+    the Architecture Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Courtly
+    Graces] skill feat.
+  SourceTitle: Pathfinder Age of Ashes Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: be8d5cfddab305e0570e12f63cbad1af260175d41a05cd9b2740bfdff608ebf2
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Architecture Lore
+    Rank: 1
+  LoreSkills:
+  - Architecture Lore
+  GrantedFeats:
+  - SourceKey: fzch2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Courtly Graces
+    SourceId: 
+    DisplayName: Courtly Graces
+    Level: 1
+    ResolvedFeature: {fileID: 0}

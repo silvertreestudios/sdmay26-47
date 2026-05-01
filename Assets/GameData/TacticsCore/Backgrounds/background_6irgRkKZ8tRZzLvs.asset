@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_6irgRkKZ8tRZzLvs
+  m_EditorClassIdentifier: 
+  SourceId: 6irgRkKZ8tRZzLvs
+  Slug: artisan
+  DisplayName: Artisan
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: As an apprentice, you practiced a particular form of building or crafting,
+    developing a specialized skill. You might have been a blacksmith's apprentice
+    toiling over the forge for countless hours, a young tailor sewing garments of
+    all kinds, or a shipwright shaping the hulls of ships. Choose two attribute boosts.
+    One must be to Strength or Intelligence , and one is a free attribute boost.
+    You're trained in the Crafting skill and the Guild Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Specialty
+    Crafting] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 515217592b2ecf49386fcc924d3e2762d833461f302568b3343dbb5929e106f6
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Guild Lore
+    Rank: 1
+  LoreSkills:
+  - Guild Lore
+  GrantedFeats:
+  - SourceKey: td7d8
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    SourceId: 
+    DisplayName: Specialty Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

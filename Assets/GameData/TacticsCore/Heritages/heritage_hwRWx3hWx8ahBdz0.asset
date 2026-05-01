@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_hwRWx3hWx8ahBdz0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: hwRWx3hWx8ahBdz0
+  Slug: winter-kholo
+  DisplayName: Winter Kholo
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're a hardy kholo covered in thick, tufted fur that makes you able
+    to survive in the harsh winters of the colder territories. You gain cold resistance
+    equal to half your level (minimum 1). You treat environmental cold effects as
+    if they were one step less extreme (incredible cold becomes extreme, extreme
+    cold becomes severe, and so on).
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 7fe6810e64cfd1663a4886d632fae6306353bf69829da241e6cb29b5f2560cc5
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"cold","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.vxbQ1Yw4qwgjTzqo
+    SourceId: 
+    Slug: kholo
+    DisplayName: Kholo
+  ParentAncestryAsset: {fileID: 11400000, guid: 6f5915ed51340204f8f369633de42202, type: 2}
+  GrantedFeatures: []

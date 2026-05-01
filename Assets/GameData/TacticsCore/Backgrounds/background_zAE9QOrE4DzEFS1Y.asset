@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_zAE9QOrE4DzEFS1Y
+  m_EditorClassIdentifier: 
+  SourceId: zAE9QOrE4DzEFS1Y
+  Slug: belkzen-anthropologist
+  DisplayName: Belkzen Anthropologist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Belkzen has a long, storied history, but much of it has been erased
+    by time, conflict, and the deliberate cruelty of those who wished to destroy
+    records of the past. You have dedicated your studies to collecting the fragmented
+    stories of Belkzen's past so you can weave together a full picture of the land's
+    lost cultures and knowledge, that the nation might be remembered properly by
+    the world. Choose two attribute boosts. One must be to Dexterity or Intelligence
+    , and one is a free attribute boost. You're trained in the Society skill and
+    the Orc Pantheon Lore skill, a broad skill pertaining to orc gods both current
+    and past. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Multilingual] skill
+    feat.
+  SourceTitle: Pathfinder Triumph of The Tusk Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 0c7d0164e0e8c1cf9c154f7d6edb750662918b8fdc1a422477aaf70d1e9e3f50
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Orc Pantheon Lore
+    Rank: 1
+  LoreSkills:
+  - Orc Pantheon Lore
+  GrantedFeats:
+  - SourceKey: 2A2Ly
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Multilingual
+    SourceId: 
+    DisplayName: Multilingual
+    Level: 1
+    ResolvedFeature: {fileID: 0}

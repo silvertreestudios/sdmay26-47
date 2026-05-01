@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_p27PSjFtHAWikKaw
+  m_EditorClassIdentifier: 
+  SourceId: p27PSjFtHAWikKaw
+  Slug: early-explorer
+  DisplayName: Early Explorer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: In the past decade, the Pathfinder Society has clashed with demonic
+    armies, meddled in politics, and more, but you joined the organization before
+    everything seemed so complicated. Whether you're a dedicated scholar of ruins
+    or an explorer who just longs for months-long expeditions into the wilderness,
+    you're a Pathfinder to explore, report, and cooperate. Choose two attribute boosts.
+    One must be to Strength or Wisdom , and one is a free attribute boost. You're
+    trained in the Survival skill and the Pathfinder Society Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Forager] skill feat. Special You can
+    select this background only if you have earned credit for at least 5 First Edition
+    scenarios from Seasons 0 of the Pathfinder Society organized play campaign.
+  SourceTitle: Organized Play Foundation
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 31ab082075c5a30c4a99f1103300a770b566a55dc669281672d8942c500491ee
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Pathfinder Lore
+    Rank: 1
+  LoreSkills:
+  - Pathfinder Lore
+  GrantedFeats:
+  - SourceKey: l5syj
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forager
+    SourceId: 
+    DisplayName: Forager
+    Level: 1
+    ResolvedFeature: {fileID: 0}

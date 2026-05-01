@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2dd8c8ce25e394197be78e39183700, type: 3}
+  m_Name: Knight_Knight_HelmetVisor
+  m_EditorClassIdentifier: 
+  PartID: knight_knight_helmetvisor
+  DisplayName: Knight HelmetVisor
+  Slot: 7
+  Icon: {fileID: 0}
+  IsStaticMesh: 1
+  SharedMesh: {fileID: -5773606273075111468, guid: b889883ca65fadb4fb6d54d75311c059, type: 3}
+  Materials:
+  - {fileID: -1418784290425750361, guid: b889883ca65fadb4fb6d54d75311c059, type: 3}

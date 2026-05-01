@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_W6OIPZhjcV45gfoX
+  m_EditorClassIdentifier: 
+  SourceId: W6OIPZhjcV45gfoX
+  Slug: revenant
+  DisplayName: Revenant
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You died. No real doubt about that. Bullet to the brain or knife to
+    the throat, you were dead as dead can be. Then you got back up again. Maybe you
+    had some unfinished business, or maybe you were just so tough and so mean that
+    Hell itself spat you out. Either way, you came back for a reason. Choose two
+    attribute boosts. One must be to Constitution or Charisma , and one is a free
+    attribute boost. You're trained in Religion and Boneyard Lore. You're still alive,
+    not undead, but you have the void healing ability, which means you're harmed
+    by vitality damage and healed by void effects as if you were undead.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 6c2b662acfd6a7341ec18ff63dec15adb5d0fcdba1fa93bcd637bfc16f3c2ef7
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.attributes.hp.negativeHealing
+    Mode: override
+    Value: true
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.attributes.hp.negativeHealing","value":true}'
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Boneyard Lore
+    Rank: 1
+  LoreSkills:
+  - Boneyard Lore
+  GrantedFeats: []

@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     public class PathfindingTester : MonoBehaviour
     {

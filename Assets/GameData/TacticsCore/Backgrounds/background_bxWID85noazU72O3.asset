@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_bxWID85noazU72O3
+  m_EditorClassIdentifier: 
+  SourceId: bxWID85noazU72O3
+  Slug: ratted-out-gun-runner
+  DisplayName: Ratted-Out Gun Runner
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Sure, you've got a checkered past. Who doesn't? It's hard to make
+    a living in the City of Smog, so you did what you could to put silvers in your
+    pocket and food on the table. You made a good deal of money selling firearms
+    from the Gunworks to people who perhaps shouldn't have had them. You even worked
+    with wasteland marauders a few times, sticking up Ustradi barges plying the river
+    between the Gunworks and Alkenstar. Of course, you never hurt any innocents or
+    did anything truly heinous; your criminal career was always just a matter of
+    money. One day, a corrupt financier named Ambrost Mugland-a true crook if there
+    ever was one-approached you, demanding a cut of your business. When you refused,
+    he put in a word with the shieldmarshals that you'd be a certain somewhere at
+    a certain time with a certain large quantity of illegally obtained firearms.
+    Even though you escaped arrest, your identity was compromised, and your old accomplices
+    have all turned their backs on you. Your gun-running days are clearly over. Now,
+    you're just running. Choose two attribute boosts. One must be to Dexterity or
+    Wisdom , and one is a free attribute boost. You're trained in the Stealth skill
+    and the Firearm Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced
+    Smuggler] skill feat.
+  SourceTitle: Pathfinder Outlaws of Alkenstar Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 68063f0565e23fdf4cebe9a541140988b0615362f32e5f6581ec2dbea0c650a7
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Firearm Lore
+    Rank: 1
+  LoreSkills:
+  - Firearm Lore
+  GrantedFeats:
+  - SourceKey: e5s60
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Smuggler
+    SourceId: 
+    DisplayName: Experienced Smuggler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

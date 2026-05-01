@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_rQJBtQ9uKUzK9ktK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: rQJBtQ9uKUzK9ktK
+  Slug: shortshanks-hobgoblin
+  DisplayName: Shortshanks Hobgoblin
+  IconPath: systems/pf2e/icons/features/ancestry/warmarch-hobgoblin.webp
+  Description: "You have a longer torso and broader shoulders than most hobgoblins,
+    making your legs seem short by comparison. This gives you a strong, muscular
+    core and lowers your center of gravity\u2014features that assist you in riding
+    and climbing\u2014and you've trained at riding in a saddle from an extremely
+    early age. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Ride] feat. Additionally,
+    you are not @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard] while you Climb."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 20b9601e0c6f4e894ee95a972ba2145c16c9a9007b9deb161832a603466b9d15
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Ride
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Ride"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.piNLXUrm9iaGqD2i
+    SourceId: 
+    Slug: hobgoblin
+    DisplayName: Hobgoblin
+  ParentAncestryAsset: {fileID: 11400000, guid: f8564f2408134d941bdb53b696e95741, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Ride
+    SourceId: 
+    DisplayName: Ride
+    Level: 0
+    ResolvedFeature: {fileID: 0}

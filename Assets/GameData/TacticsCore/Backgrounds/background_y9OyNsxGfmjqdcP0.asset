@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_y9OyNsxGfmjqdcP0
+  m_EditorClassIdentifier: 
+  SourceId: y9OyNsxGfmjqdcP0
+  Slug: artist
+  DisplayName: Artist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Your art is your greatest passion, whatever form it takes. Adventuring
+    might help you find inspiration, or simply be a way to survive until you become
+    a world-famous artist. Choose two attribute boosts. One must be to Dexterity
+    or Charisma , and one is a free attribute boost. You're trained in the Crafting
+    skill and the Art Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Specialty
+    Crafting] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: efb25c82dbb57fd787acaeddc1dfb59392edcbdf7d11b08389ee974ea4eb29f8
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Art Lore
+    Rank: 1
+  LoreSkills:
+  - Art Lore
+  GrantedFeats:
+  - SourceKey: m0e3x
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    SourceId: 
+    DisplayName: Specialty Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

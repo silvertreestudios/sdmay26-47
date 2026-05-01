@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_nLN6E15Q5YzufqoM
+  m_EditorClassIdentifier: 
+  SourceId: nLN6E15Q5YzufqoM
+  Slug: weaver
+  DisplayName: Weaver
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're a skilled weaver, crafting your pieces either by hand or by
+    loom. Whether you revere yourself as an artist or not, none can deny the beauty
+    of your craft. However, the life of a weaver isn't the most exciting one, and
+    your fingers itch for an adventure. Choose two attribute boosts. One must be
+    to Dexterity or Wisdom , and one is a free attribute boost. You're trained in
+    Crafting, and you're trained in Basket Weaving Lore, Tapestry Lore, or Textile
+    Lore. You gain the Specialty Crafting skill feat.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: e86670ac237a820b40eb30eab03e053cc617103ec8870a6264f9a805a967eafa
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: uIZ7y
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    SourceId: 
+    DisplayName: Specialty Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

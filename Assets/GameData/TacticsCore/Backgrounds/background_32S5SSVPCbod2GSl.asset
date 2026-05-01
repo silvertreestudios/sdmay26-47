@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_32S5SSVPCbod2GSl
+  m_EditorClassIdentifier: 
+  SourceId: 32S5SSVPCbod2GSl
+  Slug: green-faith-pilgrim
+  DisplayName: Green Faith Pilgrim
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You are an adherent of the Green Faith, striving to bring harmony
+    between nature and civilization. While you might hail from Shining Kingdom region
+    surrounding the Verduran Forest, the annual Moot of Ages draws visitors from
+    across the world. Traveling here is a sacred journey that could deepen your understanding
+    of nature's will. As part of your journey and natural communion, you've relied
+    heavily on flora and fauna to ease your sores and other injuries. Choose two
+    attribute boosts. One must be to Constitution or Wisdom , and one is a free attribute
+    boost. You're trained in the Nature skill and the Green Faith Lore skill. You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Natural Medicine] skill feat.
+  SourceTitle: Pathfinder Wardens of Wildwood Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: b03dd25cba51d3926d476eca54078f0cab30a5181af2eb7acd3f600d6d96fbe9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Green Faith Lore
+    Rank: 1
+  LoreSkills:
+  - Green Faith Lore
+  GrantedFeats:
+  - SourceKey: l6GOb
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Natural Medicine
+    SourceId: 
+    DisplayName: Natural Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

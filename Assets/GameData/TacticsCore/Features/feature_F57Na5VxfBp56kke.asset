@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_F57Na5VxfBp56kke
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: F57Na5VxfBp56kke
+  Slug: fortitude-expertise
+  DisplayName: Fortitude Expertise
+  IconPath: icons/magic/life/cross-explosion-burst-green.webp
+  Description: Animist Spiritual energy reinforces your body, making you more resilient.
+    Your proficiency rank for Fortitude saves increases to expert. Bard, Investigator,
+    Swashbuckler Your physique has grown hardy in your adventures. Your proficiency
+    rank for Fortitude saves increases to expert. Druid Adventures have made your
+    physique more hardy. Your proficiency rank for Fortitude saves increases to expert.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d87bfbde42a7bb310c0ac12b6002e46244b52e12bd895992bfc612fdf918f28d
+  Traits:
+  - animist
+  - bard
+  - druid
+  - investigator
+  - swashbuckler
+  TraitsLower:
+  - animist
+  - bard
+  - druid
+  - investigator
+  - swashbuckler
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '[{"text":"PF2E.SpecificRule.ClassFeatures.FortitudeExpertise.{actor|class.slug}.Description"}]'
+    Uuid: 
+    Json: '{"itemId":"{item|id}","key":"ItemAlteration","mode":"override","property":"description","value":[{"text":"PF2E.SpecificRule.ClassFeatures.FortitudeExpertise.{actor|class.slug}.Description"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{actor|class.slug}"'
+    Uuid: 
+    Json: '{"itemId":"{item|id}","key":"ItemAlteration","mode":"add","property":"traits","value":"{actor|class.slug}"}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 2
+  FocusPointDelta: 0

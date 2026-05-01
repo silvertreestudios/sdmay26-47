@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_lX5KDS2hU5LihZRs
+  m_EditorClassIdentifier: 
+  SourceId: lX5KDS2hU5LihZRs
+  Slug: martial-disciple
+  DisplayName: Martial Disciple
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You dedicated yourself to intense training and rigorous study to
+    become a great warrior. The school you attended might have been a traditionalist
+    monastery, an elite military academy, or the local branch of a prestigious mercenary
+    organization. Choose two attribute boosts. One must be to Strength or Dexterity
+    , and one is a free attribute boost. You''re trained in your choice of the Acrobatics
+    or Athletics skill. You gain a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Cat
+    Fall] if you chose Acrobatics or @UUID[Compendium.pf2e.feats-srd.Item.Quick Jump]
+    if you chose Athletics. You''re also trained in the Warfare Lore skill.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 62128a5425e751cafd436c5c35cad9082fe1d8846a26a44cc083ea5e2c7465c8
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Acrobatics","value":"acrobatics"},{"label":"PF2E.Skill.Athletics","value":"athletics"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"martial-disciple"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Cat Fall
+    Json: '{"key":"GrantItem","predicate":["martial-disciple:acrobatics"],"uuid":"Compendium.pf2e.feats-srd.Item.Cat
+      Fall"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Quick Jump
+    Json: '{"key":"GrantItem","predicate":["martial-disciple:athletics"],"uuid":"Compendium.pf2e.feats-srd.Item.Quick
+      Jump"}'
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare Lore
+    Rank: 1
+  LoreSkills:
+  - Warfare Lore
+  GrantedFeats: []

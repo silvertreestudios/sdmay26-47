@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_4lbfPXwZEf3eE0ip
+  m_EditorClassIdentifier: 
+  SourceId: 4lbfPXwZEf3eE0ip
+  Slug: snubbed-out-stoolie
+  DisplayName: Snubbed Out Stoolie
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were once a distinguished informant for the shieldmarshals, working
+    deep undercover to infiltrate gangs of bootleggers and assassins. Then, one day,
+    you discovered that the records of your service had all been completely destroyed.
+    In an instant, you were no longer an elite spy impersonating a criminal-you were
+    just a plain criminal. Now, not a trace remains of your work for the city. Not
+    only is it as though you were never a shieldmarshal at all, but you've got a
+    rap sheet implicating you as a key member in the criminal organizations you spent
+    your career infiltrating. Luckily, no one could take away the skills you learned
+    from your deep-cover missions, and your new notoriety has earned you quite a
+    reputation among Alkenstar's criminal elite. Through your underworld connections,
+    you've identified Deputy Shieldmarshal Anjelique Loveless as the one responsible
+    for your fall from grace. It seems you were onto something that she didn't want
+    you to know about, but there's only one way to figure out exactly why Loveless
+    ruined your reputation and gave you your outlaw status-find her. Choose two attribute
+    boosts. One must be to Strength or Charisma , and one is a free attribute boost.
+    You're trained in the Deception skill and the Underworld Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Lie to Me] skill feat.
+  SourceTitle: Pathfinder Outlaws of Alkenstar Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 58e9ad0d230e26469da67003c7e3eaf8574ddb835a900736b6c9a3e07587f55a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: 61zbo
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Lie to Me
+    SourceId: 
+    DisplayName: Lie To Me
+    Level: 1
+    ResolvedFeature: {fileID: 0}

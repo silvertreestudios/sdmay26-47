@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_FTeIs1Z1Qeli4BIF
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: FTeIs1Z1Qeli4BIF
+  Slug: hybrid-study
+  DisplayName: Hybrid Study
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: 'Your extensive physical training and carefully chosen magic combine
+    to form a unique and dangerous fighting style that''s more than the sum of its
+    parts. You choose one field of hybrid study to represent your particular combination
+    of skills. Your hybrid study gives you a special ability, usually tied to @UUID[Compendium.pf2e.classfeatures.Item.Spellstrike]
+    or @UUID[Compendium.pf2e.classfeatures.Item.Arcane Cascade], and it determines
+    your initial conflux spell. The hybrid studies presented in this book are as
+    follows. @UUID[Compendium.pf2e.classfeatures.Item.Aloof Firmament] @UUID[Compendium.pf2e.classfeatures.Item.Inexorable
+    Iron] @UUID[Compendium.pf2e.classfeatures.Item.Laughing Shadow] @UUID[Compendium.pf2e.classfeatures.Item.Sparkling
+    Targe] @UUID[Compendium.pf2e.classfeatures.Item.Starlit Span] @UUID[Compendium.pf2e.classfeatures.Item.Twisting
+    Tree] @UUID[Compendium.pf2e.classfeatures.Item.Unfurling Brocade] @UUID[Compendium.pf2e.classfeatures.Item.Resurgent
+    Maelstrom]'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4fde67a9d0840a46150da0bdb67bf8f8ab228d0c6a5aca84ccba1e712cb4e2fe
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:magus-hybrid-study",{"or":[{"and":["class:magus","item:tag:magus-hybrid-study"]},{"and":["item:tag:magus-hybrid-study",{"not":"item:tag:class-archetype"}]}]}]},"flag":"hybridStudy","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Magus.HybridStudy.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.hybridStudy}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.hybridStudy}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.hybridStudy}'
+    SourceId: 
+    DisplayName: hybridStudy}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

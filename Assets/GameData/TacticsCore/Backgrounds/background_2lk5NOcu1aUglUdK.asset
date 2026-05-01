@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2lk5NOcu1aUglUdK
+  m_EditorClassIdentifier: 
+  SourceId: 2lk5NOcu1aUglUdK
+  Slug: fireworks-performer
+  DisplayName: Fireworks Performer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Few celebrations in Tian Xia are complete without a show of fireworks,
+    and your job is to make sure they go off without a hitch. You load the fireworks,
+    set the fuses, and choreograph the performance, bringing the show together in
+    a finale of lights and explosions. Then it's time to pack up your gear and move
+    on to the next civic holiday or religious festival. Of course, someone who travels
+    the roads with a pack full of high explosives is bound to run into an adventure
+    or two along the way, and so over time, your fireworks have been spent in support
+    of that life. Choose two attribute boosts. One must be to Intelligence or Charisma
+    , and one is a free attribute boost. You're trained in the Performance skill
+    and the Fireworks Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Fascinating
+    Performance] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 806f71fda6095e946ad5852e0907013780ed3766a5d764e8137036c143d37897
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fireworks Lore
+    Rank: 1
+  LoreSkills:
+  - Fireworks Lore
+  GrantedFeats:
+  - SourceKey: wr9b9
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Fascinating Performance
+    SourceId: 
+    DisplayName: Fascinating Performance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

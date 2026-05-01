@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_NRQOorKeZ310FXuk
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: NRQOorKeZ310FXuk
+  Slug: seer
+  DisplayName: Seer
+  IconPath: icons/creatures/magical/spirit-undead-masked-blue.webp
+  Description: 'You are particularly sensitive to the presence and influence of spirits
+    and undead. You can detect lingering spirits, offering you some defense against
+    them. Invocation of Sight (1st): You shift your eyes easily to the spirit world,
+    intuiting the needs of apparitions and other spiritual entities based on how
+    they appear to you. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Apparition
+    Sense] feat. You also gain a +1 status bonus to saving throws and AC against
+    the effects of haunts and the abilities of spirits and incorporeal undead. Invocation
+    of Protection (9th): Your status as an intermediary across planar boundaries
+    grants you further defenses against spiritual ailments. You gain spirit resistance
+    and void resistance equal to half your level, and your status bonus to saving
+    throws and AC against the effects of haunts and the abilities of spirits and
+    incorporeal undead increases to +2. Invocation of Resilience (17th): You are
+    a bulwark against the terrible spirits that lurk in the dark. Your apparition
+    sight becomes a precise sense and your status bonus to saving throws and AC against
+    the effects of haunts and the abilities of spirits and incorporeal undead increases
+    to +3.'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: eb1d663422825850cbabc7acbe78fb5a18290408f0f297e207228c2c9a7f477e
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Apparition Sense
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Apparition Sense"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,17),3,ternary(gte(@actor.level,9),2,1))"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["origin:trait:haunt","origin:trait:spirit",{"and":["origin:trait:undead","origin:trait:incorporeal"]}]}],"selector":["ac","saving-throw"],"slug":"seer-defense-bonus","type":"status","value":"ternary(gte(@actor.level,17),3,ternary(gte(@actor.level,9),2,1))"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"floor(@actor.level/2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":[{"gte":["self:level",9]}],"type":["spirit","void"],"value":"floor(@actor.level/2)"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Apparition Sense
+    SourceId: 
+    DisplayName: Apparition Sense
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

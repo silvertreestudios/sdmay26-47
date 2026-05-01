@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_w6rMqmGzhUahdnA7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: w6rMqmGzhUahdnA7
+  Slug: surprise-attack
+  DisplayName: Surprise Attack
+  IconPath: systems/pf2e/icons/features/classes/surprice-attack.webp
+  Description: You spring into combat faster than foes can react. On the first round
+    of combat, if you roll Deception or Stealth for initiative, creatures that haven't
+    acted are @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard] to you.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2d04d90d8ca65dc9db50a7bb0ec9aa0b7b6b18e8d1cc010d968c90308ced5831
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: EphemeralEffect
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Off-Guard
+    Json: '{"key":"EphemeralEffect","predicate":["encounter:round:1",{"lt":["self:participant:initiative:rank","target:participant:initiative:rank"]},{"or":["self:participant:initiative:stat:deception","self:participant:initiative:stat:stealth"]}],"selectors":["strike-attack-roll","spell-attack-roll","strike-damage","attack-spell-damage"],"uuid":"Compendium.pf2e.conditionitems.Item.Off-Guard"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

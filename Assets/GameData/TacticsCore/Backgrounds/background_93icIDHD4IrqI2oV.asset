@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_93icIDHD4IrqI2oV
+  m_EditorClassIdentifier: 
+  SourceId: 93icIDHD4IrqI2oV
+  Slug: sodden-scavenger
+  DisplayName: Sodden Scavenger
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Mwangi Expanse You've managed to eke out an
+    existence in the storm-wracked Sodden Lands and have become an expert at scavenging
+    food and tools. Choose two attribute boosts. One must be to Constitution or Wisdom
+    , and one is a free attribute boost. You're trained in the Survival skill and
+    the Swamp Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Forager]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: d9d5bb7786bdf1bddc2cdd6d21586acb5b1f6d54f9161b67851ae51498119f28
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Swamp Lore
+    Rank: 1
+  LoreSkills:
+  - Swamp Lore
+  GrantedFeats:
+  - SourceKey: cp6du
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forager
+    SourceId: 
+    DisplayName: Forager
+    Level: 1
+    ResolvedFeature: {fileID: 0}

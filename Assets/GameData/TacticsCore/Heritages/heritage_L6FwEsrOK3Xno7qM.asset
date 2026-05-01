@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_L6FwEsrOK3Xno7qM
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: L6FwEsrOK3Xno7qM
+  Slug: ascetic-tanuki
+  DisplayName: Ascetic Tanuki
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: It's said your round form is the result of calmness and restraint,
+    not indulgence. You gain scent as an imprecise sense with a range of 30 feet.
+    The GM will usually double the range if you're downwind from something you're
+    trying to smell or halve the range if you're upwind. In addition, you gain a
+    +2 circumstance bonus to Perception checks whenever you're trying to locate food,
+    drink, or a consumable item that's ingested (such as a potion or elixir) using
+    your scent.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ab30dd963eac1e0a5f65c0ac90b8d6ab0b1582dc77916dd48ba9b318ac40c74f
+  Traits:
+  - tanuki
+  TraitsLower:
+  - tanuki
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"acuity":"imprecise","key":"Sense","range":30,"selector":"scent"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["locate-food-or-drink"],"selector":"perception","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pILFsoGsUQkVF5dZ
+    SourceId: 
+    Slug: tanuki
+    DisplayName: Tanuki
+  ParentAncestryAsset: {fileID: 11400000, guid: 840e89a1b8dc79245ba086473020388f, type: 2}
+  GrantedFeatures: []

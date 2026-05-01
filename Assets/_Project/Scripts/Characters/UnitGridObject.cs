@@ -1,9 +1,9 @@
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Combat;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     public class UnitGridObject : MonoBehaviour
     {

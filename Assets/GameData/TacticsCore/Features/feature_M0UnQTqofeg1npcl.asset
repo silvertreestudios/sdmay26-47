@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_M0UnQTqofeg1npcl
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: M0UnQTqofeg1npcl
+  Slug: initiate-benefit-bell
+  DisplayName: Initiate Benefit (Bell)
+  IconPath: icons/tools/instruments/bell-gold.webp
+  Description: You can use your bell implement to create three different kinds of
+    music, each of which weakens a foe in a different way. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Ring
+    Bell] activity.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b8226420288a10dcf4101f6fb80c72c94e61a08cb701aec9dec2da5ff724747d
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Ring Bell
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Ring Bell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Ring Bell
+    SourceId: 
+    DisplayName: Ring Bell
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

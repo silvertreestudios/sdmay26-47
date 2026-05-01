@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_k3zyr6du4gV0Ftuh
+  m_EditorClassIdentifier: 
+  SourceId: k3zyr6du4gV0Ftuh
+  Slug: yaksha
+  DisplayName: Yaksha
+  IconPath: systems/pf2e/icons/default-icons/ancestry.svg
+  Description: "Away from shining citadels and opulent palaces, reticent yakshas
+    shelter Tian Xia's rural hinterlands from natural disasters and otherworldly
+    depredations. Famed for resolute vows and prowess with primal magic, yakshas
+    shield the indigent and protect the wilderness, punishing those who threaten
+    either with bone-crushing fury. Yaksha legends recall their origins as divine
+    spirits, overseeing the safety of roads and abodes in a primeval world of vast
+    storm forests and titanic flame floods\u2014the First World, a realm of boundless
+    potentiality. During the Great Abandonment, when the gods left the First World,
+    many yakshas rejected this exodus, instead staying to perform their duties as
+    caretakers. Despite the realm's sudden dearth of divine power, the remaining
+    yakshas swore primordial vows, allowing them to channel power from the nearby
+    Creation's Forge into primal magic and transform swathes of the metamorphic First
+    World into stable regions to provide refuge for destitute fey. Yaksha"
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 3137b4d64f67af9a29e78537f44c16a9e44d8510ab7419d263879a7f23e16751
+  Traits:
+  - spirit
+  - yaksha
+  TraitsLower:
+  - spirit
+  - yaksha
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 06000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 04000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: fey
+    DisplayName: Fey
+  - Id: yaksha
+    DisplayName: Yaksha
+  AdditionalLanguageOptions:
+  - Id: diabolic
+    DisplayName: Diabolic
+  - Id: empyrean
+    DisplayName: Empyrean
+  - Id: nagaji
+    DisplayName: Nagaji
+  - Id: tang
+    DisplayName: Tang
+  - Id: tengu
+    DisplayName: Tengu
+  - Id: vudrani
+    DisplayName: Vudrani
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: 5ca25a2db509186498511c8d6bde3625, type: 2}
+  - {fileID: 11400000, guid: 43aadd1f70a0e724f976b719c7615589, type: 2}
+  - {fileID: 11400000, guid: ba84128b09324b743bb03ae758a20c8e, type: 2}
+  - {fileID: 11400000, guid: f55d2c78dffa5fe478db67a29ac33d75, type: 2}
+  - {fileID: 11400000, guid: 369c9073a0a502b4e89837866d2e6967, type: 2}
+  - {fileID: 11400000, guid: 62099417c4054304a9dbc4bd499b54d8, type: 2}

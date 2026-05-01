@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_Yix76sfxrIlltSTJ
+  m_EditorClassIdentifier: 
+  SourceId: Yix76sfxrIlltSTJ
+  Slug: ranger
+  DisplayName: Ranger
+  IconPath: systems/pf2e/icons/classes/ranger.webp
+  Description: Some rangers believe civilization wears down the soul, but still needs
+    to be protected from wild creatures. Others say nature needs to be protected
+    from the greedy, who wish to tame its beauty and plunder its treasures. You could
+    champion either goal, or both. You might be a scout, tracker, or hunter of fugitives
+    or beasts, haunting the edge of civilization or exploring the wilds. You know
+    how to live off the land and are skilled at spotting and taking down both opportune
+    prey and hated enemies. Ranger
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: ca75cf84872f5402ee46479b0093369ebf4562ec274de36672776cd7d7a75c9c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","predicate":[{"not":"feature:vindicator"}],"value":1}'
+  HitPointsPerLevel: 10
+  KeyAttributes: 0200000001000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 1
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 4
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: bhe5z
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Hunter's Edge
+    SourceId: mzkkj9LEWjJPBhaq
+    DisplayName: Hunter's Edge
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 8419f0e486450f74699473440933166f, type: 2}
+  - SourceKey: s7kqn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Hunt Prey
+    SourceId: 0nIOGpHQNHsKSFKT
+    DisplayName: Hunt Prey
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: e6f330bae6f53f249b68d80963d2fed2, type: 2}
+  GrantedFeatures:
+  - SourceKey: 07lzm
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Masterful Hunter
+    SourceId: RVZC4wVy5B5W2OeS
+    DisplayName: Masterful Hunter
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 7a9c46fe160197540b7761c2cd0cb7f4, type: 2}
+  - SourceKey: 3k9vv
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 4i75Y
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Trackless Journey
+    SourceId: PeZi7E9lI4vz8EGY
+    DisplayName: Trackless Journey
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 5153c19ddfdb24446aa61f76a5e9a1ec, type: 2}
+  - SourceKey: 7gij8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Nature's Edge
+    SourceId: j2R64kwUgEJ1TudD
+    DisplayName: Nature's Edge
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: eaaefed8ba6056a44a546e7892b978b2, type: 2}
+  - SourceKey: 9412w
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Expertise
+    SourceId: FCEp9jjxxgRJDJV3
+    DisplayName: Medium Armor Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 73197a4a7743ecd498d5be602ed09454, type: 2}
+  - SourceKey: A0Iss
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Natural Reflexes
+    SourceId: rpLPCkTXCZlQ51SR
+    DisplayName: Greater Natural Reflexes
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 684bc7c2360900f43a6a1f38f8f46a63, type: 2}
+  - SourceKey: B4Cbq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Warden's Endurance
+    SourceId: gc6OMDRxTpSfsVtk
+    DisplayName: Warden's Endurance
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: e01cf26c325d28b4ab2c49dc77f2086b, type: 2}
+  - SourceKey: NyBkK
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Natural Reflexes
+    SourceId: 7dMDxvzGKbqoEAdX
+    DisplayName: Natural Reflexes
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 462d6d2204fffe14cb9e86e64ff885d9, type: 2}
+  - SourceKey: PlY2u
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Mastery
+    SourceId: cGMSYAErbUG5E8X2
+    DisplayName: Medium Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: c6659f86a85d58d4d91186d1b048953f, type: 2}
+  - SourceKey: bYC03
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: Z7HX6TeFsaup7Dx9
+    DisplayName: Greater Weapon Specialization
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: e8328fb7ab4419d479ca3cb33e9ee85b, type: 2}
+  - SourceKey: bhe5z
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Hunter's Edge
+    SourceId: mzkkj9LEWjJPBhaq
+    DisplayName: Hunter's Edge
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 8419f0e486450f74699473440933166f, type: 2}
+  - SourceKey: bv3vc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Swift Prey
+    SourceId: bBGb1LcffXEqar0p
+    DisplayName: Swift Prey
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 4bc1bc4a3b6eb36498047bf96b2261e8, type: 2}
+  - SourceKey: epJL1
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Legend
+    SourceId: nLwPMPLRne1HnL00
+    DisplayName: Perception Legend
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 92f21d24f9a2332489b58c433c8658d8, type: 2}
+  - SourceKey: jhhhl
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Ranger Weapon Expertise
+    SourceId: QhoW8ivPvYmWzyEZ
+    DisplayName: Ranger Weapon Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 2719838ea834b8a42b80c6223cc7ed4d, type: 2}
+  - SourceKey: nvyh4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Martial Weapon Mastery
+    SourceId: ejP4jVQkS48uKRFz
+    DisplayName: Weapon Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 72296cf886f10134f8a893bc0ff539aa, type: 2}
+  - SourceKey: osijO
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Unimpeded Journey
+    SourceId: RlwE99yKnhq8FUuy
+    DisplayName: Unimpeded Journey
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 8a7ac71deaba4bd43a602e9f21a7814f, type: 2}
+  - SourceKey: s7kqn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Hunt Prey
+    SourceId: 0nIOGpHQNHsKSFKT
+    DisplayName: Hunt Prey
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: e6f330bae6f53f249b68d80963d2fed2, type: 2}
+  - SourceKey: uo4PG
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Will Expertise
+    SourceId: NhcF2CbXA8R1UCg4
+    DisplayName: Will Expertise
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: e631da3eeac3888459d9fbba2d398d2c, type: 2}
+  - SourceKey: upgl9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Ranger Expertise
+    SourceId: 5likl5SAxQPrQ3KF
+    DisplayName: Ranger Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 33c5fdf74e7fd164f924eddea404385b, type: 2}
+  - SourceKey: yjxab
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 0npO4rPscGm0dX13
+    DisplayName: Perception Mastery
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 622e4b3f5ecccf94595d00a41a052a22, type: 2}

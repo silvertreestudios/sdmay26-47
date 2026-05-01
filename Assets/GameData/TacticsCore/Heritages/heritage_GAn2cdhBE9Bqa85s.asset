@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_GAn2cdhBE9Bqa85s
+  m_EditorClassIdentifier: 
+  SourceId: GAn2cdhBE9Bqa85s
+  Slug: beastkin
+  DisplayName: Beastkin
+  IconPath: systems/pf2e/icons/features/ancestry/beastkin.webp
+  Description: The blood of a beast flows through your veins, granting you the ferocity
+    and might of animals. Only creatures with the humanoid trait can take the beastkin
+    versatile heritage. Choose a type of animal such as bat, eagle, shark, spider,
+    tyrannosaurus, wasp, or wolf. This is the type of animal tied to your heritage
+    and is known as your inherent animal. A beastkin's hybrid form is their natural
+    shape. You gain the beast and beastkin traits, in addition to the traits from
+    your ancestry. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Change Shape]
+    ability. You can choose from beastkin feats and feats from your ancestry whenever
+    you gain an ancestry feat.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: rare
+  SourceJsonHash: 8e5147bafa4aac111cf53d9717c8f521bf0825253a203fedda92b7ddf50cfbea
+  Traits:
+  - beastkin
+  TraitsLower:
+  - beastkin
+  RawRules:
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["beast"],"key":"ActorTraits"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Change Shape
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Change
+      Shape"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.NPCAbility.ChangeShape.Label","mergeable":true,"option":"change-shape","suboptions":[{"label":"PF2E.NPCAbility.ChangeShape.Form.Hybrid","value":"hybrid"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.ChangeShape.Beastkin"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:change-shape"],"priority":160,"property":"description","value":[{"text":"PF2E.SpecificRule.ChangeShape.Beastkin"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"primal"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:change-shape"],"property":"traits","value":"primal"}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"jaws","category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d4"}},"group":"brawling","img":"icons/creatures/abilities/mouth-teeth-long-red.webp","key":"Strike","label":"PF2E.Weapon.Base.jaws","predicate":["change-shape:hybrid"],"slug":"beastkin-jaws","traits":["agile","finesse","unarmed"]}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Change Shape
+    SourceId: 
+    DisplayName: Change Shape
+    Level: 0
+    ResolvedFeature: {fileID: 0}

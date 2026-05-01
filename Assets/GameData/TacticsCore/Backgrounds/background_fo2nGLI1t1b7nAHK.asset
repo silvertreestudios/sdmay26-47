@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_fo2nGLI1t1b7nAHK
+  m_EditorClassIdentifier: 
+  SourceId: fo2nGLI1t1b7nAHK
+  Slug: dreams-of-vengeance
+  DisplayName: Dreams of Vengeance
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You've known strife your whole life, whether on the battlefield,
+    in the arena, or simply living your day-to-day life. When you're not thinking
+    about your next brawl, you're turning over memories of traitorous rivals and
+    troublesome betrayers who've wronged you in the past. The sight of your enemies
+    broken and maimed, then, greatly appealed to you when you glimpsed through a
+    mysterious glowing archway during the Missing Moment. But when you stepped through
+    the gate, you found yourself back where you started, with no indications of your
+    exacted revenge anywhere in sight. You nearly burned down the countryside in
+    frustrated rage, only realizing afterward the magnitude of the fiery new power
+    you wielded. Fiery rays of energy you could shoot from your eyes\u2014these,
+    no doubt, would come in handy. Your deviant abilities are of the dragon classification.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Blasting Beams] deviant feat
+    with the fire type. As a quirk, your pupils are shaped like curved arches. When
+    you use a deviant ability, the centers of your pupils shine with light, like
+    the glowing gateways of the Missing Moment. Choose two attribute boosts. One
+    must be to Constitution or Strength , and one is a free attribute boost. You're
+    trained in the Athletics skill and the Gladiator Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Titan
+    Wrestler] skill feat."
+  SourceTitle: Pathfinder Gatewalkers Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 30cd6501d5c865d5139a7441ec17eac4c3d111ba1f1e992d0b2daba35e38c4be
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Blasting Beams
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Blasting Beams"}'
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Gladiator Lore
+    Rank: 1
+  LoreSkills:
+  - Gladiator Lore
+  GrantedFeats:
+  - SourceKey: NOtio
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Titan Wrestler
+    SourceId: 
+    DisplayName: Titan Wrestler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

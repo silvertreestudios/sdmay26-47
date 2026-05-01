@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_8zn3cD6GSmoo1LW4
+  m_EditorClassIdentifier: 
+  SourceId: 8zn3cD6GSmoo1LW4
+  Slug: fighter
+  DisplayName: Fighter
+  IconPath: systems/pf2e/icons/classes/fighter.webp
+  Description: Fighting for honor, greed, loyalty, or simply the thrill of battle,
+    you are an undisputed master of weaponry and combat techniques. You combine your
+    actions through clever combinations of opening moves, finishing strikes, and
+    counterattacks whenever your foes are unwise enough to drop their guard. Whether
+    you are a knight, mercenary, sharpshooter, or blade master, you have honed your
+    martial skills into an art form and perform devastating critical attacks on your
+    enemies. Fighter
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 398944c215e80b28b29c4dbf8c8a812e927acb2e5e389d0278d9f16208d9ad2e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Acrobatics","value":"acrobatics"},{"label":"PF2E.Skill.Athletics","value":"athletics"}],"flag":"fighterSkill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.fighterSkill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.fighterSkill}.rank","value":1}'
+  HitPointsPerLevel: 10
+  KeyAttributes: 0200000001000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 1
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 1
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 2
+  - Group: 1
+    CustomGroupName: 
+    Rank: 2
+  - Group: 2
+    CustomGroupName: 
+    Rank: 2
+  - Group: 3
+    CustomGroupName: 
+    Rank: 1
+  TrainedSkills: []
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: EYY9w
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reactive Strike
+    SourceId: hmShTfPOcTaKgbf4
+    DisplayName: Reactive Strike
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b51ffb67fdd0b9948ad31e108823b0a9, type: 2}
+  - SourceKey: e1e4m
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  GrantedFeatures:
+  - SourceKey: 0c3e5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Legend
+    SourceId: F5VenhIQMDkeGvmV
+    DisplayName: Weapon Legend
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 54ab0e26a126e51479d6b1185120954e, type: 2}
+  - SourceKey: 2jey6
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Fighter Expertise
+    SourceId: bAaI7h937Nr3g93U
+    DisplayName: Fighter Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: ab937e89ad679dd4985442bdb791de1a, type: 2}
+  - SourceKey: 9c5ay
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Armor Expertise
+    SourceId: x5jaCJxsmD5sx3KB
+    DisplayName: Armor Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 09d2422847110404085adc1a9f327d38, type: 2}
+  - SourceKey: EYY9w
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reactive Strike
+    SourceId: hmShTfPOcTaKgbf4
+    DisplayName: Reactive Strike
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b51ffb67fdd0b9948ad31e108823b0a9, type: 2}
+  - SourceKey: Yo8rt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Tempered Reflexes
+    SourceId: 2ImD2TB0RVic1VUc
+    DisplayName: Tempered Reflexes
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: c6eb7a405b8a3aa43b9130f5e3b85ed2, type: 2}
+  - SourceKey: e1e4m
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  - SourceKey: eDncW
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Battle Hardened
+    SourceId: gdSmSTaGDxf4g2d8
+    DisplayName: Battle Hardened
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: cd9ae4be259a9ab479bf7fcfc8061285, type: 2}
+  - SourceKey: enizk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Improved Flexibility
+    SourceId: W2rwudMNcAxs8VoX
+    DisplayName: Improved Flexibility
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 471ff92f7f55be049b9420306e5fe0ea, type: 2}
+  - SourceKey: ij943
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Battlefield Surveyor
+    SourceId: TIvzBALymvb56L79
+    DisplayName: Battlefield Surveyor
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: cff4d7091d3aa304ea066422eef7fe8b, type: 2}
+  - SourceKey: lakjk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Bravery
+    SourceId: GJKJafDGuX4BeAeN
+    DisplayName: Bravery
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 8e6562b1ecbc949428abbe06e17fd506, type: 2}
+  - SourceKey: q0xyz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Armor Mastery
+    SourceId: CGB1TczFhQhdQxml
+    DisplayName: Armor Mastery
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 0f31acf69e68a4b4cb99a3fe02274e3b, type: 2}
+  - SourceKey: txlgu
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Combat Flexibility
+    SourceId: 8g6HzARbhfcgilP8
+    DisplayName: Combat Flexibility
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 6f93f86e90a49c0438be8cf0d77d8224, type: 2}
+  - SourceKey: u1d1r
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: u8k07
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Fighter Weapon Mastery
+    SourceId: gApJtAdNb9ST4Ms9
+    DisplayName: Fighter Weapon Mastery
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: b775e27239f2bd84fbfd373b0da3bb29, type: 2}
+  - SourceKey: uKeq1
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: Z7HX6TeFsaup7Dx9
+    DisplayName: Greater Weapon Specialization
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: e8328fb7ab4419d479ca3cb33e9ee85b, type: 2}
+  - SourceKey: x98c2
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Versatile Legend
+    SourceId: 0H2LxtiZTJ275pSD
+    DisplayName: Versatile Legend
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: faa35c4471104d445af9c360fae42c6f, type: 2}

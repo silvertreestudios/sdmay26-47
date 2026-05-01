@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_xtRIYizCjLg9qe1Z
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: xtRIYizCjLg9qe1Z
+  Slug: wildwood-halfling
+  DisplayName: Wildwood Halfling
+  IconPath: systems/pf2e/icons/features/ancestry/wildwood-halfling.webp
+  Description: You hail from deep within a jungle or forest, and you've learned how
+    to use your small size to wriggle through undergrowth and other obstacles. You
+    ignore any difficult terrain caused by plants and fungi, such as bushes, vines,
+    and undergrowth.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: bf1994a760eaec74fbb524db7d20daa090699316373c09eb8263c89877111ad9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GgZAHbrjnzWOZy2v
+    SourceId: 
+    Slug: halfling
+    DisplayName: Halfling
+  ParentAncestryAsset: {fileID: 11400000, guid: 27cca46a5c2df4845ab39fbaa79aad34, type: 2}
+  GrantedFeatures: []

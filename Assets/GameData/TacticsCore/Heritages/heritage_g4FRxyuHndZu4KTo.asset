@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_g4FRxyuHndZu4KTo
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: g4FRxyuHndZu4KTo
+  Slug: jinxed-tengu
+  DisplayName: Jinxed Tengu
+  IconPath: systems/pf2e/icons/features/ancestry/jinxed-tengu.webp
+  Description: Your lineage has been exposed to curse after curse, and now they slide
+    off your feathers like rain. If you succeed at a saving throw against a curse
+    or misfortune effect, you get a critical success instead. When you would gain
+    the @UUID[Compendium.pf2e.conditionitems.Item.Doomed] condition, attempt a @Check[flat|dc:17].
+    On a success, reduce the value of the doomed condition you would gain by 1.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 2e3a9d63c98775663d9f13b385953ae292a9565f6511172d63e2ea87d2340824
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":[{"or":["item:trait:curse","item:trait:misfortune"]}],"selector":"saving-throw","type":"save"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.18xDKYPDBLEv2myX
+    SourceId: 
+    Slug: tengu
+    DisplayName: Tengu
+  ParentAncestryAsset: {fileID: 11400000, guid: 0cda81b7def3071468d62aaaaf7b5263, type: 2}
+  GrantedFeatures: []

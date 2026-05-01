@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Observer_A_Stealth_Test
   m_EditorClassIdentifier: 
   unitName: Unit
+  portraitIcon: {fileID: 0}
+  unitSize: 2
   perception: 4
   stealth: 0
   hasAllAroundVision: 0
   hasDenyAdvantage: 0
   strength: 10
-  dexterity: 14
+  dexterity: 20
   constitution: 14
   intelligence: 10
   wisdom: 12
@@ -31,3 +33,4 @@ MonoBehaviour:
     Immunities: 
     Weaknesses: []
     Resistances: []
+  traits: []

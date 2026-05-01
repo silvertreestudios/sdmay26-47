@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_ZZKZkeSP5TuT62IA
+  m_EditorClassIdentifier: 
+  SourceId: ZZKZkeSP5TuT62IA
+  Slug: duskwalker
+  DisplayName: Duskwalker
+  IconPath: systems/pf2e/icons/features/ancestry/duskwalker.webp
+  Description: Thanks to an ancient bargain, your soul has been reborn as a duskwalker,
+    a planar scion with a connection to psychopomps and the Boneyard. You gain the
+    duskwalker trait. You also gain low-light vision, or you gain darkvision if your
+    ancestry already has low-light vision. Neither your body nor your spirit can
+    ever become undead. You can select from duskwalker feats and feats from your
+    ancestry whenever you gain an ancestry feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 8a2805d97d143e9d02d32e23a1b59d425278ff65a3e1d15712ce1a6939655c3c
+  Traits:
+  - duskwalker
+  TraitsLower:
+  - duskwalker
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"low-light-vision"}'
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","predicate":["self:low-light-vision:from-ancestry"],"selector":"darkvision"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

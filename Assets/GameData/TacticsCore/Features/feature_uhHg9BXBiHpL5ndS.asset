@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_uhHg9BXBiHpL5ndS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: uhHg9BXBiHpL5ndS
+  Slug: methodology
+  DisplayName: Methodology
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: 'Your studies have made you savvy in many areas, but one in particular
+    drew your intense interest. Choose a methodology. The methodologies are as follows:
+    @UUID[Compendium.pf2e.classfeatures.Item.Alchemical Sciences Methodology] @UUID[Compendium.pf2e.classfeatures.Item.Empiricism
+    Methodology] @UUID[Compendium.pf2e.classfeatures.Item.Forensic Medicine Methodology]
+    @UUID[Compendium.pf2e.classfeatures.Item.Interrogation Methodology]'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5aad880cfed0cfbb9839da1eaa94ddcb48a566125c1e584505c0ae41a848ab22
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:investigator-methodology",{"or":[{"and":["class:investigator","item:tag:investigator-methodology"]},{"and":["item:tag:investigator-methodology",{"not":"item:tag:class-archetype"}]}]}]},"flag":"methodology","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Investigator.Methodology.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.methodology}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.methodology}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.methodology}'
+    SourceId: 
+    DisplayName: methodology}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

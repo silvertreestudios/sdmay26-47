@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_uNhdcyhiog7YvXPT
+  m_EditorClassIdentifier: 
+  SourceId: uNhdcyhiog7YvXPT
+  Slug: varisian-wanderer
+  DisplayName: Varisian Wanderer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Saga Lands You have spent your youth wandering
+    the lands of Varisia and beyond among the brightly painted wagons of a Varisian
+    caravan. You have heard endless tales of your people's history and lore, and
+    have learned many songs and stories from the disparate people you have met. Choose
+    two attribute boosts. One must be to Dexterity or Charisma , and one is a free
+    attribute boost. You're trained in the Performance skill and the Circus Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Fascinating Performance]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 5524e7874e2e9405e96296fb679f137ccdfbd4f6d79be4b931b50e4768ff99b9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Circus Lore
+    Rank: 1
+  LoreSkills:
+  - Circus Lore
+  GrantedFeats:
+  - SourceKey: 29ij0
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Fascinating Performance
+    SourceId: 
+    DisplayName: Fascinating Performance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

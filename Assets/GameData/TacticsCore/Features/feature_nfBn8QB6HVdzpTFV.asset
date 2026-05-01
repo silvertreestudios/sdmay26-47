@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_nfBn8QB6HVdzpTFV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: nfBn8QB6HVdzpTFV
+  Slug: anathema-druid
+  DisplayName: Anathema (Druid)
+  IconPath: icons/consumables/plants/leaf-hastate-glowing-green.webp
+  Description: As stewards of the natural order, druids find affronts to nature anathema.
+    If you repeatedly perform these acts, you lose your magical abilities from the
+    druid class, including your druid spellcasting and the benefits of your order.
+    These abilities can be regained only if you demonstrate your repentance with
+    an @UUID[Compendium.pf2e.spells-srd.Item.Atone] ritual. The following acts are
+    anathema to all druids. Anathema despoil natural places, consume more natural
+    resources than you require to live comfortably, teach the Wildsong to non-druids.
+    Your choice of druidic order adds further anathema, as detailed in the order's
+    entry.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4ed06075f82e1f0d37ec8e589eac610dd87410dcae3b88b6a495ea0a31f9be85
+  Traits:
+  - druid
+  TraitsLower:
+  - druid
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

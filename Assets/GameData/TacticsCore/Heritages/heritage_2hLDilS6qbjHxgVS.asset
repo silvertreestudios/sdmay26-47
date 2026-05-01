@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_2hLDilS6qbjHxgVS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 2hLDilS6qbjHxgVS
+  Slug: dogtooth-tengu
+  DisplayName: Dogtooth Tengu
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: In addition to a beak, your mouth also features a number of vicious,
+    pointed teeth. Some legends claim your powerful jaws can even bite through steel.
+    While you aren't that strong yet, your fangs can still leave terrible wounds.
+    Your beak unarmed attack gains the deadly d8 trait.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 25c767049315bb1925e2713aecb9f80b6501a8015d6855e3b6bb22e20d92eecc
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"deadly-d8"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:slug:beak"],"property":"traits","value":"deadly-d8"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.18xDKYPDBLEv2myX
+    SourceId: 
+    Slug: tengu
+    DisplayName: Tengu
+  ParentAncestryAsset: {fileID: 11400000, guid: 0cda81b7def3071468d62aaaaf7b5263, type: 2}
+  GrantedFeatures: []

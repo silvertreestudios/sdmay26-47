@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_XPPG7nN9pxt0sjMg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: XPPG7nN9pxt0sjMg
+  Slug: formula-book
+  DisplayName: Formula Book
+  IconPath: icons/sundries/books/book-purple-gem.webp
+  Description: "An alchemist keeps meticulous formulas for every item they can create.
+    You start with a standard Formula Book for free. The formula book contains the
+    formulas for two common 1st-level alchemical items of your choice, in addition
+    to any formulas you gained from @UUID[Compendium.pf2e.feats-srd.Item.Alchemical
+    Crafting] and your research field. Each time you gain a level, you can add the
+    formulas for two common alchemical items to your formula book. These new formulas
+    can be for any level of item you can create. You learn these formulas automatically,
+    but it's also possible to find or buy additional formulas in settlements or from
+    other alchemists, or to select the @UUID[Compendium.pf2e.feats-srd.Item.Inventor]
+    skill feat so you can invent them. As normal, having the base formula is sufficient
+    when Crafting upgraded types of the item\u2014you don't need to learn higher-level
+    formulas. For instance, if you have the 1st-level formula for a minor elixir
+    of life, you can create a minor, lesser, moderate, greater, major, or true elixir
+    of life as long as you meet the level and other prerequisites. Items with type
+    entries that have widely varied functions require separate formulas, but most
+    alchemical items have a structure similar to elixir of life."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4d3b67471dee95f8d9f78daf331201ab5c7a0bc960a390dbff96852f0dc6d022
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Formula Book (Blank)
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.equipment-srd.Item.Formula
+      Book (Blank)"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Formula Book (Blank)
+    SourceId: 
+    DisplayName: Formula Book (Blank)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

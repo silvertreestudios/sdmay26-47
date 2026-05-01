@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_fuTLDmihr9Z9e5wa
+  m_EditorClassIdentifier: 
+  SourceId: fuTLDmihr9Z9e5wa
+  Slug: cultist
+  DisplayName: Cultist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were (or still are) a member of a cult whose rites may involve
+    sacred dances to ensure a strong harvest or dire rituals that call upon dark
+    powers. You might have taken up adventuring to further your cult's aims, to initiate
+    yourself into the world's grander mysteries, or to flee unsavory practices or
+    strictures. Choose two attribute boosts. One must be to Intelligence or Charisma
+    , and one is a free attribute boost. You're trained in the Occultism skill and
+    a Lore skill related to your deity or cult. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Schooled
+    in Secrets] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 54a426dbd08fe87a251a9899a9d604909af6e541c08160a3ccae3d7e5c13160a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Deity> or <Cult> Lore
+    Rank: 1
+  LoreSkills:
+  - <Deity> or <Cult> Lore
+  GrantedFeats:
+  - SourceKey: hvaw7
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Schooled in Secrets
+    SourceId: 
+    DisplayName: Schooled In Secrets
+    Level: 1
+    ResolvedFeature: {fileID: 0}

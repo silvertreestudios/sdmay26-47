@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_D4k8wuq1ncHFCBZz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: D4k8wuq1ncHFCBZz
+  Slug: cause
+  DisplayName: Cause
+  IconPath: icons/sundries/flags/banner-symbol-sun-gold-red.webp
+  Description: 'You devote yourself to a specific cause in your deity''s name. Some
+    are limited to sanctification, as noted in parentheses. Your cause adds to your
+    edicts and anathema and grants you a special reaction called your champion''s
+    reaction, which appears after the divider, along with its upgrades if you gain
+    the relentless reaction and exalted reaction class features at higher levels.
+    @UUID[Compendium.pf2e.classfeatures.Item.Desecration] (Unholy): You selfishly
+    corrupt and destroy. @UUID[Compendium.pf2e.classfeatures.Item.Grandeur] (Holy):
+    You exemplify the glory and splendor of the celestial realms. @UUID[Compendium.pf2e.classfeatures.Item.Iniquity]
+    (Unholy): You destroy, take advantage, and act with dishonor. @UUID[Compendium.pf2e.classfeatures.Item.Justice]:
+    You follow laws and mete out just punishment. @UUID[Compendium.pf2e.classfeatures.Item.Liberation]:
+    You oppose tyranny and fight for freedom. @UUID[Compendium.pf2e.classfeatures.Item.Obedience]:
+    You enforce hierarchies and order. @UUID[Compendium.pf2e.classfeatures.Item.Redemption]
+    (Holy): You try to redeem those who commit wicked deeds.'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: cec0b05d50769242be1394a8f7ba8e187b0e96fe84f8792881413eb1146f9ad3
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:type:feature","item:tag:champion-cause",{"or":[{"and":["item:tag:holy","sanctification:holy"]},{"and":["item:tag:unholy","sanctification:unholy"]},{"nor":["item:tag:holy","item:tag:unholy"]}]},{"or":[{"and":["class:champion","item:tag:champion-cause"]},{"and":["item:tag:champion-cause",{"not":"item:tag:class-archetype"}]}]}]},"flag":"cause","key":"ChoiceSet","prompt":"PF2E.SpecificRule.DeityAndCause.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.cause}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.cause}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.cause}'
+    SourceId: 
+    DisplayName: cause}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

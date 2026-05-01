@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_23MEmXuyw75jiGKq
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 23MEmXuyw75jiGKq
+  Slug: littlehorn-minotaur
+  DisplayName: Littlehorn Minotaur
+  IconPath: icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp
+  Description: Though no less powerful, your frame (and your horns) are smaller than
+    those of most other minotaurs. Instead of Large, your size is Medium. Your horns
+    unarmed attack deals 1d6 piercing damage instead of 1d8, but it has the agile
+    trait.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 5d126c832e8a1cb71313eb518fc0222402ecec3e0cf944949449cd4f6199ecec
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"DamageDice","override":{"dieSize":"d6"},"selector":"horns-damage"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"agile"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:slug:horns"],"property":"traits","value":"agile"}'
+  - Key: CreatureSize
+    Path: 
+    Mode: 
+    Value: '"medium"'
+    Uuid: 
+    Json: '{"key":"CreatureSize","value":"medium"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.3wQ49DoWFYQgVsq6
+    SourceId: 
+    Slug: minotaur
+    DisplayName: Minotaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 1400257914fcf5548bdecbaa5f6cbb78, type: 2}
+  GrantedFeatures: []

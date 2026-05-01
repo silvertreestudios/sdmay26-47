@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_vjhB0ZTV9OZgSuSz
+  m_EditorClassIdentifier: 
+  SourceId: vjhB0ZTV9OZgSuSz
+  Slug: thassilonian-delver
+  DisplayName: Thassilonian Delver
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: As archaeologists uncovered and explored ever-larger numbers of Thassilonian
+    ruins, you were among the eager explorers who sought out the Runelords' ancient
+    secrets. You may have been the apprentice to another Pathfinder who perished
+    on an expedition, leaving you their discoveries and notes. Or perhaps you explored
+    several of these sites yourself, quickly learning to parse the arcane secrets
+    before lest the eldritch magic extinguish your life. Choose two attribute boosts.
+    One must be to Constitution or Intelligence , and one is a free attribute boost.
+    You're trained in the Arcana skill and the Thassilonian History Lore skill. You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Arcane Sense] skill feat. Add Thassilonian
+    to the list of additional languages you can learn for having a high Intelligence
+    modifier. Special You can select this background only if you have earned credit
+    for at least 5 First Edition scenarios from Season 4 of the Pathfinder Society
+    organized play campaign.
+  SourceTitle: Organized Play Foundation
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f26fed4c45f1120f5fda236c34c75ec83fb1f2c23650d3f4d0d544d62990d530
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Thassilonian History Lore
+    Rank: 1
+  LoreSkills:
+  - Thassilonian History Lore
+  GrantedFeats:
+  - SourceKey: 56qln
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Arcane Sense
+    SourceId: 
+    DisplayName: Arcane Sense
+    Level: 1
+    ResolvedFeature: {fileID: 0}

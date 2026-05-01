@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_xndlv9T3JgYYUtf8
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: xndlv9T3JgYYUtf8
+  Slug: metallic-reactance
+  DisplayName: Metallic Reactance
+  IconPath: systems/pf2e/icons/features/classes/metallic-reactance.webp
+  Description: The metals in your armor are carefully alloyed to ground electricity
+    and protect from acidic chemical reactions. You gain resistance equal to 3 +
+    half your level to acid and electricity damage. When under the effects of Overdrive,
+    the resistance increases by 2.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 10d4ef3177d51996911633bdb43b8f35326a807b5a52f184488108e488db7ab6
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"3 + floor(@actor.level / 2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}"],"type":["acid","electricity"],"value":"3
+      + floor(@actor.level / 2)"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"5 + floor(@actor.level / 2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}",{"or":["self:effect:overdrive-success","self:effect:overdrive-critical-success"]}],"type":["acid","electricity"],"value":"5
+      + floor(@actor.level / 2)"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

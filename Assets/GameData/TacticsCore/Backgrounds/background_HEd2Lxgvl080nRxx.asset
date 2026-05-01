@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HEd2Lxgvl080nRxx
+  m_EditorClassIdentifier: 
+  SourceId: HEd2Lxgvl080nRxx
+  Slug: shadow-lodge-defector
+  DisplayName: Shadow Lodge Defector
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were among the Pathfinders recruited by the devious Shadow Lodge,
+    lured in by promises of wealth, reform, justice, or revenge. You might have fought
+    against the Society's loyal agents, helped sabotage the Pathfinders' reputation
+    in distant countries, or even infiltrated the far-flung lodges as a spy. You've
+    since made peace with and rejoined the Pathfinder Society, yet the underhanded
+    reflexes and skills you learned are hard to forget. Choose two attribute boosts.
+    One must be to Dexterity or Intelligence , and one is a free attribute boost.
+    You're trained in the Deception skill and the Underworld Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Lie to Me] skill feat. Special You can
+    select this background only if you have earned credit for at least 5 First Edition
+    scenarios from Season 2 of the Pathfinder Society organized play campaign.
+  SourceTitle: Organized Play Foundation
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 97cf262bdf003017372adf1ac2e4df2483d7b3c85d002022f85d0b3dc651e02f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: o9m71
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Lie to Me
+    SourceId: 
+    DisplayName: Lie To Me
+    Level: 1
+    ResolvedFeature: {fileID: 0}

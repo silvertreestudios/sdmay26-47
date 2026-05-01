@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_J7T7bDLaQGoY1sMF
+  m_EditorClassIdentifier: 
+  SourceId: J7T7bDLaQGoY1sMF
+  Slug: nagaji
+  DisplayName: Nagaji
+  IconPath: systems/pf2e/icons/default-icons/ancestry.svg
+  Description: With humanoid figures and serpentine heads, nagaji are heralds, companions,
+    and servitors of powerful nagas. They hold a deep reverence for holy areas and
+    spiritual truths, an aspect many others find as intimidating as a nagaji's appearance.
+    Nagaji
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: dba57617ab306724a2d345c30866db5c9300515793932bb6ead7e439b4ec712c
+  Traits:
+  - humanoid
+  - nagaji
+  TraitsLower:
+  - humanoid
+  - nagaji
+  RawRules: []
+  HitPoints: 10
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 01000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: nagaji
+    DisplayName: Nagaji
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: amurrun
+    DisplayName: Amurrun
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: empyrean
+    DisplayName: Empyrean
+  - Id: shadowtongue
+    DisplayName: Shadowtongue
+  - Id: tengu
+    DisplayName: Tengu
+  - Id: thalassic
+    DisplayName: Thalassic
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  - Id: vanara
+    DisplayName: Vanara
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: O6GUQ
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Fangs (Nagaji)
+    SourceId: 
+    DisplayName: Fangs (Nagaji)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 7c7211d85af053544b0cc19b39ac3ac0, type: 2}
+  - {fileID: 11400000, guid: 5de916fa4f0040241b7f595983b4b0b4, type: 2}
+  - {fileID: 11400000, guid: 72c54d29fa5682848b9ccd962b4feaca, type: 2}
+  - {fileID: 11400000, guid: 740f72b41e33ced4eb76862681621a5f, type: 2}
+  - {fileID: 11400000, guid: bf2ce96674b530148a8529896d69adbe, type: 2}
+  - {fileID: 11400000, guid: 086c96d828d3f5a49898fc2185bfac9b, type: 2}

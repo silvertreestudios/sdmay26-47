@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_N36ZR4lh9eCazDaN
+  m_EditorClassIdentifier: 
+  SourceId: N36ZR4lh9eCazDaN
+  Slug: aiuvarin
+  DisplayName: Aiuvarin
+  IconPath: systems/pf2e/icons/features/ancestry/half-elf.webp
+  Description: You have elves, or possibly other aiuvarins, in your family tree.
+    You have pointed ears and other telltale signs of elf heritage. You gain the
+    elf trait, the aiuvarin trait, and low-light vision. In addition, when you gain
+    an ancestry feat, you can choose from aiuvarin and elf feats in addition to those
+    from your ancestry.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 8108b42f6493897cdebc752e7ea2adb14aa4f63e1f219e5a53c3424f548ebecf
+  Traits:
+  - aiuvarin
+  TraitsLower:
+  - aiuvarin
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"low-light-vision"}'
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["elf"],"key":"ActorTraits"}'
+  - Key: ActiveEffectLike
+    Path: system.details.ancestry.versatile
+    Mode: override
+    Value: '"elf"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.details.ancestry.versatile","value":"elf"}'
+  - Key: ActiveEffectLike
+    Path: system.details.ancestry.countsAs
+    Mode: add
+    Value: '"elf"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.details.ancestry.countsAs","value":"elf"}'
+  - Key: ActiveEffectLike
+    Path: system.details.ancestry.countsAs
+    Mode: add
+    Value: '"aiuvarin"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.details.ancestry.countsAs","value":"aiuvarin"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

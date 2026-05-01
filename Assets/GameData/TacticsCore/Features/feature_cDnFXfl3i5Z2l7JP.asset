@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_cDnFXfl3i5Z2l7JP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: cDnFXfl3i5Z2l7JP
+  Slug: patron-s-gift
+  DisplayName: Patron's Gift
+  IconPath: systems/pf2e/icons/features/classes/patrons-gift.webp
+  Description: Your patron grants you the power to command incredible works of magic.
+    You gain a single 10th-rank spell slot and can prepare a spell in that slot using
+    witch spellcasting. Unlike with other spell slots, you can't use 10th-rank slots
+    with abilities that give you more spell slots or that let you cast spells without
+    expending spell slots. You don't gain more 10th-rank spells as you level up,
+    but you can take the Patron's Truth feat to gain a second slot.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: c9c4aebf4b62f3ee49217c2d0b9b69bd80349235650e1d9bf02f2e46721ae4b6
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

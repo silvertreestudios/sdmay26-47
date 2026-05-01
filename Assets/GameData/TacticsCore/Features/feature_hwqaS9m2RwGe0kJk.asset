@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_hwqaS9m2RwGe0kJk
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: hwqaS9m2RwGe0kJk
+  Slug: layered-mesh
+  DisplayName: Layered Mesh
+  IconPath: systems/pf2e/icons/features/classes/layered-mesh.webp
+  Description: You've woven an incredibly powerful network of interlocking mesh around
+    your armor, which catches piercing attacks and diffuses them. While wearing your
+    armor, you gain resistance to piercing damage equal to half your level.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: c14a5e93a14034c41bcd07a3e4bb4e6bc1affeefea9ef0180468bbd92096f1bb
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"floor(@actor.level / 2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}"],"type":"piercing","value":"floor(@actor.level
+      / 2)"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

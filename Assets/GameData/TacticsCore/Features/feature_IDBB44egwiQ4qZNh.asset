@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_IDBB44egwiQ4qZNh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: IDBB44egwiQ4qZNh
+  Slug: kinetic-gate
+  DisplayName: Kinetic Gate
+  IconPath: systems/pf2e/icons/spells/abundant-step.webp
+  Description: As a kineticist, you've awakened or opened a kinetic gate, a supernatural
+    conduit within your body that can channel elemental forces straight from the
+    elemental planes. You can choose either a single gate (one element) or dual gate
+    (two elements) at 1st level. When selecting an element for your kinetic gate,
+    you can pick from six elements - air, earth, fire metal, water, and wood. Elements
+    you can channel are referred to as your kinetic elements. Your kinetic elements
+    function even in environments where they normally wouldn't. For example, you
+    could use fire actions underwater even though that's normally not possible, and
+    you could create air in a vacuum. Your kinetic gate gives you impulse feats,
+    magical actions that let you shape and control your elements in awesome ways.
+    You can select more impulse feats using your kineticist class feats, as described
+    under Impulses. At higher levels, the gate's threshold class feature gives you
+    more impulse feats and lets you choose whether to improve with one element or
+    access new kinetic elements. Single Gate Your kinetic gate links to a single
+    elemental plane, starting you with a single element but giving you greater power
+    with it. Choose one element to be your kinetic element, and select two 1st-level
+    impulse feats that have that element's trait. In addition, you gain an impulse
+    junction, a benefit that occurs when you use an impulse of the chosen element
+    that takes 2 actions or more. This happens before the other effects of the impulse,
+    unless noted otherwise. You can gain only one impulse junction per round; they
+    are described in full below. Air Before or after the other effects of the impulse,
+    you can either Stride up to half your Speed or Step. If you have a fly Speed,
+    you can Fly up to half your fly Speed instead. Earth Fragments of stone float
+    around you, granting you a +1 circumstance bonus to AC until the start of your
+    next turn. Fire Increase the damage die size of fire damage dealt by the impulse
+    by one step. Metal Choose acid, electricity, or piercing. Until the start of
+    your next turn, each time a creature touches you or damages you with an unarmed
+    melee attack or nonreach melee weapon, it takes damage of the chosen type equal
+    to half your level (minimum 1 damage). Water After the impulse's other effects,
+    you can move one creature targeted by the impulse or in its area 5 feet in any
+    direction, or 10 feet if it's in a body of water. This can't move the creature
+    into the air. You can choose only a creature that's willing to be moved, that
+    failed its save against the impulse, or that you succeeded at an impulse attack
+    roll against. Wood You gain temporary Hit Points equal to your level that last
+    until the start of your next turn. Dual Gate Your kinetic gate is a harmonious
+    conduit between two planes, allowing you to combine their elements to give you
+    a versatile set of abilities. Select two elements to be your kinetic elements.
+    Then, select two 1st-level impulse feats, one with the trait of the first element
+    and one with the trait of the other.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 52154db753e79cdeafdfda87cd4eedc8d420b20f44f03fdc7fb2504cdc61b285
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elements
+    Mode: override
+    Value: '[]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.elements","priority":19,"value":[]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate
+    Mode: override
+    Value: '{"five":null,"four":null,"one":null,"six":null,"three":null,"two":null}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate","priority":49,"value":{"five":null,"four":null,"one":null,"six":null,"three":null,"two":null}}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Kineticist.KineticGate.DualGate.Label","value":"dual-gate"},{"label":"PF2E.SpecificRule.Kineticist.KineticGate.SingleGate","value":"single-gate"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Gate","rollOption":"kinetic-gate:initial"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:kineticist-kinetic-gate"]},"flag":"elementOne","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Element","rollOption":"kinetic-gate:first-element"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.elementOne}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.elementOne}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:kineticist-kinetic-gate"]},"flag":"elementTwo","key":"ChoiceSet","predicate":["kinetic-gate:initial:dual-gate"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Element","rollOption":"kinetic-gate:second-element"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.elementTwo}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.elementTwo}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.elementOne}'
+    SourceId: 
+    DisplayName: elementOne}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.elementTwo}'
+    SourceId: 
+    DisplayName: elementTwo}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

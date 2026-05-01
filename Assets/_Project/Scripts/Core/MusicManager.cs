@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     /// <summary>
     /// Global manager for handling background music playback.

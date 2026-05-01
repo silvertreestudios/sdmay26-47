@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_xrJ4nGGgejUPf16q
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: xrJ4nGGgejUPf16q
+  Slug: fetching-bangles
+  DisplayName: Fetching Bangles
+  IconPath: icons/equipment/wrist/bracer-segmented-leather.webp
+  Description: "Usage worn bracers These lovely armbands sparkle and gleam, reflecting
+    your own incredible magnetism. Immanence (aura, mental) Others find it hard to
+    leave your captivating presence. An aura surrounds you in a @Template[type:emanation|distance:10].
+    An enemy in the aura that attempts to move away from you must succeed at a @Check[will|against:class]
+    save against your class DC or its move action is disrupted. Transcendence\u2014
+    @UUID[Compendium.pf2e.actionspf2e.Item.Embrace of Destiny] 1 (mental, spirit,
+    transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.V4HToYPQlkw8AW50 inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d03783105fe3ea2bbb43c1311b415cf9ef79db77f432d99f9b649442cc07a313
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"fetching-bangles"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.FetchingBangles.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"fetching-bangles"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.FetchingBangles.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"fetching-bangles"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Embrace of Destiny
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Embrace of
+      Destiny"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"fetching-bangles-origin"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Fetching Bangles
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"add","property":"other-tags","value":"physical-ikon"},{"mode":"add","property":"other-tags","value":"physical-ikon:fetching-bangles"}],"key":"GrantItem","predicate":["fetching-bangles-origin:granted"],"uuid":"Compendium.pf2e.equipment-srd.Item.Fetching
+      Bangles"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"types":["equipment"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["fetching-bangles-origin:existing"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:fetching-bangles"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","predicate":["fetching-bangles-origin:existing"],"property":"other-tags","value":"physical-ikon:fetching-bangles"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.xrJ4nGGgejUPf16q
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"equipment","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:fetching-bangles","fetching-bangles-origin:existing",{"not":"item:slug:fetching-bangles"}],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.xrJ4nGGgejUPf16q
+      inline]"}]}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Aura","predicate":["divine-spark:fetching-bangles"],"radius":10,"traits":["aura","mental"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:fetching-bangles","item:slug:embrace-of-destiny"]},{"not":"divine-spark:fetching-bangles"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"traits","value":"divine"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Embrace of Destiny
+    SourceId: 
+    DisplayName: Embrace of Destiny
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Fetching Bangles
+    SourceId: 
+    DisplayName: Fetching Bangles
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

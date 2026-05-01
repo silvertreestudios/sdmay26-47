@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_DpmWrtkrmmgnVtAc
+  m_EditorClassIdentifier: 
+  SourceId: DpmWrtkrmmgnVtAc
+  Slug: construction-occultist
+  DisplayName: Construction Occultist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You helped to build and design buildings and public works on behalf
+    of Geb''s architectural faction, the Builders League. You''ve been taught that
+    creating bridges, gatehouses, roads, walls, and more is as much about planning
+    as it is about brute labor. You learned that the Builders League has plans of
+    occult significance for many of its construction projects and might have even
+    aided them in the way you laid stones or designed walls (although you never learned
+    the great design behind those secret plans). Although you''ve left construction
+    behind, the skills in long-term planning and leveraging effort remain with you.
+    You are still well-regarded by the Builders League. Your party gains 1 Reputation
+    Point with the Builders League at the start of the campaign. Choose two attribute
+    boosts. One must be to Intelligence or Strength , and one is a free attribute
+    boost. You''re trained in your choice of the Athletics or Occultism skill. You
+    gain a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Hefty Hauler] if you
+    chose Athletics or @UUID[Compendium.pf2e.feats-srd.Item.Oddity Identification]
+    if you chose Occultism. You''re also trained in Architecture Lore.'
+  SourceTitle: Pathfinder Blood Lords Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 99a835b49c4835e54bdb50658a43e1fdd794b92693117924d5cebe14c0ab008a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Occultism","value":"occultism"},{"label":"PF2E.Skill.Athletics","value":"athletics"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"construction-occultist"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Oddity Identification
+    Json: '{"key":"GrantItem","predicate":["construction-occultist:occultism"],"uuid":"Compendium.pf2e.feats-srd.Item.Oddity
+      Identification"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Hefty Hauler
+    Json: '{"key":"GrantItem","predicate":["construction-occultist:athletics"],"uuid":"Compendium.pf2e.feats-srd.Item.Hefty
+      Hauler"}'
+  AttributeBoosts:
+  - Options: 0400000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Architecture Lore
+    Rank: 1
+  LoreSkills:
+  - Architecture Lore
+  GrantedFeats: []

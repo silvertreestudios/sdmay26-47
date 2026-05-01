@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_vUt71oX9QNLAUmZn
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: vUt71oX9QNLAUmZn
+  Slug: energy-barrier
+  DisplayName: Energy Barrier
+  IconPath: icons/magic/control/energy-stream-link-spiral-blue.webp
+  Description: Your armor's defenses ablate any kind of energy coming your way. While
+    wearing your armor, you gain resistance to all energy damage (acid, cold, electricity,
+    fire, force, sonic, vitality, and void damage) equal to 2 + half your level.
+    You must have the harmonic oscillator, metallic reactance, or phlogistonic regulator
+    modification to select this modification.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b95b4f5cb651d2f0f7f42a04bf5a02acdbf9c59dddd446a3f088c2814472938d
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"2 + floor(@actor.level / 2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}"],"type":["acid","cold","electricity","fire","force","void","vitality","sonic"],"value":"2
+      + floor(@actor.level / 2)"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

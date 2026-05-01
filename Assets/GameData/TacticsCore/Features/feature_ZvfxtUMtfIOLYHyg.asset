@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ZvfxtUMtfIOLYHyg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ZvfxtUMtfIOLYHyg
+  Slug: scoundrel
+  DisplayName: Scoundrel
+  IconPath: systems/pf2e/icons/features/classes/scoundrel.webp
+  Description: You use fast-talking, flattery, and a silver tongue to avoid danger
+    and escape tricky situations. You might be a grifter or con artist, or you might
+    use your skills in certain reputable professions, like a barrister or diplomat.
+    When you successfully @UUID[Compendium.pf2e.actionspf2e.Item.Feint], the target
+    is @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard] against your melee attacks
+    until the end of your next turn. On a critical success, the target is off-guard
+    against all melee attacks until the end of your next turn, not just yours. If
+    you Feint while wielding an agile or finesse melee weapon, you can step immediately
+    after the Feint as a free action. You're trained in Deception and Diplomacy.
+    You can choose Charisma as your key attribute.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 212f5d9b1b43921d35caf356a693aac8296be1eda16f0f891a8d1c7b7b92363b
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.diplomacy.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.diplomacy.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.deception.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.deception.rank","value":1}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["success"],"predicate":["action:feint"],"selector":"skill-check","text":"When
+      you successfully Feint, the target is off-guard against melee attacks you attempt
+      against it until the end of your next turn.","title":"{item|name}"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["criticalSuccess"],"predicate":["action:feint"],"selector":"skill-check","text":"On
+      a critical success, the target is off-guard against all melee attacks until
+      the end of your next turn, not just yours.","title":"{item|name}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

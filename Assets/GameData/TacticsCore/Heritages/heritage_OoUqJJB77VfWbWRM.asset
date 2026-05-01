@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_OoUqJJB77VfWbWRM
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: OoUqJJB77VfWbWRM
+  Slug: cliffscale-lizardfolk
+  DisplayName: Cliffscale Lizardfolk
+  IconPath: systems/pf2e/icons/features/ancestry/cliifscale-lizardfolk.webp
+  Description: Your toes are adapted for gripping and climbing. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Combat
+    Climber] feat as a bonus feat, and as long as you aren't wearing footwear, you
+    can use the sticky pads on your feet to climb, leaving your hands free. Additionally,
+    if you roll a success on an Athletics check to climb, you get a critical success
+    instead.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: e372201a649a1ebb053fed40eeed5c1d835c94423142472416c9e4f39d2383ee
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Combat Climber
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Combat Climber"}'
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["action:climb"],"selector":"athletics"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.HWEgF7Gmoq55VhTL
+    SourceId: 
+    Slug: lizardfolk
+    DisplayName: Lizardfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 7582496f828cec24fa510bd6248a5ed3, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Combat Climber
+    SourceId: 
+    DisplayName: Combat Climber
+    Level: 0
+    ResolvedFeature: {fileID: 0}

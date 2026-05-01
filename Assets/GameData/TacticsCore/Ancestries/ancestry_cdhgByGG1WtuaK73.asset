@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_cdhgByGG1WtuaK73
+  m_EditorClassIdentifier: 
+  SourceId: cdhgByGG1WtuaK73
+  Slug: leshy
+  DisplayName: Leshy
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/leshy.svg
+  Description: Guardians and emissaries of the environment, leshies are immortal
+    spirits of nature temporarily granted a physical form. Leshy
+  SourceTitle: Pathfinder Player Core
+  SourcePack: ancestries
+  Rarity: common
+  SourceJsonHash: 46a3aa005119dffe2ab911448887ea68cb51af2833783b87d091ae1873fb26c6
+  Traits:
+  - leshy
+  - plant
+  TraitsLower:
+  - leshy
+  - plant
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 04000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: fey
+    DisplayName: Fey
+  AdditionalLanguageOptions:
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: halfling
+    DisplayName: Halfling
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 32oz7
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Plant Nourishment
+    SourceId: 
+    DisplayName: Plant Nourishment
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 4e965a00b5614d94a86830e074869f8f, type: 2}
+  - {fileID: 11400000, guid: 9f96b3d8cb88bdf478164de278efe102, type: 2}
+  - {fileID: 11400000, guid: a6a6ea3b8cab95a409fd6986a296decc, type: 2}
+  - {fileID: 11400000, guid: 4c599a4eb0129ed4d9e9e01f5cae8a01, type: 2}
+  - {fileID: 11400000, guid: b0f3c2c9de3b9c944ad6a579f8ad4b02, type: 2}
+  - {fileID: 11400000, guid: 69812e87e455cff4eae9edc5279c9437, type: 2}
+  - {fileID: 11400000, guid: e64f05a2393a7314fa73f0926babe6ae, type: 2}
+  - {fileID: 11400000, guid: 5a6c3d391e66d934e8e1209ea4460ac8, type: 2}
+  - {fileID: 11400000, guid: f92af43fd2f44c5429a1945a4b2a5d7a, type: 2}
+  - {fileID: 11400000, guid: 9c52d067e9bd02c4d8e8841fdd0b953b, type: 2}
+  - {fileID: 11400000, guid: feb67168e87f09948b34d23b43fe48b1, type: 2}
+  - {fileID: 11400000, guid: 236aea7390258b74586f407cf2441895, type: 2}

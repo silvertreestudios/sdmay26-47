@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_1dYDucCIaZpCJqBc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 1dYDucCIaZpCJqBc
+  Slug: arctic-elf
+  DisplayName: Arctic Elf
+  IconPath: systems/pf2e/icons/features/ancestry/artic-elf.webp
+  Description: You dwell deep in the frozen north and have gained incredible resilience
+    against cold environments, granting you cold resistance equal to half your level
+    (minimum 1). You treat environmental cold effects as if they were one step less
+    extreme (incredible cold becomes extreme, extreme cold becomes severe, and so
+    on).
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 49c8f3903dd61a770e997293c696da00a19d47158e52e36a917dc4d89870485e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"cold","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.PgKmsA2aKdbLU6O0
+    SourceId: 
+    Slug: elf
+    DisplayName: Elf
+  ParentAncestryAsset: {fileID: 11400000, guid: 1040717c4df7370408570004c36bf8e9, type: 2}
+  GrantedFeatures: []

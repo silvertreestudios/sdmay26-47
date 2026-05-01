@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_7D8duG4ARFxLLm9F
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 7D8duG4ARFxLLm9F
+  Slug: majestic-will
+  DisplayName: Majestic Will
+  IconPath: icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp
+  Description: Your mind and will are tempered by your mastery of magical forces.
+    Your proficiency rank for Will saves increases to master. When you roll a success
+    on a Will save, you get a critical success instead.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 656b592ab5f71cd5a82f24f5f2d4a6dbbf6d2af95bb5b389c7dd38ec37258bb5
+  Traits:
+  - sorcerer
+  TraitsLower:
+  - sorcerer
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"will"}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: will
+    Rank: 3
+  FocusPointDelta: 0

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_2GmWdSNbH4yx9pzY
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 2GmWdSNbH4yx9pzY
+  Slug: ponygait-centaur
+  DisplayName: Ponygait Centaur
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You are smaller than most other centaurs, though no less fleet of
+    foot. Instead of Large, your size is Medium. You gain a +1 circumstance bonus
+    to Reflex saving throws.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 3582da0d4bdf7d5dea1eb3d164491c2c852c0ed0b706cd5911108951ac3cf697
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: CreatureSize
+    Path: 
+    Mode: 
+    Value: '"medium"'
+    Uuid: 
+    Json: '{"key":"CreatureSize","value":"medium"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","selector":"reflex","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pJkQlFTvpQ5GjZ5e
+    SourceId: 
+    Slug: centaur
+    DisplayName: Centaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 123a536b34b859a428fe590fb60ad26b, type: 2}
+  GrantedFeatures: []

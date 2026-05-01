@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Grid;
-using PathfinderTactics.InputSystem;
-using PathfinderTactics.Spells;
-using PathfinderTactics.UI;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Grid;
+using TacticsGame.InputSystem;
+using TacticsGame.Spells;
+using TacticsGame.UI;
 using UnityEngine;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     public class TargetingService : MonoBehaviour
     {
@@ -214,7 +214,8 @@ namespace PathfinderTactics.Core
                 {
                     var shape = spellAction.GetCurrentSpell().Area.Shape;
                     isIntersectionTargeted = (
-                        shape == Data.PF2e.AreaShape.Burst || shape == Data.PF2e.AreaShape.Cone
+                        shape == Data.TacticsRuleset.AreaShape.Burst
+                        || shape == Data.TacticsRuleset.AreaShape.Cone
                     );
                 }
 

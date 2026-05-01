@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     [System.Serializable]
     public class ActiveCondition

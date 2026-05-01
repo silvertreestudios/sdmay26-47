@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_w3aS3tsvH2Ub6XMn
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: w3aS3tsvH2Ub6XMn
+  Slug: alchemy
+  DisplayName: Alchemy
+  IconPath: icons/tools/laboratory/mortar-liquid-pink.webp
+  Description: You understand the reactions between all manner of reagents and can
+    concoct alchemical items to meet your needs. You can do this using normal reagents
+    and the Craft activity, or you can use specially prepared chemicals that allow
+    you to craft temporary items quickly and at no cost. Over time, you can create
+    more and more alchemical items for free, and since each of them becomes more
+    and more powerful, you advance in power dramatically, leaving behind those who
+    don't understand your strange science. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Alchemical
+    Crafting] feat, and you can automatically identify alchemical items that you
+    have the formula for.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 60457c977e31cbafc51d7d2fb532bb8f2359fc2f83ab5797327583c89cc5a845
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Alchemical Crafting
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Alchemical Crafting"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Formula Book
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Formula
+      Book"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Advanced Alchemy
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Advanced
+      Alchemy"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Versatile Vials
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Versatile
+      Vials"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Quick Alchemy
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Quick Alchemy"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["action:identify-alchemy"],"selector":"crafting","text":"PF2E.SpecificRule.Alchemist.Alchemy.IdentifyAlchemy","title":"{item|name}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Alchemical Crafting
+    SourceId: 
+    DisplayName: Alchemical Crafting
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Formula Book
+    SourceId: 
+    DisplayName: Formula Book
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Advanced Alchemy
+    SourceId: 
+    DisplayName: Advanced Alchemy
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Versatile Vials
+    SourceId: 
+    DisplayName: Versatile Vials
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Quick Alchemy
+    SourceId: 
+    DisplayName: Quick Alchemy
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

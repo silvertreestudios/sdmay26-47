@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_wqzFhMzGYKsfrgyo
+  m_EditorClassIdentifier: 
+  SourceId: wqzFhMzGYKsfrgyo
+  Slug: foreign-diplomat
+  DisplayName: Foreign Diplomat
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You have traveled a long way to be here, using your keen listening
+    skills and careful words to make alliances that benefit your people and surgically
+    sever ties that have become strained. You might be from Druma or Oprak, taking
+    advantage of this invitation to forge new relationships, or you might be from
+    the nations around Lake Encarthan and hoping to find an ally against Tar-Baphon.
+    Choose two attribute boosts. One must be to Charisma or Constitution , and one
+    is a free attribute boost. You're trained in the Diplomacy skill and the Heraldry
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group Impression]
+    skill feat.
+  SourceTitle: Pathfinder Triumph of The Tusk Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 059b62d85e7288d51388ca7e735a9ddd11560cbd4fa150c216e692a49614c5f5
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Heraldry Lore
+    Rank: 1
+  LoreSkills:
+  - Heraldry Lore
+  GrantedFeats:
+  - SourceKey: L9VNF
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

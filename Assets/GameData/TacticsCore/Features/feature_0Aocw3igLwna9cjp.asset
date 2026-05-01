@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0Aocw3igLwna9cjp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0Aocw3igLwna9cjp
+  Slug: warpriest
+  DisplayName: Warpriest
+  IconPath: icons/equipment/chest/breastplate-helmet-metal.webp
+  Description: 'You have trained in the more militant doctrine of your church, focusing
+    on both spells and battle. First Doctrine (1st): You''re trained in light and
+    medium armor, and you have expert proficiency in Fortitude saves. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Shield Block] general feat, a reaction to
+    reduce damage with a shield. If your deity''s favored weapon is a simple weapon
+    or an unarmed attack, you gain the @UUID[Compendium.pf2e.feats-srd.Item.Deadly
+    Simplicity] cleric feat. At 13th level, if you gain the @UUID[Compendium.pf2e.classfeatures.Item.Divine
+    Defense] class feature, you also gain expert proficiency in light and medium
+    armor. Second Doctrine (3rd): You''re trained in martial weapons. Third Doctrine
+    (7th): You gain expert proficiency with your deity''s favored weapon, martial
+    weapons, simple weapons, and unarmed attacks. When you critically succeed at
+    an attack roll using your deity''s favored weapon, you apply the weapon''s critical
+    specialization effect; you can use your spell DC in place of your class DC. Fourth
+    Doctrine (11th): Your proficiency ranks for the spell attack modifier and spell
+    DC statistics increase to expert. Fifth Doctrine (15th): Your proficiency rank
+    for Fortitude saves increases to master. When you roll a success at a Fortitude
+    save, you get a critical success instead. Final Doctrine (19th): You gain master
+    proficiency with your deity''s favored weapon, spell attack modifier, and spell
+    DC.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 3cc7c7745a879a7559d29f81cb202e3efc3608437eccdacbf6fcbd6fb5a16285
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.cleric
+    Mode: override
+    Value: '{"fifthDoctrine":"Compendium.pf2e.classfeatures.Item.Fifth Doctrine (Warpriest)","finalDoctrine":"Compendium.pf2e.classfeatures.Item.Final
+      Doctrine (Warpriest)","firstDoctrine":"Compendium.pf2e.classfeatures.Item.First
+      Doctrine (Warpriest)","fourthDoctrine":"Compendium.pf2e.classfeatures.Item.Fourth
+      Doctrine (Warpriest)","secondDoctrine":"Compendium.pf2e.classfeatures.Item.Second
+      Doctrine (Warpriest)","thirdDoctrine":"Compendium.pf2e.classfeatures.Item.Third
+      Doctrine (Warpriest)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.cleric","value":{"fifthDoctrine":"Compendium.pf2e.classfeatures.Item.Fifth
+      Doctrine (Warpriest)","finalDoctrine":"Compendium.pf2e.classfeatures.Item.Final
+      Doctrine (Warpriest)","firstDoctrine":"Compendium.pf2e.classfeatures.Item.First
+      Doctrine (Warpriest)","fourthDoctrine":"Compendium.pf2e.classfeatures.Item.Fourth
+      Doctrine (Warpriest)","secondDoctrine":"Compendium.pf2e.classfeatures.Item.Second
+      Doctrine (Warpriest)","thirdDoctrine":"Compendium.pf2e.classfeatures.Item.Third
+      Doctrine (Warpriest)"}}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

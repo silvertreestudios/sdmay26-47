@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     /// <summary>
     /// Manages the discrete Action Point (AP) slots in the HUD.

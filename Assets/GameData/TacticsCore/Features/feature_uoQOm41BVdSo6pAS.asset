@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_uoQOm41BVdSo6pAS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: uoQOm41BVdSo6pAS
+  Slug: bloodline-shadow
+  DisplayName: 'Bloodline: Shadow'
+  IconPath: systems/pf2e/icons/features/classes/shadow.webp
+  Description: 'Whether due to a velstrac''s manipulations or a planar jaunt gone
+    horribly wrong, your bloodline was infused with a vein of shadow. Spell List
+    occult Bloodline Skills Occultism, Stealth Granted Spells cantrip: @UUID[Compendium.pf2e.spells-srd.Item.Void
+    Warp]; 1st: @UUID[Compendium.pf2e.spells-srd.Item.Grim Tendrils]; 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Darkness];
+    3rd: @UUID[Compendium.pf2e.spells-srd.Item.Chilling Darkness]; 4th: @UUID[Compendium.pf2e.spells-srd.Item.Phantasmal
+    Killer]; 5th: @UUID[Compendium.pf2e.spells-srd.Item.Shadow Siphon]; 6th: @UUID[Compendium.pf2e.spells-srd.Item.Collective
+    Transposition]; 7th: @UUID[Compendium.pf2e.spells-srd.Item.Duplicate Foe]; 8th:
+    @UUID[Compendium.pf2e.spells-srd.Item.Disappearance]; 9th: @UUID[Compendium.pf2e.spells-srd.Item.Weird]
+    Bloodline Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Dim the Light];
+    advanced: @UUID[Compendium.pf2e.spells-srd.Item.Steal Shadow]; greater: @UUID[Compendium.pf2e.spells-srd.Item.Consuming
+    Darkness] Blood Magic Shadows grow deeper around you or one target, either granting
+    a +1 status bonus to Stealth or imposing a -1 status penalty to Perception for
+    1 round. @UUID[Compendium.pf2e.feat-effects.Item.Effect: Shadow Blood Magic]'
+  SourceTitle: Pathfinder Advanced Player's Guide
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a4a564f62fde914eb04f324c6f16950a09c14acf93a2199c1d1c2f1f92fe0dbd
+  Traits:
+  - sorcerer
+  TraitsLower:
+  - sorcerer
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.occultism.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.occultism.rank","predicate":[{"not":"parent:granter:slug:crossblooded-evolution"}],"value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.stealth.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.stealth.rank","predicate":[{"not":"parent:granter:slug:crossblooded-evolution"}],"value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"blood-magic-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"not":"parent:granter:slug:crossblooded-evolution"},{"or":[{"and":["item:trait:focus","item:trait:sorcerer"]},{"and":["item:spell-slot","spellcasting:category:spontaneous","spellcasting:tradition:occult",{"or":["item:slug:grim-tendrils","item:slug:darkness","item:slug:chilling-darkness","item:slug:phantasmal-killer","item:slug:shadow-siphon","item:slug:collective-transposition","item:slug:duplicate-foe","item:slug:disappearance","item:slug:weird"]}]}]}],"priority":121,"property":"other-tags","value":"blood-magic-spell"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicDescription.Title","mergeable":true,"option":"blood-magic","placement":"spellcasting","suboptions":[{"label":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicLabel.Shadow","predicate":["class:sorcerer"],"value":"shadow"}],"toggleable":true}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Sorcerer.SecondBloodMagic","mergeable":true,"option":"second-blood-magic","placement":"spellcasting","predicate":[{"or":["feat:blood-ascendancy","feat:blood-sovereignty"]}],"suboptions":[{"label":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicLabel.Shadow","value":"shadow"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicDescription.Shadow.Text","title":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicLabel.Shadow"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Shadow Blood Magic]"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","label":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicDescription.Title","mode":"add","predicate":["class:sorcerer","item:tag:blood-magic-spell",{"or":["blood-magic:shadow",{"and":["second-blood-magic:shadow","feat:blood-sovereignty"]}]}],"priority":121,"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicDescription.Shadow.Text","title":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicLabel.Shadow"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Shadow Blood Magic]"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicDescription.Shadow.Text","title":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicLabel.Shadow"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Shadow Blood Magic]"}]'
+    Uuid: 
+    Json: '{"itemType":"feat","key":"ItemAlteration","label":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicDescription.Title","mode":"add","predicate":["class:sorcerer","item:slug:blood-rising",{"or":["blood-magic:shadow",{"and":["second-blood-magic:shadow","feat:blood-ascendancy"]}]}],"priority":121,"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicDescription.Shadow.Text","title":"PF2E.SpecificRule.Sorcerer.Bloodline.BloodMagicLabel.Shadow"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Shadow Blood Magic]"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"feature:bloodline:tradition:occult","predicate":[{"not":"parent:granter:slug:crossblooded-evolution"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

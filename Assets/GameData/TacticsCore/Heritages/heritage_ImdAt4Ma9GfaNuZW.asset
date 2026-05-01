@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_ImdAt4Ma9GfaNuZW
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: ImdAt4Ma9GfaNuZW
+  Slug: half-moon-sarangay
+  DisplayName: Half Moon Sarangay
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You come from one of many traveling communities that migrate seasonally
+    along Tian Xia's vast rivers and mountains, bringing news and tidings to villages
+    along their path. Your people connect sarangay communities to one another across
+    vast distances and are symbolized by the half moon, which conjoins the light
+    and dark; so too do you conjoin the dark from the bright, the red from the blue,
+    the wind from the sea. Your ancestors were tall and burly with shiny black fur,
+    light spots or markings, and short, tightly curved horns. You become trained
+    in two Lore skills of your choice, and you gain a +1 circumstance bonus to Recall
+    Knowledge checks using those skills.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: f8c138b24377e8b74e3d196b20220bf25676aca4f130f4cb54bc1af53625711a
+  Traits:
+  - sarangay
+  TraitsLower:
+  - sarangay
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.7mpMGhVoaPANJnZ8
+    SourceId: 
+    Slug: sarangay
+    DisplayName: Sarangay
+  ParentAncestryAsset: {fileID: 11400000, guid: 3b5aa169692386942ac6e90d44192e00, type: 2}
+  GrantedFeatures: []

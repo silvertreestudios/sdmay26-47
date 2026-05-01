@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_0wzTmGUb8yvzMrO0
+  m_EditorClassIdentifier: 
+  SourceId: 0wzTmGUb8yvzMrO0
+  Slug: back-alley-doctor
+  DisplayName: Back-Alley Doctor
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're the medic many turn to when a more official clinic or healer
+    might not be available. You may specialize in stitching up bullet wounds or have
+    a standing, confidential deal with a criminal syndicate to provide your services
+    any time of day or night. In either case, you've perhaps turned to the adventuring
+    life because a former client is unhappy with your work or members of the local
+    constabulary have been asking too many questions. Choose two attribute boosts.
+    One must be to Constitution or Wisdom , and one is a free attribute boost. You're
+    trained in the Medicine skill and the Underworld Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Risky
+    Surgery] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 603870b8765b015f8ac3cd9cb868ed58ccd501e97d10f58d580f350d104023d2
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: n6uq0
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Risky Surgery
+    SourceId: 
+    DisplayName: Risky Surgery
+    Level: 1
+    ResolvedFeature: {fileID: 0}

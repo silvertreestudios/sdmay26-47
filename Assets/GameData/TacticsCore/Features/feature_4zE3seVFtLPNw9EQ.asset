@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_4zE3seVFtLPNw9EQ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 4zE3seVFtLPNw9EQ
+  Slug: whisper-of-wings
+  DisplayName: Whisper of Wings
+  IconPath: icons/commodities/materials/feather-teal.webp
+  Description: Wings and swirling winds announced the approach of your patron. The
+    wings might have been radiantly feathered, jeweled like a dragonfly's, strangely
+    mechanical, or leathery with the scent of sulfur, but the controlled chaos of
+    their movements contained countless teachings. Spell List primal Patron Skill
+    Nature Lesson of the Observed Sky Your patron teaches that the sky can guide
+    you anywhere you let it. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Murmuration]
+    hex cantrip, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Gentle
+    Landing]. Familiar of Nimble Flight Even if your familiar doesn't have wings,
+    it can sometimes move as if carried aloft by the wind. When you Cast or Sustain
+    a hex, your familiar can Fly up to 15 feet; this movement doesn't trigger reactions.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 70b50ee077520b2af1eb5c0f3873e9c894ddca6194c7a7346ae1f1a2f30521ab
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"primal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"primal"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.NimbleFlight.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.NimbleFlight.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.NimbleFlight.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.NimbleFlight.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

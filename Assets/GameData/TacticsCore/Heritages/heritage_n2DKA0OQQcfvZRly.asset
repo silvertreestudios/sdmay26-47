@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_n2DKA0OQQcfvZRly
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: n2DKA0OQQcfvZRly
+  Slug: technological-fleshwarp
+  DisplayName: Technological Fleshwarp
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your transformation is due to manipulation by advanced technology,
+    like that found in Numeria. Your emotions are dulled and hard to influence. When
+    you roll a success on a saving throw against an emotion effect, you get a critical
+    success instead.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 17c433a8ecc1da3c2aed2add9c6fe62472e55cfed6ad26be275101f02c0f6b6c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["emotion"],"selector":"saving-throw","type":"skill"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.FXlXmNBFiiz9oasi
+    SourceId: 
+    Slug: fleshwarp
+    DisplayName: Fleshwarp
+  ParentAncestryAsset: {fileID: 11400000, guid: 0a2d0aca9a4b5a7458e4d411a0bf9d0e, type: 2}
+  GrantedFeatures: []

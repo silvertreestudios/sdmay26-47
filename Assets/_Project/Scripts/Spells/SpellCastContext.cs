@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Data.PF2e;
+using TacticsGame.Characters;
+using TacticsGame.Data.TacticsRuleset;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     /// <summary>
     /// Mutable context object that carries all state through the spell effect pipeline.

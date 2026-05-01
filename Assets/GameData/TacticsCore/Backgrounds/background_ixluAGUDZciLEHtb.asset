@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_ixluAGUDZciLEHtb
+  m_EditorClassIdentifier: 
+  SourceId: ixluAGUDZciLEHtb
+  Slug: tax-collector
+  DisplayName: Tax Collector
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Reviled but required, you were sent when taxes were due. Performing
+    your job might have required travel and persuasion, or perhaps you were responsible
+    for collecting taxes on trade. Either way, it sometimes meant dirty hands, and
+    adventuring seemed the next logical step to you. Choose two attribute boosts.
+    One must be to Strength or Charisma , and one is a free attribute boost. You're
+    trained in the Intimidation skill and the Lore skill for the settlement that
+    employed you. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick Coercion]
+    skill feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 9a7e2d204269f919daf975393444df0763ce3e60ed88a6c62617848d626802d7
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <City> Lore
+    Rank: 1
+  LoreSkills:
+  - <City> Lore
+  GrantedFeats:
+  - SourceKey: ihsus
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Coercion
+    SourceId: 
+    DisplayName: Quick Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_Vq6kOTBm114bV9y7
+  m_EditorClassIdentifier: 
+  SourceId: Vq6kOTBm114bV9y7
+  Slug: shielded-fortune
+  DisplayName: Shielded Fortune
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You've always been tougher than your peers. As a child, you may have
+    been able to endure the rough-and-tumble horseplay with friends more easily.
+    You regularly emerged relatively unscathed from accidents could have been quite
+    dangerous. At some point in your past, you had a particularly close call with
+    death\u2014be it from a near-fatal accident, a fight gone horribly wrong, a close
+    call with illness, or something similar, yet you quickly recovered. You may or
+    may not believe you're more fated to face unexpected hardship in your life, but
+    regardless, you know you can take what destiny has to dish out. This background
+    is associated with the suit of Shields. Choose two attribute boosts. One must
+    be to Constitution , and one is a free attribute boost. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Toughness]
+    general feat and also gain the @UUID[Compendium.pf2e.actionspf2e.Item.Fated Not
+    to Die] free action."
+  SourceTitle: Pathfinder Stolen Fate Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 989106050542c608ac7431964f84b81bd3cdccc1bca82bb47cba43e7aa90d613
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Toughness
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Toughness"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Fated Not to Die
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Fated
+      Not to Die"}'
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

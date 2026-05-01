@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ViXWZMvWWYkVj0cQ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ViXWZMvWWYkVj0cQ
+  Slug: restless-as-the-tide
+  DisplayName: Restless as the Tide
+  IconPath: icons/magic/water/wave-water-rolling-blue.webp
+  Description: Your dominion is over the ocean, the great source and ultimate taker
+    of lives. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Energized Spark]
+    feat for your choice of water or cold. When you critically succeed on a Strike,
+    water blasts the target and those nearby. This deals bludgeoning splash damage
+    equal to the number of weapon damage dice to the target and all creatures within
+    10 feet of it. This effect has the water trait. When you Spark Transcendence,
+    you can Step, your body carried along by a surging tide. If your transcendence
+    affected an enemy, you can instead move that enemy 5 feet in a direction of your
+    choice unless it succeeds at a @Check[fortitude|against:exemplar] save against
+    your class DC. If you move an enemy who started out adjacent to you, you can
+    Step into the space it vacated.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 46e44a99bd49a62565cad7e2a703daeff572ed5e72f3eea30800f5bd71f2d086
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitCold","value":"cold"},{"label":"PF2E.TraitWater","value":"water"}],"flag":"energizedSpark","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Energized Spark
+    Json: '{"key":"GrantItem","preselectChoices":{"energizedSpark":"{item|flags.pf2e.rulesSelections.energizedSpark}"},"uuid":"Compendium.pf2e.feats-srd.Item.Energized
+      Spark"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"restless-as-the-tide"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.RestlessAsTheTide.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:restless-as-the-tide"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.RestlessAsTheTide.Description"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.CriticalSpecializationToggle","option":"epithet-critical-specialization","priority":51,"toggleable":true}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["epithet-critical-specialization"]}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alternate":true,"key":"CriticalSpecialization","predicate":["epithet-critical-specialization"],"text":"PF2E.SpecificRule.Exemplar.Epithet.RestlessAsTheTide.CriticalSpecialization"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Energized Spark
+    SourceId: 
+    DisplayName: Energized Spark
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

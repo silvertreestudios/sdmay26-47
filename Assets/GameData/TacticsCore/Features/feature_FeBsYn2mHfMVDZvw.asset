@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_FeBsYn2mHfMVDZvw
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: FeBsYn2mHfMVDZvw
+  Slug: deific-weapon
+  DisplayName: Deific Weapon
+  IconPath: icons/skills/melee/weapons-crossed-swords-purple.webp
+  Description: You zealously bear your deity's favored weapon. If it's an unarmed
+    attack with a d4 damage die or a simple weapon, increase the damage die by one
+    step (d4 to d6, d6 to d8, d8 to d10, d10 to d12). If the weapon is uncommon,
+    you gain access to it, and if it's an advanced weapon, you treat it as a martial
+    weapon for the purposes of proficiency
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4def92b985342447362e4efbcb2edb3de477c2c8e4fe37e9e825dd1a800f4795
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"fist":true,"key":"Strike","predicate":["deity:primary:favored-weapon:fist"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: upgrade
+    Value: 
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"upgrade","predicate":["item:deity-favored",{"or":["item:category:simple",{"and":["item:category:unarmed","item:damage:die:faces:4"]}]}],"property":"damage-dice-faces"}'
+  - Key: MartialProficiency
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"definition":["item:category:advanced","item:deity-favored"],"key":"MartialProficiency","sameAs":"martial","slug":"deific-weapon"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

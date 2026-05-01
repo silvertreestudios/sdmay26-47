@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_R1Ierj67voEOc6xu
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: R1Ierj67voEOc6xu
+  Slug: thief-s-calling
+  DisplayName: Thief's Calling
+  IconPath: icons/skills/social/theft-pickpocket-bribery-brown.webp
+  Description: Whether guildmaster or cutpurse, you covet something, or many things,
+    that don't belong to you, and you're driven to ever greater heights of larceny.
+    When you attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Pick a Lock] or @UUID[Compendium.pf2e.actionspf2e.Item.Steal]
+    an item, you can spend a Mythic Point to attempt the check at mythic proficiency.
+    The first time each day that you critically succeed on a check to Pick a Lock
+    or Steal from a hostile creature, you regain a Mythic Point. Edicts seek opportunities
+    to overcome evermore dangerous and complex locks and mechanical defenses, steal
+    things from dangerous creatures or places Anathema leave unattended treasure
+    where you found it, pass up opportunities for profit that challenge your skills
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 2fb8b979f92a416dcdb05e831937f39be1a5028a98f999f959069ac031271ea9
+  Traits:
+  - calling
+  - mythic
+  TraitsLower:
+  - calling
+  - mythic
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Rewrite Fate"}'
+  Category: 0
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    SourceId: 
+    DisplayName: Rewrite Fate
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

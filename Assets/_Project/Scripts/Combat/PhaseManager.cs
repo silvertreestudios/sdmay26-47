@@ -1,8 +1,8 @@
 using System;
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Combat
+namespace TacticsGame.Combat
 {
     public class PhaseManager : MonoBehaviour
     {

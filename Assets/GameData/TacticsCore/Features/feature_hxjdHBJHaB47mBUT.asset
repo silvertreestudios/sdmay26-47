@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_hxjdHBJHaB47mBUT
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: hxjdHBJHaB47mBUT
+  Slug: camouflage-pigmentation
+  DisplayName: Camouflage Pigmentation
+  IconPath: icons/commodities/materials/powder-red-green-yellow.webp
+  Description: You've modified your armor's exterior to let you blend into your surroundings
+    with ease, as long as you stay still. While wearing your armor, you can Hide
+    even without cover or concealment, as the pigmentation shifts to match your surroundings.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 23f1e7990b20d3654bc0463214da01771e744ad1129ea813e7175d34111a7a21
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules: []
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_q1Y12Pg2gQg2FJPR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: q1Y12Pg2gQg2FJPR
+  Slug: twin-juggernauts
+  DisplayName: Twin Juggernauts
+  IconPath: icons/creatures/mammals/bull-horned-blue.webp
+  Description: You and your eidolon fight off physical hardship together with your
+    shared life force. Your proficiency rank for Fortitude saves and your eidolon's
+    proficiency rank for Fortitude saves increase to master. When you roll a success
+    on a Fortitude save, you get a critical success instead. When your eidolon rolls
+    a success on a Fortitude save, it gets a critical success instead.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5ad02228183d396d81109374af899e08cbbb3937a344f25d13da43a1993d5058
+  Traits:
+  - summoner
+  TraitsLower:
+  - summoner
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"fortitude"}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 3
+  FocusPointDelta: 0

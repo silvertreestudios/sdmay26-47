@@ -1,10 +1,10 @@
 using System;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Reactions
+namespace TacticsGame.Reactions
 {
     /// <summary>
     /// Reaction that triggers when an enemy casts a spell (BeforeSpellEvent).
@@ -41,7 +41,7 @@ namespace PathfinderTactics.Reactions
             if (spellEvent.SourceUnit.GetFaction() == unit.GetFaction())
                 return false;
 
-            int distance = PF2E_Core.GetPF2eDistance3D(
+            int distance = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
                 unit.CurrentLayeredPosition,
                 spellEvent.SourceUnit.CurrentLayeredPosition
             );

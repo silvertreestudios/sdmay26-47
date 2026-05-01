@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_WaCn0mcivFv1omNK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: WaCn0mcivFv1omNK
+  Slug: strongjaw-kobold
+  DisplayName: Strongjaw Kobold
+  IconPath: systems/pf2e/icons/features/ancestry/strongjaw-kobold.webp
+  Description: Your warren is noted for their powerful jaws and sharp teeth, either
+    to help protect against natural predators or due to reverence of a mighty beast.
+    You gain a jaws unarmed attack that deals 1d6 piercing damage. Your jaws are
+    in the brawling group and have the finesse and unarmed traits.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 6f77700300c5a73804061584e8b9b04080e70259f6900c1d3d9562d7a1629208
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"jaws","category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d6"}},"group":"brawling","img":"icons/creatures/abilities/mouth-teeth-long-red.webp","key":"Strike","label":"PF2E.Weapon.Base.jaws","range":null,"traits":["finesse","unarmed"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.7oQxL6wgsokD3QXG
+    SourceId: 
+    Slug: kobold
+    DisplayName: Kobold
+  ParentAncestryAsset: {fileID: 11400000, guid: 91e4eebeb01118e4f8f1169cc3adbdff, type: 2}
+  GrantedFeatures: []

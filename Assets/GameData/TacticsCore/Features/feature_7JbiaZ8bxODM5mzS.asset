@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_7JbiaZ8bxODM5mzS
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 7JbiaZ8bxODM5mzS
+  Slug: bomber
+  DisplayName: Bomber
+  IconPath: icons/weapons/thrown/bomb-fuse-blue.webp
+  Description: You specialize in explosions and other violent reactions. Formulas
+    Two common 1st-level alchemical bombs. Field Benefit When throwing an alchemical
+    bomb with the splash trait, you can choose to deal splash damage to only your
+    primary target instead of the usual splash area. Field Vials When you @UUID[Compendium.pf2e.actionspf2e.Item.Strike]
+    with a versatile vial, you can choose to have it deal cold, electricity, or fire
+    damage instead of acid damage. Field Discovery (5th) You have calculated all
+    the angles to maximize a bomb's splash. When you throw an alchemical bomb with
+    the splash trait, you can cause the bomb to deal splash damage equal to your
+    Intelligence modifier (minimum 1) instead of the normal amount. Advanced Vials
+    (11th) You can mix special ingredients into your vials, such as magical dust
+    or flakes of precious minerals. When you create a versatile vial, you can choose
+    to have it treated as one special material of your choice, chosen from adamantine,
+    cold iron, and dawnsilver. If you're wearing or wielding an item of a different
+    precious material when you make the vial, you can choose that material instead.
+    Greater Field Discovery (13th) You can increase the splash on your bombs to damage
+    creatures within 10 feet, or 15 feet if you have Expanded Splash.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1100c06d83c9e1b798c9035cac82256445952e176c06b8747adfa2b2b907b261
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":["item:trait:alchemical","item:trait:bomb","item:trait:splash"],"selector":"strike-damage","text":"PF2E.SpecificRule.Alchemist.ResearchField.Bomber.FieldBenefit","title":"{item|name}"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.alchemist
+    Mode: override
+    Value: '{"advancedVials":"Compendium.pf2e.classfeatures.Item.Advanced Vials (Bomber)","fieldDiscovery":"Compendium.pf2e.classfeatures.Item.Field
+      Discovery (Bomber)","greaterFieldDiscovery":"Compendium.pf2e.classfeatures.Item.Greater
+      Field Discovery (Bomber)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.alchemist","value":{"advancedVials":"Compendium.pf2e.classfeatures.Item.Advanced
+      Vials (Bomber)","fieldDiscovery":"Compendium.pf2e.classfeatures.Item.Field
+      Discovery (Bomber)","greaterFieldDiscovery":"Compendium.pf2e.classfeatures.Item.Greater
+      Field Discovery (Bomber)"}}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Alchemist.ResearchField.Bomber.FieldVials.RollOptionLabel","option":"bomber-field-vials","suboptions":[{"label":"PF2E.TraitCold","value":"cold"},{"label":"PF2E.TraitElectricity","value":"electricity"},{"label":"PF2E.TraitFire","value":"fire"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.bomberFieldVials}"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"override","predicate":["bomber-field-vials","item:slug:versatile-vial"],"property":"damage-type","value":"{item|flags.pf2e.rulesSelections.bomberFieldVials}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"{item|flags.pf2e.rulesSelections.bomberFieldVials}"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["bomber-field-vials","item:slug:versatile-vial"],"property":"traits","value":"{item|flags.pf2e.rulesSelections.bomberFieldVials}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: remove
+    Value: '"acid"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"remove","predicate":["bomber-field-vials","item:slug:versatile-vial"],"property":"traits","value":"acid"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

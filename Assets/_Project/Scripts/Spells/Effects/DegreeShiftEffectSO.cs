@@ -1,14 +1,14 @@
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Effects
+namespace TacticsGame.Spells.Effects
 {
     /// <summary>
     /// Roll Phase: Shifts the degree of success for all affected targets.
     /// Used by PF2e spells like Phantasmal Killer (Failure -> Critical Failure)
     /// or the Incapacitation trait (upgraded degree for higher-level creatures).
     /// </summary>
-    [CreateAssetMenu(menuName = "PF2e/Spell Effects/Degree Shift")]
+    [CreateAssetMenu(menuName = "TacticsRuleset/Spell Effects/Degree Shift")]
     public class DegreeShiftEffectSO : SpellEffectSO
     {
         [Header("Degree Modification")]

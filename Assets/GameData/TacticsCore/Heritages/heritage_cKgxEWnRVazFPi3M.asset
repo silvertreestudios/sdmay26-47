@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_cKgxEWnRVazFPi3M
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: cKgxEWnRVazFPi3M
+  Slug: tsukumogami-poppet
+  DisplayName: Tsukumogami Poppet
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have the form and memories of a common tool. Choose one Lore skill
+    related to what kind of tool you were; for instance, Cooking Lore for a kitchen
+    knife or spoon. You're trained in this skill, and you gain a +2 circumstance
+    bonus to checks to Aid with this skill. If you take the @UUID[Compendium.pf2e.feats-srd.Item.Helpful
+    Poppet] feat, the bonus increases to +3. While most poppets are made of stuffing,
+    cloth, or soft metals, some tsukumogami are made of other materials, changing
+    the poppet weakness to fire. If your body is primarily wood or cloth, you have
+    the normal poppet weakness to fire. If your body is primarily metal, you're instead
+    weak to electricity; if its primarily ceramic, you're instead weak to cold.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 9090b5bad6f5c3f6c6b00c5e44f63e42b9416d3b45202891a537a6901bf58a73
+  Traits:
+  - poppet
+  TraitsLower:
+  - poppet
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Poppet.Tsukumogami.Cloth","value":"fire"},{"label":"PF2E.TraitMetal","value":"electricity"},{"label":"PF2E.SpecificRule.Poppet.Tsukumogami.Ceramic","value":"cold"}],"flag":"weakness","key":"ChoiceSet","label":"PF2E.SpecificRule.Prompt.Material","rollOption":"tsukumogami-poppet"}'
+  - Key: Weakness
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/3))"'
+    Uuid: 
+    Json: '{"key":"Weakness","predicate":[{"not":"feat:insulated-poppet"}],"type":"{item|flags.pf2e.rulesSelections.weakness}","value":"max(1,floor(@actor.level/3))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.6F2fSFC1Eo1JdpY4
+    SourceId: 
+    Slug: poppet
+    DisplayName: Poppet
+  ParentAncestryAsset: {fileID: 11400000, guid: 7e74619f4ea4ced419084d304988ab03, type: 2}
+  GrantedFeatures: []

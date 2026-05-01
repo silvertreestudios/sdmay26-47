@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_OOkgTzDU4mBvV98Z
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: OOkgTzDU4mBvV98Z
+  Slug: pelagic-merfolk
+  DisplayName: Pelagic Merfolk
+  IconPath: icons/magic/water/elemental-water.webp
+  Description: You're a merfolk of the open seas. Your tail is patterned after the
+    silvery tuna and herring that school by the million in your hunting grounds.
+    Water obeys your will, and with a quick word, you can draw a sheathe of it around
+    you. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Shielding Wave] action.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4eb28cb9a278bf4ad84ac180444da1b7c04ae10483927e76cb733797c51a8969
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Shielding Wave
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Shielding
+      Wave"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.FUqZRllwn6kmFA8K
+    SourceId: 
+    Slug: merfolk
+    DisplayName: Merfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: d28bdb5cc6dacfa4a8575ca73d51b040, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Shielding Wave
+    SourceId: 
+    DisplayName: Shielding Wave
+    Level: 0
+    ResolvedFeature: {fileID: 0}

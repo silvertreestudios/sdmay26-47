@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_NK88lPzi3SDAT8w5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: NK88lPzi3SDAT8w5
+  Slug: healer-samsaran
+  DisplayName: Healer Samsaran
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: In seeking enlightenment, your past incarnations have wandered away
+    from the ancestral homelands of Zi Ha, exploring the different nations of Tian
+    Xia and elsewhere in Golarion. Your past incarnations had dangerous encounters
+    while traveling, and you frequently have flashbacks to healing wounds. You become
+    trained in Medicine. If you would automatically become trained in Medicine (from
+    your background or class, for example), you instead become trained in a skill
+    of your choice. When you use Medicine to @UUID[Compendium.pf2e.actionspf2e.Item.Treat
+    Wounds] on yourself, you can use your special techniques to add your level to
+    the Hit Points you regain from the treatment.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 75cadcefcd371ae336803e6f49fb9557c742b54c6d7ca957f53cfac2397324b0
+  Traits:
+  - samsaran
+  TraitsLower:
+  - samsaran
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.medicine.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.medicine.rank","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:treat-wounds","check:statistic:medicine","origin:signature:{actor|signature}"],"selector":"healing-received","value":"@actor.level"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.l7vjMIbPAUvEIosU
+    SourceId: 
+    Slug: samsaran
+    DisplayName: Samsaran
+  ParentAncestryAsset: {fileID: 11400000, guid: 6ed453392861b0045861283779fea7f0, type: 2}
+  GrantedFeatures: []

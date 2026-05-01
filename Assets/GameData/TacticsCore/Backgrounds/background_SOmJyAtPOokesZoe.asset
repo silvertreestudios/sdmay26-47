@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_SOmJyAtPOokesZoe
+  m_EditorClassIdentifier: 
+  SourceId: SOmJyAtPOokesZoe
+  Slug: farmhand
+  DisplayName: Farmhand
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: With a strong back and an understanding of seasonal cycles, you tilled
+    the land and tended crops. Your farm could have been razed by invaders, you could
+    have lost the family tying you to the land, or you might have simply tired of
+    the drudgery, but at some point, you became an adventurer. Choose two attribute
+    boosts. One must be to Constitution or Wisdom , and one is a free attribute boost.
+    You're trained in the Athletics skill and the Farming Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Assurance] skill feat with Athletics.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 9a008887dff58c4c20b2fdc426cde4d3fdb585add1614d368dd0709f4273dcc6
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"athletics"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Farming Lore
+    Rank: 1
+  LoreSkills:
+  - Farming Lore
+  GrantedFeats: []

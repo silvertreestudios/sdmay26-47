@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_58rL5sg2y4arW1i5
+  m_EditorClassIdentifier: 
+  SourceId: 58rL5sg2y4arW1i5
+  Slug: skeleton
+  DisplayName: Skeleton
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/skeleton.svg
+  Description: Skeletons are considered among the lowest types of undead. They're
+    typically mindless creatures, lacking many of the abilities that make other undead
+    a serious threat. However, the animated bones of dragons, giants, and other great
+    beasts make for dangerous foes. Powerful living creatures can retain some of
+    their might and intellect upon returning as a skeleton. Some necromancers turn
+    their strongest enemies into skeletal undead servants, assuming they can keep
+    control of them. Skeleton
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 603f10e0ead5176ea2ef2e9054209d8cdf20dd49bdcb224b0e2b37c29934c7f0
+  Traits:
+  - skeleton
+  - undead
+  TraitsLower:
+  - skeleton
+  - undead
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 0
+  CustomSense: 
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 06000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 04000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: necril
+    DisplayName: Necril
+  AdditionalLanguageOptions: []
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: pADW6
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Basic Undead Benefits
+    SourceId: 
+    DisplayName: Basic Undead Benefits
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 678bb5215904964498b562a56585fb45, type: 2}
+  - {fileID: 11400000, guid: cc55eb2a84dd10b449888e33ec4f8d65, type: 2}
+  - {fileID: 11400000, guid: 0081f4e6248a8914a9e658d85d2ef26c, type: 2}
+  - {fileID: 11400000, guid: df4be67eb162eca4a9ef3aefce274f59, type: 2}
+  - {fileID: 11400000, guid: bffb4ab102544934290fd6ed919e067c, type: 2}

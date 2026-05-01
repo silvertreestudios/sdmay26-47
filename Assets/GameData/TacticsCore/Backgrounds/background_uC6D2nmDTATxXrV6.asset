@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_uC6D2nmDTATxXrV6
+  m_EditorClassIdentifier: 
+  SourceId: uC6D2nmDTATxXrV6
+  Slug: royalty
+  DisplayName: Royalty
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You are a prominent member of a royal family. You have eschewed the
+    daily routines of royal life and taken up an adventurous quest\u2014perhaps you're
+    a deposed queen hoping to regain her throne, a prince seeking a more exciting
+    life, or a sovereign's heir on a secret mission. Choose two attribute boosts.
+    One must be to Intelligence or Charisma , and one is a free attribute boost.
+    You are trained in Society. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Courtly
+    Graces] skill feat and can influence commoners in your family's territory, as
+    well as nobility anywhere. If you later gain the @UUID[Compendium.pf2e.feats-srd.Item.Leverage
+    Connections] skill feat, you automatically have common and noble connections
+    within any community in your royal family's territory and have noble connections
+    in large communities outside your territory."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 65579e476e59f7dbe6f6e9a1448a866fd1fa65ab2b9be01b028373c90b863ab2
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: zslzu
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Courtly Graces
+    SourceId: 
+    DisplayName: Courtly Graces
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_pSXlZggdCCbkQqNr
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: pSXlZggdCCbkQqNr
+  Slug: pacification-tools
+  DisplayName: Pacification Tools
+  IconPath: systems/pf2e/icons/features/classes/pacification-tools.webp
+  Description: Softer materials make your weapon suited to knock out instead of kill,
+    and special protrusions let you catch weapons and disarm your foes. Your innovation
+    gains the disarm, hampering, and nonlethal traits. You can choose whether to
+    apply the nonlethal trait on each attack with your innovation.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 13014b2ef1784fd40f28cffca2b29749f70415bc24d1eeb1a04bfd495c9ba212
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Inventor.Modification.NonlethalPacificationTools","option":"nonlethal-pacification-tools","predicate":["weapon-innovation:equipped"],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"nonlethal"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","predicate":["nonlethal-pacification-tools"],"property":"traits","value":"nonlethal"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"disarm"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"disarm"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"hampering"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"hampering"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

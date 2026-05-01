@@ -1,16 +1,16 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data.PF2e;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Data.TacticsRuleset;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Effects
+namespace TacticsGame.Spells.Effects
 {
     /// <summary>
     /// Resolution Phase: Heals affected targets.
     /// Routes through UnitHealth.ApplyHealing (handles wake-up from Dying, etc.)
     /// Supports heightening for scaling heal amounts.
     /// </summary>
-    [CreateAssetMenu(menuName = "PF2e/Spell Effects/Heal")]
+    [CreateAssetMenu(menuName = "TacticsRuleset/Spell Effects/Heal")]
     public class HealEffectSO : SpellEffectSO
     {
         [Header("Heal Configuration")]

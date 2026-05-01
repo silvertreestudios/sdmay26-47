@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_6rIIsZg3tOyIU3g3
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 6rIIsZg3tOyIU3g3
+  Slug: frilled-lizardfolk
+  DisplayName: Frilled Lizardfolk
+  IconPath: systems/pf2e/icons/features/ancestry/frilled-lizardfolk.webp
+  Description: You can flare your neck frill and flex your dorsal spines, Demoralizing
+    your foes. When you do, @UUID[Compendium.pf2e.actionspf2e.Item.Demoralize] loses
+    the auditory trait and gains the visual trait, and you don't take a penalty when
+    you attempt to Demoralize a creature that doesn't understand your language. You
+    also gain the @UUID[Compendium.pf2e.actionspf2e.Item.Threatening Approach] action.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4bd7d2b204c81eef81a5ebae0a5c96ac86bc7f623b9ec840dbc3f829a0dc8421
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Threatening Approach
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Threatening
+      Approach"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.HWEgF7Gmoq55VhTL
+    SourceId: 
+    Slug: lizardfolk
+    DisplayName: Lizardfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 7582496f828cec24fa510bd6248a5ed3, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Threatening Approach
+    SourceId: 
+    DisplayName: Threatening Approach
+    Level: 0
+    ResolvedFeature: {fileID: 0}

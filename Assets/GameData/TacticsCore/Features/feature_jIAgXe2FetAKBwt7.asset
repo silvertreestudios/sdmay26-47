@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_jIAgXe2FetAKBwt7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: jIAgXe2FetAKBwt7
+  Slug: innovation
+  DisplayName: Innovation
+  IconPath: icons/commodities/tech/bulb.webp
+  Description: While you're always creating inventions, there's one that represents
+    your preeminent work, the one that you hope- with refinement-might change the
+    world. Choose one of the below innovations. Your innovation's level is equal
+    to your level. If your innovation is destroyed, you can spend 1 day of downtime
+    and attempt a Crafting check with a high DC for your level; on a success, you
+    rebuild it. An innovation only works due to your constant maintenance and tinkering,
+    and therefore has no market Price.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 65832d56513e14a69a670f7afe8811e773d679b857aad1235aebd87a6b5f4dcf
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:inventor-innovation",{"or":[{"and":["class:inventor","item:tag:inventor-innovation"]},{"and":["item:tag:inventor-innovation",{"not":"item:tag:class-archetype"}]}]}]},"flag":"innovation","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Inventor.Innovation.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.innovation}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.innovation}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.innovation}'
+    SourceId: 
+    DisplayName: innovation}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

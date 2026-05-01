@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_7oQxL6wgsokD3QXG
+  m_EditorClassIdentifier: 
+  SourceId: 7oQxL6wgsokD3QXG
+  Slug: kobold
+  DisplayName: Kobold
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/kobold.svg
+  Description: "Every kobold instinctively understands the importance of power, and
+    many are inclined to venerate those who have it, whether they be mighty dragons,
+    cruel fiends, imperious fey, or even ancient artifacts. Kobolds seek out these
+    alliances out of a sense of pragmatism\u2014after all, who would dare bully a
+    kobold who serves an ancient dragon?\u2014but also because kobold eggs incubated
+    near such loci of power take on physical traits (and sometimes abilities) similar
+    to those of the warren's benefactor. On their own, kobolds are ingenious crafters
+    and devoted allies, but outsiders who trespass into their territory find them
+    to be inspired skirmishers and clever ambushers. However, these reptilian opportunists
+    prove happy to cooperate with other humanoids when it's to their benefit, combining
+    caution and cunning to make their fortunes in the wider world. Kobold"
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: d201e9883005f5314bcbe8e7663280298f5bc97d3082ed033a527ffb61320777
+  Traits:
+  - humanoid
+  - kobold
+  TraitsLower:
+  - humanoid
+  - kobold
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 02000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 03000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: diabolic
+    DisplayName: Diabolic
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: empyrean
+    DisplayName: Empyrean
+  - Id: fey
+    DisplayName: Fey
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: petran
+    DisplayName: Petran
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: ce792988ffe581e4db1a625db0bcae57, type: 2}
+  - {fileID: 11400000, guid: fa2dc32750050ac46b39cb0063d46e54, type: 2}
+  - {fileID: 11400000, guid: e3a76f8883c2dfc49b712cbc77190706, type: 2}
+  - {fileID: 11400000, guid: 81f70b3b8e049a947b83bc95b69e003a, type: 2}
+  - {fileID: 11400000, guid: 94f2abcc14386fa47aff9b16d15ca2f9, type: 2}
+  - {fileID: 11400000, guid: 3666ee788deac4349a74cec7217151fe, type: 2}
+  - {fileID: 11400000, guid: 200ff0149fb134d43aab3268ef2d8bf6, type: 2}
+  - {fileID: 11400000, guid: f0310ece83d8a62408e8931c40d8e0ec, type: 2}
+  - {fileID: 11400000, guid: de583090608ab754199002ac2c6638cf, type: 2}
+  - {fileID: 11400000, guid: c90f8ab0785d505489c2691b7903cedb, type: 2}

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_Yuwr2pT3z3WYTX9T
+  m_EditorClassIdentifier: 
+  SourceId: Yuwr2pT3z3WYTX9T
+  Slug: alkenstar-sojourner
+  DisplayName: Alkenstar Sojourner
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You came to Alkenstar because you heard they had guns, but you stayed
+    because of the atmosphere. Or the guns. Either way, journalism and scientific
+    curiosity opened the door to a life of adventure. Now you continue to adventure
+    in the Alkenstar area, using your skills to deal with whatever situations present
+    themselves. Choose two attribute boosts. One must be to Intelligence or Charisma
+    , and one is a free attribute boost. You're trained in Society and Engineering
+    Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Streetwise] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 5592408c60b72deb623763cacaf46d1ddcdb19eeec9681826541d26187e6c50d
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering Lore
+    Rank: 1
+  LoreSkills:
+  - Engineering Lore
+  GrantedFeats:
+  - SourceKey: i6f1u
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Streetwise
+    SourceId: 
+    DisplayName: Streetwise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

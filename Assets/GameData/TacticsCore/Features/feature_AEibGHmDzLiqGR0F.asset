@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_AEibGHmDzLiqGR0F
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: AEibGHmDzLiqGR0F
+  Slug: adept-benefit-mirror
+  DisplayName: Adept Benefit (Mirror)
+  IconPath: icons/commodities/treasure/token-silver-blue.webp
+  Description: Your mirror self shatters into punishing shards when damaged. While
+    Mirror's Reflection is in effect, when an enemy adjacent to one of your spaces
+    damages you, that version of you explodes into mirror shards. This ends Mirror's
+    Reflection (establishing the remaining version of you as the real one) and deals
+    slashing damage to all creatures in a @Template[emanation|distance:5] around
+    where your mirror self was. The damage is equal to @Damage[(2 + floor(@actor.level
+    / 2))[slashing]|options:area-damage]{2 + half your level} or the damage of the
+    triggering attack, whichever is lower. You're immune to this damage.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ac03714dbe42f8c71a933f68bb42be25aa004eae50b222efffb110dc96af54b6
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.paragonChoices
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Mirror.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Mirror)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.paragonChoices","priority":20,"value":{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Mirror.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Mirror)"}}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

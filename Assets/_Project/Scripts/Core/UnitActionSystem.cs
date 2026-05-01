@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Grid;
-using PathfinderTactics.InputSystem;
-using PathfinderTactics.Reactions;
-using PathfinderTactics.UI;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Combat;
+using TacticsGame.Grid;
+using TacticsGame.InputSystem;
+using TacticsGame.Reactions;
+using TacticsGame.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-namespace PathfinderTactics.Core
+namespace TacticsGame.Core
 {
     public class UnitActionSystem : MonoBehaviour
     {
@@ -111,7 +111,7 @@ namespace PathfinderTactics.Core
 
             if (newPhase != GamePhase.ActionTargeting)
             {
-                if (ServiceLocator.TryGet(out PathfinderTactics.UI.UnitTooltipUI tooltipUI))
+                if (ServiceLocator.TryGet(out TacticsGame.UI.UnitTooltipUI tooltipUI))
                 {
                     tooltipUI.Hide();
                 }

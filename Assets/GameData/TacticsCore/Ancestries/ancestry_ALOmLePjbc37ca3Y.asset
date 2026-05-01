@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_ALOmLePjbc37ca3Y
+  m_EditorClassIdentifier: 
+  SourceId: ALOmLePjbc37ca3Y
+  Slug: surki
+  DisplayName: Surki
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/surki.svg
+  Description: "Surkis are an insectile species who subsist on the latent magic in
+    the world around them. As a subterranean species native to the Darklands, surkis
+    have rarely been seen on the surface, and always with long pauses between historical
+    sightings. This is due to surkis' life cycle\u2014long dormancies followed by
+    so-called \"generation digs,\" as they migrate great distances in response to
+    happenings underground. The healing of the Worldwound initiated one of the largest
+    such digs in their history, bringing surkis up into the caverns and passages
+    of the Sarkoris Scar and emerging onto the surface for the first time in many
+    years. Since their emergence, several small surki settlements have been established
+    in secluded corners of Sarkoris, voraciously cataloging the wildlife, magics,
+    and various other inhabitants of the area as they explore the alien environment
+    of the surface. Surki"
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 77d5492f78eaea6d276dcc417d6bb271d3c3956502d7fdc6935917e760af5086
+  Traits:
+  - humanoid
+  - surki
+  TraitsLower:
+  - humanoid
+  - surki
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.surki.evolutions
+    Mode: override
+    Value: '[]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.surki.evolutions","priority":10,"value":[]}'
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: surki
+    DisplayName: Surki
+  AdditionalLanguageOptions:
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: Ve2AG
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Magiphage
+    SourceId: 
+    DisplayName: Magiphage
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 99d2c7a9bbb526945981a8472032c982, type: 2}
+  - {fileID: 11400000, guid: a2f5928cbcc731e47b412388aaec7182, type: 2}
+  - {fileID: 11400000, guid: 2bd71ffa7f7eb6b44af912cf8daf9d06, type: 2}
+  - {fileID: 11400000, guid: 6c0e586385ad30d41a51f3d8c002164e, type: 2}

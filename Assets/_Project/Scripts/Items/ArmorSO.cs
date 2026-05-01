@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Items
+namespace TacticsGame.Items
 {
     public enum ArmorCategory
     {
@@ -10,7 +10,7 @@ namespace PathfinderTactics.Items
         Heavy,
     }
 
-    [CreateAssetMenu(menuName = "PathfinderTactics/Items/Armor")]
+    [CreateAssetMenu(menuName = "TacticsGame/Items/Armor")]
     public class ArmorSO : EquipmentSO
     {
         [Header("Armor Properties")]

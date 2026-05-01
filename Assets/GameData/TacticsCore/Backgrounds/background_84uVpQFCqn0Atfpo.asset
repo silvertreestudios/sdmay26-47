@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_84uVpQFCqn0Atfpo
+  m_EditorClassIdentifier: 
+  SourceId: 84uVpQFCqn0Atfpo
+  Slug: legendary-parents
+  DisplayName: Legendary Parents
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: '[Legacy - Age of Ashes] One or more of your parents (either biological
+    or adoptive) were heroes of the Age of Ashes Adventure Path. Others tend to treat
+    you with a bit more respect, or perhaps fear your connections to people of great
+    power. Choose two attribute boosts. One must be to Dexterity or Charisma , and
+    one is a free attribute boost. You''re trained in the Intimidation skill, and
+    the Genealogy Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Coercion] skill feat.'
+  SourceTitle: 'Pathfinder #150: Broken Promises'
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: ebe27cc01fc593c7f24585b94f84b8fef45d300b42a6baf1706db6fa4a7d8366
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Genealogy Lore
+    Rank: 1
+  LoreSkills:
+  - Genealogy Lore
+  GrantedFeats:
+  - SourceKey: sce5j
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

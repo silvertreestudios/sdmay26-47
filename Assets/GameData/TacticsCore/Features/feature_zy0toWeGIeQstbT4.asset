@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_zy0toWeGIeQstbT4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: zy0toWeGIeQstbT4
+  Slug: mosquito-witch
+  DisplayName: Mosquito Witch
+  IconPath: icons/magic/control/encase-creature-spider-hold.webp
+  Description: 'Your patron is a mysterious being known as the Mosquito Witch. You
+    do not know why you were chosen, and in many cases, you wish that you hadn''t
+    been. She may have made herself known to you through terrifying prophetic visions
+    and nightmares, or you might have instead received her patronage in the form
+    of swarming insects, their buzzing opening your ears to magic and their bites
+    filling your body with power. Frightening events plague your wake: strange accidents,
+    dead animals, and glowing red eyes in the darkness. Whether or not you''re aware
+    of the Mosquito Witch''s influence, you have an affinity with insects, and typically
+    draw their attention wherever you go. Spell List primal Patron Skill Nature Lesson
+    of the Unbridled Hive The Mosquito Witch grants you control over insects. You
+    gain the @UUID[Compendium.pf2e.spells-srd.Item.Buzzing Bites] hex cantrip and
+    your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Pest Form]. Familiar
+    of Swarm''s Heart Your familiar is surrounded by a cloud of harmless insects.
+    When you Cast or Sustain a hex, the insects swarm to protect you and your allies.
+    Until the start of your next turn, your familiar grants concealment to you or
+    any ally while sharing the same space. .'
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: fb526eec02cb89db1dbd2e7219d1e59521e0306605102dfc83e544067bff72ac
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"primal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"primal"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.SwarmsHeart.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.SwarmsHeart.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.SwarmsHeart.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.SwarmsHeart.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

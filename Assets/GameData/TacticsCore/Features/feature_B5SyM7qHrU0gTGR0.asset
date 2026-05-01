@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_B5SyM7qHrU0gTGR0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: B5SyM7qHrU0gTGR0
+  Slug: greater-eidolon-specialization
+  DisplayName: Greater Eidolon Specialization
+  IconPath: icons/skills/melee/hand-grip-sword-orange.webp
+  Description: Your eidolon's damage from weapon specialization increases to 4 with
+    unarmed attacks in which it's an expert, 6 if it's a master, and 8 if it's legendary.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 33929c137297a8df360bd0f08b248b0809934066448bf2420d9c5208f65f5363
+  Traits:
+  - summoner
+  TraitsLower:
+  - summoner
+  RawRules: []
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

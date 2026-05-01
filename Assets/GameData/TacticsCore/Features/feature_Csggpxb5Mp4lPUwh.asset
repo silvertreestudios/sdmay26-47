@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Csggpxb5Mp4lPUwh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Csggpxb5Mp4lPUwh
+  Slug: burnished-armor-expertise
+  DisplayName: Burnished Armor Expertise
+  IconPath: icons/equipment/chest/breastplate-leather-brown-belted.webp
+  Description: Exposure to your divine spark has reinforced your armor. Your proficiency
+    ranks for light armor, medium armor, and unarmored defense increase to expert.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6783230419f4ca880d924aed608ff8751bc077728665a47a77947c2cc0bed982
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules: []
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: light
+    Rank: 2
+  - Target: medium
+    Rank: 2
+  - Target: unarmored
+    Rank: 2
+  FocusPointDelta: 0

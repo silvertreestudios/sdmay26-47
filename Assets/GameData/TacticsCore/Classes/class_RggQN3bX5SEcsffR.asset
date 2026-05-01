@@ -1,0 +1,237 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_RggQN3bX5SEcsffR
+  m_EditorClassIdentifier: 
+  SourceId: RggQN3bX5SEcsffR
+  Slug: kineticist
+  DisplayName: Kineticist
+  IconPath: systems/pf2e/icons/default-icons/class.svg
+  Description: The power of the elements flows from within you. Roaring fire pure
+    water, fleeting air, steadfast earth, twisting wood, slicing metal. A kinetic
+    gate inextricably tied to your body channels power directly from the elemental
+    planes, causing elements to leap to your hand, whirl around your body, and blast
+    foes at your whim. As your connection to the planes grows, you attain true mastery
+    over your chosen elements. Kineticist
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: f53697b917ebbe1019279a96f98255ab4192583a49ed46d205e4d57fc7094e4b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 8
+  KeyAttributes: 03000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 1
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: JGvbL
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Aura
+    SourceId: f0BF2210l9k66cso
+    DisplayName: Kinetic Aura
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b5f51320a71179244a91ddabdd013605, type: 2}
+  - SourceKey: NXHnk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Gate
+    SourceId: IDBB44egwiQ4qZNh
+    DisplayName: Kinetic Gate
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 79cb8084b29f08946a8c899d2092f9cc, type: 2}
+  - SourceKey: aVZTQ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Impulses
+    SourceId: xhCYkt3acfFd0hr2
+    DisplayName: Impulses
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 9f304437cfcd6f146835c7533b266d17, type: 2}
+  GrantedFeatures:
+  - SourceKey: 5itvx
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Durability
+    SourceId: eTHq1Cwf1pOvsx2R
+    DisplayName: Kinetic Durability
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 608eed06fdc86a245b5c3e4b90e5e4dc, type: 2}
+  - SourceKey: 6NQBE
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Mastery
+    SourceId: SHpjmM4A3Sw4GgDz
+    DisplayName: Light Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 57321a107853f28438ee9bc534abb632, type: 2}
+  - SourceKey: 6TeTE
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Mastery
+    SourceId: a6fIKxCViZwwHZLJ
+    DisplayName: Kinetic Mastery
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 365185f10b1cfe54e8c6862a6dfe29be, type: 2}
+  - SourceKey: 8b7hf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflow Elements
+    SourceId: SIkSIln5G1J73PrM
+    DisplayName: Reflow Elements
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 19ea88e032496954f9d80d1accc2be01, type: 2}
+  - SourceKey: J86Sn
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Legend
+    SourceId: 8ZAc21SvRO2rfPez
+    DisplayName: Kinetic Legend
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: bc50f40e938908a4da882713c25bda10, type: 2}
+  - SourceKey: JGvbL
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Aura
+    SourceId: f0BF2210l9k66cso
+    DisplayName: Kinetic Aura
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b5f51320a71179244a91ddabdd013605, type: 2}
+  - SourceKey: NXHnk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Gate
+    SourceId: IDBB44egwiQ4qZNh
+    DisplayName: Kinetic Gate
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 79cb8084b29f08946a8c899d2092f9cc, type: 2}
+  - SourceKey: SZ1aE
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Second Gate's Threshold
+    SourceId: N5Gnf73TvuO6Reoj
+    DisplayName: Second Gate's Threshold
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 7b856fa0664739348950cfa53e51f8cd, type: 2}
+  - SourceKey: UtsnS
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Fourth Gate's Threshold
+    SourceId: o8QHrhc9MsWIoKUv
+    DisplayName: Fourth Gate's Threshold
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 8093b1b3da1f8ef44be21334cc74dc01, type: 2}
+  - SourceKey: ZLDh8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Quickness
+    SourceId: 9BUk7zy1aE092XCS
+    DisplayName: Kinetic Quickness
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 9f42fe8514c6f164692a88b36e8271c5, type: 2}
+  - SourceKey: aVZTQ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Impulses
+    SourceId: xhCYkt3acfFd0hr2
+    DisplayName: Impulses
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 9f304437cfcd6f146835c7533b266d17, type: 2}
+  - SourceKey: bKOQI
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Double Reflow
+    SourceId: DvuPpIaM4BkHLX4y
+    DisplayName: Double Reflow
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 181b3804e0d71814dbd9d6ded87b3511, type: 2}
+  - SourceKey: dg9M3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: fqMT6
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Gate's Threshold
+    SourceId: vEiENk0IzuzRQesp
+    DisplayName: Gate's Threshold
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 368c4f816c048f94ebe7641ada5af80a, type: 2}
+  - SourceKey: hfJPw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Expertise
+    SourceId: pZYkb12t5DSwtts7
+    DisplayName: Light Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 3bf7d337c0e817d4795134166770c383, type: 2}
+  - SourceKey: lS1AZ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Will Expertise
+    SourceId: NhcF2CbXA8R1UCg4
+    DisplayName: Will Expertise
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: e631da3eeac3888459d9fbba2d398d2c, type: 2}
+  - SourceKey: pRGkq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: rCZNC
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Final Gate
+    SourceId: DPxpBIxPidJfn0Xv
+    DisplayName: Final Gate
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 5ab40fbd481a0ea429e135066102ef19, type: 2}
+  - SourceKey: rOa1O
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Third Gate's Threshold
+    SourceId: GfQ5MngIn74OYhQL
+    DisplayName: Third Gate's Threshold
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 6a7fd3bdb1a5b18489f131f692a5af76, type: 2}
+  - SourceKey: tD16x
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Extract Element
+    SourceId: jyCEC3eC4B6YaGoy
+    DisplayName: Extract Element
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: ed14b4fc9b29adf48ba2d4f4638f2234, type: 2}
+  - SourceKey: udfhZ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Kinetic Expertise
+    SourceId: dGiMAdZEQoXQWJbn
+    DisplayName: Kinetic Expertise
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: bd0bd3f5781ae954aa83445c8a140112, type: 2}
+  - SourceKey: wbVdT
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: xozcj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Kinetic Durability
+    SourceId: i3qjbhL7uukg9I80
+    DisplayName: Greater Kinetic Durability
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 1e8c4836a8e712e4a8dde8a0ab5db288, type: 2}

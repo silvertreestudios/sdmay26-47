@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_lSGWXjcbOa6O5fTx
+  m_EditorClassIdentifier: 
+  SourceId: lSGWXjcbOa6O5fTx
+  Slug: orc
+  DisplayName: Orc
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/orc.svg
+  Description: Orcs are forged in the fires of violence and conflict, often from
+    the moment they are born. As they live lives that are frequently cut brutally
+    short, orcs revel in testing their strength against worthy foes, whether by challenging
+    a higher-ranking member of their community for dominance or raiding a neighboring
+    settlement. Many orcs seek glory as soon as they can walk and carry a blade or
+    club, taming wild beasts or hunting deadly monsters. Orc
+  SourceTitle: Pathfinder Player Core
+  SourcePack: ancestries
+  Rarity: common
+  SourceJsonHash: 885ac9b938f6eae281660f87dcfd8de1c61a08ff6325d768995a654f649b5bb1
+  Traits:
+  - humanoid
+  - orc
+  TraitsLower:
+  - humanoid
+  - orc
+  RawRules: []
+  HitPoints: 10
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 00000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: orcish
+    DisplayName: Orcish
+  AdditionalLanguageOptions:
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: jotun
+    DisplayName: Jotun
+  - Id: petran
+    DisplayName: Petran
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: e7084df2399bbb24f8bc4124eb96b948, type: 2}
+  - {fileID: 11400000, guid: 95521821a64d153498fea22250cfb6dd, type: 2}
+  - {fileID: 11400000, guid: 6bbb11967a1a51044aace4d4293877bd, type: 2}
+  - {fileID: 11400000, guid: 09ffcc93f24ec9c4d82ee59aa62a7dde, type: 2}
+  - {fileID: 11400000, guid: 6960b03ce167965449ff841fa7550948, type: 2}
+  - {fileID: 11400000, guid: 55a2e6ab049ddc74bbd7cfdbb5176109, type: 2}
+  - {fileID: 11400000, guid: 63132fa4e4755a640bbe78ffbc80f609, type: 2}

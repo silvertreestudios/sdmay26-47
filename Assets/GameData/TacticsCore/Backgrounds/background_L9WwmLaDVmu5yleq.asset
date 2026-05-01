@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_L9WwmLaDVmu5yleq
+  m_EditorClassIdentifier: 
+  SourceId: L9WwmLaDVmu5yleq
+  Slug: moot-guard
+  DisplayName: Moot Guard
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You are a respected guardian of the Verduran Forest, and the Wildwood
+    Lodge has called upon you to manage security at their upcoming Greenwood Gala.
+    What deeds earned you such trust and esteem? Perhaps you have skirmished with
+    Taldan poachers, subdued riotous fey festivities, or spent years systematically
+    sabotaging illegal Andoren woodcutting ventures. Maybe you are officially part
+    of the Wildwood Lodge, serving as a part-time bodyguard and negotiator to help
+    maintain order\u2014otherwise Taldan nobles might send in their own army to keep
+    the peace. Whatever the case, you know that tensions are building between factions
+    who support and oppose the lodge's current leader, Valenar the Green, and you
+    might have to step in to keep the Greenwood Gala fun and welcoming. Choose two
+    attribute boosts. One must be to Strength or Constitution , and one is a free
+    attribute boost. You're trained in the Intimidation skill and the Warfare Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating Glare]
+    skill feat."
+  SourceTitle: Pathfinder Wardens of Wildwood Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 6181a0dc3ac99ae2e470bce242399d23f56d3262e591ff40cd54ecc25beae67a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare Lore
+    Rank: 1
+  LoreSkills:
+  - Warfare Lore
+  GrantedFeats:
+  - SourceKey: bOa1n
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

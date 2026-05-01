@@ -99,5 +99,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05dc91853d1f894c84d1f9c2acd4c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionalOffset: {x: 0, y: 0, z: 0}
-  rotationalOffset: {x: 0, y: 0, z: 0}
+  positionalOffset: {x: 0.003, y: 0.049, z: 0.173}
+  rotationalOffset: {x: 46.459, y: -0.116, z: 179.923}

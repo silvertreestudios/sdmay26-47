@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Pew7duAozEeAemif
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Pew7duAozEeAemif
+  Slug: starlit-span
+  DisplayName: Starlit Span
+  IconPath: icons/skills/ranged/arrows-flying-salvo-blue-light.webp
+  Description: 'With magic, the sky''s the limit, and you can''t be bound by the
+    confines of physical proximity. Your power reaches as far as your senses can
+    perceive, transcending the space between you and your target even with spells
+    that normally require direct physical contact. When you use Spellstrike, you
+    can make a ranged weapon or ranged unarmed Strike, as long as the target is within
+    the first range increment of your ranged weapon or ranged unarmed attack. You
+    can deliver the spell even if its range is shorter than the range increment of
+    your ranged attack. Conflux Spell @UUID[Compendium.pf2e.spells-srd.Item.Shooting
+    Star]'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 67c9d4653d6d179ffa3116476363260aa3e0bb9635b888ccc147539f3c26285a
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

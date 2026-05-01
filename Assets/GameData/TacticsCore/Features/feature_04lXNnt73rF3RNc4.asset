@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_04lXNnt73rF3RNc4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 04lXNnt73rF3RNc4
+  Slug: quick-tempered
+  DisplayName: Quick-Tempered
+  IconPath: icons/creatures/abilities/bear-roar-bite-brown-green.webp
+  Description: You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Quick-Tempered]
+    free action, which lets you @UUID[Compendium.pf2e.actionspf2e.Item.Rage] at the
+    slightest provocation.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f7180a606babd4b9b209f074701847a12c7cb9d607040492bba49ddac0bc1c69
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Quick-Tempered
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Quick-Tempered"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Quick-Tempered
+    SourceId: 
+    DisplayName: Quick-Tempered
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

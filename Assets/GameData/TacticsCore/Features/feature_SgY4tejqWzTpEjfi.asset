@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_SgY4tejqWzTpEjfi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: SgY4tejqWzTpEjfi
+  Slug: expert-protections
+  DisplayName: Expert Protections
+  IconPath: icons/magic/control/debuff-energy-hold-levitate-blue-yellow.webp
+  Description: The spiritual entities that protect you warn you of harm before it
+    would occur, giving you more time to react, and help bear the burden of your
+    armor when it is necessary. Your proficiency rank for light armor, medium armor,
+    unarmored defense, and Reflex saves increases to expert.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d5b1160eac82040700d213e0540fe427a47579850eb5c94fd82faf5d07508760
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: light
+    Rank: 2
+  - Target: medium
+    Rank: 2
+  - Target: reflex
+    Rank: 2
+  - Target: unarmored
+    Rank: 2
+  FocusPointDelta: 0

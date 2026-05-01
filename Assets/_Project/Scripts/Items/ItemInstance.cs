@@ -1,6 +1,6 @@
 using System;
 
-namespace PathfinderTactics.Items
+namespace TacticsGame.Items
 {
     [Serializable]
     public class ItemInstance

@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Combat;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     public class MoveRangeVisualizer : MonoBehaviour
     {

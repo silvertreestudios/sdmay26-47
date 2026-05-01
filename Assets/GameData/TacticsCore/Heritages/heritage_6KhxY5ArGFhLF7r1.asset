@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_6KhxY5ArGFhLF7r1
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 6KhxY5ArGFhLF7r1
+  Slug: thorned-rose
+  DisplayName: Thorned Rose
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your beautiful petals and seemingly smooth skin hide silent barbs
+    to pierce the unwary. Your body is covered with wickedly sharp thorns to discourage
+    those that might prey upon you. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Wicked
+    Thorns] reaction.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: d742f84f92300eb429b22c5e97155ef6d8741f27a9400f4e693be82b423b7d25
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Wicked Thorns
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Wicked Thorns"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.tSurOqRcfumadTfr
+    SourceId: 
+    Slug: ghoran
+    DisplayName: Ghoran
+  ParentAncestryAsset: {fileID: 11400000, guid: 5ba316e3f579b40409993fb6d0334eac, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Wicked Thorns
+    SourceId: 
+    DisplayName: Wicked Thorns
+    Level: 0
+    ResolvedFeature: {fileID: 0}

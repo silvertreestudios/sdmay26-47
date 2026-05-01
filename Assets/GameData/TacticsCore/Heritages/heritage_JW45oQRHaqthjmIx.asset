@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_JW45oQRHaqthjmIx
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: JW45oQRHaqthjmIx
+  Slug: cave-kholo
+  DisplayName: Cave Kholo
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Storytellers spin ancient tales claiming that kholo lived in caves
+    and underground before most of your kind ventured into the light. You're a throwback
+    to these ancients, with a broad chest and markings that resemble short black
+    slashes instead of spots. Your eyes are developed to see perfectly in the dark,
+    a valuable advantage to your clan. You gain darkvision.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ca97577cd22d3260d65417b41f2bee67c9254c992f6b150cfa5a7af7519d6312
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"darkvision"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.vxbQ1Yw4qwgjTzqo
+    SourceId: 
+    Slug: kholo
+    DisplayName: Kholo
+  ParentAncestryAsset: {fileID: 11400000, guid: 6f5915ed51340204f8f369633de42202, type: 2}
+  GrantedFeatures: []

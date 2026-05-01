@@ -1,9 +1,9 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using TMPro;
 using UnityEngine;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     /// <summary>
     /// Displays the current and maximum HP of the currently selected unit.

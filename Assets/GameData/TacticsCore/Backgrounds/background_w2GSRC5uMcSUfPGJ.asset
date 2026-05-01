@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_w2GSRC5uMcSUfPGJ
+  m_EditorClassIdentifier: 
+  SourceId: w2GSRC5uMcSUfPGJ
+  Slug: chosen-one
+  DisplayName: Chosen One
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'Your birth has fulfilled a prediction, and people close to you are
+    counting on you to do great things. There''s intense pressure on you to be up
+    to the task, and the fickle nature of prophecy complicates your path. Choose
+    two attribute boosts. One must be to Strength or Charisma , and one is a free
+    attribute boost. Decide with your GM the basics of the prophecy in which you''re
+    meant to play a major part. You''re trained in one skill related to the prophecy,
+    and the Fortune-Telling Lore skill. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Prophecy''s
+    Pawn] free action. Note: You must select the skill manually and add the Prophecy''s
+    Pawn action'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: c38759113231bfc3f9f07886f8a2bdd398cd8347234b8163151ca3aa74a87351
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Prophecy's Pawn
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Prophecy''s
+      Pawn"}'
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fortune-Telling Lore
+    Rank: 1
+  LoreSkills:
+  - Fortune-Telling Lore
+  GrantedFeats: []

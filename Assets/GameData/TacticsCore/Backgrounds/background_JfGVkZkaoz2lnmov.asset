@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_JfGVkZkaoz2lnmov
+  m_EditorClassIdentifier: 
+  SourceId: JfGVkZkaoz2lnmov
+  Slug: bright-lion
+  DisplayName: Bright Lion
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Mwangi Expanse You are a member of the Bright
+    Lions and seek to overthrow the tyrannical reign of Walkena and free Mzali from
+    his cruel whims. You're experienced operating undercover and have had to be cautious
+    of what you say and who you trust, lest you fall afoul of the god-king's terrible
+    punishments. Choose two attribute boosts. One must be to Strength or Charisma
+    , and one is a free attribute boost. You're trained in the Deception skill and
+    the Mzali Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Lie to
+    Me] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 3ed6b0945ea1381950d9d1e997afeb78e080fc91809bef61f3efa6e7ce0e4e8b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mzali Lore
+    Rank: 1
+  LoreSkills:
+  - Mzali Lore
+  GrantedFeats:
+  - SourceKey: bk1vm
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Lie to Me
+    SourceId: 
+    DisplayName: Lie To Me
+    Level: 1
+    ResolvedFeature: {fileID: 0}

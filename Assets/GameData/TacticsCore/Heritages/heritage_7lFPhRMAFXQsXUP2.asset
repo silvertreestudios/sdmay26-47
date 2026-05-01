@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_7lFPhRMAFXQsXUP2
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 7lFPhRMAFXQsXUP2
+  Slug: snow-rat
+  DisplayName: Snow Rat
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have a thicker coat and bulkier frame to defend against the cold,
+    granting you cold resistance equal to half your level (minimum 1). You treat
+    environmental cold effects as if they were one step less extreme (incredible
+    cold becomes extreme, extreme cold becomes severe, and so on).
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 83d6f19b5a8f9f7c51c04c2a6302a45ef9d5b1f214d29753d0a54f1d587b6f38
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"cold","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.P6PcVnCkh4XMdefw
+    SourceId: 
+    Slug: ratfolk
+    DisplayName: Ratfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 0157a504d77a04745a45fb09b6f01d67, type: 2}
+  GrantedFeatures: []

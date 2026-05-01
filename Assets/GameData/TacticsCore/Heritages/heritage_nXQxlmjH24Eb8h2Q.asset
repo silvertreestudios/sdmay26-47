@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_nXQxlmjH24Eb8h2Q
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: nXQxlmjH24Eb8h2Q
+  Slug: battle-ready-orc
+  DisplayName: Battle-Ready Orc
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You descend from a line of terrifying battlefield commanders. You
+    become trained in Intimidation, and you gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating
+    Glare] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 9e7eabe09936ec2ec8c743d52447fb39371e128069932eb84951e92c27f0634c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Intimidating
+      Glare"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.intimidation.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.intimidation.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.lSGWXjcbOa6O5fTx
+    SourceId: 
+    Slug: orc
+    DisplayName: Orc
+  ParentAncestryAsset: {fileID: 11400000, guid: f28dd4f71da56d6429f6bc69289d034a, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 0
+    ResolvedFeature: {fileID: 0}

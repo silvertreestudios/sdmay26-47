@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_RlwE99yKnhq8FUuy
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: RlwE99yKnhq8FUuy
+  Slug: unimpeded-journey
+  DisplayName: Unimpeded Journey
+  IconPath: icons/equipment/feet/boots-leather-laced-brown.webp
+  Description: You move quickly through obstacles, whether they're tumbled stone
+    or tangled undergrowth. You can ignore the effects of difficult terrain. As normal
+    for ignoring difficult terrain, this also lets you treat the hindrances of greater
+    difficult terrain as those of difficult terrain.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1bc1253a072c6ecfcad833aea50979d2965424c690b9fc74bc3bbece4ce19f7a
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_o8Q7wWx2oKvKMi1s
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: o8Q7wWx2oKvKMi1s
+  Slug: gleaming-blade
+  DisplayName: Gleaming Blade
+  IconPath: icons/weapons/swords/scimitar-guard-gold.webp
+  Description: "Usage a weapon in the sword or knife group, or a melee unarmed attack
+    that deals slashing damage This blade glitters with such sharpness it seems to
+    cut the very air in front of it. Immanence Strikes with the gleaming blade deal
+    2 additional spirit damage per weapon damage die. Transcendence\u2014 @UUID[Compendium.pf2e.actionspf2e.Item.Flowing
+    Spirit Strike] 2 (spirit, transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.6xWX8Ey5ShAyj1HO
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 26f7f15fbf349ec2ee104977017ff78cae9b663e874ec78d1afed982da3dd2b2
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"gleaming-blade"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.GleamingBlade.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"gleaming-blade"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.GleamingBlade.Label","predicate":["parent:tag:weapon-ikon-feat"],"value":"gleaming-blade"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Flowing Spirit Strike
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Flowing Spirit
+      Strike"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.WeaponTypeUnarmed","value":"unarmed"},{"label":"TYPES.Item.weapon","value":"weapon"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.UnarmedOrWeapon","rollOption":"gleaming-blade"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Ikon.UnarmedIkonToggle","mergeable":true,"option":"unarmed-ikon","predicate":["gleaming-blade:unarmed"],"suboptions":[{"label":"{item|name}","value":"gleaming-blade"}],"toggleable":true}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","predicate":["gleaming-blade:weapon"],"prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"gleaming-blade-origin"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"predicate":[{"or":["item:group:sword","item:group:knife"]},{"not":"item:trait:consumable"}],"types":["weapon"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["gleaming-blade-origin:existing"],"prompt":"PF2E.SpecificRule.Prompt.Weapon"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:0",{"nor":["item:magical","item:trait:consumable"]},{"or":["item:group:knife","item:group:sword"]}],"itemType":"weapon"},"flag":"grantedIkon","key":"ChoiceSet","predicate":["gleaming-blade-origin:granted"],"prompt":"PF2E.SpecificRule.Prompt.Weapon"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    Json: '{"key":"GrantItem","predicate":["gleaming-blade-origin:granted"],"uuid":"{item|flags.pf2e.rulesSelections.grantedIkon}"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["gleaming-blade:unarmed","unarmed-ikon:gleaming-blade","item:category:unarmed"]},{"and":["gleaming-blade-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["gleaming-blade-origin:granted","item:granter:slug:gleaming-blade"]}]}],"property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:gleaming-blade"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":[{"or":[{"and":["gleaming-blade:unarmed","unarmed-ikon:gleaming-blade","item:category:unarmed"]},{"and":["gleaming-blade-origin:existing","item:id:{item|flags.pf2e.rulesSelections.existingIkon}"]},{"and":["gleaming-blade-origin:granted","item:granter:slug:gleaming-blade"]}]}],"property":"other-tags","value":"physical-ikon:gleaming-blade"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:gleaming-blade"],"priority":121,"property":"traits","value":"divine"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.o8Q7wWx2oKvKMi1s
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:gleaming-blade"],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.o8Q7wWx2oKvKMi1s
+      inline]"}]}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"2*@weapon.system.damage.dice"'
+    Uuid: 
+    Json: '{"damageType":"spirit","key":"FlatModifier","predicate":["divine-spark:gleaming-blade","item:tag:physical-ikon:gleaming-blade"],"selector":"strike-damage","tags":["exemplar"],"value":"2*@weapon.system.damage.dice"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:gleaming-blade","item:slug:flowing-spirit-strike"]},{"not":"divine-spark:gleaming-blade"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"exemplar-spirit-damage","predicate":["divine-spark:gleaming-blade"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Flowing Spirit Strike
+    SourceId: 
+    DisplayName: Flowing Spirit Strike
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.grantedIkon}'
+    SourceId: 
+    DisplayName: grantedIkon}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

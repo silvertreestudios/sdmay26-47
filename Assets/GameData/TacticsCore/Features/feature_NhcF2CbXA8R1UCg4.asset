@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_NhcF2CbXA8R1UCg4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: NhcF2CbXA8R1UCg4
+  Slug: will-expertise
+  DisplayName: Will Expertise
+  IconPath: systems/pf2e/icons/features/classes/walls-of-will.webp
+  Description: Your mental defenses grow stronger. Your proficiency rank for Will
+    saves increases to expert.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 42d068aadcc83586d7d82f843def79eafec9ad2c110783f21f23631114251583
+  Traits:
+  - alchemist
+  - kineticist
+  - ranger
+  TraitsLower:
+  - alchemist
+  - kineticist
+  - ranger
+  RawRules: []
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: will
+    Rank: 2
+  FocusPointDelta: 0

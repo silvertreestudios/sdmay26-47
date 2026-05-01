@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_d7NC4C19AgkspQQg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: d7NC4C19AgkspQQg
+  Slug: battle-trained-human-bb
+  DisplayName: Battle-Trained Human (BB)
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: 'Your family has trained in battle for generations, granting you advantages
+    in a fight. You are trained in all martial weapons.. In addition, you gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Diehard] feat. Note: This heritage is from
+    the Beginner Box and features non-standard heritage features'
+  SourceTitle: Pathfinder Beginner Box
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 82880b64c4d184c9054cbdcc3a90cad1409d8c93ec898ded90892fd8db3e60db
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Diehard
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Diehard"}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.attacks.martial.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.attacks.martial.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.IiG7DgeLWYrSNXuX
+    SourceId: 
+    Slug: human
+    DisplayName: Human
+  ParentAncestryAsset: {fileID: 11400000, guid: 4a3abab8c09a4f0438706848bea28ef6, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Diehard
+    SourceId: 
+    DisplayName: Diehard
+    Level: 0
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_HPYo5j8GgQIVoOOr
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: HPYo5j8GgQIVoOOr
+  Slug: troll-deviant-classification
+  DisplayName: Troll Deviant Classification
+  IconPath: systems/pf2e/icons/spells/monstrosity-form.webp
+  Description: "Especially common when a deviant ability is born of scientific experimentation,
+    the troll classification connotes improved physical abilities. While often thought
+    of as biological mutation, clockwork implants and personal magical enhancements
+    are equally likely mechanisms. Backlash @UUID[Compendium.pf2e.classfeatures.Item.Strained
+    Metabolism] The same blood that lets one of the dragon-descended spit out a gout
+    of flame is precisely what keeps the inside of their mouth from being singed
+    in the furnace. Deviations, unfortunately, lack these safeguards, their powers
+    coming from haphazard circumstance and interactions rather than intentional design.
+    A character using their deviation always risks the chance of backlash. Whenever
+    you attempt to use a deviation, roll a @Check[flat|dc:5]. On a success, you use
+    your deviation and the DC for subsequent checks increases by 5, to a maximum
+    of 20 (@Check[flat|dc:10] @Check[flat|dc:15] @Check[flat|dc:20]); on a failure,
+    you use your deviation and then suffer a backlash effect, after which your flat
+    check DC resets to 5. Backlash progresses from mild, to moderate, to severe.
+    When you have already taken mild backlash in a given day, the next time you would
+    take backlash, you take the moderate backlash instead, and if you have already
+    taken moderate backlash, you take the severe backlash instead, and your deviation
+    can't be used for the rest of the day\u2014attempting to use it simply brings
+    pain. When you make your daily preparations, your flat check DC returns to 5
+    and your next backlash returns to mild. Any effects from backlash can't be reduced,
+    prevented, or otherwise bypassed. Conditions and damage you take from backlash
+    can't be reduced or prevented by resistance or immunity, but still triggers any
+    weakness you have to it. Troll Deviant Feats @UUID[Compendium.pf2e.feats-srd.Item.Bone
+    Spikes] @UUID[Compendium.pf2e.feats-srd.Item.Titan Swing] @UUID[Compendium.pf2e.feats-srd.Item.High-Speed
+    Regeneration] @UUID[Compendium.pf2e.feats-srd.Item.Tectonic Stomp] Universal
+    Deviant Feats @UUID[Compendium.pf2e.feats-srd.Item.Awakened Power] @UUID[Compendium.pf2e.feats-srd.Item.Greater
+    Awakened Power]"
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5f61346246b74ab5b340501557fcd2ede2b909285be1f84f0b65d865257e9799
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices
+    Mode: override
+    Value: '{"greater":[],"lesser":[]}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.deviantAbilities.awakenedChoices","priority":10,"value":{"greater":[],"lesser":[]}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.lesser
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BoneSpikesReach","predicate":[{"not":"awakening:bone-spikes:reach"},"feat:bone-spikes"],"value":"bone-spikes:reach"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.lesser","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BoneSpikesReach","predicate":[{"not":"awakening:bone-spikes:reach"},"feat:bone-spikes"],"value":"bone-spikes:reach"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.lesser
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BoneSpikesPoison","predicate":[{"not":"awakening:bone-spikes:poison"},"feat:bone-spikes"],"value":"bone-spikes:poison"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.lesser","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BoneSpikesPoison","predicate":[{"not":"awakening:bone-spikes:poison"},"feat:bone-spikes"],"value":"bone-spikes:poison"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BoneSpikesReach","predicate":[{"not":"awakening:bone-spikes:reach"},"feat:bone-spikes"],"value":"bone-spikes:reach"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BoneSpikesReach","predicate":[{"not":"awakening:bone-spikes:reach"},"feat:bone-spikes"],"value":"bone-spikes:reach"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BoneSpikesPoison","predicate":[{"not":"awakening:bone-spikes:poison"},"feat:bone-spikes"],"value":"bone-spikes:poison"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BoneSpikesPoison","predicate":[{"not":"awakening:bone-spikes:poison"},"feat:bone-spikes"],"value":"bone-spikes:poison"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.lesser
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TitanSwingProne","predicate":[{"not":"awakening:titan-swing:prone"},"feat:titan-swing"],"value":"titan-swing:prone"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.lesser","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TitanSwingProne","predicate":[{"not":"awakening:titan-swing:prone"},"feat:titan-swing"],"value":"titan-swing:prone"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.lesser
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TitanSwingBleed","predicate":[{"not":"awakening:titan-swing:bleed"},"feat:titan-swing"],"value":"titan-swing:bleed"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.lesser","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TitanSwingBleed","predicate":[{"not":"awakening:titan-swing:bleed"},"feat:titan-swing"],"value":"titan-swing:bleed"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TitanSwingProne","predicate":[{"not":"awakening:titan-swing:prone"},"feat:titan-swing"],"value":"titan-swing:prone"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TitanSwingProne","predicate":[{"not":"awakening:titan-swing:prone"},"feat:titan-swing"],"value":"titan-swing:prone"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TitanSwingBleed","predicate":[{"not":"awakening:titan-swing:bleed"},"feat:titan-swing"],"value":"titan-swing:bleed"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TitanSwingBleed","predicate":[{"not":"awakening:titan-swing:bleed"},"feat:titan-swing"],"value":"titan-swing:bleed"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.HighSpeedRegenerationRecovery","predicate":[{"not":"awakening:high-speed-regeneration:recovery"},"feat:high-speed-regeneration"],"value":"high-speed-regeneration:recovery"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.HighSpeedRegenerationRecovery","predicate":[{"not":"awakening:high-speed-regeneration:recovery"},"feat:high-speed-regeneration"],"value":"high-speed-regeneration:recovery"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.HighSpeedRegenerationSpeed","predicate":[{"not":"awakening:high-speed-regeneration:speed"},"feat:high-speed-regeneration"],"value":"high-speed-regeneration:speed"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.HighSpeedRegenerationSpeed","predicate":[{"not":"awakening:high-speed-regeneration:speed"},"feat:high-speed-regeneration"],"value":"high-speed-regeneration:speed"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TectonicStompStone","predicate":[{"not":"awakening:tectonic-stomp:stone"},"feat:tectonic-stomp"],"value":"tectonic-stomp:stone"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TectonicStompStone","predicate":[{"not":"awakening:tectonic-stomp:stone"},"feat:tectonic-stomp"],"value":"tectonic-stomp:stone"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TectonicStompStun","predicate":[{"not":"awakening:tectonic-stomp:stun"},"feat:tectonic-stomp"],"value":"tectonic-stomp:stun"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.TectonicStompStun","predicate":[{"not":"awakening:tectonic-stomp:stun"},"feat:tectonic-stomp"],"value":"tectonic-stomp:stun"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Strained Metabolism
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Strained
+      Metabolism"}'
+  Category: 2
+  Level: 0
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Strained Metabolism
+    SourceId: 
+    DisplayName: Strained Metabolism
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_ClshvrjvBTMm3INX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: ClshvrjvBTMm3INX
+  Slug: bandaagee-vanara
+  DisplayName: Bandaagee Vanara
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your family is one of many who claims to be descended from the regal
+    vanara peacekeeping family called the Bandaagee. Bandaagee are the most common
+    kind of vanaras. You're very familiar with the trappings of civilization and
+    move easily through the most crowded communities. You ignore difficult terrain
+    from crowds.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 31672071292b8109e7308d3ed5bfe241fb88c47e69a2452d777e59364e81590f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cLtOGIkuSSa4UDHY
+    SourceId: 
+    Slug: vanara
+    DisplayName: Vanara
+  ParentAncestryAsset: {fileID: 11400000, guid: 7789c15146276d844a6b43feecba1956, type: 2}
+  GrantedFeatures: []

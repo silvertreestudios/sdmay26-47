@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_z16zRyLCeTXan0Ae
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: z16zRyLCeTXan0Ae
+  Slug: fleetwind-centaur
+  DisplayName: Fleetwind Centaur
+  IconPath: icons/skills/movement/arrow-upward-yellow.webp
+  Description: You're sleek of frame and capable of reaching incredible speeds on
+    hooves alone. Your Speed increases by 5 feet.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 2d40bac1618fcc42a14de0c7b6e8570ca8f4ae9f500fc6867f65ecd762c2da90
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 5
+    Uuid: 
+    Json: '{"key":"FlatModifier","selector":"land-speed","value":5}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pJkQlFTvpQ5GjZ5e
+    SourceId: 
+    Slug: centaur
+    DisplayName: Centaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 123a536b34b859a428fe590fb60ad26b, type: 2}
+  GrantedFeatures: []

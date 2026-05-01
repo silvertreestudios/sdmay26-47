@@ -1,9 +1,9 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using TMPro;
 using UnityEngine;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     /// <summary>
     /// Controls a small UI panel that displays the currently selected unit's name and HP.

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_MgiZ25JdT6O3fLbO
+  m_EditorClassIdentifier: 
+  SourceId: MgiZ25JdT6O3fLbO
+  Slug: anti-tech-activist
+  DisplayName: Anti-Tech Activist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You've seen the sorts of things that technology brings\u2014polluted
+    environments, workers put out of their jobs or horribly injured, and the slow
+    erosion of society\u2014and you've vowed to inform the larger world of these
+    ills. You do so with long, impassioned speeches on street corners and village
+    squares and by talking personally with the heads of various guilds. Adventuring
+    into the wider world could help spread your message even farther. Choose two
+    attribute boosts. One must be to Constitution or Charisma , and one is a free
+    attribute boost. You're trained in the Intimidation skill and the Guild Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group Coercion] skill
+    feat."
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a527196b8ea2e1b6a9db758157179a8b4d4737388ab5648ad2b2215bfcaac72f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Guild
+    Rank: 1
+  LoreSkills:
+  - Guild
+  GrantedFeats:
+  - SourceKey: pppm5
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

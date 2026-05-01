@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_khGFmnQMBYmz2ONR
+  m_EditorClassIdentifier: 
+  SourceId: khGFmnQMBYmz2ONR
+  Slug: sarkorian-reclaimer
+  DisplayName: Sarkorian Reclaimer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Broken Lands Whether you trace your heritage
+    to lost Sarkoris or are a crusader trying to atone for past fanatics' wrongs,
+    you seek to liberate the Sarkorian homeland from the demons who have defiled
+    it. Choose two attribute boosts. One must be to Constitution or Wisdom , and
+    one is a free boost. You're trained in the Medicine skill and the Abyssal Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Battle Medicine] skill
+    feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f804eee18b8ac54985cc6268ab0a87c3a0da52699d669104884330b24c589992
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Abyssal Lore
+    Rank: 1
+  LoreSkills:
+  - Abyssal Lore
+  GrantedFeats:
+  - SourceKey: qsfyf
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

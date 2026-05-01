@@ -1,10 +1,10 @@
 using System;
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 using UnityEngine;
 
-namespace PathfinderTactics.Reactions
+namespace TacticsGame.Reactions
 {
-    // TODO: Update to use sheild after Michael adds the actual shield.
+    // TODO: Update to use sheild and make accurate.
     public class ShieldBlock : BaseReaction
     {
         [Header("Shield Stats")]

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_X6GQ4ngqpjP8SpCq
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: X6GQ4ngqpjP8SpCq
+  Slug: curse-of-turbulent-moments
+  DisplayName: Curse of Turbulent Moments
+  IconPath: icons/magic/time/clock-spinning-gold-pink.webp
+  Description: Time passes differently for you than for everyone else. You experience
+    fluxes that might manifest as minor day-to-day changes in your apparent age,
+    such as a gray lock of hair or a disappearing wrinkle, or as occasional ghostly
+    temporal afterimages that slightly trail your movement. As you become more affected
+    by your curse, time's passage becomes more disjointed for you, making it difficult
+    for you to react to the quick actions of others. You take a status penalty to
+    your AC against attacks made against you from reactions or free actions and a
+    status penalty to saving throws against effects that would make you @UUID[Compendium.pf2e.conditionitems.Item.Fatigued]
+    or @UUID[Compendium.pf2e.conditionitems.Item.Slowed] equal to your @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]
+    value.
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6328b26618345b1fa8012744b12b196e6fc6fd055dd306d06344683c82a2f672
+  Traits:
+  - curse
+  - divine
+  - oracle
+  TraitsLower:
+  - curse
+  - divine
+  - oracle
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.OracleCurses.Time.DefendAgainstLabel","option":"time-curse-defend-against","predicate":["class:oracle"],"toggleable":true}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"-@actor.conditions.cursebound.value"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:condition:cursebound","time-curse-defend-against"],"selector":"ac","type":"status","value":"-@actor.conditions.cursebound.value"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"-@actor.conditions.cursebound.value"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:condition:cursebound",{"or":["time-curse-defend-against","inflicts:fatigued","inflicts:slowed"]}],"selector":"saving-throw","type":"status","value":"-@actor.conditions.cursebound.value"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

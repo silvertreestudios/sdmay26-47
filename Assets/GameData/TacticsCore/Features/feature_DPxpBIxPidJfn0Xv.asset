@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_DPxpBIxPidJfn0Xv
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: DPxpBIxPidJfn0Xv
+  Slug: final-gate
+  DisplayName: Final Gate
+  IconPath: icons/skills/targeting/target-glowing-yellow.webp
+  Description: Your kinetic gate reaches a perfect form, its power constantly fighting
+    to be released. If your kinetic aura is inactive, you automatically use the first
+    action of your turn to @UUID[Compendium.pf2e.actionspf2e.Item.Channel Elements]
+    as a free action. You can deliberately suppress the effect. If you're unable
+    to act, final gate still functions, but you don't get to use the @UUID[Compendium.pf2e.actionspf2e.Item.Elemental
+    Blast] or stance impulse you normally do from using Channel Elements
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 88da609196ae35059120c95fe6eb27ef57321c0f0a1a7731c0d6fd31b3724f63
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

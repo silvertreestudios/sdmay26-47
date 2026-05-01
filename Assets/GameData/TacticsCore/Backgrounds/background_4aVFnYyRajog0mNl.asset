@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_4aVFnYyRajog0mNl
+  m_EditorClassIdentifier: 
+  SourceId: 4aVFnYyRajog0mNl
+  Slug: mantis-scion
+  DisplayName: Mantis Scion
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - High Seas At least one of your parents is a
+    member of the notorious Red Mantis assassins, merciless killers for hire who
+    rarely fail to claim their marks. Whether on purpose or by simple exposure, you
+    were trained from a young age in the art of stalking and killing people. Choose
+    two attribute boosts. One must be to Dexterity or Wisdom , and one is a free
+    attribute boost. You're trained in the Stealth skill and the Assassin Lore skill.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance] skill feat with
+    Stealth.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: c774eeee3b8b47d13dc88681160edfc69c86a3db6894305e8818624789d3d1de
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Assurance
+    Json: '{"key":"GrantItem","preselectChoices":{"assurance":"stealth"},"uuid":"Compendium.pf2e.feats-srd.Item.Assurance"}'
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 15
+    CustomSkillId: stealth
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Assassin Lore
+    Rank: 1
+  LoreSkills:
+  - Assassin Lore
+  GrantedFeats: []

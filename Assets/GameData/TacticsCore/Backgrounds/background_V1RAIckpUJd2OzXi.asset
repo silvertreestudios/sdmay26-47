@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_V1RAIckpUJd2OzXi
+  m_EditorClassIdentifier: 
+  SourceId: V1RAIckpUJd2OzXi
+  Slug: mana-wastes-refugee
+  DisplayName: Mana Wastes Refugee
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Impossible Lands Exposure to the corrupting
+    influence of the Mana Wastes' strange energies has warped your inner essence,
+    resulting in unpredictable interactions with magic items and more than a little
+    know-how about surviving under bizarre and adverse natural conditions. Choose
+    two attribute boosts. One must be to Constitution or Intelligence , and one is
+    a free attribute boost. You're trained in the Arcana skill and the Wilderness
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Trick Magic Item]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 57f04a8de69b7422c6e9caa6487e2c2148642d3e6a00eb771b7d8b4244a6df8f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Wilderness Lore
+    Rank: 1
+  LoreSkills:
+  - Wilderness Lore
+  GrantedFeats:
+  - SourceKey: exsd0
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Trick Magic Item
+    SourceId: 
+    DisplayName: Trick Magic Item
+    Level: 1
+    ResolvedFeature: {fileID: 0}

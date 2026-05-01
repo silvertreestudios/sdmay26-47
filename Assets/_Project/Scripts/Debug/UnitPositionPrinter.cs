@@ -1,9 +1,9 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.DebugTools
+namespace TacticsGame.DebugTools
 {
     public class UnitPositionPrinter : MonoBehaviour
     {

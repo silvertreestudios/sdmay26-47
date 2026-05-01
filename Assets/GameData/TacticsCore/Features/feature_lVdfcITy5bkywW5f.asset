@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_lVdfcITy5bkywW5f
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: lVdfcITy5bkywW5f
+  Slug: order-of-the-rack
+  DisplayName: Order of the Rack
+  IconPath: systems/pf2e/icons/default-icons/feat.svg
+  Description: 'Favored Weapons @UUID[Compendium.pf2e.equipment-srd.Item.Longsword],
+    @UUID[Compendium.pf2e.equipment-srd.Item.Whip] Members of the Order of the Rack
+    seek to eliminate wastefulness throughout the Inner Sea region. They seek to
+    quash pointless dreams, quell rebellions, and destroy dangerous inventions. Lesser
+    Benefit @UUID[Compendium.pf2e.feats-srd.Item.Disillusionment] Greater Benefit
+    @UUID[Compendium.pf2e.feats-srd.Item.Silence Heresy]'
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b1fbcabbcd8b8f58aba150f6270eb241fc7b119f27f221e4a8543101542ea93b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

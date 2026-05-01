@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_y87jU1yU8Plz4Yhq
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: y87jU1yU8Plz4Yhq
+  Slug: born-of-vegetation
+  DisplayName: Born of Vegetation
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You were a plant or fungi until the rain gifted you a mind. You gain
+    your choice of the plant or fungus trait. Humanoid Form With fresh vegetation,
+    you can better aid those in need. You gain a +1 circumstance bonus to Medicine
+    checks to @UUID[Compendium.pf2e.actionspf2e.Item.Administer First Aid]. Yaoguai
+    Form When anyone uses the Medicine skill to Treat your Wounds, add your level
+    to the Hit Points you regain from that treatment. Additionally, the creature
+    attempting the check gains a +1 circumstance bonus if you have the plant trait
+    and are in bright light, or the fungus trait and are in darkness.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 977a4e1660f3778a409ad077edb0a8b6ed5f6e44f7bf82102f4965b916b9a9dd
+  Traits:
+  - yaoguai
+  TraitsLower:
+  - yaoguai
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitFungus","value":"fungus"},{"label":"PF2E.TraitPlant","value":"plant"}],"flag":"trait","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Trait"}'
+  - Key: ActorTraits
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"add":["{item|flags.pf2e.rulesSelections.trait}"],"key":"ActorTraits"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:administer-first-aid","change-shape:humanoid"],"selector":"medicine","type":"circumstance","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:treat-wounds","change-shape:yaoguai","check:statistic:medicine"],"selector":"healing-received","value":"@actor.level"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.dnk0Rf7AUmyR5b8z
+    SourceId: 
+    Slug: yaoguai
+    DisplayName: Yaoguai
+  ParentAncestryAsset: {fileID: 11400000, guid: 046de30a5ff25694fa6fbcb820177564, type: 2}
+  GrantedFeatures: []

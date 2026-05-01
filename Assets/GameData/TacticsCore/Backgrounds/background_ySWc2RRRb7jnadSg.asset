@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_ySWc2RRRb7jnadSg
+  m_EditorClassIdentifier: 
+  SourceId: ySWc2RRRb7jnadSg
+  Slug: banished-celestial
+  DisplayName: Banished Celestial
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You were once something supernatural\u2014a heavenly agent, grim
+    reaper, immortal phoenix, or demonic tyrant. For some reason, you've been forced
+    to live in a mortal form. You might have been sealed by the holy power of a monk
+    or cruelly betrayed and slain, but most likely, your superiors punished you for
+    your hubris. You can't remember your previous life very well, if you're even
+    aware you were once anything more than you currently are, but you aren't completely
+    forsaken by the powers that once ruled your life. You often find a spark of enlightenment
+    in failure, as fate nudges you to correct the mistakes or tragedies that caused
+    your unmaking. You gain two free attribute boosts. You choose one, and the GM
+    chooses the other based on your past life. You're trained in any one skill of
+    your choice and any one Lore skill of your choice. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Enlightenment
+    in Adversity] ability."
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 20c975572943d801bc6ee19c096d6f486e7f5683af55631b1dee64022c3ea6d9
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":{"config":"skills"},"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Enlightenment in Adversity
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Enlightenment
+      in Adversity"}'
+  AttributeBoosts:
+  - Options: 00000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

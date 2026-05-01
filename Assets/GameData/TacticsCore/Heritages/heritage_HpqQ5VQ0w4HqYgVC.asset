@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_HpqQ5VQ0w4HqYgVC
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: HpqQ5VQ0w4HqYgVC
+  Slug: jungle-catfolk
+  DisplayName: Jungle Catfolk
+  IconPath: systems/pf2e/icons/features/ancestry/jungle-catfolk.webp
+  Description: You're descended from jungle stalkers and can move swiftly through
+    scrub and underbrush. You ignore difficult terrain from undergrowth, and greater
+    difficult terrain from undergrowth is only difficult terrain for you.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ae8f9a5033264d6b30f612f19683c424e028e298a4d367c8df5761d8178fcf1f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.972EkpJOPv9KkQIW
+    SourceId: 
+    Slug: catfolk
+    DisplayName: Catfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 44d614089b9f9a1489e79e108d8ebe69, type: 2}
+  GrantedFeatures: []

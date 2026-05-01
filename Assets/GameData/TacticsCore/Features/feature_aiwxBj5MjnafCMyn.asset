@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_aiwxBj5MjnafCMyn
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: aiwxBj5MjnafCMyn
+  Slug: first-doctrine-cloistered-cleric
+  DisplayName: First Doctrine (Cloistered Cleric)
+  IconPath: icons/magic/light/orb-hands-humanoid-yellow.webp
+  Description: You gain the @UUID[Compendium.pf2e.feats-srd.Item.Domain Initiate]
+    cleric feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 439809addb4d76055f90d45b841aeb78dbf455f56912c4623e1907c69c174031
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Domain Initiate
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Domain Initiate"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Domain Initiate
+    SourceId: 
+    DisplayName: Domain Initiate
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

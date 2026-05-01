@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PathfinderTactics.Items
+namespace TacticsGame.Items
 {
     public abstract class EquipmentSO : ItemSO
     {

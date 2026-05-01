@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_WueM94C9JXk10jPd
+  m_EditorClassIdentifier: 
+  SourceId: WueM94C9JXk10jPd
+  Slug: onyx-trader
+  DisplayName: Onyx Trader
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Eye of Dread Oprak doesn't share the secrets
+    of the Onyx Vault with many, but you are one of the lucky few to be permitted
+    into the heart of the nation. You have traveled the extradimensional paths of
+    the Stone Roads and traded goods across a wide variety of lands. You've learned
+    to step lively in foreign markets of all types. Choose two attribute boosts.
+    One must be to Dexterity or Charisma , and one is a free attribute boost. You're
+    trained in the Society skill and the Mercantile Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Multilingual]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 5be6e9566a1330da5e0ae703e54912d13ef9c061a02a302422323827c8774b58
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mercantile Lore
+    Rank: 1
+  LoreSkills:
+  - Mercantile Lore
+  GrantedFeats:
+  - SourceKey: 5mn6l
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Multilingual
+    SourceId: 
+    DisplayName: Multilingual
+    Level: 1
+    ResolvedFeature: {fileID: 0}

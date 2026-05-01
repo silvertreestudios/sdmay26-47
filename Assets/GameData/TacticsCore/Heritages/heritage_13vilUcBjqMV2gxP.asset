@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_13vilUcBjqMV2gxP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 13vilUcBjqMV2gxP
+  Slug: climbing-animal
+  DisplayName: Climbing Animal
+  IconPath: icons/creatures/reptiles/chameleon-camouflage-green-brown.webp
+  Description: You are an animal whose limbs are adapted to grab, climb, and brachiate.
+    You might be dexterous and ready to use tools like a chimpanzee or otter, or
+    you may simply be a quick climber like a bear, raccoon, or sloth. You have a
+    land Speed of 20 feet, a climb Speed of 20 feet, and one animal attack of your
+    choice (typically claw, fist, or jaws).
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 26e559b6ebd2c95f1ca2b6f24b4d099116458fd5530d659d6246f0438d98f788
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 20
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"land","value":20}'
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 20
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"climb","value":20}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.ancestryfeatures.Item.Animal Attack
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.ancestryfeatures.Item.Animal
+      Attack"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GFOgV3MzWkYwJoJW
+    SourceId: 
+    Slug: awakened-animal
+    DisplayName: Awakened Animal
+  ParentAncestryAsset: {fileID: 11400000, guid: c58a1d5658e5e884f91f290571161519, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Animal Attack
+    SourceId: 
+    DisplayName: Animal Attack
+    Level: 0
+    ResolvedFeature: {fileID: 0}

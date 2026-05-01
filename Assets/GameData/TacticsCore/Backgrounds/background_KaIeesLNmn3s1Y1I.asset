@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_KaIeesLNmn3s1Y1I
+  m_EditorClassIdentifier: 
+  SourceId: KaIeesLNmn3s1Y1I
+  Slug: fightbreaker
+  DisplayName: Fightbreaker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You have a knack for picking up on simmering tensions and calming
+    frayed nerves. You rely on your intuition to discern how and when violence is
+    imminent, and on your skills\u2014diplomatic and otherwise\u2014to deescalate
+    tense situations. You might choose the adventuring life to tackle new and unfamiliar
+    conflicts, or be trying to escape retaliation from those who thrive on violence
+    and resent your ability to keep the peace. Choose two attribute boosts. One must
+    be to Wisdom or Charisma , and one is a free attribute boost. You're trained
+    in the Diplomacy skill and the Lore skill for the city or settlement you lived
+    in when you became a Fightbreaker. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Impression] skill feat."
+  SourceTitle: Pathfinder Lost Omens Highhelm
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 0daa19284300536204b3bdd4af57a687f5eca95a29c2d11a6a10305a3ec19cf7
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: City Lore
+    Rank: 1
+  LoreSkills:
+  - City Lore
+  GrantedFeats:
+  - SourceKey: u8v5o
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2Mm0BHMJZhqIqoQG
+  m_EditorClassIdentifier: 
+  SourceId: 2Mm0BHMJZhqIqoQG
+  Slug: undertaker
+  DisplayName: Undertaker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: People die. This is the unfortunate fact of life on which you've founded
+    your business, because wherever people die, there is a demand for mortuary services.
+    You might be a Pharasmin priest or a secular professional, but your job is seeing
+    to the body, comforting the bereaved, and making sure that the deceased goes
+    to their ultimate reward with all due dignity. Of course, someone in your position
+    sees a lot of strange deaths, and chances are one of them set you on the road
+    to adventure. Choose two attribute boosts. One must be to Intelligence or Wisdom
+    , and one is a free attribute boost. You're trained in the Medicine skill and
+    a Lore skill specializing in one local type of undead. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Forensic
+    Acumen] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 33c86e602e37216817144e4535c606e569df84a1452f8bae25c864078c9544b8
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: o5yn4
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forensic Acumen
+    SourceId: 
+    DisplayName: Forensic Acumen
+    Level: 1
+    ResolvedFeature: {fileID: 0}

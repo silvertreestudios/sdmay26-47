@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_5cthRUkRqRtduVvN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 5cthRUkRqRtduVvN
+  Slug: adamantine-strikes
+  DisplayName: Adamantine Strikes
+  IconPath: systems/pf2e/icons/features/classes/adamantine-strikes.webp
+  Description: When you focus your will into your limbs, your blows are as unyielding
+    as the hardest of metals. Your unarmed attacks are treated as adamantine.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 59ecad5bc266e341dbc9694d828c431a00bdbdd8c6eb549c9ffdb6dbb828d3ad
+  Traits:
+  - monk
+  TraitsLower:
+  - monk
+  RawRules:
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"adamantine"'
+    Uuid: 
+    Json: '{"definition":["item:category:unarmed"],"key":"AdjustStrike","mode":"add","property":"materials","selector":"strike-damage","value":"adamantine"}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"adamantine"'
+    Uuid: 
+    Json: '{"definition":["item:trait:monk"],"key":"AdjustStrike","mode":"add","predicate":["feat:monastic-weaponry"],"property":"materials","selector":"strike-damage","value":"adamantine"}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+    <ui:Style src="CreatorTheme.uss" />
+
+    <ui:VisualElement class="step-container">
+
+        <ui:VisualElement class="step-header">
+            <ui:VisualElement class="step-header__group">
+                <ui:Label text="CLASS" class="header-text header-text--accent" />
+                <ui:Label text="Pick the discipline that defines your character's combat role and growth." class="subhead-text" />
+            </ui:VisualElement>
+            <ui:Label text="STEP 05 / 10" class="badge" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="split-view-container">
+
+            <ui:VisualElement class="split-left">
+                <ui:VisualElement class="search-bar">
+                    <ui:TextField name="Search_Class" text="" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Grid_Classes" class="paged-grid" style="flex-grow: 1;" />
+            </ui:VisualElement>
+
+            <ui:ScrollView class="split-right detail-panel-scroll">
+
+                <ui:VisualElement class="detail-section detail-section--header">
+                    <ui:Label name="Lbl_ClassName" text="Select a Class" class="detail-title" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="KEY ATTRIBUTE" class="summary-block__title" />
+                    <ui:VisualElement name="ClassKeyAttributeContainer" class="chip-row" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="CORE STATS" class="summary-block__title" />
+                    <ui:Label name="Lbl_ClassStats" text="-" class="detail-text detail-text--compact" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="LEVEL 1 FEATURES" class="summary-block__title" />
+                    <ui:Label name="Lbl_ClassFeatures" text="-" class="detail-text detail-text--compact" />
+                </ui:VisualElement>
+
+                <ui:Label name="Lbl_ClassDescription" text="" class="detail-text detail-text--muted detail-text--small" />
+
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

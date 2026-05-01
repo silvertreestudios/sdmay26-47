@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_UfUqPcPcrGgRJCO3
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: UfUqPcPcrGgRJCO3
+  Slug: initiate-benefit-chalice
+  DisplayName: Initiate Benefit (Chalice)
+  IconPath: icons/containers/kitchenware/goblet-jeweled-red.webp
+  Description: While holding your chalice, you can drink from it or feed its liquid
+    to an ally to improve their health. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Drink
+    from the Chalice] action.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d272d53ab17b465016c1190cbfacbe3aeaac6f2afa7ae2818f9bce5662a58d94
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Drink from the Chalice
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Drink from
+      the Chalice"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Drink from the Chalice
+    SourceId: 
+    DisplayName: Drink from the Chalice
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

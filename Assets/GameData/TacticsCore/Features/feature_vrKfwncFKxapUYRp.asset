@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_vrKfwncFKxapUYRp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: vrKfwncFKxapUYRp
+  Slug: dancer-in-the-seasons
+  DisplayName: Dancer in the Seasons
+  IconPath: icons/magic/nature/leaf-juggle-humanoid-green.webp
+  Description: 'You flourish in spring and idle in summer, give in fall and take
+    in winter. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Energized Spark]
+    feat for your choice of cold, fire, void, or wood. When you critically succeed
+    on a Strike, you can Step as a free action in a whirl of leaves, snow, blossoms,
+    or shimmering heat. The season changes, rotating each time you use this ability.
+    When you Spark Transcendence, you gain temporary Hit Points equal to half your
+    level as you are reinvigorated by the changing of the seasons; these temporary
+    Hit Points last until the start of your next turn. @UUID[Compendium.pf2e.feat-effects.Item.Effect:
+    Dancer in the Seasons]'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 11fa4050cacc270a5f6cdc5925e1d170bd85666be662a4f59435571ce264f47e
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitCold","value":"cold"},{"label":"PF2E.TraitFire","value":"fire"},{"label":"PF2E.TraitVoid","value":"void"},{"label":"PF2E.TraitWood","value":"wood"}],"flag":"energizedSpark","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Energized Spark
+    Json: '{"key":"GrantItem","preselectChoices":{"energizedSpark":"{item|flags.pf2e.rulesSelections.energizedSpark}"},"uuid":"Compendium.pf2e.feats-srd.Item.Energized
+      Spark"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"dancer-in-the-seasons"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.DancerInTheSeasons.Description"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Dancer in the Seasons]"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:dancer-in-the-seasons"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.DancerInTheSeasons.Description"},{"text":"@UUID[Compendium.pf2e.feat-effects.Item.Effect:
+      Dancer in the Seasons]"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.CriticalSpecializationToggle","option":"epithet-critical-specialization","priority":51,"toggleable":true}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["epithet-critical-specialization"]}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alternate":true,"key":"CriticalSpecialization","predicate":["epithet-critical-specialization"],"text":"PF2E.SpecificRule.Exemplar.Epithet.DancerInTheSeasons.CriticalSpecialization"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Energized Spark
+    SourceId: 
+    DisplayName: Energized Spark
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_eG7FBDjCdEFzW9V9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: eG7FBDjCdEFzW9V9
+  Slug: alchemical-mastery
+  DisplayName: Alchemical Mastery
+  IconPath: icons/tools/cooking/mortar-stone-yellow.webp
+  Description: Your concoctions are incredibly effective. Your proficiency rank for
+    your alchemist class DC increases to master.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 16326d05e47c9c889af1dbae803509b949e83e5c5cc0cf07ec129871756a4878
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: alchemist
+    Rank: 3
+  FocusPointDelta: 0

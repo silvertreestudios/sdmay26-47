@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_85tRKGZUTFa6pKpG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 85tRKGZUTFa6pKpG
+  Slug: oathkeeper-dwarf
+  DisplayName: Oathkeeper Dwarf
+  IconPath: systems/pf2e/icons/features/ancestry/oathkeeper-dwarf.webp
+  Description: Growing up, you never tried to lie to get what you wanted, and even
+    when necessary, lying makes you uncomfortable. The especially faithful might
+    even have thought that you were blessed by the dwarven god of duty, @UUID[Compendium.pf2e.deities.Item.Kols].
+    You gain a +1 circumstance bonus to Perception checks to @UUID[Compendium.pf2e.actionspf2e.Item.Sense
+    Motive] and to Perception DCs against attempts to @UUID[Compendium.pf2e.actionspf2e.Item.Lie]
+    to you. Furthermore, you gain a +2 circumstance bonus to Diplomacy checks to
+    convince others you speak the truth when you are telling the truth, and you take
+    a -4 circumstance penalty to lie and to your Deception DC against @UUID[Compendium.pf2e.actionspf2e.Item.Sense
+    Motive].
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: d78420a9fbf29993b58352dc38f33037c507ffc9f54605e6d50b2b9d9dcad8d6
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SkillVariant.SenseMotive","predicate":["action:sense-motive"],"selector":"perception","slug":"oathkeeper-dwarf-to-sense-motive","type":"circumstance","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SkillVariant.TellTheTruth","predicate":["tell-truth"],"selector":"diplomacy","slug":"oathkeeper-dwarf-tell-the-truth","type":"circumstance","value":2}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: -4
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SkillVariant.Lie","predicate":["action:lie"],"selector":"deception","slug":"oathkeeper-dwarf-lie","type":"circumstance","value":-4}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"hideIfDisabled":true,"key":"FlatModifier","predicate":["action:lie"],"selector":"perception","type":"circumstance","value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: -4
+    Uuid: 
+    Json: '{"hideIfDisabled":true,"key":"FlatModifier","predicate":["action:sense-motive"],"selector":"deception","type":"circumstance","value":-4}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.BYj5ZvlXZdpaEgA6
+    SourceId: 
+    Slug: dwarf
+    DisplayName: Dwarf
+  ParentAncestryAsset: {fileID: 11400000, guid: 4282fdfe5a426e348be9aaaadc9be877, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_t799dIUj6hlICExG
+  m_EditorClassIdentifier: 
+  SourceId: t799dIUj6hlICExG
+  Slug: wood-warden
+  DisplayName: Wood Warden
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: For all their thorns, beasts, and hazards, the wilds aren't invulnerable.
+    If the natural wonders of the Verduran Forest are to survive, they need guardians
+    like you. You have learned to monitor and protect wildernesses, earning you the
+    Verduran Lodge's respect even if you're not affiliated with any druidic organization.
+    Perhaps you grew up in a community that revered and carefully managed its local
+    ecosystem, learning millennia-old traditions. It could be you were an unlikely
+    survivor who learned to live off the land out of necessity, gradually becoming
+    its protector. Whatever the case, traveling to the Greenwood Gala is a great
+    opportunity to share your knowledge, learn new tricks, and recruit allies who
+    can help defend your home. Choose two attribute boosts. One must be to Strength
+    or Wisdom , and one is a free attribute boost. You're trained in the Survival
+    skill and the Scouting Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Survey
+    Wildlife] skill feat.
+  SourceTitle: Pathfinder Wardens of Wildwood Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 9b71923d739bbf309c4bf29e74013a7ed9a924f6e19911bd097a1bbece177431
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Scouting Lore
+    Rank: 1
+  LoreSkills:
+  - Scouting Lore
+  GrantedFeats:
+  - SourceKey: v9OA8
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Survey Wildlife
+    SourceId: 
+    DisplayName: Survey Wildlife
+    Level: 1
+    ResolvedFeature: {fileID: 0}

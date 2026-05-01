@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_CoRfFkisEsHE1e43
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: CoRfFkisEsHE1e43
+  Slug: metal-strikes
+  DisplayName: Metal Strikes
+  IconPath: icons/magic/lightning/fist-unarmed-strike-blue-green.webp
+  Description: You can adjust your body to make unarmed attacks infused with the
+    mystic energy of rare metals. Your unarmed attacks are treated as cold iron and
+    silver. This allows you to deal more damage to a variety of supernatural creatures,
+    such as demons, devils, and fey.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2a79df4bf0ed832236b138c15498ef9a0ff73688b5e06d60ecc7093ccd02877e
+  Traits:
+  - monk
+  TraitsLower:
+  - monk
+  RawRules:
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"cold-iron"'
+    Uuid: 
+    Json: '{"definition":["item:category:unarmed"],"key":"AdjustStrike","mode":"add","property":"materials","value":"cold-iron"}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"silver"'
+    Uuid: 
+    Json: '{"definition":["item:category:unarmed"],"key":"AdjustStrike","mode":"add","property":"materials","value":"silver"}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"cold-iron"'
+    Uuid: 
+    Json: '{"definition":["item:trait:monk"],"key":"AdjustStrike","mode":"add","predicate":["feat:monastic-weaponry"],"property":"materials","value":"cold-iron"}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"silver"'
+    Uuid: 
+    Json: '{"definition":["item:trait:monk"],"key":"AdjustStrike","mode":"add","predicate":["feat:monastic-weaponry"],"property":"materials","value":"silver"}'
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

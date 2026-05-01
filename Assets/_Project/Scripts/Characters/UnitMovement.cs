@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     [RequireComponent(typeof(CharacterController))]
     public class UnitMovement : MonoBehaviour
@@ -80,6 +80,17 @@ namespace PathfinderTactics.Characters
             characterController = GetComponent<CharacterController>();
             unit = GetComponent<Unit>();
             unitVisuals = GetComponentInChildren<UnitVisuals>();
+        }
+
+        private void Start()
+        {
+            if (unit != null && unit.GetStats() != null)
+            {
+                // Convert PF2e feet to Unity units/sec.
+                // 30ft (standard) -> 7 units/sec
+                int speedInFeet = unit.GetStats().GetSpeed();
+                moveSpeed = (speedInFeet / 30f) * 7f;
+            }
         }
 
         private void Update()

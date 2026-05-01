@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Combat
+namespace TacticsGame.Combat
 {
     /// <summary>
     /// Central, per-observer stealth resolver.
@@ -126,7 +126,7 @@ namespace PathfinderTactics.Combat
                 LogStealth(
                     $"  [Hide] observer={observer.name} coverBonus={coverBonus} perceptionDC={perceptionDC} current={actorStealth.GetDetectionState(observer)}"
                 );
-                Degree result = PF2E_Core.CheckResult(
+                Degree result = TacticsRuleset_Core.CheckResult(
                     stealthD20,
                     stealthMod + coverBonus,
                     perceptionDC
@@ -223,7 +223,7 @@ namespace PathfinderTactics.Combat
                     $"    [Sneak] hadCoverThroughout={hadCoverThroughout} coverBonus={coverBonus}"
                 );
                 int perceptionDC = 10 + GetPerceptionModifier(observer);
-                Degree result = PF2E_Core.CheckResult(
+                Degree result = TacticsRuleset_Core.CheckResult(
                     stealthD20,
                     stealthMod + coverBonus,
                     perceptionDC
@@ -318,7 +318,11 @@ namespace PathfinderTactics.Combat
 
                 int stealthDC = 10 + targetStealth.GetStealthModifier();
                 LogStealth($"  [Seek] target={target.name} state={state} stealthDC={stealthDC}");
-                Degree result = PF2E_Core.CheckResult(perceptionD20, perceptionMod, stealthDC);
+                Degree result = TacticsRuleset_Core.CheckResult(
+                    perceptionD20,
+                    perceptionMod,
+                    stealthDC
+                );
 
                 bool usingImpreciseSense = !CanPreciselySense(seeker, target);
                 LogStealth($"    [Seek] usingImpreciseSense={usingImpreciseSense} result={result}");
@@ -488,8 +492,8 @@ namespace PathfinderTactics.Combat
 
         private static int GetPerceptionModifier(Unit observer)
         {
-            UnitStatsSO stats = observer != null ? observer.GetStats() : null;
-            return stats != null ? stats.perception : 0;
+            IUnitDataProvider stats = observer != null ? observer.GetStats() : null;
+            return stats != null ? stats.GetPerceptionModifier() : 0;
         }
 
         private static bool CanPreciselySense(Unit observer, Unit actor)

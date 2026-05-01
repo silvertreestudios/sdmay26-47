@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_KGkWSv9rARpwWzXW
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: KGkWSv9rARpwWzXW
+  Slug: school-of-rooted-wisdom
+  DisplayName: School of Rooted Wisdom
+  IconPath: icons/magic/nature/tree-spirit-glow-black-yellow.webp
+  Description: "You've studied at the Magaambya or under one of its traveling professors,
+    learning the ancient magic of Golarion's oldest academy. Your curriculum is self-directed,
+    allowing you to choose a branch of study and personalize your learning. If you
+    choose the School of Rooted Wisdom, you gain the below curriculum and school
+    spells. Curriculum cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Detect Magic]
+    1st: @UUID[Compendium.pf2e.spells-srd.Item.Alarm] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Dispel
+    Magic] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Safe Passage] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Mountain
+    Resilience] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Control Water] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Truesight]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Energy Aegis] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Quandary]
+    9th: \u2014 School Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Halcyon
+    Mists]; advanced: @UUID[Compendium.pf2e.spells-srd.Item.Call the Ten] This is
+    your primary trunk of study, to which you add one of the following five secondary
+    branches, granting you additional curriculum spells. @UUID[Compendium.pf2e.classfeatures.Item.Cascade
+    Bearers] @UUID[Compendium.pf2e.classfeatures.Item.Emerald Boughs] @UUID[Compendium.pf2e.classfeatures.Item.Rain-Scribes]
+    @UUID[Compendium.pf2e.classfeatures.Item.Tempest-Sun Mages] @UUID[Compendium.pf2e.classfeatures.Item.Uzunjati]"
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 2235c959e0573e5c25def99fda45b1ac580b8913dcdb92022d53b9f07e0abf0c
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"value":"Compendium.pf2e.classfeatures.Item.Cascade
+      Bearers"},{"value":"Compendium.pf2e.classfeatures.Item.Emerald Boughs"},{"value":"Compendium.pf2e.classfeatures.Item.Rain-Scribes"},{"value":"Compendium.pf2e.classfeatures.Item.Tempest-Sun
+      Mages"},{"value":"Compendium.pf2e.classfeatures.Item.Uzunjati"}],"flag":"branch","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.branch}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.branch}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.branch}'
+    SourceId: 
+    DisplayName: branch}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

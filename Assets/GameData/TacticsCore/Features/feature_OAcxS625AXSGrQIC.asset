@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_OAcxS625AXSGrQIC
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: OAcxS625AXSGrQIC
+  Slug: spell-blending
+  DisplayName: Spell Blending
+  IconPath: icons/sundries/documents/blueprint-recipe-alchemical.webp
+  Description: You theorize that spell slots are a shorthand for an underlying energy
+    that powers all spellcasting, and you've found a way to tinker with the hierarchy
+    of spell slots, combining them to fuel more powerful spells. During your daily
+    preparations, you can trade two spell slots of the same spell rank for a bonus
+    spell slot of up to 2 spell ranks higher than the traded spell slots. You can
+    exchange as many spell slots as you have available. Bonus spell slots must be
+    of a spell rank you can normally cast, and each bonus spell slot must be of a
+    different spell rank. You can also trade any spell slot for two additional cantrips,
+    though you can't trade more than one spell slot at a time for additional cantrips
+    in this way.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d16a271cf873deb50cf9e0c6f317d90c175139b0ca574693b4b69eb30ee2721c
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

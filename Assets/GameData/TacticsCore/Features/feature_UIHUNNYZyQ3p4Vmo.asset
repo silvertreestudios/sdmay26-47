@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_UIHUNNYZyQ3p4Vmo
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: UIHUNNYZyQ3p4Vmo
+  Slug: interrogation-methodology
+  DisplayName: Interrogation Methodology
+  IconPath: icons/sundries/scrolls/scroll-writing-brown-grey.webp
+  Description: People can't help but trust you, whether through your inherent likableness
+    or your firm insistence on sticking to the truth. You have a way about you that
+    gets others talking, and you've developed interrogative techniques to help you
+    get to the truth of your investigations. You are trained in Diplomacy. You gain
+    the No Cause for Alarm skill feat. You can also Pursue a Lead at the same time
+    you @UUID[Compendium.pf2e.actionspf2e.Item.Make an Impression], as long as you
+    ask a question related to the creature with which you're conversing or a topic
+    of your conversation. You also gain the Pointed Question action.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8b23afd2934d2f3a9ddb5264af12a73a264d90ad9321277fbf9bf36ed10380f5
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.diplomacy.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.diplomacy.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.No Cause for Alarm
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.No Cause for
+      Alarm"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Pointed Question
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Pointed Question"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.No Cause for Alarm
+    SourceId: 
+    DisplayName: No Cause for Alarm
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Pointed Question
+    SourceId: 
+    DisplayName: Pointed Question
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

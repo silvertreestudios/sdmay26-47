@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Items
+namespace TacticsGame.Items
 {
-    [CreateAssetMenu(menuName = "PathfinderTactics/Items/Shield")]
+    [CreateAssetMenu(menuName = "TacticsGame/Items/Shield")]
     public class ShieldSO : EquipmentSO
     {
         [Header("Shield Defense")]

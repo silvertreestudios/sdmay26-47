@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_TQBYPTRTVGLMv7cx
+  m_EditorClassIdentifier: 
+  SourceId: TQBYPTRTVGLMv7cx
+  Slug: local-brigand
+  DisplayName: Local Brigand
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You hail from the River Kingdoms or the more lawless reaches of Brevoy.
+    Your life has been hard. You know how to ambush travelers, bully traders, avoid
+    the law, and camp where no one can find you. Recently, you've run into some trouble,
+    either with the law or with other bandits, and you're looking to get away to
+    somewhere no one would ever think to look for you. An expedition into the rugged
+    wilderness seems like a perfect way to lie low until the trouble blows over.
+    Choose two attribute boosts. One must be to Strength or Constitution , and one
+    is a free attribute boost. You're trained in the Intimidation skill and the Banditry
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group Coercion]
+    skill feat.
+  SourceTitle: Pathfinder Kingmaker Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 52775f1ea4e0c860f4fddc5b4b7c1367b2fbb1f85f99d701176ae21c9bca3247
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Banditry Lore
+    Rank: 1
+  LoreSkills:
+  - Banditry Lore
+  GrantedFeats:
+  - SourceKey: GnMr4
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,14 +1,14 @@
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-namespace PathfinderTactics.Core.TacticalDebug
+namespace TacticsGame.Core.TacticalDebug
 {
     public class TacticalRangeDebugger : MonoBehaviour
     {
@@ -161,7 +161,10 @@ namespace PathfinderTactics.Core.TacticalDebug
                     bool outOfRange = false;
                     if (isMelee)
                     {
-                        int distTiles = PF2E_Core.GetChebyshevDistance3D(attackerPos, currentVoxel);
+                        int distTiles = TacticsRuleset_Core.GetChebyshevDistance3D(
+                            attackerPos,
+                            currentVoxel
+                        );
                         outOfRange = (distTiles * 5) > maxRangeFeet;
                     }
                     else if (isRanged)

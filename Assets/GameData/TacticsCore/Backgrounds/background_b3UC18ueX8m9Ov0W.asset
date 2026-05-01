@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_b3UC18ueX8m9Ov0W
+  m_EditorClassIdentifier: 
+  SourceId: b3UC18ueX8m9Ov0W
+  Slug: hermit
+  DisplayName: Hermit
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "In an isolated place\u2014like a cave, remote oasis, or secluded
+    mansion\u2014you lived a life of solitude. Adventuring might be a welcome reprieve
+    from solitude or an unwanted change, but in either case, you're likely still
+    rough around the edges. Choose two attribute boosts. One must be to Constitution
+    or Intelligence , and one is a free attribute boost. You're trained in the Nature
+    or Occultism skill, plus a Lore skill related to the terrain you lived in as
+    a hermit (such as Cave Lore or Desert Lore). You gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious
+    Knowledge] skill feat."
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 247fc6db9b97e718ad25a5d8677730e6a761f9758818fcbec0e069b5f3fc1e5e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Nature","value":"nature"},{"label":"PF2E.Skill.Occultism","value":"occultism"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Location> Lore
+    Rank: 1
+  LoreSkills:
+  - <Location> Lore
+  GrantedFeats:
+  - SourceKey: z8dne
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

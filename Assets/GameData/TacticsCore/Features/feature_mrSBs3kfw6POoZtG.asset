@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_mrSBs3kfw6POoZtG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: mrSBs3kfw6POoZtG
+  Slug: paragon-benefit-weapon
+  DisplayName: Paragon Benefit (Weapon)
+  IconPath: icons/weapons/axes/pickaxe-bone-purple.webp
+  Description: The way your implement connects to your foe makes its interruptions
+    incredibly disruptive. You now disrupt the triggering action on a hit with @UUID[Compendium.pf2e.actionspf2e.Item.Implement's
+    Interruption], rather than needing a critical hit.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 97f7f6e10499083643efde1eb31181828ad12daf4b21985b1756e1efbf98382c
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

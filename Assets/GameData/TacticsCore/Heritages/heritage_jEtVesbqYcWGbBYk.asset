@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_jEtVesbqYcWGbBYk
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: jEtVesbqYcWGbBYk
+  Slug: seer-elf
+  DisplayName: Seer Elf
+  IconPath: systems/pf2e/icons/features/ancestry/seer-elf.webp
+  Description: You have an inborn ability to detect and understand magical phenomena.
+    You can cast the @UUID[Compendium.pf2e.spells-srd.Item.Detect Magic] cantrip
+    as an arcane innate spell at will. A cantrip is heightened to a spell rank equal
+    to half your level rounded up. In addition, you gain a +1 circumstance bonus
+    to checks to @UUID[Compendium.pf2e.actionspf2e.Item.Identify Magic] and to @UUID[Compendium.pf2e.actionspf2e.Item.Decipher
+    Writing] of a magical nature. These skill actions typically use the Arcana, Nature,
+    Occultism, or Religion skill.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c097be4fe6dc1d80501d73a84104eb3ac8192c6b885d5f370ed9c803f95f99f2
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["action:identify-magic","action:decipher-writing"]}],"selector":"skill-check","type":"circumstance","value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:detect-magic","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:elf"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:detect-magic","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:elf"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.PgKmsA2aKdbLU6O0
+    SourceId: 
+    Slug: elf
+    DisplayName: Elf
+  ParentAncestryAsset: {fileID: 11400000, guid: 1040717c4df7370408570004c36bf8e9, type: 2}
+  GrantedFeatures: []

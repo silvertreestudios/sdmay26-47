@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_au0lwQ1nAcNQwcGh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: au0lwQ1nAcNQwcGh
+  Slug: arcane-bond
+  DisplayName: Arcane Bond
+  IconPath: icons/weapons/wands/wand-carved-pink.webp
+  Description: You place some of your magical power in a bonded item. Each day when
+    you prepare your spells, you can designate a single item you own as your bonded
+    item. This is typically an item associated with spellcasting, such as a wand,
+    ring, or staff, but you are free to designate a weapon or other item. You gain
+    the @UUID[Compendium.pf2e.actionspf2e.Item.Drain Bonded Item] free action.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 82a520e5bf5020facdf88613b27a976d984acf3f0f1bb0b68d8600a77262ffc0
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Drain Bonded Item
+    Json: '{"key":"GrantItem","predicate":[{"not":"feature:improved-familiar-attunement"}],"uuid":"Compendium.pf2e.actionspf2e.Item.Drain
+      Bonded Item"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Drain Bonded Item
+    SourceId: 
+    DisplayName: Drain Bonded Item
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

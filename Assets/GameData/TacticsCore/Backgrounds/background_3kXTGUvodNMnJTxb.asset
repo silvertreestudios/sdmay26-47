@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_3kXTGUvodNMnJTxb
+  m_EditorClassIdentifier: 
+  SourceId: 3kXTGUvodNMnJTxb
+  Slug: aiudara-seeker
+  DisplayName: Aiudara Seeker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: '[Legacy - Age of Ashes] The aiudara of Alseta''s Ring have become
+    more well known, and you are interested in learning more about them. Choose two
+    attribute boosts. One must be to Intelligence or Wisdom , and one is a free attribute
+    boost. You''re trained in the Arcana skill and the Portal Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Quick Identification] skill feat.'
+  SourceTitle: 'Pathfinder #150: Broken Promises'
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 45b99a6cb26c3e0dbfc91a2ea73675898cc8aed20a3864d9a5a28f43158a792e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Portal Lore
+    Rank: 1
+  LoreSkills:
+  - Portal Lore
+  GrantedFeats:
+  - SourceKey: sgdv7
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Identification
+    SourceId: 
+    DisplayName: Quick Identification
+    Level: 1
+    ResolvedFeature: {fileID: 0}

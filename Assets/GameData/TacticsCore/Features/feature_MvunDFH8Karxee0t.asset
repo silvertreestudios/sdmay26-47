@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_MvunDFH8Karxee0t
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: MvunDFH8Karxee0t
+  Slug: water-gate
+  DisplayName: Water Gate
+  IconPath: icons/magic/water/pseudopod-swirl-blue.webp
+  Description: 'Water Gate Junction Critical Blast The blast deals 2 splash per damage
+    die of the blast, with the same damage type. Elemental Resistance fire, water
+    Impulse Junction After the impulse''s other effects, you can move one creature
+    targeted by the impulse or in its area 5 feet in any direction, or 10 feet if
+    it''s in a body of water. This can''t move the creature into the air. You can
+    choose only a creature that''s willing to be moved, that failed its save against
+    the impulse, or that you succeeded at an impulse attack roll against. Aura Junction
+    The aura becomes saturated with humidity, and water moves as you please. Non-magical
+    fires in the aura are extinguished, and creatures in the aura gain fire resistance
+    equal to half your level. Skill Junction Athletics, @UUID[Compendium.pf2e.feats-srd.Item.Underwater
+    Marauder]'
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d4bcf032773b304be73495c9ff50e088d496d6bda106d6820710135162218ac0
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"lte":["item:level","parent:granter:level"]},"item:trait:impulse","item:trait:water",{"not":"item:trait:composite"}],"itemType":"feat"},"flag":"impulseOne","key":"ChoiceSet","predicate":["class:kineticist"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseOne}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["class:kineticist"],"uuid":"{item|flags.pf2e.rulesSelections.impulseOne}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:1","item:trait:impulse","item:trait:water"],"itemType":"feat"},"flag":"impulseTwo","key":"ChoiceSet","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:water-gate"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseTwo}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:water-gate"],"uuid":"{item|flags.pf2e.rulesSelections.impulseTwo}"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"kinetic-gate:water","priority":10}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elements
+    Mode: add
+    Value: '{"label":"PF2E.TraitWater","value":"water"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.kineticist.elements","value":{"label":"PF2E.TraitWater","value":"water"}}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"junction:water:impulse","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:water-gate"]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.one
+    Mode: override
+    Value: '"water"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.one","predicate":["kinetic-gate:first-element:water-gate"],"value":"water"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.two
+    Mode: override
+    Value: '"water"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.two","predicate":["kinetic-gate:second-element:water-gate"],"value":"water"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.three
+    Mode: override
+    Value: '"water"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.three","predicate":["parent:granter:gates-threshold"],"value":"water"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.four
+    Mode: override
+    Value: '"water"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.four","predicate":["parent:granter:second-gates-threshold"],"value":"water"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.five
+    Mode: override
+    Value: '"water"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.five","predicate":["parent:granter:third-gates-threshold"],"value":"water"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.six
+    Mode: override
+    Value: '"water"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.six","predicate":["parent:granter:fourth-gates-threshold"],"value":"water"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Underwater Marauder
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["junction:water:skill"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Underwater
+      Marauder"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","predicate":["junction:water:skill"],"value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,17), 3, ternary(gte(@actor.level,10), 2, 1))"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["junction:water:skill","self:effect:kinetic-aura"],"selector":"athletics","type":"status","value":"ternary(gte(@actor.level,17),
+      3, ternary(gte(@actor.level,10), 2, 1))"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["junction:water:resistance","self:effect:kinetic-aura"],"type":["fire","water"],"value":"@actor.level"}'
+  - Key: Immunity
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Immunity","predicate":["junction:water:resistance",{"gte":["self:level",17]},"self:effect:kinetic-aura"],"type":["fire","water"]}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,17),10,ternary(gte(@actor.level,13),8,ternary(gte(@actor.level,9),6,ternary(gte(@actor.level,5),4,2))))"'
+    Uuid: 
+    Json: '{"critical":true,"damageCategory":"splash","key":"FlatModifier","label":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Label","predicate":["junction:water:critical","item:trait:water"],"selector":"elemental-blast-damage","value":"ternary(gte(@actor.level,17),10,ternary(gte(@actor.level,13),8,ternary(gte(@actor.level,9),6,ternary(gte(@actor.level,5),4,2))))"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":[{"gte":["action:cost",2]},"junction:water:impulse","self:action:trait:impulse","self:action:trait:water"],"selector":"impulse-attack-roll","text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Water","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Water","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"feat","key":"ItemAlteration","mode":"add","predicate":[{"gte":["item:action:cost",2]},"junction:water:impulse","item:trait:impulse","item:trait:water"],"property":"description","value":[{"text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Water","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elementalBlast.water
+    Mode: override
+    Value: '{"damageTypes":["bludgeoning","cold"],"dieFaces":8,"element":"water","img":"systems/pf2e/icons/actions/elemental-blast/water.webp","label":"PF2E.SpecificRule.Kineticist.Impulse.ElementalBlast.Label.Water","range":30}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.elementalBlast.water","predicate":["self:effect:kinetic-aura",{"not":"battle-form"}],"priority":19,"value":{"damageTypes":["bludgeoning","cold"],"dieFaces":8,"element":"water","img":"systems/pf2e/icons/actions/elemental-blast/water.webp","label":"PF2E.SpecificRule.Kineticist.Impulse.ElementalBlast.Label.Water","range":30}}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"uuid":"Compendium.pf2e.feat-effects.Item.Effect: Aura Junction
+      (Water)"}],"key":"Aura","level":"@actor.level","predicate":["self:effect:kinetic-aura","junction:water:aura"],"priority":99,"radius":"@actor.flags.pf2e.kineticist.auraRadius","slug":"kinetic-aura","traits":["kineticist","primal"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseOne}'
+    SourceId: 
+    DisplayName: impulseOne}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseTwo}'
+    SourceId: 
+    DisplayName: impulseTwo}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Underwater Marauder
+    SourceId: 
+    DisplayName: Underwater Marauder
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

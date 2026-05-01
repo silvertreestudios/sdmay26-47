@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_ievKYUc53q0mroGp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: ievKYUc53q0mroGp
+  Slug: lotus-leshy
+  DisplayName: Lotus Leshy
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You effortlessly float on the surface of water. You can walk on the
+    surface of still water and other non-damaging liquids, moving at half your normal
+    Speed. You can also attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Balance]
+    to move across the surface of flowing water, using the DC of a Swim check to
+    move through the water. When you do this, you can't move faster than half your
+    Speed, and if you fail or critically fail, you fall into the water rather than
+    the normal effects.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ef2b4bb9d322fe5af4f435b6a3cf20ad926bd9a42c8e193dbc7fb3451d514ef0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cdhgByGG1WtuaK73
+    SourceId: 
+    Slug: leshy
+    DisplayName: Leshy
+  ParentAncestryAsset: {fileID: 11400000, guid: 2c3ed83876c3e8f42b39718765568df8, type: 2}
+  GrantedFeatures: []

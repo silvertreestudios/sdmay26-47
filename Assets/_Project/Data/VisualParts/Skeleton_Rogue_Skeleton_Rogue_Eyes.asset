@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2dd8c8ce25e394197be78e39183700, type: 3}
+  m_Name: Skeleton_Rogue_Skeleton_Rogue_Eyes
+  m_EditorClassIdentifier: 
+  PartID: skeleton_rogue_skeleton_rogue_eyes
+  DisplayName: Skeleton Rogue Eyes
+  Slot: 8
+  Icon: {fileID: 0}
+  IsStaticMesh: 0
+  SharedMesh: {fileID: 6198906313763841654, guid: 1d8b849fa7bc1d4438f72e718206a332, type: 3}
+  Materials:
+  - {fileID: -8468983757882266563, guid: 9ea8f4c0b215f224baaa9e78ef5fc0af, type: 3}

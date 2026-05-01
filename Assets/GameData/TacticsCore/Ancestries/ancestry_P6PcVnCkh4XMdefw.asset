@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_P6PcVnCkh4XMdefw
+  m_EditorClassIdentifier: 
+  SourceId: P6PcVnCkh4XMdefw
+  Slug: ratfolk
+  DisplayName: Ratfolk
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/ratfolk.svg
+  Description: Ysoki are beings that most surface-dwelling humanoids refer to as
+    "ratfolk." They are a communal people who prefer cramped conditions, with up
+    to 100 individuals living in a given home. If they can't find homes in town,
+    ratfolk may instead live in caves and cavern complexes, as these provide great
+    storage for the many and varied goods they bring back from trading expeditions.
+    Ratfolk
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 790537593c4252d698f39b0a00b3a593679affc83f142e15d395642def1d52a0
+  Traits:
+  - humanoid
+  - ratfolk
+  TraitsLower:
+  - humanoid
+  - ratfolk
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 04000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 01000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: ysoki
+    DisplayName: Ysoki
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: halfling
+    DisplayName: Halfling
+  - Id: kholo
+    DisplayName: Kholo
+  - Id: orcish
+    DisplayName: Orcish
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: jkllM
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Sharp Teeth
+    SourceId: 
+    DisplayName: Sharp Teeth
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 2dbe2f9d6dc028d4684330e20d4e96b0, type: 2}
+  - {fileID: 11400000, guid: 0cddf5ef709411f4c93691e077306b1a, type: 2}
+  - {fileID: 11400000, guid: f7b9aa9166b301e48be776164835c84a, type: 2}
+  - {fileID: 11400000, guid: 9067ed2094af8ec4390ba1bd0069aee6, type: 2}
+  - {fileID: 11400000, guid: 49ac44e67dd373c4fb203003706bc049, type: 2}
+  - {fileID: 11400000, guid: 57cae255e39572d43abb0b4dd839dee8, type: 2}
+  - {fileID: 11400000, guid: 72f4c84ae44a8b441b7a3eaff76795e1, type: 2}

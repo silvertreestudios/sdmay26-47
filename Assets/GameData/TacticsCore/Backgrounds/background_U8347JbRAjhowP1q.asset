@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_U8347JbRAjhowP1q
+  m_EditorClassIdentifier: 
+  SourceId: U8347JbRAjhowP1q
+  Slug: brevic-noble
+  DisplayName: Brevic Noble
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You claim a tangential but legitimate connection to one of Brevoy''s
+    noble families. If you aren''t human, you were adopted by one of Brevoy''s nobles
+    or were perhaps a favored servant or even a childhood friend of a noble scion.
+    Whatever the case, you''ve had a comfortable life, though still a far cry from
+    the one your distant cousins or close associates know. An expedition into the
+    storied Stolen Lands seems like just the test to see if you really are worthy
+    of the "noble" title. Choose two attribute boosts. One must be to Constitution
+    or Wisdom , and one is a free attribute boost. Choose one of the Brevic lineages
+    below. Garess : Family ties to the Golushkin Mountain dwarves left its mark.
+    Your family motto is "Strong as the Mountains." You''re trained in the Crafting
+    skill and the Architecture Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Specialty
+    Crafting] skill feat. Lebeda : Your family''s history of trading along the shores
+    of Lake Reykal pervades your blood. Your family motto is "Success through Grace."
+    You''re trained in the Society skill and the Mercantile Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Multilingual] skill feat. Lodovka :
+    Your family has made a living off the coasts of the Lake of Mists and Veils since
+    before Brevoy existed. Your family motto is "The Waters, Our Fields." You''re
+    trained in the Athletics skill and the Fishing Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Underwater
+    Marauder] skill feat. Medvyed : Your family has a deep respect for the wilderness
+    and is skilled at hunting and surviving off the and. Your family motto is "Endurance
+    Overcomes All." You''re trained in the Survival skill and the Hunting Lore skill.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Terrain Expertise] skill feat.(choose
+    your terrain from aquatic, forest, mountain, plains, or swamp). Orlovsky : Your
+    family has a reputation for avoiding conflicts. Your family motto is "High Above."
+    You''re trained in the Diplomacy skill and the Brevoy Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Group Impression] skill feat. Surtova :
+    Your family is well known for their political agility and scheming nature. Your
+    family motto is Ours Is the Right." You''re trained in the Deception skill and
+    the Politics Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Charming
+    Liar] skill feat.'
+  SourceTitle: Pathfinder Kingmaker Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 26e0120ecda0d35bd8ee2eea60c5e3b730a4c59b98e0c564d0f1db65a9ae83eb
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":true,"choices":[{"label":"PF2E.SpecificRule.BrevicNoble.Garess","value":"garess"},{"label":"PF2E.SpecificRule.BrevicNoble.Lebeda","value":"lebeda"},{"label":"PF2E.SpecificRule.BrevicNoble.Lodovka","value":"lodovka"},{"label":"PF2E.SpecificRule.BrevicNoble.Medvyed","value":"medvyed"},{"label":"PF2E.SpecificRule.BrevicNoble.Orlovsky","value":"orlovsky"},{"label":"PF2E.SpecificRule.BrevicNoble.Surtova","value":"surtova"}],"flag":"lineage","key":"ChoiceSet","prompt":"PF2E.SpecificRule.BrevicNoble.Prompt","rollOption":"brevic-lineage"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.crafting.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.crafting.rank","predicate":["brevic-lineage:garess"],"value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.society.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.society.rank","predicate":["brevic-lineage:lebeda"],"value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","predicate":["brevic-lineage:lodovka"],"value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.survival.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.survival.rank","predicate":["brevic-lineage:medvyed"],"value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.diplomacy.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.diplomacy.rank","predicate":["brevic-lineage:orlovsky"],"value":1}'
+  - Key: ActiveEffectLike
+    Path: system.skills.deception.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.deception.rank","predicate":["brevic-lineage:surtova"],"value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    Json: '{"key":"GrantItem","predicate":["brevic-lineage:garess"],"uuid":"Compendium.pf2e.feats-srd.Item.Specialty
+      Crafting"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Multilingual
+    Json: '{"key":"GrantItem","predicate":["brevic-lineage:lebeda"],"uuid":"Compendium.pf2e.feats-srd.Item.Multilingual"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Underwater Marauder
+    Json: '{"key":"GrantItem","predicate":["brevic-lineage:lodovka"],"uuid":"Compendium.pf2e.feats-srd.Item.Underwater
+      Marauder"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Terrain Expertise
+    Json: '{"key":"GrantItem","predicate":["brevic-lineage:medvyed"],"uuid":"Compendium.pf2e.feats-srd.Item.Terrain
+      Expertise"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    Json: '{"key":"GrantItem","predicate":["brevic-lineage:orlovsky"],"uuid":"Compendium.pf2e.feats-srd.Item.Group
+      Impression"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Charming Liar
+    Json: '{"key":"GrantItem","predicate":["brevic-lineage:surtova"],"uuid":"Compendium.pf2e.feats-srd.Item.Charming
+      Liar"}'
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_2kSzKDtwbcILZTIe
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 2kSzKDtwbcILZTIe
+  Slug: snaptongue-tripkee
+  DisplayName: Snaptongue Tripkee
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your tongue is especially long, and you can launch it with extraordinary
+    range and precision. You can use your tongue to deliver spells with a range of
+    touch and perform extremely simple Interact actions, such as opening some types
+    of unlocked doors. Your tongue can't perform actions that require fingers or
+    significant manual dexterity, including any action that would require a check
+    to accomplish, and you can't use it to hold items.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 3d3d9583d0b3b63d326200d9c4f2c47f268942035cfa04b19d20d40b136d631e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.hXM5jXezIki1cMI2
+    SourceId: 
+    Slug: tripkee
+    DisplayName: Tripkee
+  ParentAncestryAsset: {fileID: 11400000, guid: 22df9819c61ea9443bd8eb1984c77367, type: 2}
+  GrantedFeatures: []

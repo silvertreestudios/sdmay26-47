@@ -1,0 +1,13 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/CharacterCreator/CreatorTheme.uss?fileID=7433441132597879392&amp;guid=e7ceafd2bbee17244a24a51454248c43&amp;type=3#CreatorTheme" />
+    <ui:ScrollView class="step-container detail-panel-scroll">
+        <ui:VisualElement class="step-header">
+            <ui:VisualElement class="step-header__group">
+                <ui:Label text="VISUALS" class="header-text header-text--accent" />
+                <ui:Label text="Customize the silhouette and outfit of your adventurer." class="subhead-text" />
+            </ui:VisualElement>
+            <ui:Label text="STEP 01 / 10" class="badge" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VisualsGridHost" class="paged-grid" style="flex-grow: 1;" />
+    </ui:ScrollView>
+</ui:UXML>

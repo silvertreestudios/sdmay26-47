@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_MGn2wezOr3VAdO3U
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: MGn2wezOr3VAdO3U
+  Slug: perpetual-potency
+  DisplayName: Perpetual Potency
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: Your perpetual infusions improve, allowing you to use @UUID[Compendium.pf2e.classfeatures.Item.Quick
+    Alchemy] to create more powerful items with no cost. The items you can select
+    depend on your research field and must be in your formula book.
+  SourceTitle: Pathfinder Core Rulebook
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 536503cb284e0fdefd8c7e365f6dbcdfbff22a4a33f7b2a8c3da3be6da3557fe
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{actor|flags.pf2e.alchemist.perpetualPotency}'
+    Json: '{"key":"GrantItem","uuid":"{actor|flags.pf2e.alchemist.perpetualPotency}"}'
+  Category: 2
+  Level: 11
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{actor|flags.pf2e.alchemist.perpetualPotency}'
+    SourceId: 
+    DisplayName: perpetualPotency}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

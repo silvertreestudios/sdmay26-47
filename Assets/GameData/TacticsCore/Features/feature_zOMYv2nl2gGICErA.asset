@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_zOMYv2nl2gGICErA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: zOMYv2nl2gGICErA
+  Slug: paragon-benefit-regalia
+  DisplayName: Paragon Benefit (Regalia)
+  IconPath: icons/commodities/gems/pearl-red-gold.webp
+  Description: Your regalia grants you the true gravitas of rulership, tying together
+    the hearts and minds of your allies and making it impossible for you to leave
+    a bad impression. If you roll a critical failure on a check to @UUID[Compendium.pf2e.actionspf2e.Item.Coerce],
+    @UUID[Compendium.pf2e.actionspf2e.Item.Make an Impression], or @UUID[Compendium.pf2e.actionspf2e.Item.Request],
+    you get a failure instead. When others use @UUID[Compendium.pf2e.actionspf2e.Item.Follow
+    the Expert] to follow you, you grant them a +3 circumstance bonus if you are
+    trained or +4 if you are an expert or above. Allies in your inspiring aura aren't
+    @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard] from being flanked unless
+    you too are flanked. If one of your allies in the aura is @UUID[Compendium.pf2e.conditionitems.Item.Clumsy],
+    @UUID[Compendium.pf2e.conditionitems.Item.Enfeebled], @UUID[Compendium.pf2e.conditionitems.Item.Frightened],
+    @UUID[Compendium.pf2e.conditionitems.Item.Sickened], or @UUID[Compendium.pf2e.conditionitems.Item.Stupefied],
+    the status penalty your ally takes from the condition is 1 lower than the condition's
+    value as long as the ally remains in the aura, unless you too are affected by
+    the same condition.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b1f3bd27a68fd8d528fd151d5bcc0eadd65c40f4ebf0fb8026b7f66353366a06
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"to-failure"},"key":"AdjustDegreeOfSuccess","predicate":[{"or":["action:coerce","action:make-an-impression","action:request"]}],"selector":"skill-check"}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"allies","alterations":[{"mode":"add","property":"other-tags","value":"adept-benefit"},{"mode":"add","property":"other-tags","value":"paragon-benefit"}],"uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Regalia"}],"key":"Aura","predicate":["implement:regalia:equipped"],"radius":15,"slug":"regalia-aura","traits":["emotion","visual","mental"]}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

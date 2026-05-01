@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_vxOf4LXZcqUG3P7a
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: vxOf4LXZcqUG3P7a
+  Slug: fourth-doctrine-cloistered-cleric
+  DisplayName: Fourth Doctrine (Cloistered Cleric)
+  IconPath: icons/magic/light/orb-hands-humanoid-yellow.webp
+  Description: You gain expert proficiency with your deity's favored weapon, simple
+    weapons, and unarmed attacks. When you critically succeed at an attack roll using
+    your deity's favored weapon, you apply the weapon's critical specialization effect;
+    you can use your spell DC in place of your class DC.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0aa6b0689d37f58198fad0b7b0f968be3a42a5ebaa4363144d4b4dc367247419
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.favoredWeaponRank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"flags.pf2e.favoredWeaponRank","value":2}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["item:deity-favored"]}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

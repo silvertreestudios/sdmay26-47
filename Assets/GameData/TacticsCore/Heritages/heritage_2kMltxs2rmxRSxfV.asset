@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_2kMltxs2rmxRSxfV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 2kMltxs2rmxRSxfV
+  Slug: hunter-automaton
+  DisplayName: Hunter Automaton
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You were designed to serve as a scout or assassin and have a body
+    resembling a pack hunter like a large cat or wolf. Though you typically move
+    like a quadruped, you can still stand and fight like a biped, allowing you to
+    use all equipment normally. Your quadruped design allows you to move quickly;
+    if you have both hands free, you can increase your Speed to 30 feet as you run
+    on all fours.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4aed150c8ce297349c775646952c0320d54dfeb83ecc502ac0c70457c276d759
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"on-all-fours","toggleable":true}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 5
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"PF2E.SpecificRule.Automaton.HunterAutomaton.ToggleLabel","predicate":["on-all-fours"],"selector":"land-speed","value":5}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.kYsBAJ103T44agJF
+    SourceId: 
+    Slug: automaton
+    DisplayName: Automaton
+  ParentAncestryAsset: {fileID: 11400000, guid: 5906443d70978d34f9849b4fc6b85c75, type: 2}
+  GrantedFeatures: []

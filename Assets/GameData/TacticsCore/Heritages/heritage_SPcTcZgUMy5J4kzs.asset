@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_SPcTcZgUMy5J4kzs
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: SPcTcZgUMy5J4kzs
+  Slug: mightyfall-kobold
+  DisplayName: Mightyfall Kobold
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your proximity to a mighty kaiju has caused you to grow strong and
+    hardy. You gain 10 Hit Points from your ancestry instead of 6. Instead of the
+    normal attribute boosts and flaws, you can choose to gain a boost to Strength,
+    a boost to Charisma, and a flaw in Intelligence.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 2c7498892885854257861d260d6ff8c64800c4db1e9c6a730e44569561478d95
+  Traits:
+  - kobold
+  TraitsLower:
+  - kobold
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.attributes.ancestryhp
+    Mode: override
+    Value: 10
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.attributes.ancestryhp","value":10}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.7oQxL6wgsokD3QXG
+    SourceId: 
+    Slug: kobold
+    DisplayName: Kobold
+  ParentAncestryAsset: {fileID: 11400000, guid: 91e4eebeb01118e4f8f1169cc3adbdff, type: 2}
+  GrantedFeatures: []

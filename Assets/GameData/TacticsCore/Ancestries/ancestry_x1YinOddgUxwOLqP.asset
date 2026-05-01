@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_x1YinOddgUxwOLqP
+  m_EditorClassIdentifier: 
+  SourceId: x1YinOddgUxwOLqP
+  Slug: shisk
+  DisplayName: Shisk
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/shisk.svg
+  Description: Shisks are secretive mountain-dwellers, bone-feathered humanoids who
+    lurk underground in dark tunnels and caverns. Their fascination with collecting
+    and protecting esoteric knowledge is one of the few things that can persuade
+    them to explore the outside world. Shisk
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 6bd04455c5b3c81fce96fa71cfde4d90877ed316e74c54662bef3f8c36a92f45
+  Traits:
+  - humanoid
+  - shisk
+  TraitsLower:
+  - humanoid
+  - shisk
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 2
+  CustomSense: darkvision
+  AttributeBoosts:
+  - Options: 04000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: mwangi
+    DisplayName: Mwangi
+  - Id: shisk
+    DisplayName: Shisk
+  AdditionalLanguageOptions:
+  - Id: common
+    DisplayName: Common
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: halfling
+    DisplayName: Halfling
+  - Id: jotun
+    DisplayName: Jotun
+  - Id: orcish
+    DisplayName: Orcish
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: 4443eafb76fb9004e9906e9e610a6402, type: 2}
+  - {fileID: 11400000, guid: b86692169782c234e9e80eef0f40c988, type: 2}
+  - {fileID: 11400000, guid: 95603b03d9544014782c82e89729845c, type: 2}
+  - {fileID: 11400000, guid: 3e1eaa94cf2191a4489d6e74e31b868b, type: 2}
+  - {fileID: 11400000, guid: 0fc6e848e897f24499d2efe53e1d6b29, type: 2}

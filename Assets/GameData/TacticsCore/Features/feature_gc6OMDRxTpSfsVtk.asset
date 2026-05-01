@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_gc6OMDRxTpSfsVtk
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: gc6OMDRxTpSfsVtk
+  Slug: warden-s-endurance
+  DisplayName: Warden's Endurance
+  IconPath: icons/creatures/mammals/bull-horned-blue.webp
+  Description: You shake off a grizzly's grab or a poison's ill effects with equal
+    ease. Your proficiency rank for Fortitude saves increases to master. When you
+    roll a success on a Fortitude save, you get a critical success instead.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0e90ea1e43748d747895635e9efe559adae8e4143fac0c4c72525bf78c70d721
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"fortitude"}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 3
+  FocusPointDelta: 0

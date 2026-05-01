@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_kXp8qRh5AgtD4Izi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: kXp8qRh5AgtD4Izi
+  Slug: witch-kholo
+  DisplayName: Witch Kholo
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You're a shaggy, dark-furred kholo capable of making some truly uncanny
+    sounds. You can cast the @UUID[Compendium.pf2e.spells-srd.Item.Figment] cantrip
+    as an occult innate spell at will. A cantrip is heightened to a spell rank equal
+    to half your level rounded up. In addition, you gain a +1 circumstance bonus
+    to checks to @UUID[Compendium.pf2e.actionspf2e.Item.Create a Diversion] and Impersonate
+    when using only your voice.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 8d55948b5b7440d9c3246210ecde79c01bdb60b18fafda126cd7f4107a639eb4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["auditory",{"or":["action:impersonate","action:create-a-diversion"]}],"selector":"deception","type":"circumstance","value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:figment","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:kholo"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:figment","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:kholo"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.vxbQ1Yw4qwgjTzqo
+    SourceId: 
+    Slug: kholo
+    DisplayName: Kholo
+  ParentAncestryAsset: {fileID: 11400000, guid: 6f5915ed51340204f8f369633de42202, type: 2}
+  GrantedFeatures: []

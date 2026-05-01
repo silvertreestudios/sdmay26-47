@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_9l6q90sk8UM292CY
+  m_EditorClassIdentifier: 
+  SourceId: 9l6q90sk8UM292CY
+  Slug: waste-walker
+  DisplayName: Waste Walker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Whether you grew up in the Mana Wastes, the deserts of northern Garund,
+    or another similarly desolate place, you quickly learned that only the strong
+    survive. You and your family were forced to evade monsters, mutants, wild magic,
+    and worse, as each new day heralded the possibility of a danger or threat you'd
+    never seen before. You learned to adapt to the worst possible conditions and
+    how to forage and survive in a place few others would dare to live. Choose two
+    attribute boosts. One boost must be to Strength or Wisdom , and one is a free
+    attribute boost. You're trained in the Survival skill, and Mana Wastes Lore (or
+    another similar Lore skill associated with the wastes where you grew up). You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Forager] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 3de5b28c5eab68686f779b2151142be3c14d6a146ab353d70b5dc770819520aa
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mana Wastes Lore
+    Rank: 1
+  LoreSkills:
+  - Mana Wastes Lore
+  GrantedFeats:
+  - SourceKey: 6oavh
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forager
+    SourceId: 
+    DisplayName: Forager
+    Level: 1
+    ResolvedFeature: {fileID: 0}

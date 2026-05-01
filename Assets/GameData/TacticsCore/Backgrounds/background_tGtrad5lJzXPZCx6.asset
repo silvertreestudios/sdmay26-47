@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_tGtrad5lJzXPZCx6
+  m_EditorClassIdentifier: 
+  SourceId: tGtrad5lJzXPZCx6
+  Slug: deep-sea-diver
+  DisplayName: Deep-Sea Diver
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The sapphire depths of the seas and the mysteries they hold beneath
+    their surface have always piqued your interest. Your obsession with the ocean
+    depths cannot be contained to one world alone, and you've read tomes and journals
+    about the source of all water, everywhere, hoping to one day understand the watery
+    secrets of the great unknown. Choose two attribute boosts. One must be to Strength
+    or Wisdom , and one is a free attribute boost. You're trained in the Athletics
+    skill and the Plane of Water Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Underwater
+    Marauder] skill feat.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 00736b63a93d07b75d150f1b8657b13cfe74a9b7d58656b979122fe478125b51
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Plane of Water Lore
+    Rank: 1
+  LoreSkills:
+  - Plane of Water Lore
+  GrantedFeats:
+  - SourceKey: lbeVd
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Underwater Marauder
+    SourceId: 
+    DisplayName: Underwater Marauder
+    Level: 1
+    ResolvedFeature: {fileID: 0}

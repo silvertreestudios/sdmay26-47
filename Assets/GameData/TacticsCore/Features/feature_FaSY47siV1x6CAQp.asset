@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_FaSY47siV1x6CAQp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: FaSY47siV1x6CAQp
+  Slug: the-unbound-step
+  DisplayName: The Unbound Step
+  IconPath: systems/pf2e/icons/features/classes/the-unbound-step.webp
+  Description: "The mind can flit from thought to thought; why too shouldn't you?
+    You focus on motion in a higher order of spatial dimensions, not just the typical
+    three, allowing for versatile abilities that alter positioning. Granted Spells
+    1st: @UUID[Compendium.pf2e.spells-srd.Item.Thoughtful Gift] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Enlarge]
+    3rd: @UUID[Compendium.pf2e.spells-srd.Item.Rally Point] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Translocate]
+    5th: @UUID[Compendium.pf2e.spells-srd.Item.Strange Geometry] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Collective
+    Transposition] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Momentary Recovery]
+    8th: @UUID[Compendium.pf2e.spells-srd.Item.Quandary] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Bilocation]
+    Standard Psi Cantrips @UUID[Compendium.pf2e.spells-srd.Item.Phase Bolt] Your
+    phase bolt temporarily sends the target's cover out of phase if it hits. On a
+    success, reduce the target's circumstance bonus to AC (if any) by 1 until the
+    beginning of your next turn. Your phase bolt also gains the following amp. Amp
+    Your bolt leaves phase completely, becoming invisible and intangible until it's
+    already embedded in the target\u2014giving the impression it simply teleported
+    itself into place. The target is @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard]
+    against the attack. Additionally, the bolt ignores an amount of Hardness or resistance
+    to piercing damage equal to half the spell's level. On a critical success, the
+    target can't be affected by teleportation effects until the start of your next
+    turn. Amp Heightened (+1) The bolt's damage increases by 2d4 instead of 1d4.
+    @UUID[Compendium.pf2e.spells-srd.Item.Warp Step] You warp space more compactly,
+    granting you a +10-foot status to your Speed instead of a +5-foot status bonus
+    when you warp step . The spell also gains the following amp. Amp Space contracts
+    with hardly a thought, letting you Cast the Spell as a single action. Amp Heightened
+    (4th) You twist space so completely you don't need to travel the interposing
+    distance. You can choose to instead teleport to a space within your line of sight
+    and line of effect with a range equal to your double your Speed (after applying
+    the status bonus from warp step). This grants the spell the teleportation trait.
+    Unique Psi Cantrips surface: @UUID[Compendium.pf2e.spells-srd.Item.Distortion
+    Lens] Amp The lens can interfere with creatures as well as attacks. Once during
+    a Medium or smaller ally's move action, the ally can move into and out of the
+    lens's square without that square counting against the total distance moved.
+    Conversely, the lens is difficult terrain for your enemies. deeper: @UUID[Compendium.pf2e.spells-srd.Item.Ghostly
+    Shift] Amp Your insubstantiality is complete enough that you can pass through
+    other creatures, causing painful interference effects when you do so. Once each
+    round when you Stride, Burrow, Swim, or Fly, you can pass through one creature's
+    space during that action without needing to attempt a check to @UUID[Compendium.pf2e.actionspf2e.Item.Tumble
+    Through], though you can't end your turn in its space. When you pass through
+    a creature's space in this way, you deal @Damage[2d6[force]] damage to that creature,
+    with a basic Fortitude save. Amp Heightened (+2) Increase the damage dealt by
+    phasing through a creature by 1d6. deepest: @UUID[Compendium.pf2e.spells-srd.Item.Tesseract
+    Tunnel] Amp Physical movement is no longer necessary to connect two points in
+    space. When you cast tesseract tunnel, you simply create a tunnel that ends in
+    a square within a range equal to your Speed; you can choose to immediately teleport
+    to the space at the far end of the tunnel. Furthermore, the tunnel can be traversed
+    in both directions, instead of only from entrance to exit. Finally, the spell's
+    duration changes to 1 minute. You can Dismiss the spell."
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a35d8915f5d7eb760cb928df6ba934dcf463b99a215df72521d692b90a052f2b
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:psychic","spellcasting:tradition:occult",{"or":["item:slug:phase-bolt","item:slug:warp-step"]}],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.PhaseBolt"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.PhaseBolt.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.PhaseBolt.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:phase-bolt","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.PhaseBolt"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.PhaseBolt.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.PhaseBolt.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.WarpStep"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.WarpStep.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"},{"gte":["item:rank",4]}],"text":"PF2E.SpecificRule.Psychic.Amp.WarpStep.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedFourth"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:warp-step","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.WarpStep"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.WarpStep.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"},{"gte":["item:rank",4]}],"text":"PF2E.SpecificRule.Psychic.Amp.WarpStep.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedFourth"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.DistortionLens","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:distortion-lens"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.DistortionLens","title":"PF2E.TraitAmp"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.GhostlyShift.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.GhostlyShift.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusTwo"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:ghostly-shift"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.GhostlyShift.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.GhostlyShift.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusTwo"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.TesseractTunnel","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:tesseract-tunnel"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.TesseractTunnel","title":"PF2E.TraitAmp"}]}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"diceNumber":"@spell.rank - 1","dieSize":"d4","hideIfDisabled":true,"key":"DamageDice","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:phase-bolt","item:tag:psi-cantrip"],"selector":"spell-damage"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.psychic.dedication.psiCantrips
+    Mode: override
+    Value: '[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.PhaseBolt","predicate":[{"not":"selected-psi-cantrip:phase-bolt"}],"value":"phase-bolt"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.WarpStep","predicate":[{"not":"selected-psi-cantrip:warp-step"}],"value":"warp-step"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.DistortionLens","predicate":["feat:psi-development"],"value":"distortion-lens"}]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.psychic.dedication.psiCantrips","predicate":["feat:psychic-dedication"],"priority":10,"value":[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.PhaseBolt","predicate":[{"not":"selected-psi-cantrip:phase-bolt"}],"value":"phase-bolt"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.WarpStep","predicate":[{"not":"selected-psi-cantrip:warp-step"}],"value":"warp-step"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.DistortionLens","predicate":["feat:psi-development"],"value":"distortion-lens"}]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":"flags.pf2e.psychic.dedication.psiCantrips","flag":"dedicationCantrip","key":"ChoiceSet","predicate":["feat:psychic-dedication"],"prompt":"PF2E.SpecificRule.Prompt.PsiCantrip","rollOption":"selected-psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["feat:psychic-dedication","spellcasting:tradition:occult","item:slug:{item|flags.pf2e.rulesSelections.dedicationCantrip}"],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

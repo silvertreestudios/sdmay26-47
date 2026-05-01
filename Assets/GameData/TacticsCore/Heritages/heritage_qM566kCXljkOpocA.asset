@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_qM566kCXljkOpocA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: qM566kCXljkOpocA
+  Slug: taloned-tengu
+  DisplayName: Taloned Tengu
+  IconPath: systems/pf2e/icons/features/ancestry/taloned-tengu.webp
+  Description: Your talons are every bit as sharp and strong as your beak. You gain
+    a talons unarmed attack that deals 1d4 slashing damage. Your talons are in the
+    brawling group and have the agile, finesse, unarmed, and versatile P traits.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ff37aa50eb94e99457a172a25e311b7bd9f15439e4dbb5ea02408dc5189a5c53
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"slashing","dice":1,"die":"d4"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/talon.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Talon","range":null,"traits":["agile","finesse","unarmed","versatile-p"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.18xDKYPDBLEv2myX
+    SourceId: 
+    Slug: tengu
+    DisplayName: Tengu
+  ParentAncestryAsset: {fileID: 11400000, guid: 0cda81b7def3071468d62aaaaf7b5263, type: 2}
+  GrantedFeatures: []

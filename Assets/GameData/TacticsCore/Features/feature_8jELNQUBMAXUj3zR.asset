@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_8jELNQUBMAXUj3zR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 8jELNQUBMAXUj3zR
+  Slug: physical-protections
+  DisplayName: Physical Protections
+  IconPath: icons/equipment/chest/breastplate-layered-steel.webp
+  Description: Your armor has so many adjustments and precautions that it can guard
+    against all physical damage. While wearing your armor, you gain resistance to
+    all physical damage (bludgeoning, piercing, and slashing damage, as well as persistent
+    bleed damage) equal to half your level. You must have the dense plating, layered
+    mesh, or tensile absorption breakthrough modification to select this modification.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5f07a061cbc949f46a870d9ab87c3b18464ab314c59fbdfc8db66bd6ed843789
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"floor(@actor.level / 2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}"],"type":"physical","value":"floor(@actor.level
+      / 2)"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

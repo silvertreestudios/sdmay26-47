@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ERwuazupczhUSZ73
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ERwuazupczhUSZ73
+  Slug: blessing-of-the-devoted
+  DisplayName: Blessing of the Devoted
+  IconPath: icons/magic/light/explosion-star-glow-silhouette.webp
+  Description: 'Your deity blesses your service with a boon. This might come in the
+    form of a spirit that visits you and inhabits your items or body, a mysterious
+    divine tattoo upon your body, or the like. Choose one of the following blessings,
+    or any other to which you have access. Blessed Armament : Select one weapon or
+    handwraps of mighty blows. You gain that armament''s critical specialization
+    effect, and you grant the armament a property rune of your choice from the following
+    list: @UUID[Compendium.pf2e.equipment-srd.Item.Fearsome], @UUID[Compendium.pf2e.equipment-srd.Item.Ghost
+    Touch], @UUID[Compendium.pf2e.equipment-srd.Item.Returning], @UUID[Compendium.pf2e.equipment-srd.Item.Shifting],
+    or @UUID[Compendium.pf2e.equipment-srd.Item.Vitalizing]. During your daily preparations,
+    you can change the spirit to inhabit a different armament, grant a different
+    rune, or both. Blessed Shield: In your hands, a shield gains the minor Reinforcing
+    rune. As you go up in level, the shield gains the reinforcing rune of your level
+    (lesser at 7th level, moderate at 10th level, greater at 13th level, major at
+    16th level, and supreme at 19th level). If your shield already has the appropriate
+    reinforcing rune for your level, or if it''s a Sturdy Shield of the same level
+    as the appropriate reinforcing rune, the shield''s Hardness instead increases
+    by 1. Blessed Swiftness: You gain a +5-foot status bonus to Speed. If you''re
+    mounted, your mount gains the bonus instead. In addition, when the movement of
+    one of your allies triggers an enemy''s reaction while the ally is in your champion''s
+    aura, the ally gains a +2 status bonus to all defenses against that reaction.'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5d6ef8e750f2e15589d9b4ca2cf5423e045d916a3298ba35e8b1ec08d7febf4a
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"allowedDrops":{"label":"PF2E.SpecificRule.DivineAlly.AllowedDrops","predicate":["item:type:feature","item:trait:champion"]},"choices":{"filter":["item:type:feature","item:tag:blessing-of-the-devoted"]},"flag":"blessing","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.blessing}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.blessing}"}'
+  Category: 2
+  Level: 3
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.blessing}'
+    SourceId: 
+    DisplayName: blessing}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

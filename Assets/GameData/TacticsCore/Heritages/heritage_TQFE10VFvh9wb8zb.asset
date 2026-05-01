@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_TQFE10VFvh9wb8zb
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: TQFE10VFvh9wb8zb
+  Slug: woodstalker-lizardfolk
+  DisplayName: Woodstalker Lizardfolk
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You move easily through thick forest and jungle, using every branch
+    or bush. You can always use the @UUID[Compendium.pf2e.actionspf2e.Item.Take Cover]
+    action when in forest or jungle terrain to gain cover, even if you're not next
+    to an obstacle you would normally be able to Take Cover behind. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Terrain Stalker] feat, even if you're not
+    trained in Stealth, and you must choose underbrush as your chosen terrain.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 155e4730094e9012b9d0e6b291f52b29fefb29584ebe9f02cadae3fea5a9d7e9
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Terrain Stalker
+    Json: '{"key":"GrantItem","preselectChoices":{"terrain-stalker":"underbrush"},"uuid":"Compendium.pf2e.feats-srd.Item.Terrain
+      Stalker"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.HWEgF7Gmoq55VhTL
+    SourceId: 
+    Slug: lizardfolk
+    DisplayName: Lizardfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 7582496f828cec24fa510bd6248a5ed3, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Stalker
+    SourceId: 
+    DisplayName: Terrain Stalker
+    Level: 0
+    ResolvedFeature: {fileID: 0}

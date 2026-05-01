@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_88WyCqU5x1eJ0MK2
+  m_EditorClassIdentifier: 
+  SourceId: 88WyCqU5x1eJ0MK2
+  Slug: gladiator
+  DisplayName: Gladiator
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "The bloody games of the arena taught you the art of combat. Before
+    you attained true fame, you departed\u2014or escaped\u2014the arena to explore
+    the world. Your skill at drawing both blood and a crowd's attention pay off in
+    a new adventuring life. Choose two attribute boosts. One must be to Strength
+    or Charisma , and one is a free attribute boost. You're trained in the Performance
+    skill and the Gladiatorial Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Impressive
+    Performance] skill feat."
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 09d99c1df0c5c0d998bdd8d290a2e11e90de01b430c49026c0a46134cce40b72
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Gladatorial Lore
+    Rank: 1
+  LoreSkills:
+  - Gladatorial Lore
+  GrantedFeats:
+  - SourceKey: 6ltd4
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Impressive Performance
+    SourceId: 
+    DisplayName: Impressive Performance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

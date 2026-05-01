@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_P3rO6yeGY7YbccRG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: P3rO6yeGY7YbccRG
+  Slug: animistic-practice
+  DisplayName: Animistic Practice
+  IconPath: icons/magic/symbols/circled-gem-pink.webp
+  Description: At 1st level, you choose an animistic practice that influences the
+    way your power grows and develops, and you gain its first invocation. At 9th
+    level, you gain its second invocation, and at 17th, you gain its third.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: ce8194cd1b888a505e6db90fbdfdd7f68a469cf0db7f290d2f2cbd49e9e4a549
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:animistic-practice",{"or":[{"and":["class:animist","item:tag:animistic-practice"]},{"and":["item:tag:animistic-practice",{"not":"item:tag:class-archetype"}]}]}],"itemType":"feat"},"flag":"animisticPractice","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.animisticPractice}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.animisticPractice}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.animisticPractice}'
+    SourceId: 
+    DisplayName: animisticPractice}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

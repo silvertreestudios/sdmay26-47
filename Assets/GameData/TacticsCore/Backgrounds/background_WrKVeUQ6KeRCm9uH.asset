@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_WrKVeUQ6KeRCm9uH
+  m_EditorClassIdentifier: 
+  SourceId: WrKVeUQ6KeRCm9uH
+  Slug: teacher
+  DisplayName: Teacher
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You are incredibly knowledgeable, skilled, and perhaps even trained
+    to teach children and adults about the world and its wonders. From books to classes,
+    you're committed to imparting knowledge to all. Not everything can be taught
+    or learned from a book, though, so you've become an adventurer to learn subjects
+    more directly and bring that wisdom back to your students. Choose two attribute
+    boosts. One must be to Intelligence or Wisdom , and one is a free attribute boost.
+    You're trained in your choice of either the Performance or Society skill, as
+    well as the Academia Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced
+    Professional] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: b4cc3c2e79926bc1b8a378d0c6f05daff8590de0fd669fe582b0de1f8d559e55
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Performance","value":"performance"},{"label":"PF2E.Skill.Society","value":"society"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Academia Lore
+    Rank: 1
+  LoreSkills:
+  - Academia Lore
+  GrantedFeats:
+  - SourceKey: 2phf2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Professional
+    SourceId: 
+    DisplayName: Experienced Professional
+    Level: 1
+    ResolvedFeature: {fileID: 0}

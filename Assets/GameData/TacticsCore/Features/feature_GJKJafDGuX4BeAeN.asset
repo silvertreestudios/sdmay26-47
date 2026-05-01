@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_GJKJafDGuX4BeAeN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: GJKJafDGuX4BeAeN
+  Slug: bravery
+  DisplayName: Bravery
+  IconPath: icons/sundries/flags/banner-standard-tattered-red.webp
+  Description: Having faced countless foes and the chaos of battle, you have learned
+    how to stand strong in the face of fear. Your proficiency rank for Will saves
+    increases to expert. When you roll a success at a Will save against a fear effect,
+    you get a critical success instead. In addition, anytime you gain the @UUID[Compendium.pf2e.conditionitems.Item.Frightened]
+    condition, reduce its value by 1.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b684777bb4afa59db1f34b4e5ebd09f08a588727530bf7d4ab3396c02a4c4aed
+  Traits:
+  - fighter
+  TraitsLower:
+  - fighter
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":["item:trait:fear"],"selector":"will"}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: will
+    Rank: 2
+  FocusPointDelta: 0

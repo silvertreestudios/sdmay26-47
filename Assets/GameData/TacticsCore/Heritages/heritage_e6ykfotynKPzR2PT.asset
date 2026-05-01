@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_e6ykfotynKPzR2PT
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: e6ykfotynKPzR2PT
+  Slug: makari-lizardfolk
+  DisplayName: Makari Lizardfolk
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have a trunk-like snout and a connection to the divine. The tradition
+    of any spells or magical abilities you gain from a lizardfolk heritage or ancestry
+    feat is divine instead of its normal tradition (usually primal). You gain your
+    choice of the @UUID[Compendium.pf2e.spells-srd.Item.Divine Lance] or @UUID[Compendium.pf2e.spells-srd.Item.Forbidding
+    Ward] cantrips, which you can cast as a divine innate cantrip at will. A cantrip
+    is heightened to a spell rank equal to half your level rounded up. When you cast
+    this cantrip, it loses the manipulate trait, as you cast purely by roaring and
+    flaring your trunk.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: fd8a3eaf4ca46fa935c4c535c23fd8925574e075a484a6ed28d39dd18c928595
+  Traits:
+  - lizardfolk
+  TraitsLower:
+  - lizardfolk
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"or":["item:slug:forbidding-ward","item:slug:divine-lance"]}],"itemType":"spell","slugsAsValues":true},"flag":"cantrip","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:{item|flags.pf2e.rulesSelections.cantrip}","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:lizardfolk"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:{item|flags.pf2e.rulesSelections.cantrip}","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:lizardfolk"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: remove
+    Value: '"manipulate"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"remove","predicate":["item:slug:{item|flags.pf2e.rulesSelections.cantrip}","spellcasting:innate"],"property":"traits","value":"manipulate"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.HWEgF7Gmoq55VhTL
+    SourceId: 
+    Slug: lizardfolk
+    DisplayName: Lizardfolk
+  ParentAncestryAsset: {fileID: 11400000, guid: 7582496f828cec24fa510bd6248a5ed3, type: 2}
+  GrantedFeatures: []

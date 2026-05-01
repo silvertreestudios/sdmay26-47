@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_EQ6DVIQHAUXUhY6Y
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: EQ6DVIQHAUXUhY6Y
+  Slug: iniquity
+  DisplayName: Iniquity
+  IconPath: icons/creatures/claws/claw-talons-yellow-red.webp
+  Description: You're dishonorable, dishonest, and committed to breaking the false
+    hopes of kindness. Edicts destroy that which offends you or stands in your way,
+    take advantage of others, cheat, steal Anathema bind yourself with a law other
+    than what your deity requires Champion's Reaction @UUID[Compendium.pf2e.actionspf2e.Item.Destructive
+    Vengeance] Relentless Reaction (9th Level) An enemy damaged by the initial reaction's
+    damage also takes persistent spirit damage equal to your Charisma modifier. (This
+    applies only to the damage the reaction itself deals, not the damage you deal
+    with subsequent Strikes.) Exalted Reaction (11th Level) Each enemy in your champion's
+    aura other than the triggering creature takes half the damage you deal to the
+    triggering enemy
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 98d1195eb518c84aa7763c8ae5d9c246521a67f570196824f5612c6aa9859b8d
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Destructive Vengeance
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"or":["class:champion","feat:champions-reaction"]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.actionspf2e.Item.Destructive
+      Vengeance"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Destructive Vengeance
+    SourceId: 
+    DisplayName: Destructive Vengeance
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

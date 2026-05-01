@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_XQp3uReCgoXS8hCJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: XQp3uReCgoXS8hCJ
+  Slug: ironhoof-centaur
+  DisplayName: Ironhoof Centaur
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your hooves are incredibly strong and serve as formidable weapons.
+    You gain a hoof unarmed attack that deals 1d6 bludgeoning damage. Your hooves
+    are in the brawling group and have the finesse and unarmed traits.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 645251997e8d76d39d7349d94517178f1c15d92ccccac8b6cbfe4a0031df2909
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d6"}},"group":"brawling","img":"icons/sundries/misc/horseshoe-iron.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Hoof","slug":"hoof","traits":["finesse","unarmed"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.pJkQlFTvpQ5GjZ5e
+    SourceId: 
+    Slug: centaur
+    DisplayName: Centaur
+  ParentAncestryAsset: {fileID: 11400000, guid: 123a536b34b859a428fe590fb60ad26b, type: 2}
+  GrantedFeatures: []

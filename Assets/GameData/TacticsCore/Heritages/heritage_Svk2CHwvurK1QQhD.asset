@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_Svk2CHwvurK1QQhD
+  m_EditorClassIdentifier: 
+  SourceId: Svk2CHwvurK1QQhD
+  Slug: naari
+  DisplayName: Naari
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You descend from fire elementals or bear the mark of the Inner Spheres,
+    and your features illustrate the influence that elemental fire has over you.
+    You gain the naari trait, in addition to the traits from your ancestry. You gain
+    resistance to fire equal to half your level (minimum 1), and you treat environmental
+    heat effects as if they were one step less severe (incredible heat becomes extreme,
+    extreme heat becomes severe, and so on). You can choose from naari feats and
+    feats from your ancestry whenever you gain an ancestry feat.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 278a74b6f1314d1f9d1154253f5c03463da5264718ad3eaa09d8191d6c7f6b88
+  Traits:
+  - naari
+  TraitsLower:
+  - naari
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"fire","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

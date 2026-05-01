@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_yksPhweBZYVCsE1A
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: yksPhweBZYVCsE1A
+  Slug: familiar-witch
+  DisplayName: Familiar (Witch)
+  IconPath: systems/pf2e/icons/features/classes/familiar.webp
+  Description: 'Your patron has sent you a familiar, a mystical creature that teaches
+    you magic and facilitates your spells. This familiar follows the rules for familiars,
+    though as it''s a direct conduit between you and your patron, it''s more powerful
+    than typical familiars. Your familiar gains two additional familiar abilities:
+    one of these is a unique ability based on your patron and is always selected,
+    and the other is an additional familiar ability that can be selected daily as
+    normal. Your familiar gains another extra ability at 6th, 12th, and 18th levels.
+    Spells: Your familiar is the source and repository of the spells your patron
+    has bestowed upon you, and you must commune with your familiar to prepare your
+    spells each day using your witch spellcasting. Your familiar starts off knowing
+    10 cantrips, five 1st-rank spells, and one additional spell determined by your
+    patron''s initial lesson. You choose these spells from the common spells of the
+    tradition determined by your patron or from other spells of that tradition you
+    gain access to. Each time you gain a level, your patron teaches your familiar
+    two new spells of any rank for which you have spell slots, chosen from common
+    spells of your tradition or others you gain access to. Feats can also grant your
+    familiar additional spells. Learning Spells: Your familiar can learn new spells
+    independently of your patron. It can learn any spell on your tradition''s spell
+    list by physically consuming a written version of that spell over the course
+    of 1 hour. This can be a scroll of that spell, or you can prepare a written version
+    using the Learn a Spell exploration activity. You and your familiar can use the
+    Learn a Spell activity to teach your familiar a spell from another witch''s familiar.
+    Both familiars must be present for the entirety of the activity, the spell must
+    be on your spellcasting tradition''s spell list, and you must pay the usual cost
+    for that activity, typically in the form of an offering to the other familiar''s
+    patron. You can''t prepare spells from another witch''s familiar. Undying: If
+    your familiar dies, your patron replaces it during your next daily preparations.
+    The new familiar might be a duplicate or reincarnation of your former familiar
+    or a new entity altogether, but it knows the same spells your former familiar
+    knew regardless. Your familiar''s death doesn''t affect any spells you have already
+    prepared.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2e903fa5c0ab97562b49eab3aeb8fe2dfeeac6a657eed2cb5a406ad3eda4625c
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.attributes.familiarAbilities.value
+    Mode: add
+    Value: '"2 + min(3,floor(@actor.level / 6))"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.attributes.familiarAbilities.value","predicate":["class:witch"],"value":"2
+      + min(3,floor(@actor.level / 6))"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Pet
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Pet"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pet
+    SourceId: 
+    DisplayName: Pet
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_l5Kj0owzxfPcTvIb
+  m_EditorClassIdentifier: 
+  SourceId: l5Kj0owzxfPcTvIb
+  Slug: unsponsored
+  DisplayName: Unsponsored
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You have aspirations of attending the Magaambya academy of magic,
+    but fate seemed to thwart you at every turn. You were unable to obtain a sponsorship
+    and lost a collection of helpful textbooks to unexpected insect damage. You nevertheless
+    made the long trip to Nantambu through terrible weather, uncharacteristically
+    bad roads, and indifferent fellow travelers. Yet you have persevered. Now that
+    you are here, alone but determined, you won''t let anything stand in your way.
+    Choose two attribute boosts. One must be to Constitution or Charisma , and one
+    is a free attribute boost. You''re trained in your choice of the Diplomacy or
+    Intimidation skill. You gain a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Group
+    Impression] if you chose Diplomacy or @UUID[Compendium.pf2e.feats-srd.Item.Intimidating
+    Glare] if you chose Intimidation. You''re also trained in Academia Lore. Your
+    recommended primary branch is the Tempest-Sun Mages.'
+  SourceTitle: Pathfinder Strength of Thousands Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 1de477e97b554ff0a2e9f663dd99fa2d00004766da232be878c6cc1e5ed71b07
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Diplomacy","value":"diplomacy"},{"label":"PF2E.Skill.Intimidation","value":"intimidation"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"unsponsored"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    Json: '{"key":"GrantItem","predicate":["unsponsored:diplomacy"],"uuid":"Compendium.pf2e.feats-srd.Item.Group
+      Impression"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    Json: '{"key":"GrantItem","predicate":["unsponsored:intimidation"],"uuid":"Compendium.pf2e.feats-srd.Item.Intimidating
+      Glare"}'
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Academia Lore
+    Rank: 1
+  LoreSkills:
+  - Academia Lore
+  GrantedFeats: []

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_cnbwtbDmlD0KoLqY
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: cnbwtbDmlD0KoLqY
+  Slug: insightful-goloma
+  DisplayName: Insightful Goloma
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You've learned to watch for telltale signs of dangerous sentiments
+    to help you avoid trouble. You gain a +1 circumstance bonus to your Perception
+    DC against attempts to Lie to you and your Perception checks to Sense Motive.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 5f112f3cdbd880a774ae079538449573aa1413fe1e46049f533709805cf39e57
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:sense-motive"],"selector":"perception","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.c4secsSNG2AO7I5i
+    SourceId: 
+    Slug: goloma
+    DisplayName: Goloma
+  ParentAncestryAsset: {fileID: 11400000, guid: ea7c7786010caad46aa3cbd1ce98770e, type: 2}
+  GrantedFeatures: []

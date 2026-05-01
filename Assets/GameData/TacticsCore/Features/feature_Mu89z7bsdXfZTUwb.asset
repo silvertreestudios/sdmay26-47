@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Mu89z7bsdXfZTUwb
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Mu89z7bsdXfZTUwb
+  Slug: the-deft
+  DisplayName: The Deft
+  IconPath: icons/skills/ranged/dagger-thrown-jeweled-purple.webp
+  Description: Speed, subtlety, and precision. Your feet rush as fast as a gale,
+    but your fingers touch as lightly as a breeze. You are trained in Thievery. After
+    you Spark Transcendence, you can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Steal]
+    or @UUID[Compendium.pf2e.actionspf2e.Item.Palm an Object]. When you Spark Transcendence,
+    you can Interact as a free action to reload or draw a weapon ikon, either directly
+    before or directly after your transcendence action. The weapon ikon must be a
+    ranged weapon with the reload trait or a one-handed melee weapon with the thrown
+    trait.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 23d8d5224cde5203927026fcd14678205c82dd36c7fd2f03bc0f7884cde14236
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.theivery.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.theivery.rank","value":1}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"the-deft"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.TheDeft.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:the-deft"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.TheDeft.Description"}]}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_9pK15dQJVypSCjzO
+  m_EditorClassIdentifier: 
+  SourceId: 9pK15dQJVypSCjzO
+  Slug: blessed
+  DisplayName: Blessed
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You have been blessed by a divinity. For an unknown reason, and irrespective
+    of your actual beliefs, a deity has granted you a boon to use for good or ill.
+    Your blessing grants wisdom and insight to aid you in your struggles. You may
+    or may not even know the identity of the being who blessed you, and the blessing
+    might come with a cost you discover later on. Choose two attribute boosts. One
+    must be to Wisdom or Charisma , and one is a free attribute boost. You are trained
+    in a Lore skill associated with the deity who blessed you (such as Shelyn Lore)
+    if you know their identity, or else in a Lore skill of the GM's choice if you
+    don't. Either you can cast @UUID[Compendium.pf2e.spells-srd.Item.Guidance] as
+    a divine innate spell at will, or you gain a similar blessing determined by the
+    GM.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: f9817dba7c28eb4b1bb51126751684e7b3f94cf1585e059a3c83cacb540d3530
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Deity> or <GM Choice> Lore
+    Rank: 1
+  LoreSkills:
+  - <Deity> or <GM Choice> Lore
+  GrantedFeats: []

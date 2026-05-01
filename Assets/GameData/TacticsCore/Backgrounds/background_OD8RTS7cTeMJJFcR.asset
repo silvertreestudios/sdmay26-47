@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_OD8RTS7cTeMJJFcR
+  m_EditorClassIdentifier: 
+  SourceId: OD8RTS7cTeMJJFcR
+  Slug: learned-guard-prodigy
+  DisplayName: Learned Guard Prodigy
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: For some, the nuts and bolts of keeping the peace are practically
+    second nature. Such is the case for you, a member of the Learned Guard with an
+    incredible mind for investigation as well as a gift for understanding magic.
+    You probably aren't a hit with your peers, who find your intellect and natural
+    gift of deduction perhaps a bit off-putting, but when left to your own devices
+    you excel, and you get along well with professors and mages such as those who
+    work in Forae Logos or the Arcanamirium. After no shortage of debating the pros
+    and cons, you decided to transfer to the Edgewatch precinct. Sure, you have a
+    keen understanding of the theories and principles behind law enforcement, but
+    you've reasoned that in order to be a truly effective guard you'll need some
+    first-hand experience in a high-risk area nabbing suspects and protecting innocents-
+    all the while taking fastidious notes and writing your grand thesis on the merits
+    and shortcomings of Absalom's laws. Choose two attribute boosts. One must be
+    to Intelligence or Wisdom , and one is a free attribute boost. You're trained
+    in your choice of the Arcana or Occultism skill, as well as Legal Lore. You gain
+    a +1 circumstance bonus to Deception, Diplomacy, and Intimidation checks to interact
+    with Learned Guards and with academics such as librarians and scholars. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Recognize Spell] skill feat.
+  SourceTitle: Pathfinder Agents of Edgewatch Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 7a61cfd17ff61f8bd88615233381f30fab638b5c93339f21c2c9e41dde2f54ee
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Interacting with Learned Guards or scholars
+      (Learned Guard Prodigy)","predicate":[{"or":["target:learned-guard","target:scholar"]}],"selector":["deception","diplomacy","intimidation"],"type":"circumstance","value":1}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Arcana","value":"arcana"},{"label":"PF2E.Skill.Occultism","value":"occultism"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Legal Lore
+    Rank: 1
+  LoreSkills:
+  - Legal Lore
+  GrantedFeats:
+  - SourceKey: o4rw8
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Recognize Spell
+    SourceId: 
+    DisplayName: Recognize Spell
+    Level: 1
+    ResolvedFeature: {fileID: 0}

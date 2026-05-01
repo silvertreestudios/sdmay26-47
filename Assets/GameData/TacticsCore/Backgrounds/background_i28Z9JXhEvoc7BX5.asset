@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_i28Z9JXhEvoc7BX5
+  m_EditorClassIdentifier: 
+  SourceId: i28Z9JXhEvoc7BX5
+  Slug: refugee-pc2
+  DisplayName: Refugee (PC2)
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You come from a land very distant from the one you now find yourself
+    in, driven by war, plague, or simply in the pursuit of opportunity. Regardless
+    of your origin or the reason you left your home, you find yourself an outsider
+    in this new land. Adventuring is a way to support yourself while offering hope
+    to those who need it most. Choose two attribute boosts. One must be to Constitution
+    or Wisdom , and one is a free attribute boost. You're trained in the Society
+    skill and a Lore skill related to the settlement you came from. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Streetwise] skill feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 40372dc1f4c32a71367ed800c93b6a4de29c9ce7ea7fff6012e393f01f8420d9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <City> Lore
+    Rank: 1
+  LoreSkills:
+  - <City> Lore
+  GrantedFeats:
+  - SourceKey: 17wwh
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Streetwise
+    SourceId: 
+    DisplayName: Streetwise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

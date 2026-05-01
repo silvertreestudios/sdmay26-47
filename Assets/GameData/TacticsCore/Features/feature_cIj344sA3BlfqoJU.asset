@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_cIj344sA3BlfqoJU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: cIj344sA3BlfqoJU
+  Slug: born-of-the-bones-of-the-earth
+  DisplayName: Born of the Bones of the Earth
+  IconPath: icons/magic/earth/strike-fist-stone.webp
+  Description: Your dominion is over stone and soil, the pillars holding up the stage
+    of history's great legends. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Energized
+    Spark] feat for your choice of earth or fire. When you critically succeed on
+    a Strike and the target of the critical hit is standing on a surface of earth
+    or stone, the target is driven down and mired in the ground. The target is @UUID[Compendium.pf2e.conditionitems.Item.Immobilized]
+    and must succeed at an @UUID[Compendium.pf2e.actionspf2e.Item.Escape] attempt
+    against your class DC to end the immobilization. The creature doesn't become
+    stuck if it is incorporeal, is liquid (like a water elemental or some oozes),
+    has a burrow speed, or could otherwise escape without effort. When you Spark
+    Transcendence while standing on a surface of earth or stone, you can choose to
+    shatter the surface in a @Template[type:emanation|distance:10], making it difficult
+    terrain. You are not affected by this difficult terrain.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a1da7bcb67267da15526ede87bd249fd0e8882b7d65719119b5c6fa453e308f3
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitEarth","value":"earth"},{"label":"PF2E.TraitFire","value":"fire"}],"flag":"energizedSpark","key":"ChoiceSet"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Energized Spark
+    Json: '{"key":"GrantItem","preselectChoices":{"energizedSpark":"{item|flags.pf2e.rulesSelections.energizedSpark}"},"uuid":"Compendium.pf2e.feats-srd.Item.Energized
+      Spark"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"born-of-the-bones-of-the-earth"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.BornOfTheBonesOfTheEarth.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:born-of-the-bones-of-the-earth"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.BornOfTheBonesOfTheEarth.Description"}]}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.CriticalSpecializationToggle","option":"epithet-critical-specialization","priority":51,"toggleable":true}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["epithet-critical-specialization"]}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alternate":true,"key":"CriticalSpecialization","predicate":["epithet-critical-specialization"],"text":"PF2E.SpecificRule.Exemplar.Epithet.BornOfTheBonesOfTheEarth.CriticalSpecialization"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Energized Spark
+    SourceId: 
+    DisplayName: Energized Spark
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

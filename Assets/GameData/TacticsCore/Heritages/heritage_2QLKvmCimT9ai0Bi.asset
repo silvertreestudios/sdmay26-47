@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_2QLKvmCimT9ai0Bi
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 2QLKvmCimT9ai0Bi
+  Slug: thickskin-tripkee
+  DisplayName: Thickskin Tripkee
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your thick leathery skin resembles that of a toad. You gain 8 Hit
+    Points from your ancestry instead of 6. You gain a +1 circumstance bonus to saves
+    against diseases and poisons.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 52099878522d752d1bf10d137cdce1b6e2bfc5d4ff48da5726748b7e86a4a5f3
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.attributes.ancestryhp
+    Mode: upgrade
+    Value: 8
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.attributes.ancestryhp","priority":51,"value":8}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["item:trait:disease","item:trait:poison"]}],"selector":"saving-throw","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.hXM5jXezIki1cMI2
+    SourceId: 
+    Slug: tripkee
+    DisplayName: Tripkee
+  ParentAncestryAsset: {fileID: 11400000, guid: 22df9819c61ea9443bd8eb1984c77367, type: 2}
+  GrantedFeatures: []

@@ -1,9 +1,9 @@
-using PathfinderTactics.Actions;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Actions;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Combat
+namespace TacticsGame.Combat
 {
     /// <summary>
     /// Static utility for standardizing high-fidelity combat feedback in the Unity console.

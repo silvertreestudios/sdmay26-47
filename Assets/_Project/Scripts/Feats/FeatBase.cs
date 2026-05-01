@@ -1,8 +1,8 @@
+using TacticsGame.Characters;
 using UnityEngine;
-using PathfinderTactics.Characters;
 
 //All feats should implment this interface, can modify it as needed, and include methods that do nothing for some feats in neccesarry
-namespace PathfinderTactics.Feats
+namespace TacticsGame.Feats
 {
     public interface FeatBase
     {

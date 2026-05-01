@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2dd8c8ce25e394197be78e39183700, type: 3}
+  m_Name: Ranger_Ranger_LegLeft
+  m_EditorClassIdentifier: 
+  PartID: ranger_ranger_legleft
+  DisplayName: Ranger LegLeft
+  Slot: 4
+  Icon: {fileID: 0}
+  IsStaticMesh: 0
+  SharedMesh: {fileID: -2363591808535286382, guid: 9ac9c2624d9447246a83256484fd9a0a, type: 3}
+  Materials:
+  - {fileID: 8353225005662577125, guid: 9ac9c2624d9447246a83256484fd9a0a, type: 3}

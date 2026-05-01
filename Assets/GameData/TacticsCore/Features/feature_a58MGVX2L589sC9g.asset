@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_a58MGVX2L589sC9g
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: a58MGVX2L589sC9g
+  Slug: psychic-weapon-specialization
+  DisplayName: Psychic Weapon Specialization
+  IconPath: systems/pf2e/icons/features/classes/weapon-specialization.webp
+  Description: As you touch a weapon, you glimpse the hands that made and wielded
+    it, teaching you how to inflict greater injuries. You deal 2 additional Damage
+    with weapons and unarmed attacks in which you are an expert. This damage increases
+    to 3 if you're a master, and 4 if you're legendary.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f1af038a15825d91971613a0761d11705e8a78e99ea9b6e520b9219a916793cb
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"hideIfDisabled":true,"key":"FlatModifier","label":"PF2E.WeaponSpecialization","predicate":[{"gte":["item:proficiency:rank",2]}],"selector":"strike-damage","slug":"weapon-specialization","value":2}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["item:proficiency:rank:3"],"priority":0,"selector":"strike-damage","slug":"weapon-specialization","value":3}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 4
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["item:proficiency:rank:4"],"priority":0,"selector":"strike-damage","slug":"weapon-specialization","value":4}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"feature:weapon-specialization"}'
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

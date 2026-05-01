@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_D8CSi8c9XiRpVc5M
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: D8CSi8c9XiRpVc5M
+  Slug: alertness
+  DisplayName: Alertness
+  IconPath: icons/creatures/eyes/human-single-blue.webp
+  Description: Experience has made you increasingly aware of threats around you,
+    and you react more quickly to danger. Your proficiency rank for Perception increases
+    to expert.
+  SourceTitle: Pathfinder Core Rulebook
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 04dec8de483c3b4346b6d39e864127b17dbdd9df02637db1154b88f8b3543f9e
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules: []
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: perception
+    Rank: 2
+  FocusPointDelta: 0

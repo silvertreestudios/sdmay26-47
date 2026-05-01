@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_CPUunLbsBjRgfS10
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: CPUunLbsBjRgfS10
+  Slug: thespian-s-calling
+  DisplayName: Thespian's Calling
+  IconPath: icons/equipment/head/mask-craved-beige.webp
+  Description: All the world is a stage, and you're no mere player, but a playwright
+    whose story may change the course of history. When you use Performance to @UUID[Compendium.pf2e.actionspf2e.Item.Perform]
+    or @UUID[Compendium.pf2e.actionspf2e.Item.Earn Income], you can spend a Mythic
+    Point to attempt the check at mythic proficiency. The first time each day that
+    you critically succeed on a check to Perform, you regain a Mythic Point. Edicts
+    master new performances, seek opportunities to perform in front of new audiences,
+    support other performers Anathema deny a call for an encore performance, refuse
+    a request to perform in front of an audience, sabotage another performer
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: 7ead305b2f99571c066c4592c80fc5c2ad01739840281caef7e54448ab8651d0
+  Traits:
+  - calling
+  - mythic
+  TraitsLower:
+  - calling
+  - mythic
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Rewrite Fate"}'
+  Category: 0
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    SourceId: 
+    DisplayName: Rewrite Fate
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

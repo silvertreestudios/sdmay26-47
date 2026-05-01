@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_Kq3k1Z6IWGVsLrmg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: Kq3k1Z6IWGVsLrmg
+  Slug: lahkgyan-vanara
+  DisplayName: Lahkgyan Vanara
+  IconPath: icons/creatures/abilities/mouth-teeth-long-red.webp
+  Description: 'Your vanara ancestors might have been born in Ragdya''s image, but
+    they found survival only in service to his enemy: the red-faced Lahkgya. You
+    have sharp teeth meant for gnashing and ripping into flesh. You can subsist on
+    raw meat alone. You have a jaws unarmed attack that deals 1d6 piercing damage.
+    Your jaws are in the brawling group and have the finesse and unarmed traits.'
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 3935a8c1d100a21ae723c6232c7fb0e181e9d1d7b05443fa50e86df86caaea5e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"jaws","category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d6"}},"group":"brawling","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","range":null,"slug":"jaws","traits":["finesse","unarmed"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cLtOGIkuSSa4UDHY
+    SourceId: 
+    Slug: vanara
+    DisplayName: Vanara
+  ParentAncestryAsset: {fileID: 11400000, guid: 7789c15146276d844a6b43feecba1956, type: 2}
+  GrantedFeatures: []

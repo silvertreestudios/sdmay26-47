@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_uwZ0emSBFNMGA74j
+  m_EditorClassIdentifier: 
+  SourceId: uwZ0emSBFNMGA74j
+  Slug: tall-tale
+  DisplayName: Tall Tale
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've ridden a tornado, lassoed a river, mooned a dragon under a
+    full moon, and shot six zombies with one bullet. That's what the stories say,
+    anyway, and even if people don't strictly believe them, they are curious about
+    you. Certainly, the stories keep spreading, and it would appear that you either
+    have a unique destiny or are trying to convince the world that you do. Choose
+    two attribute boosts. One must be to Constitution or Charisma , and one is a
+    free attribute boost. You're trained in Performance. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Impressive
+    Performance] skill feat. You can gain the @UUID[Compendium.pf2e.feats-srd.Item.Leverage
+    Connections] skill feat later without being expert in Society or having Courtly
+    Graces-this represents less traditional social connections and more the way that
+    your legend has spread, and you've learned to leverage your legend, with people
+    wanting to meet you and see you for themselves.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: b063ef1701167cf58e93a33a2347fa3622d82adfcf6249331f0e667f155bf7cc
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: xvz64
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Impressive Performance
+    SourceId: 
+    DisplayName: Impressive Performance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

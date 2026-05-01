@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_YPxpk9JbMnKjbNLc
+  m_EditorClassIdentifier: 
+  SourceId: YPxpk9JbMnKjbNLc
+  Slug: monk
+  DisplayName: Monk
+  IconPath: systems/pf2e/icons/classes/monk.webp
+  Description: The strength of your fist flows from your mind and spirit. You seek
+    perfection-honing your body into a flawless instrument and your mind into an
+    orderly bastion of wisdom. You're a fierce combatant renowned for martial arts
+    skills and combat stances that grant you unique fighting moves. While the challenge
+    of mastering many fighting styles drives you to great heights, you also enjoy
+    meditating on philosophical questions and discovering new ways to obtain peace
+    and enlightenment. Monk
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 79b1ab51250de2e4b26526c353a0b93668c17704d6b502a74e8459ef6f1d74db
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 10
+  KeyAttributes: 0200000001000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 2
+  - Group: 1
+    Rank: 0
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills: []
+  AdditionalSkillCount: 4
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: c8q3r
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Flurry of Blows
+    SourceId: NLHHHiAcdnZ5ohc2
+    DisplayName: Flurry of Blows
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 55bb2968b198819429b9b6a83d1db11e, type: 2}
+  - SourceKey: iqbky
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Powerful Fist
+    SourceId: SB8UJ8rZmvbcBweJ
+    DisplayName: Powerful Fist
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 2337fc02c415c534dba769a7a1144476, type: 2}
+  GrantedFeatures:
+  - SourceKey: 1fw9s
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Mystic Strikes
+    SourceId: D2AE8RfMlZ3D1FuV
+    DisplayName: Mystic Strikes
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: a8cc212de4404bc42a284ed07f6a699a, type: 2}
+  - SourceKey: 2yqet
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 3ohvk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Second Path to Perfection
+    SourceId: y6qnbUc8y0815QNE
+    DisplayName: Second Path to Perfection
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 83e27574aa441934aa0d564679c5f3f2, type: 2}
+  - SourceKey: 4ru9g
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: 
+    DisplayName: Greater Weapon Specialization (Level 15)
+    Level: 15
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 8tl8t
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Incredible Movement
+    SourceId: Cq6NjvcKZOMySBVj
+    DisplayName: Incredible Movement
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: cc3356ded1e31f74d93ec950bec6e2e5, type: 2}
+  - SourceKey: ai4sq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Strikes
+    SourceId: VgZIutWjFl8oZQFi
+    DisplayName: Expert Strikes
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: b471ac6d8b7aa7740ad4954e277ee0ea, type: 2}
+  - SourceKey: c8q3r
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Flurry of Blows
+    SourceId: NLHHHiAcdnZ5ohc2
+    DisplayName: Flurry of Blows
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 55bb2968b198819429b9b6a83d1db11e, type: 2}
+  - SourceKey: dZCTM
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: dzcvw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Graceful Legend
+    SourceId: JWDfzYub3JfuEtth
+    DisplayName: Graceful Legend
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 944c0fa70c95f6243aaec114f88f5a14, type: 2}
+  - SourceKey: iqbky
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Powerful Fist
+    SourceId: SB8UJ8rZmvbcBweJ
+    DisplayName: Powerful Fist
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 2337fc02c415c534dba769a7a1144476, type: 2}
+  - SourceKey: k3mxz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Graceful Mastery
+    SourceId: 95LI24ZSx0d4qfKX
+    DisplayName: Graceful Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 5b4c3fe674ea3cf48a0edcbde1c63f20, type: 2}
+  - SourceKey: t4zic
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Monk Expertise
+    SourceId: lxImO5D0qWp0gXFB
+    DisplayName: Monk Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 2f1f83755a25d0b4e823d141493f80d7, type: 2}
+  - SourceKey: udbeu
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Metal Strikes
+    SourceId: CoRfFkisEsHE1e43
+    DisplayName: Metal Strikes
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: d2bb1b1180707a447a5573beafda02c4, type: 2}
+  - SourceKey: xcxpa
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Adamantine Strikes
+    SourceId: 5cthRUkRqRtduVvN
+    DisplayName: Adamantine Strikes
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 88e3076072c37f242b3e63fa59385908, type: 2}
+  - SourceKey: z0s0v
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Path to Perfection
+    SourceId: 1K6m6AVmn3r8XZ9d
+    DisplayName: Path to Perfection
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 2004817ddff0b4945b8690f6a231a057, type: 2}
+  - SourceKey: zeyz5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perfected Form
+    SourceId: KmTfg7Sg5va4yU00
+    DisplayName: Perfected Form
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 15b71a4bd5151e041a420451124d56c5, type: 2}
+  - SourceKey: zgtbz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Third Path to Perfection
+    SourceId: haoTkr2U5k7kaAKN
+    DisplayName: Third Path to Perfection
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 917291dd64dceae42afd1edd4b8377d5, type: 2}
+  - SourceKey: zl9gg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Strikes
+    SourceId: 0iidKkzC2yy13lIf
+    DisplayName: Master Strikes
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: e3e84e368b8e4ef42b7653abc4d6f382, type: 2}

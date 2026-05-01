@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_eGPlKAoYBTUqjyrr
+  m_EditorClassIdentifier: 
+  SourceId: eGPlKAoYBTUqjyrr
+  Slug: tomb-born
+  DisplayName: Tomb Born
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Your parents conceived you for a fell purpose at a site tainted by
+    death, like a wight's barrow, mass grave, or ossuary. Their reasons could be
+    a mystery, or you might know of their grand design and seek to escape-or fulfill-their
+    plans. Either way, you're at your most dangerous when near death. Choose two
+    attribute boosts. One must be to Dexterity or Constitution , and one is a free
+    attribute boost. You're trained in the Undead Lore skill. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Final
+    Spite] reaction.
+  SourceTitle: Pathfinder Book of the Dead
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 117e5efdc26bfe8817b6f6d4f52ab54f13a33af60d25be1dda26910ddc0ba5a6
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Final Spite
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Final Spite"}'
+  AttributeBoosts:
+  - Options: 0300000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Undead
+    Rank: 1
+  LoreSkills:
+  - Undead
+  GrantedFeats: []

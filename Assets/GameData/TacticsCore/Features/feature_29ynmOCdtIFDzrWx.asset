@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_29ynmOCdtIFDzrWx
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 29ynmOCdtIFDzrWx
+  Slug: lesson-of-the-frozen-queen
+  DisplayName: Lesson of the Frozen Queen
+  IconPath: icons/magic/water/heart-ice-freeze.webp
+  Description: You gain the @UUID[Compendium.pf2e.spells-srd.Item.Glacial Heart]
+    hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Wall of Ice].
+  SourceTitle: Pathfinder Lost Omens Legends
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: 2822ee5f475c3e0776346bf78b696cda7782044b905622e3b15ccf1791d0f602
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 10
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

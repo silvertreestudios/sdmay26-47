@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_iaM6TjvijLCgiHeD
+  m_EditorClassIdentifier: 
+  SourceId: iaM6TjvijLCgiHeD
+  Slug: returning-descendant
+  DisplayName: Returning Descendant
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You aren't from Breachill yourself-you might not even be from Isger
+    or Avistan at all. You've lived a hard life, in any event. You have often had
+    to make tough decisions, and have developed a knack for understanding how things
+    work (and the best way to take them apart) that has helped you support yourself.
+    Recently you discovered that an ancestor was from the town of Breachill and had
+    a modest career as an adventurer. You can't help but wonder if you would have
+    had an easier life if you'd grown up there instead, and have decided to seek
+    out this small town to learn more about it. You've decided to respond to the
+    Call for Heroes to follow in your ancestor's footsteps, either to honor their
+    memory or accomplish the great deeds they did not. Choose two attribute boosts.
+    One must be to Dexterity or Wisdom , and one is a free attribute boost. You're
+    trained in the Thievery skill and the Engineering Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Pickpocket]
+    skill feat.
+  SourceTitle: Pathfinder Age of Ashes Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: c4b7356439e0d0a342209b197656c1db15526244b0355fddcffb752b35deee09
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 17
+    CustomSkillId: thievery
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering Lore
+    Rank: 1
+  LoreSkills:
+  - Engineering Lore
+  GrantedFeats:
+  - SourceKey: g5mpz
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pickpocket
+    SourceId: 
+    DisplayName: Pickpocket
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_EEvA4uj8h3zDiAfP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: EEvA4uj8h3zDiAfP
+  Slug: treedweller-goblin
+  DisplayName: Treedweller Goblin
+  IconPath: systems/pf2e/icons/features/ancestry/treedweller-goblin.webp
+  Description: You have adapted particularly well to living in forested environments.
+    As long as you are in a forest or jungle, you gain a +2 circumstance bonus to
+    Stealth checks to @UUID[Compendium.pf2e.actionspf2e.Item.Hide] and @UUID[Compendium.pf2e.actionspf2e.Item.Sneak],
+    Survival checks to @UUID[Compendium.pf2e.actionspf2e.Item.Subsist], and your
+    Survival DC to @UUID[Compendium.pf2e.actionspf2e.Item.Cover Tracks].
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: fd3d78bbf1b81188b8b32e56ae1b6e4cc2864da211276c826afe98441162953a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Treedweller Goblin (Subsist)","predicate":["action:subsist"],"selector":"survival","type":"circumstance","value":2}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Treedweller Goblin (Hide or Sneak)","predicate":[{"or":["action:hide","action:sneak"]}],"selector":"stealth","type":"circumstance","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.sQfjTMDaZbT9DThq
+    SourceId: 
+    Slug: goblin
+    DisplayName: Goblin
+  ParentAncestryAsset: {fileID: 11400000, guid: 06394c9c758154f4f9f55b529d6315ca, type: 2}
+  GrantedFeatures: []

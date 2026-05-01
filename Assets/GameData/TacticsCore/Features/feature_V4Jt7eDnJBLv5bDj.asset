@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_V4Jt7eDnJBLv5bDj
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: V4Jt7eDnJBLv5bDj
+  Slug: field-discovery-mutagenist
+  DisplayName: Field Discovery (Mutagenist)
+  IconPath: icons/consumables/potions/potion-jug-corked-skull-poison-brown-green.webp
+  Description: The mutagens flowing through your blood have altered your body chemistry.
+    When you roll a Fortitude save while affected by a mutagen and dislike the result,
+    you can end the effect of the mutagen to reroll the save. This is a fortune effect.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d97f2229635d8193595e1b6e76737650f580cd2c3c32017f75f940029cd9c038
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

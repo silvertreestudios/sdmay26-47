@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_EKY9v7SF1hVsUdbH
+  m_EditorClassIdentifier: 
+  SourceId: EKY9v7SF1hVsUdbH
+  Slug: changeling
+  DisplayName: Changeling
+  IconPath: systems/pf2e/icons/features/ancestry/changeling.webp
+  Description: Your mother was a hag. Your eyes' heterochromia is the most obvious
+    signifier of this parentage, but you likely also have a slighter build, paler
+    skin, and darker hair than most members of your other parent's ancestry. You
+    gain the changeling trait. You also gain low-light vision, or you gain darkvision
+    if your ancestry already has low-light vision. You can select from changeling
+    feats and feats from your other parent's ancestry whenever you gain an ancestry
+    feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: ee6bd066e896f084af17456cb2a9982f344d56862bb173b2480d12437d855561
+  Traits:
+  - changeling
+  TraitsLower:
+  - changeling
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"low-light-vision"}'
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","predicate":["self:low-light-vision:from-ancestry"],"selector":"darkvision"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

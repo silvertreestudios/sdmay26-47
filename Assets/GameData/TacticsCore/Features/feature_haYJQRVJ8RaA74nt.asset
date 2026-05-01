@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_haYJQRVJ8RaA74nt
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: haYJQRVJ8RaA74nt
+  Slug: shaman
+  DisplayName: Shaman
+  IconPath: icons/creatures/magical/spirit-mischief-fire-blue.webp
+  Description: 'You form close bonds with your apparitions that allow you to invest
+    them with the rare ability to take on a material form and directly affect the
+    physical world. Invocation of Embodiment (1st): You allow your apparition to
+    inhabit a physical form. You gain the Spirit Familiar feat. At 2nd level, you
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Enhanced Familiar] feat. Invocation
+    of Growth (9th): Your bond with the physical form of your chosen apparition grows
+    stronger. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Incredible Familiar]
+    feat. Invocation of Otherworldliness (17th): Your apparition familiar becomes
+    ever more powerful, straddling the line between physical and spiritual. Your
+    spirit familiar can take a single action that has the concentrate trait to become
+    incorporeal for 1 minute. It gains the incorporeal trait, meaning it can move
+    through physical creatures and such creatures can move through it. It can''t
+    attempt Strength-based checks (such as @UUID[Compendium.pf2e.actionspf2e.Item.Grapple])
+    against corporeal creatures, and corporeal creatures can''t attempt such checks
+    against it. It gains immunity to precision damage and resistance to physical
+    damage (except damage from Strikes with the @UUID[Compendium.pf2e.equipment-srd.Item.Ghost
+    Touch] property rune) equal to half your level (double against non-magical damage)
+    but weakness to force damage equal to half your level. However, when incorporeal,
+    your spirit familiar can travel no more than 60 feet from you and must maintain
+    line of effect to you; this typically prevents it from moving through walls.
+    Your spirit familiar can Dismiss this effect.'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 72ab202d0529c5b51841bc9f6d2a3c4886181fc3b917ac661316b8e6ec9ee083
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Spirit Familiar (Animist)
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Spirit Familiar
+      (Animist)"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Enhanced Familiar
+    Json: '{"key":"GrantItem","predicate":[{"gte":["self:level",2]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Enhanced
+      Familiar"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Incredible Familiar (Animist)
+    Json: '{"key":"GrantItem","predicate":[{"gte":["self:level",9]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Incredible
+      Familiar (Animist)"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Spirit Familiar (Animist)
+    SourceId: 
+    DisplayName: Spirit Familiar (Animist)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Enhanced Familiar
+    SourceId: 
+    DisplayName: Enhanced Familiar
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Incredible Familiar (Animist)
+    SourceId: 
+    DisplayName: Incredible Familiar (Animist)
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

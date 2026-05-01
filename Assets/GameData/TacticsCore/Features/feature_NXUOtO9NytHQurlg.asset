@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_NXUOtO9NytHQurlg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: NXUOtO9NytHQurlg
+  Slug: revelation-spells
+  DisplayName: Revelation Spells
+  IconPath: systems/pf2e/icons/features/classes/revelation-spells.webp
+  Description: The powers of your mystery manifest in the form of revelation spells.
+    Revelation spells are a type of focus spell. It costs 1 Focus Point to cast a
+    focus spell. You refill your focus pool during your daily preparations, and you
+    can regain 1 Focus Point by spending 10 minutes using the Refocus activity to
+    search for omens in a way befitting your mystery, like gazing into a fire, throwing
+    bones and seeing how they fall, or meditating to hear the voices of those who
+    came before you. Focus spells are automatically heightened to half your level
+    rounded up, much like cantrips. Focus spells don't require spell slots, and you
+    can't cast them using spell slots. Certain feats give you more focus spells.
+    The maximum Focus Points your focus pool can hold is equal to the number of focus
+    spells you have, but it can never be more than 3 points. You learn a revelation
+    spell at 1st level and start with a focus pool of 1 Focus Point. This spell is
+    an initial revelation spell determined by your mystery. You can learn additional
+    revelation spells through oracle feats.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 779bf32526fff6bb9437b85656da2aae468cdcdeae2573e7fa7df460489cf80d
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

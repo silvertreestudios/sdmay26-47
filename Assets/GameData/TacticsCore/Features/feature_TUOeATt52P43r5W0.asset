@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_TUOeATt52P43r5W0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: TUOeATt52P43r5W0
+  Slug: reflex-expertise
+  DisplayName: Reflex Expertise
+  IconPath: icons/magic/symbols/symbol-lightning-bolt.webp
+  Description: You've developed a knack for dodging danger. Your proficiency rank
+    for Reflex saves increases to expert.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: cff8c7bbeac9e1b656c35737d4131464f6449c76ae3eee67db9ea980597e3a26
+  Traits:
+  - barbarian
+  - bard
+  - champion
+  - cleric
+  - druid
+  - sorcerer
+  - witch
+  - wizard
+  TraitsLower:
+  - barbarian
+  - bard
+  - champion
+  - cleric
+  - druid
+  - sorcerer
+  - witch
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: reflex
+    Rank: 2
+  FocusPointDelta: 0

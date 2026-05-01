@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Characters;
+using TacticsGame.Combat;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Actions
+namespace TacticsGame.Actions
 {
     public class SneakAction : BaseAction
     {
@@ -40,7 +40,7 @@ namespace PathfinderTactics.Actions
 
             cachedStart = start;
 
-            UnitStatsSO stats = unit.GetStats();
+            IUnitDataProvider stats = unit.GetStats();
             if (stats == null)
                 cachedRange = new List<Vector3Int>();
             else

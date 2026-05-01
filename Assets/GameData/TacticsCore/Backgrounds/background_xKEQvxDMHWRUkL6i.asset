@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_xKEQvxDMHWRUkL6i
+  m_EditorClassIdentifier: 
+  SourceId: xKEQvxDMHWRUkL6i
+  Slug: clockwork-researcher
+  DisplayName: Clockwork Researcher
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: New forms of clockwork technology are incredibly interesting to you,
+    and you've been studying examples of them to see where else they might be best
+    put to use. You might eventually develop a new prototype machine or find a way
+    to make related technologies practical enough for everyone to benefit. Though
+    before you do, you must continue your research! Choose two attribute boosts.
+    One must be to Dexterity or Intelligence , and one is a free attribute boost.
+    You're trained in the Society skill and the Engineering Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Crafter's Appraisal] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 024b2acd10c419afbd7b4f901750f90902b788bf91d12d9c51aead1100afd081
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering
+    Rank: 1
+  LoreSkills:
+  - Engineering
+  GrantedFeats:
+  - SourceKey: Xg9l6
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Crafter's Appraisal
+    SourceId: 
+    DisplayName: Crafter's Appraisal
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,6 +1,6 @@
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 
-namespace PathfinderTactics.Spells
+namespace TacticsGame.Spells
 {
     /// <summary>
     /// Roll result carrying the natural die value, computed total, and degree of success.

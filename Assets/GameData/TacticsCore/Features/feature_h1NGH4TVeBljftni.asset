@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_h1NGH4TVeBljftni
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: h1NGH4TVeBljftni
+  Slug: grandeur
+  DisplayName: Grandeur
+  IconPath: icons/magic/light/explosion-beam-impact-silhouette.webp
+  Description: The glowing grandeur of the immaculate celestial realms inspires you,
+    and you exhort their virtues to bring humility to the denizens of other grim
+    worlds. Edicts provide a shining example for others, enjoy and share the beauty
+    around you, keep yourself tidy and well groomed Anathema despoil yourself by
+    associating with fiends and unholy forces. Champion's Reaction @UUID[Compendium.pf2e.actionspf2e.Item.Flash
+    of Grandeur] Relentless Reaction (9th Level) The enemy also takes persistent
+    spirit damage equal to your Charisma modifier, and it can't recover from this
+    persistent damage while affected by the revealing light from your Flash of Grandeur.
+    Exalted Reaction (11th Level) In addition to the enemy affected by Flash of Grandeur,
+    each other enemy in your champion's aura is affected by the revealing light spell
+    for 1 round.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: c1b317172ec7d6117b3ba2a2ae647162088ddbf3ba028b8d9af881c2fd86a072
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Flash of Grandeur
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"or":["class:champion","feat:champions-reaction"]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.actionspf2e.Item.Flash
+      of Grandeur"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Flash of Grandeur
+    SourceId: 
+    DisplayName: Flash of Grandeur
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_3wLnNwWnZ2dHIbV4
+  m_EditorClassIdentifier: 
+  SourceId: 3wLnNwWnZ2dHIbV4
+  Slug: diobel-pearl-diver
+  DisplayName: Diobel Pearl Diver
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Absalom and Starstone Isle You spent a portion
+    of your youth diving and gathering precious pearls under the attentive eyes of
+    Kortos Consortium merchants. Choose two attribute boosts. One must be to Constitution
+    or Dexterity , and one is a free attribute boost. You're trained in the Athletics
+    skill and the Ocean Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Underwater
+    Marauder] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 5b5aa042946e36d1e8288a28a0873ec220e93df7eae515c489554e69d7f64d1d
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Ocean Lore
+    Rank: 1
+  LoreSkills:
+  - Ocean Lore
+  GrantedFeats:
+  - SourceKey: xnsv2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Underwater Marauder
+    SourceId: 
+    DisplayName: Underwater Marauder
+    Level: 1
+    ResolvedFeature: {fileID: 0}

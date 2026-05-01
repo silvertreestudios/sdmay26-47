@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_NLHHHiAcdnZ5ohc2
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: NLHHHiAcdnZ5ohc2
+  Slug: flurry-of-blows
+  DisplayName: Flurry of Blows
+  IconPath: icons/skills/melee/unarmed-punch-fist-yellow-red.webp
+  Description: Make two unarmed Strikes. If both hit the same creature, combine their
+    damage for the purpose of resistances and weaknesses. Apply your multiple attack
+    penalty to the Strikes normally. As a flourish ability, you can use Flurry of
+    Blows only once per turn.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b6e8c8a5deb11d24fa6289fabfa249bb1240231f53172fbb9a494a3b86d0b654
+  Traits:
+  - flourish
+  - monk
+  TraitsLower:
+  - flourish
+  - monk
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

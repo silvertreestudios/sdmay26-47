@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_M89l9FOnjHe63wD7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: M89l9FOnjHe63wD7
+  Slug: arcane-thesis
+  DisplayName: Arcane Thesis
+  IconPath: icons/sundries/scrolls/scroll-writing-tan-grey.webp
+  Description: 'During your studies to become a full-fledged wizard, you produced
+    a thesis of unique magical research. You gain a special benefit depending on
+    the topic of your thesis research. The arcane thesis topics presented in this
+    book are below; your specific thesis probably has a much longer and more technical
+    title like "On the Methods of Spell Interpolation and the Genesis of a New Understanding
+    of the Building Blocks of Magic." @UUID[Compendium.pf2e.classfeatures.Item.Experimental
+    Spellshaping] @UUID[Compendium.pf2e.classfeatures.Item.Improved Familiar Attunement]
+    @UUID[Compendium.pf2e.classfeatures.Item.Spell Blending] @UUID[Compendium.pf2e.classfeatures.Item.Spell
+    Substitution] @UUID[Compendium.pf2e.classfeatures.Item.Staff Nexus]'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8b6af7b1c33709d90c0e1051d11a851b3f347122ea2f0d31d1831c16fd4a36a7
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:wizard-arcane-thesis"]},"flag":"arcaneThesis","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Wizard.ArcaneThesis.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.arcaneThesis}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.arcaneThesis}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.arcaneThesis}'
+    SourceId: 
+    DisplayName: arcaneThesis}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_GgZAHbrjnzWOZy2v
+  m_EditorClassIdentifier: 
+  SourceId: GgZAHbrjnzWOZy2v
+  Slug: halfling
+  DisplayName: Halfling
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/halfling.svg
+  Description: Claiming no place as their own, halflings control few settlements
+    larger than villages. Instead, they frequently live among humans within the walls
+    of larger cities, carving out small communities alongside taller folk. Many halflings
+    lead perfectly fulfilling lives in the shadows of their larger neighbors, while
+    others prefer a nomadic existence, traveling the world and taking advantage of
+    opportunities and adventures as they come. Halfling
+  SourceTitle: Pathfinder Player Core
+  SourcePack: ancestries
+  Rarity: common
+  SourceJsonHash: f504c02acaf6af86965ee4ecb024b897676cbea6bf9fea1415e7e48cfb6b146b
+  Traits:
+  - halfling
+  - humanoid
+  TraitsLower:
+  - halfling
+  - humanoid
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 1
+  Sense: 0
+  CustomSense: 
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 01000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: halfling
+    DisplayName: Halfling
+  AdditionalLanguageOptions:
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: elven
+    DisplayName: Elven
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 3084v
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Keen Eyes
+    SourceId: 
+    DisplayName: Keen Eyes
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: c2311fa30dda3ed42ab3263d55b2d46a, type: 2}
+  - {fileID: 11400000, guid: 571602cfef93a374191c2973be91bcf1, type: 2}
+  - {fileID: 11400000, guid: 717b773e2d59857408677e856fc49d45, type: 2}
+  - {fileID: 11400000, guid: 8e404691f599a6043a09f766b3a25b3c, type: 2}
+  - {fileID: 11400000, guid: c01380a2b368bb041958eed5e0a46038, type: 2}
+  - {fileID: 11400000, guid: 4ccd0ecf952e33b45a611fe6e8a5da2c, type: 2}
+  - {fileID: 11400000, guid: 6be820fba9f4cf84494a7ee12056d8d5, type: 2}

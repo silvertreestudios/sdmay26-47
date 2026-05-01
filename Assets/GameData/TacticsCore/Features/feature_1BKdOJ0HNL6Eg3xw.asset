@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_1BKdOJ0HNL6Eg3xw
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 1BKdOJ0HNL6Eg3xw
+  Slug: greater-field-discovery-mutagenist
+  DisplayName: Greater Field Discovery (Mutagenist)
+  IconPath: icons/consumables/potions/potion-flask-corled-pink-red.webp
+  Description: If you imbibe another mutagen while you are under the effects of a
+    mutagen, you can gain the benefits and the drawbacks of both mutagens at once,
+    despite the fact that they both have the polymorph trait and would not normally
+    function together. If you come under the effects of any further mutagens while
+    benefiting from two mutagens, you lose the benefit of one of the former mutagens
+    of your choice, while retaining the drawbacks of all the mutagens. If you are
+    under the effects of two mutagens and you come under the effect of a non-mutagen
+    polymorph effect, you lose the benefits of the mutagens while retaining the drawbacks
+    of both. Your field vial benefit applies to one mutagen of your choice.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2c2118cc3a9d1c98d1a29d4d23ccfc8290aed4253d1a4fbd8a358a0af6bf571f
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

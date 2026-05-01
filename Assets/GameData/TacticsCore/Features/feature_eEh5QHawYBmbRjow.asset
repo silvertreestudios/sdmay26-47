@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_eEh5QHawYBmbRjow
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: eEh5QHawYBmbRjow
+  Slug: greater-creed
+  DisplayName: Greater Creed
+  IconPath: icons/skills/melee/weapons-crossed-swords-purple.webp
+  Description: Your proficiency ranks for the spell attack modifier and spell DC
+    statistics increase to expert.
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 39e959b7ac0a2e9da7bfe1864a5bc71b8722a2abc6005050b61b0ca3d106afa4
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: spellcasting
+    Rank: 2
+  FocusPointDelta: 0

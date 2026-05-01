@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_vWZaLE2fEKMBw3D5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: vWZaLE2fEKMBw3D5
+  Slug: masterful-hunter-outwit
+  DisplayName: Masterful Hunter (Outwit)
+  IconPath: icons/creatures/invertebrates/spider-web-black.webp
+  Description: 'Masterful Hunter Upgrade Level 17 Your mastery of skills allows you
+    to overwhelm your prey. If you have master proficiency in Deception, Intimidation,
+    Stealth, or the skill you use to Recall Knowledge about your prey, increase the
+    circumstance bonus against the prey with that skill from +2 to +4. If you have
+    master proficiency with your armor, increase the circumstance bonus to AC against
+    the prey from +1 to +2. Automation Notes: The bonus to recall knowledge has been
+    set up for arcana, crafting, nature, occultism, religion, and society only. The
+    bonus to AC is based on your unarmored proficiency, and not on the proficiency
+    of the armor you''re wearing.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 73356df7648f26051d3a5fc34eb5dec84bc3ac0c1ce1b0e188efca5fc664e400
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":2},{"end":2,"start":1,"value":1}],"field":"actor|system.proficiencies.defenses.unarmored.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Vs. attacks from hunted prey (Masterful
+      Hunter)","predicate":["target:mark:hunted-prey"],"selector":"ac","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":2},{"end":2,"start":1,"value":1}],"field":"actor|system.proficiencies.defenses.unarmored.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.deception.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Vs. hunted prey (Masterful Hunter)","predicate":["target:mark:hunted-prey"],"selector":"deception","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.deception.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.intimidation.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Vs. hunted prey (Masterful Hunter)","predicate":["target:mark:hunted-prey"],"selector":"intimidation","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.intimidation.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.stealth.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Vs. hunted prey (Masterful Hunter)","predicate":["target:mark:hunted-prey"],"selector":"stealth","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.stealth.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.arcana.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Recall knowledge on hunted prey (Masterful
+      Hunter)","predicate":["target:mark:hunted-prey","action:recall-knowledge"],"selector":"arcana","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.arcana.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.religion.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Recall knowledge on hunted prey (Masterful
+      Hunter)","predicate":["target:mark:hunted-prey","action:recall-knowledge"],"selector":"religion","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.religion.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.nature.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Recall knowledge on hunted prey (Masterful
+      Hunter)","predicate":["target:mark:hunted-prey","action:recall-knowledge"],"selector":"nature","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.nature.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.occultism.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Recall knowledge on hunted prey (Masterful
+      Hunter)","predicate":["target:mark:hunted-prey","action:recall-knowledge"],"selector":"occultism","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.occultism.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.crafting.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Recall knowledge on hunted prey (Masterful
+      Hunter)","predicate":["target:mark:hunted-prey","action:recall-knowledge"],"selector":"crafting","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.crafting.rank"}}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.society.rank"}'
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Recall knowledge on hunted prey (Masterful
+      Hunter)","predicate":["target:mark:hunted-prey","action:recall-knowledge"],"selector":"society","type":"circumstance","value":{"brackets":[{"end":4,"start":3,"value":4},{"end":2,"start":1,"value":2}],"field":"actor|system.skills.society.rank"}}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

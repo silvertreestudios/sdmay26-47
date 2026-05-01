@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_zPhArF36ZVgLeVUU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: zPhArF36ZVgLeVUU
+  Slug: ancient-scale-azarketi
+  DisplayName: Ancient Scale Azarketi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your lineage stems from azarketis who remain dedicated to their deep-sea
+    roots. Divorced from land society, you're a foreigner to any world above a thousand
+    fathoms deep. You gain darkvision. Your body is dotted with phosphorescent spots
+    that emit a guiding light and help you communicate. The spots - located primarily
+    on your face, arms, and hands - illuminate a 10-foot radius around you with dim
+    light. You can activate, deactivate, or change the arrangement of lights as an
+    action, which has the concentration trait.
+  SourceTitle: Pathfinder Lost Omens Absalom, City of Lost Omens
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ff117fa42b93dbcd51cf0b0a8d5e784c37b6eb01be709245112f7692d735a677
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"darkvision"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: true
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Azarketi.PhosphorescentSpots","option":"phosphorescent-spots","toggleable":true,"value":true}'
+  - Key: TokenLight
+    Path: 
+    Mode: 
+    Value: '{"alpha":0.3,"animation":{"intensity":4,"speed":1,"type":"torch"},"attenuation":0.35,"bright":0,"color":"#b5dedd","dim":10,"luminosity":0.4,"shadows":0.2}'
+    Uuid: 
+    Json: '{"key":"TokenLight","predicate":["phosphorescent-spots"],"value":{"alpha":0.3,"animation":{"intensity":4,"speed":1,"type":"torch"},"attenuation":0.35,"bright":0,"color":"#b5dedd","dim":10,"luminosity":0.4,"shadows":0.2}}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.yFoojz6q3ZjvceFw
+    SourceId: 
+    Slug: azarketi
+    DisplayName: Azarketi
+  ParentAncestryAsset: {fileID: 11400000, guid: 35691cbce9f238047a56788acb89af44, type: 2}
+  GrantedFeatures: []

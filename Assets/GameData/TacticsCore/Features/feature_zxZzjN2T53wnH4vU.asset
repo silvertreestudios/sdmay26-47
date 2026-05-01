@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_zxZzjN2T53wnH4vU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: zxZzjN2T53wnH4vU
+  Slug: third-implement
+  DisplayName: Third Implement
+  IconPath: systems/pf2e/icons/features/classes/third-implement.webp
+  Description: As you come closer to the culmination of your journey, you gain your
+    final implement, completing your set of three. It must be a different type of
+    implement than your first and second implements. You gain the initiate benefit
+    and intensify vulnerability benefit of your new implement.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 17eebaba23264733a2e568db8842ce3c6858392018d589034e791e6ea9288bc2
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:thaumaturge-implement"]},"flag":"implement","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.ThirdImplement"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.implement}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.implement}"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.implement}'
+    SourceId: 
+    DisplayName: implement}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

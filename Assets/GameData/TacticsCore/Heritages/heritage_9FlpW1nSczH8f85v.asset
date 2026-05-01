@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_9FlpW1nSczH8f85v
+  m_EditorClassIdentifier: 
+  SourceId: 9FlpW1nSczH8f85v
+  Slug: hungerseed
+  DisplayName: Hungerseed
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: One of your parents was an oni or a hungerseed. You possess a pair
+    of horns, ranging in size from conical nubs to lengthy protrusions. You might
+    have other signs of your parentage, such as colorful skin, fangs and claws, or
+    a third eye in your forehead. You gain the oni trait. You gain a horns unarmed
+    attack that deals 1d6 piercing damage and is in the brawling group. You can select
+    from hungerseed feats and feats from your other parent's ancestry whenever you
+    gain an ancestry feat.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: ecb04324f25bfdad4017f2cc54901338d54fff7fb3d720bc4ff6ca8de5093ea5
+  Traits:
+  - oni
+  TraitsLower:
+  - oni
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d6"}},"group":"brawling","img":"icons/commodities/bones/horn-simple-grey.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Horns","slug":"horns","traits":["unarmed"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"hungerseed-horns"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:id:{item|id}"],"property":"other-tags","value":"hungerseed-horns"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_VKRjmXxBFLrJK01c
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: VKRjmXxBFLrJK01c
+  Slug: signature-spells
+  DisplayName: Signature Spells
+  IconPath: systems/pf2e/icons/features/classes/signature-spells-sorcerer.webp
+  Description: Experience allows you to cast some spells more flexibly. For each
+    spell rank you have access to, choose one spell of that rank to be a signature
+    spell. You don't need to learn heightened versions of signature spells separately;
+    instead, you can heighten these spells freely. If you've learned a signature
+    spell at a higher rank than its minimum, you can also cast all its lower-rank
+    versions without learning those separately. If you swap out a signature spell,
+    you can choose a replacement signature spell of the same spell rank at which
+    you learned the previous spell. You can also retrain specifically to change a
+    signature spell to a different spell of that rank without swapping any spells;
+    this takes as much time as retraining a spell normally does.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: bc3b224ba7f0a291467c9421e72ca33175fa386ed4f10d5fd061d3611ea4a48a
+  Traits:
+  - bard
+  - oracle
+  - psychic
+  - sorcerer
+  TraitsLower:
+  - bard
+  - oracle
+  - psychic
+  - sorcerer
+  RawRules: []
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

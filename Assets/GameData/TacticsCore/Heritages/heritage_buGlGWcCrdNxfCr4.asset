@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_buGlGWcCrdNxfCr4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: buGlGWcCrdNxfCr4
+  Slug: born-of-animal
+  DisplayName: Born of Animal
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You were a simple animal until the sun enlightened you. Humanoid Form
+    Animals can sense the power of your presence. You gain a +1 circumstance bonus
+    to Intimidation checks against animals and beasts and don't take a penalty for
+    attempting to Intimidate animals or beasts you don't share a language with. Yaoguai
+    Form You can dash like an animal. If you have both hands free, you can increase
+    your Speed to 30 feet as you run on all fours.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 6dcbdfd5e037ad923cc03fab1605f9d2e933c69205049162662c7b6882b952b6
+  Traits:
+  - yaoguai
+  TraitsLower:
+  - yaoguai
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["change-shape:humanoid",{"or":["target:trait:animal","target:trait:beast"]}],"selector":"intimidation","type":"circumstance","value":1}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Automaton.HunterAutomaton.ToggleLabel","option":"on-all-fours","predicate":["change-shape:yaoguai"],"priority":70,"toggleable":true}'
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 30
+    Uuid: 
+    Json: '{"key":"BaseSpeed","predicate":["on-all-fours"],"selector":"land","value":30}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.dnk0Rf7AUmyR5b8z
+    SourceId: 
+    Slug: yaoguai
+    DisplayName: Yaoguai
+  ParentAncestryAsset: {fileID: 11400000, guid: 046de30a5ff25694fa6fbcb820177564, type: 2}
+  GrantedFeatures: []

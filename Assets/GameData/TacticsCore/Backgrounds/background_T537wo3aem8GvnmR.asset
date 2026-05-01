@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_T537wo3aem8GvnmR
+  m_EditorClassIdentifier: 
+  SourceId: T537wo3aem8GvnmR
+  Slug: hounded-thief
+  DisplayName: Hounded Thief
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Some time ago, you stole a unique item from a strange individual.
+    It might have been a piece of clockwork from a far-off land or some other bit
+    of strange technology. You might still have it or you might have sold it, but
+    either way, you can't shake the feeling that you're being followed and watched,
+    likely by forces who want to retrieve what you took. Luckily, a life of adventure
+    keeps you on the move. Choose two attribute boosts. One must be to Dexterity
+    or Wisdom , and one is a free attribute boost. You're trained in the Thievery
+    skill and the Underworld Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Pickpocket]
+    skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 54d4a8187c61510d0f3e170ad6a6d717a3acb6b6224e11a2bb0d2fabf5713421
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 17
+    CustomSkillId: thievery
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld
+    Rank: 1
+  LoreSkills:
+  - Underworld
+  GrantedFeats:
+  - SourceKey: l8gqm
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pickpocket
+    SourceId: 
+    DisplayName: Pickpocket
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_T9wA833bzZVlB3Lo
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: T9wA833bzZVlB3Lo
+  Slug: devourer-of-decay
+  DisplayName: Devourer of Decay
+  IconPath: icons/magic/death/hand-withered-gray.webp
+  Description: Your patron appeared at the end or near the end of a life, flickering
+    in feverish visions or glinting mysteriously in the eyes of waiting scavengers.
+    Although horrifying to many, decay creates the resources needed for new life.
+    This fate awaits you and possibly even your patron, whether they're a towering
+    arboreal, a subterranean fungus creature, or one of the psychopomps that shepherds
+    the entire process along. Spell List primal Patron Skill Nature Lesson of the
+    Hungry Scavenger Your patron teaches ways to convert death into new life. You
+    gain the @UUID[Compendium.pf2e.spells-srd.Item.Scrounger's Glee] hex cantrip,
+    and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Enfeeble]. Familiar
+    of Parasitic Might Your familiar appears gaunt and malnourished or otherwise
+    on the brink of death, even though it's quite healthy. When you Cast or Sustain
+    a hex, your familiar can draw on the waning strength of another to sustain itself.
+    One creature within 15 feet of your familiar with less than half of its maximum
+    Hit Points becomes Sickened 1 unless it succeeds at a Fortitude saving throw
+    against your spell DC.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 714f01cd973ee4a4fd857878cdc063984cac7973fcc081f721bb4885fc190fe4
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"primal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"primal"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.ParasiticMight.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.ParasiticMight.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.ParasiticMight.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.ParasiticMight.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

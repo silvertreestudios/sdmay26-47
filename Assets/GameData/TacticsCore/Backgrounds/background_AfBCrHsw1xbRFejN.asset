@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_AfBCrHsw1xbRFejN
+  m_EditorClassIdentifier: 
+  SourceId: AfBCrHsw1xbRFejN
+  Slug: sleepless-suns-star
+  DisplayName: Sleepless Suns Star
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Among your fellow guards who patrol the Foreign Quarter, you're something
+    of a big deal. Your good work and big personality have made a big enough splash
+    that word has gotten out about your status as a rising star among the watchdogs
+    of Absalom. Your popularity has also earned you the trust of many citizens of
+    the Foreign Quarter. Your laudable performance has earned you a transfer to the
+    newly formed Edgewatch in the Precipice Quarter, where you'll put your formidable
+    reputation to good use by patrolling the Radiant Festival and ensuring the safety
+    of Absalom's most vulnerable visitors. Choose two attribute boosts. One must
+    be to Wisdom or Charisma , and one is a free attribute boost. You're trained
+    in the Society, plus either Gladiatorial Lore or Genealogy Lore. You gain a +1
+    circumstance bonus to Deception, Diplomacy, and Intimidation checks to @UUID[Compendium.pf2e.actionspf2e.Item.Interact]
+    with members of the Sleepless Suns and residents of the Foreign Quarter. You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Multilingual] skill feat.
+  SourceTitle: Pathfinder Agents of Edgewatch Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: fce8c545df8ea781d37e3e930c8044fc95b8495735a5c5606c57c6185fdc4e2c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Interacting with members of the Sleepless
+      Suns and residents of the Foreign Quarter (Sleepless Suns Star)","predicate":[{"or":["target:sleepless-suns","target:foreign-quarter"]}],"selector":["deception","diplomacy","intimidation"],"type":"circumstance","value":1}'
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Gladatorial Lore or Genealogy Lore
+    Rank: 1
+  LoreSkills:
+  - Gladatorial Lore or Genealogy Lore
+  GrantedFeats:
+  - SourceKey: j7rys
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Multilingual
+    SourceId: 
+    DisplayName: Multilingual
+    Level: 1
+    ResolvedFeature: {fileID: 0}

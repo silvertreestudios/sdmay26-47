@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_qbvzNG8hMjb8f66D
+  m_EditorClassIdentifier: 
+  SourceId: qbvzNG8hMjb8f66D
+  Slug: squire
+  DisplayName: Squire
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You trained at the feet of a knight, maintaining their gear and supporting
+    them at tourneys and in battle. Now you search for a challenge that will prove
+    you worthy of full knighthood, or you've spurned pomp and ceremony to test yourself
+    in honest, albeit less formal, combat. Choose two attribute boosts. One must
+    be to Strength or Constitution , and one is a free attribute boost. You're trained
+    in the Athletics skill and your choice of the Heraldry Lore or Warfare Lore skill.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Armor Assist] skill feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 2972c5e22dd7aa3553ec7fed09e43dca609158b2d8089c1b88797ab0a17410a1
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Heraldry Lore or Warfare Lore
+    Rank: 1
+  LoreSkills:
+  - Heraldry Lore or Warfare Lore
+  GrantedFeats:
+  - SourceKey: o4nzb
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Armor Assist
+    SourceId: 
+    DisplayName: Armor Assist
+    Level: 1
+    ResolvedFeature: {fileID: 0}

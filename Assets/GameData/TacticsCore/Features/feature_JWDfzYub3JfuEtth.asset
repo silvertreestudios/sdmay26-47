@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_JWDfzYub3JfuEtth
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: JWDfzYub3JfuEtth
+  Slug: graceful-legend
+  DisplayName: Graceful Legend
+  IconPath: systems/pf2e/icons/features/classes/graceful-legend.webp
+  Description: Your sublime movement grants you unparalleled protection and offense.
+    Your proficiency rank for unarmored defense increases to legendary, and your
+    proficiency rank for your monk class DC increases to master. If you have qi spells,
+    your proficiency rank for spell attack modifiers and spell DCs increases to master.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8b3ca8a3471f53b10d9fd462a6f1fbdef490ec80b7091c7d3ff7d79355bdd482
+  Traits:
+  - monk
+  TraitsLower:
+  - monk
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.spellcasting.rank
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.spellcasting.rank","predicate":["feat:qi-spells"],"value":3}'
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: monk
+    Rank: 3
+  - Target: unarmored
+    Rank: 4
+  FocusPointDelta: 0

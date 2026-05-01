@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_6zo2PJGYoig7nFpR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 6zo2PJGYoig7nFpR
+  Slug: field-discovery-toxicologist
+  DisplayName: Field Discovery (Toxicologist)
+  IconPath: icons/consumables/potions/potion-tube-corked-red.webp
+  Description: You have handled enough poisons to become inured to their effects.
+    You gain poison resistance equal to half your level.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: fd7e5e999aa241e569a6b8536ae96414b8de29134c0903745976239547c8bc96
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"floor(@actor.level/2)"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"poison","value":"floor(@actor.level/2)"}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

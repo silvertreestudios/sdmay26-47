@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_1w4npGmPzgdZw3Na
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 1w4npGmPzgdZw3Na
+  Slug: kaleidoscopic-athamaru
+  DisplayName: Kaleidoscopic Athamaru
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your scales are a spectrum of color that shimmers in the light. In
+    areas of bright light or dim light, you gain a +1 circumstance bonus to Performance
+    checks. You also gain the @UUID[Compendium.pf2e.actionspf2e.Item.Dazzle Seeker]
+    reaction.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 0ea3bad930d821b0fe21541ad8caeef48aa8f8cb95403549463f923c0c3e3b34
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Dazzle Seeker
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Dazzle Seeker"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["light:bright","light:dim"]}],"selector":"performance","type":"circumstance","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.Cg1AMgp3zrGmimWd
+    SourceId: 
+    Slug: athamaru
+    DisplayName: Athamaru
+  ParentAncestryAsset: {fileID: 11400000, guid: 2ee95b5b79f6b7640b2e6a86a1e1ebe0, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Dazzle Seeker
+    SourceId: 
+    DisplayName: Dazzle Seeker
+    Level: 0
+    ResolvedFeature: {fileID: 0}

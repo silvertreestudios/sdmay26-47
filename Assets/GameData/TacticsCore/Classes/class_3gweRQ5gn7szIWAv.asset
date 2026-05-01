@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_3gweRQ5gn7szIWAv
+  m_EditorClassIdentifier: 
+  SourceId: 3gweRQ5gn7szIWAv
+  Slug: bard
+  DisplayName: Bard
+  IconPath: systems/pf2e/icons/classes/bard.webp
+  Description: You are a master of artistry, a scholar of hidden secrets, and a captivating
+    persuader. Using powerful performances, you influence minds and elevate souls
+    to new levels of heroics. You might use your powers to become a charismatic leader,
+    or perhaps you might instead be a counselor, manipulator, scholar, scoundrel,
+    or virtuoso. While your versatility leads some to consider you a beguiling ne'er-do-well
+    and a jack-of-all-trades, it's dangerous to dismiss you as a master of none.
+    Bard
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: a37bac12417a29f3fa1ad21dedf7b613e66039a0e10860b5687eef562f216a2a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 8
+  KeyAttributes: 06000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 4
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: BNZ4O
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  - SourceKey: en1lf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Composition Spells
+    SourceId: s0VbbQJNlSgPocui
+    DisplayName: Composition Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 9f075a5d81a01cf4dbc4e37dcb760fac, type: 2}
+  - SourceKey: oyw8v
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Muses
+    SourceId: AIOBWGOS4nkfH3kW
+    DisplayName: Muses
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 8f2968b6ad31369498c005cea83ca7d0, type: 2}
+  - SourceKey: qev30
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Occult Spellcasting
+    SourceId: fEOj0eOBe34qYdAa
+    DisplayName: Occult Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d4f3912f69a62d047a91aa15bad35e0d, type: 2}
+  GrantedFeatures:
+  - SourceKey: 06b94
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Spellcaster
+    SourceId: cD3nSupdCvONuHiE
+    DisplayName: Expert Spellcaster
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 3e7fd61908df4a14290ae0cc0e240ad8, type: 2}
+  - SourceKey: 1da3z
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Spellcaster
+    SourceId: l1InYvhnQSz6Ucxc
+    DisplayName: Master Spellcaster
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4bf880905a2203248baa95088d309fcb, type: 2}
+  - SourceKey: 1qqwt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 81u6r
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Magnum Opus
+    SourceId: NjsOpWbbzUY2Hpk3
+    DisplayName: Magnum Opus
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: ca3e92b95d98bcb4ca981fbcd2ac6194, type: 2}
+  - SourceKey: BNZ4O
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  - SourceKey: JXCPj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Spellcaster
+    SourceId: Hfaa7TuLn3nE8lr3
+    DisplayName: Legendary Spellcaster
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: f940d7779f91b714099ce8d9e2809a2a, type: 2}
+  - SourceKey: U3WYY
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Performer's Heart
+    SourceId: nPwYSuMLkJWMB4CH
+    DisplayName: Performer's Heart
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 11f8ed230ccfe2a428d1578037b37e5b, type: 2}
+  - SourceKey: UKinY
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: TUOeATt52P43r5W0
+    DisplayName: Reflex Expertise
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 539148cfddca53c4488f47d820d2f718, type: 2}
+  - SourceKey: aqv5W
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 0npO4rPscGm0dX13
+    DisplayName: Perception Mastery
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 622e4b3f5ecccf94595d00a41a052a22, type: 2}
+  - SourceKey: en1lf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Composition Spells
+    SourceId: s0VbbQJNlSgPocui
+    DisplayName: Composition Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 9f075a5d81a01cf4dbc4e37dcb760fac, type: 2}
+  - SourceKey: f4w3H
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Signature Spells
+    SourceId: VKRjmXxBFLrJK01c
+    DisplayName: Signature Spells
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 136a8a6c0baf816409514c7fd81ee427, type: 2}
+  - SourceKey: iUrjR
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Fortitude Expertise
+    SourceId: F57Na5VxfBp56kke
+    DisplayName: Fortitude Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 64c77f7441a8f224c810d356bfbb2f73, type: 2}
+  - SourceKey: oyw8v
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Muses
+    SourceId: AIOBWGOS4nkfH3kW
+    DisplayName: Muses
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 8f2968b6ad31369498c005cea83ca7d0, type: 2}
+  - SourceKey: q84eq
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Expertise
+    SourceId: pZYkb12t5DSwtts7
+    DisplayName: Light Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 3bf7d337c0e817d4795134166770c383, type: 2}
+  - SourceKey: qev30
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Occult Spellcasting
+    SourceId: fEOj0eOBe34qYdAa
+    DisplayName: Occult Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d4f3912f69a62d047a91aa15bad35e0d, type: 2}
+  - SourceKey: rQJDP
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Performer's Heart
+    SourceId: mRobjNNsABQdUUZq
+    DisplayName: Greater Performer's Heart
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 48407fe42a0d4204cad8b936ebc55618, type: 2}
+  - SourceKey: yjn5p
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Bard Weapon Expertise
+    SourceId: 4lp8oG9A3zuqhPBS
+    DisplayName: Bard Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: dbc1ce33d9f28f74a9c73599430123ad, type: 2}

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_COMhWWNBJOdaJqp7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: COMhWWNBJOdaJqp7
+  Slug: greed
+  DisplayName: Greed
+  IconPath: icons/weapons/polearms/glaive-hooked-steel.webp
+  Description: 'The Precious Gleam carries knowledge that the world''s problems are
+    far beyond one''s current form and resources. But forms can change and resources
+    can be hoarded with the help of this rune''s magic. Anathema Use your magic to
+    affect the mind or perception rather than physical reality. Sin Spells cantrips:
+    @UUID[Compendium.pf2e.spells-srd.Item.Live Wire], @UUID[Compendium.pf2e.spells-srd.Item.Read
+    Aura] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Ant Haul], @UUID[Compendium.pf2e.spells-srd.Item.Leaden
+    Steps] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Enlarge], @UUID[Compendium.pf2e.spells-srd.Item.Phantasmal
+    Treasure] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.One with Stone], @UUID[Compendium.pf2e.spells-srd.Item.Shrink
+    Item] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Aerial Form], @UUID[Compendium.pf2e.spells-srd.Item.Shape
+    Stone] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Elemental Form], @UUID[Compendium.pf2e.spells-srd.Item.Impaling
+    Spike] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Dragon Form], @UUID[Compendium.pf2e.spells-srd.Item.Petrify]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Chrysopoetic Curse], @UUID[Compendium.pf2e.spells-srd.Item.Lifewood
+    Cage] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Monstrosity Form] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Metamorphosis]
+    Initial School Spell @UUID[Compendium.pf2e.spells-srd.Item.Precious Gleam]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: 1b563f50b0d7318fdb935db8cbe41b04ea871a86849b5066340ff437d3df22d4
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"runelord-sin-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"or":["item:slug:live-wire","item:slug:read-aura","item:slug:ant-haul","item:slug:leaden-steps","item:slug:enlarge","item:slug:phantasmal-treasure","item:slug:one-with-stone","item:slug:shrink-item","item:slug:aerial-form","item:slug:shape-stone","item:slug:elemental-form","item:slug:impaling-spike","item:slug:dragon-form","item:slug:petrify","item:slug:chrysopoetic-curse","item:slug:lifewood-cage","item:slug:monstrosity-form","item:slug:metamorphosis"]}],"priority":118,"property":"other-tags","value":"runelord-sin-spell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_lq7uhfPMcJgn1z7u
+  m_EditorClassIdentifier: 
+  SourceId: lq7uhfPMcJgn1z7u
+  Slug: fated-rival
+  DisplayName: Fated Rival
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You are bound in an adversarial relationship with another person or
+    creature. You might have been close once, before everything went wrong, or they
+    might have drastically altered your life at a crucial moment. Perhaps you are
+    mystically bound by the red string of destiny, or perhaps your clash was preordained
+    by the oracles of Po Li. Whatever the case, either fate or your own will keeps
+    you driving forward to fight with them once more. You and your GM work out who
+    your rival is and how they fit in to your story. You become trained in two Lore
+    skills related to your rival, which you and your GM choose. You gain two free
+    attribute boosts; you choose one, and the GM chooses one to complement your rival.
+    So long as you are not in the presence of your rival, you gain the Diehard general
+    feat and a +1 circumstance bonus to saving throws against the doomed condition.
+    When in the presence of your rival, you lose these benefits but gain a +1 circumstance
+    bonus to attack rolls and damage. If your rival becomes your ally or a member
+    of your party, you gain the Diehard and save bonus benefits, as long as that's
+    the case.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 1809f62a6958072f27c6277db1c92edbfb8183367661bfa3320b4102e7dde130
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 00000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

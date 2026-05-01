@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_0c9Np7Yq5JSxZ6Tb
+  m_EditorClassIdentifier: 
+  SourceId: 0c9Np7Yq5JSxZ6Tb
+  Slug: alkenstar-tinker
+  DisplayName: Alkenstar Tinker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Impossible Lands Your dedication to the scientific
+    inquiry of your native Alkenstar provides great insight into mechanical and chemical
+    innovation. Choose two attribute boosts. One must be to Dexterity or Intelligence
+    , and one is a free attribute boost. You're trained in the Crafting skill and
+    the Engineering Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Alchemical
+    Crafting] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 236688cfa2c9757e777a4c038158d35ef16aa41a6ae42af573e12570926ec1cd
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering Lore
+    Rank: 1
+  LoreSkills:
+  - Engineering Lore
+  GrantedFeats:
+  - SourceKey: 3pqt3
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Alchemical Crafting
+    SourceId: 
+    DisplayName: Alchemical Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_d0bNxgGqvaCkFlhN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: d0bNxgGqvaCkFlhN
+  Slug: umbral-gnome
+  DisplayName: Umbral Gnome
+  IconPath: systems/pf2e/icons/features/ancestry/umbral-gnome.webp
+  Description: Whether from a connection to dark or shadowy fey, from the underground
+    gnomes known as drathnelar, or from another source, you can see in complete darkness.
+    You gain darkvision.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 78887d370e5a37d2d69b284cbeac4777851d57f75361d3b7c6ca351549912369
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"darkvision"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.CYlfsYLJcBOgqKtD
+    SourceId: 
+    Slug: gnome
+    DisplayName: Gnome
+  ParentAncestryAsset: {fileID: 11400000, guid: fb1bbba28cbc5b74cae3db902c75b07b, type: 2}
+  GrantedFeatures: []

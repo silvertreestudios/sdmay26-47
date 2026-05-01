@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_15Yc1r6s9CEhSTMe
+  m_EditorClassIdentifier: 
+  SourceId: 15Yc1r6s9CEhSTMe
+  Slug: sorcerer
+  DisplayName: Sorcerer
+  IconPath: systems/pf2e/icons/classes/sorcerer.webp
+  Description: You didn't choose to become a spellcaster-you were born one. There's
+    magic in your blood, whether a divinity touched one of your ancestors, a forebear
+    communed with a primal creature, or a powerful occult ritual influenced your
+    line. Self-reflection and study allow you to refine your inherent magical skills
+    and unlock new, more powerful abilities. The power in your blood carries a risk,
+    however, and you constantly face the choice of whether you'll rise to become
+    a master spellcaster or fall into destruction. Sorcerer
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 2cc1c50a4c55dc7616bb67b10875736ef74a2dd8e86bcc4ae62dba145b46dccc
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 6
+  KeyAttributes: 06000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 0
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills: []
+  AdditionalSkillCount: 2
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 8y7Jv
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  - SourceKey: i4R73
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Sorcerous Potency
+    SourceId: yBvGqA6Edp6ImaR3
+    DisplayName: Sorcerous Potency
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b65708a809361904597bac0db1e3c3d3, type: 2}
+  - SourceKey: jx0fg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Sorcerer Spellcasting
+    SourceId: gmnx7e1g08bppbqt
+    DisplayName: Sorcerer Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d6b198d9ce1eeb94b9c6d9feeba13132, type: 2}
+  - SourceKey: qimsg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Bloodline
+    SourceId: 2goYo6VNbwC6aKF1
+    DisplayName: Bloodline
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 856f3c75952081940b595218d736988f, type: 2}
+  - SourceKey: r346v
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Bloodline Spells
+    SourceId: H6ziAPvCipTPG8SH
+    DisplayName: Bloodline Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b1f98758e8f9d834a9efce6bccfd1962, type: 2}
+  GrantedFeatures:
+  - SourceKey: 7Odcm
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: TUOeATt52P43r5W0
+    DisplayName: Reflex Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 539148cfddca53c4488f47d820d2f718, type: 2}
+  - SourceKey: 7nvmf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Bloodline Paragon
+    SourceId: feCnVrPPlKhl701x
+    DisplayName: Bloodline Paragon
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 677b5189c0fcc6c4db7bec1efd1e300f, type: 2}
+  - SourceKey: 8y7Jv
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  - SourceKey: LS8SS
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Majestic Will
+    SourceId: 7D8duG4ARFxLLm9F
+    DisplayName: Majestic Will
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 6f738abe132800e4780476f1e959775b, type: 2}
+  - SourceKey: bd6fU
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: ds47l
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: erm0v
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Spellcaster
+    SourceId: cD3nSupdCvONuHiE
+    DisplayName: Expert Spellcaster
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 3e7fd61908df4a14290ae0cc0e240ad8, type: 2}
+  - SourceKey: i4R73
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Sorcerous Potency
+    SourceId: yBvGqA6Edp6ImaR3
+    DisplayName: Sorcerous Potency
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b65708a809361904597bac0db1e3c3d3, type: 2}
+  - SourceKey: i55qe
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: jx0fg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Sorcerer Spellcasting
+    SourceId: gmnx7e1g08bppbqt
+    DisplayName: Sorcerer Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: d6b198d9ce1eeb94b9c6d9feeba13132, type: 2}
+  - SourceKey: pryw9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Signature Spells
+    SourceId: VKRjmXxBFLrJK01c
+    DisplayName: Signature Spells
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 136a8a6c0baf816409514c7fd81ee427, type: 2}
+  - SourceKey: q2jao
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Defensive Robes
+    SourceId: gU7epgcPSm0TD1UK
+    DisplayName: Defensive Robes
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: ff44964321aa36141b0277efd089c9e2, type: 2}
+  - SourceKey: q8nk5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Spellcaster
+    SourceId: Hfaa7TuLn3nE8lr3
+    DisplayName: Legendary Spellcaster
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: f940d7779f91b714099ce8d9e2809a2a, type: 2}
+  - SourceKey: qimsg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Bloodline
+    SourceId: 2goYo6VNbwC6aKF1
+    DisplayName: Bloodline
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 856f3c75952081940b595218d736988f, type: 2}
+  - SourceKey: r346v
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Bloodline Spells
+    SourceId: H6ziAPvCipTPG8SH
+    DisplayName: Bloodline Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b1f98758e8f9d834a9efce6bccfd1962, type: 2}
+  - SourceKey: tr1s2
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Magical Fortitude
+    SourceId: 70jqXP2eS4tRZ0Ok
+    DisplayName: Magical Fortitude
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: d288b7bd0da9d46439de4efa4661c8a4, type: 2}
+  - SourceKey: zmu64
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Spellcaster
+    SourceId: l1InYvhnQSz6Ucxc
+    DisplayName: Master Spellcaster
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4bf880905a2203248baa95088d309fcb, type: 2}

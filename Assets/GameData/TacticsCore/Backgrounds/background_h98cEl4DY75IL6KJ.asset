@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_h98cEl4DY75IL6KJ
+  m_EditorClassIdentifier: 
+  SourceId: h98cEl4DY75IL6KJ
+  Slug: teamster
+  DisplayName: Teamster
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You left your home a few months back for a life on the road, working
+    for one caravan company and then another, always on the lookout for a new job
+    and a better life. Last week, you were hired by the Bort Bargith's company in
+    Elidir. You don't know anyone from the company just yet, but most of its members
+    seem to be honest merchants and traders. Choose two attribute boosts. One must
+    be to Strength or Wisdom , and one is a free attribute boost. You're trained
+    in the Nature skill and the Mercantile Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Train
+    Animal] skill feat.
+  SourceTitle: 'Pathfinder Adventure: The Fall of Plaguestone'
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 7b023be8808155b5b92321e1d435c55435d1b477dba2fd96b9b35169c6b22f71
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Mercantile Lore
+    Rank: 1
+  LoreSkills:
+  - Mercantile Lore
+  GrantedFeats:
+  - SourceKey: 7z8e4
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Train Animal
+    SourceId: 
+    DisplayName: Train Animal
+    Level: 1
+    ResolvedFeature: {fileID: 0}

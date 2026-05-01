@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_MZajaYrn6c1A1XcO
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: MZajaYrn6c1A1XcO
+  Slug: initiate-benefit-weapon
+  DisplayName: Initiate Benefit (Weapon)
+  IconPath: icons/weapons/axes/pickaxe-bone-purple.webp
+  Description: Your weapon trembles slightly in your hand, seeking out your foe's
+    weakness to it and interrupting their actions. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Implement's
+    Interruption] reaction. At 5th level, when you gain thaumaturgic weapon expertise,
+    your instinctive knowledge of your weapon implement also grants you the weapon's
+    critical specialization effect.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5467f8917249b4aa8a6c407952b6ac6b112f11073cd96a160090d543951ab876
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Implement's Interruption
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Implement''s
+      Interruption"}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["item:id:{actor|flags.pf2e.thaumaturge.weaponImplement}","feature:thaumaturge-weapon-expertise"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Implement's Interruption
+    SourceId: 
+    DisplayName: Implement's Interruption
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

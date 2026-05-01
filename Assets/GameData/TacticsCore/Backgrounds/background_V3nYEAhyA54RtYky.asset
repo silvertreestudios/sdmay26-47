@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_V3nYEAhyA54RtYky
+  m_EditorClassIdentifier: 
+  SourceId: V3nYEAhyA54RtYky
+  Slug: ulfen-raider
+  DisplayName: Ulfen Raider
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Saga Lands You are an Ulfen warrior, feared
+    among Avistan for the merciless and devastating raids your people once conducted
+    along the shores. Though the days of these Ulfen raids are largely past, you
+    have been trained to strike terror into the hearts of those who face you. Choose
+    two attribute boosts. One must be to Strength or Charisma , and one is a free
+    attribute boost. You're trained in the Intimidation skill and the Sailing Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating Glare]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: cc221975110ccf3420886bd2022124e9ddc0ade2b6ec5519bd0f23acd503b0b9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Sailing Lore
+    Rank: 1
+  LoreSkills:
+  - Sailing Lore
+  GrantedFeats:
+  - SourceKey: leo7o
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

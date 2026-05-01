@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_iwAzV1IlQ2pMHQoB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: iwAzV1IlQ2pMHQoB
+  Slug: divine-access
+  DisplayName: Divine Access
+  IconPath: icons/sundries/scrolls/scroll-yellow-teal.webp
+  Description: Your mystery offers you strange access to spells typically reserved
+    for more conventional worshippers. Choose one deity who grants one of your mystery's
+    granted domains. Add up to three cleric spells of your choice granted by that
+    deity to your spell list, and to your spell repertoire as soon as you can cast
+    spells of the appropriate rank.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d288729db6e2f1ad33306546559f6af6be3918b03a63e9500a7a2a73b82d4d73
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

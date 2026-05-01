@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_N1ugDqZlslxbp3Uy
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: N1ugDqZlslxbp3Uy
+  Slug: final-doctrine-warpriest
+  DisplayName: Final Doctrine (Warpriest)
+  IconPath: icons/equipment/chest/breastplate-helmet-metal.webp
+  Description: You gain master proficiency with your deity's favored weapon, spell
+    attack modifier, and spell DC.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 673e11c388fc4fd9bb1ba2dab63c0d7bb22dfd989616c861adfc1f5d233e1d17
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.favoredWeaponRank
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"flags.pf2e.favoredWeaponRank","value":3}'
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: spellcasting
+    Rank: 3
+  FocusPointDelta: 0

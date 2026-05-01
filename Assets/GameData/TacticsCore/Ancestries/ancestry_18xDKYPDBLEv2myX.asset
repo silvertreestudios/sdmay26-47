@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_18xDKYPDBLEv2myX
+  m_EditorClassIdentifier: 
+  SourceId: 18xDKYPDBLEv2myX
+  Slug: tengu
+  DisplayName: Tengu
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/tengu.svg
+  Description: Tengu are survivalists and conversationalists, equally at home living
+    off the wilderness and finding a niche in dense cities. They accumulate knowledge,
+    tools, and companions, adding them to their collection as they travel. Tengu
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 5d72ef4d765bf49b34aac945b6f8534e32650c92a8127ea6cb82ce4753b91cb3
+  Traits:
+  - humanoid
+  - tengu
+  TraitsLower:
+  - humanoid
+  - tengu
+  RawRules: []
+  HitPoints: 6
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: tengu
+    DisplayName: Tengu
+  AdditionalLanguageOptions:
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: halfling
+    DisplayName: Halfling
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: vo9ge
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Sharp Beak
+    SourceId: 
+    DisplayName: Sharp Beak
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 472fd7c82259ba64583fb12665dc611d, type: 2}
+  - {fileID: 11400000, guid: 574fcdd577dfc2a4c88c8a591fc00b66, type: 2}
+  - {fileID: 11400000, guid: f197850f850de0e4dacf6d2c24722b5c, type: 2}
+  - {fileID: 11400000, guid: e0cb1c7840f880a478957d3e2b7bbacb, type: 2}
+  - {fileID: 11400000, guid: e18722264df714d46a5673b2cf685135, type: 2}
+  - {fileID: 11400000, guid: 1cf77662b6f3ebe4f88538f4529aeadb, type: 2}
+  - {fileID: 11400000, guid: acedb53ff6688eb47912c4fb72f6e2d2, type: 2}

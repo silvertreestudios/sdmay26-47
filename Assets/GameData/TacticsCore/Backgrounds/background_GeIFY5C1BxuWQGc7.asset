@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_GeIFY5C1BxuWQGc7
+  m_EditorClassIdentifier: 
+  SourceId: GeIFY5C1BxuWQGc7
+  Slug: bookish-providence
+  DisplayName: Bookish Providence
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You have always been interested in knowledge and learned to read from
+    a very young age. Perhaps one or both of your parents were librarians or scholars,
+    or maybe the local bookshop or university was a place you felt safe at. Or, you
+    could simply have been an avid reader of stories. Whatever the case, books have
+    always brought you peace and comfort, and you try to never travel without a few
+    packed away in your belongings. Since not every book is written in the same language,
+    you've also picked up a few extra languages along the way. Your interest in the
+    written word hasn't always been a positive, though. You might have been bullied
+    or tormented by your peers for being more interested in reading than other pursuits.
+    Or maybe you had some unsettling experiences with misinformation or knowledge
+    that sent you in pursuit of something dangerous. Try to come up with one event
+    from your past where your pursuit of books or the testing of knowledge learned
+    from them placed you in danger, but also keep in mind that you managed to escape
+    this danger because of what you've learned from your voracious reading habits!
+    This background is associated with the suit of Books. Choose two attribute boosts.
+    One must be to Intelligence , and one is a free attribute boost. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Multilingual] skill feat, are trained in
+    the Academia Lore skill, and gain the @UUID[Compendium.pf2e.actionspf2e.Item.Recall
+    Under Pressure] free action.
+  SourceTitle: Pathfinder Stolen Fate Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 3aa3da834b9b48fb090a995822fc89672c7b59bf0930c5db27ad56d9ca959403
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Recall Under Pressure
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Recall
+      Under Pressure"}'
+  AttributeBoosts:
+  - Options: 04000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: 1yalA
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Multilingual
+    SourceId: 
+    DisplayName: Multilingual
+    Level: 1
+    ResolvedFeature: {fileID: 0}

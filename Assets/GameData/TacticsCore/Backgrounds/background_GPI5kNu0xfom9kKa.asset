@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_GPI5kNu0xfom9kKa
+  m_EditorClassIdentifier: 
+  SourceId: GPI5kNu0xfom9kKa
+  Slug: dragon-scholar
+  DisplayName: Dragon Scholar
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Dragons have fascinated you for as long as you can remember. The potent
+    power they possess, the long lives they lead, the ancient traditions they inspire-whatever
+    the source of your interest, you've spent much of your life to this point immersed
+    in all things draconic. These studies have bolstered your self-confidence and
+    given you a wide range of methods and tactics you can use to impose your will
+    on others. You've likely chosen to attend the Call for Heroes as a way to seek
+    funds as an adventurer to afford more texts about dragons or perhaps out of a
+    desire to encounter one in real life. Choose two attribute boosts. One must be
+    to Strength or Charisma , and one is a free attribute boost. You're trained in
+    the Intimidation skill, and the Dragon Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating
+    Glare] skill feat.
+  SourceTitle: Pathfinder Age of Ashes Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 072740dd060f07a09543e61cd0bee77d1c4526feca2eee15d61d427f34fd38a5
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Dragon Lore
+    Rank: 1
+  LoreSkills:
+  - Dragon Lore
+  GrantedFeats:
+  - SourceKey: 29e0x
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

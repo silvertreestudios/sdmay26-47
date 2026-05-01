@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_idJ2lSKEmmwqG5eT
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: idJ2lSKEmmwqG5eT
+  Slug: shifting-skeleton
+  DisplayName: Shifting Skeleton
+  IconPath: icons/commodities/bones/bones-stack-brown.webp
+  Description: Constructed from the bones of various shapechanging creatures, shifting
+    skeletons retain a measure of reconfigurability, allowing them to shift forms.
+    You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Rearrange Bones] action.
+  SourceTitle: Pathfinder Wake the Dead #4
+  SourcePack: heritages
+  Rarity: rare
+  SourceJsonHash: d31dfae982f13e160850a2991b8da3397782284891a862c91326de4aacd8eeba
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Rearrange Bones
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Rearrange
+      Bones"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.58rL5sg2y4arW1i5
+    SourceId: 
+    Slug: skeleton
+    DisplayName: Skeleton
+  ParentAncestryAsset: {fileID: 11400000, guid: 05a9768c91264d64fa563771eb10af03, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Rearrange Bones
+    SourceId: 
+    DisplayName: Rearrange Bones
+    Level: 0
+    ResolvedFeature: {fileID: 0}

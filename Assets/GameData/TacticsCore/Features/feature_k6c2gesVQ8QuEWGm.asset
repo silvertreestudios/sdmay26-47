@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_k6c2gesVQ8QuEWGm
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: k6c2gesVQ8QuEWGm
+  Slug: medium
+  DisplayName: Medium
+  IconPath: icons/magic/unholy/silhouette-light-fire-blue.webp
+  Description: 'You are particularly good at acting as a conduit for spiritual energy
+    and tend to associate more freely with a wide array of apparitions, though you
+    tend not to form the deep bond with a single apparition that other animists often
+    develop. Invocation of Unity (1st): The lines between your body and your apparition
+    are blurry. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Relinquish Control]
+    feat. Dual Invocation (9th): You can build powerful bonds with multiple apparitions.
+    You can select two of your attuned apparitions to be your primary apparitions.
+    If you have the @UUID[Compendium.pf2e.classfeatures.Item.Supreme Incarnation]
+    class feature, you choose which apparition''s avatar form you manifest each time
+    you cast the @UUID[Compendium.pf2e.spells-srd.Item.Avatar] spell. The number
+    of Focus Points in your focus pool is equal to the number of focus spells you
+    have or the number of primary apparitions you are attuned to, whichever is higher
+    (maximum 3). Invocation of Synchronization (17th): The line between your intentions
+    and those of the apparition possessing you blurs, leaving you better able to
+    support each other in the throes of combat. While you have Relinquished Control
+    to an apparition, you gain the following additional benefits: Once per round,
+    you can attempt a Recall Knowledge check as a free action. All Strikes you make
+    with a weapon or unarmed attack deal an additional 2 points of spirit damage.
+    You gain resistance equal to half your level against all physical damage, but
+    have weakness equal to your level to spirit damage.'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1a55f6b36962aea27e84236a77c63327cbc647edec3eb1ffbaf5824ccc7a3fd2
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Relinquish Control
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Relinquish Control"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Relinquish Control
+    SourceId: 
+    DisplayName: Relinquish Control
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

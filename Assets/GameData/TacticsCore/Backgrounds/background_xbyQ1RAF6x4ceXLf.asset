@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_xbyQ1RAF6x4ceXLf
+  m_EditorClassIdentifier: 
+  SourceId: xbyQ1RAF6x4ceXLf
+  Slug: energy-scarred
+  DisplayName: Energy Scarred
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Exposure to a significant magical event overloaded you with magical
+    energy. Perhaps you were exposed to dangerous levels of magical energy that left
+    you near death, or it built up over long-term exposure to a powerful source of
+    magic. Choose two attribute boosts. One must be Constitution and one is a free
+    attribute boost. Your innate magical trait is primal. Choose acid, cold, electricity,
+    fire, force, sonic, vitality, or void. You are trained in a Lore skill associated
+    with the chosen energy (such as Fire Lore) and you gain resistance to that energy
+    type equal to half your level (minimum 1).
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: c3f0aa836bfca6a2607ff0eca4707a5cbf421004522a72dab7ed6eb2f42809de
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.TraitAcid","value":"acid"},{"label":"PF2E.TraitCold","value":"cold"},{"label":"PF2E.TraitElectricity","value":"electricity"},{"label":"PF2E.TraitFire","value":"fire"},{"label":"PF2E.TraitForce","value":"force"},{"label":"PF2E.TraitVoid","value":"void"},{"label":"PF2E.TraitVitality","value":"vitality"},{"label":"PF2E.TraitSonic","value":"sonic"}],"flag":"backgroundEnergyScarred","key":"ChoiceSet"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"{item|flags.pf2e.rulesSelections.backgroundEnergyScarred}","value":"max(1,floor(@actor.level/2))"}'
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Lore associated with the chosen energy
+    Rank: 1
+  LoreSkills:
+  - Lore associated with the chosen energy
+  GrantedFeats: []

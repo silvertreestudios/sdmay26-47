@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_2xVLO3JDe4gYlqv4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 2xVLO3JDe4gYlqv4
+  Slug: impossible-alloy
+  DisplayName: Impossible Alloy
+  IconPath: icons/commodities/metal/ingot-rough-steel.webp
+  Description: Other inventors claim it's not even technically possible, but you've
+    managed to create several metal alloys that seem to work for only you. These
+    alloys can damage opponents vulnerable to any one of the seven skymetals. Your
+    innovation is treated as all seven skymetals (abysium, adamantine, djezet, inubrix,
+    noqual, orichalcum, and siccatite). This means you deal more damage to a variety
+    of creatures, though you don't apply any of the other special effects for weapons
+    made of those skymetals.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 28651b8b36ee1f6b86afa27fb4623dad881235dcb96153decba18a33add13d77
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules: []
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

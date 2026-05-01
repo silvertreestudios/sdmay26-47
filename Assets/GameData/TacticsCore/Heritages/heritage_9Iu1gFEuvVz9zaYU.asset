@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_9Iu1gFEuvVz9zaYU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 9Iu1gFEuvVz9zaYU
+  Slug: spined-azarketi
+  DisplayName: Spined Azarketi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your fins conceal launchable toxic spines. You have a spine ranged
+    unarmed attack with the unarmed trait that deals @Damage[1d4[poison]] damage,
+    has a range increment of 10 feet, and is in the dart weapon group.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: f9f1778c4d50c64baabec1a35c1cde6d122830055dab8b2809b172a9fdaeb4a2
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"poison","dice":1,"die":"d4"}},"group":"dart","img":"systems/pf2e/icons/unarmed-attacks/spine.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Spine","range":{"increment":10},"traits":["unarmed"]}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.yFoojz6q3ZjvceFw
+    SourceId: 
+    Slug: azarketi
+    DisplayName: Azarketi
+  ParentAncestryAsset: {fileID: 11400000, guid: 35691cbce9f238047a56788acb89af44, type: 2}
+  GrantedFeatures: []

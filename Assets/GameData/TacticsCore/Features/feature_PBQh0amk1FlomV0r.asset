@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_PBQh0amk1FlomV0r
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: PBQh0amk1FlomV0r
+  Slug: versatile-vials
+  DisplayName: Versatile Vials
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: You know how to prepare fast-acting chemicals into versatile vials,
+    special items that can be used as bombs and be turned into other alchemical items
+    by introducing special reagents. During your daily preparations, you can create
+    a number of versatile vials up to 2 + your Intelligence modifier, which is also
+    your maximum number of vials. If you're below your maximum number, you can gather
+    reagents from the environment around you. For every 10 minutes you spend in exploration
+    mode, you regain 2 vials; this doesn't prevent you from participating in other
+    exploration activities. Versatile vials are infused items, and are destroyed
+    if not used by the next time you make your daily preparations. A vial you create
+    is always the highest type you could Craft. See the sidebar for statistics on
+    using a versatile vial as a bomb. You can also use vials for @UUID[Compendium.pf2e.classfeatures.Item.Quick
+    Alchemy] and your research field can add to the ways you can use a vial. You
+    can store all your versatile vials within your @UUID[Compendium.pf2e.equipment-srd.Item.Alchemist's
+    Toolkit], with no increase to its Bulk. Though versatile vials are physical objects,
+    they can't be duplicated or preserved in any way.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 70dc3edd155a0a86ab53e597ec141bdbff5651d35774a560fe1b4f5adc5c34ae
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: SpecialResource
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"itemUUID":"Compendium.pf2e.equipment-srd.Item.Versatile Vial","key":"SpecialResource","label":"PF2E.SpecificRule.Alchemist.VersatileVials","level":"ternary(gte(@actor.level,
+      18), 18, ternary(gte(@actor.level, 12), 12, ternary(gte(@actor.level, 4), 4,
+      1)))","max":"2 + @actor.system.abilities.int.mod","slug":"versatile-vials"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

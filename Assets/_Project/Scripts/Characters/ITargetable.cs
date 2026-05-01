@@ -1,7 +1,7 @@
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Represents an entity that can be targeted by attacks, spells, or effects.

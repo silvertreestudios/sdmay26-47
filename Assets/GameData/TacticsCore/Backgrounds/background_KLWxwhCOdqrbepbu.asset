@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_KLWxwhCOdqrbepbu
+  m_EditorClassIdentifier: 
+  SourceId: KLWxwhCOdqrbepbu
+  Slug: child-of-notoriety
+  DisplayName: Child Of Notoriety
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "One or more of your ancestors committed a grave atrocity, and even
+    though you've tried to live your own life, your family's grim past looms over
+    you like a relentless shadow. You might have traveled a thousand miles to escape
+    the legends, learned how to ingratiate yourself to others, just tried to ignore
+    the everyday accusing glances, or even accepted the notoriety just to be left
+    alone. You didn't commit the crime, yet it haunts you. Whether you're proving
+    the world wrong, proving to yourself that you're no monster, earning wealth to
+    pay reparations, or just driven to do some good with your life, it's time to
+    break free of the past. That journey begins with understanding. Clan Tolorr preserves
+    the deeds and misdeeds of dwarven legend. With their help, you might not only
+    understand dwarven crimes and reparations, but also learn how to accept your
+    past and leave the world a little better than when you found it. You've corresponded
+    with Clan Tolorr, but your most recent message came instead from one of the clan's
+    guests: a lizardfolk mystic named Valahask who studies the dead and is eager
+    to meet you. He has lobbied on your behalf, earning you an invitation to Clan
+    Tolorr's upcoming Family Festival. Choose two attribute boosts. One must be to
+    Constitution or Charisma , and one is a free attribute boost. Choose whether
+    you've navigated your past through kindness or notoriety thus far. For the former,
+    you're trained in the Diplomacy skill and the Genealogy Lore skill, and you gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Group Impression] skill feat. For the
+    latter, you're trained in the Intimidation skill and the Underworld Lore skill,
+    and you gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating Glare] skill
+    feat. Connection: Valahask, an iruxi mystic Reputation Points: \u20131"
+  SourceTitle: Pathfinder Sky King's Tomb Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: d049c67b4c0a09d884b6f57e8fa684a66ee9ce70fbe39d67112e475b29c08003
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.Skill.Diplomacy","value":{"feat":"Compendium.pf2e.feats-srd.Item.Group
+      Impression","skill":"diplomacy"}},{"label":"PF2E.Skill.Intimidation","value":{"feat":"Compendium.pf2e.feats-srd.Item.Intimidating
+      Glare","skill":"intimidation"}}],"flag":"childOfNotoriety","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.childOfNotoriety.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.childOfNotoriety.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.childOfNotoriety.feat}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.childOfNotoriety.feat}"}'
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats: []

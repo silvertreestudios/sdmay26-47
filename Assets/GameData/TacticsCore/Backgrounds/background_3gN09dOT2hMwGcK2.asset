@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_3gN09dOT2hMwGcK2
+  m_EditorClassIdentifier: 
+  SourceId: 3gN09dOT2hMwGcK2
+  Slug: cook
+  DisplayName: Cook
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You grew up in the kitchens of a tavern or other dining establishment
+    and excelled there, becoming an exceptional cook. Baking, cooking, a little brewing
+    on the side\u2014you've spent lots of time out of sight. It's about time you
+    went out into the world to catch some sights for yourself. Choose two attribute
+    boosts. One must be to Constitution or Intelligence , and one is a free attribute
+    boost. You're trained in the Survival skill and the Cooking Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Seasoned] skill feat."
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 7c4d74f8bf1bcedc6037bcd4483d5b953b294e3f826d5e81179a97d0378c2f5f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Cooking Lore
+    Rank: 1
+  LoreSkills:
+  - Cooking Lore
+  GrantedFeats:
+  - SourceKey: diizj
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Seasoned
+    SourceId: 
+    DisplayName: Seasoned
+    Level: 1
+    ResolvedFeature: {fileID: 0}

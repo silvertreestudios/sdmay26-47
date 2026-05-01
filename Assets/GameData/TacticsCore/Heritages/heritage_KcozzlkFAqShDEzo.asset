@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_KcozzlkFAqShDEzo
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: KcozzlkFAqShDEzo
+  Slug: stronggut-shisk
+  DisplayName: Stronggut Shisk
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your metabolism is slow, allowing you to go for days without food
+    and process maladies at a slower rate. You can go for 1 week without food before
+    you begin to starve Additionally, the onset times and lengths of stages for all
+    diseases and poisons that affect you are increased by 50%. If the onset time
+    or stage is instant or lasts only 1 round, this ability has no effect.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: a49fb4fcdb616b7d3be413f53a00a15394a52690272738d840e797f3ccbcee38
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.x1YinOddgUxwOLqP
+    SourceId: 
+    Slug: shisk
+    DisplayName: Shisk
+  ParentAncestryAsset: {fileID: 11400000, guid: 99c85d2314ba82d469243287e812686c, type: 2}
+  GrantedFeatures: []

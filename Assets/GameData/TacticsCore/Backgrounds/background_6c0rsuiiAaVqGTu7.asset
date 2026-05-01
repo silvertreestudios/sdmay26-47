@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_6c0rsuiiAaVqGTu7
+  m_EditorClassIdentifier: 
+  SourceId: 6c0rsuiiAaVqGTu7
+  Slug: rivethun-adherent
+  DisplayName: Rivethun Adherent
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Shining Kingdoms You have spent time learning
+    the practices and traditions of the ancient Rivethun dwarven shamans and can
+    recognize all sorts of magic. You may have chosen your own road since then, or
+    you may remain an adherent of the philosophy. Choose two attribute boosts. One
+    must be to Constitution or Wisdom , and one is a free attribute boost. You're
+    trained in the Occultism skill and the Spirit Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Recognize
+    Spell] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: eaaeae9e19957a50127cb192c9fbb1b154f92b879ed5e861d1dd199c0c9a456c
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Spirit Lore
+    Rank: 1
+  LoreSkills:
+  - Spirit Lore
+  GrantedFeats:
+  - SourceKey: s5irv
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Recognize Spell
+    SourceId: 
+    DisplayName: Recognize Spell
+    Level: 1
+    ResolvedFeature: {fileID: 0}

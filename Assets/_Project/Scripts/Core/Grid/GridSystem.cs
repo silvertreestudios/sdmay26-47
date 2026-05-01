@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     /// <summary>
     /// Manages the layered game grid built from scene-authored TerrainBlocks.
@@ -355,7 +355,7 @@ namespace PathfinderTactics.Grid
         }
 
         /// <summary>
-        /// Returns all units within PF2e 3D distance of the given position.
+        /// Returns all units within TacticsRuleset 3D distance of the given position.
         /// </summary>
         public List<Unit> GetUnitsInRadius(Vector3Int center, int radiusTiles)
         {
@@ -363,7 +363,7 @@ namespace PathfinderTactics.Grid
 
             foreach (var kvp in occupancy)
             {
-                int dist = Core.PF2E_Core.GetPF2eDistance3D(center, kvp.Key);
+                int dist = Core.TacticsRuleset_Core.GetTacticsRulesetDistance3D(center, kvp.Key);
                 if (dist <= radiusTiles)
                     unitsInRange.Add(kvp.Value);
             }

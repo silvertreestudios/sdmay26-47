@@ -1,8 +1,8 @@
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     /// <summary>
     /// Visualizes the tile the unit is currently occupying on the grid in real-time.

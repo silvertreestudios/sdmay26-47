@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_uptzvOLrZ3fctrl2
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: uptzvOLrZ3fctrl2
+  Slug: exalted-reaction
+  DisplayName: Exalted Reaction
+  IconPath: icons/skills/melee/swords-parry-block-yellow.webp
+  Description: Your champion's reaction exalts nearby allies, allowing them to benefit
+    as well. When you use your champion's reaction, you also get the effect listed
+    for its exalted reaction.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 0146e36275cac0ffbaaec18c1c1ebec18316705e9025d7b0da022ca01a7044d2
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Desecration"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:selfish-shield"],"property":"description","value":[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Desecration"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Iniquity"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Iniquity","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:destructive-vengeance"],"property":"description","value":[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Iniquity"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Iniquity","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Grandeur"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Grandeur","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:flash-of-grandeur"],"property":"description","value":[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Grandeur"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Grandeur","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Justice"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Justice","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:retributive-strike"],"property":"description","value":[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Justice"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Justice","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Liberation"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Liberation","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:liberating-step"],"property":"description","value":[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Liberation"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Liberation","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Obedience"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Obedience","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:iron-command"],"property":"description","value":[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Obedience"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Obedience","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Redemption"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Redemption","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:glimpse-of-redemption"],"property":"description","value":[{"text":"PF2E.SpecificRule.Champion.ExaltedReaction.Redemption"},{"predicate":["feat:exalted-greatness"],"text":"PF2E.SpecificRule.Champion.ExaltedGreatness.Redemption","title":"PF2E.SpecificRule.Champion.ExaltedGreatness.Label"}]}'
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

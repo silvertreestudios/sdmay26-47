@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_Gmk7oNITvMVBy78Z
+  m_EditorClassIdentifier: 
+  SourceId: Gmk7oNITvMVBy78Z
+  Slug: undine
+  DisplayName: Undine
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: A water elemental ancestor influences your bloodline. You gain the
+    undine trait, in addition to the traits from your ancestry. You gain a swim Speed
+    of 10 feet and the amphibious trait. Like all creatures with the amphibious trait,
+    you can breathe both water and air. You can choose from undine feats and feats
+    from your ancestry whenever you gain an ancestry feat.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 4dae68d2a809eac467fc24f448d6462ae5e218ecce809e41a335bd4b4770c765
+  Traits:
+  - amphibious
+  - undine
+  TraitsLower:
+  - amphibious
+  - undine
+  RawRules:
+  - Key: BaseSpeed
+    Path: 
+    Mode: 
+    Value: 10
+    Uuid: 
+    Json: '{"key":"BaseSpeed","selector":"swim","value":10}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

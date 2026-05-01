@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_rAvoo4cwdkWiGNe0
+  m_EditorClassIdentifier: 
+  SourceId: rAvoo4cwdkWiGNe0
+  Slug: professional-letter-writer
+  DisplayName: Professional Letter Writer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You make a living out of reading and writing letters for people who
+    are eager to keep in touch with their loved ones over long distances. Many of
+    these people are semiliterate and can't afford magical communication, such as
+    sending or dream message spells. You aren't always fluent in the many disparate
+    languages you're asked to record, but with your many books and dictionaries,
+    you get by. Your services are important to the community, despite your craft
+    being a rarity Choose two attribute boosts. One must be to Intelligence or Charisma
+    , and one is a free attribute boost. You're trained in Scribing Lore. You gain
+    one skill feat of your choice between the Specialty Crafting or Multilingual
+    skill feat. During your daily preparations, you can choose one additional language
+    that you know. You can change this language the next time you make your daily
+    preparations.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: d7a488b212756374d85a539206333e3a21c26575b8043c46f42cfc1b3277929c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"value":"Compendium.pf2e.feats-srd.Item.Specialty
+      Crafting"},{"value":"Compendium.pf2e.feats-srd.Item.Multilingual"}],"flag":"feat","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.SkillFeat"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.feat}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.feat}"}'
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Scribing Lore
+    Rank: 1
+  LoreSkills:
+  - Scribing Lore
+  GrantedFeats: []

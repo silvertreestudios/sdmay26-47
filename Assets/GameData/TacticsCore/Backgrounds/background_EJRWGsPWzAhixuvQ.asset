@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_EJRWGsPWzAhixuvQ
+  m_EditorClassIdentifier: 
+  SourceId: EJRWGsPWzAhixuvQ
+  Slug: belkzen-slayer
+  DisplayName: Belkzen Slayer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Eye of Dread You are a fearsome warrior from
+    the Hold of Belkzen, and your clan counts on you for support, counsel, and defense.
+    With the rising threat of the Whispering Tyrant threatening the safety of your
+    home, you must not let your people down. Choose two attribute boosts. One must
+    be to Strength or Charisma , and one is a free attribute boost. You're trained
+    in the Intimidation skill and the Orc Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating
+    Glare] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 2e48fd9d57728556c9e81e3d043d5d4c1c8c1eaabc70eaa7c4a972dc133e9840
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Orc Lore
+    Rank: 1
+  LoreSkills:
+  - Orc Lore
+  GrantedFeats:
+  - SourceKey: caima
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

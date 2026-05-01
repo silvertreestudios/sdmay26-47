@@ -1,9 +1,9 @@
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
+using TacticsGame.Characters;
+using TacticsGame.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     /// <summary>
     /// Represents an individual unit's plate in the Turn Order UI.
@@ -65,9 +65,9 @@ namespace PathfinderTactics.UI
             targetUnit = unit;
 
             // Set Portrait
-            if (unit.GetStats() != null && unit.GetStats().portraitIcon != null)
+            if (unit.GetStats() != null && unit.GetStats().GetPortraitIcon() != null)
             {
-                portraitImage.sprite = unit.GetStats().portraitIcon;
+                portraitImage.sprite = unit.GetStats().GetPortraitIcon();
             }
 
             // Set Border based on Faction

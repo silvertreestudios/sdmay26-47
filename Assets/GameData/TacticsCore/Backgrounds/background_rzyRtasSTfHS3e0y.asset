@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_rzyRtasSTfHS3e0y
+  m_EditorClassIdentifier: 
+  SourceId: rzyRtasSTfHS3e0y
+  Slug: returned
+  DisplayName: Returned
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You died and miraculously returned with knowledge of the realms beyond
+    death and a stronger link to life. Some dead and undead souls might feel a strange,
+    instinctual kinship with you. Choose two attribute boosts. One must be to Constitution
+    or Wisdom , and one is a free attribute boost. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Diehard]
+    feat and the @UUID[Compendium.pf2e.feats-srd.Item.Additional Lore] feat for Boneyard
+    Lore.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 11243841632a80fe107494badb66db12a04e97345b5d64a8a401341296655671
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: '**Boneyard Lore (with Additional Lore perks)'
+    Rank: 1
+  LoreSkills:
+  - '**Boneyard Lore (with Additional Lore perks)'
+  GrantedFeats:
+  - SourceKey: bpwjq
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Diehard
+    SourceId: 
+    DisplayName: Diehard
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: k29rl
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Additional Lore
+    SourceId: 
+    DisplayName: Additional Lore
+    Level: 1
+    ResolvedFeature: {fileID: 0}

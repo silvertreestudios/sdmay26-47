@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_3M2FRDlunjFshzbq
+  m_EditorClassIdentifier: 
+  SourceId: 3M2FRDlunjFshzbq
+  Slug: fogfen-tale-teller
+  DisplayName: Fogfen Tale-Teller
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You know there are monstrous things out in the swamp known as Fogfen;
+    you've seen these things through the mist, gliding through the murky water and
+    heaving themselves over sodden bits of land. No one in Otari believes your tales
+    of swamp monsters from the depths, even when you embellish the creatures of your
+    stories with fangs, wings, or tentacles. You'll just have to prove to them that
+    there are truly monsters out there, and that they were wrong to doubt you. Choose
+    two attribute boosts. One must be to Strength or Charisma , and one is a free
+    attribute boost. You're trained in Athletics and the Swamp Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Titan Wrestler] skill feat.
+  SourceTitle: Pathfinder Abomination Vaults Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 950251ad9255b105bc535a1757e933429c044b80ded59786c8ab2e3f245842e9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Swamp Lore
+    Rank: 1
+  LoreSkills:
+  - Swamp Lore
+  GrantedFeats:
+  - SourceKey: by6ry
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Titan Wrestler
+    SourceId: 
+    DisplayName: Titan Wrestler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

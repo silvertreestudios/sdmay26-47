@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_lDT5h3f5GXRj42Ir
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: lDT5h3f5GXRj42Ir
+  Slug: stonestep-shisk
+  DisplayName: Stonestep Shisk
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Navigating mountains and other rocky terrain is second nature to you.
+    You can ignore non-magical difficult terrain caused by rubble and uneven ground
+    made of stone and earth.
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: f5519d81b4e97640fbbd8971189f5f33f0bc339b75b81fb17d8e370d4147bfdf
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.x1YinOddgUxwOLqP
+    SourceId: 
+    Slug: shisk
+    DisplayName: Shisk
+  ParentAncestryAsset: {fileID: 11400000, guid: 99c85d2314ba82d469243287e812686c, type: 2}
+  GrantedFeatures: []

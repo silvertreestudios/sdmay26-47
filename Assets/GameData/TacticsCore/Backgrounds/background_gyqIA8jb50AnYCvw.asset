@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_gyqIA8jb50AnYCvw
+  m_EditorClassIdentifier: 
+  SourceId: gyqIA8jb50AnYCvw
+  Slug: convocation-scout
+  DisplayName: Convocation Scout
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The Convocation is the biggest, most anticipated academic event in
+    recent years. Eager to create long-lasting alliances as well as recruit promising
+    students or staff to their own ranks, your school has sent you as a representative
+    to advance their interests. Your tact, analytical ability, and gift for communication
+    serve you well in scouting profitable partnerships with the Convocation's other
+    sponsors and guests. Choose two attribute boosts. One must be to Wisdom or Charisma
+    , and one is a free attribute boost. You're trained in Diplomacy. You're also
+    trained in the Politics Lore skill or a Lore skill associated with your school.
+    You gain the Group Impression skill feat.
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 0d17129ad8b9a025f9b83643f05ade40558085a6f785bd760fbcc463eafdee24
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Politics Lore
+    Rank: 1
+  LoreSkills:
+  - Politics Lore
+  GrantedFeats:
+  - SourceKey: u9n1N
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Impression
+    SourceId: 
+    DisplayName: Group Impression
+    Level: 1
+    ResolvedFeature: {fileID: 0}

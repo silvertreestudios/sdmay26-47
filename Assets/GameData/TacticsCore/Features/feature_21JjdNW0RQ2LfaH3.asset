@@ -1,0 +1,213 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_21JjdNW0RQ2LfaH3
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 21JjdNW0RQ2LfaH3
+  Slug: metal-gate
+  DisplayName: Metal Gate
+  IconPath: icons/commodities/metal/mail-chain-steel.webp
+  Description: 'Metal Gate Junction Critical Blast The target takes 1d6 persistent
+    bleed damage; if the creature has the metal trait or is made of metal, it instead
+    takes 1d6 persistent damage with no type from rust. You gain an item bonus to
+    this persistent damage equal to your item bonus to impulse attack rolls, such
+    as from a gate attenuator . Elemental Resistance electricity, metal Impulse Junction
+    Choose acid, electricity, or piercing. Until the start of your next turn, each
+    time a creature touches you or damages you with an unarmed melee attack or nonreach
+    melee weapon, it takes damage of the chosen type equal to half your level (minimum
+    1 damage). Aura Junction Your enemies in the aura take a -1 status penalty to
+    attacks with metal objects, and they take a -1 status penalty to AC if they''re
+    wearing metal armor, have the metal trait, or are made of metal. Skill Junction
+    Crafting, @UUID[Compendium.pf2e.feats-srd.Item.Quick Repair]'
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b22c43911b8b3c6c50a813a420be3e7288357bd657495d68dd40e31b7b75f629
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"lte":["item:level","parent:granter:level"]},"item:trait:impulse","item:trait:metal",{"not":"item:trait:composite"}],"itemType":"feat"},"flag":"impulseOne","key":"ChoiceSet","predicate":["class:kineticist"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseOne}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["class:kineticist"],"uuid":"{item|flags.pf2e.rulesSelections.impulseOne}"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:1","item:trait:impulse","item:trait:metal"],"itemType":"feat"},"flag":"impulseTwo","key":"ChoiceSet","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:metal-gate"],"prompt":"PF2E.SpecificRule.Kineticist.KineticGate.Prompt.Impulse"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.impulseTwo}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:metal-gate"],"uuid":"{item|flags.pf2e.rulesSelections.impulseTwo}"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"kinetic-gate:metal","priority":10}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elements
+    Mode: add
+    Value: '{"label":"PF2E.TraitMetal","value":"metal"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.kineticist.elements","value":{"label":"PF2E.TraitMetal","value":"metal"}}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","option":"junction:metal:impulse","predicate":["kinetic-gate:initial:single-gate","kinetic-gate:first-element:metal-gate"]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.one
+    Mode: override
+    Value: '"metal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.one","predicate":["kinetic-gate:first-element:metal-gate"],"value":"metal"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.two
+    Mode: override
+    Value: '"metal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.two","predicate":["kinetic-gate:second-element:metal-gate"],"value":"metal"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.three
+    Mode: override
+    Value: '"metal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.three","predicate":["parent:granter:gates-threshold"],"value":"metal"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.four
+    Mode: override
+    Value: '"metal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.four","predicate":["parent:granter:second-gates-threshold"],"value":"metal"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.five
+    Mode: override
+    Value: '"metal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.five","predicate":["parent:granter:third-gates-threshold"],"value":"metal"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.gate.six
+    Mode: override
+    Value: '"metal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.gate.six","predicate":["parent:granter:fourth-gates-threshold"],"value":"metal"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Quick Repair
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":["junction:metal:skill"],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.feats-srd.Item.Quick
+      Repair"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.crafting.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.crafting.rank","predicate":["junction:metal:skill"],"value":1}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"ternary(gte(@actor.level,17), 3, ternary(gte(@actor.level,10), 2, 1))"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["junction:metal:skill","self:effect:kinetic-aura"],"selector":"crafting","type":"status","value":"ternary(gte(@actor.level,17),
+      3, ternary(gte(@actor.level,10), 2, 1))"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["junction:metal:resistance","self:effect:kinetic-aura"],"type":["electricity","metal"],"value":"@actor.level"}'
+  - Key: Immunity
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Immunity","predicate":["junction:metal:resistance",{"gte":["self:level",17]},"self:effect:kinetic-aura"],"type":["electricity","metal"]}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["criticalSuccess"],"predicate":["junction:metal:critical","item:trait:metal"],"selector":"elemental-blast-damage","text":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Metal","title":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Label"}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"critical":true,"damageType":"bleed","diceNumber":1,"dieSize":"d6","key":"DamageDice","label":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Label","predicate":["junction:metal:critical","item:trait:metal"],"selector":"elemental-blast-damage"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@blast.flags.pf2e.attackItemBonus"'
+    Uuid: 
+    Json: '{"critical":true,"damageCategory":"persistent","damageType":"bleed","key":"FlatModifier","label":"PF2E.SpecificRule.Kineticist.Impulse.CriticalBlast.Label","predicate":["junction:metal:critical","item:trait:metal"],"selector":"elemental-blast-damage","value":"@blast.flags.pf2e.attackItemBonus"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","predicate":[{"gte":["action:cost",2]},"junction:metal:impulse","self:action:trait:impulse","self:action:trait:metal"],"selector":"impulse-attack-roll","text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Metal","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Metal","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"feat","key":"ItemAlteration","mode":"add","predicate":[{"gte":["item:action:cost",2]},"junction:metal:impulse","item:trait:impulse","item:trait:metal"],"property":"description","value":[{"text":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Metal","title":"PF2E.SpecificRule.Kineticist.Impulse.ImpulseJunction.Title"}]}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.kineticist.elementalBlast.metal
+    Mode: override
+    Value: '{"damageTypes":["piercing","slashing"],"dieFaces":8,"element":"metal","img":"systems/pf2e/icons/actions/elemental-blast/metal.webp","label":"PF2E.SpecificRule.Kineticist.Impulse.ElementalBlast.Label.Metal","range":30}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.kineticist.elementalBlast.metal","predicate":["self:effect:kinetic-aura",{"not":"battle-form"}],"priority":19,"value":{"damageTypes":["piercing","slashing"],"dieFaces":8,"element":"metal","img":"systems/pf2e/icons/actions/elemental-blast/metal.webp","label":"PF2E.SpecificRule.Kineticist.Impulse.ElementalBlast.Label.Metal","range":30}}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"enemies","predicate":["junction:metal:aura"],"uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Aura Junction (Metal)"}],"key":"Aura","level":"@actor.level","predicate":["self:effect:kinetic-aura","junction:metal:aura"],"priority":99,"radius":"@actor.flags.pf2e.kineticist.auraRadius","slug":"kinetic-aura","traits":["kineticist","primal"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseOne}'
+    SourceId: 
+    DisplayName: impulseOne}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.impulseTwo}'
+    SourceId: 
+    DisplayName: impulseTwo}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Repair
+    SourceId: 
+    DisplayName: Quick Repair
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

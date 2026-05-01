@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_rUMHUzZhOMOVbxRO
+  m_EditorClassIdentifier: 
+  SourceId: rUMHUzZhOMOVbxRO
+  Slug: streetfood-vendor
+  DisplayName: Streetfood Vendor
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're an inspired chef, trying to make it as big as you can out on
+    the open road. You travel with a wood or iron cart that doubles as your portable
+    business and shelter. Struggling for funds or fighting for a place to set up
+    shop are common plights in your daily life. However, there's no one hungrier
+    than a budding adventurer, and you're very affordable, always there with the
+    perfect meal. Choose two attribute boosts. One must be to Strength or Dexterity
+    , and one is a free attribute boost. You're trained in either Crafting or Society,
+    and Cooking Lore. You gain the Seasoned skill feat.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 7e9a9083c33952897c256580196daaee5075349a04d7fee1231716357501c25e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Cooking Lore
+    Rank: 1
+  LoreSkills:
+  - Cooking Lore
+  GrantedFeats:
+  - SourceKey: S0PJC
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Seasoned
+    SourceId: 
+    DisplayName: Seasoned
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 
   Slug: 
-  ElementName: Heal
+  ElementName: Heal 3
   Icon: {fileID: 0}
   Description: Disperse a massive burst of vital energy in a 30-foot emanation. All
     living creatures in the area are healed for 1d8 HP, and all undead creatures

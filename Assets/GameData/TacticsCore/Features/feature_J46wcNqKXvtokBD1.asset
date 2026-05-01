@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_J46wcNqKXvtokBD1
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: J46wcNqKXvtokBD1
+  Slug: reconfigure
+  DisplayName: Reconfigure
+  IconPath: systems/pf2e/icons/features/classes/reconfigure.webp
+  Description: You've become an expert in all crafts and are always adjusting your
+    inventions. You can attempt to change the modifications on your innovation by
+    spending 1 day of downtime tinkering with it and attempting a Crafting check,
+    with a high DC for your level. On a success, you can change one modification
+    you've chosen for your innovation to a different modification of the same kind
+    (initial, breakthrough, or revolutionary). If you have any modification feats,
+    on a successful check you can choose to instead retrain a modification feat to
+    a different modification feat. The new feat has to meet the standard restrictions
+    for retraining.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 85ddb62ddfa5b8a00377f7b603011f7a8f186b334d4a66533426b661ce411b03
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules: []
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

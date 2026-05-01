@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_7Y2XDqr4gRisjiAG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 7Y2XDqr4gRisjiAG
+  Slug: lesson-of-renewal
+  DisplayName: Lesson of Renewal
+  IconPath: systems/pf2e/icons/spells/restorative-moment.webp
+  Description: You gain the @UUID[Compendium.pf2e.spells-srd.Item.Restorative Moment]
+    hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Field of
+    Life].
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 266cd79a45deee3da0720c96159a654189b437f5e72400012bfa6f2681a49c34
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 10
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

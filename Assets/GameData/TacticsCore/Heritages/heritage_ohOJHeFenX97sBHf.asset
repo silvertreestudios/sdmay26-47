@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_ohOJHeFenX97sBHf
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: ohOJHeFenX97sBHf
+  Slug: scalekeeper-vishkanya
+  DisplayName: Scalekeeper Vishkanya
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You are part of the family of vishkanyas in your community tasked
+    with keeping records of the history and experiences of your people. Your scholarly
+    skill affords you a quick mind. Once per day, you can attempt to Recall Knowledge
+    as a free action.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c35d62a82d48aae9a0e44804fe5f619f305bdbd2c780ad50ece7cc198d732922
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.u1VJEXsVlmh3Fyx0
+    SourceId: 
+    Slug: vishkanya
+    DisplayName: Vishkanya
+  ParentAncestryAsset: {fileID: 11400000, guid: 30dc95b74f6069247afe27e7048d5c79, type: 2}
+  GrantedFeatures: []

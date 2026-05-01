@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_cvQmPkJtybMcHinK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: cvQmPkJtybMcHinK
+  Slug: esoteric-lore
+  DisplayName: Esoteric Lore
+  IconPath: icons/sundries/documents/document-tree-brown.webp
+  Description: Your experience with the unknown, as well as the tales you've exchanged
+    with other thaumaturges, has taught you about strange phenomena of every kind.
+    You become trained in Esoteric Lore, a special lore skill that can be used to
+    Recall Knowledge regarding haunts, curses, and creatures of any type, but that
+    can't be used to Recall Knowledge of other topics. Unlike a normal Lore skill,
+    you use Charisma as your modifier on Esoteric Lore checks. You also gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Dubious Knowledge] skill feat. At 3rd level,
+    you become an expert in Esoteric Lore; at 7th level, you become a master in Esoteric
+    Lore; and at 15th level, you become legendary in Esoteric Lore.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 802fbda1984cadc28a3cca1a521f33cf0cce7a89b9df82359d992a52a77329c6
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"ability":"cha","force":true,"key":"FlatModifier","selector":["esoteric","esoteric-lore","lore-esoteric"],"type":"ability"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Dubious Knowledge"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

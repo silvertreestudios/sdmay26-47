@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_Yu7Cl0Lk94LdPRi6
+  m_EditorClassIdentifier: 
+  SourceId: Yu7Cl0Lk94LdPRi6
+  Slug: noble
+  DisplayName: Noble
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'To the common folk, the life of a noble seems one of idyllic luxury,
+    but growing up as a noble or member of the aspiring gentry, you know the reality:
+    a noble''s lot is obligation and intrigue. Whether you seek to escape your duties
+    by adventuring or to better your station, you have traded silks and pageantry
+    for an adventurer''s life. Choose two attribute boosts. One must be to Intelligence
+    or Charisma , and one is a free attribute boost. You''re trained in the Society
+    skill and the Genealogy Lore or Heraldry Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Courtly
+    Graces] skill feat.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 95bd4b83dee3bd2c8dc382fcbd30032afa77106de06880b2c9d01f58b1fe155c
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Genealogy or Heraldry> Lore
+    Rank: 1
+  LoreSkills:
+  - <Genealogy or Heraldry> Lore
+  GrantedFeats:
+  - SourceKey: 5gkru
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Courtly Graces
+    SourceId: 
+    DisplayName: Courtly Graces
+    Level: 1
+    ResolvedFeature: {fileID: 0}

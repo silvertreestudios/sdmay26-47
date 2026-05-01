@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_oj4B6KLAOlUbY0wr
+  m_EditorClassIdentifier: 
+  SourceId: oj4B6KLAOlUbY0wr
+  Slug: eclipseborn
+  DisplayName: Eclipseborn
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were born at the exact moment of a solar or lunar eclipse. At
+    the eclipse's junction, or not long after, a catastrophe fell upon the area of
+    your birth-perhaps it affected only the people around you, a city, or even spanned
+    the entire region. Whatever the scope, those present at your arrival came to
+    believe the eclipse was the omen of ill fortune, and you were its harbinger.
+    You grew up distinctly aware others viewed you as a child of misfortune and,
+    to a certain extent, they were right. Choose two attribute boosts. One must be
+    to Charisma or Constitution, and one is a free attribute boost. Decide with the
+    GM what catastrophic event coincided with your birth; you're trained in a Lore
+    skill related to that event. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Ill
+    Omen] as an occult innate spell once per day. After you Cast this Spell, but
+    before you regain the ability to cast it the following day, the GM can force
+    you to reroll a successful saving throw, attack roll, or skill check as misfortune
+    finds its way back to you. This is a misfortune effect. If this effect causes
+    you to fail the associated saving throw, attack roll, or skill check, you can
+    cast ill omen again a second time that day.
+  SourceTitle: Pathfinder Lost Omens Travel Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 01b80653bd3b6dc1ef735b835029008c302d9d02c46e1b0c419b92c78510a0f0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <GM> Lore
+    Rank: 1
+  LoreSkills:
+  - <GM> Lore
+  GrantedFeats: []

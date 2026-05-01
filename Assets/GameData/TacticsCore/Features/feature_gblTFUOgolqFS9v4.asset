@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_gblTFUOgolqFS9v4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: gblTFUOgolqFS9v4
+  Slug: divine-font
+  DisplayName: Divine Font
+  IconPath: icons/magic/fire/flame-burning-hand-white.webp
+  Description: 'Through your deity''s blessing, you gain additional spells that channel
+    either the life force called vitality or its counterforce, the void. When you
+    prepare your spells each day, you can prepare additional @UUID[Compendium.pf2e.spells-srd.Item.Heal]
+    or @UUID[Compendium.pf2e.spells-srd.Item.Harm] spells, depending on your deity.
+    The divine font spell your deity provides is listed in the Divine Font entry
+    for your deity; if both are listed, you can choose between heal or harm . Once
+    you choose, you can''t change your choice short of divine intervention. Healing
+    Font: You gain 4 additional spell slots each day at your highest rank of cleric
+    spell slots. You can prepare only heal spells in these slots. At 5th level, the
+    number of additional slots increases to 5, and at 15th level, the total number
+    of additional slots increases to 6. Harmful Font: You gain 4 additional spell
+    slots each day at your highest rank of cleric spell slots. You can prepare only
+    harm spells in these slots. At 5th level, the number of additional slots increases
+    to 5, and at 15th level, the total number of additional slots increases to 6.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 159a077cc1ba0ebcc97472f437fed629c14b9aebd3a2b6af0ddb3621636d1c2d
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"img":"icons/magic/life/cross-worn-green.webp","label":"PF2E.SpecificRule.Cleric.DivineFont.Healing","predicate":["deity:primary:font:heal"],"value":"heal"},{"img":"systems/pf2e/icons/spells/harm.webp","label":"PF2E.SpecificRule.Cleric.DivineFont.Harmful","predicate":["deity:primary:font:harm"],"value":"harm"}],"flag":"divineFont","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Cleric.DivineFont.Prompt","rollOption":"divine-font"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

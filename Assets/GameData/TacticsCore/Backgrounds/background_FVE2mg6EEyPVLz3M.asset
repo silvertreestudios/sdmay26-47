@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_FVE2mg6EEyPVLz3M
+  m_EditorClassIdentifier: 
+  SourceId: FVE2mg6EEyPVLz3M
+  Slug: student-of-magic
+  DisplayName: Student of Magic
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You are currently enrolled at a school of magic, where you're learning
+    the fundamentals of your magical tradition. Whether your adventuring occurs during
+    breaks between semesters, as part of a work study program, or even within the
+    halls of the academy itself, you'll have to learn to juggle your dual life. Choose
+    two attribute boosts. One must be to Intelligence or Wisdom , and one is a free
+    attribute boost. You're trained in your choice of Arcana, Nature, Occultism,
+    or Religion, as well as Academia Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Recognize
+    Spell] skill feat.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 1b99ad2c214d1a3daff00a2a0a5cd0c9abc94c2731e40a7ffcd46f2cd9d40541
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Arcana","value":"arcana"},{"label":"PF2E.Skill.Nature","value":"nature"},{"label":"PF2E.Skill.Occultism","value":"occultism"},{"label":"PF2E.Skill.Religion","value":"religion"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Academia Lore
+    Rank: 1
+  LoreSkills:
+  - Academia Lore
+  GrantedFeats:
+  - SourceKey: xa78y
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Recognize Spell
+    SourceId: 
+    DisplayName: Recognize Spell
+    Level: 1
+    ResolvedFeature: {fileID: 0}

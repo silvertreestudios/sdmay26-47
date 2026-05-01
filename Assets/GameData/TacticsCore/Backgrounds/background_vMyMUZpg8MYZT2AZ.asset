@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_vMyMUZpg8MYZT2AZ
+  m_EditorClassIdentifier: 
+  SourceId: vMyMUZpg8MYZT2AZ
+  Slug: wish-for-riches
+  DisplayName: Wish for Riches
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: On the night of the Missing Moment, you saw visions of fabulous riches
+    in the gate before you. Honestly, how someone could see anything but piles of
+    jewels and gold is utterly baffling to you. Having pined for material wealth
+    for as long as you could remember, you practically sprang into the portal in
+    hopes of securing your fortune. The next moment, however, you were standing right
+    where you'd just been, though indeterminate time had passed. The night's cold
+    hardly bothered you; in fact, you soon discovered that you could absorb the very
+    chill in the air, in the process changing the appearance of everything around
+    you into a sheen of finest silver. You're no richer than before you walked through
+    the gate, unfortunately, but perhaps you could use this new power somehow to
+    pursue your avarice anew. Your deviant abilities are of the dragon classification.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Consume Energy] deviant feat
+    with the cold type. As a quirk, your deviant abilities manifest in a silver hue,
+    and when you use a deviant ability you absorb the color silver from your surroundings.
+    The absorbed color returns to your surroundings within an hour. Choose two attribute
+    boosts. One must be to Charisma or Dexterity , and one is a free attribute boost.
+    You're trained in the Thievery skill and the Games Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Subtle
+    Theft] skill feat.
+  SourceTitle: Pathfinder Gatewalkers Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 3f47900595a63e492a94bccf9a261e1b3e2ffddbc8e0c60d4502a8576d6794f1
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Consume Energy
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Consume Energy"}'
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 17
+    CustomSkillId: thievery
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Games Lore
+    Rank: 1
+  LoreSkills:
+  - Games Lore
+  GrantedFeats:
+  - SourceKey: eGyHW
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Subtle Theft
+    SourceId: 
+    DisplayName: Subtle Theft
+    Level: 1
+    ResolvedFeature: {fileID: 0}

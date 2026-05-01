@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_gfklP8ub45R4wXKe
+  m_EditorClassIdentifier: 
+  SourceId: gfklP8ub45R4wXKe
+  Slug: aspiring-river-monarch
+  DisplayName: Aspiring River Monarch
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Broken Lands New realms rise constantly in the
+    River Kingdoms, and you intend to lead one of them. Making your reign last, however,
+    will require both strength and grace. Choose two attribute boosts. One must be
+    to Wisdom or Charisma , and one is a free attribute boost. You're trained in
+    the Society skill and the Politics Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Courtly
+    Graces] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 0a60c7c00f390715baa31339f4a0737c8f989d0571dd0371c154ab85850a902e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Politics Lore
+    Rank: 1
+  LoreSkills:
+  - Politics Lore
+  GrantedFeats:
+  - SourceKey: 1v9rl
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Courtly Graces
+    SourceId: 
+    DisplayName: Courtly Graces
+    Level: 1
+    ResolvedFeature: {fileID: 0}

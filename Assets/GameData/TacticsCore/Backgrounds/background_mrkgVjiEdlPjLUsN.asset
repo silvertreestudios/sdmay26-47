@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_mrkgVjiEdlPjLUsN
+  m_EditorClassIdentifier: 
+  SourceId: mrkgVjiEdlPjLUsN
+  Slug: vidrian-reformer
+  DisplayName: Vidrian Reformer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Mwangi Expanse You know that the only way your
+    homeland of Vidrian can remain free from outside conquerors is by forging a strong
+    and unified government. As such, you seek to bind your fellow citizens together
+    through careful diplomacy and force of personality-or, if necessary, subterfuge
+    and intrigue. Choose two attribute boosts. One must be to Dexterity or Charisma
+    , and one is a free attribute boost. You're trained in the Diplomacy skill and
+    the Politics Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Hobnobber]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: e7df10f500036ff610af6ecd850f0fcb944a8e4f6c6152a7c38a4b5384e34dc3
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Politics Lore
+    Rank: 1
+  LoreSkills:
+  - Politics Lore
+  GrantedFeats:
+  - SourceKey: d0exc
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hobnobber
+    SourceId: 
+    DisplayName: Hobnobber
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_Y50ssWBBKSRVBpSa
+  m_EditorClassIdentifier: 
+  SourceId: Y50ssWBBKSRVBpSa
+  Slug: mystic-seer
+  DisplayName: Mystic Seer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You delight crowds by reading minds, telling futures, and contacting
+    spirits. Although much of your work is misdirection and showmanship, your cons
+    have inadvertently awakened a genuine awareness of magic in your mind. This new
+    sense is both thrilling and frightening, and you hope that you can hone it further
+    in the Circus of Wayward Wonders. Choose two attribute boosts. One must be to
+    Intelligence or Wisdom , and one is a free attribute boost. You're trained in
+    the Arcana skill and the Scam Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Arcane
+    Sense] skill feat.
+  SourceTitle: Pathfinder Extinction Curse Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 50becf22fa2a24f6e1a0fd837676dc9cf121225d295fa129538ee85502da4b0b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Scam Lore
+    Rank: 1
+  LoreSkills:
+  - Scam Lore
+  GrantedFeats:
+  - SourceKey: kkm53
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Arcane Sense
+    SourceId: 
+    DisplayName: Arcane Sense
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_JBRBb2818DZ4hjXw
+  m_EditorClassIdentifier: 
+  SourceId: JBRBb2818DZ4hjXw
+  Slug: total-power
+  DisplayName: Total Power
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Whether you desire simple security after a life of uncertainty or
+    you're actually just a control freak, power over your own fate is the thing you've
+    always wanted. On the night of the Missing Moment, you glimpsed such power amid
+    the light of a glowing archway, and you stepped through, eager to claim control
+    over your destiny. What happened next, you don't remember\u2014you came to at
+    the same place you'd started, though clearly a lot of time had passed. Ever since
+    that night, your body has felt heavier than before. You soon discovered that
+    you could will your very bones into extending from your flesh like thorns from
+    a rose's stem. Though you didn't choose the title gatewalker for yourself, you're
+    sure you can use your strange new power to exercise control over your life. Your
+    deviant abilities are of the troll classification. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Bone
+    Spikes] deviant feat. As a quirk, whenever you use a deviant ability, the very
+    fibers of your muscles flex and expand to impossible proportions. Your actual
+    strength remains the same during these times, but few can deny your fearsome
+    appearance. Choose two attribute boosts. One must be to Strength or Wisdom ,
+    and one is a free attribute boost. You're trained in the Intimidation skill and
+    the Legal Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating
+    Glare] skill feat."
+  SourceTitle: Pathfinder Gatewalkers Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 60ea96a338ee74f3173fbad22dd7ba7a81622cf6f2cb275969052da9628b9f48
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Bone Spikes
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Bone Spikes"}'
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Legal Lore
+    Rank: 1
+  LoreSkills:
+  - Legal Lore
+  GrantedFeats:
+  - SourceKey: w2FQs
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

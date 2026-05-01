@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_TPoP1mKpqUOpRQ5Y
+  m_EditorClassIdentifier: 
+  SourceId: TPoP1mKpqUOpRQ5Y
+  Slug: reputation-seeker
+  DisplayName: Reputation Seeker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You're likely from Breachill, but unlike the Local Scion, your family
+    has no notable legacy in the area. You might not even have much of a family at
+    all to call your own, and could be an orphan. You've seen so many people make
+    names for themselves that you set out on your own and spent some time abroad
+    in the jungles or deserts of Garund or in the upper reaches of the Darklands-regions
+    that proved too dangerous to remain in for long on your own. You returned home
+    with more caution and knowledge of the world beyond Breachill's borders, but
+    still determined to win fame. You've decided that joining an adventuring group
+    would be the best way to secure aid in your quest to build your own reputation,
+    and are attending the Call for Heroes to find such allies. Choose two attribute
+    boosts. One must be to Dexterity or Intelligence , and one is a free attribute
+    boost. You're trained in the Survival skill and the Darklands, Desert, or Jungle
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Terrain Expertise]
+    skill feat (underground if you have Darklands Lore, desert if you have Desert
+    Lore, or forest if you have Jungle Lore).
+  SourceTitle: Pathfinder Age of Ashes Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a638ba3429e3f2da2c2c9709ec188ce291ccbd3322b7ac682c14e6b7a69f6005
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Terrain> Lore
+    Rank: 1
+  LoreSkills:
+  - <Terrain> Lore
+  GrantedFeats:
+  - SourceKey: u6r5t
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Expertise
+    SourceId: 
+    DisplayName: Terrain Expertise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_nzgb43mQmLgaqDoQ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: nzgb43mQmLgaqDoQ
+  Slug: primal-hierophant
+  DisplayName: Primal Hierophant
+  IconPath: icons/weapons/wands/wand-crook-yellow.webp
+  Description: You command the most potent forces of primal magic and can cast a
+    spell of truly incredible power. You gain a single 10th-rank spell slot and can
+    prepare a spell in that slot using druid spellcasting. Unlike with other spell
+    slots, you can't use 10-rank slots with abilities that give you more spell slots
+    or that let you cast spells without expending spell slots. You don't gain more
+    10th-rank spells as you level up, but you can take the @UUID[Compendium.pf2e.feats-srd.Item.Hierophant's
+    Power] feat to gain a second slot.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5e5177962e1a336e599a41e29180adc78b4642d56efb1526c9175b4d71554a75
+  Traits:
+  - druid
+  TraitsLower:
+  - druid
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_VDz0zSZOmdzRxy65
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: VDz0zSZOmdzRxy65
+  Slug: godly-expertise
+  DisplayName: Godly Expertise
+  IconPath: icons/magic/control/buff-flight-wings-runes-purple.webp
+  Description: Your divine power increases in might. Your proficiency rank for your
+    exemplar class DC increases to expert.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6b92ef5ab237f1ac5e794b7dc3f1d4073a340bcc3a726e20af5c0af5e658b29f
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules: []
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: exemplar
+    Rank: 2
+  FocusPointDelta: 0

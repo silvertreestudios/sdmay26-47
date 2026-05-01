@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_vgin9ff2sUBMpuaI
+  m_EditorClassIdentifier: 
+  SourceId: vgin9ff2sUBMpuaI
+  Slug: former-aspis-agent
+  DisplayName: Former Aspis Agent
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: For more than a century, the Pathfinder Society has clashed with the
+    avaricious and underhanded Aspis Consortium, and several years ago the Society
+    dealt its rival a decisive blow. You may be one of the few survivors of a doomed
+    Aspis expedition, or perhaps you chafed at the Consortium's villainous practices
+    and defected to the Pathfinders. No matter your reasons, you know how to be efficient
+    and ruthless when the circumstances demand. Choose two attribute boosts. One
+    must be to Intelligence or Charisma , and one is a free attribute boost. You're
+    trained in the Intimidation skill and the Aspis Consortium Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Group Coercion] skill feat. You gain
+    access to any uncommon options as though you were a member of the Aspis Consortium.
+    Special You can select this background only if you have earned credit for at
+    least 5 First Edition scenarios from Season 7 of the Pathfinder Society organized
+    play campaign.
+  SourceTitle: Organized Play Foundation
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 388695f3fada00df211fab9cff82bd10c31537f935a112b619e2102ad12100fe
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Aspis Consortium Lore
+    Rank: 1
+  LoreSkills:
+  - Aspis Consortium Lore
+  GrantedFeats:
+  - SourceKey: fshym
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

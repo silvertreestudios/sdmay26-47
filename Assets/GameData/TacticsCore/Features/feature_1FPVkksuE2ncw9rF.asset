@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_1FPVkksuE2ncw9rF
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 1FPVkksuE2ncw9rF
+  Slug: ki-spells
+  DisplayName: Ki Spells
+  IconPath: systems/pf2e/icons/spells/ki-strike.webp
+  Description: Ki Spells By tapping into a supernatural inner reserve called ki,
+    you can create magical effects. Certain feats grant you special spells called
+    ki spells, which are a type of focus spell. It costs 1 Focus Point to cast a
+    focus spell. When you gain your first ki spell, you also gain a focus pool of
+    1 Focus Point. You refill your focus pool during your daily preparations, and
+    you regain 1 Focus Point by spending 10 minutes using the Refocus activity to
+    meditate in order to reach inner peace. When you first gain a ki spell, decide
+    whether your ki spells are divine spells or occult spells. You become trained
+    in spell attacks and spell DCs of that tradition and your key spellcasting ability
+    is Wisdom. Focus spells are automatically heightened to half your level rounded
+    up. Taking feats can give you more focus spells and increase the size of your
+    focus pool, though your focus pool can never hold more than 3 points.
+  SourceTitle: Pathfinder Core Rulebook
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6c46c49143c0947e662c6ff63e78d5bcf31dd57b5080495dc389b9687a1c43d4
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

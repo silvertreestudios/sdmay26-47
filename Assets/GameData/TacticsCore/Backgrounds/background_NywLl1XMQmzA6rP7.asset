@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_NywLl1XMQmzA6rP7
+  m_EditorClassIdentifier: 
+  SourceId: NywLl1XMQmzA6rP7
+  Slug: demon-slayer
+  DisplayName: Demon Slayer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: For over a century, Mendev led a multinational coalition against ever-growing
+    abyssal invaders in the Worldwound, and the Pathfinder Society aided in the so-called
+    Fifth Crusade that ultimately sealed the planar rift and defeated its demon armies.
+    You might be a hardened recruit who clashed with the demons, or perhaps you were
+    a survivor who lost everything to the fiendish armies and narrowly escaped-or
+    was rescued by Pathfinders. Your exposure to the Worldwound has taught you vital
+    lessons in identifying fiends and their magic. Choose two attribute boosts. One
+    must be to Strength or Constitution , and one is a free attribute boost. You're
+    trained in the Religion skill and the Demon Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Recognize
+    Spell] skill feat. Add Abyssal to the list of additional languages you can learn
+    for having a high Intelligence modifier. Special You can select this background
+    only if you have earned credit for at least 5 First Edition scenarios from Season
+    5 of the Pathfinder Society organized play campaign.
+  SourceTitle: Organized Play Foundation
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 651ccf188c7cfacfcb2bc83ee28d87f471ef79c23e3a76e13e895d5098b80149
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Demon Lore
+    Rank: 1
+  LoreSkills:
+  - Demon Lore
+  GrantedFeats:
+  - SourceKey: 3d0hn
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Recognize Spell
+    SourceId: 
+    DisplayName: Recognize Spell
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_0Iv6LfT3UEt8taj5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 0Iv6LfT3UEt8taj5
+  Slug: warden-human-bb
+  DisplayName: Warden Human (BB)
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: 'You and your family members are survivors, and you''ve learned how
+    to take care of yourself. Pick one of the following benefits. Add 4 to your maximum
+    Hit Points. You become an expert in Fortitude saving throws. You become trained
+    in medium armor. Note: This heritage is from the Beginner Box and features non-standard
+    heritage features'
+  SourceTitle: Pathfinder Beginner Box
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 8e8f24db61b3a4532f71822d5628ef4f552a7056e33b4f9defcfdb937833ee9d
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.WardenHuman.HitPoints","value":"hp"},{"label":"PF2E.SpecificRule.WardenHuman.Fortitude","value":"fortitude"},{"label":"PF2E.SpecificRule.WardenHuman.MediumArmor","value":"armor"}],"flag":"wardenHumanBB","key":"ChoiceSet","label":"PF2E.UI.RuleElements.ChoiceSet.Prompt","rollOption":"heritage:warden-human"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 4
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["heritage:warden-human:hp"],"selector":"hp","value":4}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.defenses.medium.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.defenses.medium.rank","predicate":["heritage:warden-human:armor"],"value":1}'
+  - Key: ActiveEffectLike
+    Path: system.saves.fortitude.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.saves.fortitude.rank","predicate":["heritage:warden-human:fortitude"],"value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.IiG7DgeLWYrSNXuX
+    SourceId: 
+    Slug: human
+    DisplayName: Human
+  ParentAncestryAsset: {fileID: 11400000, guid: 4a3abab8c09a4f0438706848bea28ef6, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_byyceQSVT0H5GfNB
+  m_EditorClassIdentifier: 
+  SourceId: byyceQSVT0H5GfNB
+  Slug: anti-magical
+  DisplayName: Anti-Magical
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Magic has never worked quite right around you. Perhaps you have become
+    a magic-user in spite of that, or perhaps you use your unique ability to fight
+    magic-users. Choose two attribute boosts. One must be to Constitution or Wisdom
+    , and one is a free attribute boost. You're trained in a Lore skill of your choice,
+    though it can't be about a magical subject (as determined by the GM if it's unclear).
+    Whenever you would be affected by magic, even your own magic or that of an ally,
+    the originator of the effect must attempt a @Check[flat|dc:3]. On a failure,
+    the magic doesn't affect you (though it still has its normal effects on anyone
+    else). On a success, the magic affects you and there is no need to attempt further
+    flat checks for the same magical effect, even if it affects you again later.
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 009b0e6bef1a1ab575cd20fe8691b8bd9958c254bc0b2070e08938e86849f3a1
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Non-Magical> Lore
+    Rank: 1
+  LoreSkills:
+  - <Non-Magical> Lore
+  GrantedFeats: []

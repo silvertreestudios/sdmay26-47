@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_cCi1Lsld9Umz1uHs
+  m_EditorClassIdentifier: 
+  SourceId: cCi1Lsld9Umz1uHs
+  Slug: sense-of-belonging
+  DisplayName: Sense of Belonging
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Home is all you've ever wanted. But home, whatever that means to you,
+    has always been a step out of reach. On the night of the Missing Moment, you
+    saw loving figures with outstretched arms, beckoning you toward a warm hearth
+    just inside a glowing archway. On the other side of the portal, though, you found
+    only missing memories and lost time, your feet back at the very spot where you
+    started. Perhaps your heart was broken that night, or perhaps you met your mission
+    to find a suitable community with renewed zeal. Either way, you haven't felt
+    quite "whole" since your gatewalker experience. Your new ability to momentarily
+    disappear onto another plane of existence only reinforces this feeling of emptiness.
+    Your deviant abilities are of the wraith classification. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Eerie
+    Flicker] deviant feat. As a quirk, whenever you use a deviant ability, plants
+    around you spontaneously bloom and then wilt, as if rapidly aging. Choose two
+    attribute boosts. One must be to Constitution or Intelligence , and one is a
+    free attribute boost. You're trained in the Survival skill and the Scouting Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Forager] skill feat.
+  SourceTitle: Pathfinder Gatewalkers Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: ead5b396b0b6050c5aa03a4342ee4698ea412baa700f7e4140a6588187da4ab3
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Eerie Flicker
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Eerie Flicker"}'
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Scouting Lore
+    Rank: 1
+  LoreSkills:
+  - Scouting Lore
+  GrantedFeats:
+  - SourceKey: dDUWJ
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forager
+    SourceId: 
+    DisplayName: Forager
+    Level: 1
+    ResolvedFeature: {fileID: 0}

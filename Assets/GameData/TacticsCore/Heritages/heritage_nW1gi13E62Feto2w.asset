@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_nW1gi13E62Feto2w
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: nW1gi13E62Feto2w
+  Slug: woodland-elf
+  DisplayName: Woodland Elf
+  IconPath: systems/pf2e/icons/features/ancestry/woodland-elf.webp
+  Description: You're adapted to life in the forest, the deep jungle, or a similar
+    environment, and you know how to climb trees and use foliage to your advantage.
+    When Climbing trees, vines, and other foliage, you move at half your Speed on
+    a success and at full Speed on a critical success (and you move at full Speed
+    on a success if you have @UUID[Compendium.pf2e.feats-srd.Item.Quick Climb]).
+    This doesn't affect you if you're using a climb Speed. You can always use the
+    @UUID[Compendium.pf2e.actionspf2e.Item.Take Cover] action when you are within
+    forest terrain to gain cover, even if you're not next to an obstacle you can
+    Take Cover behind.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ee1e9c4386ebec8d965d5e9222df7353f80766041a0c806a3298d7cb536e8f77
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":[],"predicate":["action:climb","terrain:foliage"],"selector":"athletics","text":"When
+      you climb trees, vines or other foliage, you move at half your Speed on a success,
+      and full speed on a critical success.","title":"{item|name}"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.PgKmsA2aKdbLU6O0
+    SourceId: 
+    Slug: elf
+    DisplayName: Elf
+  ParentAncestryAsset: {fileID: 11400000, guid: 1040717c4df7370408570004c36bf8e9, type: 2}
+  GrantedFeatures: []

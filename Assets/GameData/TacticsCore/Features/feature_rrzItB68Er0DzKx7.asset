@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_rrzItB68Er0DzKx7
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: rrzItB68Er0DzKx7
+  Slug: major-curse
+  DisplayName: Major Curse
+  IconPath: systems/pf2e/icons/features/classes/major-curse.webp
+  Description: You've learned to better tolerate the conflicting powers wreaking
+    havoc on your body. The maximum @UUID[Compendium.pf2e.conditionitems.Item.Cursebound]
+    value you can have increases from cursebound 2 to cursebound 3.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 251cf2791a441495a1fb7d5c5bf388bea907a145db2d13838baa73798c3b04ea
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

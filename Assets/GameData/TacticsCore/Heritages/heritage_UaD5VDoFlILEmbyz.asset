@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e48e3c5347dfa43bf2fc6f1eb7ea59, type: 3}
+  m_Name: heritage_UaD5VDoFlILEmbyz
+  m_EditorClassIdentifier: 
+  SourceId: UaD5VDoFlILEmbyz
+  Slug: dhampir
+  DisplayName: Dhampir
+  IconPath: systems/pf2e/icons/features/ancestry/dhampir.webp
+  Description: You are the scion of a vampire, half living and half undead, gifted
+    with uncanny charm and grace, a bloodless pallor, and elongated incisors. You
+    gain the dhampir trait, in addition to the traits from your ancestry. You have
+    the void healing ability, which means you are harmed by vitality damage and healed
+    by void effects as if you were undead. You also gain low-light vision, or you
+    gain darkvision if your ancestry already has low-light vision. You can select
+    from dhampir feats and feats from your ancestry whenever you gain an ancestry
+    feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: uncommon
+  SourceJsonHash: 787f052c2bfeabc74212f579a57c3e54b57e95a7292e404d5b88a6122b739e63
+  Traits:
+  - dhampir
+  TraitsLower:
+  - dhampir
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.attributes.hp.negativeHealing
+    Mode: override
+    Value: true
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.attributes.hp.negativeHealing","value":true}'
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","selector":"low-light-vision"}'
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Sense","predicate":["self:low-light-vision:from-ancestry"],"selector":"darkvision"}'
+  ParentAncestry:
+    SourceUuid: 
+    SourceId: 
+    Slug: 
+    DisplayName: 
+  ParentAncestryAsset: {fileID: 0}
+  GrantedFeatures: []

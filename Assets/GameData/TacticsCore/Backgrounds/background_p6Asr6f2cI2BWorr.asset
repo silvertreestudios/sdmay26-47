@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_p6Asr6f2cI2BWorr
+  m_EditorClassIdentifier: 
+  SourceId: p6Asr6f2cI2BWorr
+  Slug: sponsored-by-teacher-ot
+  DisplayName: Sponsored by Teacher Ot
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You have known the Magaambyan teacher Takulu Ot and his wife Niana
+    for many years. Both are amateur bird-watchers and musicians, and you share one
+    of these hobbies. They are pleasant people and well-regarded in Nantambu, although
+    their unshakable generosity and friendliness strike cynics as too earnest to
+    be genuine. You know otherwise; Takulu and Niana are just as sincere as they
+    appear. Takulu always seemed to watch you with a discerning eye, and one day
+    he idly observed that you''d do well at the Magaambya. Talking about it further
+    with him, Takulu agreed that he would sponsor you personally and be the one to
+    give your intake interview. With a twinkle in his eye, he asked that you call
+    him Teacher Ot from now on, just as all of his students do. Choose two attribute
+    boosts. One must be to Wisdom or Charisma , and one is a free attribute boost.
+    You''re trained in your choice of the Survival or Performance skill. You gain
+    a skill feat: @UUID[Compendium.pf2e.feats-srd.Item.Survey Wildlife] if you chose
+    Survival or @UUID[Compendium.pf2e.feats-srd.Item.Impressive Performance] if you
+    chose Performance. You''re also trained in Nantambu Lore. Your recommended primary
+    branch is the Emerald Boughs.'
+  SourceTitle: Pathfinder Strength of Thousands Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 0a6c955f109a3bd5e76a6f8e3f109d0d3ea9fe05b670630693e71bb69cde8571
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Performance","value":"performance"},{"label":"PF2E.Skill.Survival","value":"survival"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill","rollOption":"teacher-ot"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Impressive Performance
+    Json: '{"key":"GrantItem","predicate":["teacher-ot:performance"],"uuid":"Compendium.pf2e.feats-srd.Item.Impressive
+      Performance"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Survey Wildlife
+    Json: '{"key":"GrantItem","predicate":["teacher-ot:survival"],"uuid":"Compendium.pf2e.feats-srd.Item.Survey
+      Wildlife"}'
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Nantambu Lore
+    Rank: 1
+  LoreSkills:
+  - Nantambu Lore
+  GrantedFeats: []

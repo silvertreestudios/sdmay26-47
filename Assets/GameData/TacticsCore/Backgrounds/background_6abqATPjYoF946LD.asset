@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_6abqATPjYoF946LD
+  m_EditorClassIdentifier: 
+  SourceId: 6abqATPjYoF946LD
+  Slug: bandit
+  DisplayName: Bandit
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Your past includes no small amount of rural banditry, robbing travelers
+    on the road and scraping by. Whether your robbery was sanctioned by a local noble
+    or you did so of your own accord, you eventually got caught up in the adventuring
+    life. Choose two attribute boosts. One must be to Dexterity or Charisma , and
+    one is a free attribute boost. You're trained in the Intimidation skill and a
+    Lore skill related to the terrain you worked in (such as Desert Lore or Plains
+    Lore). You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group Coercion] skill
+    feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 552ebbdf23ca0bf662ccefc1dcc022dbeac5dc86decdf9d3fc300ee0e867c62e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Terrain> Lore
+    Rank: 1
+  LoreSkills:
+  - <Terrain> Lore
+  GrantedFeats:
+  - SourceKey: r7b3d
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 1
+    ResolvedFeature: {fileID: 0}

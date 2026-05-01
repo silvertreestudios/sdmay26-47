@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_bdeuzUMiPjEdlPS8
+  m_EditorClassIdentifier: 
+  SourceId: bdeuzUMiPjEdlPS8
+  Slug: crown-of-chaos
+  DisplayName: Crown of Chaos
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Your life was one of tumult and mayhem, but you don't see this as
+    a bad thing. Perhaps you lived life on the road as part of an ever-changing group,
+    such as being a member of a traveling circus or part of a years-long pilgrimage
+    with a group of explorers. Maybe you were a member of a large family and found
+    the best way to get attention was to be unpredictable. Or you could have grown
+    up in a region where society had collapsed, such as a war zone or ruined city
+    after a disaster, where you were forced to constantly think on your feet to handle
+    unexpected situations. One thing you've certainly excelled at is developing the
+    skill of lying to strangers in order to put them at ease. Is it really a bad
+    thing to lie, after all, if the end result is good for both sides? Or at the
+    very least, good for you? This background is associated with the suit of Crowns.
+    Choose two attribute boosts. One must be to Charisma , and one is a free attribute
+    boost. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Charming Liar] skill
+    feat and are trained in a Lore about a specific terrain, as befits where you
+    spent most of your childhood growing up. You also gain the @UUID[Compendium.pf2e.actionspf2e.Item.Chaotic
+    Destiny] free action.
+  SourceTitle: Pathfinder Stolen Fate Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 6eae931ac93ebc60dad655a1b535d7687038357c165521906c9c0ec9ff8329c0
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Chaotic Destiny
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Chaotic Destiny"}'
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: XZn29
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Charming Liar
+    SourceId: 
+    DisplayName: Charming Liar
+    Level: 1
+    ResolvedFeature: {fileID: 0}

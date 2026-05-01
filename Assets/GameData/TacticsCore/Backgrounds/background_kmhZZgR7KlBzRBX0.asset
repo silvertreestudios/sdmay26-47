@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_kmhZZgR7KlBzRBX0
+  m_EditorClassIdentifier: 
+  SourceId: kmhZZgR7KlBzRBX0
+  Slug: driver
+  DisplayName: Driver
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You live behind the controls of a vehicle, and can handle anything
+    the road or waves and sky can throw at you. You adventure to test your skills
+    with new and interesting vehicles. Choose two attribute boosts. One must be to
+    Strength or Dexterity , and one is a free attribute boost. You're trained in
+    the Acrobatics skill and either the Driving Lore or Piloting Lore skill. You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Assurance] skill feat with the
+    chosen lore.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 7ce44e0750e9a74998399914d37949ccceb9f4091b9c3ec30b657be7e1f4830d
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 1
+    CustomSkillId: acrobatics
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: 8kkXY
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Assurance
+    SourceId: 
+    DisplayName: Assurance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

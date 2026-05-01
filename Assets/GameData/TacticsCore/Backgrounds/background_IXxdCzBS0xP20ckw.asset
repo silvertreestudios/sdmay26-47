@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_IXxdCzBS0xP20ckw
+  m_EditorClassIdentifier: 
+  SourceId: IXxdCzBS0xP20ckw
+  Slug: ward
+  DisplayName: Ward
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "When you were young, you became the ward of another house\u2014boarded,
+    fed, and educated, but never quite a part of the family. Perhaps you had to tend
+    to their needs in return for feeding and raising you, or perhaps you were provided
+    for but disregarded. Now, adventuring is your chance to grow and roam free. Choose
+    two attribute boosts. One must be to Constitution or Charisma , and one is a
+    free attribute boost. You're trained in the Performance skill and the Genealogy
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Fascinating Performance]
+    skill feat."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 9591fa1e25501094e5c1c6ba40ef701c962829e25b2b475994fe06f15122248b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Genealogy Lore
+    Rank: 1
+  LoreSkills:
+  - Genealogy Lore
+  GrantedFeats:
+  - SourceKey: rdv0j
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Fascinating Performance
+    SourceId: 
+    DisplayName: Fascinating Performance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

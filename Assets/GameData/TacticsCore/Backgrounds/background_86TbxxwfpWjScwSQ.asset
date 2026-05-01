@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_86TbxxwfpWjScwSQ
+  m_EditorClassIdentifier: 
+  SourceId: 86TbxxwfpWjScwSQ
+  Slug: undercover-lotus-guard
+  DisplayName: Undercover Lotus Guard
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: It's a well-known secret that for every playhouse in the Ivy District,
+    there's an underground criminal element lurking somewhere in the shadows. To
+    get intel on the occultists, assassins, and thieves' guilds that pull the strings
+    of power in the Ivy District, the Lotus Guard trains some of the best undercover
+    agents and operatives in all of Absalom. You're one such agent, and you've put
+    your life on the line more times than you can count by getting close to the Ivy's
+    most dangerous criminals. Your risky missions and thrill-seeking derring-do have
+    earned you many accolades-but also no shortage of enemies. You transferred to
+    the Edgewatch after your cover was unexpectedly blown and you needed a safe place
+    to lie low away from the Ivy District. With your mastery of disguise and your
+    ability to confidently converse with criminal masterminds, it won't be long before
+    you've made yourself an indispensable undercover operator in this precinct as
+    well. Choose two attribute boosts. One must be to Intelligence or Charisma ,
+    and one is a free attribute boost. You're trained in the Deception skill, Art
+    Lore, and Underworld Lore. You gain a +1 circumstance bonus to Deception, Diplomacy,
+    and Intimidation checks to Interact with Lotus Guards and high-ranking criminals
+    like guild masters, gang leaders, and mob bosses. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Charming
+    Liar] skill feat.
+  SourceTitle: Pathfinder Agents of Edgewatch Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 6a294c1f77d50f066391c4c2cbee4a23a2811b03c3cf967a5fe22576149a1a54
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Interacting with Lotus Guards and high-ranking
+      criminals (Undercover Lotus Guard)","predicate":[{"or":["target:lotus-guard","target:high-rank-criminal"]}],"selector":["deception","diplomacy","intimidation"],"type":"circumstance","value":1}'
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Art Lore and Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Art Lore and Underworld Lore
+  GrantedFeats:
+  - SourceKey: hqa2u
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Charming Liar
+    SourceId: 
+    DisplayName: Charming Liar
+    Level: 1
+    ResolvedFeature: {fileID: 0}

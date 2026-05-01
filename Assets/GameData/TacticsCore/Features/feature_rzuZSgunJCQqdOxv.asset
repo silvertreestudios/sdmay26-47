@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_rzuZSgunJCQqdOxv
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: rzuZSgunJCQqdOxv
+  Slug: lesser-creed
+  DisplayName: Lesser Creed
+  IconPath: icons/skills/melee/weapons-crossed-swords-black-gray.webp
+  Description: You gain expert proficiency with your deity's favored weapon, martial
+    weapons, simple weapons, and unarmed attacks. When you critically succeed at
+    an attack roll using your deity's favored weapon, you apply the weapon's critical
+    specialization effect. Your proficiency rank for your class DC increases to expert.
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9efafda01c662ec06916e4bb356375abd429ddf0897cdb5ff9a358d96a638456
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.favoredWeaponRank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"flags.pf2e.favoredWeaponRank","value":2}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["item:deity-favored"]}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: cleric
+    Rank: 2
+  - Target: martial
+    Rank: 2
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

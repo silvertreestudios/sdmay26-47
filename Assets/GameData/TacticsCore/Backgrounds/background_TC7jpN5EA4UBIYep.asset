@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_TC7jpN5EA4UBIYep
+  m_EditorClassIdentifier: 
+  SourceId: TC7jpN5EA4UBIYep
+  Slug: truth-seeker
+  DisplayName: Truth Seeker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Whether you are a local or from out of town, you've heard rumors that
+    Breachill's past contains a hidden secret. Perhaps you've heard strange rumors
+    that the town's founder, Lamond Breachton, was not the hero everyone touts, or
+    maybe your grandmother heard stories from her own grandmother that contradict
+    the town's accepted narrative of its establishment. In the pursuit of the truth,
+    you've learned to navigate the tangles of politics, and to never take anyone's
+    word at face value. You plan to join the Call for Heroes so that you can make
+    yourself known to the council, or perhaps even ingratiating yourself to them,
+    so you can seek the truth and eventually uncover Breachill's secrets! Choose
+    two attribute boosts. One must be to Strength or Wisdom , and one is a free attribute
+    boost. You're trained in the Deception skill and the Politics Lore skill. You
+    gain the @UUID[Compendium.pf2e.feats-srd.Item.Lie to Me] skill feat.
+  SourceTitle: Pathfinder Age of Ashes Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 39541ede245a65b1d8fa2338cb9e69728f51a804c22d872e69d3ff960242de8e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Politics Lore
+    Rank: 1
+  LoreSkills:
+  - Politics Lore
+  GrantedFeats:
+  - SourceKey: llxv2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Lie to Me
+    SourceId: 
+    DisplayName: Lie To Me
+    Level: 1
+    ResolvedFeature: {fileID: 0}

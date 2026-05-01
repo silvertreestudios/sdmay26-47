@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_w3HysrCgDs5uFXKX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: w3HysrCgDs5uFXKX
+  Slug: warden-spells
+  DisplayName: Warden Spells
+  IconPath: icons/magic/nature/leaf-elm-sparkle-glow-green.webp
+  Description: Your relationship with the world around you extends from the physical
+    to the magical. Certain feats grant you warden spells, which are a type of focus
+    spells. It costs 1 Focus Point (FP) to cast a focus spell. When you gain your
+    first warden spell, you also gain a focus pool of 1 FP. You refill your focus
+    pool during your daily preparations, and you regain 1 FP by spending 10 minutes
+    using the Refocus activity to commune with nature. Your warden spells are primal
+    spells. When you first gain a warden spell, you become trained in primal spell
+    attacks and spell DCs. Your spellcasting ability is Wisdom. Focus spells are
+    automatically heightened to half your level rounded up. Taking feats can give
+    you more focus spells and increase the size of your focus pool, though your focus
+    pool can never hold more than 3 FP. The full rules for focus spells appear here.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: de7eef87014c16488c780a0f32f4c30b1129f9a523a3c2327e3f60f29cb224a1
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

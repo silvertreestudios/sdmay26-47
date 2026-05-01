@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_dnk0Rf7AUmyR5b8z
+  m_EditorClassIdentifier: 
+  SourceId: dnk0Rf7AUmyR5b8z
+  Slug: yaoguai
+  DisplayName: Yaoguai
+  IconPath: systems/pf2e/icons/default-icons/ancestry.svg
+  Description: "Yaoguai usually begin as simple animals, plants, or objects before
+    finding a way to awaken to sapience, becoming strange shapeshifting creatures
+    in the process. Often originating from an infusion of ambient energy into their
+    original form, yaoguai attain their powers through training their innate magic.
+    Taking care not to expose their true appearance and nature, yaoguai of the same
+    origins or species sometimes form enclaves in which they dedicate their lives
+    to honing their powers or engaging in hedonistic pursuits\u2014though the two
+    aren't mutually exclusive. Yaoguai who lack a solid community, meanwhile, feel
+    compelled to cultivate themselves until they transcend their origin, which might
+    allow them to join society and experience a new kind of freedom. Yaoguai"
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 39f938cbfef78c470c76432c998407acec8f52a505bdefd949112f226a3238e4
+  Traits:
+  - humanoid
+  - yaoguai
+  TraitsLower:
+  - humanoid
+  - yaoguai
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.NPCAbility.ChangeShape.Label","mergeable":true,"option":"change-shape","suboptions":[{"label":"PF2E.NPCAbility.ChangeShape.Form.Yaoguai","value":"yaoguai"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: override
+    Value: '[{"text":"PF2E.SpecificRule.ChangeShape.Yaoguai"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"override","predicate":["item:slug:change-shape"],"property":"description","value":[{"text":"PF2E.SpecificRule.ChangeShape.Yaoguai"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"occult"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:change-shape"],"property":"traits","value":"occult"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"yaoguai"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:change-shape"],"property":"traits","value":"yaoguai"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Change Shape
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Change Shape"}'
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 0
+  CustomSense: 
+  AttributeBoosts:
+  - Options: 06000000
+  - Options: 03000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 04000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: elven
+    DisplayName: Elven
+  - Id: fey
+    DisplayName: Fey
+  - Id: kitsune
+    DisplayName: Kitsune
+  - Id: nagaji
+    DisplayName: Nagaji
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  - Id: tengu
+    DisplayName: Tengu
+  - Id: ysoki
+    DisplayName: Ysoki
+  AdditionalLanguageCount: 0
+  GrantedFeatures: []
+  Heritages:
+  - {fileID: 11400000, guid: e18cb006f09bfaa4fa38b752db05c360, type: 2}
+  - {fileID: 11400000, guid: ab342087a63635749b82a775241a5056, type: 2}
+  - {fileID: 11400000, guid: 5e42238adfb0c2a46b76e1a65033b167, type: 2}
+  - {fileID: 11400000, guid: 84cf281ac04da90488d3c851671f1a80, type: 2}
+  - {fileID: 11400000, guid: 0545fbaf4695196418ebcc4b759df57b, type: 2}

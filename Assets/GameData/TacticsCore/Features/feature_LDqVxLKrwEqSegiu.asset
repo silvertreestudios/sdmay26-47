@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_LDqVxLKrwEqSegiu
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: LDqVxLKrwEqSegiu
+  Slug: gunslinger-s-way
+  DisplayName: Gunslinger's Way
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: All gunslingers have a particular way they follow, a combination of
+    philosophy and combat style that defines both how they fight and the weapons
+    they excel with. At 1st level, your way grants you an initial deed, a unique
+    reload action called a slinger's reload, and proficiency with a particular skill.
+    You also gain advanced and greater deeds at later levels, as well as access to
+    way-specific feats. @UUID[Compendium.pf2e.classfeatures.Item.Way of the Drifter]
+    You wander across the battlefield, equally at home in and out of the fray. @UUID[Compendium.pf2e.classfeatures.Item.Way
+    of the Pistolero] You carefully maintain your distance at a duelist's 10 paces
+    with pistol in hand. @UUID[Compendium.pf2e.classfeatures.Item.Way of the Sniper]
+    You practice a methodical style of shooting, striking from far cover. @UUID[Compendium.pf2e.classfeatures.Item.Way
+    of the Vanguard] You rely on a brutal combat style that uses heavy weapons and
+    explosive attacks. @UUID[Compendium.pf2e.classfeatures.Item.Way of the Triggerbrand]
+    You prefer firearms that work well as weapons in both melee and ranged combat
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 60383da7bb08a2ad9dc0b8708854c122720cb7a656c17cf6a6e93bfcfd530f77
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:tag:gunslinger-way",{"or":[{"and":["class:gunslinger","item:tag:gunslinger-way"]},{"and":["item:tag:gunslinger-way",{"not":"item:tag:class-archetype"}]}]}]},"flag":"way","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Gunslinger.Way.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.way}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.way}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.way}'
+    SourceId: 
+    DisplayName: way}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

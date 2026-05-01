@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_44T9XsTcTbmMhtc1
+  m_EditorClassIdentifier: 
+  SourceId: 44T9XsTcTbmMhtc1
+  Slug: crystal-healer
+  DisplayName: Crystal Healer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Mineral formations can be beautiful things, sparkling and arrayed
+    in geometric configurations. To you, they are also potent natural healing aids.
+    You may have taken up adventuring to prove yourself by healing the ailing or
+    to find new crystals with unique properties to add to your growing collection.
+    Choose two attribute boosts. One must be to Wisdom or Charisma and one is a free
+    attribute boost. You're trained in the Nature skill and the Plane of Earth Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Natural Medicine] skill
+    feat.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 2b42e47f7a3eef7e0b3ca60d0d051715ae44a5f68d709ee75a8cfba664b929c8
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Plane of Earth Lore
+    Rank: 1
+  LoreSkills:
+  - Plane of Earth Lore
+  GrantedFeats:
+  - SourceKey: VFEH7
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Natural Medicine
+    SourceId: 
+    DisplayName: Natural Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

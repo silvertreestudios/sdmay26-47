@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_z4cvqtpkkAYoFpHa
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: z4cvqtpkkAYoFpHa
+  Slug: bloodhound-shoony
+  DisplayName: Bloodhound Shoony
+  IconPath: systems/pf2e/icons/features/ancestry/bloodhound-shoony.webp
+  Description: 'Your ancestors were famous trackers, and you carry in your blood
+    that same gift of the hunt. You gain a special sense: imprecise scent with a
+    range of 30 feet. This means you can use your sense of smell to determine the
+    location of a creature, but it remains @UUID[Compendium.pf2e.conditionitems.Item.Hidden].
+    In addition, you gain a +2 circumstance bonus to Survival checks to @UUID[Compendium.pf2e.actionspf2e.Item.Track]
+    creatures that you have previously sensed with your scent.'
+  SourceTitle: 'Pathfinder #153: Life''s Long Shadows'
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 8a414b0c56d971c8bf3082ca90d93ad765e296657b55cf20b3b4769a08a95363
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Bloodhound Shoony (Track smelled creatures)","predicate":["action:track","target:previously-smelled"],"selector":"survival","type":"circumstance","value":2}'
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"acuity":"imprecise","key":"Sense","range":30,"selector":"scent"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.q6rsqYARyOGXZA8F
+    SourceId: 
+    Slug: shoony
+    DisplayName: Shoony
+  ParentAncestryAsset: {fileID: 11400000, guid: 2637afd2b1c063f4f87f6d958797ae40, type: 2}
+  GrantedFeatures: []

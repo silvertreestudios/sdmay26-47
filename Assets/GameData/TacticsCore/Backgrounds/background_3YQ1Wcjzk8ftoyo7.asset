@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_3YQ1Wcjzk8ftoyo7
+  m_EditorClassIdentifier: 
+  SourceId: 3YQ1Wcjzk8ftoyo7
+  Slug: astrologer
+  DisplayName: Astrologer
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Astrologers look to the stars for signs and portents, using their
+    positions in the heavens to chart courses for those living beneath them. As the
+    celestial spheres move, so does fate itself. You studied the stars and learned
+    to divine your path based on their guidance. Whether the stars directly called
+    you to a life of adventure or you use the stars to guide your wanderlust, you're
+    living out the stars' guidance in a life of adventure. Choose two attribute boosts.
+    One must be to Intelligence or Wisdom , and one is a free attribute boost. You're
+    trained in Occultism and Astrology Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Oddity
+    Identification] skill feat.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: d99b08e8c54fc10182b61427eba926cedd2a28754961f512dbbdcbcf3f5b79e7
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Astrology Lore
+    Rank: 1
+  LoreSkills:
+  - Astrology Lore
+  GrantedFeats:
+  - SourceKey: prdi2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Oddity Identification
+    SourceId: 
+    DisplayName: Oddity Identification
+    Level: 1
+    ResolvedFeature: {fileID: 0}

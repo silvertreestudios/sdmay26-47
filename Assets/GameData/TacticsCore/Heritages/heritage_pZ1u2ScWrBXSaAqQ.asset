@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_pZ1u2ScWrBXSaAqQ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: pZ1u2ScWrBXSaAqQ
+  Slug: winter-orc
+  DisplayName: Winter Orc
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your ancestors survived in cold climates. You become trained in Survival,
+    and you treat environmental cold effects as if they were one step less extreme
+    (incredible cold becomes extreme, extreme cold becomes severe, and so on).
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 6795d24089dac8f51b6fea3ff9c6f3341fa83b5a19b3d0d67e7982eaf8c2a4df
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.survival.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.survival.rank","value":1}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.lSGWXjcbOa6O5fTx
+    SourceId: 
+    Slug: orc
+    DisplayName: Orc
+  ParentAncestryAsset: {fileID: 11400000, guid: f28dd4f71da56d6429f6bc69289d034a, type: 2}
+  GrantedFeatures: []

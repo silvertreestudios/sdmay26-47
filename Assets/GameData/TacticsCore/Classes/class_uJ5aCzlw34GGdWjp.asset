@@ -1,0 +1,256 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_uJ5aCzlw34GGdWjp
+  m_EditorClassIdentifier: 
+  SourceId: uJ5aCzlw34GGdWjp
+  Slug: swashbuckler
+  DisplayName: Swashbuckler
+  IconPath: systems/pf2e/icons/classes/swashbuckler.webp
+  Description: Many warriors rely on brute force, weighty armor, or cumbersome weapons.
+    For you, battle is a dance where you move among foes with style and grace. You
+    dart among combatants with flair and land powerful finishing moves with a flick
+    of the wrist and a flash of the blade, all while countering attacks with elegant
+    ripostes that keep enemies off balance. Harassing and thwarting your foes lets
+    you charm fate and cheat death time and again with aplomb and plenty of flair.
+    Swashbuckler
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: f772503326e2ef43f00cbe9e64d7c5d3d51581a8bcdbb2f271849fe38cc7c7f1
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 10
+  KeyAttributes: 02000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 2
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 1
+    CustomSkillId: acrobatics
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 4
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 0200000003000000040000000600000007000000080000000a0000000c0000000e0000000f000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 2v2xl
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Panache
+    SourceId: LzYi0OuOoypNb6jd
+    DisplayName: Panache
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: cc30fcd1261dc9340bea223a779876ce, type: 2}
+  - SourceKey: 2z1nf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Precise Strike
+    SourceId: RQH6vigvhmiYKKjg
+    DisplayName: Precise Strike
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 9158191aab2b7d442bcfa6ec4038de5f, type: 2}
+  - SourceKey: 41jmp
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Confident Finisher
+    SourceId: pyo0vmxUFIFX2GNl
+    DisplayName: Confident Finisher
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 208c932af072fb440876eda290225d77, type: 2}
+  - SourceKey: jlyi1
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Swashbuckler's Style
+    SourceId: beW1OqibVQ3fBvRw
+    DisplayName: Swashbuckler's Style
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 96e3e1342c3176645a514e897c1956ee, type: 2}
+  - SourceKey: o2Jz5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Stylish Combatant
+    SourceId: TALz3cU06Hb14Key
+    DisplayName: Stylish Combatant
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: df817f311da552643bf703bf85bc1d4b, type: 2}
+  GrantedFeatures:
+  - SourceKey: 2v2xl
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Panache
+    SourceId: LzYi0OuOoypNb6jd
+    DisplayName: Panache
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: cc30fcd1261dc9340bea223a779876ce, type: 2}
+  - SourceKey: 2z1nf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Precise Strike
+    SourceId: RQH6vigvhmiYKKjg
+    DisplayName: Precise Strike
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 9158191aab2b7d442bcfa6ec4038de5f, type: 2}
+  - SourceKey: 41jmp
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Confident Finisher
+    SourceId: pyo0vmxUFIFX2GNl
+    DisplayName: Confident Finisher
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 208c932af072fb440876eda290225d77, type: 2}
+  - SourceKey: 4sxx4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 7g9e4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Vivacious Speed
+    SourceId: 8BOFeRE7ZfJ02N0O
+    DisplayName: Vivacious Speed
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 5ca9968fed349704380ebf8fbe2e1aa2, type: 2}
+  - SourceKey: 8DtzF
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: 9bzuj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Eternal Confidence
+    SourceId: ypfT3iybew6ZSIUl
+    DisplayName: Eternal Confidence
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 2c7e4855bc31c8c4385557c4b3515b14, type: 2}
+  - SourceKey: WmEXP
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Assured Evasion
+    SourceId: syEkISIi0F9946zo
+    DisplayName: Assured Evasion
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 23af7b402738f4946af34ea0a21f271a, type: 2}
+  - SourceKey: i3ldz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: Z7HX6TeFsaup7Dx9
+    DisplayName: Greater Weapon Specialization
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: e8328fb7ab4419d479ca3cb33e9ee85b, type: 2}
+  - SourceKey: jlyi1
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Swashbuckler's Style
+    SourceId: beW1OqibVQ3fBvRw
+    DisplayName: Swashbuckler's Style
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 96e3e1342c3176645a514e897c1956ee, type: 2}
+  - SourceKey: ltpXI
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reinforced Ego
+    SourceId: 5cjr4uwygBp6vihP
+    DisplayName: Reinforced Ego
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: c55630880f8ffb8419aa2b931b0e5cf1, type: 2}
+  - SourceKey: m4r06
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Stylish Tricks
+    SourceId: pthjQIK9pDxnbER6
+    DisplayName: Stylish Tricks
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 3c8ef39fd05bf7740836f51a4f828a21, type: 2}
+  - SourceKey: mh4q8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 
+    DisplayName: Vigilant Senses
+    Level: 11
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: mysbh
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Mastery
+    SourceId: SHpjmM4A3Sw4GgDz
+    DisplayName: Light Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 57321a107853f28438ee9bc534abb632, type: 2}
+  - SourceKey: o2Jz5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Stylish Combatant
+    SourceId: TALz3cU06Hb14Key
+    DisplayName: Stylish Combatant
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: df817f311da552643bf703bf85bc1d4b, type: 2}
+  - SourceKey: o4f3f
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Opportune Riposte
+    SourceId: Jtn7IugykXDlIoZq
+    DisplayName: Opportune Riposte
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: b95e8d54e31faed4f96b4f91b1db2971, type: 2}
+  - SourceKey: sltbp
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Exemplary Finisher
+    SourceId: KxpaxUSuBC7hr4F7
+    DisplayName: Exemplary Finisher
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: b8792901b4e607141a34512ca2806b13, type: 2}
+  - SourceKey: t02dj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Expertise
+    SourceId: pZYkb12t5DSwtts7
+    DisplayName: Light Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 3bf7d337c0e817d4795134166770c383, type: 2}
+  - SourceKey: t8VSZ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Fortitude Expertise
+    SourceId: F57Na5VxfBp56kke
+    DisplayName: Fortitude Expertise
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 64c77f7441a8f224c810d356bfbb2f73, type: 2}
+  - SourceKey: wdKDW
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Confident Evasion
+    SourceId: HBTLwREPKK3H4xVD
+    DisplayName: Confident Evasion
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 995cb958d7c03144899fda48b302462d, type: 2}
+  - SourceKey: xi59r
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Keen Flair
+    SourceId: Pk3Ht0KZyFxSeL07
+    DisplayName: Keen Flair
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 41d0a1fbd94120342bb3731ae08669b2, type: 2}
+  - SourceKey: yeomf
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Swashbuckler Expertise
+    SourceId: U74JoAcLHTOsZG6q
+    DisplayName: Swashbuckler Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 9dccaec994b28044ab09f069e3630fc2, type: 2}
+  - SourceKey: z4u6l
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Continuous Flair
+    SourceId: 13QpCrR8a8XULbJa
+    DisplayName: Continuous Flair
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 21b4efd950e08394d8905fe0193f9959, type: 2}
+  - SourceKey: zwcsy
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Martial Weapon Mastery
+    SourceId: ejP4jVQkS48uKRFz
+    DisplayName: Weapon Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 72296cf886f10134f8a893bc0ff539aa, type: 2}

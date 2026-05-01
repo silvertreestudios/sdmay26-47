@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_f3Dh32EU4VsHu01b
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: f3Dh32EU4VsHu01b
+  Slug: rogue-expertise
+  DisplayName: Rogue Expertise
+  IconPath: systems/pf2e/icons/features/classes/rogue-expertise.webp
+  Description: Your techniques are now harder to resist. Your proficiency rank for
+    your rogue class DC increases to expert.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4ca1e2b5a10aca594e05f376036964b87e8645d04e94e08e52963cd6d9e6ff05
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules: []
+  Category: 2
+  Level: 11
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: rogue
+    Rank: 2
+  FocusPointDelta: 0

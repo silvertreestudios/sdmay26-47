@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_82rxCGBb5qf9fwbp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 82rxCGBb5qf9fwbp
+  Slug: incredible-resistance
+  DisplayName: Incredible Resistance
+  IconPath: icons/equipment/chest/breastplate-banded-steel.webp
+  Description: 'You''ve improved upon your breakthrough modification''s ability to
+    resist damage. Choose one of the following breakthrough modifications your innovation
+    has: dense plating, layered mesh, or tensile absorption. Increase the resistance
+    you gain from that modification to be equal to your level, instead of half your
+    level.'
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: dd6a309cc62b02fb380079585cd18e132640db2b0264651f601b390ee5797df6
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}","feature:dense-plating"],"type":"slashing","value":"@actor.level"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}","feature:layered-mesh"],"type":"piercing","value":"@actor.level"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.level"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:id:{actor|flags.pf2e.innovationId}","feature:tensile-absorption"],"type":"bludgeoning","value":"@actor.level"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

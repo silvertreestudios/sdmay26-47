@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_2CtYJJjesShbkyOv
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 2CtYJJjesShbkyOv
+  Slug: deific-mastery
+  DisplayName: Deific Mastery
+  IconPath: icons/magic/control/buff-flight-wings-runes-purple-orange.webp
+  Description: You have achieved full mastery over your divine spark as its power
+    flows through your body and ikons. Your proficiency rank for your exemplar class
+    DC increases to master.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 105c457a52120c394b54b00dc25c19a57fe37189e1eb0e4151a4e0ec4d17ba68
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: exemplar
+    Rank: 3
+  FocusPointDelta: 0

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_i5G6E5dkGWiq838C
+  m_EditorClassIdentifier: 
+  SourceId: i5G6E5dkGWiq838C
+  Slug: scholar-of-the-ancients
+  DisplayName: Scholar of the Ancients
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - High Seas You're fascinated by the lost Azlanti
+    Empire and have dedicated yourself to seeking out and studying every broken artifact
+    or scrap of knowledge that remains, whether as an academic pursuit or simply
+    for the joy of treasure hunting. Choose two attribute boosts. One must be to
+    Intelligence or Charisma , and one is a free attribute boost. You're trained
+    in the Arcana skill and the Azlant Lore skills. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Quick
+    Identification] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 664532477ab91973d6f43e146827ad58dd6c56372a97050f4c922aa6d59252ea
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Azlant Lore
+    Rank: 1
+  LoreSkills:
+  - Azlant Lore
+  GrantedFeats:
+  - SourceKey: nrcun
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Quick Identification
+    SourceId: 
+    DisplayName: Quick Identification
+    Level: 1
+    ResolvedFeature: {fileID: 0}

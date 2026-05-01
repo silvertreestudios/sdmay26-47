@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_ikNJZRxUjcRLisO6
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: ikNJZRxUjcRLisO6
+  Slug: elfbane-hobgoblin
+  DisplayName: Elfbane Hobgoblin
+  IconPath: systems/pf2e/icons/features/ancestry/unbreakable-goblin.webp
+  Description: Hobgoblins were engineered long ago from the unreliable and fecund
+    goblins to be used as an army against the elves. Although the elves ultimately
+    freed the hobgoblins from their bondage, some hobgoblins retain ancestral resistance
+    to magic, which they refer to as "elf magic." You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Resist
+    Elf Magic] reaction.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ca424dcbe6f1aa1d040bb135766cc0f4bb58ad3467473bc1b6e21a121f4f2b4a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Resist Elf Magic
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Resist Elf
+      Magic"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.piNLXUrm9iaGqD2i
+    SourceId: 
+    Slug: hobgoblin
+    DisplayName: Hobgoblin
+  ParentAncestryAsset: {fileID: 11400000, guid: f8564f2408134d941bdb53b696e95741, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Resist Elf Magic
+    SourceId: 
+    DisplayName: Resist Elf Magic
+    Level: 0
+    ResolvedFeature: {fileID: 0}

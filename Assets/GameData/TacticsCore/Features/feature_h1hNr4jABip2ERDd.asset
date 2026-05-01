@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_h1hNr4jABip2ERDd
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: h1hNr4jABip2ERDd
+  Slug: inconspicuous-appearance
+  DisplayName: Inconspicuous Appearance
+  IconPath: icons/consumables/vegetable/root-carrot-orange.webp
+  Description: Melee Only Your innovation is built for easy concealment and surprise
+    attacks. It gains the backstabber and versatile P traits. If the weapon has light
+    Bulk, it also gains the concealable trait.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 260fc6811ee5c2c87d848818738a2789babe3971f8b3115e44b19838a0c25850
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"backstabber"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"backstabber"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"versatile-p"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","property":"traits","value":"versatile-p"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"concealable"'
+    Uuid: 
+    Json: '{"itemId":"{actor|flags.pf2e.trackedItems.weaponInnovation}","key":"ItemAlteration","mode":"add","predicate":["item:bulk:light"],"property":"traits","value":"concealable"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

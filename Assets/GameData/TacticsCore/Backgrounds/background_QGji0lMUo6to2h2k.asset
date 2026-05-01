@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_QGji0lMUo6to2h2k
+  m_EditorClassIdentifier: 
+  SourceId: QGji0lMUo6to2h2k
+  Slug: fire-warden
+  DisplayName: Fire Warden
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Whether you fought against fires in the wilderness or in crowded city
+    streets, you've had your fair share of dealing with uncontrolled flames. Battling
+    thick smoke and toxic fumes, you've broken down obstacles to save trapped people
+    from a fiery grave, and you've studied the nature and source of fire itself to
+    try and better learn how to fight it. Choose two attribute boosts. One must be
+    to Strength or Constitution , and one is a free attribute boost. You're trained
+    in the Athletics skill and the Plane of Fire Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Breath
+    Control] feat.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 8541ece629dab9710747fff2f6e0c78a40da4e765c9399d5fed93e3ab5303568
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Plane of Fire Lore
+    Rank: 1
+  LoreSkills:
+  - Plane of Fire Lore
+  GrantedFeats:
+  - SourceKey: tRABG
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Breath Control
+    SourceId: 
+    DisplayName: Breath Control
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_gjOGOR30Czpnx3tM
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: gjOGOR30Czpnx3tM
+  Slug: battle
+  DisplayName: Battle
+  IconPath: systems/pf2e/icons/features/classes/battle-mystery.webp
+  Description: 'Warlike forces fill you with physical might and tactical knowledge,
+    aiming to have you uphold the glory of combat, fight to improve the world, prepare
+    against the necessity of conflict, or endure the inevitability of war. You might
+    draw upon deities such as Gorum, Iomedae, Rovagug, the Horseman of War Szuriel,
+    the Queen of the Night Eiseth, the Vudrani god Diomazul, and others, or you might
+    find power in the unending conflict between the armies of Heaven and Hell, the
+    Elemental Planes, the Outer Gods, or even the collective spirits of those who
+    fought in wars over the ages. Granted Spells cantrip: @UUID[Compendium.pf2e.spells-srd.Item.Shield]
+    1st: @UUID[Compendium.pf2e.spells-srd.Item.Sure Strike] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic
+    Maneuver] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Weapon Storm] Revelation
+    Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Weapon Trance] advanced:
+    @UUID[Compendium.pf2e.spells-srd.Item.Battlefield Persistence] greater: @UUID[Compendium.pf2e.spells-srd.Item.Revel
+    in Retribution] Related Domains destruction, might, protection, zeal Mystery
+    Skill Athletics Oracle Feat @UUID[Compendium.pf2e.feats-srd.Item.Oracular Warning]
+    @UUID[Compendium.pf2e.classfeatures.Item.Curse of the Mortal Warrior]'
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: cf0a087ecd63f610d6463ba62a2c29400797968dc52d327535077577d8bde7d7
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Oracular Warning
+    Json: '{"key":"GrantItem","predicate":["class:oracle"],"uuid":"Compendium.pf2e.feats-srd.Item.Oracular
+      Warning"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Curse of the Mortal Warrior
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Curse of
+      the Mortal Warrior"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Oracular Warning
+    SourceId: 
+    DisplayName: Oracular Warning
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Curse of the Mortal Warrior
+    SourceId: 
+    DisplayName: Curse of the Mortal Warrior
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

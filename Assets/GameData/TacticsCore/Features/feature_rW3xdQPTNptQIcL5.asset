@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_rW3xdQPTNptQIcL5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: rW3xdQPTNptQIcL5
+  Slug: paragon-benefit-chalice
+  DisplayName: Paragon Benefit (Chalice)
+  IconPath: icons/containers/kitchenware/goblet-jeweled-red.webp
+  Description: When you or an ally drain the chalice, the overwhelming vitality it's
+    collected helps you overcome many ailments. Reduce the drinker's @UUID[Compendium.pf2e.conditionitems.Item.Clumsy],
+    @UUID[Compendium.pf2e.conditionitems.Item.Enfeebled], @UUID[Compendium.pf2e.conditionitems.Item.Frightened],
+    @UUID[Compendium.pf2e.conditionitems.Item.Stupefied], and @UUID[Compendium.pf2e.conditionitems.Item.Stunned]
+    values by 1. (This reduces the stunned condition only if it has a condition value,
+    not when it has a duration.) The drinker also reduces its @UUID[Compendium.pf2e.conditionitems.Item.Drained]
+    value by 1, but it can reduce its drained condition by Drinking from the Chalice
+    only once per day. In addition, the chalice attempts to counteract all poisons,
+    diseases, and curses afflicting the drinker, using half your level rounded up
+    as the counteract rank and your class DC - 10 as the counteract modifier. If
+    the chalice fails to counteract a given affliction for a drinker, it can't attempt
+    to counteract that affliction again until midnight.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 35701440b1456709531e23dfc434f5de74c1d221b942506336a3731e107ef08f
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

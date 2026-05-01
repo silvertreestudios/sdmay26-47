@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_FovAoohhvG7vIbX9
+  m_EditorClassIdentifier: 
+  SourceId: FovAoohhvG7vIbX9
+  Slug: gold-falls-regular
+  DisplayName: Gold Falls Regular
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've long been a regular of Gold Falls Inn, a tavern located near
+    Droskar's Crag in the Darkmoon Vale region of Andoran. The establishment is a
+    frequent gathering place for adventurers, storytellers, and folk heroes. You
+    took note of the Pathfinder Society's growing reputation in the area and decided
+    to join up and seek adventure and fame of your own. Choose two attribute boosts.
+    One must be to Constitution or Charisma , and one is a free attribute boost.
+    You're trained in the Performance skill, as well as your choice of the Cooking
+    Lore skill or Volcano Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Impressive
+    Performance] skill feat. Additionally, when you receive a mission briefing at
+    Gold Falls Inn or a settlement in Darkmoon Vale, you can draw on your knowledge
+    of the region and its many stories. You gain a +2 circumstance bonus to your
+    checks to Gather Information or Recall Knowledge during the Getting Started segment
+    of such adventures. Be sure to remind your GM that you have a relevant background.
+  SourceTitle: 'Pathfinder Blog: Pathfinder Society Year 4 Rule Updates'
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 654d015af056ccca43c972ae259b458790dbaadb2c127ff529a46abecb21fdf6
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: <Cooking Lore or Volcano Lore>
+    Rank: 1
+  LoreSkills:
+  - <Cooking Lore or Volcano Lore>
+  GrantedFeats:
+  - SourceKey: 4shqb
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Impressive Performance
+    SourceId: 
+    DisplayName: Impressive Performance
+    Level: 1
+    ResolvedFeature: {fileID: 0}

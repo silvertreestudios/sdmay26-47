@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_i79pgNIAtJfkkOiw
+  m_EditorClassIdentifier: 
+  SourceId: i79pgNIAtJfkkOiw
+  Slug: tinker
+  DisplayName: Tinker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Creating all sorts of minor inventions scratches your itch for problem-solving.
+    Your engineering skills take a particularly creative bent, and no one know what
+    you'll come up with next. It might be a genius device with tremendous potential
+    or it might explode. Choose two attribute boosts. One must be to Dexterity or
+    Intelligence , and one is a free attribute boost. You're trained in the Crafting
+    skill and the Engineering Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Specialty
+    Crafting] skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 5d90785ed30de4bb95026935c77389cb3e4e667cdc2d94238ca773e226f56518
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Engineering Lore
+    Rank: 1
+  LoreSkills:
+  - Engineering Lore
+  GrantedFeats:
+  - SourceKey: wts6h
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Specialty Crafting
+    SourceId: 
+    DisplayName: Specialty Crafting
+    Level: 1
+    ResolvedFeature: {fileID: 0}

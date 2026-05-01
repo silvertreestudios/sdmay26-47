@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_gacjZkMkeVsrCt4A
+  m_EditorClassIdentifier: 
+  SourceId: gacjZkMkeVsrCt4A
+  Slug: verduran-city-folk
+  DisplayName: Verduran City Folk
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You hail from one of the few large settlements in or around the Verduran
+    Forest, such as Bellis or Wispil. It might be that you're part of these towns'
+    timber operations or supporting industries, such as transporting supplies, overseeing
+    operations, or serving as a remote bureaucrat who reports to a distant capital
+    and enforces the Treaty of the Wildwood. Whatever the case, you're part of a
+    scattered constellation of settlements that share cultural touchstones, including
+    fey-inspired games like Prismati. Choose two attribute boosts. One must be to
+    Dexterity or Intelligence , and one is a free attribute boost. You're trained
+    in the Society skill and the Games Lore skill. You gain either @UUID[Compendium.pf2e.feats-srd.Item.Multilingual]
+    or @UUID[Compendium.pf2e.feats-srd.Item.Streetwise] as a skill feat.
+  SourceTitle: Pathfinder Wardens of Wildwood Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 0174436d24cf6e7969e05d956577f51476e47e9d3dbce5f3fb91cdffa5e0ed3f
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"value":"Compendium.pf2e.feats-srd.Item.Multilingual"},{"value":"Compendium.pf2e.feats-srd.Item.Streetwise"}],"flag":"feat","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Feat"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.feat}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.feat}"}'
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Games Lore
+    Rank: 1
+  LoreSkills:
+  - Games Lore
+  GrantedFeats: []

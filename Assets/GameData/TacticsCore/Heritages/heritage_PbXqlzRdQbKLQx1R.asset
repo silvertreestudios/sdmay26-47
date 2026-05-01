@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_PbXqlzRdQbKLQx1R
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: PbXqlzRdQbKLQx1R
+  Slug: old-blood-vishkanya
+  DisplayName: Old-Blood Vishkanya
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have a direct matrilineal line to the original group of vishkanyas
+    upon the Vudrani ships that came to reclaim Jalmeray. Since then, your family
+    has adjusted well to a new life in the Inner Sea. You become trained in Society
+    (or another skill of your choice if you're already trained in Society), and you
+    gain your choice of the @UUID[Compendium.pf2e.feats-srd.Item.Courtly Graces]
+    or @UUID[Compendium.pf2e.feats-srd.Item.Streetwise] feat.
+  SourceTitle: Pathfinder Lost Omens Impossible Lands
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c3bc0a1306713f4cfd0ef2d1f02c79ec533998316c15e45cefe85b820daa4e8b
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"value":"Compendium.pf2e.feats-srd.Item.Streetwise"},{"value":"Compendium.pf2e.feats-srd.Item.Courtly
+      Graces"}],"flag":"feat","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.SkillFeat"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.feat}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.feat}"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.u1VJEXsVlmh3Fyx0
+    SourceId: 
+    Slug: vishkanya
+    DisplayName: Vishkanya
+  ParentAncestryAsset: {fileID: 11400000, guid: 30dc95b74f6069247afe27e7048d5c79, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.feat}'
+    SourceId: 
+    DisplayName: feat}
+    Level: 0
+    ResolvedFeature: {fileID: 0}

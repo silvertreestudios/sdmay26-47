@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_wAh2riuFRzz0edPl
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: wAh2riuFRzz0edPl
+  Slug: thief
+  DisplayName: Thief
+  IconPath: systems/pf2e/icons/features/classes/thief.webp
+  Description: Nothing beats the thrill of taking something that belongs to someone
+    else. You might be a pickpocket working the streets, a cat burglar sneaking through
+    windows, or even a consultant, testing your clients' vaults for openings. When
+    a fight breaks out, you prefer swift, lightweight weapons, and you strike where
+    it hurts. When you attack with a finesse melee weapon or finesse melee unarmed
+    attack, you can add your Dexterity modifier to damage rolls instead of your Strength
+    modifier. You are trained in Thievery.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2c826f9e1934fe0632bdb75268b2a00c57efbb48cebcaaf70b392b4ee75afde1
+  Traits:
+  - rogue
+  TraitsLower:
+  - rogue
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"ability":"dex","key":"FlatModifier","predicate":["item:trait:finesse"],"selector":"melee-strike-damage","type":"ability"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.thievery.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.thievery.rank","value":1}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

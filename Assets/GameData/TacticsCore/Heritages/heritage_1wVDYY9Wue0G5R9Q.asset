@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_1wVDYY9Wue0G5R9Q
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 1wVDYY9Wue0G5R9Q
+  Slug: whisper-elf
+  DisplayName: Whisper Elf
+  IconPath: systems/pf2e/icons/features/ancestry/whisper-elf.webp
+  Description: Your ears are finely tuned, able to detect even the slightest whispers
+    of sound. You gain a +2 circumstance bonus when using the @UUID[Compendium.pf2e.actionspf2e.Item.Seek]
+    action to find @UUID[Compendium.pf2e.conditionitems.Item.Hidden] or @UUID[Compendium.pf2e.conditionitems.Item.Undetected]
+    creatures within 30 feet of you. When you target an opponent that is @UUID[Compendium.pf2e.conditionitems.Item.Concealed]
+    from you or hidden from you, reduce the DC of the flat check to 3 for a concealed
+    target or 9 for a hidden one. This benefit doesn't apply if you can't hear or
+    if the creature is incapable of making sound (for example, if it's affected by
+    a @UUID[Compendium.pf2e.spells-srd.Item.Silence] spell).
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 09197c2e707a15e4f67b8142a9fec0158c47360925b484dd42769e9dd370e41c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":[{"or":["target:condition:undetected","target:condition:hidden"]},{"lte":["target:distance",30]},"target:audible"],"selector":"perception","type":"circumstance","value":2}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.PgKmsA2aKdbLU6O0
+    SourceId: 
+    Slug: elf
+    DisplayName: Elf
+  ParentAncestryAsset: {fileID: 11400000, guid: 1040717c4df7370408570004c36bf8e9, type: 2}
+  GrantedFeatures: []

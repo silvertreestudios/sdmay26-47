@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_3eRkOQa7h1MWmzBh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 3eRkOQa7h1MWmzBh
+  Slug: initiate-benefit-regalia
+  DisplayName: Initiate Benefit (Regalia)
+  IconPath: icons/commodities/gems/pearl-red-gold.webp
+  Description: While you hold your regalia, you gain an air of authority and bolster
+    the courage of allies who believe in you. Your regalia aids you when you attempt
+    to convince others. You gain a +1 circumstance bonus to Deception, Diplomacy,
+    and Intimidation checks. Allies who can see you can use Follow the Expert to
+    follow you even if you're only trained in a skill and not an expert, due to the
+    competence you clearly exude. When they do, the circumstance bonus they gain
+    from Following the Expert is +1. When you are holding your regalia, you gain
+    an inspiring aura that stokes the courage of you and all allies in a @Template[emanation|distance:15]
+    who can see you, granting them a +1 status bonus to saving throws against fear.
+    At the end of your turn, at the same time you would reduce your frightened value
+    by 1, you reduce the frightened value of all allies within your inspiring aura
+    by 1. Your aura has the emotion, mental, and visual traits.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b64ef24d795bae13d9af160fe1a517af6a3f352108c6aebe40ca13870007139b
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["implement:regalia:equipped"],"selector":["deception","diplomacy","intimidation"],"slug":"regalia","type":"circumstance","value":1}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"allies","uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Regalia"}],"key":"Aura","predicate":["implement:regalia:equipped",{"not":"feature:adept-benefit-regalia"}],"radius":15,"slug":"regalia-aura","traits":["emotion","visual","mental"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

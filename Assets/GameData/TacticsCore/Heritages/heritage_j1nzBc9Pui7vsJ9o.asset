@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_j1nzBc9Pui7vsJ9o
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: j1nzBc9Pui7vsJ9o
+  Slug: sharpshooter-automaton
+  DisplayName: Sharpshooter Automaton
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your lithe, humanoid shape is designed for speed and accuracy suitable
+    for ranged combat. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Automaton
+    Aim] action.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 67f60906a8a85a2bfbb731b86ff4a87566d7921c9962a4134e32fc32c313a81c
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Automaton Aim
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Automaton
+      Aim"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.kYsBAJ103T44agJF
+    SourceId: 
+    Slug: automaton
+    DisplayName: Automaton
+  ParentAncestryAsset: {fileID: 11400000, guid: 5906443d70978d34f9849b4fc6b85c75, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Automaton Aim
+    SourceId: 
+    DisplayName: Automaton Aim
+    Level: 0
+    ResolvedFeature: {fileID: 0}

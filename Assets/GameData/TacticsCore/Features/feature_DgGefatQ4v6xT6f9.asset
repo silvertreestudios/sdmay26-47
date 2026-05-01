@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_DgGefatQ4v6xT6f9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: DgGefatQ4v6xT6f9
+  Slug: final-doctrine-cloistered-cleric
+  DisplayName: Final Doctrine (Cloistered Cleric)
+  IconPath: icons/magic/light/orb-hands-humanoid-yellow.webp
+  Description: Your proficiency ranks for the spell attack modifier and spell DC
+    statistics increase to legendary.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 7b35725735cfeb2dd948e860dfd01f148a68705f2043927b4a799457ae31e4ed
+  Traits:
+  - cleric
+  TraitsLower:
+  - cleric
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: spellcasting
+    Rank: 4
+  FocusPointDelta: 0

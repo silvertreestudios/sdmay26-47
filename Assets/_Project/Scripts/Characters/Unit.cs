@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Actions;
-using PathfinderTactics.Combat;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data.PF2e;
-using PathfinderTactics.Grid;
+using TacticsGame.Actions;
+using TacticsGame.Combat;
+using TacticsGame.Core;
+using TacticsGame.Data.TacticsRuleset;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     [RequireComponent(typeof(UnitActionEconomy))]
     [RequireComponent(typeof(UnitGridObject))]
@@ -32,9 +32,17 @@ namespace PathfinderTactics.Characters
 
         [Header("Configuration")]
         [SerializeField]
-        private UnitStatsSO stats;
+        private UnitStatsSO defaultStats; // For inspector compatibility
 
-        public UnitSize GetUnitSize() => (stats != null) ? stats.unitSize : UnitSize.Medium;
+        private IUnitDataProvider statsProvider;
+        private IUnitDataProvider Stats => statsProvider ?? defaultStats;
+
+        public void Initialize(IUnitDataProvider provider)
+        {
+            statsProvider = provider;
+        }
+
+        public UnitSize GetUnitSize() => (Stats != null) ? Stats.GetSize() : UnitSize.Medium;
 
         // Dependencies
         private UnitActionEconomy actionEconomy;
@@ -118,10 +126,10 @@ namespace PathfinderTactics.Characters
         }
 
         // PF2e Rule Properties
-        public int Level => (stats != null) ? stats.level : 1;
-        public bool HasAllAroundVision => (stats != null) && stats.hasAllAroundVision;
-        public bool HasDenyAdvantage => (stats != null) && stats.hasDenyAdvantage;
-        public RWIProfile RWIProfile => (stats != null) ? stats.rwiProfile : null;
+        public int Level => (Stats != null) ? Stats.GetLevel() : 1;
+        public bool HasAllAroundVision => (Stats != null) && Stats.HasAllAroundVision();
+        public bool HasDenyAdvantage => (Stats != null) && Stats.HasDenyAdvantage();
+        public RWIProfile RWIProfile => (Stats != null) ? Stats.GetRWIProfile() : null;
 
         // Capability Flags
         public bool CanAct => (conditions != null) && conditions.CanAct;
@@ -184,10 +192,10 @@ namespace PathfinderTactics.Characters
         // Stats & Formulas
         public int GetMoveDistanceInCells()
         {
-            if (stats == null)
+            if (Stats == null)
                 return 0;
 
-            int speed = stats.baseSpeedInFeet;
+            int speed = Stats.GetSpeed();
 
             // PF2e: Armor applies a Speed penalty. If you meet the Strength requirement,
             // the penalty is typically reduced by 5 ft (never becomes a speed bonus).
@@ -200,7 +208,7 @@ namespace PathfinderTactics.Characters
 
                     if (penaltyFeet != 0)
                     {
-                        if (stats.strength >= armor.strengthRequirement)
+                        if (Stats.GetStrength() >= armor.strengthRequirement)
                         {
                             // Reduce the penalty by 5 ft, but never above 0.
                             penaltyFeet = Mathf.Min(0, penaltyFeet + 5);
@@ -222,22 +230,22 @@ namespace PathfinderTactics.Characters
 
         public int GetAbilityModifier(AbilityScore stat)
         {
-            if (stats == null)
+            if (Stats == null)
                 return 0;
             switch (stat)
             {
                 case AbilityScore.STR:
-                    return PF2E_Core.GetAbilityModifier(stats.strength);
+                    return Stats.GetStrength();
                 case AbilityScore.DEX:
-                    return PF2E_Core.GetAbilityModifier(stats.dexterity);
+                    return Stats.GetDexterity();
                 case AbilityScore.CON:
-                    return PF2E_Core.GetAbilityModifier(stats.constitution);
+                    return Stats.GetConstitution();
                 case AbilityScore.INT:
-                    return PF2E_Core.GetAbilityModifier(stats.intelligence);
+                    return Stats.GetIntelligence();
                 case AbilityScore.WIS:
-                    return PF2E_Core.GetAbilityModifier(stats.wisdom);
+                    return Stats.GetWisdom();
                 case AbilityScore.CHA:
-                    return PF2E_Core.GetAbilityModifier(stats.charisma);
+                    return Stats.GetCharisma();
                 default:
                     return 0;
             }
@@ -245,7 +253,7 @@ namespace PathfinderTactics.Characters
 
         public int GetSaveModifier(SavingThrowType type)
         {
-            if (stats == null)
+            if (Stats == null)
                 return 0;
 
             AbilityScore ability;
@@ -265,8 +273,8 @@ namespace PathfinderTactics.Characters
             }
 
             // TODO: Simplified: Assuming Trained (+2) for all saves as a baseline for now
-            return PF2E_Core.CalculateModifier(
-                stats.level,
+            return TacticsRuleset_Core.CalculateModifier(
+                Stats.GetLevel(),
                 Proficiency.Trained,
                 GetAbilityModifier(ability)
             );
@@ -277,17 +285,17 @@ namespace PathfinderTactics.Characters
             Proficiency prof = Proficiency.Trained
         )
         {
-            return PF2E_Core.CalculateSpellDC(
+            return TacticsRuleset_Core.CalculateSpellDC(
                 this,
-                stats.level,
+                Stats.GetLevel(),
                 prof,
                 GetAbilityModifier(castingStat)
             );
         }
 
-        public UnitStatsSO GetStats() => stats;
+        public IUnitDataProvider GetStats() => Stats;
 
-        public void SetStats(UnitStatsSO newStats) => stats = newStats;
+        public void SetStats(IUnitDataProvider newStats) => statsProvider = newStats;
 
         public int GetArmorClass(
             Unit attacker = null,
@@ -304,19 +312,19 @@ namespace PathfinderTactics.Characters
         {
             ArmorClassBreakdown breakdown = new ArmorClassBreakdown();
             // Base AC fallback when stats aren't initialized.
-            if (stats == null)
+            if (Stats == null)
             {
                 breakdown.baseAC = 10;
                 breakdown.totalAC = breakdown.baseAC;
             }
 
-            int dexMod = (stats != null) ? GetAbilityModifier(AbilityScore.DEX) : 0;
+            int dexMod = (Stats != null) ? GetAbilityModifier(AbilityScore.DEX) : 0;
             int itemBonus = 0;
 
             // NOTE: Proficiency calculation should pull from class later (stubbed as Trained)
             Proficiency armorProf = Proficiency.Trained;
 
-            if (stats != null)
+            if (Stats != null)
             {
                 if (equipment != null)
                 {
@@ -330,7 +338,9 @@ namespace PathfinderTactics.Characters
                 }
 
                 breakdown.baseAC =
-                    10 + PF2E_Core.CalculateModifier(stats.level, armorProf, dexMod) + itemBonus;
+                    10
+                    + TacticsRuleset_Core.CalculateModifier(Stats.GetLevel(), armorProf, dexMod)
+                    + itemBonus;
             }
 
             UnitConditions currentConditions = GetComponent<UnitConditions>();
@@ -344,7 +354,7 @@ namespace PathfinderTactics.Characters
             }
 
             string statusPenaltySource;
-            breakdown.statusPenalty = PF2E_Core.GetStatusPenalty(
+            breakdown.statusPenalty = TacticsRuleset_Core.GetStatusPenalty(
                 currentConditions,
                 AbilityScore.DEX,
                 out statusPenaltySource
@@ -380,16 +390,18 @@ namespace PathfinderTactics.Characters
 
         public int getTotalHP()
         {
-            if (stats == null)
+            if (Stats == null)
                 return 0;
-            return stats.TotalHP;
+            return Stats.GetMaxHP(null);
         }
 
         public bool HasTrait(string trait)
         {
-            if (stats == null || stats.traits == null)
+            if (Stats == null || Stats.GetTraits() == null)
                 return false;
-            return stats.traits.Exists(t => t.Equals(trait, StringComparison.OrdinalIgnoreCase));
+            return Stats
+                .GetTraits()
+                .Exists(t => t.Equals(trait, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

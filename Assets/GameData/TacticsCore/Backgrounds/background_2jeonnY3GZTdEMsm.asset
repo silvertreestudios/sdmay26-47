@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_2jeonnY3GZTdEMsm
+  m_EditorClassIdentifier: 
+  SourceId: 2jeonnY3GZTdEMsm
+  Slug: harrow-led
+  DisplayName: Harrow-Led
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'You were the subject of a harrow reading at a pivotal point in your
+    life, such as on an important birthday, or upon reaching adulthood. The reading
+    was eerily accurate and has been relevant, for good or ill, at more points in
+    your life than you could call mere coincidence. Randomly determine two harrow
+    suits tied to your character, each reflecting a specific ability score. You can
+    do so by drawing cards from a harrow deck or by rolling a [[/r 1d6]]{d6}: d6
+    Result Ability 1 Hammers Strength 2 Keys Dexterity 3 Shields Constitution 4 Books
+    Intelligence 5 Stars Wisdom 6 Crowns Charisma The first suit is your aligned
+    score, and the second suit is your misaligned score. Choose two attribute boosts.
+    One must be to your aligned or misaligned score, and one is a free attribute
+    boost. You''re trained in your choice of the Occultism, Performance, or Society
+    skill and the Harrow Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Dubious
+    Knowledge] skill feat.'
+  SourceTitle: 'Pathfinder #160: Assault on Hunting Lodge Seven'
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 42bea1eb846339707fb4b18ac512f09a33cc6f416d3db4e02ea840b1207e26f8
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.Skill.Occultism","value":"occultism"},{"label":"PF2E.Skill.Performance","value":"performance"},{"label":"PF2E.Skill.Society","value":"society"}],"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":1}'
+  AttributeBoosts:
+  - Options: 00000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Harrow Lore
+    Rank: 1
+  LoreSkills:
+  - Harrow Lore
+  GrantedFeats:
+  - SourceKey: 38k5r
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dubious Knowledge
+    SourceId: 
+    DisplayName: Dubious Knowledge
+    Level: 1
+    ResolvedFeature: {fileID: 0}

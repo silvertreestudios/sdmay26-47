@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_BZhPPw9VD9U2ur6B
+  m_EditorClassIdentifier: 
+  SourceId: BZhPPw9VD9U2ur6B
+  Slug: witchlight-follower
+  DisplayName: Witchlight Follower
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "While in a dismal forest or remote swamp, you caught sight of a string
+    of lights bobbing through the trees. You stepped forward for a closer look, and
+    then still further when the lights retreated a few paces. Then you remembered
+    the rumors. Will-o'-wisps, rushlights, corpse lanterns\u2014whatever they're
+    called\u2014such evil creatures lead people to their doom. With a supreme effort
+    of will, you broke free from the alluring enchantment, and you've resolved to
+    never let the strange lights of remote wildernesses claim you again. Choose two
+    attribute boosts. One must be to Dexterity or Wisdom , and one is a free attribute
+    boost. You're trained in Survival and the Wisp Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Terrain
+    Expertise] skill feat with both swamp terrain and subterranean bodies of water."
+  SourceTitle: Pathfinder Abomination Vaults Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f31b7ee4403376510009da7c6ba1276db530f185aca546ff33649c52e4c928df
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Wisp Lore
+    Rank: 1
+  LoreSkills:
+  - Wisp Lore
+  GrantedFeats:
+  - SourceKey: pz84g
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Expertise
+    SourceId: 
+    DisplayName: Terrain Expertise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

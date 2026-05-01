@@ -1,8 +1,8 @@
 using System;
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 using UnityEngine;
 
-namespace PathfinderTactics.Reactions
+namespace TacticsGame.Reactions
 {
     public abstract class BaseReaction : MonoBehaviour
     {

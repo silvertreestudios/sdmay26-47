@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_MpZ0sdwMJ8fdZmtR
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: MpZ0sdwMJ8fdZmtR
+  Slug: lust
+  DisplayName: Lust
+  IconPath: icons/weapons/polearms/spear-hooked-brown.webp
+  Description: 'The Heart''s Hook drowns rationality in desires, twisting its targets''
+    thoughts until they gladly serve the runelord''s wishes. Anathema Use your magic
+    to meddle with physical forms or invoke the void. Sin Spells cantrips: @UUID[Compendium.pf2e.spells-srd.Item.Daze],
+    @UUID[Compendium.pf2e.spells-srd.Item.Message] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Charm],
+    @UUID[Compendium.pf2e.spells-srd.Item.Command] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Charitable
+    Urge], @UUID[Compendium.pf2e.spells-srd.Item.Stupefy] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Dream
+    Message], @UUID[Compendium.pf2e.spells-srd.Item.Enthrall] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Confusion],
+    @UUID[Compendium.pf2e.spells-srd.Item.Suggestion] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Mind
+    Probe], @UUID[Compendium.pf2e.spells-srd.Item.Subconscious Suggestion] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Dominate],
+    @UUID[Compendium.pf2e.spells-srd.Item.Never Mind] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Love''s
+    Sacrifice], @UUID[Compendium.pf2e.spells-srd.Item.Warp Mind] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Uncontrollable
+    Dance] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Telepathic Demand] Initial
+    School Spell @UUID[Compendium.pf2e.spells-srd.Item.Heart''s Hook]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: f7c78cd9c479170a8a04dc75b24c59d4136934d26ea2710933a95c93f4f3ecd5
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"runelord-sin-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"or":["item:slug:daze","item:slug:message","item:slug:charm","item:slug:command","item:slug:charitable-urge","item:slug:stupefy","item:slug:dream-message","item:slug:enthrall","item:slug:confusion","item:slug:suggestion","item:slug:mind-probe","item:slug:subconscious-suggestion","item:slug:dominate","item:slug:never-mind","item:slug:loves-sacrifice","item:slug:warp-mind","item:slug:uncontrollable-dance","item:slug:telepathic-demand"]}],"priority":118,"property":"other-tags","value":"runelord-sin-spell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

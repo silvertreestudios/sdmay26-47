@@ -1,0 +1,306 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_0FtzFbUrN56KA67z
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 0FtzFbUrN56KA67z
+  Slug: animal-instinct
+  DisplayName: Animal Instinct
+  IconPath: icons/creatures/abilities/cougar-pounce-stalk-black.webp
+  Description: "The fury of a wild predator fills you when you Rage, granting you
+    ferocious unarmed attacks. Cultures that revere vicious animals (such as apes
+    or bears) give rise to barbarians with this instinct. You might also be at war
+    with an uncontrollable, animalistic side of your personality, or you might be
+    a descendant of a werewolf or another werecreature. Select an animal from the
+    Animal Instincts table that best matches your chosen animal. Instinct Ability\u2014Bestial
+    Rage While raging, you gain your chosen animal's unarmed attack (or attacks),
+    but you're unable to use weapons. The specific attack gained, the damage it deals,
+    and its traits are listed in the Animal Instincts table. These attacks are in
+    the brawling group. Your Rage action gains the morph and primal traits. Specialization
+    Ability (7th) Increase the damage die size for the unarmed attacks granted by
+    your chosen animal by one step, and increase the additional damage from Rage
+    from 2 to 5 for your chosen animal's unarmed attacks. If you have greater weapon
+    specialization, increase the damage from Rage from 5 to 12 for your chosen animal's
+    unarmed attacks. Raging Resistance (9th) You resist piercing and slashing damage.
+    Animal Instincts Animal Attack Damage Traits Ankylosaurus Tail 1d10 B Razing,
+    unarmed Ant Mandibles 1d10 P Grapple, unarmed Ape Fist 1d10 B Grapple, unarmed
+    Bat Fangs 1d10 P Unarmed Wings 1d4 P Parry, unarmed Bear Jaws 1d10 P Unarmed
+    Claw 1d6 S Agile, unarmed Bird Beak 1d10 P Unarmed Talon 1d6 S Agile, unarmed
+    Brontosaurus Tail 1d10 B Trip, unarmed Bull Horn 1d10 P Shove, unarmed Cat Jaws
+    1d10 P Unarmed Claw 1d6 S Agile, unarmed Crab Claw 1d10 B Razing, unarmed Claw
+    1d4 S Parry, unarmed Crocodile Jaws 1d10 P Unarmed Tail 1d6 B Agile, unarmed
+    Deer Antler 1d10 P Grapple, unarmed Frog Jaws 1d10 B Unarmed Tongue 1d4 B Agile,
+    unarmed Orca Jaws 1d8 P Forceful, unarmed Scorpion Stinger 1d6 P Reach, unarmed,
+    venomous Pincer 1d4 S Parry, unarmed Seal Jaws 1d10 P Grapple, unarmed Shark
+    Jaws 1d10 P Grapple, unarmed Snake Fangs 1d10 P Grapple, unarmed Spider Fangs
+    1d8 P Grapple, unarmed, venomous Web Special* Range increment 15 feet Tyrannosaurus
+    Jaws 1d8 P Deadly d12, unarmed Tail 1d6 B Agile, unarmed Wasp Stinger 1d4 P Backstabber,
+    deadly d8, unarmed, venomous Wolf Jaws 1d10 P Trip, unarmed *The spider's web
+    attack deals no damage, but the target takes a \u201310-foot circumstance penalty
+    to its Speeds for 1 round on a hit. If a target is hit a second time by the same
+    character's web attack while they have this penalty, they're instead @UUID[Compendium.pf2e.conditionitems.Item.Immobilized]
+    until they succeed at a check to @UUID[Compendium.pf2e.actionspf2e.Item.Escape]
+    against your class DC."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 47603c148e882270b5fbc7b10caf2c4f81d08b30a26bccf5d4348bd53630f68a
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":[{"label":"PF2E.SpecificRule.Barbarian.Animal.Ankylosaurus","value":"ankylosaurus"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Ant","value":"ant"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Ape","value":"ape"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Bat","value":"bat"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Bear","value":"bear"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Bird","value":"bird"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Brontosaurus","value":"brontosaurus"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Bull","value":"bull"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Cat","value":"cat"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Crab","value":"crab"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Crocodile","value":"crocodile"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Deer","value":"deer"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Frog","value":"frog"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Orca","value":"orca"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Scorpion","value":"scorpion"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Seal","value":"seal"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Shark","value":"shark"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Snake","value":"snake"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Spider","value":"spider"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Tyrannosaurus","value":"tyrannosaurus"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Wasp","value":"wasp"},{"label":"PF2E.SpecificRule.Barbarian.Animal.Wolf","value":"wolf"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Barbarian.Animal.Prompt","rollOption":"animal-instinct"}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 5
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian",{"gte":["self:level",7]}],"selector":"{item|_id}-damage","slug":"rage","value":5}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 12
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian","feature:greater-weapon-specialization"],"selector":"{item|_id}-damage","slug":"rage","value":12}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+3"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feature:raging-resistance"],"type":["piercing","slashing"],"value":"@actor.abilities.con.mod+3"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+8"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feat:unstoppable-juggernaut"],"type":["piercing","slashing"],"value":"@actor.abilities.con.mod+8"}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"DamageDice","override":{"upgrade":true},"predicate":[{"gte":["self:level",7]},{"not":"feat:barbarian-dedication"}],"selector":"{item|_id}-damage"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"morph"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:rage",{"or":["class:barbarian","feat:instinct-ability"]}],"property":"traits","value":"morph"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"primal"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:rage",{"or":["class:barbarian","feat:instinct-ability"]}],"property":"traits","value":"primal"}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"fist","category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d10"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/ape-fist.webp","key":"Strike","label":"PF2E.Strike.Fist.Label","predicate":["animal-instinct:ape","self:effect:rage",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-fist","traits":["grapple","unarmed"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"jaws","category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"icons/creatures/abilities/mouth-teeth-long-red.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","predicate":["self:effect:rage",{"or":["animal-instinct:bear","animal-instinct:cat"]},{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-jaws","traits":["unarmed"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"jaws","category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d10"}},"group":"brawling","img":"icons/creatures/abilities/mouth-teeth-long-red.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","predicate":["self:effect:rage","animal-instinct:frog",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-jaws","traits":["unarmed"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"jaws","category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"icons/creatures/abilities/mouth-teeth-long-red.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","predicate":["self:effect:rage","animal-instinct:wolf",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-jaws","traits":["unarmed","trip"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"claw","category":"unarmed","damage":{"base":{"damageType":"slashing","dice":1,"die":"d6"}},"group":"brawling","img":"icons/commodities/claws/claw-bear-brown-grey.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Claw","predicate":["self:effect:rage",{"or":["animal-instinct:bear","animal-instinct:cat"]},{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-claw","traits":["unarmed","agile"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"icons/creatures/mammals/ox-bull-horned-glowing-orange.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Horn","predicate":["self:effect:rage","animal-instinct:bull",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-horn","traits":["unarmed","shove"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"icons/commodities/bones/horn-antler-brown-red.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Antler","predicate":["self:effect:rage","animal-instinct:deer",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-antler","traits":["unarmed","grapple"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d4"}},"group":"brawling","img":"icons/commodities/biological/tongue-pink.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Tongue","predicate":["self:effect:rage","animal-instinct:frog",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-tongue","traits":["unarmed","agile"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"baseType":"jaws","category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"icons/creatures/abilities/mouth-teeth-long-red.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","predicate":["self:effect:rage","animal-instinct:shark",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-jaws","traits":["unarmed","grapple"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/fangs.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Fangs","predicate":["self:effect:rage","animal-instinct:snake",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-fangs","traits":["unarmed","grapple"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d10"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/tail.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Tail","predicate":["self:effect:rage","animal-instinct:ankylosaurus",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-tail","traits":["unarmed","razing"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"icons/creatures/invertebrates/spider-mandibles-brown.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Mandibles","predicate":["self:effect:rage","animal-instinct:ant",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-mandibles","traits":["unarmed","grapple"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/fangs.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Fangs","predicate":["self:effect:rage","animal-instinct:bat",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-fangs","traits":["unarmed"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d4"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/wing.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Wing","predicate":["self:effect:rage","animal-instinct:bat",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-wing","traits":["unarmed","parry"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/beak.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Beak","predicate":["self:effect:rage","animal-instinct:bird",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-beak","traits":["unarmed"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"slashing","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/talon.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Talon","predicate":["self:effect:rage","animal-instinct:bird",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-talon","traits":["unarmed","agile"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d10"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/tail.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Tail","predicate":["self:effect:rage","animal-instinct:brontosaurus",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-tail","traits":["unarmed","trip"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d10"}},"group":"brawling","img":"icons/commodities/claws/claw-pincer-red.webp","key":"Strike","label":"PF2E.BattleForm.Attack.BigClaw","predicate":["self:effect:rage","animal-instinct:crab",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-big-claw","traits":["unarmed","razing"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"slashing","dice":1,"die":"d4"}},"group":"brawling","img":"icons/commodities/claws/claw-pincer-red.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Claw","predicate":["self:effect:rage","animal-instinct:crab",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-claw","traits":["unarmed","parry"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/jaws.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","predicate":["self:effect:rage","animal-instinct:crocodile",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-jaws","traits":["unarmed"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/tail.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Tail","predicate":["self:effect:rage","animal-instinct:crocodile",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-tail","traits":["unarmed","agile"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d8"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/jaws.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","predicate":["self:effect:rage","animal-instinct:orca",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-jaws","traits":["unarmed","forceful"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/stinger.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Stinger","predicate":["self:effect:rage","animal-instinct:scorpion",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-stinger","traits":["unarmed","venomous","reach"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"slashing","dice":1,"die":"d4"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/pincer.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Pincer","predicate":["self:effect:rage","animal-instinct:scorpion",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-pincer","traits":["unarmed","parry"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d10"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/jaws.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","predicate":["self:effect:rage","animal-instinct:seal",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-jaws","traits":["unarmed","grapple"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d8"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/fangs.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Fangs","predicate":["self:effect:rage","animal-instinct:spider",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-fangs","traits":["unarmed","grapple","venomous"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","group":"brawling","img":"icons/commodities/materials/material-webbing.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Web","predicate":["self:effect:rage","animal-instinct:spider",{"or":["class:barbarian","feat:instinct-ability"]}],"range":{"increment":15},"slug":"instinct-web","traits":["unarmed"]}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","selector":"instinct-web-attack-roll","text":"PF2E.SpecificRule.Barbarian.Animal.WebNote","title":"PF2E.SpecificRule.Barbarian.Animal.Spider"}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d8"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/jaws.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Jaws","predicate":["self:effect:rage","animal-instinct:tyrannosaurus",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-jaws","traits":["unarmed","deadly-d12"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"bludgeoning","dice":1,"die":"d6"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/tail.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Tail","predicate":["self:effect:rage","animal-instinct:tyrannosaurus",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-tail","traits":["unarmed","agile"]}'
+  - Key: Strike
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"unarmed","damage":{"base":{"damageType":"piercing","dice":1,"die":"d4"}},"group":"brawling","img":"systems/pf2e/icons/unarmed-attacks/stinger.webp","key":"Strike","label":"PF2E.BattleForm.Attack.Pincer","predicate":["self:effect:rage","animal-instinct:wasp",{"or":["class:barbarian","feat:instinct-ability"]}],"slug":"instinct-stinger","traits":["unarmed","backstabber","deadly-d8","venomous"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"instinct-unarmed-strike"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:id:{item|id}"],"property":"other-tags","value":"instinct-unarmed-strike"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Fh5Khtx5bgGpBeOu
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Fh5Khtx5bgGpBeOu
+  Slug: envy
+  DisplayName: Envy
+  IconPath: icons/weapons/polearms/halberd-crescent-glowing.webp
+  Description: 'The Cutting Eye reveals weaknesses in yourself and others, creating
+    those weaknesses when you need to humble those who dare surpass you. Anathema
+    Use your magic to cause harm with the elements or void. Sin Spells cantrips:
+    @UUID[Compendium.pf2e.spells-srd.Item.Shield], @UUID[Compendium.pf2e.spells-srd.Item.Tangle
+    Vine] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Schadenfreude], @UUID[Compendium.pf2e.spells-srd.Item.Enfeeble]
+    2nd: @UUID[Compendium.pf2e.spells-srd.Item.Dispel Magic], @UUID[Compendium.pf2e.spells-srd.Item.Stupefy]
+    3rd: @UUID[Compendium.pf2e.spells-srd.Item.Earthbind], @UUID[Compendium.pf2e.spells-srd.Item.Thief
+    of Fortune] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Containment], @UUID[Compendium.pf2e.spells-srd.Item.Outcast''s
+    Curse] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Banishment], @UUID[Compendium.pf2e.spells-srd.Item.Grisly
+    Growths] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Cursed Metamorphosis], @UUID[Compendium.pf2e.spells-srd.Item.Spellwrack]
+    7th: @UUID[Compendium.pf2e.spells-srd.Item.Duplicate Foe], @UUID[Compendium.pf2e.spells-srd.Item.Planar
+    Seal] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Quandary] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Detonate
+    Magic] Initial School Spell @UUID[Compendium.pf2e.spells-srd.Item.Cutting Eye]'
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: classfeatures
+  Rarity: rare
+  SourceJsonHash: 2e8f7b40e7a4c751b2ab3a47e097914899dc72fc641f6c88e00bfede1ca8ad3a
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"runelord-sin-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":[{"or":["item:slug:shield","item:slug:tangle-vine","item:slug:schadenfreude","item:slug:enfeeble","item:slug:dispel-magic","item:slug:stupefy","item:slug:earthbind","item:slug:thief-of-fortune","item:slug:containment","item:slug:outcasts-curse","item:slug:banishment","item:slug:grisly-growths","item:slug:cursed-metamorphosis","item:slug:spellwrack","item:slug:duplicate-foe","item:slug:planar-seal","item:slug:quandary","item:slug:detonate-magic"]}],"priority":118,"property":"other-tags","value":"runelord-sin-spell"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

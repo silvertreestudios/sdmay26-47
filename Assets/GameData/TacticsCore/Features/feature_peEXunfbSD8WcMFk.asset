@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_peEXunfbSD8WcMFk
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: peEXunfbSD8WcMFk
+  Slug: justice
+  DisplayName: Justice
+  IconPath: icons/skills/melee/sword-winged-holy-orange.webp
+  Description: "In your deity's name you seek justice, following the law and punishing
+    those who transgress it. Edicts follow the law, respect legitimate authorities
+    or leadership Anathema take advantage of another, cheat Champion's Reaction @UUID[Compendium.pf2e.actionspf2e.Item.Retributive
+    Strike] Relentless Reaction (9th Level) If your Strike hits, the target takes
+    persistent spirit damage equal to your Charisma modifier. Exalted Reaction (11th
+    Level) Each ally in your champion's aura with the target in their melee reach
+    can spend a reaction to Strike the target with a \u20135 penalty."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 06fdf8c738493dee499ed33ac93613945b085ca6c5c1dd836a256a1b5ce765c8
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Retributive Strike
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"or":["class:champion","feat:champions-reaction"]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.actionspf2e.Item.Retributive
+      Strike"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Retributive Strike
+    SourceId: 
+    DisplayName: Retributive Strike
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

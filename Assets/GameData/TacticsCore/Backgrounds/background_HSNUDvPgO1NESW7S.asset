@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HSNUDvPgO1NESW7S
+  m_EditorClassIdentifier: 
+  SourceId: HSNUDvPgO1NESW7S
+  Slug: junk-collector
+  DisplayName: Junk Collector
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You live by the adage that one person's trash is another's treasure.
+    Whether by sifting through scrap heaps or digging up old battlefields, you remain
+    on the lookout for lost or discarded objects that you might be able to turn into
+    something useful. More often than not, what you find is just junk, but you're
+    convinced that one of these days, you're going to hit the jackpot. You've even
+    taken up adventuring as a means to supercharge your access to all sorts of junk,
+    gear, and loot. Choose two attribute boosts. One must be to Dexterity or Intelligence
+    , and one is a free attribute boost. You're trained in the Crafting skill and
+    your choice of either the Engineering Lore or Mining Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Crafter's Appraisal] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 312cb82cf977f15f35aacdb790551c165328646fa43ce00b9b51167b426cdf53
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 4
+    CustomSkillId: crafting
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: osb2w
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Crafter's Appraisal
+    SourceId: 
+    DisplayName: Crafter's Appraisal
+    Level: 1
+    ResolvedFeature: {fileID: 0}

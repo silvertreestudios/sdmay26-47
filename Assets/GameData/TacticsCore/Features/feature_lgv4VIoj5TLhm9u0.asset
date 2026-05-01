@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_lgv4VIoj5TLhm9u0
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: lgv4VIoj5TLhm9u0
+  Slug: ripple-in-the-deep
+  DisplayName: Ripple in the Deep
+  IconPath: icons/magic/water/pseudopod-teal.webp
+  Description: When your patron appeared, it was as an unfathomably large shadow
+    beneath the waves, possibly as an ancient denizen of the vast waters like a kraken.
+    Whether channeling the lethal terror of an oceanic predator or singing the ancestral
+    wisdom of its gentle giants, your leviathan patron brings you lessons from the
+    unplumbed depths of the world. Spell List primal Patron Skill Nature Lesson of
+    Surface and Seas Your patron teaches of the dangers and wonders of its domain,
+    even at the very edges of the water. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Sting
+    of the Sea] hex cantrip, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Dizzying
+    Colors] or @UUID[Compendium.pf2e.spells-srd.Item.Grease]. Familiar of Overwhelming
+    Tides Your familiar constantly drips with ocean water. When you Cast or Sustain
+    a hex, you can cause a small wave to surge forth from your familiar. One creature
+    within 10 feet of your familiar is pushed 5 feet away from your familiar.
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 77aefd015092277b0db93809472c9050b512f7749077459a4401bf4d5d7d8216
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.nature.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.nature.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"primal"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"primal"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.OverwhelmingTides.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.OverwhelmingTides.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.OverwhelmingTides.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.OverwhelmingTides.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_tXC5Gwn9D5x0ouJh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: tXC5Gwn9D5x0ouJh
+  Slug: sensate-gnome
+  DisplayName: Sensate Gnome
+  IconPath: systems/pf2e/icons/features/ancestry/sensate-gnome.webp
+  Description: 'You see all colors as brighter, hear all sounds as richer, and especially
+    smell all scents with incredible detail. You gain a special sense: imprecise
+    scent with a range of 30 feet. This means you can use your sense of smell to
+    determine the exact location of a creature. The GM will usually double the range
+    if you''re downwind from the creature or halve the range if you''re upwind. In
+    addition, you gain a +2 circumstance bonus to Perception checks whenever you''re
+    trying to locate an undetected creature that is within the range of your scent.'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 9151b3b70d65756d5da9a5a07f5a1d4e9b45bf7f7d0a5a7caa3d45fd9391c2e8
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 2
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:seek",{"lte":["target:distance",30]}],"selector":"perception","type":"circumstance","value":2}'
+  - Key: Sense
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"acuity":"imprecise","key":"Sense","range":30,"selector":"scent"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.CYlfsYLJcBOgqKtD
+    SourceId: 
+    Slug: gnome
+    DisplayName: Gnome
+  ParentAncestryAsset: {fileID: 11400000, guid: fb1bbba28cbc5b74cae3db902c75b07b, type: 2}
+  GrantedFeatures: []

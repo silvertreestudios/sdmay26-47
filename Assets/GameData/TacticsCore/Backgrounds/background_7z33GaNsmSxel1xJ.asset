@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_7z33GaNsmSxel1xJ
+  m_EditorClassIdentifier: 
+  SourceId: 7z33GaNsmSxel1xJ
+  Slug: doomcaller
+  DisplayName: Doomcaller
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: In the stars you see not guidance or wisdom but a twinkling door to
+    the impending end of all things. You might have been raised in this ideology,
+    gleaned it from superstition, or received a prophetic vision. Regardless, you've
+    come to view the stars and whatever power they evoke as a path to doom, a curse
+    to warn the masses. Others might spurn your warnings, while some might join you
+    in enlightening the ignorant. To you, there's no greater truth than the coming
+    end, and you know that whatever the cause for it will come from the stars-or
+    perhaps the stars are just a gate to a more terrifying beyond. Choose two attribute
+    boosts. One must be to Intelligence or Wisdom, and one is a free attribute boost.
+    You're trained in Occultism and Star Lore. You also gain the @UUID[Compendium.pf2e.actionspf2e.Item.Stellar
+    Misfortune] action.
+  SourceTitle: Pathfinder Lost Omens Travel Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 75eb1e5e411511153887d95f2e0c3b0befabda59aaac3b526a4a8b010f02c548
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Stellar Misfortune
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Stellar Misfortune"}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Star lore
+    Rank: 1
+  LoreSkills:
+  - Star lore
+  GrantedFeats: []

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_kLjqmylGOXeQ5o5Y
+  m_EditorClassIdentifier: 
+  SourceId: kLjqmylGOXeQ5o5Y
+  Slug: bonuwat-wavetouched
+  DisplayName: Bonuwat Wavetouched
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Mwangi Expanse You are a child of the Bonuwat
+    people, and the sea's salt flows through your veins. You've taken to sailing
+    and swimming gracefully and with ease, earning you the honorific "wavetouched."
+    Choose two attribute boosts. One must be to Strength or Wisdom , and one is a
+    free attribute boost. You're trained in the Athletics skill and the Ocean Lore
+    skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Underwater Marauder]
+    skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 46e48a4e631c2ea9fb3a025e6730b78233c5f1e214a2a9c94a4af5b9d806f395
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Ocean Lore
+    Rank: 1
+  LoreSkills:
+  - Ocean Lore
+  GrantedFeats:
+  - SourceKey: 9ljw3
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Underwater Marauder
+    SourceId: 
+    DisplayName: Underwater Marauder
+    Level: 1
+    ResolvedFeature: {fileID: 0}

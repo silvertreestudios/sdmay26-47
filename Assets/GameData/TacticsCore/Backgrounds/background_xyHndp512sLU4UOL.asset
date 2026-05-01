@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_xyHndp512sLU4UOL
+  m_EditorClassIdentifier: 
+  SourceId: xyHndp512sLU4UOL
+  Slug: northland-forager
+  DisplayName: Northland Forager
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'The vast tundra and looming mountains of the Realm of the Mammoth
+    Lords may seem featureless and barren to the untrained eye, but you know better.
+    You see what others don''t: nutritious roots buried beneath muddy reeds, succulent
+    bird eggs cradled in craggy rocks, restorative berries nestled among thorny thickets,
+    and more. In the south, farmers toil in dusty fields to eat the same vegetables
+    every day, but your diet is varied and you''re rarely hungry-the entire Realm
+    is your garden. Choose two attribute boosts. One must be to Constitution or Wisdom
+    , and one is a free attribute boost. You''re trained in the Survival skill and
+    the Herbalism Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Forager]
+    skill feat.'
+  SourceTitle: Pathfinder Quest for the Frozen Flame Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 8b2f0f58af692f058dd236fb92206caf7ecde777496fed854a6444c831e24e14
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Herbalism
+    Rank: 1
+  LoreSkills:
+  - Herbalism
+  GrantedFeats:
+  - SourceKey: 07n2z
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forager
+    SourceId: 
+    DisplayName: Forager
+    Level: 1
+    ResolvedFeature: {fileID: 0}

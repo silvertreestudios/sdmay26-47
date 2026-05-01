@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HNdGlDHkcczqNw2U
+  m_EditorClassIdentifier: 
+  SourceId: HNdGlDHkcczqNw2U
+  Slug: musical-prodigy
+  DisplayName: Musical Prodigy
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: 'Ever since you were young, you''ve been almost supernaturally skilled
+    in a particular type of music. The people around you were sure you''d grow up
+    to perform at royal courts or to become a world-famous composer, but you''ve
+    chosen a life of adventure instead. You might have given up on those dreams to
+    find your own meaning, or you might find that adventuring allows you to experience
+    unfiltered emotions and exploits that you can translate into a wondrous symphony
+    some day. Choose two attribute boosts. One must be to Dexterity or Charisma ,
+    and one is a free attribute boost. You''re trained in Performance and Music Lore.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Virtuosic Performer] skill
+    feat. Note: You will have to select the correct virtuosic performer feat for
+    your style.'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f663ccbf6f29a05d1d0efc5aa0827209435791f9d632fdb2c78cd45ffc4380c9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Music Lore
+    Rank: 1
+  LoreSkills:
+  - Music Lore
+  GrantedFeats:
+  - SourceKey: F9KOw
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Virtuosic Performer
+    SourceId: 
+    DisplayName: Virtuosic Performer
+    Level: 1
+    ResolvedFeature: {fileID: 0}

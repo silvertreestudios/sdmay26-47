@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_JauSkDtMV6dhDZS8
+  m_EditorClassIdentifier: 
+  SourceId: JauSkDtMV6dhDZS8
+  Slug: political-scion
+  DisplayName: Political Scion
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Like your parents and your parents before them, you initially followed
+    the long path toward politics from an early age. Your close association with
+    Absalom's upper echelons put you in touch with the city's various military or
+    special operations units-the First Guard, the Wave Riders, the Varlokkur-though
+    you avoided any actual duty with these groups. Thanks to your strict upbringing
+    and the connections of your family, you soon became a lauded and highly respected
+    member of Absalom's political elite. But you couldn't stifle a certain feeling
+    that you were destined for more than simply filling the pointed shoes of your
+    forebears. Despite your easily earned accolades and a relatively cushy life as
+    a young lawyer or councilmember, you sought to do more with your diplomatic training
+    and not live out the exact same life as your ancestors. Your decision to transfer
+    to the Edgewatch has rubbed your traditionalist family the wrong way, and they've
+    cut off the financial aid they've provided you your whole life. But you don't
+    care-you know you're doing the right thing by taking on the rough jobs of a low-ranking
+    guard, and you're ready to shine based on your own merits, not those of your
+    lofty kin. Choose two attribute boosts. One must be to Constitution or Intelligence
+    , and one is a free attribute boost. You're trained in the Diplomacy skill and
+    Legal Lore. You gain a +1 circumstance bonus to Deception, Diplomacy, and Intimidation
+    checks to Interact with members of Absalom's political establishment. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Hobnobber] skill feat.
+  SourceTitle: Pathfinder Agents of Edgewatch Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 7f56979027497aac0f78761fc12d0b29d17b0a86950abf94dbab058614304e2a
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","label":"Interacting with Absalom''s political establishment
+      (Political Scion)","predicate":["target:absalom-politician"],"selector":["deception","diplomacy","intimidation"],"type":"circumstance","value":1}'
+  AttributeBoosts:
+  - Options: 0300000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Legal Lore
+    Rank: 1
+  LoreSkills:
+  - Legal Lore
+  GrantedFeats:
+  - SourceKey: km6n9
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hobnobber
+    SourceId: 
+    DisplayName: Hobnobber
+    Level: 1
+    ResolvedFeature: {fileID: 0}

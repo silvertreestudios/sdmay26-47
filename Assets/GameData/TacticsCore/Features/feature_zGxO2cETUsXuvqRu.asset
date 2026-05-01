@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_zGxO2cETUsXuvqRu
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: zGxO2cETUsXuvqRu
+  Slug: order-of-the-pyre
+  DisplayName: Order of the Pyre
+  IconPath: systems/pf2e/icons/default-icons/feat.svg
+  Description: 'Favored Weapon @UUID[Compendium.pf2e.equipment-srd.Item.Glaive] The
+    Order of the Pyre is dedicated to eliminating those faiths and beliefs they consider
+    to be a threat to the Inner Sea region. They are particularly keen on stamping
+    out dangerous cults. Lesser Benefit @UUID[Compendium.pf2e.feats-srd.Item.Righteous
+    Resistance] Greater Benefit @UUID[Compendium.pf2e.feats-srd.Item.Spiritual Disruption]'
+  SourceTitle: Pathfinder Lost Omens Character Guide
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: b4aabe2d6ab5ca78a709ae5e573adb6691215a68d994ec412e9ea1ce1a9035b5
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

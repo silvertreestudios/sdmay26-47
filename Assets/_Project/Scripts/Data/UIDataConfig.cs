@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
+using TacticsGame.Characters;
 using UnityEngine;
 
-namespace PathfinderTactics.Data
+namespace TacticsGame.Data
 {
     [Serializable]
     public struct DamageTypeIconMapping
@@ -12,7 +12,7 @@ namespace PathfinderTactics.Data
         public Sprite icon;
     }
 
-    [CreateAssetMenu(fileName = "UIDataConfig", menuName = "PathfinderTactics/UI/UI Data Config")]
+    [CreateAssetMenu(fileName = "UIDataConfig", menuName = "TacticsGame/UI/UI Data Config")]
     public class UIDataConfig : ScriptableObject
     {
         [Header("Damage Type Icons")]

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ZrkyPG41iFicYsdX
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ZrkyPG41iFicYsdX
+  Slug: multisensory-mask
+  DisplayName: Multisensory Mask
+  IconPath: icons/equipment/head/helm-goggles-leather.webp
+  Description: Subterfuge Suit only You've built a multisensory mask over your armor
+    that protects you by distorting your figure from all senses, leaving behind only
+    a hazy image, muffled sounds, and so forth. While wearing the armor, you gain
+    concealment against all creatures, even if they are using a nonvisual precise
+    sense, such as a bat's echolocation. As normal for effects that leave your location
+    obvious, you can't use this concealment to Hide or @UUID[Compendium.pf2e.actionspf2e.Item.Sneak].
+    If you use a hostile action, the concealment ends until you restore the mask
+    as a single action, which has the manipulate trait.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: a6fe656523b8fb6d96fb63a72f3b5bc9c2ee16abb03a1a1978fef71a351a0373
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","option":"multisensory-mask","predicate":["armor:id:{actor|flags.pf2e.innovationId}"],"toggleable":true}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.conditionitems.Item.Concealed
+    Json: '{"inMemoryOnly":true,"key":"GrantItem","predicate":["multisensory-mask"],"uuid":"Compendium.pf2e.conditionitems.Item.Concealed"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.conditionitems.Item.Concealed
+    SourceId: 
+    DisplayName: Concealed
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

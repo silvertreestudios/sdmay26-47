@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_GXcC6oVa5quzgNHD
+  m_EditorClassIdentifier: 
+  SourceId: GXcC6oVa5quzgNHD
+  Slug: strix
+  DisplayName: Strix
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/strix.svg
+  Description: Known as itarii in their own language, strix are reclusive avian humanoids
+    devoted to their homelands and their tribes. They defend their precious communities
+    with broad wingspans and razor talons. Strix
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 714312936f16db7c67650b52d6e0d73a7b0c07eee13fc00c29cf4272d4921aa0
+  Traits:
+  - humanoid
+  - strix
+  TraitsLower:
+  - humanoid
+  - strix
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 02000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: strix
+    DisplayName: Strix
+  AdditionalLanguageOptions:
+  - Id: diabolic
+    DisplayName: Diabolic
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: gnomish
+    DisplayName: Gnomish
+  - Id: jotun
+    DisplayName: Jotun
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 64eou
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Wings
+    SourceId: 
+    DisplayName: Wings
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 8cbe1c5d413eb7a4587a926a90fc3a5e, type: 2}
+  - {fileID: 11400000, guid: ddb31f8c17eab614fbc3ecc07a4a9701, type: 2}
+  - {fileID: 11400000, guid: 18a955f3c95e66e4cab170e09bade4a2, type: 2}
+  - {fileID: 11400000, guid: 587b6a3de3ec245428ee00385f5e6a8f, type: 2}
+  - {fileID: 11400000, guid: dc0992f6eaf42644e931153bdd4bebcc, type: 2}

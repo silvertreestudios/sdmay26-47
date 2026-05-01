@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     [ExecuteAlways]
     public class GridVisualizer : MonoBehaviour

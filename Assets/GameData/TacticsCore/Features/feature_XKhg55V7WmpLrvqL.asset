@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_XKhg55V7WmpLrvqL
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: XKhg55V7WmpLrvqL
+  Slug: rascal
+  DisplayName: Rascal
+  IconPath: icons/sundries/gaming/playing-cards.webp
+  Description: You aren't afraid to use underhanded tactics to get the edge over
+    your opponents. You are trained in Thievery and gain the @UUID[Compendium.pf2e.feats-srd.Item.Dirty
+    Trick] general feat. When you use Dirty Trick, the action gains the bravado trait.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 864ebab04e7e891ff3894734b18eb7b47ecc1f417eb41e153cd9f039ac33df28
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.thievery.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.thievery.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Dirty Trick
+    Json: '{"key":"GrantItem","predicate":["class:swashbuckler"],"uuid":"Compendium.pf2e.feats-srd.Item.Dirty
+      Trick"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["success","criticalSuccess"],"predicate":["finisher","feature:exemplary-finisher"],"selector":"strike-attack-roll","text":"PF2E.SpecificRule.ExemplaryFinisher.Rascal","title":"PF2E.SpecificRule.ExemplaryFinisher.Name"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"skill-check","key":"RollOption","option":"item:trait:bravado","predicate":["action:dirty-trick"]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dirty Trick
+    SourceId: 
+    DisplayName: Dirty Trick
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

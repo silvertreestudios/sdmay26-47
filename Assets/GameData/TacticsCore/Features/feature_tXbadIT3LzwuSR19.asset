@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_tXbadIT3LzwuSR19
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: tXbadIT3LzwuSR19
+  Slug: revolutionary-innovation
+  DisplayName: Revolutionary Innovation
+  IconPath: systems/pf2e/icons/features/classes/revolutionary-innovation.webp
+  Description: "You are an unparalleled genius and have discovered a technique that
+    will revolutionize your chosen field\u2014or at least for the time being, your
+    innovation! Choose a revolutionary modification to apply to your innovation.
+    You can also choose an initial or breakthrough modification of the same type
+    instead, if you prefer. Revolutionary Armor Modifications @UUID[Compendium.pf2e.classfeatures.Item.Automated
+    Impediments]: Your armor uses electromagnetic fields, subharmonic distortions,
+    or other techniques to make it difficult for those close to you to move unless
+    you allow it. While wearing your armor, all spaces adjacent to you are difficult
+    terrain for your enemies. @UUID[Compendium.pf2e.classfeatures.Item.Energy Barrier]:
+    Your armor's defenses ablate any kind of energy coming your way. While wearing
+    your armor, you gain resistance to all energy damage (acid, cold, electricity,
+    fire, force, sonic, vitality, and void damage) equal to 2 + half your level.
+    You must have the harmonic oscillator, metallic reactance, or phlogistonic regulator
+    modification to select this modification. @UUID[Compendium.pf2e.classfeatures.Item.Incredible
+    Resistance]: You've improved upon your breakthrough modification's ability to
+    resist damage. Choose one of the following breakthrough modifications your innovation
+    has: dense plating, layered mesh, or tensile absorption. Increase the resistance
+    you gain from that modification to be equal to your level, instead of half your
+    level. @UUID[Compendium.pf2e.classfeatures.Item.Multisensory Mask] (subterfuge
+    suit only): You've built a multisensory mask over your armor that protects you
+    by distorting your figure from all senses, leaving behind only a hazy image,
+    muffled sounds, and so forth. While wearing the armor, you gain concealment against
+    all creatures, even if they are using a nonvisual precise sense, such as a bat's
+    echolocation. As normal for effects that leave your location obvious, you can't
+    use this concealment to Hide or Sneak. If you use a hostile action, the concealment
+    ends until you restore the mask as a single action, which has the manipulate
+    trait. @UUID[Compendium.pf2e.classfeatures.Item.Perfect Fortification] (power
+    suit only): You've outfitted your armor with such heavy fortifications that deadly
+    attacks often lose their edge. Each time you're critically hit while wearing
+    the armor, attempt a DC 13 flat check. On a success, it becomes a normal hit.
+    This isn't cumulative with fortification runes or other abilities that reduce
+    critical hits with a flat check. Additionally, you gain resistance 2 + half your
+    level against precision damage. @UUID[Compendium.pf2e.classfeatures.Item.Physical
+    Protections]: Your armor has so many adjustments and precautions that it can
+    guard against all physical damage. While wearing your armor, you gain resistance
+    to all physical damage (bludgeoning, piercing, and slashing damage, as well as
+    persistent bleed damage) equal to half your level. You must have the dense plating,
+    layered mesh, or tensile absorption breakthrough modification to select this
+    modification. @UUID[Compendium.pf2e.classfeatures.Item.Rune Capacity]: Whether
+    you've done some dabbling in orichalcum alloys or found another engineering solution,
+    you've built your innovation in such a way that it can hold an additional property
+    rune. Your innovation can have one more property rune than a normal item of its
+    kind (to a maximum of four property runes with a +3 potency armor). Revolutionary
+    Construct Modifications Flight Chassis: You fit your construct with a means of
+    flight, such as adding rotors or rebuilding it with wings and a lightweight construction.
+    Your innovation gains a fly Speed of 25 feet. Miracle Gears: As you perfect your
+    innovation's cortex, it becomes much more intelligent. Its Intelligence modifier
+    increases by 2, and it learns a language of your choice from among the languages
+    you know. Your construct gains the ability to use actions that require greater
+    Intelligence, like @UUID[Compendium.pf2e.actionspf2e.Item.Coerce] and Decipher
+    Writing. Finally, your construct becomes legendary in two Intelligence- or Charisma-based
+    skills of your choice. You must have the marvelous gears modification to select
+    this modification. Resistant Coating: Your innovation is hard to damage by any
+    means. It gains resistance 5 to all damage (except adamantine). Runic Keystone:
+    You've incorporated a device similar to a runestone into your innovation, allowing
+    it to hold a property rune, even though it isn't a weapon or suit of armor. An
+    armor property rune affects your innovation itself if it would affect the wearer
+    of the armor. A weapon property rune grants whatever properties it would normally
+    grant to a weapon to your innovation's unarmed attacks, following all the requirements
+    as normal (for instance, a vorpal rune would only apply to slashing melee unarmed
+    attacks); if the rune affects only ranged attacks, it has no effect unless your
+    innovation has a built-in ranged attack (from the projectile launcher initial
+    modification, for example). If the rune would affect the physical shape or appearance
+    of the weapon or armor itself, like raiment , the rune has no effect when etched
+    into your construct. Wall Configuration: Your innovation can transform from a
+    mobile construct to a stationary battlefield emplacement. It can unfold as a
+    2-action activity that has the manipulate trait, changing from its usual form
+    into a thin, straight wall of metal and gears up to 10 feet tall and 30 feet
+    long. The wall must extend through your innovation's original space. While your
+    construct is a wall, it can't take any actions except to use the same activity
+    to transform back, and it can't defend itself easily, making it @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard]
+    and giving it an additional \u20132 status penalty to its AC. The wall blocks
+    line of sight and effect unless your innovation has half its maximum HP or fewer,
+    at which point holes in the wall allow creatures to see through and attack with
+    cover, and Tiny creatures to slip through. Revolutionary Weapon Modifications
+    @UUID[Compendium.pf2e.classfeatures.Item.Attack Refiner]: Your weapon makes minute
+    recalibrations after every missed attack to ensure the next lands with vicious
+    efficacy. Your innovation gains the backswing and forceful traits. @UUID[Compendium.pf2e.classfeatures.Item.Deadly
+    Strike]: Through precise calculation, you've found the perfect way for your weapon
+    to deal damage on a well-placed strike. Your innovation gains the deadly d8 trait.
+    If your innovation was already deadly, increase the die by up to two die sizes
+    (d6 to d10, d8 to d12), to a maximum of deadly d12. @UUID[Compendium.pf2e.classfeatures.Item.Enhanced
+    Damage]: You've made your innovation more powerful than other weapons of its
+    kind. Increase your innovation's weapon damage die by one step (d4 to d6, d6
+    to d8, d8 to d10, d10 to d12). As normal, you can't increase your die by more
+    than one size, so this modification isn't cumulative with complex simplicity.
+    @UUID[Compendium.pf2e.classfeatures.Item.Extensible Weapon] (melee only): You've
+    found a way to construct your weapon so that it can extend while leaving its
+    balance unchanged. Your innovation gains the reach trait. If the weapon already
+    had the reach trait, it increases your reach by an additional 10 feet, instead
+    of the usual additional 5 feet. @UUID[Compendium.pf2e.classfeatures.Item.Impossible
+    Alloy]: Other inventors claim it's not even technically possible, but you've
+    managed to create several metal alloys that seem to work for only you. These
+    alloys can damage opponents vulnerable to any one of the seven skymetals. Your
+    innovation is treated as all seven skymetals (abysium, adamantine, djezet, inubrix,
+    noqual, orichalcum, and siccatite). This means you deal more damage to a variety
+    of creatures, though you don't apply any of the other special effects for weapons
+    made of those skymetals. @UUID[Compendium.pf2e.classfeatures.Item.Momentum Enhancer]:
+    A special device lets your weapon move with uncanny speed. Your innovation gains
+    the agile trait; if it had the reload ability, you can reload once per round
+    as a free action. @UUID[Compendium.pf2e.classfeatures.Item.Omnirange Stabilizers]
+    (ranged only): You've modified your innovation to be dangerous and effective
+    at any range. If your innovation had the volley trait, remove the volley trait.
+    Otherwise, increase your innovation's range increment by 50 feet or an amount
+    equal to the weapon's base range increment, whichever is more. @UUID[Compendium.pf2e.classfeatures.Item.Rune
+    Capacity]: Whether you've dabbled with orichalcum or found another engineering
+    solution, you've built your innovation in such a way that it can hold an additional
+    property rune. Your innovation can have one more property rune than a normal
+    item of its kind (to a maximum of four property runes with a +3 potency weapon)."
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 18afa8db99f82cedcfc377382bc5824f03e3f8b0e4470ba9c0ed50a6855e23d9
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"allowedDrops":{"label":"PF2E.SpecificRule.Inventor.Modification.Revolutionary.AllowedDrops","predicate":[{"lte":["item:level",15]},"item:type:feature","item:trait:inventor"]},"choices":[{"predicate":["feature:armor-innovation",{"not":"feature:dense-plating"}],"value":"Compendium.pf2e.classfeatures.Item.Dense
+      Plating"},{"predicate":["feature:armor-innovation",{"not":"feature:harmonic-oscillator"}],"value":"Compendium.pf2e.classfeatures.Item.Harmonic
+      Oscillator"},{"predicate":["feature:armor-innovation",{"not":"feature:metallic-reactance"}],"value":"Compendium.pf2e.classfeatures.Item.Metallic
+      Reactance"},{"predicate":["armor-innovation:power-suit",{"not":"feature:muscular-exoskeleton"}],"value":"Compendium.pf2e.classfeatures.Item.Muscular
+      Exoskeleton"},{"predicate":["feature:armor-innovation",{"not":"feature:otherworldly-protection"}],"value":"Compendium.pf2e.classfeatures.Item.Otherworldly
+      Protection"},{"predicate":["feature:armor-innovation",{"not":"feature:phlogistonic-regulator"}],"value":"Compendium.pf2e.classfeatures.Item.Phlogistonic
+      Regulator"},{"predicate":["feature:armor-innovation",{"not":"feature:speed-boosters"}],"value":"Compendium.pf2e.classfeatures.Item.Speed
+      Boosters"},{"predicate":["armor-innovation:subterfuge-suit",{"not":"feature:subtle-dampeners"}],"value":"Compendium.pf2e.classfeatures.Item.Subtle
+      Dampeners"},{"predicate":["feature:armor-innovation",{"not":"feature:antimagic-plating"}],"value":"Compendium.pf2e.classfeatures.Item.Antimagic
+      Plating"},{"predicate":[{"and":["feature:armor-innovation","armor-innovation:subterfuge-suit"]},{"not":"feature:camouflage-pigmentation"}],"value":"Compendium.pf2e.classfeatures.Item.Camouflage
+      Pigmentation"},{"predicate":["feature:armor-innovation",{"or":["feature:harmonic-oscillator","feature:metallic-reactance","feature:otherworldly-protection","feature:phlogistonic-regulator"]},{"not":"feature:enhanced-resistance"}],"value":"Compendium.pf2e.classfeatures.Item.Enhanced
+      Resistance"},{"predicate":[{"and":["armor-innovation:power-suit","feature:armor-innovation"]},{"not":"feature:heavy-construction"}],"value":"Compendium.pf2e.classfeatures.Item.Heavy
+      Construction"},{"predicate":["feature:armor-innovation",{"not":"feature:hyper-boosters"}],"value":"Compendium.pf2e.classfeatures.Item.Speed
+      Boosters"},{"predicate":["feature:armor-innovation",{"not":"feature:layered-mesh"}],"value":"Compendium.pf2e.classfeatures.Item.Layered
+      Mesh"},{"predicate":["feature:armor-innovation",{"not":"feature:tensile-absorption"}],"value":"Compendium.pf2e.classfeatures.Item.Tensile
+      Absorption"},{"predicate":["feature:armor-innovation",{"or":["feature:harmonic-oscillator","feature:metallic-reactance","feature:phlogistonic-regulator"]}],"value":"Compendium.pf2e.classfeatures.Item.Energy
+      Barrier"},{"predicate":["feature:armor-innovation"],"value":"Compendium.pf2e.classfeatures.Item.Automated
+      Impediments"},{"predicate":["feature:armor-innovation",{"or":["feature:dense-plating","feature:layered-mesh","feature:tensile-absorption"]}],"value":"Compendium.pf2e.classfeatures.Item.Incredible
+      Resistance"},{"predicate":["feature:armor-innovation","armor-innovation:subterfuge-suit"],"value":"Compendium.pf2e.classfeatures.Item.Multisensory
+      Mask"},{"predicate":["feature:armor-innovation","armor-innovation:power-suit"],"value":"Compendium.pf2e.classfeatures.Item.Perfect
+      Fortification"},{"predicate":["feature:armor-innovation",{"or":["feature:dense-plating","feature:layered-mesh","feature:tensile-absorption"]}],"value":"Compendium.pf2e.classfeatures.Item.Physical
+      Protections"},{"predicate":[{"or":["feature:weapon-innovation","feature:armor-innovation"]}],"value":"Compendium.pf2e.classfeatures.Item.Rune
+      Capacity"},{"predicate":["feature:weapon-innovation","weapon-innovation:ranged",{"nor":["feature:advanced-rangefinder","weapon-innovation:thrown"]}],"value":"Compendium.pf2e.classfeatures.Item.Advanced
+      Rangefinder"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee",{"not":"feature:aerodynamic-construction"}],"value":"Compendium.pf2e.classfeatures.Item.Aerodynamic
+      Construction"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee",{"not":"feature:inconspicuous-appearance"}],"value":"Compendium.pf2e.classfeatures.Item.Inconspicuous
+      Appearance"},{"predicate":["feature:weapon-innovation","weapon-innovation:usage:hands:1",{"not":"weapon-innovation:trait:two-handed"}],"value":"Compendium.pf2e.classfeatures.Item.Integrated
+      Gauntlet"},{"predicate":["feature:weapon-innovation",{"not":"feature:manifold-alloy"}],"value":"Compendium.pf2e.classfeatures.Item.Manifold
+      Alloy"},{"predicate":["feature:weapon-innovation","weapon-innovation:ranged",{"nor":["feature:rope-shot","weapon-innovation:thrown"]}],"value":"Compendium.pf2e.classfeatures.Item.Rope
+      Shot"},{"predicate":["feature:weapon-innovation","weapon-innovation:thrown","feature:tangle-line"],"value":"Compendium.pf2e.classfeatures.Item.Tangle
+      Line"},{"predicate":["feature:weapon-innovation","weapon-innovation:ranged",{"nor":["feature:blunt-shot","weapon-innovation:thrown"],"not":"feature:blunt-shot"}],"value":"Compendium.pf2e.classfeatures.Item.Blunt
+      Shot"},{"predicate":["feature:weapon-innovation","weapon-innovation:category:simple",{"not":"feature:complex-simplicity"}],"value":"Compendium.pf2e.classfeatures.Item.Complex
+      Simplicity"},{"predicate":["feature:weapon-innovation","weapon-innovation:usage:hands:1","weapon-innovation:melee",{"nor":["feature:dynamic-weighting","weapon-innovation:trait:agile","weapon-innovation:trait:attached","weapon-innovation:trait:free-hand"]}],"value":"Compendium.pf2e.classfeatures.Item.Dynamic
+      Weighting"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee",{"not":"feature:entangling-form"}],"value":"Compendium.pf2e.classfeatures.Item.Entangling
+      Form"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee",{"not":"feature:hampering-spikes"}],"value":"Compendium.pf2e.classfeatures.Item.Hampering
+      Spikes"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee",{"not":"feature:hefty-composition"}],"value":"Compendium.pf2e.classfeatures.Item.Hefty
+      Composition"},{"predicate":["feature:weapon-innovation","feature:weapon-innovation",{"not":"feature:modular-head"}],"value":"Compendium.pf2e.classfeatures.Item.Modular
+      Head"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee",{"not":"feature:pacification-tools"}],"value":"Compendium.pf2e.classfeatures.Item.Pacification
+      Tools"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee",{"not":"feature:razor-prongs"}],"value":"Compendium.pf2e.classfeatures.Item.Razor
+      Prongs"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee",{"not":"feature:segmented-frame"}],"value":"Compendium.pf2e.classfeatures.Item.Segmented
+      Frame"},{"predicate":["feature:weapon-innovation"],"value":"Compendium.pf2e.classfeatures.Item.Attack
+      Refiner"},{"predicate":["feature:weapon-innovation"],"value":"Compendium.pf2e.classfeatures.Item.Deadly
+      Strike"},{"predicate":["feature:weapon-innovation"],"value":"Compendium.pf2e.classfeatures.Item.Enhanced
+      Damage"},{"predicate":["feature:weapon-innovation","weapon-innovation:melee"],"value":"Compendium.pf2e.classfeatures.Item.Extensible
+      Weapon"},{"predicate":["feature:weapon-innovation"],"value":"Compendium.pf2e.classfeatures.Item.Impossible
+      Alloy"},{"predicate":["feature:weapon-innovation"],"value":"Compendium.pf2e.classfeatures.Item.Momentum
+      Enhancer"},{"predicate":["feature:weapon-innovation","weapon-innovation:ranged"],"value":"Compendium.pf2e.classfeatures.Item.Omnirange
+      Stabilizers"}],"flag":"revolutionaryModification","key":"ChoiceSet","predicate":["class:inventor",{"or":["feature:armor-innovation","feature:weapon-innovation"]}],"prompt":"PF2E.SpecificRule.Inventor.Modification.Revolutionary.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.revolutionaryModification}'
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.revolutionaryModification}"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.revolutionaryModification}'
+    SourceId: 
+    DisplayName: revolutionaryModification}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

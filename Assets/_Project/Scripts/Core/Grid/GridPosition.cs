@@ -1,6 +1,6 @@
 using System;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     /// <summary>
     /// Represents a coordinate on the grid in (x, z) space.

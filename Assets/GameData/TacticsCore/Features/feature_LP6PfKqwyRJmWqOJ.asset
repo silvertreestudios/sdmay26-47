@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_LP6PfKqwyRJmWqOJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: LP6PfKqwyRJmWqOJ
+  Slug: lesson-of-the-shark
+  DisplayName: Lesson of the Shark
+  IconPath: icons/creatures/fish/fish-shark-swimming.webp
+  Description: Learn the ways of this deadly oceanic predator. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Blood
+    in the Water] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Feet
+    to Fins].
+  SourceTitle: Pathfinder Howl of the Wild
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d470ef6ca3d5affdce006ce8c56ff6cd2ccb56097caf35133edb6f5d8813e1d3
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules: []
+  Category: 2
+  Level: 6
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

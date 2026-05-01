@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_maGzhKLmgubAdUlN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: maGzhKLmgubAdUlN
+  Slug: sparkling-targe
+  DisplayName: Sparkling Targe
+  IconPath: icons/equipment/shield/heater-crystal-blue.webp
+  Description: 'You''ve studied the applications of magic, training yourself to perform
+    not just offensive maneuvers but defensive tactics as well. When magic flows
+    through you, your shield can block impossible things, even a dragon''s breath
+    or a magic missile. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Shield
+    Block] general feat. When you''re in Arcane Cascade stance with your shield raised,
+    your circumstance bonus to AC from your shield also applies to your saves against
+    spells and other magical effects. In addition, damage you take as a result of
+    a spell or magical effect while you''re in Arcane Cascade can trigger your Shield
+    Block reaction, even if the damage isn''t physical. When blocking damage in this
+    way, increase your shield''s Hardness by an amount equal to the extra damage
+    from Arcane Cascade (typically 1, but 2 if you have weapon specialization, or
+    3 if you have greater weapon specialization). These benefits apply whether you''re
+    using an actual shield, the shield spell, or something else that works like a
+    shield (such as a raised tome if you have the Raise a Tome feat). Conflux Spell
+    @UUID[Compendium.pf2e.spells-srd.Item.Shielding Strike]'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2e33d4361ee5eccd12692547d6a66ddf168d8b2389bd0daed1691543d2d735fc
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Magus.SparklingTarge.DefendingLabel","option":"defend-against-magic","predicate":["self:effect:arcane-cascade"],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: 1
+    Uuid: 
+    Json: '{"itemType":"shield","key":"ItemAlteration","mode":"add","predicate":["item:equipped",{"or":["item:magical","defend-against-magic"]},"self:effect:arcane-cascade","self:effect:raise-a-shield",{"not":"feature:weapon-specialization"}],"property":"hardness","value":1}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: 2
+    Uuid: 
+    Json: '{"itemType":"shield","key":"ItemAlteration","mode":"add","predicate":["item:equipped",{"or":["item:magical","defend-against-magic"]},"self:effect:arcane-cascade","self:effect:raise-a-shield","feature:weapon-specialization",{"not":"feature:greater-weapon-specialization"}],"property":"hardness","value":2}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: 3
+    Uuid: 
+    Json: '{"itemType":"shield","key":"ItemAlteration","mode":"add","predicate":["item:equipped",{"or":["item:magical","defend-against-magic"]},"self:effect:arcane-cascade","self:effect:raise-a-shield","feature:greater-weapon-specialization"],"property":"hardness","value":3}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@actor.system.attributes.shield.ac"'
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:shield:raised","self:effect:arcane-cascade",{"or":["item:magical","defend-against-magic"]}],"selector":"saving-throw","type":"circumstance","value":"@actor.system.attributes.shield.ac"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Shield Block
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Shield
+      Block"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Shield Block
+    SourceId: 
+    DisplayName: Shield Block
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

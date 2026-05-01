@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_f7ZTF8tnZUmTXwwF
+  m_EditorClassIdentifier: 
+  SourceId: f7ZTF8tnZUmTXwwF
+  Slug: osprey-warrior
+  DisplayName: Osprey Warrior
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You'd always been the most athletic child of your play group, leading
+    the other children in games of skill and strategy. As an adult, there are few
+    opportunities for you to employ these skills in the village. Osprey Cove is a
+    quiet community, with hardly any dangers or foes to fight. You occasionally break
+    up pub brawls, or perhaps start them out of boredom. Elder Ordwi asks you to
+    come with her simply because of your endurance and athleticism\u2014the Old Coast
+    Road is poorly maintained, and the physical aid you'll bring on the trip will
+    likely be invaluable. Choose two attribute boosts. One must be to Strength or
+    Constitution , and one is a free attribute boost. You're trained in the Athletics
+    skill and the Gorum Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Hefty
+    Hauler] skill feat."
+  SourceTitle: 'Pathfinder Adventure: Rusthenge'
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: d37a67bb57b0ce5b112928e10e837af5d07f66fffd059e6f17bc9eb7b05f483b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Gorum Lore
+    Rank: 1
+  LoreSkills:
+  - Gorum Lore
+  GrantedFeats:
+  - SourceKey: FmB3C
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Hefty Hauler
+    SourceId: 
+    DisplayName: Hefty Hauler
+    Level: 1
+    ResolvedFeature: {fileID: 0}

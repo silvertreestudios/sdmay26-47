@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_3gVDqDPSz4fB5T9G
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 3gVDqDPSz4fB5T9G
+  Slug: laughing-shadow
+  DisplayName: Laughing Shadow
+  IconPath: icons/creatures/magical/spirit-fear-energy-pink.webp
+  Description: 'Magic is freeing, a means to your ends, and you can use it to go
+    where you want, do as you please, and avoid the consequences. You are a laughing
+    shadow of spell and blade, always one step ahead of your foes, always with a
+    trick up your sleeve. While in Arcane Cascade stance, you gain a +5-foot status
+    bonus to your Speeds, or a +10-foot bonus if you''re unarmored. If you have a
+    free hand while in the stance and are attacking an @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard]
+    creature, you increase the extra damage to 3, to 5 if you have weapon specialization,
+    or to 7 if you have greater weapon specialization. You must have your other hand
+    completely free; the extra damage doesn''t apply if you have a free-hand weapon
+    or other item in that hand, even if you would normally be able to use the hand
+    for other things. Conflux Spell @UUID[Compendium.pf2e.spells-srd.Item.Dimensional
+    Assault]'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: db552e8465a01915344f616183975b1479b08c6539bd5e32353f37f23828259f
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 5
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:armored","self:effect:arcane-cascade"],"selector":"speed","slug":"laughing-shadow-armored-movement","type":"status","value":5}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 10
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["self:effect:arcane-cascade",{"not":"self:armored"}],"selector":"speed","slug":"laughing-shadow-unarmored-movement","type":"status","value":10}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["target:condition:off-guard",{"gte":["hands-free:but-really",1]}],"selector":"strike-damage","slug":"arcane-cascade-extra-damage","value":3}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 5
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["feature:weapon-specialization","target:condition:off-guard",{"gte":["hands-free:but-really",1]}],"selector":"strike-damage","slug":"arcane-cascade-extra-damage","value":5}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 7
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["feature:greater-weapon-specialization","target:condition:off-guard",{"gte":["hands-free:but-really",1]}],"selector":"strike-damage","slug":"arcane-cascade-extra-damage","value":7}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.TOTMToggle.OffGuard","option":"target:condition:off-guard","toggleable":"totm"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

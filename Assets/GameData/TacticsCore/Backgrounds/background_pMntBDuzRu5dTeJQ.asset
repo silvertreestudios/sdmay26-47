@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_pMntBDuzRu5dTeJQ
+  m_EditorClassIdentifier: 
+  SourceId: pMntBDuzRu5dTeJQ
+  Slug: town-troublemaker
+  DisplayName: Town Troublemaker
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Every town has at least one of them: the person that everyone \"knows\"
+    is a bad apple, a rascal, a mixer, or a fly in the ointment\u2014the troublemaker.
+    Your hometown was no exception, because you were that town's troublemaker, or
+    at least one of its more notorious ones! This reputation may not have been warranted\u2014perhaps
+    you took the rap to protect a friend or family member caught in a scandal, or
+    maybe you were tricked or cajoled into a tricky situation by so-called \"friends.\"
+    Or the reputation could be spot-on. Being a town troublemaker doesn't mean you
+    had malice in your heart, of course, especially if the town in question was one
+    ruled by villains or governed by cruelty. One society's troublemaker is, after
+    all, another society's freedom fighter! Regardless of the truth that lies at
+    the heart of your personal situation, your legacy as the town troublemaker has
+    given you great insights into society's seamy underbelly. Choose two attribute
+    boosts. One must be to Strength or Dexterity , and one is a free attribute boost.
+    You're trained in the Thievery skill and the Underworld Lore skill. You gain
+    the Dirty Trick skill feat. If you have the Scoundrel persona trait, you also
+    become trained in the Norgorber Lore skill."
+  SourceTitle: Pathfinder Curtain Call Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 1f70d118946ae67b0a643b66c451a57a94f4f257f6e367bdd5073ba4ee3f07a1
+  Traits:
+  - persona-scoundrel
+  TraitsLower:
+  - persona-scoundrel
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.campaign-effects.Item.Persona Trait
+    Json: '{"key":"GrantItem","predicate":[{"not":"feature:persona-trait"}],"uuid":"Compendium.pf2e.campaign-effects.Item.Persona
+      Trait"}'
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 17
+    CustomSkillId: thievery
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: DxqVa
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Dirty Trick
+    SourceId: 
+    DisplayName: Dirty Trick
+    Level: 1
+    ResolvedFeature: {fileID: 0}

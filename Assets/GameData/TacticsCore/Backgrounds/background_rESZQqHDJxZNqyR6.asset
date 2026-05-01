@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_rESZQqHDJxZNqyR6
+  m_EditorClassIdentifier: 
+  SourceId: rESZQqHDJxZNqyR6
+  Slug: working-student
+  DisplayName: Working Student
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Many students look to education as a means of improving their lives.
+    You are in the middle of that process or have spent a lot of time there, juggling
+    lessons and textbooks with the manual labor to pay for them. Although this work
+    might distract from your studies, it also teaches you other lessons, making you
+    more worldly than your classmates. Choose two attribute boosts. One must be to
+    Strength or Intelligence , and one is a free attribute boost. You're trained
+    in Society. You're also trained in the Labor Lore skill or a Lore skill associated
+    with your school. You gain the Streetwise skill feat.
+  SourceTitle: Pathfinder Lost Omens Rival Academies
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 17b331665719286f5172885cb92686b4d25ec340211173bfafb91533f4329c0f
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Labor Lore
+    Rank: 1
+  LoreSkills:
+  - Labor Lore
+  GrantedFeats:
+  - SourceKey: YpaWp
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Streetwise
+    SourceId: 
+    DisplayName: Streetwise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

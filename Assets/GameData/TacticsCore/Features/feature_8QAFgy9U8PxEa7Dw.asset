@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_8QAFgy9U8PxEa7Dw
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 8QAFgy9U8PxEa7Dw
+  Slug: field-discovery-bomber
+  DisplayName: Field Discovery (Bomber)
+  IconPath: icons/weapons/thrown/bomb-fuse-pink.webp
+  Description: You have calculated all the angles to maximize a bomb's splash. When
+    you throw an alchemical bomb with the splash trait, you can cause the bomb to
+    deal splash damage equal to your Intelligence modifier (minimum 1) instead of
+    the normal amount.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 1f9c17b319af2566a6c25c45dcd87c6f54ef5bbc73d7d34f9183b1a832cd047f
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules:
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: '"@actor.abilities.int.mod"'
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","relabel":"{item|name}","selector":"alchemical-bomb-damage","slug":"splash","value":"@actor.abilities.int.mod"}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

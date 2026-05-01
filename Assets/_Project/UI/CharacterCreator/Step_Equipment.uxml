@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+    <ui:Style src="CreatorTheme.uss" />
+
+    <ui:VisualElement class="step-container">
+
+        <ui:VisualElement class="step-header">
+            <ui:VisualElement class="step-header__group">
+                <ui:Label text="EQUIPMENT" class="header-text header-text--accent" />
+                <ui:Label text="Equip your starting kit. Two-handed weapons disable the off-hand slot." class="subhead-text" />
+            </ui:VisualElement>
+            <ui:Label text="STEP 08 / 10" class="badge" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="split-view-container">
+
+            <!-- Left: buttons + paged grid for currently selected slot -->
+            <ui:VisualElement class="split-left">
+
+                <ui:VisualElement class="chip-row" style="margin-bottom: 12px;">
+                    <ui:Button name="Btn_TabMain"  text="MAIN HAND" class="chip chip--active" />
+                    <ui:Button name="Btn_TabOff"   text="OFF HAND"  class="chip" />
+                    <ui:Button name="Btn_TabArmor" text="ARMOR"     class="chip" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="Grid_Equipment" class="paged-grid" style="flex-grow: 1;" />
+            </ui:VisualElement>
+
+            <ui:ScrollView class="split-right detail-panel-scroll">
+                <ui:VisualElement class="detail-section detail-section--header">
+                    <ui:Label text="CURRENT LOADOUT" class="summary-block__title" />
+
+                    <ui:VisualElement class="stat-row stat-row--compact">
+                        <ui:Label text="Main Hand" class="stat-label" />
+                        <ui:Label name="Lbl_LoadoutMain" text="-" class="stat-value stat-value--small" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-row stat-row--compact">
+                        <ui:Label text="Off Hand" class="stat-label" />
+                        <ui:Label name="Lbl_LoadoutOff" text="-" class="stat-value stat-value--small" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-row stat-row--compact stat-row--last">
+                        <ui:Label text="Armor" class="stat-label" />
+                        <ui:Label name="Lbl_LoadoutArmor" text="-" class="stat-value stat-value--small" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="detail-section">
+                    <ui:Label text="ITEM DETAILS" class="summary-block__title" />
+                    <ui:Label name="Lbl_EquipmentSummary" text="Select an item to view details." class="detail-text detail-text--compact" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

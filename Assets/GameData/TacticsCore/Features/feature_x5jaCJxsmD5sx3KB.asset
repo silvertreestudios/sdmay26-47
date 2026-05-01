@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_x5jaCJxsmD5sx3KB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: x5jaCJxsmD5sx3KB
+  Slug: armor-expertise
+  DisplayName: Armor Expertise
+  IconPath: icons/equipment/chest/breastplate-banded-steel-gold.webp
+  Description: You have spent so much time in armor that you know how to make the
+    most of its protection. Your proficiency ranks for light, medium, and heavy armor,
+    as well as for unarmored defense, increase to expert. You gain the armor specialization
+    effects of medium and heavy armor.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 10b817195fb4b29aa143f936ccd903038358085122f33a9afbefb53a62481a67
+  Traits:
+  - champion
+  - fighter
+  TraitsLower:
+  - champion
+  - fighter
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"1 + @armor.system.runes.potency"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:category:medium","armor:group:composite"],"type":"piercing","value":"1
+      + @armor.system.runes.potency"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"1 + @armor.system.runes.potency"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:category:medium","armor:group:leather"],"type":"bludgeoning","value":"1
+      + @armor.system.runes.potency"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"1 + @armor.system.runes.potency"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:category:medium","armor:group:plate"],"type":"slashing","value":"1
+      + @armor.system.runes.potency"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"2 + @armor.system.runes.potency"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:category:heavy","armor:group:composite"],"type":"piercing","value":"2
+      + @armor.system.runes.potency"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"2 + @armor.system.runes.potency"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:category:heavy","armor:group:leather"],"type":"bludgeoning","value":"2
+      + @armor.system.runes.potency"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"2 + @armor.system.runes.potency"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:category:heavy","armor:group:plate"],"type":"slashing","value":"2
+      + @armor.system.runes.potency"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"3 + @armor.system.runes.potency"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:category:medium","armor:group:skeletal"],"type":"precision","value":"3
+      + @armor.system.runes.potency"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"5 + @armor.system.runes.potency"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["armor:category:heavy","armor:group:skeletal"],"type":"precision","value":"5
+      + @armor.system.runes.potency"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: heavy
+    Rank: 2
+  - Target: light
+    Rank: 2
+  - Target: medium
+    Rank: 2
+  - Target: unarmored
+    Rank: 2
+  FocusPointDelta: 0

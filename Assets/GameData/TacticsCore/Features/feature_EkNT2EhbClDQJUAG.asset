@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_EkNT2EhbClDQJUAG
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: EkNT2EhbClDQJUAG
+  Slug: adept-benefit-regalia
+  DisplayName: Adept Benefit (Regalia)
+  IconPath: icons/commodities/gems/pearl-red-gold.webp
+  Description: Your regalia's power increases, and so do the abilities it grants.
+    The circumstance bonus you gain to Deception, Diplomacy, and Intimidation increases
+    to +2, as long as you have master proficiency in each skill. When others use
+    Follow the Expert to follow you, you grant them a +2 circumstance bonus if you
+    are trained, +3 if you have expert proficiency, or +4 if you have master or legendary
+    proficiency. The courage your aura instills grows stronger. The +1 status bonus
+    now applies to all saving throws against mental effects, rather than only against
+    fear, and you and allies in your aura gain a +2 status bonus to damage rolls.
+    At 11th level, this increases to a +3 status bonus to damage rolls, and at 17th
+    level, this increases to a +4 status bonus to damage rolls.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: eb5baa5e1517fd098c9d7d41d1bdfb711f73c5bdf9262afce10cb71f85d56e12
+  Traits:
+  - thaumaturge
+  TraitsLower:
+  - thaumaturge
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.thaumaturge.paragonChoices
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Regalia.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Regalia)"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.thaumaturge.paragonChoices","priority":20,"value":{"label":"PF2E.SpecificRule.Thaumaturge.Implement.Regalia.Label","value":"Compendium.pf2e.classfeatures.Item.Paragon
+      Benefit (Regalia)"}}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","selectors":["deception","diplomacy","intimidation"],"slug":"regalia","value":2}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"allies","alterations":[{"mode":"add","property":"other-tags","value":"adept-benefit"}],"uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Regalia"}],"key":"Aura","predicate":["implement:regalia:equipped",{"not":"feature:paragon-benefit-regalia"}],"radius":15,"slug":"regalia-aura","traits":["emotion","visual","mental"]}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_6YJ8KFl7THkVy6Gm
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 6YJ8KFl7THkVy6Gm
+  Slug: twisting-tree
+  DisplayName: Twisting Tree
+  IconPath: icons/weapons/staves/staff-simple-gold.webp
+  Description: 'The staff is perhaps one of the simplest of weapons, but this simplicity
+    belies its elegance and versatility. To you, a staff is casting implement and
+    martial weapon alike-the foundation of a fighting style. While you wield a staff
+    in one hand, the staff adjusts in shape and weight, gaining the agile trait and
+    increasing its damage die size to 1d6. While you wield a staff in both hands,
+    it lengthens, twists, and reshapes, gaining the parry, reach, and trip traits.
+    While you''re in Arcane Cascade stance, you can Interact or Release to change
+    your grip on the weapon as a free action when you Strike with your staff, including
+    Strikes made in a Spellstrike. This happens before you roll your attack roll.
+    You can also Interact to change your grip on the staff as a free action triggered
+    at the end of your turn. Conflux Spell @UUID[Compendium.pf2e.spells-srd.Item.Spinning
+    Staff]'
+  SourceTitle: Pathfinder Secrets of Magic
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 3a74a50f9b543da9a8c8852e0425d0f83a7f3ce66aa2be4e68373508019cdd3d
+  Traits:
+  - magus
+  TraitsLower:
+  - magus
+  RawRules:
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"DamageDice","override":{"upgrade":true},"predicate":["item:base:staff","item:damage:die:faces:4","item:hands-held:1"],"selector":"strike-damage"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"agile"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:base:staff","item:hands-held:1"],"property":"traits","value":"agile"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"parry"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:base:staff","item:hands-held:2"],"property":"traits","value":"parry"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"reach"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:base:staff","item:hands-held:2"],"property":"traits","value":"reach"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"trip"'
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"add","predicate":["item:base:staff","item:hands-held:2"],"property":"traits","value":"trip"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_EslxR2sbDK9XJaAl
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: EslxR2sbDK9XJaAl
+  Slug: time
+  DisplayName: Time
+  IconPath: systems/pf2e/icons/spells/haste.webp
+  Description: "Whether by accident, fate, or purposeful meddling, you exist slightly
+    outside of time. While initially unmoored by moments, the countless march of
+    milliseconds builds up to drift you further and further out of sync with your
+    natural timeline, often in contradictory directions. You might view this as a
+    blessing, perhaps as a sign you're somehow beyond mortality or you can't be contained
+    within reality's limitations, or you might view it as a cruel curse that causes
+    your life to slip by adrift even as you gain power over time. Many oracles of
+    time are without faith and either come to rely upon their own instincts to survive
+    or turn to strange rituals and forbidden magic in attempts to break free of time's
+    grasp. Those oracles who worship deities most often venerate Pharasma, goddess
+    of fate who sees all possible futures for all who ever lived, or Alseta, goddess
+    of transitions and the passage through time. Granted Spells cantrip: @UUID[Compendium.pf2e.spells-srd.Item.Time
+    Sense] 1st: @UUID[Compendium.pf2e.spells-srd.Item.D\xE9j\xE0 Vu] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Time
+    Pocket] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Time Beacon] Revelation Spells
+    initial: @UUID[Compendium.pf2e.spells-srd.Item.Temporal Distortion] advanced:
+    @UUID[Compendium.pf2e.spells-srd.Item.Time Skip] greater: @UUID[Compendium.pf2e.spells-srd.Item.Manifold
+    Lives] Related Domains change, fate, nothingness, time Mystery Skill Occultism
+    Oracle Feat @UUID[Compendium.pf2e.feats-srd.Item.Oracular Warning] @UUID[Compendium.pf2e.classfeatures.Item.Curse
+    of Turbulent Moments]"
+  SourceTitle: Pathfinder Lost Omens Divine Mysteries
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f3d3f249a1c2305e0c63da69fff2656d8666b542662c61d66bffb76fbdd7d143
+  Traits:
+  - oracle
+  TraitsLower:
+  - oracle
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.occultism.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.occultism.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Oracular Warning
+    Json: '{"key":"GrantItem","predicate":["class:oracle"],"uuid":"Compendium.pf2e.feats-srd.Item.Oracular
+      Warning"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Curse of Turbulent Moments
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Curse of
+      Turbulent Moments"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Oracular Warning
+    SourceId: 
+    DisplayName: Oracular Warning
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Curse of Turbulent Moments
+    SourceId: 
+    DisplayName: Curse of Turbulent Moments
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PathfinderTactics.Grid
+namespace TacticsGame.Grid
 {
     /// <summary>
     /// A helper class for the Pathfinding system.

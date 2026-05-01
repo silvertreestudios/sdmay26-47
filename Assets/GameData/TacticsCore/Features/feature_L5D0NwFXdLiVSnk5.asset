@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_L5D0NwFXdLiVSnk5
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: L5D0NwFXdLiVSnk5
+  Slug: improved-evasion
+  DisplayName: Improved Evasion
+  IconPath: systems/pf2e/icons/features/classes/improved-evasion.webp
+  Description: Your ability to elude danger is matchless. Your proficiency rank for
+    Reflex saves increases to legendary. When you roll a critical failure on a Reflex
+    save, you get a failure instead. When you roll a failure on a Reflex save against
+    a damaging effect, you take half damage.
+  SourceTitle: Pathfinder Core Rulebook
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: fb4a8318346a4bed8e908cb87584d5428a8ce7ffba393d0ea33b33df289ad8f3
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: reflex
+    Rank: 4
+  FocusPointDelta: 0

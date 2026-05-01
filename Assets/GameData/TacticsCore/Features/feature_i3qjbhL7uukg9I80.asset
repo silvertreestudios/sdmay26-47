@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_i3qjbhL7uukg9I80
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: i3qjbhL7uukg9I80
+  Slug: greater-kinetic-durability
+  DisplayName: Greater Kinetic Durability
+  IconPath: icons/magic/life/cross-explosion-burst-green.webp
+  Description: Your gate protects you even more. Your proficiency rank for Fortitude
+    saves increases to legendary. When you roll a critical failure on a Fortitude
+    save, you get a failure instead. When you fail a Fortitude save against an effect
+    that deals damage, you halve the damage you take.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: cfdd882956bd99807f93b3e16f644dd8ed09e37ce27f62fc1bcb4ff73db13a26
+  Traits:
+  - kineticist
+  TraitsLower:
+  - kineticist
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"fortitude"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["damaging-effect"],"selector":"fortitude","text":"PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Fortitude","title":"{item|name}"}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 4
+  FocusPointDelta: 0

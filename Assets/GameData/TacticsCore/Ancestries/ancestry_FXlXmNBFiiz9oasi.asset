@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_FXlXmNBFiiz9oasi
+  m_EditorClassIdentifier: 
+  SourceId: FXlXmNBFiiz9oasi
+  Slug: fleshwarp
+  DisplayName: Fleshwarp
+  IconPath: systems/pf2e/icons/default-icons/alternatives/ancestries/fleshwarp.svg
+  Description: Fleshwarps are people whose forms were created or radically transformed
+    by magic, alchemy, or unnatural energies. Their unorthodox appearance can make
+    it difficult for them to find a place for themselves in the world. Fleshwarp
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: ancestries
+  Rarity: rare
+  SourceJsonHash: 0bd5f554b58cc2210559c4fc0f72d580599695bee91e775c88044c211cdf6657
+  Traits:
+  - aberration
+  - humanoid
+  TraitsLower:
+  - aberration
+  - humanoid
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.ActorSizeSmall","value":"sm"},{"label":"PF2E.ActorSizeMedium","value":"med"}],"flag":"fleshwarpSize","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.CreatureSize"}'
+  - Key: CreatureSize
+    Path: 
+    Mode: 
+    Value: '"{item|flags.pf2e.rulesSelections.fleshwarpSize}"'
+    Uuid: 
+    Json: '{"key":"CreatureSize","value":"{item|flags.pf2e.rulesSelections.fleshwarpSize}"}'
+  HitPoints: 10
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 00000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 00000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  AdditionalLanguageOptions:
+  - Id: aklo
+    DisplayName: Aklo
+  - Id: draconic
+    DisplayName: Draconic
+  - Id: dwarven
+    DisplayName: Dwarven
+  - Id: elven
+    DisplayName: Elven
+  - Id: goblin
+    DisplayName: Goblin
+  - Id: sakvroth
+    DisplayName: Sakvroth
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: 31xm9
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Unusual Anatomy
+    SourceId: 
+    DisplayName: Unusual Anatomy
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: e80bf3e92d8ed0047bbf044739d63771, type: 2}
+  - {fileID: 11400000, guid: 1daecd69adfb4b548b6412afbf5136a5, type: 2}
+  - {fileID: 11400000, guid: d45eb9ee6e8e9674281d8c68e189cf37, type: 2}
+  - {fileID: 11400000, guid: c366616390f645249a16f17c5bffeb83, type: 2}
+  - {fileID: 11400000, guid: f256776f28788cf4c85eefc1fef04549, type: 2}
+  - {fileID: 11400000, guid: cc269ead2645d5546937f825ec8ba895, type: 2}
+  - {fileID: 11400000, guid: 7d892ceab10b53140b7366587545377b, type: 2}

@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_pWHx4SXcft9O2udP
+  m_EditorClassIdentifier: 
+  SourceId: pWHx4SXcft9O2udP
+  Slug: oracle
+  DisplayName: Oracle
+  IconPath: systems/pf2e/icons/classes/oracle.webp
+  Description: "Your conduit to divine power eschews the traditional channels of
+    prayer and servitude\u2014you instead glean sacred truths and great mysteries
+    embodied in overarching concepts, whether because you perceive the common ground
+    across multiple deities or circumvent their power entirely. You explore one of
+    these mysteries and draw upon its power to cast miraculous spells, but that power
+    comes with a terrible price: a curse that grows stronger the more you draw upon
+    it, which you might uphold as an instrument of the divine or view as punishment
+    from the gods. Oracle"
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 44892c719e4553be12c4cf801db64dbfffe3849eae717be6a38233ad420c47e1
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 8
+  KeyAttributes: 06000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 1
+  Spellcasting: 1
+  SavingThrows:
+  - Save: 0
+    Rank: 1
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 0
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 0
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 1
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 4KtTI
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Oracle Spellcasting
+    SourceId: 7AVspOB6ITNzGFZi
+    DisplayName: Oracle Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 6a5ced0c15e845345b07417b7e2ea8dd, type: 2}
+  - SourceKey: 4qdk7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Mystery
+    SourceId: PRJYLksQEwT39bTl
+    DisplayName: Mystery
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 60fc80d9d2c047a4c971f4d3689fe5de, type: 2}
+  - SourceKey: 7gbv8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Oracular Curse
+    SourceId: ibX2EhKkyUtbOHLj
+    DisplayName: Oracular Curse
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 2fbfd77eb990bea48bb9c6c56d499d2b, type: 2}
+  - SourceKey: am0mt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Revelation Spells
+    SourceId: NXUOtO9NytHQurlg
+    DisplayName: Revelation Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 7c136b3ff6052ec47873c0e3d98bfacd, type: 2}
+  - SourceKey: r3cFb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  GrantedFeatures:
+  - SourceKey: 4FyXX
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Mysterious Resolve
+    SourceId: cCTqkTHYnVCJKg4S
+    DisplayName: Mysterious Resolve
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: a71a2ded65edf09489c803c5413efe87, type: 2}
+  - SourceKey: 4KtTI
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Oracle Spellcasting
+    SourceId: 7AVspOB6ITNzGFZi
+    DisplayName: Oracle Spellcasting
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 6a5ced0c15e845345b07417b7e2ea8dd, type: 2}
+  - SourceKey: 4qdk7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Mystery
+    SourceId: PRJYLksQEwT39bTl
+    DisplayName: Mystery
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 60fc80d9d2c047a4c971f4d3689fe5de, type: 2}
+  - SourceKey: 66mj3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Signature Spells
+    SourceId: VKRjmXxBFLrJK01c
+    DisplayName: Signature Spells
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: 136a8a6c0baf816409514c7fd81ee427, type: 2}
+  - SourceKey: 68tsw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Legendary Spellcaster
+    SourceId: Hfaa7TuLn3nE8lr3
+    DisplayName: Legendary Spellcaster
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: f940d7779f91b714099ce8d9e2809a2a, type: 2}
+  - SourceKey: 6ygi2
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Oracular Clarity
+    SourceId: 571c1aGnvNVwfF6b
+    DisplayName: Oracular Clarity
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: dc64165e36990be49802158c277594c3, type: 2}
+  - SourceKey: 7gbv8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Oracular Curse
+    SourceId: ibX2EhKkyUtbOHLj
+    DisplayName: Oracular Curse
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 2fbfd77eb990bea48bb9c6c56d499d2b, type: 2}
+  - SourceKey: 7lbdz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: 9dhwz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: K3vUt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Premonition Reflexes
+    SourceId: tIpJHInpblTed5ZK
+    DisplayName: Premonition Reflexes
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 15a2f610146feb342947f8b779aa62ea, type: 2}
+  - SourceKey: OsZv7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Mysterious Resolve
+    SourceId: Kj59CmXnMJDKXKWx
+    DisplayName: Greater Mysterious Resolve
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 444fecadf072d964886d0c6890eff5cb, type: 2}
+  - SourceKey: am0mt
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Revelation Spells
+    SourceId: NXUOtO9NytHQurlg
+    DisplayName: Revelation Spells
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 7c136b3ff6052ec47873c0e3d98bfacd, type: 2}
+  - SourceKey: d7d3y
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Light Armor Expertise
+    SourceId: pZYkb12t5DSwtts7
+    DisplayName: Light Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 3bf7d337c0e817d4795134166770c383, type: 2}
+  - SourceKey: dmnaw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Major Curse
+    SourceId: rrzItB68Er0DzKx7
+    DisplayName: Major Curse
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: d78be962bd618524c89bce97bbe62013, type: 2}
+  - SourceKey: jtk8p
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Extreme Curse
+    SourceId: F4brPlp1tHGUqyuI
+    DisplayName: Extreme Curse
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 35eebe2a4f9f2134e9dc4e3c94331567, type: 2}
+  - SourceKey: k3rbd
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Magical Fortitude
+    SourceId: 70jqXP2eS4tRZ0Ok
+    DisplayName: Magical Fortitude
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: d288b7bd0da9d46439de4efa4661c8a4, type: 2}
+  - SourceKey: n1uo5
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Expert Spellcaster
+    SourceId: cD3nSupdCvONuHiE
+    DisplayName: Expert Spellcaster
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 3e7fd61908df4a14290ae0cc0e240ad8, type: 2}
+  - SourceKey: nHlek
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Divine Access
+    SourceId: iwAzV1IlQ2pMHQoB
+    DisplayName: Divine Access
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: f35f12909e9a52447968c9f5b5d55fa4, type: 2}
+  - SourceKey: r3cFb
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spell Repertoire
+    SourceId: 1RfnAiyQ5FR7vnuH
+    DisplayName: Spell Repertoire
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 1288fc8e92b391d48b5c35af67c17a7d, type: 2}
+  - SourceKey: wpam7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Master Spellcaster
+    SourceId: l1InYvhnQSz6Ucxc
+    DisplayName: Master Spellcaster
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4bf880905a2203248baa95088d309fcb, type: 2}
+  - SourceKey: xuvG4
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Oracular Senses
+    SourceId: eTQZQGPMIZJHIR6J
+    DisplayName: Oracular Senses
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 224a3a56f5691e547b524163592b6da7, type: 2}

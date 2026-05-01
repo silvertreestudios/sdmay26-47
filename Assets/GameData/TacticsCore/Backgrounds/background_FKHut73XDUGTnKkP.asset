@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_FKHut73XDUGTnKkP
+  m_EditorClassIdentifier: 
+  SourceId: FKHut73XDUGTnKkP
+  Slug: field-medic
+  DisplayName: Field Medic
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: In the chaotic rush of battle, you learned to adapt to rapidly changing
+    conditions as you administered to battle casualties. You patched up soldiers,
+    guards, or other combatants, and learned a fair amount about the logistics of
+    war. Choose two attribute boosts. One must be to Constitution or Wisdom , and
+    one is a free attribute boost. You're trained in the Medicine skill and the Warfare
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Battle Medicine]
+    skill feat.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 2e971d72e0cc5d42a217ee493b313b6705a11449fa6960b76ad77122d9c17d04
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare Lore
+    Rank: 1
+  LoreSkills:
+  - Warfare Lore
+  GrantedFeats:
+  - SourceKey: lzyme
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

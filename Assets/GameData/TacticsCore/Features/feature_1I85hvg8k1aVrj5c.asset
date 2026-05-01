@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_1I85hvg8k1aVrj5c
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 1I85hvg8k1aVrj5c
+  Slug: peerless-under-heaven
+  DisplayName: Peerless under Heaven
+  IconPath: icons/magic/holy/projectiles-blades-salvo-yellow.webp
+  Description: For as long as there have been gods, they have made war, and you aim
+    to stand atop the pile when the fighting's over. When you critically succeed
+    on a Strike, divine skill at arms guides your weapon, granting you the critical
+    specialization effect for the weapon group. If you already had access to the
+    critical specialization effect for this weapon, your weapon gains the additional
+    critical specialization effect of the @UUID[Compendium.pf2e.equipment-srd.Item.Grievous]
+    rune. After you Spark Transcendence, your impeccable battle form strikes fear.
+    An enemy of your choice within 30 feet must succeed at a @Check[will|against:exemplar|traits:emotion,fear,mental,visual]
+    save against your class DC or be Frightened 1. That creature is then temporarily
+    immune to this effect for 10 minutes. This is an emotion, fear, mental, and visual
+    effect.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9c203c33cdca17c385f8e8356bf3152ff7c95ad84f5cfe0ec1ab03173f9dd888
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"peerless-under-heaven"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.PeerlessUnderHeaven.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:peerless-under-heaven"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.PeerlessUnderHeaven.Description"}]}'
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.PeerlessUnderHeaven.GrievousToggle","option":"peerless-under-heaven-grievous","toggleable":true}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"grievous"'
+    Uuid: 
+    Json: '{"key":"AdjustStrike","mode":"add","predicate":["peerless-under-heaven-grievous"],"property":"property-runes","value":"grievous"}'
+  Category: 2
+  Level: 7
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

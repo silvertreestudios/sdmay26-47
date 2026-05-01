@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_zovmBa6cipFsg8GA
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: zovmBa6cipFsg8GA
+  Slug: teacher-of-heroes
+  DisplayName: Teacher of Heroes
+  IconPath: icons/environment/settlement/tavern.webp
+  Description: "Those who make great names for themselves as heroes are called upon
+    to train those who follow them, and such is your destiny\u2014to be remembered
+    not through your own deeds but through the progeny who you hope will one day
+    surpass you. After you Spark Transcendence, you can attempt to Recall Knowledge
+    about one enemy you can see as a free action and instantly transmit any knowledge
+    you gain as a result to every ally within 60 feet. The first piece of knowledge
+    you gain when Recalling Knowledge in this way is always the enemy's immunities.
+    If the enemy has no immunities, you learn its greatest resistance; if it also
+    possesses no resistances, you learn its greatest weakness; if it possesses none
+    of the above, you learn its lowest saving throw."
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5e0a2334b3e3ae73657ee0baaa08edd16089ee920f8e73f904b41d4ed0aa3844
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"alwaysActive":true,"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.Epithet.Label","mergeable":true,"option":"epithet","suboptions":[{"label":"{item|name}","value":"teacher-of-heroes"}],"toggleable":true}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.TeacherOfHeroes.Description"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence","divine-spark","epithet:teacher-of-heroes"],"property":"description","value":[{"divider":true,"text":"PF2E.SpecificRule.Exemplar.Epithet.TeacherOfHeroes.Description"}]}'
+  Category: 2
+  Level: 15
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

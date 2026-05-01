@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_LoTFGTJCAGJFUFYs
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: LoTFGTJCAGJFUFYs
+  Slug: bookkeeper-s-calling
+  DisplayName: Bookkeeper's Calling
+  IconPath: icons/sundries/books/book-open-brown.webp
+  Description: Your passion and destiny are both tied to the preservation of knowledge
+    and a deep-seated love of instruments designed to preserve and propagate knowledge,
+    such as books and scrolls. When you attempt a check to Recall Knowledge or @UUID[Compendium.pf2e.actionspf2e.Item.Earn
+    Income] using a Lore skill you're trained in, you can spend a Mythic Point to
+    attempt the check at mythic proficiency. The first time each day that you critically
+    succeed on a check to Recall Knowledge while researching in a library or similar
+    facility, you regain a Mythic Point. Edicts educate others, record new knowledge
+    so that others can share in your discoveries Anathema destroy books, scrolls,
+    or other instruments used to record information; refuse an opportunity to share
+    your knowledge with an earnest knowledge-seeker
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: uncommon
+  SourceJsonHash: fb5e42f4970c602b97faad6b471b4c0c68e040c5934f7eb541aee7d8e84ca131
+  Traits:
+  - calling
+  - mythic
+  TraitsLower:
+  - calling
+  - mythic
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Rewrite Fate"}'
+  Category: 0
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Rewrite Fate
+    SourceId: 
+    DisplayName: Rewrite Fate
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

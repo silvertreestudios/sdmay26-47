@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_4yN5miHoMvKwZIsa
+  m_EditorClassIdentifier: 
+  SourceId: 4yN5miHoMvKwZIsa
+  Slug: press-ganged-lowg
+  DisplayName: Press-Ganged (LOWG)
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - High Seas You were forced into service as a
+    sailor against your will. Perhaps you were punished for a crime, were drafted
+    into military service, are repaying a debt, or simply were abducted. Though you
+    were initially trained as a simple deckhand, you may have subsequently studied
+    a trade under one of the vessel's specialists. Choose two attribute boosts. One
+    must be to Strength or Wisdom , and one is a free attribute boost. You're trained
+    in the Society skill and the Sailing Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced
+    Professional] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f6f7aa8d83f36953d64c3538b761594a075d33809d3e3997d749077dd6836498
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0100000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Sailing Lore
+    Rank: 1
+  LoreSkills:
+  - Sailing Lore
+  GrantedFeats:
+  - SourceKey: u3r44
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Professional
+    SourceId: 
+    DisplayName: Experienced Professional
+    Level: 1
+    ResolvedFeature: {fileID: 0}

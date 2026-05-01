@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_1rlBo3LcwIuPDCvz
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 1rlBo3LcwIuPDCvz
+  Slug: the-distant-grasp
+  DisplayName: The Distant Grasp
+  IconPath: systems/pf2e/icons/features/classes/the-distant-grasp.webp
+  Description: "Motion characterizes the physical-a boulder falls, creatures move,
+    the world turns. You believe the truest form of mind over matter is therefore
+    to move things as well, wielding telekinesis as an arm that can grasp the furthest
+    and finest of objects. Granted Spells 1st: @UUID[Compendium.pf2e.spells-srd.Item.Kinetic
+    Ram] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Maneuver] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Levitate]
+    4th: @UUID[Compendium.pf2e.spells-srd.Item.Fly] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic
+    Haul] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Poltergeist's Fury] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic
+    Bombardment] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Falling Sky] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Implosion]
+    Standard Psi Cantrips @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Hand]
+    Your mage hand can carry up to 1 Bulk instead of only light Bulk. If the spell
+    is heightened to 3rd level or higher, its maximum Bulk is 2. If the spell is
+    heightened to 7th level or higher, its maximum Bulk is 3. It also gains the following
+    amp. Amp You create a multitude of telekinetic hands that grip onto a creature
+    and move it about. Target a creature of Medium size or smaller with the amped
+    spell instead of an object. You attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Shove]
+    the target in a direction of your choice, rolling a spell attack roll against
+    its Fortitude DC instead of an Athletics check. The creature takes a \u201310-foot
+    circumstance penalty to its Speeds until the spell ends. Starting the round after
+    you Cast the Spell, the first time each round you Sustain the Spell, you can
+    attempt to Shove the creature again. Amp Heightened (4th) You can attempt to
+    @UUID[Compendium.pf2e.actionspf2e.Item.Disarm] the creature instead of attempting
+    to Shove it. If you knock an item out of the creature's grasp in this way, the
+    mage hand immediately grabs it. Any effect of the mage hand on the creature ends,
+    and the spell now carries the item, just like you had picked it up with an unamped
+    mage hand. @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Projectile] Your
+    telekinetic projectiles can fly much further away. Increase the range of telekinetic
+    projectile to 60 feet. It also gains the following amp. Amp You fling objects
+    with even more force, driving your opponents backwards in a hail of objects.
+    On a success, you push the target 5 feet away from you, and on a critical success,
+    you push the target 10 feet away from you in addition to dealing double damage.
+    Amp Heightened (+1) The damage increases by 2d6 instead of by 1d6. Unique Psi
+    Cantrips surface: @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Rend] Amp
+    Your thoughts expand in scope and power. The bursts deal 1d6 bludgeoning damage
+    and 1d6 slashing damage, instead of the usual damage. A creature that critically
+    fails its save is also Stunned 1. Amp Heightened (+2) Both types of damage increase
+    by 1d6 instead of just one. Add a third non-overlapping @Template[burst|distance:5]
+    to the area. deeper: @UUID[Compendium.pf2e.spells-srd.Item.Vector Screen] Amp
+    Your screen persists for longer, and you can detonate it in an explosive counterattack.
+    The duration of the spell increases to 1 minute. You can Dismiss the spell. If
+    there are any projectiles trapped in the screen, you can cast telekinetic projectile
+    to fire them at one creature as part of Dismissing the spell. Measure the range
+    for the telekinetic projectile from where the vector screen was, instead of from
+    you. deepest: @UUID[Compendium.pf2e.spells-srd.Item.Dancing Blade] Amp The weapon's
+    attacks increase in strength, and your control is fine enough for advanced technique.
+    The damage dice for the weapon's Strike change from d6s to d10s. When you Cast
+    or Sustain the spell, you can choose from the following options in addition to
+    the standard ones. Guard Rather than attacking, the weapon grants a +2 circumstance
+    bonus to AC against melee attacks to the creature it's following. The bonus lasts
+    until the start of your next turn or until the weapon Changes Partners, whichever
+    comes first. Push (attack) The weapon attempts to @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Push]
+    its target, using your spell attack roll instead of an Athletics check to determine
+    the results of the Push."
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 57fad4c760e3d4b8869a0ba52ef34d095abf37d977778936950dc774d1d4c234
+  Traits:
+  - psychic
+  TraitsLower:
+  - psychic
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:psychic","spellcasting:tradition:occult",{"or":["item:slug:telekinetic-hand","item:slug:telekinetic-projectile"]}],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.TelekineticHand"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticHand.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"},{"gte":["item:rank",4]}],"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticHand.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedFourth"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:telekinetic-hand","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.TelekineticHand"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticHand.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"},{"gte":["item:rank",4]}],"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticHand.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedFourth"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.SpellModification.TelekineticProjectile"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticProjectile.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticProjectile.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:telekinetic-projectile","item:tag:psi-cantrip"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.SpellModification.TelekineticProjectile"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticProjectile.Base","title":"PF2E.TraitAmp"},{"predicate":["item:tag:amped",{"not":"alternate-amp"}],"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticProjectile.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusOne"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticRend.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticRend.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusTwo"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:telekinetic-rend"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticRend.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.TelekineticRend.Heightened","title":"PF2E.SpecificRule.Psychic.Amp.AmpHeightenedLabel.AmpHeightenedPlusTwo"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.VectorScreen","title":"PF2E.TraitAmp"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:vector-screen"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.VectorScreen","title":"PF2E.TraitAmp"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Guard.Text","title":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Guard.Title"},{"text":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Push.Text","title":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Push.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:dancing-blade"],"property":"description","value":[{"text":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Base","title":"PF2E.TraitAmp"},{"text":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Guard.Text","title":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Guard.Title"},{"text":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Push.Text","title":"PF2E.SpecificRule.Psychic.Amp.DancingBlade.Push.Title"}]}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"diceNumber":"@spell.rank - 1","dieSize":"d6","hideIfDisabled":true,"key":"DamageDice","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:telekinetic-projectile","item:tag:psi-cantrip"],"selector":"spell-damage"}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"damageType":"bludgeoning","diceNumber":"ceil(@spell.rank/2)","dieSize":"d6","hideIfDisabled":true,"key":"DamageDice","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:telekinetic-rend","item:damage:type:slashing"],"selector":"spell-damage"}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"damageType":"slashing","diceNumber":"ceil(@spell.rank/2)","dieSize":"d6","hideIfDisabled":true,"key":"DamageDice","predicate":["item:tag:amped",{"not":"alternate-amp"},"item:slug:telekinetic-rend","item:damage:type:bludgeoning"],"selector":"spell-damage"}'
+  - Key: DamageAlteration
+    Path: 
+    Mode: upgrade
+    Value: 10
+    Uuid: 
+    Json: '{"key":"DamageAlteration","mode":"upgrade","predicate":["item:slug:dancing-blade","item:tag:amped",{"not":"alternate-amp"}],"property":"dice-faces","selectors":["spell-damage"],"value":10}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.psychic.dedication.psiCantrips
+    Mode: override
+    Value: '[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.TelekineticHand","predicate":[{"not":"selected-psi-cantrip:telekinetic-hand"}],"value":"telekinetic-hand"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.TelekineticProjectile","predicate":[{"not":"selected-psi-cantrip:telekinetic-projectile"}],"value":"telekinetic-projectile"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.TelekineticRend","predicate":["feat:psi-development"],"value":"telekinetic-rend"}]'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.psychic.dedication.psiCantrips","predicate":["feat:psychic-dedication"],"priority":10,"value":[{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.TelekineticHand","predicate":[{"not":"selected-psi-cantrip:telekinetic-hand"}],"value":"telekinetic-hand"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.TelekineticProjectile","predicate":[{"not":"selected-psi-cantrip:telekinetic-projectile"}],"value":"telekinetic-projectile"},{"label":"PF2E.SpecificRule.Psychic.PsiCantripLabels.TelekineticRend","predicate":["feat:psi-development"],"value":"telekinetic-rend"}]}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":"flags.pf2e.psychic.dedication.psiCantrips","flag":"dedicationCantrip","key":"ChoiceSet","predicate":["feat:psychic-dedication"],"prompt":"PF2E.SpecificRule.Prompt.PsiCantrip","rollOption":"selected-psi-cantrip"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"psi-cantrip"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["feat:psychic-dedication","spellcasting:tradition:occult","item:slug:{item|flags.pf2e.rulesSelections.dedicationCantrip}"],"priority":19,"property":"other-tags","value":"psi-cantrip"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

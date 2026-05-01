@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_TQqv9Q5mB4PW6LH9
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: TQqv9Q5mB4PW6LH9
+  Slug: spirit-instinct
+  DisplayName: Spirit Instinct
+  IconPath: icons/creatures/magical/spirit-undead-horned-blue.webp
+  Description: "Whether you are emotionally sensitive to the spirits around you;
+    worship ancestors or apparitions; or are haunted by the specter of an ancestor,
+    relative, friend, or foe, your rage takes the form of a spiritual possession.
+    Instinct Ability\u2014Spirit Rage While raging, you can increase the additional
+    damage from Rage from 2 to 3 and change its damage type to spirit, instead of
+    the damage type for your weapon or unarmed attack (choose each time you Rage).
+    If you choose to deal spirit damage, your weapon or unarmed attack gains the
+    effects of the @UUID[Compendium.pf2e.equipment-srd.Item.Ghost Touch] property
+    rune, which makes it more effective against incorporeal creatures, and your Rage
+    action gains the divine and spirit traits. Specialization Ability (7th) When
+    using spirit rage, increase the damage from Rage from 3 to 7. If you have greater
+    weapon specialization, instead increase the damage when using spirit rage to
+    13. Raging Resistance (9th) You resist void damage, as well as damage dealt by
+    the attacks and abilities of undead creatures, regardless of the damage type."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 859ae62a7928d65f0c581c12457c43726ee39bfc79071e7cbe07de7428679e9e
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: true
+    Uuid: 
+    Json: '{"domain":"all","key":"RollOption","label":"PF2E.SpecificRule.Barbarian.Spirit.ToggleLabel","option":"spirit-rage","predicate":[{"or":["class:barbarian","feat:instinct-ability"]}],"toggleable":true,"value":true}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+3"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feature:raging-resistance"],"type":"void","value":"@actor.abilities.con.mod+3"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+3"'
+    Uuid: 
+    Json: '{"definition":["origin:mode:undead"],"key":"Resistance","label":"PF2E.IWR.Custom.AllDamageFromUndead","predicate":["self:effect:rage","feature:raging-resistance"],"type":"custom","value":"@actor.abilities.con.mod+3"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+8"'
+    Uuid: 
+    Json: '{"key":"Resistance","predicate":["self:effect:rage","feat:unstoppable-juggernaut"],"type":"void","value":"@actor.abilities.con.mod+8"}'
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"@actor.abilities.con.mod+8"'
+    Uuid: 
+    Json: '{"definition":["origin:mode:undead"],"key":"Resistance","label":"PF2E.IWR.Custom.AllDamageFromUndead","predicate":["self:effect:rage","feat:unstoppable-juggernaut"],"type":"custom","value":"@actor.abilities.con.mod+8"}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 3
+    Uuid: 
+    Json: '{"damageType":"spirit","key":"AdjustModifier","mode":"upgrade","predicate":["spirit-rage"],"selectors":["strike-damage"],"slug":"rage","value":3}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 7
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian","spirit-rage",{"gte":["self:level",7]}],"selector":"strike-damage","slug":"rage","value":7}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 13
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","predicate":["class:barbarian","feature:greater-weapon-specialization","spirit-rage"],"selector":"strike-damage","slug":"rage","value":13}'
+  - Key: AdjustStrike
+    Path: 
+    Mode: add
+    Value: '"ghost-touch"'
+    Uuid: 
+    Json: '{"key":"AdjustStrike","mode":"add","predicate":["spirit-rage"],"property":"property-runes","value":"ghost-touch"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

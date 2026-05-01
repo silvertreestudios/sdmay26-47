@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_ptpK6H1rM4Bu3ry4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: ptpK6H1rM4Bu3ry4
+  Slug: mountainkeeper-tengu
+  DisplayName: Mountainkeeper Tengu
+  IconPath: systems/pf2e/icons/features/ancestry/mountainkeeper-tengu.webp
+  Description: You come from a line of tengu ascetics, leaving you with a link to
+    the spirits of the world and the Great Beyond. You can cast the @UUID[Compendium.pf2e.spells-srd.Item.Vitality
+    Lash] cantrip as a primal innate spell at will. A cantrip is heightened to a
+    spell rank equal to half your level rounded up. Each time you cast a spell from
+    a tengu heritage or ancestry feat, you can decide whether it's a divine or primal
+    spell.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 17f9a8b6819553245b9f9ef048566c6fea4503fab39db7b112a5fd57298b936e
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:vitality-lash","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:tengu"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:vitality-lash","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:tengu"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.18xDKYPDBLEv2myX
+    SourceId: 
+    Slug: tengu
+    DisplayName: Tengu
+  ParentAncestryAsset: {fileID: 11400000, guid: 0cda81b7def3071468d62aaaaf7b5263, type: 2}
+  GrantedFeatures: []

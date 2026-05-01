@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_YMKxN56w617BYwu4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: YMKxN56w617BYwu4
+  Slug: expert-overdrive
+  DisplayName: Expert Overdrive
+  IconPath: systems/pf2e/icons/features/classes/expert-overdrive.webp
+  Description: You've increased your skill in crafting, and you can put your devices
+    into a more powerful state of overdrive. You become an expert in Crafting, and
+    on a successful use of Overdrive, you increase the additional damage by 1.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6ae67a65b17356c268d0e9650808e0fbe1a0d76e09ae70996b6d007e11a96485
+  Traits:
+  - inventor
+  TraitsLower:
+  - inventor
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.crafting.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.crafting.rank","value":2}'
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

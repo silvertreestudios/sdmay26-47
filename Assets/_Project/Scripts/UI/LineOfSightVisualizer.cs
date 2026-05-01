@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
-using PathfinderTactics.Grid;
+using TacticsGame.Core;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.UI
+namespace TacticsGame.UI
 {
     /// <summary>
     /// Attach this to an Empty GameObject in your scene to debug Line of Effect and Line of Sight in Play Mode.
-    /// Provide it with two Transforms to watch the calculated 3D Bresenham path turn Green (Clear) or Red (Blocked).
+    /// Provide it with two Transforms to watch the calculated 3D Bresenham path turn Green (Clear) or Red (Blocked) or Yellow (Standard Cover) or Orange (Greater Cover).
     /// </summary>
     public class LineOfSightVisualizer : MonoBehaviour
     {

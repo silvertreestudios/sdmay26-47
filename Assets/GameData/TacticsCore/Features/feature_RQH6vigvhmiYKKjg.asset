@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_RQH6vigvhmiYKKjg
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: RQH6vigvhmiYKKjg
+  Slug: precise-strike
+  DisplayName: Precise Strike
+  IconPath: systems/pf2e/icons/features/classes/precise-strike.webp
+  Description: When you make a Strike with an agile or finesse melee weapon or agile
+    or finesse unarmed attack, you deal 2 additional precision damage. If the Strike
+    is part of a finisher, the additional damage is 2d6 precision damage instead.
+    As your swashbuckler level increases, so does your additional damage for precise
+    strike. At 5th, 9th, 13th, and 17th level, increase the amount of additional
+    damage on a Strike by 1 and the additional damage on a finisher by 1d6.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: dbf8915d51a882ae9d4e728f341a9174a75ca5df5c037e1252ed366795944421
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.swashbuckler.preciseStrike
+    Mode: override
+    Value: '"ceil(@actor.level/4) + 1"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.swashbuckler.preciseStrike","predicate":["class:swashbuckler"],"value":"ceil(@actor.level/4)
+      + 1"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: '"@actor.flags.pf2e.swashbuckler.preciseStrike"'
+    Uuid: 
+    Json: '{"damageCategory":"precision","key":"FlatModifier","predicate":[{"or":["item:melee",{"and":["feat:flying-blade","item:thrown","target:range-increment:1"]}]},{"or":["item:trait:agile","item:trait:finesse"]},{"not":"finisher"}],"selector":"strike-damage","slug":"precise-strike","value":"@actor.flags.pf2e.swashbuckler.preciseStrike"}'
+  - Key: DamageDice
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"category":"precision","diceNumber":"@actor.flags.pf2e.swashbuckler.preciseStrike","dieSize":"d6","key":"DamageDice","predicate":["finisher",{"or":["item:melee",{"and":["feat:flying-blade","item:thrown",{"or":["target:range-increment:1",{"and":["finisher:twirling-throw",{"lte":["target:range-increment",3]}]}]}]}]},{"or":["item:trait:agile","item:trait:finesse"]}],"selector":"strike-damage","slug":"finisher"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

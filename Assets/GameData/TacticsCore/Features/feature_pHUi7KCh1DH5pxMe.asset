@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_pHUi7KCh1DH5pxMe
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: pHUi7KCh1DH5pxMe
+  Slug: victor-s-wreath
+  DisplayName: Victor's Wreath
+  IconPath: icons/equipment/neck/amulet-round-star-gold.webp
+  Description: "Usage worn headwear or belt (typically a sash) This symbol of victory\u2014whether
+    a laurel worn around the head or a medal that hangs from your neck\u2014reminds
+    you and your allies that victory is the only acceptable outcome. Immanence (aura,
+    emotion, mental) You inspire your allies to greater glory. You and all your allies
+    in a 15-foot emanation gain a +1 status bonus to attack rolls. Transcendence\u2014
+    @UUID[Compendium.pf2e.actionspf2e.Item.One Moment till Glory] 1 (concentrate,
+    emotion, mental, transcendence) @Embed[Compendium.pf2e.actionspf2e.Item.IEBBHnI7wWRt44KG
+    inline]"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 5d063d196ba0629cf9fc6a52aae3e6080ed60c9f970bde719047b2f0d4ea76e0
+  Traits:
+  - ikon
+  TraitsLower:
+  - ikon
+  RawRules:
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"RollOption","label":"PF2E.SpecificRule.Exemplar.DivineSpark.Label","mergeable":true,"option":"divine-spark","suboptions":[{"label":"{item|name}","value":"victors-wreath"}],"toggleable":true}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.exemplar.ikons
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.Exemplar.Ikon.VictorsWreath.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"victors-wreath"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.exemplar.ikons","value":{"label":"PF2E.SpecificRule.Exemplar.Ikon.VictorsWreath.Label","predicate":["parent:tag:worn-ikon-feat"],"value":"victors-wreath"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.One Moment till Glory
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.One Moment
+      till Glory"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Grant","value":"granted"},{"label":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Existing","value":"existing"}],"key":"ChoiceSet","prompt":"PF2E.SpecificRule.Exemplar.Ikon.Physical.Prompt","rollOption":"victors-wreath-origin"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.equipment-srd.Item.Victor's Wreath
+    Json: '{"allowDuplicate":false,"alterations":[{"mode":"add","property":"other-tags","value":"physical-ikon"},{"mode":"add","property":"other-tags","value":"physical-ikon:victors-wreath"}],"key":"GrantItem","predicate":["victors-wreath-origin:granted"],"uuid":"Compendium.pf2e.equipment-srd.Item.Victor''s
+      Wreath"}'
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"ownedItems":true,"types":["equipment"]},"flag":"existingIkon","key":"ChoiceSet","predicate":["victors-wreath-origin:existing"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"other-tags","value":"physical-ikon"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"physical-ikon:victors-wreath"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"other-tags","value":"physical-ikon:victors-wreath"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.pHUi7KCh1DH5pxMe
+      inline]"}]'
+    Uuid: 
+    Json: '{"itemType":"equipment","key":"ItemAlteration","mode":"add","predicate":["item:tag:physical-ikon:victors-wreath","victors-wreath-origin:existing",{"not":"item:slug:victors-wreath"}],"property":"description","value":[{"text":"@Embed[Compendium.pf2e.classfeatures.Item.pHUi7KCh1DH5pxMe
+      inline]"}]}'
+  - Key: Aura
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"effects":[{"affects":"allies","uuid":"Compendium.pf2e.feat-effects.Item.Effect:
+      Victor''s Wreath"}],"key":"Aura","predicate":["divine-spark:victors-wreath"],"radius":15,"traits":["emotion","mental"]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:trait:transcendence",{"or":["item:granter:tag:chosen-ikon:victors-wreath","item:slug:one-moment-till-glory"]},{"not":"divine-spark:victors-wreath"}],"priority":121,"property":"description","value":[{"text":"PF2E.SpecificRule.Exemplar.DivineSpark.SparkTranscendence.Reminder"}]}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"divine"'
+    Uuid: 
+    Json: '{"itemId":"{item|flags.pf2e.rulesSelections.existingIkon}","key":"ItemAlteration","mode":"add","property":"traits","value":"divine"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.One Moment till Glory
+    SourceId: 
+    DisplayName: One Moment till Glory
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.equipment-srd.Item.Victor's Wreath
+    SourceId: 
+    DisplayName: Victor's Wreath
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

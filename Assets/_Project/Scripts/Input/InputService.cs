@@ -1,10 +1,10 @@
 using System;
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-namespace PathfinderTactics.InputSystem
+namespace TacticsGame.InputSystem
 {
     public class InputService : MonoBehaviour
     {
@@ -18,6 +18,15 @@ namespace PathfinderTactics.InputSystem
         public event EventHandler OnLayerDownPerformed;
         public event EventHandler OnEagleEyePerformed;
         public event EventHandler OnToggleWaypointPerformed;
+
+        // UI Map Events
+        public event EventHandler OnUIPageNextPerformed;
+        public event EventHandler OnUIPagePrevPerformed;
+        public event EventHandler OnUIStepNextPerformed;
+        public event EventHandler OnUIStepPrevPerformed;
+        public event EventHandler OnUIToggleStepsPerformed;
+        public event EventHandler OnUIConfirmPerformed;
+        public event EventHandler OnUICancelPerformed;
 
         private PlayerInputActions playerInputActions;
 
@@ -38,37 +47,118 @@ namespace PathfinderTactics.InputSystem
         private void OnEnable()
         {
             playerInputActions.Player.Enable();
-            playerInputActions.Player.Select.performed += ctx =>
-                InvokeEventIfValid(OnSelectPerformed);
-            playerInputActions.Player.Confirm.performed += ctx =>
-                InvokeEventIfValid(OnConfirmPerformed);
-            playerInputActions.Player.Cancel.performed += ctx =>
-                InvokeEventIfValid(OnCancelPerformed);
-            playerInputActions.Player.Jump.performed += ctx => InvokeEventIfValid(OnJumpPerformed);
-            playerInputActions.Player.OpenMenu.performed += ctx =>
-                InvokeEventIfValid(OnOpenMenuPerformed);
-            playerInputActions.Player.EndTurn.performed += ctx =>
-                InvokeEventIfValid(OnEndTurnPerformed);
-            playerInputActions.Player.LayerUp.performed += ctx =>
-                InvokeEventIfValid(OnLayerUpPerformed);
-            playerInputActions.Player.LayerDown.performed += ctx =>
-                InvokeEventIfValid(OnLayerDownPerformed);
-            playerInputActions.Player.EagleEye.performed += ctx =>
-                InvokeEventIfValid(OnEagleEyePerformed);
-            playerInputActions.Player.ToggleWaypoint.performed += ctx =>
-                InvokeEventIfValid(OnToggleWaypointPerformed);
+            playerInputActions.Player.Select.performed += HandleSelect;
+            playerInputActions.Player.Confirm.performed += HandleConfirm;
+            playerInputActions.Player.Cancel.performed += HandleCancel;
+            playerInputActions.Player.Jump.performed += HandleJump;
+            playerInputActions.Player.OpenMenu.performed += HandleOpenMenu;
+            playerInputActions.Player.EndTurn.performed += HandleEndTurn;
+            playerInputActions.Player.LayerUp.performed += HandleLayerUp;
+            playerInputActions.Player.LayerDown.performed += HandleLayerDown;
+            playerInputActions.Player.EagleEye.performed += HandleEagleEye;
+            playerInputActions.Player.ToggleWaypoint.performed += HandleToggleWaypoint;
+
+            playerInputActions.UI.PageNext.performed += HandleUIPageNext;
+            playerInputActions.UI.PagePrev.performed += HandleUIPagePrev;
+            playerInputActions.UI.StepNext.performed += HandleUIStepNext;
+            playerInputActions.UI.StepPrev.performed += HandleUIStepPrev;
+            playerInputActions.UI.ToggleSteps.performed += HandleUIToggleSteps;
+            playerInputActions.UI.Submit.performed += HandleUIConfirm;
+            playerInputActions.UI.Cancel.performed += HandleUICancel;
         }
 
         private void OnDisable()
         {
+            playerInputActions.Player.Select.performed -= HandleSelect;
+            playerInputActions.Player.Confirm.performed -= HandleConfirm;
+            playerInputActions.Player.Cancel.performed -= HandleCancel;
+            playerInputActions.Player.Jump.performed -= HandleJump;
+            playerInputActions.Player.OpenMenu.performed -= HandleOpenMenu;
+            playerInputActions.Player.EndTurn.performed -= HandleEndTurn;
+            playerInputActions.Player.LayerUp.performed -= HandleLayerUp;
+            playerInputActions.Player.LayerDown.performed -= HandleLayerDown;
+            playerInputActions.Player.EagleEye.performed -= HandleEagleEye;
+            playerInputActions.Player.ToggleWaypoint.performed -= HandleToggleWaypoint;
+
+            playerInputActions.UI.PageNext.performed -= HandleUIPageNext;
+            playerInputActions.UI.PagePrev.performed -= HandleUIPagePrev;
+            playerInputActions.UI.StepNext.performed -= HandleUIStepNext;
+            playerInputActions.UI.StepPrev.performed -= HandleUIStepPrev;
+            playerInputActions.UI.ToggleSteps.performed -= HandleUIToggleSteps;
+            playerInputActions.UI.Submit.performed -= HandleUIConfirm;
+            playerInputActions.UI.Cancel.performed -= HandleUICancel;
+
             playerInputActions.Player.Disable();
-            // In a deeper implementation, unsubscribe these, but disabling the map is usually enough in Unity.
+            playerInputActions.UI.Disable();
         }
 
-        private void InvokeEventIfValid(EventHandler ev)
+        private void HandleSelect(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnSelectPerformed, IsPointerInput(ctx));
+
+        private void HandleConfirm(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnConfirmPerformed, IsPointerInput(ctx));
+
+        private void HandleCancel(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnCancelPerformed, IsPointerInput(ctx));
+
+        private void HandleJump(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnJumpPerformed, IsPointerInput(ctx));
+
+        private void HandleOpenMenu(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnOpenMenuPerformed, IsPointerInput(ctx));
+
+        private void HandleEndTurn(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnEndTurnPerformed, IsPointerInput(ctx));
+
+        private void HandleLayerUp(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnLayerUpPerformed, IsPointerInput(ctx));
+
+        private void HandleLayerDown(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnLayerDownPerformed, IsPointerInput(ctx));
+
+        private void HandleEagleEye(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnEagleEyePerformed, IsPointerInput(ctx));
+
+        private void HandleToggleWaypoint(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnToggleWaypointPerformed, IsPointerInput(ctx));
+
+        private void HandleUIPageNext(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnUIPageNextPerformed, IsPointerInput(ctx));
+
+        private void HandleUIPagePrev(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnUIPagePrevPerformed, IsPointerInput(ctx));
+
+        private void HandleUIStepNext(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnUIStepNextPerformed, IsPointerInput(ctx));
+
+        private void HandleUIStepPrev(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnUIStepPrevPerformed, IsPointerInput(ctx));
+
+        private void HandleUIToggleSteps(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnUIToggleStepsPerformed, IsPointerInput(ctx));
+
+        private void HandleUIConfirm(InputAction.CallbackContext ctx)
+        {
+            Debug.Log("[INPUT] UI Confirm Performed");
+            InvokeEventIfValid(OnUIConfirmPerformed, IsPointerInput(ctx));
+        }
+
+        private void HandleUICancel(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnUICancelPerformed, IsPointerInput(ctx));
+
+        private bool IsPointerInput(InputAction.CallbackContext ctx)
+        {
+            return ctx.control?.device is Pointer;
+        }
+
+        private void InvokeEventIfValid(EventHandler ev, bool isPointerInput)
         {
             // PREVENT UI CLICK-THROUGH CRASH / Blocking inputs when clicking on UI
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            if (
+                isPointerInput
+                && EventSystem.current != null
+                && EventSystem.current.IsPointerOverGameObject()
+            )
                 return;
 
             ev?.Invoke(this, EventArgs.Empty);
@@ -76,11 +166,24 @@ namespace PathfinderTactics.InputSystem
 
         public Vector2 GetMovementVectorNormalized()
         {
+            if (playerInputActions.UI.enabled)
+                return playerInputActions.UI.Navigate.ReadValue<Vector2>();
             return playerInputActions.Player.Move.ReadValue<Vector2>();
+        }
+
+        public bool IsMovementFromKeyboard()
+        {
+            var action = playerInputActions.UI.enabled
+                ? playerInputActions.UI.Navigate
+                : playerInputActions.Player.Move;
+
+            return action.activeControl?.device is UnityEngine.InputSystem.Keyboard;
         }
 
         public Vector2 GetRotationVector()
         {
+            if (playerInputActions.UI.enabled)
+                return playerInputActions.UI.Rotate.ReadValue<Vector2>();
             return playerInputActions.Player.Rotate.ReadValue<Vector2>();
         }
 
@@ -95,11 +198,31 @@ namespace PathfinderTactics.InputSystem
         /// </summary>
         public int GetLayerCycleInput()
         {
+            if (playerInputActions.UI.enabled)
+            {
+                if (playerInputActions.UI.PageNext.WasPressedThisFrame())
+                    return 1;
+                if (playerInputActions.UI.PagePrev.WasPressedThisFrame())
+                    return -1;
+                return 0;
+            }
+
             if (playerInputActions.Player.LayerUp.WasPressedThisFrame())
                 return 1;
             if (playerInputActions.Player.LayerDown.WasPressedThisFrame())
                 return -1;
             return 0;
+        }
+
+        public void SwitchToActionMap(string mapName)
+        {
+            playerInputActions.Player.Disable();
+            playerInputActions.UI.Disable();
+
+            if (mapName == "UI")
+                playerInputActions.UI.Enable();
+            else
+                playerInputActions.Player.Enable();
         }
     }
 }

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_NZY0r4Csjul6eVPp
+  m_EditorClassIdentifier: 
+  SourceId: NZY0r4Csjul6eVPp
+  Slug: finadar-leshy
+  DisplayName: Finadar Leshy
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisites Leshy ancestry You are a leshy from Finadar Forest,
+    originally created under the corruption of a cyclopean monolith. Though the Pathfinder
+    Society managed to sever the monolith's connection, freeing the forest and your
+    people from its influence, you retain a trace, unnerving connection to the Abyss.
+    Choose two attribute boosts. One must be to Constitution or Charisma , and one
+    is a free attribute boost. You're trained in the Intimidation skill and the Abyssal
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating Glare]
+    skill feat.
+  SourceTitle: 'Pathfinder Society Scenario #1-15: The Blooming Catastrophe'
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: f39e4eac32e95b4ddf9297e6f61a3156d6f6558fd493c04f823fefd981c9161a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Abyssal Lore
+    Rank: 1
+  LoreSkills:
+  - Abyssal Lore
+  GrantedFeats:
+  - SourceKey: horfp
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

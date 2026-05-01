@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_zVf0Hlp5xG0Q7kmc
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: zVf0Hlp5xG0Q7kmc
+  Slug: skilled-human
+  DisplayName: Skilled Human
+  IconPath: icons/tools/navigation/map-chart-tan.webp
+  Description: Your ingenuity allows you to train in a wide variety of skills. You
+    become trained in one skill of your choice. At 5th level, you become an expert
+    in the chosen skill.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: e7b8278076b34c4cc91a289124cdc85ceb4d9a8ca74aa3b2c4bde24a362479c1
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"choices":{"config":"skills"},"flag":"skill","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Skill"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.{item|flags.pf2e.rulesSelections.skill}.rank
+    Mode: upgrade
+    Value: '"ternary(gte(@actor.level,5),2,1)"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.{item|flags.pf2e.rulesSelections.skill}.rank","value":"ternary(gte(@actor.level,5),2,1)"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.IiG7DgeLWYrSNXuX
+    SourceId: 
+    Slug: human
+    DisplayName: Human
+  ParentAncestryAsset: {fileID: 11400000, guid: 4a3abab8c09a4f0438706848bea28ef6, type: 2}
+  GrantedFeatures: []

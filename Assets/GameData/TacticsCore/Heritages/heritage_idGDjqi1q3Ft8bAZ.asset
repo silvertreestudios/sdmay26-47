@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_idGDjqi1q3Ft8bAZ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: idGDjqi1q3Ft8bAZ
+  Slug: nomadic-halfling
+  DisplayName: Nomadic Halfling
+  IconPath: systems/pf2e/icons/features/ancestry//nomadic-halfling.webp
+  Description: Your ancestors have traveled from place to place for generations,
+    never content to settle down. You gain two additional languages of your choice,
+    chosen from among the common and uncommon languages available to you, and every
+    time you take the @UUID[Compendium.pf2e.feats-srd.Item.Multilingual] feat, you
+    gain another new language.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 4b5fd3b7efce5a9dae142ed1007e049578dacc6901d9f15e0ded51ccf277a2a6
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.build.languages.max
+    Mode: add
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.build.languages.max","value":2}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.multilingualTaken
+    Mode: override
+    Value: 0
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.multilingualTaken","priority":19,"value":0}'
+  - Key: ActiveEffectLike
+    Path: system.build.languages.max
+    Mode: add
+    Value: '"@actor.flags.pf2e.multilingualTaken"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"system.build.languages.max","priority":21,"value":"@actor.flags.pf2e.multilingualTaken"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.GgZAHbrjnzWOZy2v
+    SourceId: 
+    Slug: halfling
+    DisplayName: Halfling
+  ParentAncestryAsset: {fileID: 11400000, guid: 27cca46a5c2df4845ab39fbaa79aad34, type: 2}
+  GrantedFeatures: []

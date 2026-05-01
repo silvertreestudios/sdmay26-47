@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_pPR0HAeXLUxP3rx4
+  m_EditorClassIdentifier: 
+  SourceId: pPR0HAeXLUxP3rx4
+  Slug: clan-associate
+  DisplayName: Clan Associate
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "You already have a close connection to Clan Tolorr, such as having
+    been born into the clan, worked as an esteemed contractor for them, or married
+    into the clan (even if you chose to retain your prior clan affiliation). Whether
+    through dedicated study or just overhearing your fellows' academic debates, you've
+    absorbed boundless trivia about history\u2014especially local lore. Beyond Tolorr
+    halls, your affiliation earns you respect in Highhelm. Your clan expects you
+    to behave well, as your actions reflect on them. Choose two attribute boosts.
+    One must be to Constitution or Wisdom , and one is a free attribute boost. You're
+    trained in the Society skill and the Highhelm Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Multilingual]
+    skill feat. Connection: You have no special connection or sponsor in Clan Tolorr.
+    Reputation Points: +2"
+  SourceTitle: Pathfinder Sky King's Tomb Player's Guide
+  SourcePack: backgrounds
+  Rarity: uncommon
+  SourceJsonHash: 468ed1cf5a72effd2154f522b7eecbf183fa0d397c7c43fbf5255c593502005e
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Highhelm Lore
+    Rank: 1
+  LoreSkills:
+  - Highhelm Lore
+  GrantedFeats:
+  - SourceKey: IskX6
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Multilingual
+    SourceId: 
+    DisplayName: Multilingual
+    Level: 1
+    ResolvedFeature: {fileID: 0}

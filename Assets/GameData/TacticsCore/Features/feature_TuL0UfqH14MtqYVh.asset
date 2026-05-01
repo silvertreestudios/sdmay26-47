@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_TuL0UfqH14MtqYVh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: TuL0UfqH14MtqYVh
+  Slug: greater-juggernaut
+  DisplayName: Greater Juggernaut
+  IconPath: systems/pf2e/icons/features/classes/greater-juggernaut.webp
+  Description: You have a stalwart physiology. Your proficiency rank for Fortitude
+    saves increases to legendary. When you roll a critical failure on a Fortitude
+    save, you get a failure instead. When you roll a failure on a Fortitude save
+    against an effect that deals damage, you halve the damage you take.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 4b4c2880c1af92a98586954e447c37c1830f48456f673174840303f47312c24f
+  Traits:
+  - barbarian
+  TraitsLower:
+  - barbarian
+  RawRules:
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"one-degree-better"},"key":"AdjustDegreeOfSuccess","selector":"fortitude"}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["failure"],"predicate":["damaging-effect"],"selector":"fortitude","text":"PF2E.SpecificRule.SaveCriticalFailureToFailure.FailureHalfDamage.Fortitude","title":"{item|name}"}'
+  Category: 2
+  Level: 13
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: fortitude
+    Rank: 4
+  FocusPointDelta: 0

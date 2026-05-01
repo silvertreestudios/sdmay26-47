@@ -1,0 +1,42 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/CharacterCreator/CreatorTheme.uss?fileID=7433441132597879392&amp;guid=e7ceafd2bbee17244a24a51454248c43&amp;type=3#CreatorTheme" />
+    <ui:VisualElement class="step-container">
+        <ui:VisualElement class="step-header">
+            <ui:VisualElement class="step-header__group">
+                <ui:Label text="CONCEPT &amp; IDENTITY" class="header-text header-text--accent" />
+                <ui:Label text="Who is your character? Define their basic identity, beliefs, and name." class="subhead-text" />
+            </ui:VisualElement>
+            <ui:Label text="STEP 02 / 10" class="badge" />
+        </ui:VisualElement>
+        <ui:VisualElement class="form-grid form-grid--compact">
+            <ui:VisualElement class="form-field form-field--compact">
+                <ui:Label text="CHARACTER NAME" class="form-field__label" />
+                <ui:TextField name="Txt_Name" />
+            </ui:VisualElement>
+            <ui:VisualElement class="form-field form-field--compact">
+                <ui:Label text="PRONOUNS" class="form-field__label" />
+                <ui:TextField name="Txt_Pronouns" />
+            </ui:VisualElement>
+            <ui:VisualElement class="form-field form-field--compact">
+                <ui:Label text="IDENTITY" class="form-field__label" />
+                <ui:TextField name="Txt_Identity" />
+            </ui:VisualElement>
+            <ui:VisualElement class="form-field form-field--compact">
+                <ui:Label text="AGE" class="form-field__label" />
+                <ui:TextField name="Txt_Age" />
+            </ui:VisualElement>
+            <ui:VisualElement class="form-field form-field--compact form-field--wide">
+                <ui:Label text="DEITY" class="form-field__label" />
+                <ui:TextField name="Txt_Deity" />
+            </ui:VisualElement>
+            <ui:VisualElement class="form-field form-field--compact form-field--wide">
+                <ui:Label text="EDICTS" class="form-field__label" />
+                <ui:TextField name="Txt_Edicts" multiline="true" class="form-field__multiline form-field__multiline--short" />
+            </ui:VisualElement>
+            <ui:VisualElement class="form-field form-field--compact form-field--wide">
+                <ui:Label text="ANATHEMA" class="form-field__label" />
+                <ui:TextField name="Txt_Anathema" multiline="true" class="form-field__multiline form-field__multiline--short" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

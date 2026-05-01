@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_CzOHITB2ihLGqMuJ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: CzOHITB2ihLGqMuJ
+  Slug: runtboss-hobgoblin
+  DisplayName: Runtboss Hobgoblin
+  IconPath: systems/pf2e/icons/features/ancestry/runtboss-hobgoblin.webp
+  Description: You come from a long line of hobgoblins who commanded goblins. You
+    are smaller than other hobgoblins, but goblins still listen to any commands you
+    bellow. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Group Coercion] skill
+    feat. If you roll a success on an Intimidation check to @UUID[Compendium.pf2e.actionspf2e.Item.Coerce]
+    a goblin, you get a critical success instead; if you roll a critical failure,
+    you get a failure instead.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: c59ee714eea31f42eb286a5ea6926c75b1ed3dc3189840a2ec63c65fba77d1ab
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Group Coercion"}'
+  - Key: AdjustDegreeOfSuccess
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustment":{"criticalFailure":"one-degree-better","success":"one-degree-better"},"key":"AdjustDegreeOfSuccess","predicate":[{"or":["target:trait:goblin","action:coerce"]}],"selector":"intimidation"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.piNLXUrm9iaGqD2i
+    SourceId: 
+    Slug: hobgoblin
+    DisplayName: Hobgoblin
+  ParentAncestryAsset: {fileID: 11400000, guid: f8564f2408134d941bdb53b696e95741, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Group Coercion
+    SourceId: 
+    DisplayName: Group Coercion
+    Level: 0
+    ResolvedFeature: {fileID: 0}

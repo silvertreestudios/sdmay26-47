@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using PathfinderTactics.Core;
+using TacticsGame.Core;
 using UnityEngine;
 
 public class ClassData
@@ -16,7 +16,7 @@ public class DefenseValues
     public int unarmored;
 }
 
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     public enum UnitSize
     {
@@ -43,8 +43,8 @@ namespace PathfinderTactics.Characters
         public List<RWIModifier> Resistances = new List<RWIModifier>();
     }
 
-    [CreateAssetMenu(fileName = "NewUnitStats", menuName = "PathfinderTactics/Unit Stats")]
-    public class UnitStatsSO : ScriptableObject
+    [CreateAssetMenu(fileName = "NewUnitStats", menuName = "TacticsGame/Unit Stats")]
+    public class UnitStatsSO : ScriptableObject, IUnitDataProvider
     {
         [Header("Identity")]
         public string unitName = "Unit";
@@ -86,7 +86,7 @@ namespace PathfinderTactics.Characters
         [Tooltip("Charisma: presence and personality (e.g. 10).")]
         public int charisma = 10;
 
-        [Header("Core Stats (Pathfinder 2e)")]
+        [Header("Core Stats (PF2e)")]
         [Tooltip("Speed in feet. Standard is 25 or 30 for most humanoids.")]
         public int baseSpeedInFeet = 30;
 
@@ -125,7 +125,7 @@ namespace PathfinderTactics.Characters
             {
                 int aHp = GetAncestryHp();
                 int cHp = GetClassHp();
-                int conMod = PF2E_Core.GetAbilityModifier(constitution);
+                int conMod = TacticsRuleset_Core.GetAbilityModifier(constitution);
                 int lvl = Mathf.Max(1, level);
 
                 // Level 1: Ancestry + Class + ConMod
@@ -211,5 +211,88 @@ namespace PathfinderTactics.Characters
             if (level < 1)
                 level = 1;
         }
+
+        // IUnitDataProvider Implementation
+        public string GetUnitName() => unitName;
+
+        public UnityEngine.Sprite GetPortraitIcon() => portraitIcon;
+
+        public UnitSize GetSize() => unitSize;
+
+        public int GetLevel() => level;
+
+        public string GetHeritageID() => "";
+
+        public string GetIdentity() => "";
+
+        public string GetPronouns() => "";
+
+        public string GetDeity() => "";
+
+        public List<string> GetEdicts() => new List<string>();
+
+        public List<string> GetAnathema() => new List<string>();
+
+        public int GetAge() => 0;
+
+        public List<Data.ChoiceRecord> GetLedger() => new List<Data.ChoiceRecord>();
+
+        public List<Data.SpellSelection> GetSpellLedger() => new List<Data.SpellSelection>();
+
+        public Dictionary<string, string> GetEquippedFeats() => new Dictionary<string, string>();
+
+        public int GetMaxHP(Data.TacticsRuleset.TacticsRulesetDatabase db) => TotalHP;
+
+        public int GetSpeed() => baseSpeedInFeet;
+
+        public int GetMaxFocusPoints() => 0;
+
+        public int GetClassDC() =>
+            10
+            + TacticsRuleset_Core.CalculateModifier(
+                level,
+                Proficiency.Trained,
+                TacticsRuleset_Core.GetAbilityModifier(strength)
+            );
+
+        public int GetSavingThrow(Data.TacticsRuleset.SavingThrowType save) => 0; // Simplified for now
+
+        public int GetPerceptionModifier() => perception;
+
+        public int GetSpellAttackModifier() => 0;
+
+        public int GetSpellDC() => 10;
+
+        public int GetMaxBulk() => 5 + TacticsRuleset_Core.GetAbilityModifier(strength);
+
+        public Proficiency GetSkillProficiency(SkillType skill) => Proficiency.Untrained;
+
+        public Proficiency GetLoreProficiency(string loreName) => Proficiency.Untrained;
+
+        public List<string> GetKnownLanguages() => new List<string>();
+
+        public List<SenseType> GetSenses() => new List<SenseType>();
+
+        public int GetStealth() => stealth;
+
+        public bool HasAllAroundVision() => hasAllAroundVision;
+
+        public bool HasDenyAdvantage() => hasDenyAdvantage;
+
+        public int GetStrength() => TacticsRuleset_Core.GetAbilityModifier(strength);
+
+        public int GetDexterity() => TacticsRuleset_Core.GetAbilityModifier(dexterity);
+
+        public int GetConstitution() => TacticsRuleset_Core.GetAbilityModifier(constitution);
+
+        public int GetIntelligence() => TacticsRuleset_Core.GetAbilityModifier(intelligence);
+
+        public int GetWisdom() => TacticsRuleset_Core.GetAbilityModifier(wisdom);
+
+        public int GetCharisma() => TacticsRuleset_Core.GetAbilityModifier(charisma);
+
+        public RWIProfile GetRWIProfile() => rwiProfile;
+
+        public List<string> GetTraits() => traits;
     }
 }

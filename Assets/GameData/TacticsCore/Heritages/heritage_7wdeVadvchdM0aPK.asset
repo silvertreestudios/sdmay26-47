@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_7wdeVadvchdM0aPK
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 7wdeVadvchdM0aPK
+  Slug: mistbreath-azarketi
+  DisplayName: Mistbreath Azarketi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You descend from azarketis who migrated to land environments that
+    could support their need for water. Over time, your people adapted to life on
+    land culturally and physically, even resulting in azarketis born with human hair
+    like their Azlanti ancestors. You no longer need to be immersed in water every
+    24 hours to maintain your skin and can instead mist or wipe your skin with water
+    to live comfortably. Your land Speed is 25 feet, but your swim Speed is only
+    15 feet.
+  SourceTitle: Pathfinder Lost Omens Absalom, City of Lost Omens
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: dc943614fdf445ab7f323dc9d64f181656fa20dcff2a6e98729dbe84d3549a00
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: -15
+    Uuid: 
+    Json: '{"key":"FlatModifier","selector":"swim-speed","value":-15}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 5
+    Uuid: 
+    Json: '{"key":"FlatModifier","selector":"land-speed","value":5}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.yFoojz6q3ZjvceFw
+    SourceId: 
+    Slug: azarketi
+    DisplayName: Azarketi
+  ParentAncestryAsset: {fileID: 11400000, guid: 35691cbce9f238047a56788acb89af44, type: 2}
+  GrantedFeatures: []

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_HiOvPmXEXBjUy0VZ
+  m_EditorClassIdentifier: 
+  SourceId: HiOvPmXEXBjUy0VZ
+  Slug: brevic-outcast
+  DisplayName: Brevic Outcast
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: One of your parents was a member of one of the great families of Brevoy,
+    perhaps even of the line of Rogarvia itself. Yet you have no substantive proof
+    of your nobility, and you've learned that claiming such without evidence is a
+    fool's game. Whether a recent attempt to prove your heritage brought down the
+    wrath of a noble family or you seek to prove the worth of the blood in your veins,
+    you've joined an expedition into the Stolen Lands, hoping to make a name all
+    your own. Choose two attribute boosts. One must be to Charisma or Constitution
+    , and one is a free attribute boost. You're trained in the Politics Lore skill.
+    You take a -1 penalty on all Charisma-based skill checks attempted when dealing
+    with members of the nobility, but gain the @UUID[Compendium.pf2e.feats-srd.Item.Haughty
+    Obstinacy] human ancestry feat, even if you aren't a human. If you manage to
+    establish yourself as a true noble or secure a leadership role in a kingdom,
+    you no longer take the penalty to Charisma-based checks.
+  SourceTitle: Pathfinder Kingmaker Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 5e84e9f03d558297516e9d1beccaebb75681bac4b6ed28272fbed997cc355152
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: -1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["target:tag:noblility"],"selector":"cha-skill-check","value":-1}'
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills: []
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: pUIwv
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Haughty Obstinacy
+    SourceId: 
+    DisplayName: Haughty Obstinacy
+    Level: 1
+    ResolvedFeature: {fileID: 0}

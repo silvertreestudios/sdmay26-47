@@ -1,4 +1,4 @@
-namespace PathfinderTactics.Reactions
+namespace TacticsGame.Reactions
 {
     public enum ReactionMode
     {

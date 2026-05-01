@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_vZ0jL7pwthV2pm4A
+  m_EditorClassIdentifier: 
+  SourceId: vZ0jL7pwthV2pm4A
+  Slug: exemplar
+  DisplayName: Exemplar
+  IconPath: systems/pf2e/icons/default-icons/class.svg
+  Description: "As the war god died, his power rained through the many planes of
+    creation, sparking conflict and instilling divine energy in those previously
+    without it. Whether you were directly touched by this power, claimed it from
+    an ancient being or artifact, or whether it awoke something long dormant in your
+    lineage, a spark of the divine now blazes within your soul, granting you abilities,
+    sacred weapons, and divine signifiers that reach into the realm previously reserved
+    for gods and legends. How you wield these tools and grow your power is for you
+    to decide\u2014you may become a hero or you may turn to selfish ends, but one
+    thing is certain: you intend to carve your epithet in history, immortalized in
+    the memory of gods and mortals alike. Exemplar"
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classes
+  Rarity: rare
+  SourceJsonHash: 938272b05bc6b7ee04cc4df4b4945b00dc46e1813a0a9c0523bc557305881387
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 10
+  KeyAttributes: 0200000001000000
+  Perception: 1
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 0Y2AR
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  - SourceKey: lPyXP
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Humble Strikes
+    SourceId: tmTlnyVxo6zPqJvh
+    DisplayName: Humble Strikes
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 06f389afce4d49642853112041930888, type: 2}
+  - SourceKey: uazZg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Divine Spark and Ikons
+    SourceId: GtxSH6TudkQoKToW
+    DisplayName: Divine Spark and Ikons
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 08c968b1665226f4dbaf26ca26c38c3c, type: 2}
+  GrantedFeatures:
+  - SourceKey: 0Y2AR
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Shield Block
+    SourceId: eZNCckLzbH3GyncH
+    DisplayName: Shield Block
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: b02982ef758b33749a47d1225865720e, type: 2}
+  - SourceKey: 4B6qN
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Burnished Armor Mastery
+    SourceId: 2x6Nlt4vGhkNtwOj
+    DisplayName: Burnished Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 68df549483697694fa009549d45d199c, type: 2}
+  - SourceKey: BkmNc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Expertise
+    SourceId: JCqACxgrm5ixX0Jy
+    DisplayName: Perception Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: 525577de9634f3c4ba8b5acb3d4ce5be, type: 2}
+  - SourceKey: EY39w
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Divine Premonition
+    SourceId: e2MJdkZQorNwhbGn
+    DisplayName: Divine Premonition
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: aabf88b4745141e42825d82b43247d9f, type: 2}
+  - SourceKey: GIKlM
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Sovereignty Epithet
+    SourceId: 8AdMvVrcx40iaMwT
+    DisplayName: Sovereignty Epithet
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 0223ba97223ad284cb9ca445fcb2c3db, type: 2}
+  - SourceKey: HkjMG
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Spirit Striking
+    SourceId: AVI5SJET99zRqfpZ
+    DisplayName: Greater Spirit Striking
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: 4524429a2a07a9f46a90e8f3a3d930e9, type: 2}
+  - SourceKey: HqeGk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Mortality Reforged
+    SourceId: A8rAsfXHpO8lWe2r
+    DisplayName: Mortality Reforged
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: cc64d18c48516414794af2682402c9c3, type: 2}
+  - SourceKey: HzCFp
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Deific Mastery
+    SourceId: 2CtYJJjesShbkyOv
+    DisplayName: Deific Mastery
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 78250eb45535e864ba59a2472415dbcf, type: 2}
+  - SourceKey: JAIEv
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Root Epithet
+    SourceId: Mlane2mQ7gCFQrfw
+    DisplayName: Root Epithet
+    Level: 3
+    ResolvedFeature: {fileID: 11400000, guid: b89ee2faee527c3429f10a5a021bbbce, type: 2}
+  - SourceKey: OGekJ
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Unassailable Soul
+    SourceId: Zb8SS1tbpbtEwqNh
+    DisplayName: Greater Unassailable Soul
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: d51da2e854d10d64483a53f8225b58e0, type: 2}
+  - SourceKey: RTwPC
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Expertise
+    SourceId: 9XLUh9iMepZesdmc
+    DisplayName: Weapon Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 326227201fda26f4086320a6e716f4aa, type: 2}
+  - SourceKey: UGtUL
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Divine Weapon Mastery
+    SourceId: nFZW9LZ6lV39dhBf
+    DisplayName: Divine Weapon Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 19ef5e25bbd9da44788d168a545308f1, type: 2}
+  - SourceKey: bp6Hv
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Burnished Armor Expertise
+    SourceId: Csggpxb5Mp4lPUwh
+    DisplayName: Burnished Armor Expertise
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 4211a16e6663f7544ba0cc69b4b85c42, type: 2}
+  - SourceKey: dbrt3
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Spirit Striking
+    SourceId: cAuV9xgPTwZ26Nj0
+    DisplayName: Spirit Striking
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: b94b568645e446346bd059e96dc5d8f1, type: 2}
+  - SourceKey: iEXza
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 0npO4rPscGm0dX13
+    DisplayName: Perception Mastery
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 622e4b3f5ecccf94595d00a41a052a22, type: 2}
+  - SourceKey: lPyXP
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Humble Strikes
+    SourceId: tmTlnyVxo6zPqJvh
+    DisplayName: Humble Strikes
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 06f389afce4d49642853112041930888, type: 2}
+  - SourceKey: n7ltm
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Unassailable Soul
+    SourceId: ScUPQN2FDfr9shQj
+    DisplayName: Unassailable Soul
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 5eca093a92582884a81eadadb543619f, type: 2}
+  - SourceKey: pToae
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Dominion Epithet
+    SourceId: yQY2griL1Sykw25V
+    DisplayName: Dominion Epithet
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 6f1302c816e605b4e9413e188eb164e1, type: 2}
+  - SourceKey: uazZg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Divine Spark and Ikons
+    SourceId: GtxSH6TudkQoKToW
+    DisplayName: Divine Spark and Ikons
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 08c968b1665226f4dbaf26ca26c38c3c, type: 2}
+  - SourceKey: wUHJ9
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Godly Expertise
+    SourceId: VDz0zSZOmdzRxy65
+    DisplayName: Godly Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: d4fb2f968a0702540bb53ca1d6539bef, type: 2}

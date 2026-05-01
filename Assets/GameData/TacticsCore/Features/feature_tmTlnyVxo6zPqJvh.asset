@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_tmTlnyVxo6zPqJvh
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: tmTlnyVxo6zPqJvh
+  Slug: humble-strikes
+  DisplayName: Humble Strikes
+  IconPath: icons/skills/melee/sword-echo-stylized-tan.webp
+  Description: Even the most unassuming weapons can accomplish great deeds. When
+    you are wielding a simple weapon, increase the damage die size of that weapon
+    by one step.
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 98b0cc3ccfc88c37593572bcdcdfe7fca64158f3cd54b7fe07e1f52919a0e676
+  Traits:
+  - exemplar
+  TraitsLower:
+  - exemplar
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: upgrade
+    Value: 
+    Uuid: 
+    Json: '{"itemType":"weapon","key":"ItemAlteration","mode":"upgrade","predicate":["item:category:simple","item:equipped"],"property":"damage-dice-faces"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

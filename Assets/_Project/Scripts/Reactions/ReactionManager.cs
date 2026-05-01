@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.UI;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.UI;
 using UnityEngine;
 
-namespace PathfinderTactics.Reactions
+namespace TacticsGame.Reactions
 {
     public class ReactionManager : MonoBehaviour
     {

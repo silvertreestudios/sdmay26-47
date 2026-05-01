@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_UyuwFp0jQqYL2AdF
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: UyuwFp0jQqYL2AdF
+  Slug: redemption
+  DisplayName: Redemption
+  IconPath: icons/magic/nature/symbol-sun-yellow.webp
+  Description: Yearning for all to live in harmony, you make every attempt to redeem
+    those others might slay or dismiss. Edicts try to redeem those who commit wicked
+    deeds, show compassion to others regardless of their authority or station Anathema
+    kill a sapient enemy without first offering a chance at redemption Champion's
+    Reaction @UUID[Compendium.pf2e.actionspf2e.Item.Glimpse of Redemption] Relentless
+    Reaction (9th Level) If the enemy refuses, it takes persistent @Damage[@actor.abilities.cha.mod[spirit,persistent]]{persistent
+    spirit damage} equal to your Charisma modifier. Exalted Reaction (11th Level)
+    If the enemy refuses, you can choose to grant the resistance to yourself and
+    all allies in your champion's aura, including the triggering ally. If you do,
+    the resistance is reduced by 2 for all
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 56c2e3e5f164f58a208ec94c9fb1db8bdf8998966ea6f4ab645adaa4c6b70873
+  Traits:
+  - champion
+  TraitsLower:
+  - champion
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Glimpse of Redemption
+    Json: '{"allowDuplicate":false,"key":"GrantItem","predicate":[{"or":["class:champion","feat:champions-reaction"]}],"reevaluateOnUpdate":true,"uuid":"Compendium.pf2e.actionspf2e.Item.Glimpse
+      of Redemption"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Glimpse of Redemption
+    SourceId: 
+    DisplayName: Glimpse of Redemption
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

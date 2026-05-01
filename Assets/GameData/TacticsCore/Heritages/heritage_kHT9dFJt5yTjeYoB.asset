@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_kHT9dFJt5yTjeYoB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: kHT9dFJt5yTjeYoB
+  Slug: frozen-wind-kitsune
+  DisplayName: Frozen Wind Kitsune
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your ancestors crossed the Crown of the World or resided on snowy
+    peaks. You gain cold resistance equal to half your level (minimum 1). You treat
+    environmental cold effects as if they were one step less extreme (incredible
+    cold becomes extreme, extreme cold becomes severe, and so on). Your alternate
+    form is a common Medium humanoid ancestry prevalent where you grew up (typically
+    human), called a tailless form.
+  SourceTitle: Pathfinder Lost Omens Ancestry Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: ec1567f386e443463ede705944b76712e493cb2fc2618a9611e6eb17e92e00ab
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: Resistance
+    Path: 
+    Mode: 
+    Value: '"max(1,floor(@actor.level/2))"'
+    Uuid: 
+    Json: '{"key":"Resistance","type":"cold","value":"max(1,floor(@actor.level/2))"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.4BL5wf1VF9feC2rY
+    SourceId: 
+    Slug: kitsune
+    DisplayName: Kitsune
+  ParentAncestryAsset: {fileID: 11400000, guid: dc102657926b46045b2c6589b973e7e3, type: 2}
+  GrantedFeatures: []

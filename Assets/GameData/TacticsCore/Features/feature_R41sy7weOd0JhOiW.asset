@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_R41sy7weOd0JhOiW
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: R41sy7weOd0JhOiW
+  Slug: dragon-deviant-classification
+  DisplayName: Dragon Deviant Classification
+  IconPath: systems/pf2e/icons/spells/dragon-breath.webp
+  Description: "Deviant abilities often trace their origin to massive concentrations
+    of energy, such as being at ground zero of a detonating magical artifact. These
+    energies can linger within an individual to grant them deviations falling under
+    the dragon classification\u2014gouts of flame, electrical breath, and the like\u2014projecting
+    and absorbing it to great effect. When you gain a dragon-type deviation, choose
+    a type of damage, from cold, electricity, fire, or sonic. All abilities you gain
+    from this deviation deal this type of damage and add the corresponding trait
+    to the ability. You also use this damage type for the damage and weakness from
+    your backlash. Backlash @UUID[Compendium.pf2e.classfeatures.Item.Energetic Meltdown]
+    The same blood that lets one of the dragon-descended spit out a gout of flame
+    is precisely what keeps the inside of their mouth from being singed in the furnace.
+    Deviations, unfortunately, lack these safeguards, their powers coming from haphazard
+    circumstance and interactions rather than intentional design. A character using
+    their deviation always risks the chance of backlash. Whenever you attempt to
+    use a deviation, roll a @Check[flat|dc:5]. On a success, you use your deviation
+    and the DC for subsequent checks increases by 5, to a maximum of 20 (@Check[flat|dc:10]
+    @Check[flat|dc:15] @Check[flat|dc:20]); on a failure, you use your deviation
+    and then suffer a backlash effect, after which your flat check DC resets to 5.
+    Backlash progresses from mild, to moderate, to severe. When you have already
+    taken mild backlash in a given day, the next time you would take backlash, you
+    take the moderate backlash instead, and if you have already taken moderate backlash,
+    you take the severe backlash instead, and your deviation can't be used for the
+    rest of the day\u2014attempting to use it simply brings pain. When you make your
+    daily preparations, your flat check DC returns to 5 and your next backlash returns
+    to mild. Any effects from backlash can't be reduced, prevented, or otherwise
+    bypassed. Conditions and damage you take from backlash can't be reduced or prevented
+    by resistance or immunity, but still triggers any weakness you have to it. Dragon
+    Deviant Feats @UUID[Compendium.pf2e.feats-srd.Item.Blasting Beams] @UUID[Compendium.pf2e.feats-srd.Item.Consume
+    Energy] @UUID[Compendium.pf2e.feats-srd.Item.Storming Breath] @UUID[Compendium.pf2e.feats-srd.Item.Propulsive
+    Leap] Universal Deviant Feats @UUID[Compendium.pf2e.feats-srd.Item.Awakened Power]
+    @UUID[Compendium.pf2e.feats-srd.Item.Greater Awakened Power]"
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2667033216a34414d3dcdd91ed2e147eef174ec9a532fb4460f485f58c22a963
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":[{"label":"PF2E.TraitAcid","value":"acid"},{"label":"PF2E.TraitCold","value":"cold"},{"label":"PF2E.TraitElectricity","value":"electricity"},{"label":"PF2E.TraitFire","value":"fire"},{"label":"PF2E.TraitSonic","value":"sonic"}],"flag":"energy","key":"ChoiceSet","prompt":"PF2E.SpecificRule.DeviantAbilities.Dragon.EnergyPrompt"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.dragon.damageType
+    Mode: override
+    Value: '"{item|flags.pf2e.rulesSelections.energy}"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.deviantAbilities.dragon.damageType","value":"{item|flags.pf2e.rulesSelections.energy}"}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices
+    Mode: override
+    Value: '{"greater":[],"lesser":[]}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"flags.pf2e.deviantAbilities.awakenedChoices","priority":10,"value":{"greater":[],"lesser":[]}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.lesser
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsLine","predicate":[{"not":"awakening:blasting-beams:line"},"feat:blasting-beams"],"value":"blasting-beams:line"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.lesser","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsLine","predicate":[{"not":"awakening:blasting-beams:line"},"feat:blasting-beams"],"value":"blasting-beams:line"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.lesser
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsAgile","predicate":[{"not":"awakening:blasting-beams:agile"},"feat:blasting-beams"],"value":"blasting-beams:agile"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.lesser","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsAgile","predicate":[{"not":"awakening:blasting-beams:agile"},"feat:blasting-beams"],"value":"blasting-beams:agile"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsLine","predicate":[{"not":"awakening:blasting-beams:line"},"feat:blasting-beams"],"value":"blasting-beams:line"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsLine","predicate":[{"not":"awakening:blasting-beams:line"},"feat:blasting-beams"],"value":"blasting-beams:line"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsAgile","predicate":[{"not":"awakening:blasting-beams:agile"},"feat:blasting-beams"],"value":"blasting-beams:agile"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.BlastingBeamsAgile","predicate":[{"not":"awakening:blasting-beams:agile"},"feat:blasting-beams"],"value":"blasting-beams:agile"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.lesser
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyRange","predicate":[{"not":"awakening:consume-energy:range"},"feat:consume-energy"],"value":"consume-energy:range"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.lesser","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyRange","predicate":[{"not":"awakening:consume-energy:range"},"feat:consume-energy"],"value":"consume-energy:range"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.lesser
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyStrikes","predicate":[{"not":"awakening:consume-energy:strikes"},"feat:consume-energy"],"value":"consume-energy:strikes"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.lesser","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyStrikes","predicate":[{"not":"awakening:consume-energy:strikes"},"feat:consume-energy"],"value":"consume-energy:strikes"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyRange","predicate":[{"not":"awakening:consume-energy:range"},"feat:consume-energy"],"value":"consume-energy:range"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyRange","predicate":[{"not":"awakening:consume-energy:range"},"feat:consume-energy"],"value":"consume-energy:range"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyStrikes","predicate":[{"not":"awakening:consume-energy:strikes"},"feat:consume-energy"],"value":"consume-energy:strikes"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.ConsumeEnergyStrikes","predicate":[{"not":"awakening:consume-energy:strikes"},"feat:consume-energy"],"value":"consume-energy:strikes"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.StormingBreathProne","predicate":[{"not":"awakening:storming-breath:prone"},"feat:storming-breath"],"value":"storming-breath:prone"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.StormingBreathProne","predicate":[{"not":"awakening:storming-breath:prone"},"feat:storming-breath"],"value":"storming-breath:prone"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.StormingBreathEscape","predicate":[{"not":"awakening:storming-breath:escape"},"feat:storming-breath"],"value":"storming-breath:escape"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.StormingBreathEscape","predicate":[{"not":"awakening:storming-breath:escape"},"feat:storming-breath"],"value":"storming-breath:escape"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.PropulsiveLeapSpeed","predicate":[{"not":"awakening:propulsive-leap:speed"},"feat:propulsive-leap"],"value":"propulsive-leap:speed"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.PropulsiveLeapSpeed","predicate":[{"not":"awakening:propulsive-leap:speed"},"feat:propulsive-leap"],"value":"propulsive-leap:speed"}}'
+  - Key: ActiveEffectLike
+    Path: flags.pf2e.deviantAbilities.awakenedChoices.greater
+    Mode: add
+    Value: '{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.PropulsiveLeapWeapon","predicate":[{"not":"awakening:propulsive-leap:weapon"},"feat:propulsive-leap"],"value":"propulsive-leap:weapon"}'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"add","path":"flags.pf2e.deviantAbilities.awakenedChoices.greater","value":{"label":"PF2E.SpecificRule.DeviantAbilities.AwakenedPower.PropulsiveLeapWeapon","predicate":[{"not":"awakening:propulsive-leap:weapon"},"feat:propulsive-leap"],"value":"propulsive-leap:weapon"}}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.classfeatures.Item.Energetic Meltdown
+    Json: '{"allowDuplicate":false,"key":"GrantItem","uuid":"Compendium.pf2e.classfeatures.Item.Energetic
+      Meltdown"}'
+  - Key: SpecialStatistic
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"extends":"class-spell","key":"SpecialStatistic","label":"PF2E.SpecificRule.DeviantAbilities.Label","slug":"deviant","type":"attack-roll"}'
+  Category: 2
+  Level: 0
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Energetic Meltdown
+    SourceId: 
+    DisplayName: Energetic Meltdown
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

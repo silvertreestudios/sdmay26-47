@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_N03BtRvjX9TeHRa4
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: N03BtRvjX9TeHRa4
+  Slug: warrior
+  DisplayName: Warrior
+  IconPath: icons/equipment/head/helm-spangen-horned-worn.webp
+  Description: 'The battlefield is your stage, the clang of steel, your song. Your
+    muse has seen countless battles, whether reveling in combat or resigned to its
+    necessity. An individual soldier or general might inspire you, but so might a
+    battlefield or weapon with a particularly profound history. If your muse is a
+    creature, it might be an otherworldly soldier, such as an archon or devil soldier.
+    If it''s a deity, it might be Gorum. Art inspired by a warrior muse is triumphant
+    and strident, often detailing epic battles. As a bard with a warrior muse, you
+    train for battle in addition to performance, and you prepare your allies for
+    the dangers of combat. You might even wade into the thick of things with them.
+    Muse Feat @UUID[Compendium.pf2e.feats-srd.Item.Martial Performance] Muse Spell
+    @UUID[Compendium.pf2e.spells-srd.Item.Fear]'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9038ff508cdc20437120648deff78e4ebed3efec2d4be63ca3041e0c6bea406b
+  Traits:
+  - bard
+  TraitsLower:
+  - bard
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Martial Performance
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Martial Performance"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Martial Performance
+    SourceId: 
+    DisplayName: Martial Performance
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

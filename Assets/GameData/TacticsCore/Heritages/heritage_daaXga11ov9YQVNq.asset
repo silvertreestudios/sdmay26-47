@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_daaXga11ov9YQVNq
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: daaXga11ov9YQVNq
+  Slug: polychromatic-anadi
+  DisplayName: Polychromatic Anadi
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: 'Your body is covered with exceptionally colorful hairs that create
+    vibrant, eye-catching patterns, some of which might even show in your human form.
+    You become trained in Performance (or another skill if you were already trained
+    in Performance), and you gain the @UUID[Compendium.pf2e.feats-srd.Item.Impressive
+    Performance] feat. Note: If you are already trained in the skill provided by
+    this feat, you need to manually select an alternative skill.'
+  SourceTitle: Pathfinder Lost Omens The Mwangi Expanse
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 1b8e9a6f05cc71206ccdb33f2c193f85273ed960daf4662c5682a8b0d2483b21
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.performance.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.performance.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Impressive Performance
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Impressive Performance"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.TQEqWqc7BYiadUdY
+    SourceId: 
+    Slug: anadi
+    DisplayName: Anadi
+  ParentAncestryAsset: {fileID: 11400000, guid: 31b1e69965ce06c4dbcc3db72b86dd27, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Impressive Performance
+    SourceId: 
+    DisplayName: Impressive Performance
+    Level: 0
+    ResolvedFeature: {fileID: 0}

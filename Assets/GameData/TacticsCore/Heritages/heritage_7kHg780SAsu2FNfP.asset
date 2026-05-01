@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_7kHg780SAsu2FNfP
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: 7kHg780SAsu2FNfP
+  Slug: stuffed-poppet
+  DisplayName: Stuffed Poppet
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: You have little inside you other than cotton, sawdust, or dried leaves.
+    You take no damage from falling, regardless of the distance you fall.
+  SourceTitle: Pathfinder Lost Omens The Grand Bazaar
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 721ddacd927c4c5b3fb2fc0d1611238f07a84631c14dce1763ced594008d26f0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.6F2fSFC1Eo1JdpY4
+    SourceId: 
+    Slug: poppet
+    DisplayName: Poppet
+  ParentAncestryAsset: {fileID: 11400000, guid: 7e74619f4ea4ced419084d304988ab03, type: 2}
+  GrantedFeatures: []

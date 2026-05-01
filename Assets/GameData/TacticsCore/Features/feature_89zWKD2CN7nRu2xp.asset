@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_89zWKD2CN7nRu2xp
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 89zWKD2CN7nRu2xp
+  Slug: experimental-spellshaping
+  DisplayName: Experimental Spellshaping
+  IconPath: icons/sundries/scrolls/scroll-runed-brown-purple.webp
+  Description: Your thesis posits that the magical practice of spellshaping can be
+    realized more efficiently by altering variables and parameters as you cast, imitating
+    the wizards of long ago who had to work out their own spells themselves. This
+    allows you efficient access to various spellshape effects. You gain one 1st-level
+    spellshape wizard feat of your choice. Starting at 4th level, during your daily
+    preparations, you can gain a spellshape wizard feat of your choice that has a
+    level requirement of no more than half your level, which you can use until your
+    next daily preparations.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8ec9c4d4fad1f7619b203adbe0704e98400534cbf41fa0550eaf6a83e1a027b3
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:1","item:type:feat","item:trait:spellshape","item:trait:wizard"]},"flag":"feat","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Wizard.Spellshape1.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.feat}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.feat}"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.feat}'
+    SourceId: 
+    DisplayName: feat}
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_7IrOApgShgnmp1A5
+  m_EditorClassIdentifier: 
+  SourceId: 7IrOApgShgnmp1A5
+  Slug: rigger
+  DisplayName: Rigger
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've worked as a roustabout to erect tents and set up rigging for
+    acrobatic performances; you've sometimes even aided aerialists and acrobats in
+    their death-defying training. Even though your work is often done before the
+    crowds arrive, you know your skills contribute to the success and safety of the
+    circus. Mistress Dusklight treats her roustabouts as little more than slaves,
+    and you've resolved to join a company where your expertise is appreciated. Choose
+    two attribute boosts. One must be to Strength or Dexterity , and one is a free
+    attribute boost. You're trained in the Athletics skill and the Circus Lore skill.
+    You gain the @UUID[Compendium.pf2e.feats-srd.Item.Combat Climber] skill feat.
+  SourceTitle: Pathfinder Extinction Curse Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 0b4135136b60c73c590e372586b4116cc9bafdac1eedeb9fc184f25b2ab25dcb
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 3
+    CustomSkillId: athletics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Circus Lore
+    Rank: 1
+  LoreSkills:
+  - Circus Lore
+  GrantedFeats:
+  - SourceKey: zp5gh
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Combat Climber
+    SourceId: 
+    DisplayName: Combat Climber
+    Level: 1
+    ResolvedFeature: {fileID: 0}

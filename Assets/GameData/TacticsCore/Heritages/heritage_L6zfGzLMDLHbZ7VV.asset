@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_L6zfGzLMDLHbZ7VV
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: L6zfGzLMDLHbZ7VV
+  Slug: fruit-leshy
+  DisplayName: Fruit Leshy
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: Your body continually produces small fruits imbued with primal magic.
+    At dawn each day, a new fruit ripens. You or an ally can remove this fruit as
+    an Interact action. If a living creature that can derive sustenance from fruit
+    consumes it as an Interact action within the next hour, they regain @Damage[(ceil(@actor.level/2))d8[vitality,healing]|shortLabel]
+    Hit Points, plus an additional 1d8 Hit Points for every 2 of your levels beyond
+    1st. This effect has the healing and vitality traits.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 6a06f8ef212fbe57ddfd35b03945c1bb5f877c2d5fbb375b73398f6871505d68
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.cdhgByGG1WtuaK73
+    SourceId: 
+    Slug: leshy
+    DisplayName: Leshy
+  ParentAncestryAsset: {fileID: 11400000, guid: 2c3ed83876c3e8f42b39718765568df8, type: 2}
+  GrantedFeatures: []

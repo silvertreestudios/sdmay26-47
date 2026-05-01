@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_KHMEcCCG132ILkuU
+  m_EditorClassIdentifier: 
+  SourceId: KHMEcCCG132ILkuU
+  Slug: starless-one
+  DisplayName: Starless One
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were born on a night when not a single star was in the night sky.
+    While this is likely due to a haze, cloud cover, or other natural phenomena,
+    there is always a chance that the stars hid from you on purpose. You have never
+    been able to rely on the stars to guide you and you choose to exert your own
+    will on your fortune rather than rely on the heavens. You've learned to reject
+    outside influence on your fate, maintaining control of your own destiny. Choose
+    two attribute boosts. One must be to Wisdom or Charisma, and one is a free attribute
+    boost. You're trained in Occultism and Astrology Lore. You also gain the @UUID[Compendium.pf2e.actionspf2e.Item.Reclaim
+    Destiny] action.
+  SourceTitle: Pathfinder Lost Omens Travel Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 2ceee86815fc075885248755b554d19f214f7199525d94166ad32f047d1c63c7
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Reclaim Destiny
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.actionspf2e.Item.Reclaim Destiny"}'
+  AttributeBoosts:
+  - Options: 0600000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Astrology Lore
+    Rank: 1
+  LoreSkills:
+  - Astrology Lore
+  GrantedFeats: []

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ZYAn8X0IjA6i38qU
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ZYAn8X0IjA6i38qU
+  Slug: fungal-rot
+  DisplayName: Fungal Rot
+  IconPath: icons/magic/nature/root-vine-thorned-fire-purple.webp
+  Description: 'As you use your powers, radioactive molds and fungi consume your
+    flesh, making you look (and feel) like a rotting, walking corpse. @UUID[Compendium.pf2e.feat-effects.Item.Effect:
+    Fungal Rot] Mild Backlash You take damage equal to your level as your body decays.
+    Moderate Backlash You take damage equal to your level and become Sickened 2.
+    Severe Backlash You take damage equal to twice your level and become Sickened
+    4. You can''t reduce the value of your sickened condition below 1 for 1 hour.'
+  SourceTitle: 'Pathfinder #202: Severed at the Root'
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: d513aa7ec4bdb5591e19020559fe566b016c7da4ac0632e11bfef711d8751eb6
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  Category: 2
+  Level: 0
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

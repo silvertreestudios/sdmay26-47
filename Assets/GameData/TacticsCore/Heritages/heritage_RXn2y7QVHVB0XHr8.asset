@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_RXn2y7QVHVB0XHr8
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: RXn2y7QVHVB0XHr8
+  Slug: born-of-elements
+  DisplayName: Born of Elements
+  IconPath: systems/pf2e/icons/default-icons/heritage.svg
+  Description: "You were an aspect of nature\u2014the rain, the wind, a ray of light\u2014until
+    the wild essences gave you a soul. Due to your natural connection, the tradition
+    of any spells or magical abilities you gain from a yaoguai heritage or ancestry
+    feat is primal instead of its normal tradition (usually occult). Humanoid Form
+    You remain attuned to the natural world. You gain a +1 circumstance bonus to
+    Survival checks to @UUID[Compendium.pf2e.actionspf2e.Item.Sense Direction], and
+    you don't take a penalty if you don't have a compass. Yaoguai Form The power
+    of nature flows through you, ready to lash out. Choose @UUID[Compendium.pf2e.spells-srd.Item.Electric
+    Arc], @UUID[Compendium.pf2e.spells-srd.Item.Frostbite], @UUID[Compendium.pf2e.spells-srd.Item.Ignition],
+    @UUID[Compendium.pf2e.spells-srd.Item.Needle Darts], @UUID[Compendium.pf2e.spells-srd.Item.Timber],
+    @UUID[Compendium.pf2e.spells-srd.Item.Scatter Scree], @UUID[Compendium.pf2e.spells-srd.Item.Slashing
+    Gust], or @UUID[Compendium.pf2e.spells-srd.Item.Spout]. You can cast this spell
+    as an innate primal cantrip at will. A cantrip is heightened to a spell rank
+    equal to half your level rounded up."
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: e53fa83320f5806fef9c583665bd1e40db08e05668c2c63ae5231ee6a5ca1703
+  Traits:
+  - yaoguai
+  TraitsLower:
+  - yaoguai
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":[{"or":["item:slug:electric-arc","item:slug:frostbite","item:slug:ignition","item:slug:needle-darts","item:slug:timber","item:slug:scatter-scree","item:slug:slashing-gust","item:slug:spout"]}],"itemType":"spell","slugsAsValues":true},"flag":"cantrip","key":"ChoiceSet","prompt":"PF2E.SpecificRule.Prompt.Cantrip","rollOption":"born-of-elements"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:{item|flags.pf2e.rulesSelections.cantrip}","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"ancestral-spell:yaoguai"'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["item:slug:{item|flags.pf2e.rulesSelections.cantrip}","spellcasting:innate"],"property":"other-tags","value":"ancestral-spell:yaoguai"}'
+  - Key: FlatModifier
+    Path: 
+    Mode: 
+    Value: 1
+    Uuid: 
+    Json: '{"key":"FlatModifier","predicate":["action:sense-direction","change-shape:humanoid"],"selector":"survival","type":"circumstance","value":1}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"skill-check","key":"RollOption","option":"compass-in-possession"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.dnk0Rf7AUmyR5b8z
+    SourceId: 
+    Slug: yaoguai
+    DisplayName: Yaoguai
+  ParentAncestryAsset: {fileID: 11400000, guid: 046de30a5ff25694fa6fbcb820177564, type: 2}
+  GrantedFeatures: []

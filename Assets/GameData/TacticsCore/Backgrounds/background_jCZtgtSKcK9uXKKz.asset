@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_jCZtgtSKcK9uXKKz
+  m_EditorClassIdentifier: 
+  SourceId: jCZtgtSKcK9uXKKz
+  Slug: warded-by-kami
+  DisplayName: Warded by Kami
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You've lived among kami, gaining a wellspring of spiritual power found
+    deep within the Forest of Spirits. You've heard many rumors of what lies beyond
+    the safety of your home and, for better or worse, they intrigue you. Whatever
+    your reasons for leaving, you're still bound to whatever entity serves as your
+    ward. Whether you return to the place of your birth or find a new land to call
+    home is up to you. Choose two attribute boosts. One must be to Intelligence or
+    Wisdom , and one is a free attribute boost. You're trained in Occultism and Spirit
+    Lore. You also gain a ward that binds you to a specific animal, plant, object,
+    or location of your choice. Once per day, you can spend an Interact action to
+    merge with your ward and heal Hit Points equal to your level. This action has
+    the healing trait.
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 18f739280501c87a619e9196d99483671618ff2f83f9599fde0ad0b3b751c4d9
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Spirit Lore
+    Rank: 1
+  LoreSkills:
+  - Spirit Lore
+  GrantedFeats: []

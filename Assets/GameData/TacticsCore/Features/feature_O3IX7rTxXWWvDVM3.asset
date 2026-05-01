@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_O3IX7rTxXWWvDVM3
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: O3IX7rTxXWWvDVM3
+  Slug: forensic-medicine-methodology
+  DisplayName: Forensic Medicine Methodology
+  IconPath: systems/pf2e/icons/features/classes/forensic-medicine-methodology.webp
+  Description: You've learned that in most cases, especially murders, criminals tend
+    to leave more evidence of the crime on the body than they'd like to believe.
+    Information from bruising, bone fractures, blood spatters, and even the life
+    cycle of carrion insects can provide valuable clues that help reconstruct the
+    scene. You're trained in Medicine and gain the @UUID[Compendium.pf2e.feats-srd.Item.Forensic
+    Acumen] and @UUID[Compendium.pf2e.feats-srd.Item.Battle Medicine] skill feats.
+    When you use Battle Medicine, on a success the target recovers additional Hit
+    Points equal to your level, and the target becomes temporarily immune for only
+    1 hour, not 1 day
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 8c53d1219c3847e55d87f95b0371b27d905df08466a6e2aee506c2cbc1b33a1e
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.medicine.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.medicine.rank","value":1}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Forensic Acumen
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Forensic Acumen"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    Json: '{"key":"GrantItem","uuid":"Compendium.pf2e.feats-srd.Item.Battle Medicine"}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Forensic Acumen
+    SourceId: 
+    DisplayName: Forensic Acumen
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Battle Medicine
+    SourceId: 
+    DisplayName: Battle Medicine
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

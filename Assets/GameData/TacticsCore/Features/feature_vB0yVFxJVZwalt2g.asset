@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_vB0yVFxJVZwalt2g
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: vB0yVFxJVZwalt2g
+  Slug: way-of-the-vanguard
+  DisplayName: Way of the Vanguard
+  IconPath: systems/pf2e/icons/features/classes/way-of-the-vanguard.webp
+  Description: You practice a unique combat style originated by dwarven siege engineers,
+    using heavy weapons with wide attack areas to blast holes through enemy lines,
+    clear an opening for your allies, and defend the conquered territory. Slinger's
+    Reload @UUID[Compendium.pf2e.actionspf2e.Item.Clear a Path] Deeds Initial @UUID[Compendium.pf2e.actionspf2e.Item.Living
+    Fortification]; Advanced @UUID[Compendium.pf2e.actionspf2e.Item.Spinning Crush];
+    Greater @UUID[Compendium.pf2e.actionspf2e.Item.Siegebreaker] Way Skill Athletics
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: e1a6e29de940f4ebdf7e99571fcb8d5fcd9f3cda1bf0c0bd8ab6724ba993c3dc
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Clear a Path
+    Json: '{"key":"GrantItem","predicate":["class:gunslinger"],"uuid":"Compendium.pf2e.actionspf2e.Item.Clear
+      a Path"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.actionspf2e.Item.Living Fortification
+    Json: '{"key":"GrantItem","predicate":["class:gunslinger"],"uuid":"Compendium.pf2e.actionspf2e.Item.Living
+      Fortification"}'
+  - Key: ActiveEffectLike
+    Path: system.skills.athletics.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.athletics.rank","value":1}'
+  Category: 2
+  Level: 1
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Clear a Path
+    SourceId: 
+    DisplayName: Clear a Path
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 
+    SourceUuid: Compendium.pf2e.actionspf2e.Item.Living Fortification
+    SourceId: 
+    DisplayName: Living Fortification
+    Level: 0
+    ResolvedFeature: {fileID: 0}
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

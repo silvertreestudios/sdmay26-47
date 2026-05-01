@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_csrF8UOWPl1rr6st
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: csrF8UOWPl1rr6st
+  Slug: crafter-in-the-vault
+  DisplayName: Crafter in the Vault
+  IconPath: icons/skills/trades/smithing-anvil-silver-red.webp
+  Description: 'Crafters in the vault are found in dungeons, forges, or other places
+    where creation and injury occur concurrently. They enjoy partnering with animists
+    who compliment them on their creations, but often become jealous when anyone
+    else intrudes on their expertise, including casting any of the spells that appear
+    on their apparition list. Apparition Skills Architecture Lore, Engineering Lore
+    Apparition Spells Cantrip @UUID[Compendium.pf2e.spells-srd.Item.Sigil] 1st @UUID[Compendium.pf2e.spells-srd.Item.Mending]
+    2nd @UUID[Compendium.pf2e.spells-srd.Item.Knock] 3rd @UUID[Compendium.pf2e.spells-srd.Item.Ghostly
+    Weapon] 4th @UUID[Compendium.pf2e.spells-srd.Item.Creation] 5th @UUID[Compendium.pf2e.spells-srd.Item.Impaling
+    Spike] 6th @UUID[Compendium.pf2e.spells-srd.Item.Wall of Metal] 7th @UUID[Compendium.pf2e.spells-srd.Item.Beheading
+    Buzz Saw] 8th @UUID[Compendium.pf2e.spells-srd.Item.Ferrous Form] 9th @UUID[Compendium.pf2e.spells-srd.Item.Resplendent
+    Mansion] Vessel Spell @UUID[Compendium.pf2e.spells-srd.Item.Traveling Workshop]
+    Avatar Incarnate Dungeon Speed 50 feet, either burrow Speed 50 feet or fly Speed
+    50 feet Melee 1 dungeon trap (reach 10 feet, versatile B or P), Damage @Damage[(6d6+6)[slashing]]
+    plus Grab Ranged 1 deadly darts (range 120 feet, versatile poison), Damage @Damage[(6d6+6)[piercing]]'
+  SourceTitle: Pathfinder War of Immortals
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 6aa532cab34b68511122fe29dbfccdc2b51e0e9375e07384d97ada25223025b5
+  Traits:
+  - animist
+  TraitsLower:
+  - animist
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

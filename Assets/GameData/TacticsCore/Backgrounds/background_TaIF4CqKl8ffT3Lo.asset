@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_TaIF4CqKl8ffT3Lo
+  m_EditorClassIdentifier: 
+  SourceId: TaIF4CqKl8ffT3Lo
+  Slug: blight-survivor
+  DisplayName: Blight Survivor
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Centuries ago, the elven witch Silisifex played an important role
+    in the fight against Treerazer. With her deep knowledge, power over primal magic,
+    and abiding faith in Calistria, she was one of the first elves to directly fight
+    against the encroaching fiendish blight that was Tanglebriar. Her discoveries,
+    teachings, and lore have continued to protect and inspire elves to this very
+    day, centuries after she vanished mysteriously on a mission into Tanglebriar
+    back in 3050 ar. Whether you're a primal spellcaster or merely someone whose
+    life was impacted by Tanglebriar's blight, Silisifex's discoveries and methods
+    for combating the demonic corruption of nature has benefited you significantly
+    over the course of your life and may even have saved you from being corrupted
+    yourself. Alternately, you could have had close friends or family members who
+    became corrupted only to have been restored before that corruption could become
+    permanent. Many have succumbed to the influence of Tanglebriar over the ages,
+    but you count yourself as one of the survivors of this corruption. Using your
+    hard-earned experience to help others survive their encounter with the blight
+    has, in part, defined your role in Kyonin or abroad. Choose two attribute boosts.
+    One must be to Constitution or Wisdom , and one is a free attribute boost. You're
+    trained in the Nature skill and the Fungus Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Natural
+    Medicine] skill feat. In addition, once you're 4th level, you gain the ability
+    to cast @UUID[Compendium.pf2e.spells-srd.Item.Cleanse Affliction] as an innate
+    primal spell once per day. This spell automatically heightens to a rank equal
+    to half your level, rounded up. If you're cleansing an affliction with the fungus
+    trait, you gain a +4 status bonus to your counteract check.
+  SourceTitle: Pathfinder Spore War Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: d24e2db5c26090af44649e821b46f452ac8bdacf159fabe3392d8e17203f9efd
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Fungus Lore
+    Rank: 1
+  LoreSkills:
+  - Fungus Lore
+  GrantedFeats:
+  - SourceKey: cwbBi
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Natural Medicine
+    SourceId: 
+    DisplayName: Natural Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

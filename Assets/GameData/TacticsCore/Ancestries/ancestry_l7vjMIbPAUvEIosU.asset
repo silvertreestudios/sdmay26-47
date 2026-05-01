@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7ac86ed706f040a87fa9a64965a9d, type: 3}
+  m_Name: ancestry_l7vjMIbPAUvEIosU
+  m_EditorClassIdentifier: 
+  SourceId: l7vjMIbPAUvEIosU
+  Slug: samsaran
+  DisplayName: Samsaran
+  IconPath: systems/pf2e/icons/default-icons/ancestry.svg
+  Description: Samsarans, as the tale goes, originated with a group of scholars in
+    Zi Ha who ventured into the mountains to find the cure for an illness ravaging
+    their village. After weeks of peril, they found a freshwater spring filled with
+    pure magical life essence. This water brought the scholars back from the brink
+    of death and cured the villagers. Given a new chance at life, everyone who drank
+    the water devoted the rest of their life to learning and experiencing the world
+    fully. Upon death, this devotion, combined with the magical essence now infused
+    in their bodies, transformed these people into the first samsarans. Samsaran
+  SourceTitle: Pathfinder Lost Omens Tian Xia Character Guide
+  SourcePack: ancestries
+  Rarity: uncommon
+  SourceJsonHash: 3e955f1654fc03aef83efef6e3dfc66fa08dabbcdf173f734257dc0c1db46c96
+  Traits:
+  - humanoid
+  - samsaran
+  TraitsLower:
+  - humanoid
+  - samsaran
+  RawRules: []
+  HitPoints: 8
+  Speed: 25
+  Reach: 5
+  Size: 2
+  Sense: 1
+  CustomSense: low-light-vision
+  AttributeBoosts:
+  - Options: 03000000
+  - Options: 05000000
+  - Options: 00000000
+  AttributeFlaws:
+  - Options: 06000000
+  StartingLanguages:
+  - Id: common
+    DisplayName: Common
+  - Id: samsaran
+    DisplayName: Samsaran
+  AdditionalLanguageOptions:
+  - Id: chthonian
+    DisplayName: Chthonian
+  - Id: empyrean
+    DisplayName: Empyrean
+  - Id: jotun
+    DisplayName: Jotun
+  - Id: petran
+    DisplayName: Petran
+  - Id: pyric
+    DisplayName: Pyric
+  - Id: sussuran
+    DisplayName: Sussuran
+  - Id: thalassic
+    DisplayName: Thalassic
+  - Id: diabolic
+    DisplayName: Diabolic
+  - Id: draconic
+    DisplayName: Draconic
+  AdditionalLanguageCount: 0
+  GrantedFeatures:
+  - SourceKey: Be6lQ
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Cryptomnesia
+    SourceId: 
+    DisplayName: Cryptomnesia
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: xYhuY
+    SourceUuid: Compendium.pf2e.ancestryfeatures.Item.Wanderer's Soul
+    SourceId: 
+    DisplayName: Wanderer's Soul
+    Level: 1
+    ResolvedFeature: {fileID: 0}
+  Heritages:
+  - {fileID: 11400000, guid: 50820303bd0c1754d97115ad1ad673f9, type: 2}
+  - {fileID: 11400000, guid: cddf8ffff12556b47a1f81dd3969f2f3, type: 2}
+  - {fileID: 11400000, guid: 9448a8266f358a4468f66c507c3af9d3, type: 2}
+  - {fileID: 11400000, guid: 00afa61b300d31449a8263e906545e67, type: 2}
+  - {fileID: 11400000, guid: b76a94a0288aac740ba664c7c689c8ba, type: 2}

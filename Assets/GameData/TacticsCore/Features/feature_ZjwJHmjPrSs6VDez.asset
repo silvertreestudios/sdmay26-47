@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ZjwJHmjPrSs6VDez
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ZjwJHmjPrSs6VDez
+  Slug: archwizard-s-spellcraft
+  DisplayName: Archwizard's Spellcraft
+  IconPath: icons/sundries/books/book-eye-purple.webp
+  Description: You command the most potent arcane magic and can cast a spell of truly
+    incredible power. You gain a single 10th-rank spell slot and can prepare a spell
+    in that slot using wizard spellcasting. Unlike with other spell slots, you can't
+    use 10th-rank slots with abilities that give you more spell slots or that let
+    you cast spells without expending spell slots. You don't gain more 10th-rank
+    spells as you level up, but you can take the @UUID[Compendium.pf2e.feats-srd.Item.Archwizard's
+    Might] feat to gain a second slot.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: c355ee884f2fb8b595848e4068e1b49257a0bee4a6ee3352a5394e35fcc6e61f
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 19
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

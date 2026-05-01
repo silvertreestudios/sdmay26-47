@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Wpdeh6EkcAKA60oH
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Wpdeh6EkcAKA60oH
+  Slug: stubborn
+  DisplayName: Stubborn
+  IconPath: icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp
+  Description: You don't like being told what to do, and you don't give up. Your
+    proficiency rank for Will saves increases to expert. When you fail, but don't
+    critically fail, a Will save against an effect that would give you the controlled
+    condition, you can attempt a second save against the effect at the start of your
+    next turn. On a successful second save, the controlled condition ends, though
+    any other effects remain. As normal, failing this second save doesn't allow you
+    to attempt a third save on the subsequent turn.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 06f711267825150d6c36dc5f497218cce173c4f3e4fca8710478e2bffb37872c
+  Traits:
+  - gunslinger
+  TraitsLower:
+  - gunslinger
+  RawRules: []
+  Category: 2
+  Level: 3
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: will
+    Rank: 2
+  FocusPointDelta: 0

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_CjNA8ippwoAvpxeI
+  m_EditorClassIdentifier: 
+  SourceId: CjNA8ippwoAvpxeI
+  Slug: ozem-experience
+  DisplayName: Ozem Experience
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You or someone close to you worked with the Knights of Ozem before
+    Lastwall fell. In addition to knowledge of the organization's tenets and goals,
+    you have germane understanding of the order's history. You believe there are
+    valuable lessons in the Knights of Ozem's exploits. Choose two attribute boosts.
+    One must be to Strength or Intelligence , and one is a free attribute boost.
+    You're trained in the Society skill and the Warfare Lore skill. You gain the
+    @UUID[Compendium.pf2e.feats-srd.Item.Courtly Graces] skill feat.
+  SourceTitle: Pathfinder Lost Omens Knights of Lastwall
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 6d4da1a2c001430b516fbb0f86c2495333e67080863765a9a585b40585d5d4c0
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0400000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 14
+    CustomSkillId: society
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Warfare
+    Rank: 1
+  LoreSkills:
+  - Warfare
+  GrantedFeats:
+  - SourceKey: 7erl2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Courtly Graces
+    SourceId: 
+    DisplayName: Courtly Graces
+    Level: 1
+    ResolvedFeature: {fileID: 0}

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_R1v4gUu8oRMoOASM
+  m_EditorClassIdentifier: 
+  SourceId: R1v4gUu8oRMoOASM
+  Slug: wildwood-local
+  DisplayName: Wildwood Local
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Prerequisite Region - Shining Kingdoms You might have been born and
+    raised among the druids of the Verduran Forest, or you may have spent time among
+    them as an adult and come to know their ways. Choose two attribute boosts. One
+    must be to Dexterity or Wisdom , and one is a free attribute boost. You're trained
+    in the Nature skill as well as the Forest Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Natural
+    Medicine] skill feat.
+  SourceTitle: Pathfinder Lost Omens World Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 3ae51d5e2b0d6498a3a928670ccf73697a36d1fa9139121b11e48946021d9208
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Forest Lore
+    Rank: 1
+  LoreSkills:
+  - Forest Lore
+  GrantedFeats:
+  - SourceKey: zmomz
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Natural Medicine
+    SourceId: 
+    DisplayName: Natural Medicine
+    Level: 1
+    ResolvedFeature: {fileID: 0}

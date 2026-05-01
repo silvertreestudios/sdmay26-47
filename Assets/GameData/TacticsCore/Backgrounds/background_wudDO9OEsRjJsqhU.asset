@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_wudDO9OEsRjJsqhU
+  m_EditorClassIdentifier: 
+  SourceId: wudDO9OEsRjJsqhU
+  Slug: barber
+  DisplayName: Barber
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Haircuts, dentistry, bloodletting, and surgery\u2014if it takes a
+    steady hand and a razor, you can do it. You may have taken to the road to expand
+    your skills or test yourself against a world that leaves your patients so battered
+    and bruised. Choose two attribute boosts. One must be to Dexterity or Wisdom
+    , and one is a free attribute boost. You're trained in the Medicine skill and
+    the Surgery Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Risky
+    Surgery] skill feat."
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a1ba83c7bdfbb8151b64e71340af2188f12f27bd4c66ec711befe721990dda7b
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0200000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 9
+    CustomSkillId: medicine
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Surgery Lore
+    Rank: 1
+  LoreSkills:
+  - Surgery Lore
+  GrantedFeats:
+  - SourceKey: ph05m
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Risky Surgery
+    SourceId: 
+    DisplayName: Risky Surgery
+    Level: 1
+    ResolvedFeature: {fileID: 0}

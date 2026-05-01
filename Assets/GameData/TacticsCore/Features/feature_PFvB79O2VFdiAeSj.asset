@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_PFvB79O2VFdiAeSj
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: PFvB79O2VFdiAeSj
+  Slug: investigator-expertise
+  DisplayName: Investigator Expertise
+  IconPath: icons/commodities/treasure/medal-ribbon-gold-blue.webp
+  Description: You've refined your investigative techniques to an exceptional degree.
+    Your circumstance bonus from @UUID[Compendium.pf2e.actionspf2e.Item.Pursue a
+    Lead] increases to +2. Your proficiency rank for your investigator class DC increases
+    to expert.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 3982a289836731b4ef9f74a8f2ad0363d5f4e71d82ace31e699ae3e8180cd3f5
+  Traits:
+  - investigator
+  TraitsLower:
+  - investigator
+  RawRules:
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '"investigator-expertise"'
+    Uuid: 
+    Json: '{"itemType":"action","key":"ItemAlteration","mode":"add","predicate":["item:slug:clue-in"],"property":"other-tags","value":"investigator-expertise"}'
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","selectors":["perception","skill-check","saving-throw"],"slug":"pursue-a-lead","value":2}'
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: investigator
+    Rank: 2
+  FocusPointDelta: 0

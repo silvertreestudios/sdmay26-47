@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Data.PF2e;
-using PathfinderTactics.Grid;
+using TacticsGame.Characters;
+using TacticsGame.Data.TacticsRuleset;
+using TacticsGame.Grid;
 using UnityEngine;
 
-namespace PathfinderTactics.Reactions
+namespace TacticsGame.Reactions
 {
     public abstract class GameEvent
     {

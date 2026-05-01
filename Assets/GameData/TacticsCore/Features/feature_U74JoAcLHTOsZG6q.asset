@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_U74JoAcLHTOsZG6q
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: U74JoAcLHTOsZG6q
+  Slug: swashbuckler-expertise
+  DisplayName: Swashbuckler Expertise
+  IconPath: systems/pf2e/icons/features/classes/swashbuckler-expertise.webp
+  Description: You perform swashbuckling techniques with exceptional flair, making
+    them harder to resist. Your circumstance bonus from Stylish Combatant increases
+    to +2. Your proficiency rank for your swashbuckler class DC increases to expert.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 045f3218bc8ae5b6b1873ec628f9ed41f8d3681e18120a557d40567ee22c3e45
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: AdjustModifier
+    Path: 
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"AdjustModifier","mode":"upgrade","selector":"skill-check","slug":"stylish-combatant-skill","value":2}'
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: swashbuckler
+    Rank: 2
+  FocusPointDelta: 0

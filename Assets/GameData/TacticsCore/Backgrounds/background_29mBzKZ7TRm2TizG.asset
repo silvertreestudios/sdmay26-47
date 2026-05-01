@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_29mBzKZ7TRm2TizG
+  m_EditorClassIdentifier: 
+  SourceId: 29mBzKZ7TRm2TizG
+  Slug: dendrologist
+  DisplayName: Dendrologist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Trees grow in every biome, and your awe at their ability to conquer
+    terrain has inspired deeper study into their workings. There are trees everywhere,
+    and your study of them will inevitably take you ever further afield in search
+    of new varieties, perhaps even to the Plane of Wood itself. Choose two attribute
+    boosts. One must be to Intelligence or Wisdom , and one is a free attribute boost.
+    You're trained in the Survival skill and the Plane of Wood Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Terrain Expertise] skill feat for forests.
+  SourceTitle: Pathfinder Rage of Elements
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 94958320bfc36febae1c3f8c4b6cac42fafb4112942d369eb9a76d07afccd198
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.feats-srd.Item.Terrain Expertise
+    Json: '{"allowDuplicate":false,"key":"GrantItem","preselectChoices":{"terrain":"forest"},"uuid":"Compendium.pf2e.feats-srd.Item.Terrain
+      Expertise"}'
+  AttributeBoosts:
+  - Options: 0400000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 16
+    CustomSkillId: survival
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Plane of Wood Lore
+    Rank: 1
+  LoreSkills:
+  - Plane of Wood Lore
+  GrantedFeats:
+  - SourceKey: UzOU5
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Terrain Expertise
+    SourceId: 
+    DisplayName: Terrain Expertise
+    Level: 1
+    ResolvedFeature: {fileID: 0}

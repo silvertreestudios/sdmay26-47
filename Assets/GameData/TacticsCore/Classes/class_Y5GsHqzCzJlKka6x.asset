@@ -1,0 +1,264 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b454058a1ef48c4c83b3eed68b6bb95, type: 3}
+  m_Name: class_Y5GsHqzCzJlKka6x
+  m_EditorClassIdentifier: 
+  SourceId: Y5GsHqzCzJlKka6x
+  Slug: thaumaturge
+  DisplayName: Thaumaturge
+  IconPath: systems/pf2e/icons/default-icons/class.svg
+  Description: "The world is full of the unexplainable: ancient magic, dead gods,
+    and even stranger things. In response, you've scavenged the best parts of every
+    magical tradition and built up a collection of esoterica\u2014a broken holy relic
+    here, a sprig of mistletoe there\u2014that you can use to best any creature by
+    exploiting their weaknesses and vulnerabilities. The mystic implement you carry
+    is both badge and weapon, its symbolic weight helping you bargain with and subdue
+    the supernatural. Every path to power has its restrictions and costs, but you
+    turn them all to your advantage. You're a thaumaturge, and you work wonders.
+    Thaumaturge"
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: classes
+  Rarity: common
+  SourceJsonHash: 2334e01df5e41238a4f3333a5e46538f356510c321e09e1dc67d266afa06dd09
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  HitPointsPerLevel: 8
+  KeyAttributes: 06000000
+  Perception: 2
+  ClassDifficulty: 0
+  SpellDifficulty: 0
+  Spellcasting: 0
+  SavingThrows:
+  - Save: 0
+    Rank: 2
+  - Save: 1
+    Rank: 1
+  - Save: 2
+    Rank: 2
+  ArmorProficiencies:
+  - Group: 0
+    Rank: 1
+  - Group: 1
+    Rank: 1
+  - Group: 2
+    Rank: 1
+  - Group: 3
+    Rank: 0
+  WeaponProficiencies:
+  - Group: 0
+    CustomGroupName: 
+    Rank: 1
+  - Group: 1
+    CustomGroupName: 
+    Rank: 1
+  - Group: 2
+    CustomGroupName: 
+    Rank: 1
+  - Group: 3
+    CustomGroupName: 
+    Rank: 0
+  TrainedSkills:
+  - Skill: 2
+    CustomSkillId: arcana
+    LoreName: 
+    Rank: 1
+  - Skill: 10
+    CustomSkillId: nature
+    LoreName: 
+    Rank: 1
+  - Skill: 11
+    CustomSkillId: occultism
+    LoreName: 
+    Rank: 1
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  AdditionalSkillCount: 3
+  AncestryFeatureLevels: 0100000005000000090000000d00000011000000
+  ClassFeatureLevels: 01000000020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  SkillFeatureLevels: 020000000400000006000000080000000a0000000c0000000e000000100000001200000014000000
+  GeneralFeatureLevels: 03000000070000000b0000000f00000013000000
+  SkillIncreaseLevels: 030000000500000007000000090000000b0000000d0000000f0000001100000013000000
+  HasSpellcasting: 0
+  StartingFocusPoints: 0
+  LevelOneFeatures:
+  - SourceKey: 3rn78
+    SourceUuid: Compendium.pf2e.classfeatures.Item.First Implement and Esoterica
+    SourceId: VSQJtzQE6ikKdsnP
+    DisplayName: First Implement and Esoterica
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: cfce8e36776eae44d933454ef54f44f7, type: 2}
+  - SourceKey: 7qJbx
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Esoteric Lore
+    SourceId: cvQmPkJtybMcHinK
+    DisplayName: Esoteric Lore
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: ec400d86e0aac1b46b88c13f1ec975a4, type: 2}
+  - SourceKey: 94AW8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Implement's Empowerment
+    SourceId: PbNS8d3w3pYQYcVN
+    DisplayName: Implement's Empowerment
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 87f7793607afd2a428b6a61db760b558, type: 2}
+  - SourceKey: gjFwy
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Exploit Vulnerability
+    SourceId: uwLNfBprqZw2osTb
+    DisplayName: Exploit Vulnerability
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: e62aa91208080f9439ada3dbe916de6a, type: 2}
+  GrantedFeatures:
+  - SourceKey: 1LMTz
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Unlimited Esoterica
+    SourceId: 9ItMYxEkvxqBHrV1
+    DisplayName: Unlimited Esoterica
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: 9f0c72b512f59c949a7de65259623371, type: 2}
+  - SourceKey: 1a61p
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Juggernaut
+    SourceId: OMZs5y16jZRW9KQK
+    DisplayName: Juggernaut
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: dd80e424e266d80469b63e0eb4c96a68, type: 2}
+  - SourceKey: 2waut
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Reflex Expertise
+    SourceId: 
+    DisplayName: Lightning Reflexes
+    Level: 3
+    ResolvedFeature: {fileID: 0}
+  - SourceKey: 3rn78
+    SourceUuid: Compendium.pf2e.classfeatures.Item.First Implement and Esoterica
+    SourceId: VSQJtzQE6ikKdsnP
+    DisplayName: First Implement and Esoterica
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: cfce8e36776eae44d933454ef54f44f7, type: 2}
+  - SourceKey: 4h2t7
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization
+    SourceId: Z7HX6TeFsaup7Dx9
+    DisplayName: Greater Weapon Specialization
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: e8328fb7ab4419d479ca3cb33e9ee85b, type: 2}
+  - SourceKey: 59mfg
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Expertise
+    SourceId: FCEp9jjxxgRJDJV3
+    DisplayName: Medium Armor Expertise
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: 73197a4a7743ecd498d5be602ed09454, type: 2}
+  - SourceKey: 63BEI
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Second Adept
+    SourceId: ZEUxZ4Ta1kDPHiq5
+    DisplayName: Second Adept
+    Level: 11
+    ResolvedFeature: {fileID: 11400000, guid: e490765ff63c9b44a914e479e7aa0838, type: 2}
+  - SourceKey: 7qJbx
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Esoteric Lore
+    SourceId: cvQmPkJtybMcHinK
+    DisplayName: Esoteric Lore
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: ec400d86e0aac1b46b88c13f1ec975a4, type: 2}
+  - SourceKey: 91CWx
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Third Implement
+    SourceId: zxZzjN2T53wnH4vU
+    DisplayName: Third Implement
+    Level: 15
+    ResolvedFeature: {fileID: 11400000, guid: a388ea817098b124eb1d5b7b8646a120, type: 2}
+  - SourceKey: 94AW8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Implement's Empowerment
+    SourceId: PbNS8d3w3pYQYcVN
+    DisplayName: Implement's Empowerment
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: 87f7793607afd2a428b6a61db760b558, type: 2}
+  - SourceKey: EeAOX
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Implement Paragon
+    SourceId: QEtgbY8N2V4wTbsI
+    DisplayName: Implement Paragon
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: c89c88ae78fe2f94c8d148837da80c5b, type: 2}
+  - SourceKey: Fg8iw
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Mastery
+    SourceId: ejP4jVQkS48uKRFz
+    DisplayName: Weapon Mastery
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 72296cf886f10134f8a893bc0ff539aa, type: 2}
+  - SourceKey: HFk1R
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Intensify Vulnerability
+    SourceId: VdwNvQwq9sHflEwe
+    DisplayName: Intensify Vulnerability
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: a242da1fec4db344188c9589bbecdad6, type: 2}
+  - SourceKey: Pr5fe
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Thaumaturge Weapon Expertise
+    SourceId: ABYmUcLdxDFXEtzu
+    DisplayName: Thaumaturge Weapon Expertise
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 984e033a9b4a6dc42b9b4218b40cf0c2, type: 2}
+  - SourceKey: VjdCa
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Thaumaturgic Expertise
+    SourceId: yvdSUIRU5uLr5eF2
+    DisplayName: Thaumaturgic Expertise
+    Level: 9
+    ResolvedFeature: {fileID: 11400000, guid: a4d854ac2a8278c408486644be9b90cb, type: 2}
+  - SourceKey: anx17
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Second Implement
+    SourceId: Z8WpDAdAXyefLB7Q
+    DisplayName: Second Implement
+    Level: 5
+    ResolvedFeature: {fileID: 11400000, guid: 32e0754c989d69847909bf15b96f28cf, type: 2}
+  - SourceKey: etPSx
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Implement Adept
+    SourceId: Obm4ItMIIr0whYeO
+    DisplayName: Implement Adept
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 42a5a94bf66c99244bd7f98570dc0224, type: 2}
+  - SourceKey: f5coc
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Weapon Specialization
+    SourceId: 9EqIasqfI8YIM3Pt
+    DisplayName: Weapon Specialization
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: 520ee75793fd0b140945f865301334d7, type: 2}
+  - SourceKey: fdT0O
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Thaumaturgic Mastery
+    SourceId: VywXtJCa0Y9fdGVH
+    DisplayName: Thaumaturgic Mastery
+    Level: 17
+    ResolvedFeature: {fileID: 11400000, guid: 5377b628a2772534d9ed9eb95e26812e, type: 2}
+  - SourceKey: gjFwy
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Exploit Vulnerability
+    SourceId: uwLNfBprqZw2osTb
+    DisplayName: Exploit Vulnerability
+    Level: 1
+    ResolvedFeature: {fileID: 11400000, guid: e62aa91208080f9439ada3dbe916de6a, type: 2}
+  - SourceKey: ifvk8
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Resolve
+    SourceId: JQAujUXjczVnYDEI
+    DisplayName: Resolve
+    Level: 7
+    ResolvedFeature: {fileID: 11400000, guid: d85aeaecc8bc39a4cad24f3d33f501d0, type: 2}
+  - SourceKey: le5cj
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Medium Armor Mastery
+    SourceId: cGMSYAErbUG5E8X2
+    DisplayName: Medium Armor Mastery
+    Level: 19
+    ResolvedFeature: {fileID: 11400000, guid: c6659f86a85d58d4d91186d1b048953f, type: 2}
+  - SourceKey: oa3vk
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Greater Resolve
+    SourceId: 5LOARurr4qWkfS9K
+    DisplayName: Greater Resolve
+    Level: 13
+    ResolvedFeature: {fileID: 11400000, guid: 2868a3f01e1052a449ecf78f2f28fa12, type: 2}
+  - SourceKey: vd7eu
+    SourceUuid: Compendium.pf2e.classfeatures.Item.Perception Mastery
+    SourceId: 
+    DisplayName: Vigilant Senses
+    Level: 9
+    ResolvedFeature: {fileID: 0}

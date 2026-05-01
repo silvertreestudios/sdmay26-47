@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_jN3Ww8tBsTaOVX4t
+  m_EditorClassIdentifier: 
+  SourceId: jN3Ww8tBsTaOVX4t
+  Slug: bully-or-baiter
+  DisplayName: Bully or Baiter?
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: "Force, be it as a physical presence or as a strength of personality,
+    has long given bullies power over others in their groups. Whether it's the threat
+    of a physical beating or the actual assault itself, the bully's methods are usually
+    efficient at establishing a network full of fearful followers and social power.
+    You may have been a bully yourself, and if so, you've never faced any significant
+    comeuppance or retribution for your nefarious actions, and the skills you developed
+    as a youth while bullying others serve you very well today. Yet maybe you weren't
+    the bully\u2014maybe you were a baiter of bullies instead? Someone who put on
+    an irresistible-to-bullies appearance only to turn their tactics back upon them
+    with threats and violence. Were you a champion of the picked-upon and downtrodden
+    in schoolyard and back alley alike, who lured the local bullies into traps that
+    taught them lessons writ in blood and pain? Choose two attribute boosts. One
+    must be to Strength or Charisma , and one is a free attribute boost. You're trained
+    in the Intimidation skill and the Underworld Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Intimidating
+    Glare] skill feat. If you have the Warrior persona trait, you also become trained
+    in the Warfare Lore skill."
+  SourceTitle: Pathfinder Curtain Call Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: ee8250195de7edcf12fd7e200319c04c2ba59516dbfa8a4b280f63ac1e42870b
+  Traits:
+  - persona-warrior
+  TraitsLower:
+  - persona-warrior
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.campaign-effects.Item.Persona Trait
+    Json: '{"key":"GrantItem","predicate":[{"not":"feature:persona-trait"}],"uuid":"Compendium.pf2e.campaign-effects.Item.Persona
+      Trait"}'
+  AttributeBoosts:
+  - Options: 0600000001000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 7
+    CustomSkillId: intimidation
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Underworld Lore
+    Rank: 1
+  LoreSkills:
+  - Underworld Lore
+  GrantedFeats:
+  - SourceKey: XRbw2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Intimidating Glare
+    SourceId: 
+    DisplayName: Intimidating Glare
+    Level: 1
+    ResolvedFeature: {fileID: 0}

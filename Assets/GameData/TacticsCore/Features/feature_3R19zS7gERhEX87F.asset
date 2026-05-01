@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_3R19zS7gERhEX87F
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 3R19zS7gERhEX87F
+  Slug: perpetual-perfection-toxicologist
+  DisplayName: Perpetual Perfection (Toxicologist)
+  IconPath: icons/consumables/potions/potion-jar-corked-labeled-red.webp
+  Description: You have perfected your perpetual infusions, allowing you to use @UUID[Compendium.pf2e.classfeatures.Item.Quick
+    Alchemy] to create even more powerful items at no cost. The items you can select
+    depend on your research field and must be in your formula book. Choose two common
+    11th-level or lower alchemical poisons.
+  SourceTitle: Pathfinder Core Rulebook
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 013b47dff9822049f114c4a1367651f5139bcd8951d1b6f9114fb5d9c04b2597
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

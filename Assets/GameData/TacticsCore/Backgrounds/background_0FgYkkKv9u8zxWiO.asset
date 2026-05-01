@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_0FgYkkKv9u8zxWiO
+  m_EditorClassIdentifier: 
+  SourceId: 0FgYkkKv9u8zxWiO
+  Slug: child-of-the-twin-village
+  DisplayName: Child of the Twin Village
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: You were born in a village where everyone has a twin with a special
+    link. You have moved to the wider world for reasons of your own, but you still
+    have an unbreakable connection to your twin through your dreams. Choose two attribute
+    boosts. One must be to Constitution or Charisma , and one is a free attribute
+    boost. You're trained in Diplomacy and Dreamlands Lore. You gain the ability
+    to communicate with your twin in your dreams. You and your twin gain the effects
+    of dream message every night, only between the two of you; this isn't a spell,
+    but a natural effect. Unless your twin is another PC, your GM roleplays your
+    twin or summarizes your interaction during these dreams.
+  SourceTitle: Pathfinder Dark Archive
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 02d1527a9d26ddd64f6699c3b49e2d470f6f8a61961e457e68a48a692eaff596
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000003000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 6
+    CustomSkillId: diplomacy
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Dreamlands Lore
+    Rank: 1
+  LoreSkills:
+  - Dreamlands Lore
+  GrantedFeats: []

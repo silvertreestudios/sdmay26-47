@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: heritage_hFBwsVcSnNCJoimo
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:HeritageDataSO
+  SourceId: hFBwsVcSnNCJoimo
+  Slug: versatile-human
+  DisplayName: Versatile Human
+  IconPath: icons/environment/people/group.webp
+  Description: Humanity's versatility and ambition have fueled its ascendance to
+    be the most common ancestry in most nations throughout the world. Select a general
+    feat of your choice for which you meet the prerequisites (as with your ancestry
+    feat, you can select this general feat at any point during character creation).
+  SourceTitle: Pathfinder Player Core
+  SourcePack: heritages
+  Rarity: common
+  SourceJsonHash: 1f07f7bc31d1db161dd8a554d137b559a9748305f5d7433fbb924f396f9e34e4
+  Traits: []
+  TraitsLower: []
+  RawRules:
+  - Key: ChoiceSet
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"adjustName":false,"choices":{"filter":["item:level:1","item:trait:general"],"itemType":"feat"},"flag":"versatileHeritage","key":"ChoiceSet","prompt":"PF2E.SpecificRule.GeneralTraining.Prompt"}'
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: '{item|flags.pf2e.rulesSelections.versatileHeritage}'
+    Json: '{"key":"GrantItem","uuid":"{item|flags.pf2e.rulesSelections.versatileHeritage}"}'
+  ParentAncestry:
+    SourceUuid: Compendium.pf2e.ancestries.Item.IiG7DgeLWYrSNXuX
+    SourceId: 
+    Slug: human
+    DisplayName: Human
+  ParentAncestryAsset: {fileID: 11400000, guid: 4a3abab8c09a4f0438706848bea28ef6, type: 2}
+  GrantedFeatures:
+  - SourceKey: 
+    SourceUuid: '{item|flags.pf2e.rulesSelections.versatileHeritage}'
+    SourceId: 
+    DisplayName: versatileHeritage}
+    Level: 0
+    ResolvedFeature: {fileID: 0}

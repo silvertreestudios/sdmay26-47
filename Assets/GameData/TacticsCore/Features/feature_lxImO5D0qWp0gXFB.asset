@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_lxImO5D0qWp0gXFB
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: lxImO5D0qWp0gXFB
+  Slug: monk-expertise
+  DisplayName: Monk Expertise
+  IconPath: icons/magic/unholy/silhouette-robe-evil-power.webp
+  Description: Your proficiency rank for your monk class DC increases to expert.
+    If you have qi spells, your proficiency rank for spell attacks and spell DCs
+    increases to expert.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 2040d360463e71523c8b8e05be2f073c39773241aece1afbd1e007d9f70538b5
+  Traits:
+  - monk
+  TraitsLower:
+  - monk
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.spellcasting.rank
+    Mode: upgrade
+    Value: 2
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.proficiencies.spellcasting.rank","predicate":["feat:qi-spells"],"value":2}'
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: monk
+    Rank: 2
+  FocusPointDelta: 0

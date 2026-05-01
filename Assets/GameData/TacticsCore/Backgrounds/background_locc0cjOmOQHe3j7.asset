@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_locc0cjOmOQHe3j7
+  m_EditorClassIdentifier: 
+  SourceId: locc0cjOmOQHe3j7
+  Slug: savior-of-air
+  DisplayName: Savior of Air
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Upon securing the Untouchable Opal , an artifact of extraordinary
+    power, the Pathfinder Society endeavored to free the benevolent demigod Ranginori,
+    who was trapped within the virtually unbreakable prison. You might have joined
+    the Pathfinder Society in its expeditions to the Elemental Planes, or you might
+    have lived on one of those planes before learning of the Society from these Pathfinder
+    agents. You are no stranger to navigating precarious terrain as a result. Choose
+    two attribute boosts. One must be to Dexterity or Charisma , and one is a free
+    attribute boost. You're trained in the Acrobatics skill, plus either Elemental
+    Lords Lore or a Lore skill related either to one of the Elemental Planes (such
+    as Plane of Air Lore). You gain the @UUID[Compendium.pf2e.feats-srd.Item.Cat
+    Fall] skill feat. Add Auran to the list of additional languages you can learn
+    for having a high Intelligence modifier. Special You can select this background
+    only if you have earned credit for at least 5 First Edition scenarios from Season
+    8 of the Pathfinder Society organized play campaign.
+  SourceTitle: Organized Play Foundation
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 4d62414ca891495dfaebc09545fca86b35fe962f304dacf6645b38cbc63cea8a
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 1
+    CustomSkillId: acrobatics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Elemental Lords Lore or <Elemental Plane> Lore
+    Rank: 1
+  LoreSkills:
+  - Elemental Lords Lore or <Elemental Plane> Lore
+  GrantedFeats:
+  - SourceKey: z1zgz
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Cat Fall
+    SourceId: 
+    DisplayName: Cat Fall
+    Level: 1
+    ResolvedFeature: {fileID: 0}

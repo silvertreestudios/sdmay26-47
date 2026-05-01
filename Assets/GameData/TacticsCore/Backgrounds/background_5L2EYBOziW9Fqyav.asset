@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_5L2EYBOziW9Fqyav
+  m_EditorClassIdentifier: 
+  SourceId: 5L2EYBOziW9Fqyav
+  Slug: wandering-libertine
+  DisplayName: Wandering Libertine
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Receiving attention has always come easily to you, be it because of
+    your good looks, your charming personality, your way with words, or something
+    else entirely, yet you've never really settled down. You spent much of your life
+    up to this point on the road or at sea, traveling from town to town and never
+    staying long enough in one place to ever have a proper home. The reasons for
+    this itinerant lifestyle aren't important, but what is important is that it never
+    took you long to find someone to hold after arriving in a new town. Whether your
+    inevitable departure was heralded by false promises to return or tearful goodbyes,
+    you've left in your wake a mix of pining admirers and jilted lovers. One of these
+    days, you might actually settle down. One of these days, you might find someone
+    you'll want to spend the rest of your life with. One of these days, you might
+    find a place to call home. But today is not that day. Choose two attribute boosts.
+    One must be to Dexterity or Charisma , and one is a free attribute boost. You're
+    trained in the Deception skill and the Shelyn Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Charming
+    Liar] skill feat. If you have the Flirt persona trait, you also become trained
+    in the Sailing Lore skill.
+  SourceTitle: Pathfinder Curtain Call Player's Guide
+  SourcePack: backgrounds
+  Rarity: rare
+  SourceJsonHash: 1b2d015590b59008674ae6e165df7ceddcbf05dc5c35dee07947ccbaa9ae6f55
+  Traits:
+  - persona-flirt
+  TraitsLower:
+  - persona-flirt
+  RawRules:
+  - Key: GrantItem
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: Compendium.pf2e.campaign-effects.Item.Persona Trait
+    Json: '{"key":"GrantItem","predicate":[{"not":"feature:persona-trait"}],"uuid":"Compendium.pf2e.campaign-effects.Item.Persona
+      Trait"}'
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 5
+    CustomSkillId: deception
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Shelyn Lore
+    Rank: 1
+  LoreSkills:
+  - Shelyn Lore
+  GrantedFeats:
+  - SourceKey: xJmYF
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Charming Liar
+    SourceId: 
+    DisplayName: Charming Liar
+    Level: 1
+    ResolvedFeature: {fileID: 0}

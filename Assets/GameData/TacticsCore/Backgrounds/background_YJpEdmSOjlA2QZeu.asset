@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_YJpEdmSOjlA2QZeu
+  m_EditorClassIdentifier: 
+  SourceId: YJpEdmSOjlA2QZeu
+  Slug: circus-born
+  DisplayName: Circus Born
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: The itinerant life of a traveling circus performer is nothing new
+    to you; you were born and raised in the circus. You've seen more acts than you
+    can count and grew up hearing the tall tales of circus performers while gathered
+    around their campfires. You've experienced the thrill of captivating crowd ever
+    since you were young. You may have tried a few times to settle down, but the
+    lure of the open road and the glamor of the big top always called you back. Choose
+    two attribute boosts. One must be to Intelligence or Charisma , and one is a
+    free attribute boost. You're trained in the Performance skill and the Circus
+    Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Experienced Professional]
+    skill feat.
+  SourceTitle: Pathfinder Extinction Curse Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a19e6b8f75fd5703e244876c85ddd26c4a026ec5f21fa8c21766f4bc1d2bf476
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000004000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 12
+    CustomSkillId: performance
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Circus Lore
+    Rank: 1
+  LoreSkills:
+  - Circus Lore
+  GrantedFeats:
+  - SourceKey: pem87
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Experienced Professional
+    SourceId: 
+    DisplayName: Experienced Professional
+    Level: 1
+    ResolvedFeature: {fileID: 0}

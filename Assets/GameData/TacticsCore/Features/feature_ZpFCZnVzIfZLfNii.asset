@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_ZpFCZnVzIfZLfNii
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: ZpFCZnVzIfZLfNii
+  Slug: school-of-the-boundary
+  DisplayName: School of the Boundary
+  IconPath: icons/sundries/books/book-face-black.webp
+  Description: 'Why use your magic to affect something as pedestrian as the physical
+    world? Whether you studied at the College of Dimensional Studies in Katapesh
+    or an underground school in haunted Ustalav, you''ve turned your magic past the
+    Universe to the forces beyond, summoning spirits and shades, manipulating dimensions
+    and planes, and treading in a place not meant for mortals. Curriculum cantrips:
+    @UUID[Compendium.pf2e.spells-srd.Item.Telekinetic Hand], @UUID[Compendium.pf2e.spells-srd.Item.Void
+    Warp] 1st: @UUID[Compendium.pf2e.spells-srd.Item.Grim Tendrils], @UUID[Compendium.pf2e.spells-srd.Item.Phantasmal
+    Minion], @UUID[Compendium.pf2e.spells-srd.Item.Summon Undead] 2nd: @UUID[Compendium.pf2e.spells-srd.Item.Darkness],
+    @UUID[Compendium.pf2e.spells-srd.Item.See the Unseen] 3rd: @UUID[Compendium.pf2e.spells-srd.Item.Bind
+    Undead], @UUID[Compendium.pf2e.spells-srd.Item.Ghostly Weapon] 4th: @UUID[Compendium.pf2e.spells-srd.Item.Flicker],
+    @UUID[Compendium.pf2e.spells-srd.Item.Translocate] 5th: @UUID[Compendium.pf2e.spells-srd.Item.Banishment],
+    @UUID[Compendium.pf2e.spells-srd.Item.Invoke Spirits] 6th: @UUID[Compendium.pf2e.spells-srd.Item.Teleport],
+    @UUID[Compendium.pf2e.spells-srd.Item.Vampiric Exsanguination] 7th: @UUID[Compendium.pf2e.spells-srd.Item.Eclipse
+    Burst], @UUID[Compendium.pf2e.spells-srd.Item.Interplanar Teleport] 8th: @UUID[Compendium.pf2e.spells-srd.Item.Quandary],
+    @UUID[Compendium.pf2e.spells-srd.Item.Unrelenting Observation] 9th: @UUID[Compendium.pf2e.spells-srd.Item.Massacre]
+    School Spells initial: @UUID[Compendium.pf2e.spells-srd.Item.Fortify Summoning];
+    advanced: @UUID[Compendium.pf2e.spells-srd.Item.Spiral of Horrors]'
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 161a6f27046ef48df6ccea5969b62313e2bfbcd01b805010c653f38ab77e1d39
+  Traits:
+  - wizard
+  TraitsLower:
+  - wizard
+  RawRules: []
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

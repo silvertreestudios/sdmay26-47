@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_Jgid6Ja6Y879COlN
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: Jgid6Ja6Y879COlN
+  Slug: fencer
+  DisplayName: Fencer
+  IconPath: icons/weapons/swords/scimitar-guard-brown.webp
+  Description: You move carefully, feinting and creating false openings to lead your
+    foes into inopportune attacks. You are trained in Deception. When you @UUID[Compendium.pf2e.actionspf2e.Item.Create
+    a Diversion] or @UUID[Compendium.pf2e.actionspf2e.Item.Feint], the action gains
+    the bravado trait.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: f59266e035fe792f3ba2e8c50f1c3b336c75aa78dfedaa37c481cf33a86e8f81
+  Traits:
+  - swashbuckler
+  TraitsLower:
+  - swashbuckler
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.deception.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.deception.rank","predicate":["class:swashbuckler"],"value":1}'
+  - Key: Note
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"Note","outcome":["success","criticalSuccess"],"predicate":["finisher","feature:exemplary-finisher"],"selector":"strike-attack-roll","text":"PF2E.SpecificRule.ExemplaryFinisher.Fencer","title":"PF2E.SpecificRule.ExemplaryFinisher.Name"}'
+  - Key: RollOption
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"domain":"skill-check","key":"RollOption","option":"item:trait:bravado","predicate":[{"or":["action:create-a-diversion","action:feint"]}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

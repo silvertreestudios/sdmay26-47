@@ -1,4 +1,4 @@
-namespace PathfinderTactics.Characters
+namespace TacticsGame.Characters
 {
     public enum ConditionType
     {

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_UFHezf1LXUwcQIAQ
+  m_EditorClassIdentifier: 
+  SourceId: UFHezf1LXUwcQIAQ
+  Slug: wandering-preacher
+  DisplayName: Wandering Preacher
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: While you once spoke to a small congregation in a ramshackle church,
+    those days are behind you now. Your church was destroyed, your congregants scattered,
+    and now you meander the lands holding a worn copy of your religious text in one
+    hand, and a fiery conviction in the other. Choose two attribute boosts. One boost
+    must be to Constitution or Wisdom , and one is a free attribute boost. You're
+    trained in the Religion skill and a Lore skill associated with the deity you
+    preach for (such as Pharasmin Lore). You gain the @UUID[Compendium.pf2e.feats-srd.Item.Pilgrim's
+    Token] skill feat.
+  SourceTitle: Pathfinder Guns & Gears
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: a34a6ecdac409476252f5c156481d719729c0709752fe141dddd52a6952e4496
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0300000005000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 13
+    CustomSkillId: religion
+    LoreName: 
+    Rank: 1
+  LoreSkills: []
+  GrantedFeats:
+  - SourceKey: bcwu2
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Pilgrim's Token
+    SourceId: 
+    DisplayName: Pilgrim's Token
+    Level: 1
+    ResolvedFeature: {fileID: 0}

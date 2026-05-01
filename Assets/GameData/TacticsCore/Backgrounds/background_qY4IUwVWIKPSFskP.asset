@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6167c621163b2489220286f015ff34, type: 3}
+  m_Name: background_qY4IUwVWIKPSFskP
+  m_EditorClassIdentifier: 
+  SourceId: qY4IUwVWIKPSFskP
+  Slug: aerialist
+  DisplayName: Aerialist
+  IconPath: systems/pf2e/icons/default-icons/background.svg
+  Description: Experienced with trapezes, aerial silks, and hoops, your skill is
+    in performing death-defying stunts high above the ground. The Celestial Menagerie
+    skimped on safety devices such as nets and quality ropes, so you also learned
+    to take a fall better than most. After a harrowing near-death experience involving
+    a cracked trapeze bar, you decided to take your expertise elsewhere. Choose two
+    attribute boosts. One must be to Dexterity or Charisma , and one is a free attribute
+    boost. You're trained in the Acrobatics skill and the Rope Lore skill. You gain
+    the @UUID[Compendium.pf2e.feats-srd.Item.Cat Fall] skill feat.
+  SourceTitle: Pathfinder Extinction Curse Player's Guide
+  SourcePack: backgrounds
+  Rarity: common
+  SourceJsonHash: 1280c781836a891ee1ed5fc2247ddaccf4be2e30fa0e16fe3cbd1371f119c1bd
+  Traits: []
+  TraitsLower: []
+  RawRules: []
+  AttributeBoosts:
+  - Options: 0600000002000000
+  - Options: 00000000
+  TrainedSkills:
+  - Skill: 1
+    CustomSkillId: acrobatics
+    LoreName: 
+    Rank: 1
+  - Skill: 8
+    CustomSkillId: lore
+    LoreName: Rope Lore
+    Rank: 1
+  LoreSkills:
+  - Rope Lore
+  GrantedFeats:
+  - SourceKey: htrdu
+    SourceUuid: Compendium.pf2e.feats-srd.Item.Cat Fall
+    SourceId: 
+    DisplayName: Cat Fall
+    Level: 1
+    ResolvedFeature: {fileID: 0}

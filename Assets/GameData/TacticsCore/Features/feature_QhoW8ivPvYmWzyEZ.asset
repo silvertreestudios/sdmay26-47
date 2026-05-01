@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_QhoW8ivPvYmWzyEZ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: QhoW8ivPvYmWzyEZ
+  Slug: ranger-weapon-expertise
+  DisplayName: Ranger Weapon Expertise
+  IconPath: icons/skills/melee/hand-grip-sword-red.webp
+  Description: You gain every advantage from your weapons. Your proficiency rank
+    for martial weapons, simple weapons, and unarmed attacks increases to expert.
+    You gain access to the critical specialization effects of all such weapons and
+    unarmed attacks when attacking your hunted prey.
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 07e73b5397394510aab4c16d413cabdaf2d34e0b30d30322965b5216d6e6b69f
+  Traits:
+  - ranger
+  TraitsLower:
+  - ranger
+  RawRules:
+  - Key: CriticalSpecialization
+    Path: 
+    Mode: 
+    Value: 
+    Uuid: 
+    Json: '{"key":"CriticalSpecialization","predicate":["target:mark:hunted-prey",{"or":["item:category:simple","item:category:martial","item:category:unarmed"]}]}'
+  Category: 2
+  Level: 5
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: martial
+    Rank: 2
+  - Target: simple
+    Rank: 2
+  - Target: unarmed
+    Rank: 2
+  FocusPointDelta: 0

@@ -1,18 +1,18 @@
 using System.Collections.Generic;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Data.PF2e;
-using PathfinderTactics.Grid;
-using PathfinderTactics.Spells.Services;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Data.TacticsRuleset;
+using TacticsGame.Grid;
+using TacticsGame.Spells.Services;
 using UnityEngine;
 
-namespace PathfinderTactics.Spells.Effects
+namespace TacticsGame.Spells.Effects
 {
     /// <summary>
     /// Targeting Phase: Computes affected grid cells from an AreaDefinition,
     /// then populates context.AffectedUnits using UnitQueryService.
     /// </summary>
-    [CreateAssetMenu(menuName = "PF2e/Spell Effects/Area Effect")]
+    [CreateAssetMenu(menuName = "TacticsRuleset/Spell Effects/Area Effect")]
     public class AreaEffectSO : SpellEffectSO
     {
         private void OnEnable()

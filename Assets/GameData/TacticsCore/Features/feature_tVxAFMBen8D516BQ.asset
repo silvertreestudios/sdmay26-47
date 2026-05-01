@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_tVxAFMBen8D516BQ
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: tVxAFMBen8D516BQ
+  Slug: abundant-vials
+  DisplayName: Abundant Vials
+  IconPath: icons/magic/symbols/question-stone-yellow.webp
+  Description: You're permanently @UUID[Compendium.pf2e.conditionitems.Item.Quickened],
+    and can use the extra action only to use @UUID[Compendium.pf2e.actionspf2e.Item.Quick
+    Alchemy] to create a quick vial. You can create only one vial with this action,
+    even if you have double brew or a similar ability.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: dc8deb592eea846e5c64a7c900bd70eedf08407c2ccfdce23ff5a0f642aa40e1
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 17
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0

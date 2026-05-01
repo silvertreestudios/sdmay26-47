@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_3e1PlMXmlSwKoc6d
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: 3e1PlMXmlSwKoc6d
+  Slug: alchemical-expertise
+  DisplayName: Alchemical Expertise
+  IconPath: icons/consumables/potions/potion-round-corked-glowing-green.webp
+  Description: Constant practice has increased the effectiveness of your concoctions.
+    Your proficiency rank for your alchemist class DC increases to expert. In addition,
+    when you gather reagents during exploration mode, you can regain three vials
+    instead of two.
+  SourceTitle: Pathfinder Player Core 2
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 60d092c70f3ab59d55b0427a4fc88b7120f6843a436b330dcf2de4fba5b2dddb
+  Traits:
+  - alchemist
+  TraitsLower:
+  - alchemist
+  RawRules: []
+  Category: 2
+  Level: 9
+  GrantedFeatures: []
+  ProficiencyUpgrades:
+  - Target: alchemist
+    Rank: 2
+  FocusPointDelta: 0

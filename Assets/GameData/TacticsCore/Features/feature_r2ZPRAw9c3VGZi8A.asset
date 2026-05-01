@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: feature_r2ZPRAw9c3VGZi8A
+  m_EditorClassIdentifier: NewAssembly:TacticsGame.Data.TacticsCore:FeatureDataSO
+  SourceId: r2ZPRAw9c3VGZi8A
+  Slug: starless-shadow
+  DisplayName: Starless Shadow
+  IconPath: icons/magic/perception/eye-ringed-glow-angry-small-teal.webp
+  Description: "Your patron first contacted you at the witching hour, as your body
+    lay paralyzed by sleep while your mind had yet to escape the waking world. Your
+    patron might be a creature of the Netherworld or a long-forgotten spirit of twilight\u2014all
+    you remember of them are haunting eyes of moonlight, offering you power from
+    the darkness. Spell List occult Patron Skill Occultism Lesson of Night's Terrors
+    Your patron taught you that the darkness can hide all manner of things best left
+    unseen. You gain the @UUID[Compendium.pf2e.spells-srd.Item.Shroud of Night] hex
+    cantrip, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Fear].
+    Familiar of Stalking Night Your familiar is dark of fur or feather, and light
+    seems to disappear into it. When you Cast or Sustain a hex, and your familiar
+    is adjacent to an enemy to which it's @UUID[Compendium.pf2e.conditionitems.Item.Concealed],
+    @UUID[Compendium.pf2e.conditionitems.Item.Hidden], or undetected, the enemy becomes
+    Frightened 1."
+  SourceTitle: Pathfinder Player Core
+  SourcePack: classfeatures
+  Rarity: common
+  SourceJsonHash: 9f18595501bba4d1d53eac82dc48aa1d2c475bf561eaa9607e86e8b361f8b120
+  Traits:
+  - witch
+  TraitsLower:
+  - witch
+  RawRules:
+  - Key: ActiveEffectLike
+    Path: system.skills.occultism.rank
+    Mode: upgrade
+    Value: 1
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"upgrade","path":"system.skills.occultism.rank","value":1}'
+  - Key: ActiveEffectLike
+    Path: system.proficiencies.aliases.witch
+    Mode: override
+    Value: '"occult"'
+    Uuid: 
+    Json: '{"key":"ActiveEffectLike","mode":"override","path":"system.proficiencies.aliases.witch","priority":39,"value":"occult"}'
+  - Key: ItemAlteration
+    Path: 
+    Mode: add
+    Value: '[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.StalkingNight.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.StalkingNight.Title"}]'
+    Uuid: 
+    Json: '{"itemType":"spell","key":"ItemAlteration","mode":"add","predicate":["class:witch","item:trait:hex"],"property":"description","value":[{"text":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.StalkingNight.Description","title":"PF2E.SpecificRule.Witch.Patron.FamiliarAbility.StalkingNight.Title"}]}'
+  Category: 2
+  Level: 1
+  GrantedFeatures: []
+  ProficiencyUpgrades: []
+  FocusPointDelta: 0
