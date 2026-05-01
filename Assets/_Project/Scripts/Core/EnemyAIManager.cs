@@ -23,22 +23,32 @@ namespace TacticsGame.Core
         [SerializeField]
         private EnemyControlMode controlMode = EnemyControlMode.AiEnabled;
 
+        [SerializeField]
+        private float turnStartDelay = 1f;
+
+        [SerializeField]
+        private float delayBetweenActions = 0.5f;
+
+        [SerializeField]
+        private int maxAttackDistanceTiles = 6;
+
+        [Header("Random Jumping")]
+        [SerializeField]
+        private bool randomJumpEnabled = true;
+
+        [SerializeField]
+        private float randomJumpChance = 0.25f;
+
+        [SerializeField]
+        private float jumpLeadTime = 0.08f;
+
         public EnemyControlMode ControlMode => controlMode;
 
-        private enum State
-        {
-            WaitingForTurn,
-            TakingTurn,
-            Busy, // Waiting for an action/animation to finish
-        }
-
-        private State state;
-        private float timer;
+        private TurnManager turnManager;
 
         private void Awake()
         {
             ServiceLocator.Register(this);
-            state = State.WaitingForTurn;
         }
 
         private void OnDestroy()
@@ -48,18 +58,13 @@ namespace TacticsGame.Core
 
         private void Start()
         {
-            ServiceLocator.Get<TurnManager>().OnTurnChanged += TurnManager_OnTurnChanged;
-            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
-            {
-                state = State.TakingTurn;
-                timer = 1.0f;
-            }
+            turnManager = ServiceLocator.Get<TurnManager>();
+            turnManager.OnTurnChanged += TurnManager_OnTurnChanged;
         }
 
         private void Update()
         {
-            // Press 'P' to cycle enemy control mode:
-            // AI enabled -> AI disabled -> Player controls enemy -> ...
+            // Press 'P' to cycle enemy control mode
             if (Input.GetKeyDown(KeyCode.P))
             {
                 controlMode = controlMode switch
@@ -69,235 +74,339 @@ namespace TacticsGame.Core
                     _ => EnemyControlMode.AiEnabled,
                 };
 
-                Debug.Log($"[ENEMY AI] Enemy control mode: {controlMode}");
-            }
-
-            // If it's a player turn (or we're giving player control), do nothing here.
-            if (ServiceLocator.Get<TurnManager>().IsPlayerTurn())
-                return;
-
-            // If AI is disabled, immediately end enemy turns to avoid stalling combat.
-            if (controlMode == EnemyControlMode.AiDisabled)
-            {
-                ServiceLocator.Get<UnitActionSystem>().EndTurn();
-                state = State.WaitingForTurn;
-                return;
-            }
-
-            // If the player controls enemy units, do not run AI.
-            if (controlMode == EnemyControlMode.PlayerControlsEnemy)
-                return;
-
-            switch (state)
-            {
-                case State.WaitingForTurn:
-                    break;
-
-                case State.TakingTurn:
-                    timer -= Time.deltaTime;
-                    if (timer <= 0f)
-                    {
-                        state = State.Busy;
-                        TakeEnemyAction(ServiceLocator.Get<UnitActionSystem>().SelectedUnit);
-                    }
-                    break;
-
-                case State.Busy:
-                    // Just wait for the callback from the action to set us back to TakingTurn
-                    break;
+                Debug.Log($"<color=orange>[ENEMY AI]</color> Mode: {controlMode}");
             }
         }
 
         private void TurnManager_OnTurnChanged(object sender, EventArgs e)
         {
-            if (!ServiceLocator.Get<TurnManager>().IsPlayerTurn())
+            if (controlMode == EnemyControlMode.AiDisabled)
             {
-                // Enemy's turn.
-                // If AI is enabled, pause briefly to "think". Otherwise player-control/disabled modes
-                // are handled in Update().
-                if (controlMode == EnemyControlMode.AiEnabled)
+                if (
+                    turnManager.CurrentUnit != null
+                    && turnManager.CurrentUnit.GetFaction() == Faction.Enemy
+                )
                 {
-                    state = State.TakingTurn;
-                    timer = 1.0f;
+                    ServiceLocator.Get<UnitActionSystem>().EndTurn();
                 }
+                return;
+            }
+
+            if (controlMode != EnemyControlMode.AiEnabled)
+                return;
+
+            Unit currentUnit = turnManager.CurrentUnit;
+            if (currentUnit == null || currentUnit.GetFaction() != Faction.Enemy)
+                return;
+
+            StartCoroutine(RunEnemyTurnRoutine(currentUnit));
+        }
+
+        private IEnumerator RunEnemyTurnRoutine(Unit enemyUnit)
+        {
+            yield return null;
+
+            if (turnManager.CurrentUnit != enemyUnit)
+                yield break;
+
+            yield return new WaitForSeconds(turnStartDelay);
+
+            UnitConditions conditions = enemyUnit.GetComponent<UnitConditions>();
+            if (conditions != null && conditions.HasCondition(ConditionType.Unconscious))
+            {
+                Debug.Log($"[AI] {enemyUnit.name} is unconscious. Skipping AI turn.");
+                ServiceLocator.Get<UnitActionSystem>().EndTurn();
+                yield break;
+            }
+
+            int safety = 0;
+            while (
+                turnManager.CurrentUnit == enemyUnit
+                && enemyUnit.GetActionPointsRemaining() > 0
+                && safety < 5
+            )
+            {
+                safety++;
+
+                // Respect real-time mode changes during turn
+                if (controlMode != EnemyControlMode.AiEnabled)
+                    yield break;
+
+                if (IsNextToPlayer(enemyUnit) && WantsToUseRangedAttack(enemyUnit))
+                {
+                    yield return MoveAwayFromClosestPlayer(enemyUnit);
+                    if (turnManager.CurrentUnit != enemyUnit)
+                        yield break;
+                    yield return new WaitForSeconds(delayBetweenActions);
+                }
+
+                int apBefore = enemyUnit.GetActionPointsRemaining();
+                yield return TryAttackIfPossible(enemyUnit);
+
+                if (turnManager.CurrentUnit != enemyUnit)
+                    yield break;
+
+                if (enemyUnit.GetActionPointsRemaining() < apBefore)
+                {
+                    yield return new WaitForSeconds(delayBetweenActions);
+                    continue;
+                }
+
+                Unit target = GetClosestPlayerUnit(enemyUnit);
+                if (target == null)
+                {
+                    ServiceLocator.Get<UnitActionSystem>().EndTurn();
+                    yield break;
+                }
+
+                yield return MoveTowardTarget(enemyUnit, target);
+
+                if (turnManager.CurrentUnit != enemyUnit)
+                    yield break;
+
+                yield return new WaitForSeconds(delayBetweenActions);
+            }
+
+            if (turnManager.CurrentUnit == enemyUnit && enemyUnit.GetActionPointsRemaining() > 0)
+            {
+                ServiceLocator.Get<UnitActionSystem>().EndTurn();
             }
         }
 
-        private void TakeEnemyAction(Unit enemyUnit)
+        private IEnumerator TryAttackIfPossible(Unit enemyUnit)
         {
-            if (enemyUnit == null || enemyUnit.GetActionPointsRemaining() <= 0)
+            BaseAction attackAction = null;
+            Unit target = null;
+
+            RangedAction rangedAction = enemyUnit.GetComponent<RangedAction>();
+            if (rangedAction != null && rangedAction.CanExecuteAction())
             {
-                // Out of AP, end the turn
-                ServiceLocator.Get<UnitActionSystem>().EndTurn();
-                state = State.WaitingForTurn;
-                return;
+                target = GetClosestValidTargetForAction(enemyUnit, rangedAction);
+                if (target != null)
+                    attackAction = rangedAction;
             }
 
-            // Find the closest target
-            Unit target = GetClosestPlayerUnit(enemyUnit);
-            if (target == null)
+            if (attackAction == null)
             {
-                // No players left alive? End turn.
-                ServiceLocator.Get<UnitActionSystem>().EndTurn();
-                state = State.WaitingForTurn;
-                return;
-            }
-
-            // Get all possible actions the enemy can take
-            BaseAction[] availableActions = enemyUnit.GetComponents<BaseAction>();
-
-            // Filter to actions that have valid targets
-            List<BaseAction> validActions = new List<BaseAction>();
-            foreach (var action in availableActions)
-            {
-                if (action.GetValidActionGridPositions().Contains(target.CurrentLayeredPosition))
+                MeleeAction meleeAction = enemyUnit.GetComponent<MeleeAction>();
+                if (meleeAction != null && meleeAction.CanExecuteAction())
                 {
-                    validActions.Add(action);
+                    target = GetClosestValidTargetForAction(enemyUnit, meleeAction);
+                    if (target != null)
+                        attackAction = meleeAction;
                 }
             }
 
-            if (validActions.Count > 0)
-            {
-                // Attack with a random valid action
-                BaseAction chosenAction = validActions[
-                    UnityEngine.Random.Range(0, validActions.Count)
-                ];
+            if (attackAction == null || target == null)
+                yield break;
 
-                Debug.Log(
-                    $"[ENEMY AI] {enemyUnit.name} is using {chosenAction.GetActionName()} on {target.name}!"
-                );
-                enemyUnit.SpendActionPoints(chosenAction.GetActionPointsCost());
+            bool actionComplete = false;
+            UnitActionSystem uas = ServiceLocator.Get<UnitActionSystem>();
 
-                chosenAction.TakeAction(
-                    target.CurrentLayeredPosition,
-                    () =>
-                    {
-                        // Callback when attack finishes
-                        state = State.TakingTurn;
-                        timer = 0.5f; // Short pause before next action
-                    }
-                );
-                return;
-            }
+            void HandleActionComplete(object sender, EventArgs e) => actionComplete = true;
 
-            // Not in range? Try to move closer.
-            if (TryMoveTowardsTarget(enemyUnit, target))
-            {
-                return; // Move action started
-            }
+            uas.OnActionCompleted += HandleActionComplete;
+            uas.AiExecuteAction(attackAction, target.CurrentLayeredPosition);
 
-            // If we can't hit them and can't move, just end turn.
-            ServiceLocator.Get<UnitActionSystem>().EndTurn();
-            state = State.WaitingForTurn;
+            yield return new WaitUntil(() => actionComplete);
+            uas.OnActionCompleted -= HandleActionComplete;
         }
 
-        private bool TryMoveTowardsTarget(Unit enemyUnit, Unit target)
+        private Unit GetClosestValidTargetForAction(Unit enemyUnit, BaseAction action)
         {
-            List<Vector3Int> validMoves = Pathfinding.GetReachablePositions(
-                enemyUnit.CurrentLayeredPosition,
-                enemyUnit.GetMaxMoveCost()
-            );
-
-            if (validMoves.Count == 0)
-                return false;
-
-            Vector3Int bestMove = enemyUnit.CurrentLayeredPosition;
+            List<Vector3Int> validPositions = action.GetValidActionGridPositions();
+            Unit closest = null;
             int closestDistance = int.MaxValue;
 
-            Vector3Int targetPos3D = target.CurrentLayeredPosition;
-            foreach (Vector3Int movePos in validMoves)
+            foreach (Unit unit in UnitManager.AllUnits)
             {
-                int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(movePos, targetPos3D);
-                if (dist < closestDistance)
+                if (unit == null || unit.GetFaction() != Faction.Player)
+                    continue;
+
+                var health = unit.GetComponent<IDamageable>();
+                if (health != null && health.IsDead)
+                    continue;
+
+                if (!validPositions.Contains(unit.CurrentLayeredPosition))
+                    continue;
+
+                int distance = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
+                    enemyUnit.CurrentLayeredPosition,
+                    unit.CurrentLayeredPosition
+                );
+
+                if (distance > maxAttackDistanceTiles)
+                    continue;
+
+                if (distance < closestDistance)
                 {
-                    closestDistance = dist;
-                    bestMove = movePos;
+                    closestDistance = distance;
+                    closest = unit;
+                }
+            }
+            return closest;
+        }
+
+        private bool WantsToUseRangedAttack(Unit enemyUnit)
+        {
+            RangedAction rangedAction = enemyUnit.GetComponent<RangedAction>();
+            if (rangedAction == null || !rangedAction.CanExecuteAction())
+                return false;
+            return GetClosestValidTargetForAction(enemyUnit, rangedAction) != null;
+        }
+
+        private IEnumerator MoveAwayFromClosestPlayer(Unit enemyUnit)
+        {
+            Unit closestPlayer = GetClosestPlayerUnit(enemyUnit);
+            if (closestPlayer == null)
+                yield break;
+
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int start = enemyUnit.CurrentLayeredPosition;
+            Vector3Int playerPos = closestPlayer.CurrentLayeredPosition;
+            int maxMoveCost = enemyUnit.GetMaxMoveCost();
+
+            List<Vector3Int> reachablePositions = Pathfinding.GetReachablePositions(
+                start,
+                maxMoveCost
+            );
+            Vector3Int bestDestination = start;
+            int bestDistance = TacticsRuleset_Core.GetTacticsRulesetDistance3D(start, playerPos);
+
+            foreach (Vector3Int position in reachablePositions)
+            {
+                if (position == start || grid.IsPositionOccupied(position))
+                    continue;
+
+                int distance = TacticsRuleset_Core.GetTacticsRulesetDistance3D(position, playerPos);
+                if (distance > bestDistance)
+                {
+                    bestDistance = distance;
+                    bestDestination = position;
                 }
             }
 
-            if (bestMove != enemyUnit.CurrentLayeredPosition)
+            if (bestDestination == start)
+                yield break;
+
+            List<Vector3Int> path = Pathfinding.FindPath(start, bestDestination);
+            if (path == null || path.Count < 2)
+                yield break;
+
+            bool visualMoveComplete = false;
+            enemyUnit.MoveAlongPath(path, () => visualMoveComplete = true);
+            yield return new WaitUntil(() => visualMoveComplete);
+
+            bool actionCommitComplete = false;
+            ServiceLocator
+                .Get<UnitActionSystem>()
+                .AiCommitMoveAction(() => actionCommitComplete = true);
+            yield return new WaitUntil(() => actionCommitComplete);
+        }
+
+        private IEnumerator MoveTowardTarget(Unit enemyUnit, Unit target)
+        {
+            if (target == null)
+                yield break;
+
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int start = enemyUnit.CurrentLayeredPosition;
+            Vector3Int targetPos = target.CurrentLayeredPosition;
+
+            List<Vector3Int> fullPath = Pathfinding.FindPath(start, targetPos, targetPos);
+            if (fullPath == null || fullPath.Count < 2)
+                yield break;
+
+            int maxMoveCost = enemyUnit.GetMaxMoveCost();
+            Vector3Int bestDestination = start;
+            int usedCost = 0;
+
+            for (int i = 1; i < fullPath.Count; i++)
             {
-                Debug.Log($"[ENEMY AI] {enemyUnit.name} is moving towards {target.name}!");
+                Vector3Int previous = fullPath[i - 1];
+                Vector3Int next = fullPath[i];
 
-                GridPosition bestMoveGP = new GridPosition(bestMove.x, bestMove.z);
-                var moveEvent = new Reactions.BeforeMoveEvent(
-                    enemyUnit,
-                    enemyUnit.CurrentGridPosition,
-                    bestMoveGP
+                if (grid.IsPositionOccupied(next) && next != targetPos)
+                    break;
+                if (next == targetPos)
+                    break;
+
+                int stepCost = Pathfinding.CalculatePathCost(
+                    new List<Vector3Int> { previous, next }
                 );
+                if (usedCost + stepCost > maxMoveCost)
+                    break;
 
-                ServiceLocator
-                    .Get<ReactionManager>()
-                    .EvaluateEvent(
-                        moveEvent,
-                        (resolvedEvent) =>
-                        {
-                            GridSystem grid = ServiceLocator.Get<GridSystem>();
-                            if (resolvedEvent.IsCancelled)
-                            {
-                                enemyUnit.SnapToGrid(
-                                    grid.GetWorldPosition(enemyUnit.CurrentLayeredPosition)
-                                );
-                                state = State.TakingTurn;
-                                timer = 0.5f;
-                            }
-                            else
-                            {
-                                List<Vector3Int> path = Pathfinding.FindPath(
-                                    enemyUnit.CurrentLayeredPosition,
-                                    bestMove
-                                );
-
-                                enemyUnit.SpendActionPoints(1);
-                                grid.MoveUnit(
-                                    enemyUnit,
-                                    enemyUnit.CurrentLayeredPosition,
-                                    bestMove
-                                );
-                                enemyUnit.FinalizeMove(bestMove);
-
-                                enemyUnit.MoveAlongPath(
-                                    path,
-                                    () =>
-                                    {
-                                        state = State.TakingTurn;
-                                        timer = 0.5f;
-                                    }
-                                );
-                            }
-                        }
-                    );
-                return true;
+                usedCost += stepCost;
+                bestDestination = next;
             }
 
-            return false;
+            if (bestDestination == start)
+                yield break;
+
+            List<Vector3Int> movePath = Pathfinding.FindPath(start, bestDestination);
+            if (movePath == null || movePath.Count < 2)
+                yield break;
+
+            bool visualMoveComplete = false;
+            enemyUnit.MoveAlongPath(movePath, () => visualMoveComplete = true);
+            yield return new WaitUntil(() => visualMoveComplete);
+
+            bool actionCommitComplete = false;
+            ServiceLocator
+                .Get<UnitActionSystem>()
+                .AiCommitMoveAction(() => actionCommitComplete = true);
+            yield return new WaitUntil(() => actionCommitComplete);
         }
 
         private Unit GetClosestPlayerUnit(Unit enemyUnit)
         {
             Unit closest = null;
-            int closestDist = int.MaxValue;
+            int closestDistance = int.MaxValue;
 
-            foreach (Unit playerUnit in UnitManager.AllUnits)
+            foreach (Unit unit in UnitManager.AllUnits)
             {
-                if (playerUnit.GetFaction() == Faction.Player)
-                {
-                    var health = playerUnit.GetComponent<IDamageable>();
-                    if (health != null && health.IsDead)
-                        continue;
+                if (unit == null || unit.GetFaction() != Faction.Player)
+                    continue;
 
-                    int dist = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
-                        enemyUnit.CurrentLayeredPosition,
-                        playerUnit.CurrentLayeredPosition
-                    );
-                    if (dist < closestDist)
-                    {
-                        closestDist = dist;
-                        closest = playerUnit;
-                    }
+                var health = unit.GetComponent<IDamageable>();
+                if (health != null && health.IsDead)
+                    continue;
+
+                int distance = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
+                    enemyUnit.CurrentLayeredPosition,
+                    unit.CurrentLayeredPosition
+                );
+
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closest = unit;
                 }
             }
             return closest;
+        }
+
+        private bool IsNextToPlayer(Unit enemyUnit)
+        {
+            foreach (Unit unit in UnitManager.AllUnits)
+            {
+                if (unit == null || unit.GetFaction() != Faction.Player)
+                    continue;
+
+                var health = unit.GetComponent<IDamageable>();
+                if (health != null && health.IsDead)
+                    continue;
+
+                int distance = TacticsRuleset_Core.GetTacticsRulesetDistance3D(
+                    enemyUnit.CurrentLayeredPosition,
+                    unit.CurrentLayeredPosition
+                );
+
+                if (distance <= 1)
+                    return true;
+            }
+            return false;
         }
     }
 }

@@ -90338,6 +90338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3197422478429784906, guid: f4363603d7e604142ba80447f35a4f3d, type: 3}
+      propertyPath: controlMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4436149597350624496, guid: f4363603d7e604142ba80447f35a4f3d, type: 3}
       propertyPath: gridCursorVisual
       value: 
@@ -90963,3 +90967,7 @@ SceneRoots:
   - {fileID: 1267988185}
   - {fileID: 7069995806818222543}
   - {fileID: 1139280562509417414}
+  - {fileID: 548295968}
+  - {fileID: 956298216}
+  - {fileID: 1550522281}
+  - {fileID: 1696851973}
