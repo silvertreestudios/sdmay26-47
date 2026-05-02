@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Project/Scenes/ModelScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/MainMenu.unity
     guid: bef3577971b4c3c4f994657b58e1c009
+  - enabled: 1
+    path: Assets/_Project/Scenes/MainMenu.unity
+    guid: 00c042f6a689f14479aea891ff5922cf
+  - enabled: 1
+    path: Assets/_Project/Scenes/CharacterCreator.unity
+    guid: 41209a41a11de6f49939bf27c8d1c765
   - enabled: 1
     path: Assets/_Project/Scenes/Level 1.unity
     guid: 789e114ca0ec01745a256b5a54ef9f91

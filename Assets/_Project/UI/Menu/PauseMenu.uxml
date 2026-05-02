@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:Style src="MenuTheme.uss" />
+
+    <!-- overlay the entire screen with a semi-transparent black -->
+    <ui:VisualElement name="PauseRoot" class="settings-modal-wrapper screen-hidden" style="background-color: rgba(10, 12, 14, 0.85); justify-content: center; align-items: center;" focusable="false" picking-mode="Position">
+        
+        <!-- list of buttons centered on screen -->
+        <ui:Label text="PAUSED" class="pause-title" focusable="false" picking-mode="Ignore" />
+
+        <ui:VisualElement name="ButtonList" class="menu-btn-list" style="width: 400px;" focusable="false" picking-mode="Ignore">
+            <ui:Button name="BtnResume" text="RESUME" class="pause-menu-btn" />
+            <ui:Button name="BtnSave" text="SAVE GAME" class="pause-menu-btn" />
+            <ui:Button name="BtnRestart" text="RESTART" class="pause-menu-btn" />
+            <ui:Button name="BtnMainMenu" text="MAIN MENU" class="pause-menu-btn" />
+            <ui:Button name="BtnQuit" text="QUIT" class="pause-menu-btn" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+
+</ui:UXML>

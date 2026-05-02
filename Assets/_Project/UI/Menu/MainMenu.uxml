@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:tactics="TacticsGame.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:Style src="MenuTheme.uss" />
+
+    <!-- Root container with optional background image -->
+    <ui:VisualElement name="MenuRoot" class="menu-root root-container">
+        <!-- Background Container for images -->
+        <ui:VisualElement name="BackgroundContainer" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; -unity-background-scale-mode: scale-and-crop;" />
+        
+        <!-- Overlay to ensure text readability -->
+        <ui:VisualElement class="menu-bg-overlay" />
+
+        <!-- Left Panel: Navigation and Titles -->
+        <ui:VisualElement name="MenuLeftPanel" class="menu-left-panel" focusable="false" picking-mode="Ignore">
+            <ui:VisualElement class="menu-title-container" focusable="false" picking-mode="Ignore">
+                <ui:Label text="DUNGEON CRAWL" class="menu-title-main" focusable="false" picking-mode="Ignore" />
+                <ui:Label text="TACTICS" class="menu-title-sub" focusable="false" picking-mode="Ignore" />
+            </ui:VisualElement>
+ 
+            <ui:VisualElement class="menu-btn-list" focusable="false" picking-mode="Ignore">
+                <ui:Button name="BtnNewGame" text="NEW GAME" class="menu-btn" />
+                <ui:Button name="BtnLoadGame" text="LOAD GAME" class="menu-btn" />
+
+                <ui:Button name="BtnCredits" text="CREDITS" class="menu-btn" />
+                <ui:Button name="BtnLicense" text="ORC LICENSE" class="menu-btn" />
+                <ui:Button name="BtnQuit" text="QUIT GAME" class="menu-btn" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+ 
+        <!-- Right Panel / Full Screen Overlays -->
+        <ui:VisualElement name="MenuRightPanel" class="menu-right-panel" picking-mode="Ignore" focusable="false">
+            
+
+ 
+            <!-- License Modal -->
+            <ui:VisualElement name="LicenseView" class="license-modal screen-hidden" focusable="false" picking-mode="Ignore">
+                <ui:Label name="LicenseTitle" text="ORC LICENSE" class="modal-title" focusable="false" picking-mode="Ignore" />
+                <ui:ScrollView name="LicenseScroll" class="modal-scroll" vertical-scroller-visibility="AlwaysVisible" horizontal-scroller-visibility="Hidden" focusable="false">
+                    <ui:Label name="LicenseText" class="modal-content-text" focusable="false" picking-mode="Ignore" />
+                </ui:ScrollView>
+                <ui:Button name="LicenseCloseBtn" text="Close" class="modal-close-btn" />
+            </ui:VisualElement>
+            
+        </ui:VisualElement>
+ 
+        <!-- Credits Full Screen Overlay -->
+        <ui:VisualElement name="CreditsView" class="credits-view screen-hidden" focusable="false" picking-mode="Ignore">
+            <ui:ScrollView name="CreditsScroll" class="credits-scroll" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" focusable="false">
+                <!-- Large spacing at top to allow scrolling from bottom to top -->
+                <ui:VisualElement style="height: 1080px;" focusable="false" picking-mode="Ignore" />
+                <ui:Label name="CreditsText" class="credits-content-text" focusable="false" picking-mode="Ignore" />
+                <!-- Large spacing at bottom -->
+                <ui:VisualElement style="height: 1080px;" focusable="false" picking-mode="Ignore" />
+            </ui:ScrollView>
+            
+            <!-- Hold to Skip Indicator -->
+            <ui:VisualElement class="hold-skip-container" focusable="false" picking-mode="Ignore">
+                <tactics:RadialProgress name="HoldSkipProgress" class="hold-skip-circle" focusable="false" picking-mode="Ignore" />
+                <ui:Label text="Hold to skip" class="hold-skip-text" focusable="false" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+
+</ui:UXML>

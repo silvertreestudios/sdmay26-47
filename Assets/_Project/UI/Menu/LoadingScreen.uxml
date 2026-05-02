@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:Style src="MenuTheme.uss" />
+
+    <ui:VisualElement name="LoadingRoot" class="loading-screen-root screen-hidden">
+        <ui:VisualElement class="loading-content">
+            <ui:Label text="LOADING" class="loading-text" />
+            
+            <ui:VisualElement class="loading-bar-container">
+                <ui:VisualElement name="LoadingBarFill" class="loading-bar-fill" />
+            </ui:VisualElement>
+            
+            <ui:Label name="StatusText" text="0%" class="loading-status-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
