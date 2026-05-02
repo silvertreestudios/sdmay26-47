@@ -18,6 +18,7 @@ namespace TacticsGame.InputSystem
         public event EventHandler OnLayerDownPerformed;
         public event EventHandler OnEagleEyePerformed;
         public event EventHandler OnToggleWaypointPerformed;
+        public event EventHandler OnPausePerformed;
 
         // UI Map Events
         public event EventHandler OnUIPageNextPerformed;
@@ -57,6 +58,7 @@ namespace TacticsGame.InputSystem
             playerInputActions.Player.LayerDown.performed += HandleLayerDown;
             playerInputActions.Player.EagleEye.performed += HandleEagleEye;
             playerInputActions.Player.ToggleWaypoint.performed += HandleToggleWaypoint;
+            playerInputActions.Player.Pause.performed += HandlePause;
 
             playerInputActions.UI.PageNext.performed += HandleUIPageNext;
             playerInputActions.UI.PagePrev.performed += HandleUIPagePrev;
@@ -65,6 +67,7 @@ namespace TacticsGame.InputSystem
             playerInputActions.UI.ToggleSteps.performed += HandleUIToggleSteps;
             playerInputActions.UI.Submit.performed += HandleUIConfirm;
             playerInputActions.UI.Cancel.performed += HandleUICancel;
+            playerInputActions.UI.Pause.performed += HandlePause;
         }
 
         private void OnDisable()
@@ -79,6 +82,7 @@ namespace TacticsGame.InputSystem
             playerInputActions.Player.LayerDown.performed -= HandleLayerDown;
             playerInputActions.Player.EagleEye.performed -= HandleEagleEye;
             playerInputActions.Player.ToggleWaypoint.performed -= HandleToggleWaypoint;
+            playerInputActions.Player.Pause.performed -= HandlePause;
 
             playerInputActions.UI.PageNext.performed -= HandleUIPageNext;
             playerInputActions.UI.PagePrev.performed -= HandleUIPagePrev;
@@ -87,6 +91,7 @@ namespace TacticsGame.InputSystem
             playerInputActions.UI.ToggleSteps.performed -= HandleUIToggleSteps;
             playerInputActions.UI.Submit.performed -= HandleUIConfirm;
             playerInputActions.UI.Cancel.performed -= HandleUICancel;
+            playerInputActions.UI.Pause.performed -= HandlePause;
 
             playerInputActions.Player.Disable();
             playerInputActions.UI.Disable();
@@ -121,6 +126,9 @@ namespace TacticsGame.InputSystem
 
         private void HandleToggleWaypoint(InputAction.CallbackContext ctx) =>
             InvokeEventIfValid(OnToggleWaypointPerformed, IsPointerInput(ctx));
+
+        private void HandlePause(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnPausePerformed, IsPointerInput(ctx));
 
         private void HandleUIPageNext(InputAction.CallbackContext ctx) =>
             InvokeEventIfValid(OnUIPageNextPerformed, IsPointerInput(ctx));
@@ -190,6 +198,26 @@ namespace TacticsGame.InputSystem
         public Vector2 GetMousePosition()
         {
             return Mouse.current.position.ReadValue();
+        }
+
+        public bool IsAnyButtonHeld()
+        {
+            if (Keyboard.current != null && Keyboard.current.anyKey.isPressed)
+                return true;
+            if (
+                Mouse.current != null
+                && (Mouse.current.leftButton.isPressed || Mouse.current.rightButton.isPressed)
+            )
+                return true;
+            if (Gamepad.current != null)
+            {
+                foreach (var control in Gamepad.current.allControls)
+                {
+                    if (control.IsPressed())
+                        return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>

@@ -174,6 +174,12 @@ namespace TacticsGame.UI.CharacterCreator
             if (uiDocument == null)
                 uiDocument = GetComponent<UIDocument>();
 
+            // match targetFOV with the actual camera FOV
+            if (previewCamera != null)
+            {
+                targetFOV = previewCamera.fieldOfView;
+            }
+
             StartCoroutine(InitializeWhenDocumentReady());
         }
 

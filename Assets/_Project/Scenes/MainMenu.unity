@@ -1,0 +1,771 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 10
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 1
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 1
+    m_PVRDenoiserTypeIndirect: 1
+    m_PVRDenoiserTypeAO: 1
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 1
+    m_PVRFilteringGaussRadiusAO: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingSettings: {fileID: 0}
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 3
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    buildHeightMesh: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &706335119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 706335122}
+  - component: {fileID: 706335121}
+  - component: {fileID: 706335120}
+  - component: {fileID: 706335123}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &706335120
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706335119}
+  m_Enabled: 1
+--- !u!20 &706335121
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706335119}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &706335122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706335119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &706335123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706335119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!1 &740451191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740451193}
+  - component: {fileID: 740451192}
+  - component: {fileID: 740451194}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &740451192
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740451191}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &740451193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740451191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &740451194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740451191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!1 &2080276418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2080276420}
+  - component: {fileID: 2080276419}
+  - component: {fileID: 2080276421}
+  - component: {fileID: 2080276423}
+  - component: {fileID: 2080276422}
+  - component: {fileID: 2080276424}
+  m_Layer: 5
+  m_Name: UI_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2080276419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080276418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: a12a156a0c6e8884fa7afcfb41c5813f, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: c5bdf05ace0c73c47ab29f064fead274, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!4 &2080276420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080276418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2080276421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080276418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc71c4d345ad79246bd956ef9de552b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSceneName: CharacterCreator
+  loadingTemplate: {fileID: 9197481963319205126, guid: 0f07de8797de8704f81ac8f37d82e0d0, type: 3}
+  creditsText: "PATHFINDER 2E GAME IN UNITY\r\n\r\n\n\n\nCredits\r\n\r\n\r\n\r\nDEVELOPMENT
+    TEAM\r\n\u201CThe Pathwinners\u201D\r\nSenior Design Team sdmay26-47\r\nIowa
+    State University\r\n\nSoftware Architect  \r\nOwais Samman\n\nProject Liaison 
+    \nMichael Linker\n\nMeeting Coordinator  \r\nTJ Pexa\r\n\nTester / QA  \nCaleb
+    Iddings\n\nTimeline Upholder  \r\nOwen Wardyn\r\n\nGit Manager \nKasson Plummer
+    \r\n\r\n\n\r\nPROJECT LEADERSHIP\r\n\r\nClient: Josh Clausman\r\nFaculty Advisor:
+    Akhilesh Tyagi\r\n\r\n\r\n\nSPECIAL CONTRIBUTIONS\r\n\r\nFace Scan Actor: Adil
+    Afzal\r\n\r\n\n\r\nBETA TESTERS\r\n\r\n[To Be Added]\r\n\r\n\n\r\nGAME DESIGN
+    & RULESET\r\n\r\nBased on Pathfinder Second Edition  \r\n\xA9 Paizo Inc.\r\n\r\nRules
+    reference support:\r\nArchives of Nethys\r\n\r\n\r\n\r\nDATA & STRUCTURE REFERENCES\r\n\r\nJSON
+    encounter and rule structure inspired by exports from:\r\nFoundry Virtual Tabletop\r\n\r\n\r\nTOOLS
+    & ENGINE\r\n\r\nUnity Engine\r\n\r\n\r\n\nART ASSETS\r\n\r\nKayKit Asset Packs 
+    \r\nMaiami Studios Free Stylized Smoke Effects Pack\r\nVefects Free Fire VFX\r\n\r\n\n\r\nACKNOWLEDGEMENTS\r\n\r\nPathfinder
+    community  \r\nFriends, family, and supporters  \r\n\r\n\n\r\nLEGAL\r\n\r\nThis
+    project was developed as part of the\r\nSenior Design Capstone at Iowa State
+    University.\r\n\r\nPathfinder is a trademark of Paizo Inc.\r\nThis project is
+    not affiliated with or endorsed by Paizo Inc.\r\n\r\n\n\r\n\xA9 2026 Iowa State
+    University\r\nSenior Design Team sdmay26-47\r\nAll Rights Reserved"
+  licenseText: "ORC LICENSE FINAL\r\nThis Open RPG Creative license (\u201CORC License\u201D)
+    grants the right to use Licensed Material subject to the\r\nterms and conditions
+    set forth and referenced as follows:\r\nI. Definitions.\r\na. Adapted Licensed
+    Material means Derivative Works that Use all or any portion of the Licensed\r\nMaterial
+    that You create or publish to the limited extent that such Derivative Works would\r\notherwise
+    constitute those forms of Licensed Material set forth in Section I.e.(2) below.\r\nAdapted
+    Licensed Material expressly excludes works that would constitute Reserved Material.\r\nb.
+    Copyright and Similar Rights means copyright and/or similar rights closely related
+    to\r\ncopyright including, without limitation, performance, broadcast, sound
+    recording, and Sui\r\nGeneris Database Rights, without regard to how the rights
+    are labeled or categorized. In no\r\nevent shall Copyright and Similar Rights
+    include trademark or patent rights.\r\nc. Derivative Work means: (i) for a product
+    that Uses a single playable game system, the entire\r\nproduct published by or
+    on behalf of You that is based on, derived from, or incorporates all or\r\nany
+    portion of the Licensed Material; and (ii) for products containing sections relating
+    to\r\nmultiple non-interoperable game systems (such as a magazine featuring sections
+    regarding\r\nmultiple unrelated games from different publishers or a website
+    with portions related to\r\ndifferent games) the entire portion of the product
+    related to or derived from the Licensed\r\nMaterial shall constitute the Derivative
+    Work.\r\nd. Effective Technological Measures means those measures that, in the
+    absence of proper\r\nauthority, may not be circumvented under laws fulfilling
+    obligations under Article 11 of the\r\nWIPO Copyright Treaty adopted on December
+    20, 1996, and/or similar international\r\nagreements.\r\ne. Licensed Material
+    means (1) any material contained in a Work that would otherwise constitute\r\nReserved
+    Material but that has been expressly designated as Licensed Material by that\r\nmaterial\u2019s
+    Licensor, and (2) those expressions reasonably necessary to convey functional
+    ideas\r\nand methods of operation of a game that are contained in a Work that
+    are comprised of systems,\r\nprocedures, processes, rules, laws, instructions,
+    heuristics, routines, functional elements,\r\ncommands, structures, principles,
+    methodologies, operations, devices, and concepts of play,\r\nand the limitations,
+    restraints, constraints, allowances, and affordances inherent in gameplay,\r\nincluding
+    but not limited to expressions describing the function of or providing instructions
+    as\r\nto the following:\r\ni. Creation and play of player and non-player characters
+    (such as statistics, attributes,\r\nstatblocks, traits, classes, jobs, alignments,
+    professions, proficiencies, abilities, spells,\r\nskills, actions, reactions,
+    interactions, resources, and equipment);\r\nii. Systems and classifications applicable
+    to gameplay (such as alignments, backgrounds,\r\nclasses, experience points,
+    levels and leveling up, encounters, combat, initiative and turn\r\norder, movement,
+    monster statistics, creature types, traps, conditions, buffs and debuffs,\r\npowers,
+    terrain types, challenge ratings, moves, difficulty classes, skill checks, saving\r\nthrows,
+    resting and resource management, classification of magic systems, spell and ability\r\neffects,
+    looting, items and equipment, diplomacy systems, dialogue options, and outcome\r\ndetermination);\r\niii.
+    Methods of determining success, failure, or outcome, and any expressions of such
+    methods\r\nor of such successes, failures, or outcomes; and\r\niv. Methods and
+    mediums by which players play the game (such as dice rolling, random\r\nnumber
+    generation, coin flipping, card drawing and play, applying modifiers to results
+    of\r\nchance, creating or filling in character sheets, moving and interacting
+    with tokens or\r\nfigurines, drawing maps and illustrations, speaking, messaging,
+    acting, pantomime, writing\r\nnotes, asking questions, and making statements).\r\n2\r\nThe
+    term Licensed Material shall in no event include Third Party Reserved Material.
+    For the\r\navoidance of doubt, the term Licensed Material is intended to exclude
+    Reserved Material except\r\nto the limited extent a Licensor has expressly designated
+    content that would otherwise\r\nconstitute their Reserved Material as Licensed
+    Material pursuant to notice published under\r\nArticle III.\r\nf. Licensed Rights
+    means the rights granted to You subject to the terms and conditions of this\r\nORC
+    License, which are limited to all Copyright and Similar Rights that apply to
+    Your Use of\r\nthe Licensed Material and that the Licensor has authority to license.\r\ng.
+    Licensor means any individual or entity granting rights under this ORC License.\r\nh.
+    Reserved Material means trademarks, trade dress, and creative expressions that
+    are not\r\nessential to, or can be varied without altering, the ideas or methods
+    of operation of a game\r\nsystem, including works of visual art, music and sound
+    design, and clearly expressed and\r\nsufficiently delineated characters, character
+    organizations, dialogue, settings, locations, worlds,\r\nplots, or storylines,
+    including proper nouns and the adjectives, names, and titles derived from\r\nproper
+    nouns. The term Reserved Material shall in no event include elements that have
+    been\r\npreviously expressly designated as Licensed Material by that material\u2019s
+    Licensor, that are\r\nAdapted Licensed Material, that constitute Third Party
+    Reserved Material, or that are in the\r\npublic domain.\r\ni. Sui Generis Database
+    Rights means rights other than copyright resulting from Directive\r\n96/9/EC
+    of the European Parliament and of the Council of 11 March 1996 on the legal\r\nprotection
+    of databases, as amended and/or succeeded, as well as other essentially equivalent\r\nrights
+    anywhere in the world.\r\nj. Term means the longer of the term of the Copyright
+    and Similar Rights licensed herein.\r\nk. Third Party Reserved Material means
+    all intellectual property rights that are not or have not\r\nbeen licensed under
+    the ORC License and that are neither owned nor controlled by Licensor or\r\nYou
+    or any person or entity that directly or indirectly controls, is controlled by,
+    or is under\r\ncommon control with You or Licensor.\r\nl. Use or Used means to
+    use material by any means or process that requires permission under the\r\nLicensed
+    Rights, such as production, reproduction, creation of derivative works, public
+    display,\r\npublic performance, distribution, dissemination, communication, or
+    importation, and to make\r\nmaterial available to the public including in ways
+    that members of the public may access the\r\nmaterial from a place and at a time
+    individually chosen by them.\r\nm. Work or Works means that where a Licensor
+    applies notice substantially in the form described\r\nin Section III to a product,
+    (i) for products containing a single playable game, the entire product\r\npublished
+    by Licensor shall constitute the Work, and (ii) for products containing sections\r\nrelating
+    to multiple non-interoperable games (such as a magazine featuring sections regarding\r\nmultiple
+    unrelated games from different publishers or a website with portions related
+    to\r\ndifferent games) the entire portion of the product related to or derived
+    from the Licensed\r\nMaterial shall constitute the Work.\r\nn. You or Your means
+    the individual or entity exercising rights granted under this ORC License.\r\nII.
+    Grants & Limitations.\r\na. Primary Grant to You. Subject to the terms and conditions
+    of this ORC License, for the Term\r\nLicensor hereby grants You a worldwide,
+    royalty-free, non-sublicensable, non-exclusive,\r\nirrevocable license to exercise
+    the Licensed Rights in the Licensed Material to Use the Licensed\r\nMaterial,
+    in whole or in part that may be terminated only as set forth in Section V.a.
+    for Your\r\nbreach. Licensor hereby authorizes You to exercise the Licensed Rights
+    in all media and\r\nformats whether now known or hereafter created, and to make
+    technical modifications\r\nnecessary to do so. Licensor hereby waives and/or
+    agrees not to assert any right or authority to\r\nforbid You from making technical
+    modifications necessary to exercise the Licensed Rights,\r\nincluding technical
+    modifications necessary to circumvent Effective Technological Measures.\r\n3\r\nb.
+    Grant of Adapted Licensed Material by You. You hereby receive an offer from the
+    Licensor\r\nto exercise the Licensed Rights on the express condition that You
+    do and hereby grant to every\r\nrecipient of the Adapted Licensed Material an
+    irrevocable offer to exercise the Licensed Rights\r\nin the Adapted Licensed
+    Material under the terms and conditions hereof pursuant to which such\r\nAdapted
+    Licensed Material shall be licensed as Licensed Material to such recipient. You
+    may\r\nnot offer or impose any additional or different terms or conditions on
+    the Licensed Material or\r\napply any Effective Technological Measures to the
+    Licensed Material if doing so restricts\r\nexercise of the Licensed Rights by
+    any recipient of the Licensed Material.\r\nc. Database Rights. Where the Licensed
+    Rights include Sui Generis Database Rights that apply\r\nto Your Use of the Licensed
+    Material, this ORC License grants You the right to extract, reuse,\r\nreproduce,
+    and Use all or a substantial portion of the contents of the database, and if
+    You\r\ninclude all or a substantial portion of the database contents in a database
+    in which You have\r\nSui Generis Database Rights, then the database in which
+    You have Sui Generis Database Rights\r\n(but not its individual contents) shall
+    constitute Adapted Licensed Material.\r\nd. Limitations.\r\ni. Nothing in this
+    ORC License constitutes or may be construed as permission to assert or\r\nimply
+    that You are, or that Your Use of the Licensed Material is, connected with, or\r\nsponsored,
+    endorsed, or granted official status by, the Licensor or others designated to\r\nreceive
+    attribution hereunder.\r\nii. Moral rights, such as the right of integrity, are
+    not licensed under this ORC License, nor\r\nare publicity, privacy, and/or other
+    similar personality rights; however, to the extent\r\npossible, the Licensor
+    waives and/or agrees not to assert any such rights held by the\r\nLicensor to
+    the limited extent necessary to allow You to exercise the Licensed Rights, but\r\nnot
+    otherwise.\r\niii. To the extent possible, the Licensor waives any right to collect
+    royalties from You for the\r\nexercise of the Licensed Rights and Use of the
+    Licensed Material, whether directly or\r\nthrough a collecting society under
+    any voluntary or waivable statutory or compulsory\r\nlicensing scheme.\r\nIII.
+    Required Notice. The grant of this ORC License to You is expressly conditioned
+    on You including\r\nthe notice statements described in subsections (a)\u2013(d)
+    below in a reasonable manner based on the\r\nmedium, means, and context in which
+    You Used the Licensed Material:\r\na. ORC Notice. The following statement designating
+    the location and the terms of this ORC\r\nLicense:\r\nThis product is licensed
+    under the ORC License located at the Library of\r\nCongress at TX 9-307-067 and
+    available online at various locations. All\r\nwarranties are disclaimed as set
+    forth therein.\r\nb. Attribution Notice.\r\ni. A statement based on reasonable,
+    good-faith efforts that identifies each Licensor or creator\r\nof the Licensed
+    Material You Used and any others designated to receive attribution,\r\nincluding
+    all upstream licensors of Licensed Material upon which Your Adapted Licensed\r\nMaterial
+    is based or derived from, worded in any accurate and reasonable manner so\r\nrequested
+    by such parties. Such credit may be named, anonymous, or a reasonable\r\npseudonym.
+    For the avoidance of doubt, both Licensor and all parties similarly credited\r\nunder
+    Licensor\u2019s attribution notice should be included in Your attribution notice
+    unless\r\notherwise reasonably indicated by such parties.\r\nii. A statement
+    indicating how You wish to be reasonably credited with respect to the Adapted\r\nLicensed
+    Material licensed by You under this ORC License, including anonymously or by\r\npseudonym
+    if designated. Licensors and creators may update their name, anonymity\r\ndesignation,
+    or pseudonym from time-to-time by notice to You and other known licensees\r\nhereunder;
+    however, such change shall in no event require You to halt distribution of any\r\n4\r\nWorks
+    You have produced or destroy any produced Works or Works-in-progress, but shall\r\nmerely
+    require You to use good faith efforts to implement the requested change on a
+    going\r\nforward basis.\r\nc. Reserved Material Notice. A statement based on
+    reasonable, good-faith efforts that identifies\r\nthe elements of Your Reserved
+    Material, if any, contained in the Derivative Work in which You\r\nUse the Licensed
+    Material. For avoidance of doubt, such designation neither limits Your rights\r\nin
+    Your Reserved Material nor limits any downstream licensee\u2019s Use of the Adapted
+    Licensed\r\nMaterial. In the event of a conflict between Your designation of
+    Reserved Material and the\r\ndefinition of Licensed Material, the definition
+    shall control.\r\nd. Expressly Designated Licensed Material. A statement that
+    identifies any elements of Your\r\ncontent that would otherwise constitute Reserved
+    Material contained in Your Derivative Work\r\nthat You agree to offer to prospective
+    licensees under the ORC License as Licensed Material\r\npursuant to Section I.e.(1)
+    above.\r\ne. Sample Notice. By way of example only, the following notice would
+    comply with the\r\nrequirements of this ORC License:\r\nORC Notice This product
+    is licensed under the ORC License located at the Library of\r\nCongress at TX
+    9-307-067 and available online at various locations\r\nincluding [possible domain
+    names may be inserted] and others.\r\nAll warranties are disclaimed as set forth
+    therein.\r\nAttribution This product is based on the following Licensed Material:\r\n
+    [Title of Work], [Copyright Notice], [Author Credit Information].\r\n [Title
+    of Additional Work], [Copyright Notice], [Author Credit\r\nInformation],\r\n[Etc.].\r\n
+    If you use our Licensed Material in your own published works, please\r\ncredit
+    us as follows:\r\n [Title of This Work], [Copyright Notice], [Your Author Credit\r\nInformation].\r\nReserved\r\nMaterial\r\nReserved
+    Material elements in this product include, but may not be limited\r\nto: The
+    Skeleton Krew, The Horrible Nation of Funeralia, The Order of\r\nOssuaries &
+    Edgelords, and all elements designated as Reserved Material\r\nunder the ORC
+    License.\r\nExpressly\r\nDesignated\r\nLicensed\r\nMaterial\r\nThe following
+    elements are owned by the Licensor and would otherwise\r\nconstitute Reserved
+    Material and are hereby designated as Licensed\r\nMaterial: The Bardic Order
+    of the Singing Skull and associated characters,\r\nlocations, and titles.\r\nIV.
+    Warranty & Limitation of Liability. Licensor warrants, represents, acknowledges,
+    and agrees\r\nthat upon publication of Required Notice in a Licensor Work, Licensor
+    may not thereafter withdraw,\r\nmodify, or revoke such offer to license the Licensed
+    Material hereunder as to any existing licensee\r\nor any prospective licensee,
+    and Licensor\u2019s offer to license such Licensed Material is irrevocable.\r\nLicensor
+    licenses the Licensed Material as-is and as-available, and makes no representations
+    or\r\nwarranties of any kind concerning the Licensed Material, whether express,
+    implied, statutory, or\r\nother. This includes, without limitation, warranties
+    of title, merchantability, fitness for a particular\r\npurpose, non-infringement,
+    absence of latent or other defects, accuracy, or the presence or absence\r\nof
+    errors, whether or not known or discoverable. Where disclaimers of warranties
+    are not allowed\r\nin full or in part, this disclaimer may not apply to You.
+    To the extent possible, in no event will the\r\n5\r\nLicensor be liable to You
+    on any legal theory (including, without limitation, negligence) or\r\notherwise
+    for any direct, special, indirect, incidental, consequential, punitive, exemplary,
+    or other\r\nlosses, costs, expenses, or damages arising out of this ORC License
+    or use of the Licensed Material,\r\neven if the Licensor has been advised of
+    the possibility of such losses, costs, expenses, or damages.\r\nWhere a limitation
+    of liability is not allowed in full or in part, this limitation may not apply
+    to You.\r\nThe disclaimer of warranties and limitation of liability provided
+    above shall be interpreted in a\r\nmanner that, to the extent possible, most
+    closely approximates an absolute disclaimer and waiver\r\nof all liability.\r\nV.
+    Other Terms & Conditions.\r\na. Termination & Remedies. Your license to Use the
+    Licensed Material will terminate\r\nautomatically if You fail to comply with
+    the terms and condition of this ORC License. Your\r\nlicense will be reinstated,
+    effective as of the date of termination, if You cure such violation on\r\na going
+    forward basis (without the obligation to destroy inventory on hand) within 60
+    days of\r\nYour discovery of the violation or if Licensor waives such violation
+    in writing. No such\r\ntermination shall affect, limit, or disrupt the rights
+    of any Licensor or downstream licensee of\r\nany Licensed Material under any
+    ORC License. Only the Licensor and Licensor\u2019s upstream\r\nlicensors under
+    this ORC License (which You are deemed to be in privity herewith) may bring\r\nenforcement
+    action against You hereunder. This constitutes a limitation on Licensor remedies\r\nwith
+    respect to the license grant in the Licensed Material hereunder; however, this
+    ORC License\r\nneither limits Licensor\u2019s remedies in any way with respect
+    to Licensor\u2019s Reserved Material,\r\nnor does it limit Licensor\u2019s right
+    to offer the Licensed Material or Reserved Material under\r\nseparate terms or
+    conditions.\r\nb. Modifications. This ORC License may not be amended, superseded,
+    modified, updated,\r\nrepealed, revoked, or deauthorized. Neither You nor Licensor
+    may modify the terms of this\r\nORC License; however, You may enter into a separate
+    agreement of Your own making provided\r\nsuch agreement does not seek to modify
+    the terms hereof. This ORC License does not, and\r\nshall not be interpreted
+    to reduce, limit, restrict, or impose conditions on any use of the Licensed\r\nMaterial
+    that could lawfully be made without permission under this ORC License.\r\nc.
+    Construction. This ORC License is published simultaneously with an answers and\r\nexplanations
+    document (\u201CAxE\u201D) that is filed under the same US Copyright registration
+    as this\r\nORC License. One purpose of the AxE is to provide a general indication
+    of the drafters\u2019\r\nintentions in interpreting the ORC License and in the
+    event of a dispute, the AxE is intended to\r\nbe admissible to and used by any
+    adjudicating body for such purpose. The ORC License may\r\nbe translated into
+    other languages. You and Licensor acknowledge and agree that if there is any\r\nconflict
+    between this ORC License, the AxE, and such translated version, the terms of
+    the\r\nEnglish language ORC License registered by Azora Law PLLC with the US
+    Copyright Office\r\nshall control. Subsequent versions of the AxE shall not be
+    admissible for purposes of\r\ndetermining the drafters\u2019 intentions with
+    respect to the ORC License. To the extent possible, if\r\nany provision of this
+    ORC License is deemed unenforceable by a court of law, it shall be\r\nautomatically
+    reformed to the minimum extent necessary to make it enforceable on a case-bycase
+    basis. If such provision cannot be reformed, it shall be severed from this ORC
+    License\r\nwithout affecting the enforceability of the remaining terms and conditions.
+    No term or\r\ncondition of this ORC License will be waived and no failure to
+    comply consented to unless\r\nexpressly agreed to by the Licensor. Nothing in
+    this ORC License constitutes or may be\r\ninterpreted as a limitation upon, or
+    waiver of, any privileges and immunities that apply to the\r\nLicensor or You,
+    including from the legal processes of any jurisdiction or authority."
+  creditsScrollSpeed: 80
+  holdToSkipTime: 1.5
+--- !u!114 &2080276422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080276418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535c94c62c0056443beed44d2e5c41f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgrounds:
+  - {fileID: 21300000, guid: 6f7799d12a8ff5d499fc520bb7605763, type: 3}
+  - {fileID: 21300000, guid: 5babd8601f3e3eb4e8e1890458c93665, type: 3}
+  - {fileID: 21300000, guid: e5aeb046d3cc8fa4f8418b37696d4cb0, type: 3}
+  - {fileID: 21300000, guid: e2fbd0aa762a44647be7d8ca821d21d1, type: 3}
+  - {fileID: 21300000, guid: 5675f64d956bc39468ab7576edb94e9c, type: 3}
+  startIndex: -1
+  panSpeed: 0.2
+  zoomSpeed: 0.2
+  maxZoom: 1.2
+  autoSwapInterval: 10
+  backgroundElementName: BackgroundContainer
+--- !u!114 &2080276423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080276418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63de73f25f00404f9317e9873312cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 500
+--- !u!114 &2080276424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080276418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fa024607af8bd438ca94d510a7f3d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 706335122}
+  - {fileID: 740451193}
+  - {fileID: 2080276420}
