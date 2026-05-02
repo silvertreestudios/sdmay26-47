@@ -23,8 +23,7 @@ namespace TacticsGame.Characters
 
         private void Start()
         {
-            var grid = ServiceLocator.Get<GridSystem>();
-            if (grid == null)
+            if (!ServiceLocator.TryGet<GridSystem>(out var grid))
                 return;
 
             if (unit == null)
@@ -47,7 +46,9 @@ namespace TacticsGame.Characters
             if (unit == null)
                 return;
 
-            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            if (!ServiceLocator.TryGet<GridSystem>(out var grid))
+                return;
+
             int referenceY = Mathf.RoundToInt(transform.position.y / grid.VerticalCellSize);
             CurrentLayeredPosition = grid.ResolveClosestLayeredPosition(gridPosition, referenceY);
 
@@ -56,8 +57,10 @@ namespace TacticsGame.Characters
 
         public void FinalizeMove(Vector3Int finalLayeredPosition)
         {
-            GridSystem grid = ServiceLocator.Get<GridSystem>();
-            grid.MoveUnit(unit, CurrentLayeredPosition, finalLayeredPosition);
+            if (ServiceLocator.TryGet<GridSystem>(out var grid))
+            {
+                grid.MoveUnit(unit, CurrentLayeredPosition, finalLayeredPosition);
+            }
             CurrentLayeredPosition = finalLayeredPosition;
 
             if (STEALTH_DEBUG && unit != null)

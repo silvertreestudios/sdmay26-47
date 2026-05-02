@@ -99,7 +99,10 @@ namespace TacticsGame.Characters
 
         private void Start()
         {
-            ServiceLocator.Get<UnitActionSystem>().OnSelectedUnitChanged += Select_unit;
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var uas))
+            {
+                uas.OnSelectedUnitChanged += Select_unit;
+            }
 
             var meshRenderer = GetComponentInChildren<MeshRenderer>();
             if (meshRenderer != null)
@@ -122,7 +125,10 @@ namespace TacticsGame.Characters
 
         private void Select_unit(object sender, EventArgs e)
         {
-            selected = (ServiceLocator.Get<UnitActionSystem>().SelectedUnit == this);
+            if (ServiceLocator.TryGet<UnitActionSystem>(out var uas))
+            {
+                selected = (uas.SelectedUnit == this);
+            }
         }
 
         // PF2e Rule Properties

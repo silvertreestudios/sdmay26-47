@@ -28,6 +28,7 @@ namespace TacticsGame.InputSystem
         public event EventHandler OnUIToggleStepsPerformed;
         public event EventHandler OnUIConfirmPerformed;
         public event EventHandler OnUICancelPerformed;
+        public event EventHandler OnAdvanceDialoguePerformed;
 
         private PlayerInputActions playerInputActions;
 
@@ -68,6 +69,7 @@ namespace TacticsGame.InputSystem
             playerInputActions.UI.Submit.performed += HandleUIConfirm;
             playerInputActions.UI.Cancel.performed += HandleUICancel;
             playerInputActions.UI.Pause.performed += HandlePause;
+            playerInputActions.UI.AdvanceDialogue.performed += HandleAdvanceDialogue;
         }
 
         private void OnDisable()
@@ -92,6 +94,7 @@ namespace TacticsGame.InputSystem
             playerInputActions.UI.Submit.performed -= HandleUIConfirm;
             playerInputActions.UI.Cancel.performed -= HandleUICancel;
             playerInputActions.UI.Pause.performed -= HandlePause;
+            playerInputActions.UI.AdvanceDialogue.performed -= HandleAdvanceDialogue;
 
             playerInputActions.Player.Disable();
             playerInputActions.UI.Disable();
@@ -144,6 +147,9 @@ namespace TacticsGame.InputSystem
 
         private void HandleUIToggleSteps(InputAction.CallbackContext ctx) =>
             InvokeEventIfValid(OnUIToggleStepsPerformed, IsPointerInput(ctx));
+
+        private void HandleAdvanceDialogue(InputAction.CallbackContext ctx) =>
+            InvokeEventIfValid(OnAdvanceDialoguePerformed, IsPointerInput(ctx));
 
         private void HandleUIConfirm(InputAction.CallbackContext ctx)
         {

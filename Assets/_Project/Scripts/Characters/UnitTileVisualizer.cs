@@ -35,12 +35,21 @@ namespace TacticsGame.Characters
 
         private void Start()
         {
-            gridSystem = ServiceLocator.Get<GridSystem>();
+            if (!ServiceLocator.TryGet<GridSystem>(out gridSystem))
+            {
+                Debug.LogWarning(
+                    $"[UnitTileVisualizer] GridSystem not found for {gameObject.name}. Disabling visualizer."
+                );
+                enabled = false;
+                return;
+            }
             InitializeHighlight();
         }
 
         private void Update()
         {
+            if (gridSystem == null)
+                return;
             UpdateHighlightPosition();
             UpdateVisualState();
         }
@@ -95,6 +104,8 @@ namespace TacticsGame.Characters
 
         private void UpdatePosition()
         {
+            if (gridSystem == null)
+                return;
             int referenceY = Mathf.RoundToInt(
                 unit.transform.position.y / gridSystem.VerticalCellSize
             );

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:VisualElement class="settings-modal-wrapper">
+        <ui:VisualElement class="settings-panel">
+            <ui:VisualElement class="settings-header-container">
+                <ui:Label text="SETTINGS" class="settings-header" />
+            </ui:VisualElement>
+
+            <ui:ScrollView name="SettingsScroll" class="settings-scroll-content" vertical-scroller-visibility="Auto" focusable="false">
+                
+                <ui:Label text="DISPLAY" class="settings-section-header" focusable="false" picking-mode="Ignore" />
+                <ui:VisualElement name="RowResolution" class="settings-row" focusable="false" picking-mode="Ignore">
+                    <ui:Label text="Resolution" class="settings-label" focusable="false" picking-mode="Ignore" />
+                    <ui:DropdownField name="ResolutionDropdown" choices="1920x1080,2560x1440,3840x2160" value="1920x1080" class="unity-popup-field" />
+                </ui:VisualElement>
+ 
+                <ui:VisualElement name="RowFullscreen" class="settings-row" focusable="false" picking-mode="Ignore">
+                    <ui:Label text="Fullscreen" class="settings-label" focusable="false" picking-mode="Ignore" />
+                    <ui:Toggle name="FullscreenToggle" class="unity-toggle" value="true" />
+                </ui:VisualElement>
+ 
+                <ui:VisualElement name="RowVSync" class="settings-row" focusable="false" picking-mode="Ignore">
+                    <ui:Label text="VSync" class="settings-label" focusable="false" picking-mode="Ignore" />
+                    <ui:Toggle name="VSyncToggle" class="unity-toggle" value="true" />
+                </ui:VisualElement>
+ 
+                <ui:VisualElement class="settings-section-divider" focusable="false" picking-mode="Ignore" />
+                <ui:Label text="AUDIO" class="settings-section-header" focusable="false" picking-mode="Ignore" />
+ 
+                <ui:VisualElement name="RowMasterVol" class="settings-row" focusable="false" picking-mode="Ignore">
+                    <ui:Label text="Master Volume" class="settings-label" focusable="false" picking-mode="Ignore" />
+                    <ui:Slider name="MasterVolSlider" low-value="0" high-value="100" value="100" class="unity-slider" />
+                </ui:VisualElement>
+ 
+                <ui:VisualElement name="RowMusicVol" class="settings-row" focusable="false" picking-mode="Ignore">
+                    <ui:Label text="Music Volume" class="settings-label" focusable="false" picking-mode="Ignore" />
+                    <ui:Slider name="MusicVolSlider" low-value="0" high-value="100" value="80" class="unity-slider" />
+                </ui:VisualElement>
+ 
+                <ui:VisualElement name="RowSFXVol" class="settings-row" focusable="false" picking-mode="Ignore">
+                    <ui:Label text="SFX Volume" class="settings-label" focusable="false" picking-mode="Ignore" />
+                    <ui:Slider name="SFXVolSlider" low-value="0" high-value="100" value="80" class="unity-slider" />
+                </ui:VisualElement>
+ 
+                <ui:VisualElement class="settings-section-divider" focusable="false" picking-mode="Ignore" />
+                <ui:Label text="GAMEPLAY" class="settings-section-header" focusable="false" picking-mode="Ignore" />
+                
+                <ui:VisualElement name="RowGridOverlay" class="settings-row" focusable="false" picking-mode="Ignore">
+                    <ui:Label text="Grid Overlay" class="settings-label" focusable="false" picking-mode="Ignore" />
+                    <ui:Toggle name="GridToggle" class="unity-toggle" value="false" />
+                </ui:VisualElement>
+ 
+                <ui:VisualElement name="RowActionPoints" class="settings-row" focusable="false" picking-mode="Ignore">
+                    <ui:Label text="Show Action Points" class="settings-label" focusable="false" picking-mode="Ignore" />
+                    <ui:Toggle name="APToggle" class="unity-toggle" value="true" />
+                </ui:VisualElement>
+ 
+            </ui:ScrollView>
+
+            <ui:VisualElement class="settings-footer">
+                <ui:Button name="SettingsBackBtn" text="BACK" class="settings-back-btn" />
+                <ui:Button name="SettingsApplyBtn" text="APPLY" class="settings-apply-btn" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+
+</ui:UXML>

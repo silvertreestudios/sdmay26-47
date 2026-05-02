@@ -44,7 +44,7 @@ namespace TacticsGame.UI
             }
 
             // Set a very high sort order to ensure it's always on top
-            uiDocument.sortingOrder = 999;
+            uiDocument.sortingOrder = 10000;
         }
 
         /// <summary>

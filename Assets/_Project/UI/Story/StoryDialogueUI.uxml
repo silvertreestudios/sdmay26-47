@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:Style src="StoryTheme.uss" />
+
+    <ui:VisualElement name="StoryRoot" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0;" picking-mode="Ignore">
+        
+        <ui:VisualElement name="DialogueContainer" class="story-dialogue-container screen-hidden">
+            
+            <ui:VisualElement name="PortraitContainer" class="story-portrait-container">
+                <ui:Image name="SpeakerPortrait" class="story-portrait-image" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="story-text-container">
+                <ui:Label name="SpeakerName" text="Speaker Name" class="story-speaker-name" />
+                <ui:Label name="DialogueText" text="Dialogue text goes here..." class="story-dialogue-text" />
+            </ui:VisualElement>
+
+            <ui:Label name="AdvanceIndicator" text="▼" class="story-advance-indicator screen-hidden" />
+            
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+
+</ui:UXML>

@@ -227,13 +227,13 @@ public class PauseMenuController : MonoBehaviour
     public void OnRestartLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        TacticsGame.UI.LoadingManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void OnMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(mainMenuSceneName);
+        TacticsGame.UI.LoadingManager.Instance.LoadScene(mainMenuSceneName);
     }
 
     public void OnQuitDesktop()
