@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2a109c31bab164dba82205f643559e, type: 3}
+  m_Name: Howling_Blizzard_Snowdrifts
+  m_EditorClassIdentifier: 
+  Phase: 2
+  Filter: 0
+  MovementCostOverride: 2
+  AddToExistingCost: 0
+  HasDuration: 1
+  PersistentEffectPrefab: {fileID: 4494428942011645696, guid: 32521802cbf24504096d83cdb923b03c, type: 3}

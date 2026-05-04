@@ -48,10 +48,7 @@ namespace TacticsGame.Spells.Effects
                     if (!context.RollResults.TryGetValue(target, out var result))
                     {
                         // Fallback: Roll a basic Fortitude save if the spell asset is missing the SaveEffect
-                        int spellDC = context.Caster.GetSpellDC(
-                            AbilityScore.INT,
-                            Proficiency.Trained
-                        );
+                        int spellDC = context.Caster.GetSpellDC();
                         int saveMod = target.GetSaveModifier(SavingThrowType.Fortitude);
                         int d20 = Random.Range(1, 21);
                         Degree degree = TacticsRuleset_Core.CheckResult(d20, saveMod, spellDC);

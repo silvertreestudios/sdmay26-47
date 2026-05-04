@@ -143,5 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultBackgroundMusic: {fileID: 8300000, guid: 842dadb4112983a4ea88bbb8987aa864, type: 3}
-  playOnStart: 0
+  playOnStart: 1
   defaultVolume: 0.5
+  availableTracks:
+  - name: Calculated Defiance
+    clip: {fileID: 8300000, guid: 1584637b0a4efed4d940c85cab76be41, type: 3}
+  - name: Clockwork Gambit
+    clip: {fileID: 8300000, guid: bfd5692d58086cd4180abc0200d2fadb, type: 3}
+  - name: Clockwork Throne Breaker
+    clip: {fileID: 8300000, guid: 977a589ec0d6f2c4e810e27a2b9046bb, type: 3}
+  - name: Fields of Bitter Resolve
+    clip: {fileID: 8300000, guid: 1bbde7d0163bffc42b8d0917ed378c9e, type: 3}
+  - name: Music
+    clip: {fileID: 8300000, guid: 842dadb4112983a4ea88bbb8987aa864, type: 3}
+  - name: Muster at the Iron Gate
+    clip: {fileID: 8300000, guid: 6e5137a95a6948245820cb81c3d6c071, type: 3}
+  - name: Sorrow on the Battle Grid
+    clip: {fileID: 8300000, guid: 61073fb4b436a8448a14ef1cdd49ca7f, type: 3}

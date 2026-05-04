@@ -143,18 +143,12 @@ namespace TacticsGame.Spells
                     {
                         Vector3Int testPos3D = node.Coordinates;
 
-                        // Ensure the node exists
-                        if (node == null)
-                            continue;
-
-                        // Range Check
                         if (
                             TacticsRuleset_Core.GetTacticsRulesetDistance3D(unitPos3D, testPos3D)
                             > range
                         )
                             continue;
 
-                        // Line of Effect Check
                         if (currentSpell.RequiresLineOfEffect)
                         {
                             if (!LineOfSightUtility.HasLineOfEffect(unitPos3D, testPos3D))
@@ -177,16 +171,11 @@ namespace TacticsGame.Spells
             if (currentSpell == null)
                 return validPositions;
 
-            // Use the filtered range positions as the base set
             List<Vector3Int> rangePositions = GetActionRangeGridPositions();
 
-            // Self-targeting
             if (currentSpell.Targeting == SpellTargetingType.Self)
-            {
                 return rangePositions;
-            }
 
-            // Ground/Area targeting - any tile in range is valid
             if (
                 currentSpell.Targeting == SpellTargetingType.GroundTarget
                 || currentSpell.Targeting == SpellTargetingType.Area
@@ -197,7 +186,6 @@ namespace TacticsGame.Spells
                 return rangePositions;
             }
 
-            // SingleTarget - must have a valid unit within the already-filtered range
             GridSystem grid = ServiceLocator.Get<GridSystem>();
             foreach (Vector3Int testPos3D in rangePositions)
             {
@@ -226,14 +214,9 @@ namespace TacticsGame.Spells
                 }
 
                 if (valid)
-                {
                     validPositions.Add(testPos3D);
-                }
             }
 
-            Debug.Log(
-                $"[SPELL TARGETING] Found {validPositions.Count} valid target tiles for {currentSpell.ElementName}. Range used: {GetRangeInTiles()} tiles."
-            );
             return validPositions;
         }
 
@@ -248,14 +231,12 @@ namespace TacticsGame.Spells
         {
             if (currentSpell == null)
             {
-                Debug.LogError("[CastSpellAction] No spell configured!");
                 onActionComplete?.Invoke();
                 return;
             }
 
             this.onActionComplete = onActionComplete;
 
-            // Build context
             SpellCastContext context = new SpellCastContext
             {
                 Caster = unit,
@@ -268,7 +249,6 @@ namespace TacticsGame.Spells
             isWaitingForProjectile = false;
             isAnimationFinished = false;
 
-            // For single-target spells without AoE effects, pre-populate the target
             if (
                 currentSpell.Targeting == SpellTargetingType.SingleTarget
                 || currentSpell.Targeting == SpellTargetingType.Self
@@ -282,14 +262,7 @@ namespace TacticsGame.Spells
                 }
             }
 
-            Debug.Log(
-                $"<b><color=magenta>[SPELL CAST]</color></b> {unit.name} casts "
-                    + $"{currentSpell.ElementName} (Level {castLevel}) at {targetPosition}!"
-            );
-
-            // Fire BeforeSpellEvent -> Counterspell window
             BeforeSpellEvent spellEvent = new BeforeSpellEvent(unit, currentSpell, targetPosition);
-
             ServiceLocator
                 .Get<ReactionManager>()
                 .EvaluateEvent(
@@ -298,38 +271,131 @@ namespace TacticsGame.Spells
                     {
                         if (resolvedEvent.IsCancelled)
                         {
-                            Debug.Log(
-                                $"<color=red>[SPELL]</color> {currentSpell.ElementName} was counterspelled!"
-                            );
                             FinishCasting();
                             return;
                         }
 
-                        var visuals = unit.GetComponentInChildren<UnitVisuals>();
-                        if (visuals != null)
+                        SpellEffectResolver.ResolvePhases(
+                            context,
+                            SpellEffectPhase.Targeting,
+                            SpellEffectPhase.Roll
+                        );
+                        activeContext = context;
+
+                        if (context.PendingMovements.Exists(m => m.IsInteractive))
                         {
-                            activeContext = context;
-                            visuals.OnCastSpell += HandleCastSpellFire;
-                            visuals.OnAnimationEnd += HandleCastAnimationEnd;
-                            visuals.TriggerCastSpellAction();
+                            StartCoroutine(ProcessInteractiveMovements());
                         }
                         else
                         {
-                            // Fallback
-                            activeContext = context;
-                            isAnimationFinished = true;
-                            ResolveSpellVisualsAndPayload();
+                            StartCastingVisuals();
                         }
                     }
                 );
         }
 
+        private void StartCastingVisuals()
+        {
+            // Ensure camera is watching the caster during their animation
+            ServiceLocator.Get<CameraController>().SetFollowTarget(unit.transform);
+
+            var visuals = unit.GetComponentInChildren<UnitVisuals>();
+            if (visuals != null)
+            {
+                visuals.OnCastSpell += HandleCastSpellFire;
+                visuals.OnAnimationEnd += HandleCastAnimationEnd;
+                visuals.TriggerCastSpellAction();
+            }
+            else
+            {
+                isAnimationFinished = true;
+                ResolveSpellVisualsAndPayload();
+            }
+        }
+
+        private System.Collections.IEnumerator ProcessInteractiveMovements()
+        {
+            var targeting = ServiceLocator.Get<TargetingService>();
+            var input = ServiceLocator.Get<InputService>();
+            var grid = ServiceLocator.Get<GridSystem>();
+            var rangeVis = ServiceLocator.Get<MoveRangeVisualizer>();
+            var cam = ServiceLocator.Get<CameraController>();
+
+            yield return null;
+
+            foreach (var req in activeContext.PendingMovements)
+            {
+                if (!req.IsInteractive)
+                    continue;
+
+                cam.EnterEagleEyeMode(req.Target.transform);
+                ServiceLocator.Get<HapticService>()?.TriggerRumble(0.2f, 0.2f, 0.1f);
+
+                DragTargetingHelper helper =
+                    req.Target.gameObject.AddComponent<DragTargetingHelper>();
+                helper.Initialize(req.Target.CurrentLayeredPosition, req.MaxTiles);
+
+                List<Vector3Int> validTiles = helper.GetValidActionGridPositions();
+                rangeVis.ShowCustomRange(validTiles, true);
+
+                targeting.InitializeTargeting(
+                    new GridPosition(
+                        req.Target.CurrentLayeredPosition.x,
+                        req.Target.CurrentLayeredPosition.z
+                    ),
+                    helper
+                );
+
+                bool confirmed = false;
+                while (!confirmed)
+                {
+                    targeting.HandleCursorMovement(helper);
+
+                    Vector3 cursorWorldPos = grid.GetWorldPosition(
+                        targeting.CurrentTargetLayeredPosition
+                    );
+                    req.Target.transform.position = Vector3.Lerp(
+                        req.Target.transform.position,
+                        cursorWorldPos,
+                        Time.deltaTime * 20f
+                    );
+
+                    if (input.IsConfirmJustPressed())
+                    {
+                        if (
+                            helper.IsValidActionGridPosition(targeting.CurrentTargetLayeredPosition)
+                        )
+                        {
+                            confirmed = true;
+                        }
+                        else
+                        {
+                            ServiceLocator.Get<HapticService>()?.TriggerRumble(0.15f, 0.15f, 0.1f);
+                        }
+                    }
+                    yield return null;
+                }
+
+                Vector3Int targetCell = targeting.CurrentTargetLayeredPosition;
+                req.Target.FinalizeMove(targetCell);
+                req.Target.SnapToGrid(grid.GetWorldPosition(targetCell));
+
+                rangeVis.ClearCustomRange();
+                targeting.HideTargeting();
+
+                cam.ExitEagleEyeMode();
+                Destroy(helper);
+
+                yield return new WaitForSeconds(0.15f);
+            }
+
+            StartCastingVisuals();
+        }
+
         private void HandleCastSpellFire()
         {
             if (activeContext != null)
-            {
                 ResolveSpellVisualsAndPayload();
-            }
         }
 
         private void ResolveSpellVisualsAndPayload()
@@ -338,33 +404,26 @@ namespace TacticsGame.Spells
             Transform handTransform = (visuals != null) ? visuals.GetHandTransform() : transform;
             Vector3 handPos = handTransform.position;
             var gridSystem = ServiceLocator.Get<GridSystem>();
-            Vector3 targetPos = gridSystem.GetWorldPosition(activeContext.TargetPosition); // Proper world center
 
-            // If we have a unit target, aim for their visual center instead of the floor
-            Unit targetUnit = gridSystem.GetUnitAt(activeContext.TargetPosition);
-            if (targetUnit != null)
-            {
-                targetPos = targetUnit.transform.position + Vector3.up;
-            }
+            Vector3 targetPos = gridSystem.GetWorldPosition(activeContext.TargetPosition);
 
-            // Cast VFX
             if (activeContext.SpellData.CastVFXPrefab != null)
             {
                 Instantiate(activeContext.SpellData.CastVFXPrefab, handPos, Quaternion.identity);
-
                 if (unit.GetFaction() == Faction.Player)
-                {
                     ServiceLocator.Get<HapticService>()?.TriggerRumble(0.25f, 0.25f, 0.1f);
-                }
             }
 
-            // Delivery Branch
             if (activeContext.SpellData.DeliveryType == SpellDelivery.Instant)
             {
                 PlayHitVFXAndResolve();
             }
             else if (activeContext.SpellData.DeliveryType == SpellDelivery.Projectile)
             {
+                Unit targetUnit = gridSystem.GetUnitAt(activeContext.TargetPosition);
+                if (targetUnit != null)
+                    targetPos = targetUnit.transform.position + Vector3.up;
+
                 if (activeContext.SpellData.ProjectileVFXPrefab != null)
                 {
                     isWaitingForProjectile = true;
@@ -373,10 +432,9 @@ namespace TacticsGame.Spells
                         handPos,
                         Quaternion.identity
                     );
-                    SpellProjectile projectile = projObj.GetComponent<SpellProjectile>();
-
-                    if (projectile == null)
-                        projectile = projObj.AddComponent<SpellProjectile>();
+                    SpellProjectile projectile =
+                        projObj.GetComponent<SpellProjectile>()
+                        ?? projObj.AddComponent<SpellProjectile>();
 
                     projectile.Launch(
                         handPos,
@@ -391,7 +449,6 @@ namespace TacticsGame.Spells
                 }
                 else
                 {
-                    // Fallback if prefab missing
                     PlayHitVFXAndResolve();
                 }
             }
@@ -399,12 +456,10 @@ namespace TacticsGame.Spells
 
         private void PlayHitVFXAndResolve()
         {
-            // Hit VFX
             if (activeContext.SpellData.HitVFXPrefab != null)
             {
                 var gridSystem = ServiceLocator.Get<GridSystem>();
                 Vector3 hitPos = gridSystem.GetWorldPosition(activeContext.TargetPosition);
-
                 Unit targetUnit = gridSystem.GetUnitAt(activeContext.TargetPosition);
                 if (targetUnit != null)
                     hitPos = targetUnit.transform.position + Vector3.up;
@@ -412,11 +467,12 @@ namespace TacticsGame.Spells
                 Instantiate(activeContext.SpellData.HitVFXPrefab, hitPos, Quaternion.identity);
             }
 
-            // Rumble on impact
             ServiceLocator.Get<HapticService>()?.TriggerRumble(0.75f, 0.75f, 0.2f);
-
-            // Logic Resolution
-            SpellEffectResolver.Resolve(activeContext);
+            SpellEffectResolver.ResolvePhases(
+                activeContext,
+                SpellEffectPhase.Resolution,
+                SpellEffectPhase.Aftermath
+            );
             FireAfterEventAndFinish(activeContext);
         }
 
@@ -443,58 +499,77 @@ namespace TacticsGame.Spells
                 visuals.OnCastSpell -= HandleCastSpellFire;
                 visuals.OnAnimationEnd -= HandleCastAnimationEnd;
             }
-
             CheckForResolutionComplete();
         }
 
         private void CheckForResolutionComplete()
         {
-            // wait for both the animation to end and the projectile (if any) to hit.
             if (isAnimationFinished && !isWaitingForProjectile)
-            {
                 FinishCasting();
-            }
         }
 
         private void FinishCasting()
         {
-            // This is called either directly (instant) or via the projectile callback + animation end check.
             if (isAnimationFinished && !isWaitingForProjectile)
             {
+                // Return camera to caster so player can select next action
+                ServiceLocator.Get<CameraController>().SetFollowTarget(unit.transform);
+
                 onActionComplete?.Invoke();
             }
         }
 
-        // Helpers
-
-        /// <summary>
-        /// Converts the SpellSO's range (in feet) to grid tiles (1 tile = 5ft).
-        /// Returns at least 1 for non-self spells so cursor can move.
-        /// </summary>
         private int GetRangeInTiles()
         {
             if (currentSpell == null)
                 return 1;
             if (currentSpell.Targeting == SpellTargetingType.Self)
                 return 0;
-
-            int rangeInTiles = currentSpell.Range / 5;
-            return Mathf.Max(1, rangeInTiles);
+            return Mathf.Max(1, currentSpell.Range / 5);
         }
 
-        /// <summary>
-        /// Override condition check to also block casting when Stupefied
-        /// or when silenced (for spells with verbal components).
-        /// </summary>
         public override bool CanExecuteAction()
         {
             if (!base.CanExecuteAction())
                 return false;
-
-            // TODO: Add Silenced check for verbal component spells
-            // TODO: Add Stupefied flat check for spell failure
-
             return true;
         }
+    }
+
+    public class DragTargetingHelper : Actions.BaseAction
+    {
+        private Vector3Int startPos;
+        private int maxTiles;
+        private List<Vector3Int> cachedValidPositions;
+
+        public void Initialize(Vector3Int startPos, int maxTiles)
+        {
+            this.startPos = startPos;
+            this.maxTiles = maxTiles;
+            this.cachedValidPositions = null;
+        }
+
+        public override string GetActionName() => "Dragging Unit";
+
+        public override bool IsUnitTargeted => false;
+
+        public override List<Vector3Int> GetValidActionGridPositions()
+        {
+            if (cachedValidPositions == null)
+            {
+                cachedValidPositions = Pathfinding.GetReachablePositions(startPos, maxTiles * 10);
+            }
+            return cachedValidPositions;
+        }
+
+        public override List<Vector3Int> GetActionRangeGridPositions() =>
+            GetValidActionGridPositions();
+
+        public override bool IsValidActionGridPosition(Vector3Int targetPosition)
+        {
+            return GetValidActionGridPositions().Contains(targetPosition);
+        }
+
+        public override void TakeAction(Vector3Int targetPosition, Action onActionComplete) { }
     }
 }

@@ -17,6 +17,15 @@ namespace TacticsGame.Spells.Services
         /// </summary>
         public static void Resolve(SpellCastContext context)
         {
+            ResolvePhases(context, SpellEffectPhase.Targeting, SpellEffectPhase.Aftermath);
+        }
+
+        public static void ResolvePhases(
+            SpellCastContext context,
+            SpellEffectPhase startPhase,
+            SpellEffectPhase endPhase
+        )
+        {
             if (context.SpellData.Effects == null || context.SpellData.Effects.Count == 0)
             {
                 Debug.LogWarning(
@@ -25,9 +34,10 @@ namespace TacticsGame.Spells.Services
                 return;
             }
 
-            // Group effects by phase
+            // Group and filter effects by phase range
             var effectsByPhase = context
                 .SpellData.Effects.Where(e => e != null)
+                .Where(e => e.Phase >= startPhase && e.Phase <= endPhase)
                 .OrderBy(e => (int)e.Phase)
                 .GroupBy(e => e.Phase);
 
@@ -52,8 +62,7 @@ namespace TacticsGame.Spells.Services
             }
 
             Debug.Log(
-                $"<color=green>[SPELL]</color> {context.SpellData.ElementName} fully resolved. "
-                    + $"Affected {context.AffectedUnits.Count} units."
+                $"<color=green>[SPELL]</color> {context.SpellData.ElementName} resolved phases {startPhase} to {endPhase}."
             );
         }
     }

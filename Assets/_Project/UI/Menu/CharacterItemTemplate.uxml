@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:VisualElement class="character-item-card" focusable="true">
+        <ui:Label name="Lbl_CharacterName" text="Character Name" class="character-name-text" focusable="false" picking-mode="Ignore" />
+        <ui:VisualElement style="flex-direction: row; justify-content: space-between;" focusable="false" picking-mode="Ignore">
+            <ui:Label name="Lbl_CharacterClass" text="Level 1 Fighter" class="character-sub-text" focusable="false" picking-mode="Ignore" />
+            <ui:Label name="Lbl_LastSaved" text="Saved: Today" class="character-sub-text" focusable="false" picking-mode="Ignore" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

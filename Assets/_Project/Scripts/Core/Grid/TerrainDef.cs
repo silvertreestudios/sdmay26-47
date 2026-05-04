@@ -25,6 +25,7 @@ namespace TacticsGame.Grid
         public bool GrantsConcealment;
         public bool BlocksImpreciseSenses;
         public bool RequiresBalanceCheck;
+        public bool IsSolidWall;
 
         /// <summary>
         /// When true, Line of Effect cannot pass through this tile's volume for
@@ -40,5 +41,21 @@ namespace TacticsGame.Grid
         /// bridge decks block shots to/from lower floors without extra setup.
         /// </summary>
         public bool AllowVerticalLineOfEffect;
+
+        public TerrainDef Clone()
+        {
+            return new TerrainDef
+            {
+                MovementCost = this.MovementCost,
+                IsWalkable = this.IsWalkable,
+                CoverType = this.CoverType,
+                GrantsConcealment = this.GrantsConcealment,
+                BlocksImpreciseSenses = this.BlocksImpreciseSenses,
+                RequiresBalanceCheck = this.RequiresBalanceCheck,
+                IsSolidWall = this.IsSolidWall,
+                BlocksLineOfEffect = this.BlocksLineOfEffect,
+                AllowVerticalLineOfEffect = this.AllowVerticalLineOfEffect,
+            };
+        }
     }
 }

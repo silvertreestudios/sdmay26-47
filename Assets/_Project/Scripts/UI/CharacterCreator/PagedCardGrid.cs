@@ -34,6 +34,7 @@ namespace TacticsGame.UI.CharacterCreator
         private int selectedIndex = -1;
 
         public Action<int, T> OnSelectionChanged;
+        public Action<int, T> OnFocusChanged;
 
         /// <summary>
         /// Fired whenever the page changes. Parameter is the first item index on the new page.
@@ -207,6 +208,9 @@ namespace TacticsGame.UI.CharacterCreator
                 bindCard(card, ctx);
 
                 card.RegisterCallback<ClickEvent>(_ => SetSelectedIndex(captured));
+                card.RegisterCallback<FocusEvent>(_ =>
+                    OnFocusChanged?.Invoke(captured, items[captured])
+                );
                 pageContainer.Add(card);
                 currentPageCards.Add(card);
             }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:Style src="../Story/StoryTheme.uss" />
+
+    <ui:VisualElement class="resolution-overlay" picking-mode="Position">
+        <ui:VisualElement class="resolution-container" picking-mode="Position">
+            <ui:Label name="ResolutionTitle" text="BATTLE RESOLVED" class="resolution-title" picking-mode="Ignore" />
+            
+            <ui:VisualElement name="ResolutionButtonList" class="resolution-button-list" picking-mode="Position">
+                <ui:Button name="BtnRetry" text="RETRY BATTLE" class="menu-btn resolution-btn" picking-mode="Position" />
+                <ui:Button name="BtnContinue" text="CONTINUE" class="menu-btn resolution-btn" picking-mode="Position" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+
+</ui:UXML>

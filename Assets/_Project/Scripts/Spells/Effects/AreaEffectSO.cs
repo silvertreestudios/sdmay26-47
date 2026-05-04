@@ -51,6 +51,11 @@ namespace TacticsGame.Spells.Effects
                 context.Caster
             );
 
+            // Populate affected environment objects (Doors, etc.)
+            context.AffectedDamageables = UnitQueryService.GetDamageablesInCells(
+                context.AffectedCells
+            );
+
             Debug.Log(
                 $"<color=cyan>[SPELL AoE]</color> {context.SpellData.ElementName}: "
                     + $"{area.Shape} hits {context.AffectedCells.Count} cells, {context.AffectedUnits.Count} units."

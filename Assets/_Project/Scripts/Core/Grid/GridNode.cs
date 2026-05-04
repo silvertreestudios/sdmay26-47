@@ -46,5 +46,7 @@ namespace TacticsGame.Grid
 
             return true;
         }
+
+        public bool IsSolidWall() => Terrain != null && Terrain.IsSolidWall;
     }
 }

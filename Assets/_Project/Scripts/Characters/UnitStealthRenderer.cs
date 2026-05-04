@@ -185,40 +185,10 @@ namespace TacticsGame.Characters
                 {
                     case DetectionState.Observed:
                         r.enabled = true;
-
-                        {
-                            // Observed: normal faction color (same as Unit.cs Start()).
-                            // If Concealed, tint slightly toward purple to hint concealment
-                            // without using transparency.
-                            Color baseColor =
-                                unit.GetFaction() == Faction.Player ? Color.blue : Color.red;
-                            if (actorIsConcealed)
-                                baseColor = Color.Lerp(
-                                    baseColor,
-                                    new Color(0.7f, 0.2f, 0.9f, 1f),
-                                    0.35f
-                                );
-
-                            r.material.color = baseColor;
-                        }
                         break;
 
                     case DetectionState.Hidden:
                         r.enabled = true;
-                        if (actorIsInvisible)
-                        {
-                            // Hidden + Invisible: very light gray silhouette.
-                            r.material.color = new Color(0.85f, 0.85f, 0.85f, 1f);
-                        }
-                        else
-                        {
-                            // Hidden: dark gray silhouette.
-                            // If Concealed too, tint slightly purple.
-                            Color c = new Color(0.25f, 0.25f, 0.25f, 1f);
-                            if (actorIsConcealed)
-                                c = Color.Lerp(c, new Color(0.7f, 0.2f, 0.9f, 1f), 0.25f);
-                            r.material.color = c;
-                        }
                         break;
 
                     case DetectionState.Undetected:

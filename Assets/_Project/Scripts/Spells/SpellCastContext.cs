@@ -22,6 +22,7 @@ namespace TacticsGame.Spells
         // Populated during Targeting phase
         public List<Vector3Int> AffectedCells { get; set; } = new List<Vector3Int>();
         public List<Unit> AffectedUnits { get; set; } = new List<Unit>();
+        public List<IDamageable> AffectedDamageables { get; set; } = new List<IDamageable>();
 
         // Populated during Roll phase
 
@@ -34,5 +35,16 @@ namespace TacticsGame.Spells
 
         // Flags
         public bool IsCancelled { get; set; } = false;
+
+        // Interactive Requests (populated during Resolution, processed after)
+        public List<ForcedMovementRequest> PendingMovements { get; set; } =
+            new List<ForcedMovementRequest>();
+    }
+
+    public class ForcedMovementRequest
+    {
+        public Unit Target;
+        public int MaxTiles;
+        public bool IsInteractive;
     }
 }

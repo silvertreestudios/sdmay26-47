@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TacticsGame.Actions;
 using TacticsGame.Characters;
 using TacticsGame.Combat;
@@ -50,7 +51,14 @@ namespace TacticsGame.Grid
         private GameObject attackTargetTilePrefab; // Bright Red (Valid Targets)
 
         private List<GameObject> activeVisuals = new List<GameObject>();
+        private List<GameObject> customVisuals = new List<GameObject>();
         private Transform visualParent;
+        private Transform customVisualParent;
+
+        private void Awake()
+        {
+            ServiceLocator.Register(this);
+        }
 
         private void Start()
         {
@@ -63,6 +71,10 @@ namespace TacticsGame.Grid
             }
 
             visualParent = new GameObject("ActionRangeVisuals").transform;
+            customVisualParent = new GameObject("CustomRangeVisuals").transform;
+            visualParent.SetParent(transform);
+            customVisualParent.SetParent(transform);
+
             ServiceLocator.Get<UnitActionSystem>().OnValidPositionsChanged +=
                 HandleValidPositionsChanged;
 
@@ -108,6 +120,7 @@ namespace TacticsGame.Grid
             {
                 uas.OnValidPositionsChanged -= HandleValidPositionsChanged;
             }
+            ServiceLocator.Unregister<MoveRangeVisualizer>();
         }
 
         private void HandleValidPositionsChanged(object sender, System.EventArgs e)
@@ -706,6 +719,36 @@ namespace TacticsGame.Grid
                 Destroy(visual);
             }
             activeVisuals.Clear();
+        }
+
+        public void ShowCustomRange(List<Vector3Int> positions, bool useActionStyle = false)
+        {
+            ClearCustomRange();
+
+            Material outMat = useActionStyle ? actionOuterMaterial : outerMaterial;
+            Material inMat = useActionStyle ? actionInnerMaterial : innerMaterial;
+
+            // Redirect visuals to custom parent
+            var oldParent = visualParent;
+            var oldList = activeVisuals;
+
+            visualParent = customVisualParent;
+            activeVisuals = customVisuals;
+
+            DrawOutlines(positions, outMat, inMat);
+
+            visualParent = oldParent;
+            activeVisuals = oldList;
+        }
+
+        public void ClearCustomRange()
+        {
+            foreach (var go in customVisuals)
+            {
+                if (go != null)
+                    Destroy(go);
+            }
+            customVisuals.Clear();
         }
 
         private static void DisableColliders(GameObject root)

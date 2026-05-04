@@ -175,6 +175,7 @@ namespace TacticsGame.Characters
         Sonic,
         Positive,
         Negative,
+        Spirit,
     }
 
     public enum ActionTag

@@ -20,6 +20,13 @@ namespace TacticsGame.Spells.Effects
         [Tooltip("If true, this is a spell attack (uses the attack roll degree for damage).")]
         public bool IsSpellAttack;
 
+        [Header("Overrides (Optional)")]
+        [Tooltip("If set, overrides the spell's base damage formula.")]
+        public DiceFormula OverrideDamage;
+
+        [Tooltip("If set, overrides the spell's damage type. Set to Untyped to use spell default.")]
+        public DamageType OverrideDamageType = DamageType.Untyped;
+
         private void OnEnable()
         {
             Phase = SpellEffectPhase.Resolution;
@@ -28,29 +35,42 @@ namespace TacticsGame.Spells.Effects
         public override void Apply(SpellCastContext context)
         {
             SpellSO spell = context.SpellData;
-            DiceFormula damageFormula = GetScaledDamage(spell, context.CastLevel);
+            DiceFormula damageFormula =
+                OverrideDamage.DiceCount > 0
+                    ? OverrideDamage
+                    : GetScaledDamage(spell, context.CastLevel);
+
+            DamageType finalType =
+                OverrideDamageType != DamageType.Untyped ? OverrideDamageType : spell.ElementType;
 
             foreach (Unit target in context.AffectedUnits)
             {
-                if ((IsBasicSave || IsSpellAttack) && !context.RollResults.ContainsKey(target))
-                {
-                    continue;
-                }
+                // If it's a save/attack spell, we must have a result to know how to scale.
+                // If it's a guaranteed hit (no save, no attack), we treat it as a 'Failure' (full damage).
+                Degree degree = Degree.Failure;
 
-                if (!context.RollResults.TryGetValue(target, out var result))
-                    continue;
+                if (IsBasicSave || IsSpellAttack)
+                {
+                    if (!context.RollResults.TryGetValue(target, out var result))
+                        continue;
+                    degree = result.Degree;
+                }
+                else if (context.RollResults.TryGetValue(target, out var result))
+                {
+                    degree = result.Degree;
+                }
 
                 // Roll base damage
                 int baseDamage = RollDice(damageFormula);
 
                 // Apply degree-based scaling
-                int finalDamage = ApplyDegreeScaling(baseDamage, result.Degree);
+                int finalDamage = ApplyDegreeScaling(baseDamage, degree);
 
                 if (finalDamage <= 0)
                 {
                     Debug.Log(
                         $"<color=grey>[SPELL DMG]</color> {target.name} takes 0 damage "
-                            + $"({result.Degree})."
+                            + $"({degree})."
                     );
                     continue;
                 }
@@ -60,17 +80,28 @@ namespace TacticsGame.Spells.Effects
                 if (health != null)
                 {
                     bool isCrit =
-                        result.Degree == Degree.CriticalSuccess && IsSpellAttack
-                        || result.Degree == Degree.CriticalFailure && IsBasicSave;
+                        degree == Degree.CriticalSuccess && IsSpellAttack
+                        || degree == Degree.CriticalFailure && IsBasicSave;
 
-                    health.ApplyDamage(context.Caster, finalDamage, spell.ElementType, isCrit);
+                    health.ApplyDamage(context.Caster, finalDamage, finalType, isCrit);
 
                     Debug.Log(
                         $"<color=red>[SPELL DMG]</color> {target.name} takes {finalDamage} "
-                            + $"{spell.ElementType} damage ({result.Degree}). "
+                            + $"{finalType} damage ({degree}). "
                             + $"[{damageFormula}]"
                     );
                 }
+            }
+
+            // Environmental Objects
+            foreach (IDamageable target in context.AffectedDamageables)
+            {
+                // Objects usually don't roll saves/attacks, they just take full damage.
+                // We treat them as 'Failure' (full damage) for environmental effects.
+                int baseDamage = RollDice(damageFormula);
+
+                // Route through the same ApplyDamage pipeline
+                target.ApplyDamage(context.Caster, baseDamage, finalType, false);
             }
         }
 
@@ -133,8 +164,8 @@ namespace TacticsGame.Spells.Effects
                 }
             }
 
-            // Default: full damage on Success or better
-            return degree >= Degree.Success ? baseDamage : 0;
+            // Default: if it's not a save or attack roll, it just hits for full damage.
+            return baseDamage;
         }
 
         private int RollDice(DiceFormula formula)

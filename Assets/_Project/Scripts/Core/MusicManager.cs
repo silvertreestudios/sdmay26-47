@@ -21,7 +21,19 @@ namespace TacticsGame.Core
         [Range(0f, 1f)]
         private float defaultVolume = 0.5f;
 
+        [Header("Track Library")]
+        [SerializeField]
+        private System.Collections.Generic.List<MusicTrack> availableTracks =
+            new System.Collections.Generic.List<MusicTrack>();
+
         private AudioSource audioSource;
+
+        [System.Serializable]
+        public class MusicTrack
+        {
+            public string name;
+            public AudioClip clip;
+        }
 
         private void Awake()
         {
@@ -43,6 +55,26 @@ namespace TacticsGame.Core
             if (playOnStart && defaultBackgroundMusic != null)
             {
                 PlayMusic(defaultBackgroundMusic);
+            }
+        }
+
+        /// <summary>
+        /// Finds a track by name in the library and plays it.
+        /// </summary>
+        public void PlayMusic(string trackName)
+        {
+            MusicTrack track = availableTracks.Find(t =>
+                t.name.Equals(trackName, StringComparison.OrdinalIgnoreCase)
+            );
+            if (track != null && track.clip != null)
+            {
+                PlayMusic(track.clip);
+            }
+            else
+            {
+                Debug.LogWarning(
+                    $"<color=orange>[MusicManager]</color> Track '{trackName}' not found in library!"
+                );
             }
         }
 

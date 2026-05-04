@@ -377,6 +377,151 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1601025869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601025872}
+  - component: {fileID: 1601025871}
+  - component: {fileID: 1601025870}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1601025870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601025869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e884ebe22ffa1419d1ded541ac1736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultBackgroundMusic: {fileID: 8300000, guid: 61073fb4b436a8448a14ef1cdd49ca7f, type: 3}
+  playOnStart: 1
+  defaultVolume: 0.5
+--- !u!82 &1601025871
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601025869}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1601025872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601025869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.13308, y: 0.8405876, z: 24.718464}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2080276418
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +590,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneName: CharacterCreator
+  characterCreatorSceneName: CharacterCreator
   loadingTemplate: {fileID: 9197481963319205126, guid: 0f07de8797de8704f81ac8f37d82e0d0, type: 3}
+  characterItemTemplate: {fileID: 9197481963319205126, guid: 25ae9b0e506a9834fa42b2a55db50004, type: 3}
   creditsText: "PATHFINDER 2E GAME IN UNITY\r\n\r\n\n\n\nCredits\r\n\r\n\r\n\r\nDEVELOPMENT
     TEAM\r\n\u201CThe Pathwinners\u201D\r\nSenior Design Team sdmay26-47\r\nIowa
     State University\r\n\nSoftware Architect  \r\nOwais Samman\n\nProject Liaison 
@@ -457,13 +604,14 @@ MonoBehaviour:
     & RULESET\r\n\r\nBased on Pathfinder Second Edition  \r\n\xA9 Paizo Inc.\r\n\r\nRules
     reference support:\r\nArchives of Nethys\r\n\r\n\r\n\r\nDATA & STRUCTURE REFERENCES\r\n\r\nJSON
     encounter and rule structure inspired by exports from:\r\nFoundry Virtual Tabletop\r\n\r\n\r\nTOOLS
-    & ENGINE\r\n\r\nUnity Engine\r\n\r\n\r\n\nART ASSETS\r\n\r\nKayKit Asset Packs 
-    \r\nMaiami Studios Free Stylized Smoke Effects Pack\r\nVefects Free Fire VFX\r\n\r\n\n\r\nACKNOWLEDGEMENTS\r\n\r\nPathfinder
-    community  \r\nFriends, family, and supporters  \r\n\r\n\n\r\nLEGAL\r\n\r\nThis
-    project was developed as part of the\r\nSenior Design Capstone at Iowa State
-    University.\r\n\r\nPathfinder is a trademark of Paizo Inc.\r\nThis project is
-    not affiliated with or endorsed by Paizo Inc.\r\n\r\n\n\r\n\xA9 2026 Iowa State
-    University\r\nSenior Design Team sdmay26-47\r\nAll Rights Reserved"
+    & ENGINE\r\n\r\nUnity Engine\r\n\nFigma\r\n\r\n\nART ASSETS\r\n\r\nKayKit Asset
+    Packs  \r\nMaiami Studios Free Stylized Smoke Effects Pack\r\nVefects Free Fire
+    VFX\r\n\r\n\n\r\nACKNOWLEDGEMENTS\r\n\r\nPathfinder community  \r\nFriends, family,
+    and supporters  \r\n\r\n\n\r\nLEGAL\r\n\r\nThis project was developed as part
+    of the\r\nSenior Design Capstone at Iowa State University.\r\n\r\nPathfinder
+    is a trademark of Paizo Inc.\r\nThis project is not affiliated with or endorsed
+    by Paizo Inc.\r\n\r\n\n\r\n\xA9 2026 Iowa State University\r\nSenior Design Team
+    sdmay26-47\r\nAll Rights Reserved"
   licenseText: "ORC LICENSE FINAL\r\nThis Open RPG Creative license (\u201CORC License\u201D)
     grants the right to use Licensed Material subject to the\r\nterms and conditions
     set forth and referenced as follows:\r\nI. Definitions.\r\na. Adapted Licensed
@@ -726,11 +874,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 21300000, guid: 6f7799d12a8ff5d499fc520bb7605763, type: 3}
-  - {fileID: 21300000, guid: 5babd8601f3e3eb4e8e1890458c93665, type: 3}
-  - {fileID: 21300000, guid: e5aeb046d3cc8fa4f8418b37696d4cb0, type: 3}
-  - {fileID: 21300000, guid: e2fbd0aa762a44647be7d8ca821d21d1, type: 3}
-  - {fileID: 21300000, guid: 5675f64d956bc39468ab7576edb94e9c, type: 3}
+  - {fileID: 21300000, guid: c6e48df8bf63604408ca9b03b4e81cf7, type: 3}
+  - {fileID: 21300000, guid: bf1690e8712e034459a652aebda757dd, type: 3}
+  - {fileID: 21300000, guid: 0f8f1c1972bb8cb4687075598a1e7b96, type: 3}
+  - {fileID: 21300000, guid: d2209e44e785f8a4f8d15c107b101571, type: 3}
   startIndex: -1
   panSpeed: 0.2
   zoomSpeed: 0.2
@@ -769,3 +916,4 @@ SceneRoots:
   - {fileID: 706335122}
   - {fileID: 740451193}
   - {fileID: 2080276420}
+  - {fileID: 1601025872}

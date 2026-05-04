@@ -26,8 +26,8 @@ MonoBehaviour:
   damageType: 2
   category: 2
   group: 14
-  hands: 0
-  weaponAnimType: 1
+  hands: 1
+  weaponAnimType: 2
   reachFeet: 5
   rangeIncrementFeet: 0
   traits: 27000000

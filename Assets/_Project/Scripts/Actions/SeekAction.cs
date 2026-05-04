@@ -12,6 +12,8 @@ namespace TacticsGame.Actions
     {
         private const bool STEALTH_DEBUG = true;
 
+        public override string GetActionName() => "Seek";
+
         [Header("Seek Area")]
         [Tooltip(
             "Radius in tiles around your space that Seek checks. Minimum viable: 3 tiles (~15 ft)."

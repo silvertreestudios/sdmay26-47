@@ -18,6 +18,9 @@ namespace TacticsGame.Characters
         public event EventHandler OnHealthChanged;
         public event EventHandler<string> OnStatusMessage;
 
+        [Header("Debug Settings")]
+        public bool NoDamageMode = false; // If true, unit takes no damage (useful for testing conditions)
+
         [Header("Health Stats")]
         [SerializeField]
         private int baseMaxHealth = 20; // The unit's permanent max HP
@@ -112,7 +115,7 @@ namespace TacticsGame.Characters
             bool isCriticalHit = false
         )
         {
-            if (IsDead)
+            if (IsDead || NoDamageMode)
                 return;
 
             // Resolve RWI (Immunity -> Weakness -> Resistance) BEFORE Reactions

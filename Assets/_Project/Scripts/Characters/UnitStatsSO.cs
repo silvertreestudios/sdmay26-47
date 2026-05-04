@@ -86,6 +86,10 @@ namespace TacticsGame.Characters
         [Tooltip("Charisma: presence and personality (e.g. 10).")]
         public int charisma = 10;
 
+        [Header("Key Ability")]
+        [Tooltip("The primary attribute used for this unit's Class DC and Spell DC.")]
+        public AbilityScore keyAbility = AbilityScore.STR;
+
         [Header("Core Stats (PF2e)")]
         [Tooltip("Speed in feet. Standard is 25 or 30 for most humanoids.")]
         public int baseSpeedInFeet = 30;
@@ -247,21 +251,67 @@ namespace TacticsGame.Characters
 
         public int GetMaxFocusPoints() => 0;
 
-        public int GetClassDC() =>
-            10
-            + TacticsRuleset_Core.CalculateModifier(
+        public int GetClassDC() => 10 + GetSpellAttackModifier();
+
+        public int GetSavingThrow(Data.TacticsRuleset.SavingThrowType save)
+        {
+            // Simplified logic for non-player units
+            AbilityScore ability;
+            switch (save)
+            {
+                case Data.TacticsRuleset.SavingThrowType.Fortitude:
+                    ability = AbilityScore.CON;
+                    break;
+                case Data.TacticsRuleset.SavingThrowType.Reflex:
+                    ability = AbilityScore.DEX;
+                    break;
+                case Data.TacticsRuleset.SavingThrowType.Will:
+                    ability = AbilityScore.WIS;
+                    break;
+                default:
+                    return 0;
+            }
+
+            return TacticsRuleset_Core.CalculateModifier(
                 level,
                 Proficiency.Trained,
-                TacticsRuleset_Core.GetAbilityModifier(strength)
+                TacticsRuleset_Core.GetAbilityModifier(GetStatValue(ability))
             );
-
-        public int GetSavingThrow(Data.TacticsRuleset.SavingThrowType save) => 0; // Simplified for now
+        }
 
         public int GetPerceptionModifier() => perception;
 
-        public int GetSpellAttackModifier() => 0;
+        public int GetSpellAttackModifier()
+        {
+            return TacticsRuleset_Core.CalculateModifier(
+                level,
+                Proficiency.Trained,
+                TacticsRuleset_Core.GetAbilityModifier(GetStatValue(keyAbility))
+            );
+        }
 
-        public int GetSpellDC() => 10;
+        public int GetSpellDC() => 10 + GetSpellAttackModifier();
+
+        private int GetStatValue(AbilityScore score)
+        {
+            switch (score)
+            {
+                case AbilityScore.STR:
+                    return strength;
+                case AbilityScore.DEX:
+                    return dexterity;
+                case AbilityScore.CON:
+                    return constitution;
+                case AbilityScore.INT:
+                    return intelligence;
+                case AbilityScore.WIS:
+                    return wisdom;
+                case AbilityScore.CHA:
+                    return charisma;
+                default:
+                    return 10;
+            }
+        }
 
         public int GetMaxBulk() => 5 + TacticsRuleset_Core.GetAbilityModifier(strength);
 

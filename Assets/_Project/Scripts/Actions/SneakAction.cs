@@ -12,6 +12,8 @@ namespace TacticsGame.Actions
     {
         private const bool STEALTH_DEBUG = true;
 
+        public override string GetActionName() => "Sneak";
+
         [Header("Sneak Noise")]
         [Tooltip("If true, the Sneak action applies the noise rule (Undetected -> Hidden).")]
         [SerializeField]

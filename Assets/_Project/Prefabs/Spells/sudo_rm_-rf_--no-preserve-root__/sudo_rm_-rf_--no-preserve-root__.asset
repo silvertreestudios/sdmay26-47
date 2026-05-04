@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: sudo_rm_-rf_--no-preserve-root__
+  m_EditorClassIdentifier: 
+  Id: f36e6a87-324f-41d0-98cf-477525e8cc44
+  Slug: sudo-rm--rf---no-preserve-root-/
+  ElementName: sudo rm -rf --no-preserve-root /
+  Icon: {fileID: 0}
+  Description: 
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 10
+  Traditions: []
+  Cost: 4
+  School: 
+  Components: []
+  Targeting: 2
+  Target: 6
+  Range: 0
+  RequiresLineOfEffect: 1
+  Area:
+    Shape: 1
+    Radius: 10
+  SpellAttackRoll: 0
+  DeliveryType: 0
+  ProjectileSpeed: 15
+  CastVFXPrefab: {fileID: 9096394482661789119, guid: 35ee78f44f28c0f4e9f9529fd6e4c077, type: 3}
+  ProjectileVFXPrefab: {fileID: 0}
+  HitVFXPrefab: {fileID: 7736012482946398376, guid: eff8c4f887c2126428c1fe71192441d1, type: 3}
+  SaveType: 0
+  ElementType: 11
+  IsBasicSave: 0
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 99
+    DiceSize: 20
+    Bonus: 999
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: 191bbde207e092e4482410c196e1729e, type: 2}
+  - {fileID: 11400000, guid: 7a7de1259709b6047a09daaf8b756d33, type: 2}
+  AITags: []

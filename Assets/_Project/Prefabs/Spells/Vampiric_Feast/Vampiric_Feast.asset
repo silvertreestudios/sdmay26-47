@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: Vampiric_Feast
+  m_EditorClassIdentifier: 
+  Id: 53708798-7f60-4132-8563-ef6b5eef8313
+  Slug: vampiric-feast
+  ElementName: Vampiric Feast
+  Icon: {fileID: 0}
+  Description: 
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 3
+  Traditions: []
+  Cost: 3
+  School: 
+  Components: []
+  Targeting: 0
+  Target: 3
+  Range: 5
+  RequiresLineOfEffect: 1
+  Area:
+    Shape: 0
+    Radius: 0
+  SpellAttackRoll: 0
+  DeliveryType: 0
+  ProjectileSpeed: 15
+  CastVFXPrefab: {fileID: 2960139272707442072, guid: 225539a47ec070b43a94d59736a4e5fc, type: 3}
+  ProjectileVFXPrefab: {fileID: 0}
+  HitVFXPrefab: {fileID: 3943869240050100306, guid: 7c1386de1554a944e9cea909e6b8b8e6, type: 3}
+  SaveType: 1
+  ElementType: 14
+  IsBasicSave: 0
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 6
+    DiceSize: 6
+    Bonus: 0
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: 875f6728d55769a47a82e948418d30ff, type: 2}
+  - {fileID: 11400000, guid: 861dc52c8f37d554d88a5b723cc74a3b, type: 2}
+  - {fileID: 11400000, guid: 8d2718ea11814a546be11e17fcaecf90, type: 2}
+  AITags: []

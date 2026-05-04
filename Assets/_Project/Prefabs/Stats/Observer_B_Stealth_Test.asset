@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b4dbbef26f0994cab6b8ec41cdcf92, type: 3}
   m_Name: Observer_B_Stealth_Test
   m_EditorClassIdentifier: 
-  unitName: Unit
-  perception: 20
-  stealth: 0
+  unitName: Adil
+  portraitIcon: {fileID: 21300000, guid: 4b98555ff0936094a828dc7267365eb2, type: 3}
+  unitSize: 2
+  perception: 99
+  stealth: 99
   hasAllAroundVision: 0
   hasDenyAdvantage: 0
-  strength: 10
-  dexterity: 14
-  constitution: 14
-  intelligence: 10
-  wisdom: 12
-  charisma: 10
-  baseSpeedInFeet: 30
+  strength: 99
+  dexterity: 99
+  constitution: 99
+  intelligence: 99
+  wisdom: 99
+  charisma: 99
+  baseSpeedInFeet: 99
   ancestryResourcePath: JSON/ancestries/human
   classResourcePath: JSON/classes/fighter
   level: 1
@@ -31,3 +33,4 @@ MonoBehaviour:
     Immunities: 
     Weaknesses: []
     Resistances: []
+  traits: []

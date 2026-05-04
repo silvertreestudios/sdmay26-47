@@ -112,11 +112,13 @@
 }
 
 .app-header__title {
-    font-size: var(--font-h2);
+    font-size: 24px;
     color: var(--color-accent);
     -unity-font-style: bold;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     margin-right: var(--pad-lg);
+    white-space: normal;
+    max-width: 800px;
 }
 
 .app-header__crumb {
@@ -502,6 +504,7 @@
     flex-grow: 1;
     flex-shrink: 1;
     min-height: 0;
+    padding: 0 4px;
 }
 
 .paged-grid__page {
@@ -765,8 +768,10 @@
 
 .creator-controller-focused {
     border-color: rgb(126, 226, 232);
-    border-width: 2px;
-    background-color: rgba(126, 226, 232, 0.10);
+    border-width: 3px;
+    background-color: rgba(126, 226, 232, 0.15);
+    scale: 1.02;
+    transition: scale var(--transition-fast), border-color var(--transition-fast);
 }
 
 .carousel-label {
@@ -919,6 +924,13 @@
     color: rgb(10, 18, 14);
 }
 
+.btn--primary.creator-controller-focused {
+    background-color: var(--color-accent);
+    border-color: white;
+    color: rgb(10, 18, 14);
+    scale: 1.05;
+}
+
 .btn--ghost {
     border-color: rgba(0, 0, 0, 0);
     color: var(--color-text-muted);
@@ -956,9 +968,11 @@
     visibility: hidden;
 }
 
-.list-view .unity-scroller--horizontal {
+.list-view .unity-scroller--horizontal,
+.unity-scroll-view .unity-scroller--horizontal {
     width: 0;
     height: 0;
+    display: none;
     visibility: hidden;
 }
 
@@ -1610,8 +1624,14 @@
 }
 
 .finishing-actions__cta {
-    min-width: var(--min-width-field);
-    margin: 0;
+    min-width: 400px;
+    min-height: 80px;
+    font-size: var(--font-h3);
+    -unity-font-style: bold;
+    letter-spacing: 4px;
+    border-radius: var(--radius-lg);
+    margin: var(--pad-md) 0;
+    transition: scale var(--transition-normal), background-color var(--transition-normal);
 }
 
 .step-container {
@@ -1634,4 +1654,16 @@
     flex-shrink: 1;
     min-width: 0;
     min-height: 0;
+}
+.detail-list {
+    flex-direction: column;
+    padding: 4px;
+}
+
+.unity-scroll-view__content-viewport {
+    overflow: hidden;
+}
+
+.unity-scroll-view__content-container {
+    padding-right: 4px;
 }

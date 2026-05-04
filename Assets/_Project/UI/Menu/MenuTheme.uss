@@ -49,12 +49,13 @@
 }
 
 .menu-title-main {
-    font-size: 84px;
+    font-size: 38px;
     color: var(--color-text-display);
     -unity-font-style: bold;
-    letter-spacing: 6px;
+    letter-spacing: 2px;
     white-space: normal;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    max-width: 600px;
 }
 
 .menu-title-sub {
@@ -170,6 +171,16 @@
 .settings-scroll-content .unity-scroller__low-button,
 .settings-scroll-content .unity-scroller__high-button {
     display: none;
+}
+
+.modal-scroll .unity-scroller--horizontal,
+.character-list-scroll .unity-scroller--horizontal {
+    display: none;
+    visibility: hidden;
+}
+
+.character-list-container {
+    padding: 24px 32px;
 }
 
 
@@ -523,5 +534,39 @@
 .screen-hidden {
     display: none;
     opacity: 0;
+}
+
+/* Character Selection Styles */
+.character-item-card {
+    background-color: rgba(30, 35, 40, 0.8);
+    border-color: rgba(100, 100, 100, 0.5);
+    border-width: 1px;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: background-color 0.2s, border-color 0.2s, scale 0.1s;
+}
+
+.character-item-card:hover, .character-item-card:focus {
+    background-color: rgba(50, 60, 70, 0.9);
+    border-color: var(--color-accent);
+    scale: 1.02;
+}
+
+.character-item-card:active {
+    background-color: var(--color-accent-dim);
+    scale: 0.98;
+}
+
+.character-name-text {
+    font-size: 24px;
+    color: var(--color-text-display);
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+}
+
+.character-sub-text {
+    font-size: 16px;
+    color: var(--color-text-muted);
 }
 

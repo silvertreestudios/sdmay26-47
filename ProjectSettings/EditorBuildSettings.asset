@@ -18,8 +18,23 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/CharacterCreator.unity
     guid: 41209a41a11de6f49939bf27c8d1c765
   - enabled: 1
+    path: Assets/_Project/Scenes/StoryScene.unity
+    guid: 617fcb1c35c32ad4595e857b21163b86
+  - enabled: 1
     path: Assets/_Project/Scenes/Level 1.unity
     guid: 789e114ca0ec01745a256b5a54ef9f91
+  - enabled: 1
+    path: Assets/_Project/Scenes/Story_Victory_1.unity
+    guid: fcf5e2fbe8967244baf3d00872189872
+  - enabled: 1
+    path: Assets/_Project/Scenes/Story_Defeat_1.unity
+    guid: 6e92da99d239edc4cbf102b0f81c5458
+  - enabled: 1
+    path: Assets/_Project/Scenes/Level 2.unity
+    guid: 8039588bec2f3b144a2eb956a3ddb7ad
+  - enabled: 1
+    path: Assets/_Project/Scenes/Story_Victory_2.unity
+    guid: 40e8cb7bcc9298b47b3794e05b5aed34
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

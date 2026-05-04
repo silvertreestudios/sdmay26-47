@@ -40,7 +40,7 @@ namespace TacticsGame.UI
         {
             if (Instance != null)
             {
-                Destroy(gameObject);
+                Destroy(this);
                 return;
             }
             Instance = this;
@@ -61,21 +61,15 @@ namespace TacticsGame.UI
 
         public void SetPosition(GridPosition gridPos)
         {
-            currentGridPosition = gridPos;
-            RefreshAvailableLayers();
-
-            GridSystem grid = ServiceLocator.Get<GridSystem>();
-            Vector3 worldPos = grid.GetWorldPosition(
-                new Vector3Int(gridPos.x, currentLayer, gridPos.z)
+            bool posChanged = (
+                gridPos.x != currentGridPosition.x || gridPos.z != currentGridPosition.z
             );
+            currentGridPosition = gridPos;
 
-            if (cursorSize > 1)
-            {
-                float halfCell = grid.CellSize * 0.5f;
-                worldPos += new Vector3(halfCell, 0, halfCell);
-            }
+            // Refresh the list of layers at this X,Z
+            RefreshAvailableLayers(forceRebuild: posChanged);
 
-            transform.position = worldPos;
+            UpdateVisualPosition();
         }
 
         /// <summary>
@@ -84,21 +78,31 @@ namespace TacticsGame.UI
         /// </summary>
         public bool CycleLayer(int direction)
         {
-            if (availableLayers.Count <= 1)
-                return false;
+            RefreshAvailableLayers(forceRebuild: true);
 
+            if (availableLayers.Count <= 1)
+            {
+                return false;
+            }
+
+            int oldIndex = layerIndex;
             int newIndex = layerIndex + direction;
+
+            // Wrap around
             if (newIndex < 0)
                 newIndex = availableLayers.Count - 1;
             else if (newIndex >= availableLayers.Count)
                 newIndex = 0;
 
-            if (newIndex == layerIndex)
+            if (newIndex == oldIndex)
+            {
                 return false;
+            }
 
             layerIndex = newIndex;
             currentLayer = availableLayers[layerIndex];
-            SetPosition(currentGridPosition);
+
+            UpdateVisualPosition();
             return true;
         }
 
@@ -143,8 +147,39 @@ namespace TacticsGame.UI
 
         public int GetCursorSize() => cursorSize;
 
-        private void RefreshAvailableLayers()
+        private void UpdateVisualPosition()
         {
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            if (grid == null)
+                return;
+
+            Vector3 worldPos = grid.GetWorldPosition(
+                new Vector3Int(currentGridPosition.x, currentLayer, currentGridPosition.z)
+            );
+
+            if (cursorSize > 1)
+            {
+                float halfCell = grid.CellSize * 0.5f;
+                worldPos += new Vector3(halfCell, 0, halfCell);
+            }
+
+            transform.position = worldPos;
+        }
+
+        private void RefreshAvailableLayers(bool forceRebuild)
+        {
+            int oldY = currentLayer;
+            if (!forceRebuild && availableLayers.Count > 0)
+            {
+                // If we're on the same tile and already have layers,
+                // just make sure our index matches our current layer.
+                if (availableLayers.Contains(currentLayer))
+                {
+                    layerIndex = availableLayers.IndexOf(currentLayer);
+                    return;
+                }
+            }
+
             availableLayers.Clear();
             layerIndex = 0;
 
@@ -167,11 +202,28 @@ namespace TacticsGame.UI
                 return;
             }
 
+            HashSet<int> uniqueLayers = new HashSet<int>();
             foreach (GridNode node in column)
-                availableLayers.Add(node.Coordinates.y);
+            {
+                // Skip the interior of solid walls when aiming
+                if (node.IsSolidWall())
+                    continue;
+                uniqueLayers.Add(node.Coordinates.y);
+            }
+
+            foreach (int y in uniqueLayers)
+                availableLayers.Add(y);
+
+            if (availableLayers.Count == 0)
+            {
+                // If the whole column is solid, fallback to the top-most solid layer
+                // (or first node) just so the cursor has somewhere to be.
+                availableLayers.Add(column[column.Count - 1].Coordinates.y);
+            }
 
             availableLayers.Sort();
 
+            // Try to find the best match for our current height
             int bestIdx = 0;
             int bestDist = int.MaxValue;
             for (int i = 0; i < availableLayers.Count; i++)
@@ -183,6 +235,7 @@ namespace TacticsGame.UI
                     bestIdx = i;
                 }
             }
+
             layerIndex = bestIdx;
             currentLayer = availableLayers[layerIndex];
         }

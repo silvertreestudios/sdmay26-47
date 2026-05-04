@@ -377,6 +377,12 @@ namespace TacticsGame.Characters
             persistentDamages.RemoveAll(p => p.Type == type);
         }
 
+        public bool HasPersistentDamage(DamageType type)
+        {
+            EnsureSharedState();
+            return persistentDamages.Exists(p => p.Type == type);
+        }
+
         // Turn lifecycle
 
         public int HandleTurnStart(out ActionTag extraActionRestriction)

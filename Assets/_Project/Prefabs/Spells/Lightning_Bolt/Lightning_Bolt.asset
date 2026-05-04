@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: Lightning_Bolt
+  m_EditorClassIdentifier: 
+  Id: 9f32cd57-c39a-4b5e-b9cc-03a1edb66cfb
+  Slug: lightning-bolt
+  ElementName: Lightning Bolt
+  Icon: {fileID: 0}
+  Description: 
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 3
+  Traditions: []
+  Cost: 3
+  School: 
+  Components: []
+  Targeting: 2
+  Target: 6
+  Range: 120
+  RequiresLineOfEffect: 1
+  Area:
+    Shape: 3
+    Radius: 24
+  SpellAttackRoll: 0
+  DeliveryType: 0
+  ProjectileSpeed: 15
+  CastVFXPrefab: {fileID: 8146109990153422361, guid: 3a71933006943464880abeb3bc4a9574, type: 3}
+  ProjectileVFXPrefab: {fileID: 0}
+  HitVFXPrefab: {fileID: 5248255443729959751, guid: 96012ff53abb4d443aace81c7b9fd4bc, type: 3}
+  SaveType: 2
+  ElementType: 7
+  IsBasicSave: 0
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 4
+    DiceSize: 12
+    Bonus: 0
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: f7a10d988238ef24eacb9d040ac68300, type: 2}
+  - {fileID: 11400000, guid: 0b0006b6d9718074bb59b744b4a74b37, type: 2}
+  - {fileID: 11400000, guid: d55c579d1fad84244b037c8b50930d83, type: 2}
+  AITags: []

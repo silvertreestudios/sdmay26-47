@@ -220,8 +220,19 @@ public class PauseMenuController : MonoBehaviour
 
     public void OnSaveGame()
     {
-        Debug.Log("[PauseMenu] Save Game Clicked. (Save System not yet implemented)");
-        // Add save logic here
+        var activeData = TacticsGame.Core.GlobalGameState.Instance.ActiveSaveData;
+        if (activeData != null)
+        {
+            activeData.lastSceneName = SceneManager.GetActiveScene().name;
+            TacticsGame.Core.SaveSystem.Save(activeData);
+            Debug.Log($"[PauseMenu] Game Saved. Scene: {activeData.lastSceneName}");
+
+            TogglePause();
+        }
+        else
+        {
+            Debug.LogWarning("[PauseMenu] Cannot save: No active character data found.");
+        }
     }
 
     public void OnRestartLevel()

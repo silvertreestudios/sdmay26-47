@@ -23,9 +23,8 @@ namespace TacticsGame.Spells.Effects
 
         public override void Apply(SpellCastContext context)
         {
-            // Calculate the caster's spell DC dynamically based on their stats
-            // NOTE: For now using INT as default, but this should be configurable on the SpellSO or ClassData
-            int spellDC = context.Caster.GetSpellDC(AbilityScore.INT, Proficiency.Trained);
+            // Retrieve the unit's actual spell DC
+            int spellDC = context.Caster.GetSpellDC();
 
             foreach (var target in context.AffectedUnits)
             {

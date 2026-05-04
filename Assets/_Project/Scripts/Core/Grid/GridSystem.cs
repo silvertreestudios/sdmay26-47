@@ -21,6 +21,7 @@ namespace TacticsGame.Grid
         public int ColumnCount => columns.Count;
 
         private Dictionary<Vector3Int, GridNode> nodes = new Dictionary<Vector3Int, GridNode>();
+        public IEnumerable<GridNode> AllNodes => nodes.Values;
         private Dictionary<Vector2Int, List<GridNode>> columns =
             new Dictionary<Vector2Int, List<GridNode>>();
         private Dictionary<Vector3Int, Unit> occupancy = new Dictionary<Vector3Int, Unit>();
@@ -369,6 +370,16 @@ namespace TacticsGame.Grid
             }
 
             return unitsInRange;
+        }
+
+        /// <summary>
+        /// Raised when a grid cell's state (walkability, cover, entities) changes.
+        /// </summary>
+        public event System.Action<Vector3Int> OnGridObjectChanged;
+
+        public void TriggerGridObjectChanged(Vector3Int position)
+        {
+            OnGridObjectChanged?.Invoke(position);
         }
     }
 }

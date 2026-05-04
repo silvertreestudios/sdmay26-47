@@ -59,3 +59,50 @@
     color: var(--color-accent);
     -unity-font-style: bold;
 }
+
+/* Battle Resolution Styles */
+.resolution-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.resolution-container {
+    width: 600px;
+    padding: var(--pad-xl);
+    background-color: rgba(14, 17, 19, 0.95);
+    border-width: 1px;
+    border-color: var(--color-border-soft);
+    border-radius: var(--radius-md);
+    align-items: center;
+}
+
+.resolution-title {
+    font-size: 48px;
+    color: var(--color-text-display);
+    -unity-font-style: bold;
+    margin-bottom: var(--pad-xl);
+    letter-spacing: 4px;
+    -unity-text-align: middle-center;
+}
+
+.resolution-button-list {
+    width: 100%;
+    flex-direction: column;
+}
+
+.resolution-btn {
+    margin-bottom: var(--margin-md);
+    border-left-width: 4px;
+    border-left-color: transparent;
+    -unity-text-align: middle-center;
+}
+
+.resolution-btn:focus {
+    padding-left: var(--pad-lg);
+}

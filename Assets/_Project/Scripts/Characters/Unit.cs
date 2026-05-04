@@ -21,6 +21,10 @@ namespace TacticsGame.Characters
         [Header("Team Configuration")]
         [SerializeField]
         private Faction faction = Faction.Player;
+
+        [SerializeField]
+        private bool isMainPlayerCharacter = false;
+
         public event Action OnMoveConfirmed;
 
         public Faction GetFaction() => faction;
@@ -104,13 +108,144 @@ namespace TacticsGame.Characters
                 uas.OnSelectedUnitChanged += Select_unit;
             }
 
-            var meshRenderer = GetComponentInChildren<MeshRenderer>();
-            if (meshRenderer != null)
+            // Inject persistent character data if this is the main player unit
+            if (
+                isMainPlayerCharacter
+                && faction == Faction.Player
+                && GlobalGameState.Instance != null
+            )
             {
-                if (faction == Faction.Player)
-                    meshRenderer.material.color = Color.blue;
-                else if (faction == Faction.Enemy)
-                    meshRenderer.material.color = Color.red;
+                var activeData = GlobalGameState.Instance.ActiveSaveData;
+                if (activeData != null && activeData.characterData != null)
+                {
+                    Initialize(activeData.characterData);
+                    Debug.Log(
+                        $"[Player Unit Debug] Injected persistent stats for {activeData.characterData.Name} into {gameObject.name}"
+                    );
+
+                    // Attempt visual injection
+                    var visualManager =
+                        GetComponentInChildren<TacticsGame.Characters.Visuals.VisualPartManager>();
+                    if (visualManager != null)
+                    {
+                        var compendium =
+                            ServiceLocator.Get<TacticsGame.Data.TacticsRuleset.CompendiumRegistry>();
+                        if (compendium != null && compendium.MasterDatabase != null)
+                        {
+                            Debug.Log(
+                                $"[Player Unit Debug] Initializing visuals for {activeData.characterData.Name} via VisualPartManager..."
+                            );
+                            foreach (var kvp in activeData.characterData.VisualPartIDs)
+                            {
+                                var partSO = compendium.MasterDatabase.GetVisualPartById(kvp.Value);
+                                if (partSO != null)
+                                {
+                                    visualManager.EquipPart(partSO);
+                                }
+                                else
+                                {
+                                    Debug.LogWarning(
+                                        $"[Player Unit Debug] Could not resolve visual part ID: {kvp.Value} for slot: {kvp.Key}"
+                                    );
+                                }
+                            }
+
+                            // Equipment Injection
+                            var equipment = GetComponent<UnitEquipment>();
+                            if (equipment != null)
+                            {
+                                Debug.Log(
+                                    $"[Player Unit Debug] Initializing equipment for {activeData.characterData.Name}..."
+                                );
+                                if (
+                                    !string.IsNullOrEmpty(activeData.characterData.MainHandWeaponID)
+                                )
+                                {
+                                    var weapon = compendium.MasterDatabase.GetWeaponById(
+                                        activeData.characterData.MainHandWeaponID
+                                    );
+                                    if (weapon != null)
+                                        equipment.EquipMainHand(weapon);
+                                }
+
+                                if (
+                                    !string.IsNullOrEmpty(
+                                        activeData.characterData.OffHandEquipmentID
+                                    )
+                                )
+                                {
+                                    var weapon = compendium.MasterDatabase.GetWeaponById(
+                                        activeData.characterData.OffHandEquipmentID
+                                    );
+                                    if (weapon != null)
+                                        equipment.EquipOffHand(weapon);
+                                    else
+                                    {
+                                        var shield = compendium.MasterDatabase.GetShieldById(
+                                            activeData.characterData.OffHandEquipmentID
+                                        );
+                                        if (shield != null)
+                                            equipment.EquipOffHand(shield);
+                                    }
+                                }
+
+                                if (!string.IsNullOrEmpty(activeData.characterData.ArmorID))
+                                {
+                                    var armor = compendium.MasterDatabase.GetArmorById(
+                                        activeData.characterData.ArmorID
+                                    );
+                                    if (armor != null)
+                                        equipment.EquipArmor(armor);
+                                }
+                            }
+
+                            // Spell Injection
+                            if (
+                                activeData.characterData.SpellIDs != null
+                                && activeData.characterData.SpellIDs.Count > 0
+                            )
+                            {
+                                Debug.Log(
+                                    $"[Player Unit Debug] Injecting {activeData.characterData.SpellIDs.Count} spells for {activeData.characterData.Name}..."
+                                );
+                                foreach (string spellId in activeData.characterData.SpellIDs)
+                                {
+                                    var spellSO = compendium.MasterDatabase.GetSpellById(spellId);
+                                    if (spellSO != null)
+                                    {
+                                        var castAction =
+                                            gameObject.AddComponent<TacticsGame.Spells.CastSpellAction>();
+                                        castAction.SetSpell(spellSO);
+                                        Debug.Log(
+                                            $"[Player Unit Debug] Added CastSpellAction for: {spellSO.ElementName}"
+                                        );
+                                    }
+                                }
+                            }
+
+                            // Finalize actions
+                            GetComponent<UnitActionEconomy>()?.RefreshActions();
+                        }
+                        else
+                        {
+                            Debug.LogWarning(
+                                "[Player Unit Debug] CompendiumRegistry or MasterDatabase is null. Visual injection skipped."
+                            );
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning(
+                            $"[Unit] VisualPartManager not found on Player unit: {gameObject.name}"
+                        );
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning(
+                        $"[Unit] No active save data found for Player unit: {gameObject.name}"
+                    );
+                }
             }
         }
 
@@ -225,6 +360,19 @@ namespace TacticsGame.Characters
                 }
             }
 
+            // Status Penalties to Speed
+            // Example: Acid Grip persistent damage penalty (-10 ft)
+            if (conditions != null)
+            {
+                // Check if taking persistent acid damage
+                // TODO: make a list of speed penalties.
+                // For now, just check the persistent damage list.
+                if (conditions.HasPersistentDamage(DamageType.Acid))
+                {
+                    speed -= 10;
+                }
+            }
+
             // Minimum Speed in PF2e is usually 5ft (1 cell) if penalties are too high.
             return Mathf.Max(5, speed) / 5;
         }
@@ -286,16 +434,88 @@ namespace TacticsGame.Characters
             );
         }
 
-        public int GetSpellDC(
-            AbilityScore castingStat = AbilityScore.INT,
-            Proficiency prof = Proficiency.Trained
-        )
+        public int GetSpellDC()
+        {
+            if (Stats != null)
+                return Stats.GetSpellDC();
+
+            return TacticsRuleset_Core.CalculateSpellDC(
+                this,
+                Level,
+                Proficiency.Trained,
+                GetAbilityModifier(AbilityScore.INT)
+            );
+        }
+
+        public int GetSpellDC(AbilityScore castingStat, Proficiency prof)
         {
             return TacticsRuleset_Core.CalculateSpellDC(
                 this,
-                Stats.GetLevel(),
+                Level,
                 prof,
                 GetAbilityModifier(castingStat)
+            );
+        }
+
+        public int GetSkillModifier(SkillType skill)
+        {
+            if (Stats == null)
+                return 0;
+
+            AbilityScore ability;
+            switch (skill)
+            {
+                case SkillType.Athletics:
+                    ability = AbilityScore.STR;
+                    break;
+                case SkillType.Thievery:
+                    ability = AbilityScore.DEX;
+                    break;
+                case SkillType.Stealth:
+                    ability = AbilityScore.DEX;
+                    break;
+                case SkillType.Acrobatics:
+                    ability = AbilityScore.DEX;
+                    break;
+                case SkillType.Arcana:
+                case SkillType.Crafting:
+                case SkillType.Occultism:
+                case SkillType.Society:
+                    ability = AbilityScore.INT;
+                    break;
+                case SkillType.Medicine:
+                case SkillType.Nature:
+                case SkillType.Religion:
+                case SkillType.Survival:
+                    ability = AbilityScore.WIS;
+                    break;
+                case SkillType.Deception:
+                case SkillType.Diplomacy:
+                case SkillType.Intimidation:
+                case SkillType.Performance:
+                    ability = AbilityScore.CHA;
+                    break;
+                default:
+                    ability = AbilityScore.None;
+                    break;
+            }
+
+            Proficiency prof = Stats.GetSkillProficiency(skill);
+
+            return TacticsRuleset_Core.CalculateModifier(Level, prof, GetAbilityModifier(ability));
+        }
+
+        public int GetSpellAttackModifier()
+        {
+            if (Stats != null)
+                return Stats.GetSpellAttackModifier();
+
+            return TacticsRuleset_Core.CalculateSpellAttackModifier(
+                this,
+                AbilityScore.INT,
+                GetAbilityModifier(AbilityScore.INT),
+                Level,
+                Proficiency.Trained
             );
         }
 

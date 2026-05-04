@@ -74,6 +74,33 @@ namespace TacticsGame.Spells.Services
         }
 
         /// <summary>
+        /// Returns all non-unit entities in the given cells that implement IDamageable.
+        /// </summary>
+        public static List<IDamageable> GetDamageablesInCells(List<Vector3Int> cells)
+        {
+            List<IDamageable> result = new List<IDamageable>();
+            GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
+
+            foreach (Vector3Int cell in cells)
+            {
+                GridNode node = gridSystem.GetNode(cell);
+                if (node == null)
+                    continue;
+
+                foreach (var entity in node.Entities)
+                {
+                    if (entity is IDamageable damageable && !damageable.IsDead)
+                    {
+                        if (!result.Contains(damageable))
+                            result.Add(damageable);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Evaluates whether a unit passes the given target filter.
         /// </summary>
         public static bool PassesFilter(Unit target, TargetFilter filter, Unit caster)

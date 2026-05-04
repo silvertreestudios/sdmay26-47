@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: Howling_Blizzard
+  m_EditorClassIdentifier: 
+  Id: 1d9bf861-b095-4d78-9270-f8785e6b3f13
+  Slug: howling-blizzard
+  ElementName: Howling Blizzard
+  Icon: {fileID: 0}
+  Description: 
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 5
+  Traditions: []
+  Cost: 3
+  School: 
+  Components: []
+  Targeting: 2
+  Target: 6
+  Range: 0
+  RequiresLineOfEffect: 1
+  Area:
+    Shape: 2
+    Radius: 12
+  SpellAttackRoll: 0
+  DeliveryType: 0
+  ProjectileSpeed: 15
+  CastVFXPrefab: {fileID: 2351803016126263508, guid: fdd966af85c9d10449d15615d30a040e, type: 3}
+  ProjectileVFXPrefab: {fileID: 0}
+  HitVFXPrefab: {fileID: 8217551450044406508, guid: 9fdf0155c2cebe14aa69fcbec0ddf82c, type: 3}
+  SaveType: 2
+  ElementType: 5
+  IsBasicSave: 0
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 10
+    DiceSize: 6
+    Bonus: 0
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: d7c2ab9d8a0e4e848a9eb2e41e163c9b, type: 2}
+  - {fileID: 11400000, guid: e488460433145d7459f6a29a2b213f9f, type: 2}
+  - {fileID: 11400000, guid: ecd997ef5cc2a0b4a893ccd1b30b54f2, type: 2}
+  - {fileID: 11400000, guid: 4a4d2a2f5a49ad94f853d0aa63670a25, type: 2}
+  - {fileID: 11400000, guid: 1041255b9bbeacd4a9c20f87054c308f, type: 2}
+  AITags: []

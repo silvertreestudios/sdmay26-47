@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TacticsGame.Core;
+using TacticsGame.Data;
 using TacticsGame.InputSystem;
 using TacticsGame.UI;
 using UnityEngine;
@@ -14,7 +15,14 @@ public class MainMenuController : MonoBehaviour
     private string gameSceneName = "Level 1";
 
     [SerializeField]
+    private string characterCreatorSceneName = "CharacterCreator";
+
+    [SerializeField]
     private VisualTreeAsset loadingTemplate;
+
+    [Header("Character Selection")]
+    [SerializeField]
+    private VisualTreeAsset characterItemTemplate;
 
     [Header("Content Texts")]
     [TextArea(15, 50)]
@@ -41,6 +49,17 @@ public class MainMenuController : MonoBehaviour
     // Sub Views
     private VisualElement licenseView;
     private VisualElement creditsView;
+    private VisualElement characterSelectionView;
+
+    // Character Selection UI
+    private VisualElement characterListContainer;
+    private ScrollView characterSelectionScroll;
+    private Button btnNewCharacter;
+    private Button btnCloseSelection;
+
+    // Save state
+    private List<GameSaveData> availableSaves = new List<GameSaveData>();
+    private GameSaveData selectedSave;
 
     // License UI
     private ScrollView licenseScroll;
@@ -54,6 +73,7 @@ public class MainMenuController : MonoBehaviour
     // State
     private bool isCreditsRolling = false;
     private float currentHoldTime = 0f;
+    private float lastMenuOpenTime = 0f;
 
     private void OnEnable()
     {
@@ -70,6 +90,18 @@ public class MainMenuController : MonoBehaviour
         // Get Sub Views
         licenseView = root.Q<VisualElement>("LicenseView");
         creditsView = root.Q<VisualElement>("CreditsView");
+        characterSelectionView = root.Q<VisualElement>("CharacterSelectionView");
+
+        // Character Selection UI Elements
+        characterListContainer = characterSelectionView?.Q<VisualElement>("CharacterListContainer");
+        characterSelectionScroll = characterSelectionView?.Q<ScrollView>(
+            "CharacterSelectionScroll"
+        );
+        btnNewCharacter = characterSelectionView?.Q<Button>("BtnNewCharacter");
+        btnCloseSelection = characterSelectionView?.Q<Button>("BtnCloseSelection");
+
+        btnNewCharacter?.RegisterCallback<ClickEvent>(ev => OnNewCharacter());
+        btnCloseSelection?.RegisterCallback<ClickEvent>(ev => HideAllSubPanels());
 
         // License UI Elements
         licenseScroll = licenseView?.Q<ScrollView>("LicenseScroll");
@@ -187,6 +219,11 @@ public class MainMenuController : MonoBehaviour
         if (licenseView != null && !licenseView.ClassListContains("screen-hidden"))
             HideAllSubPanels();
         else if (creditsView != null && !creditsView.ClassListContains("screen-hidden"))
+            HideAllSubPanels();
+        else if (
+            characterSelectionView != null
+            && !characterSelectionView.ClassListContains("screen-hidden")
+        )
             HideAllSubPanels();
     }
 
@@ -314,15 +351,115 @@ public class MainMenuController : MonoBehaviour
 
     private void OnNewGame()
     {
-        if (!string.IsNullOrEmpty(gameSceneName))
-        {
-            LoadingManager.Instance.LoadScene(gameSceneName);
-        }
+        ShowCharacterSelection();
     }
 
     private void OnLoadGame()
     {
-        Debug.Log("Load Game Not Implemented Yet");
+        ShowCharacterSelection();
+    }
+
+    private void OnNewCharacter()
+    {
+        if (!string.IsNullOrEmpty(characterCreatorSceneName))
+        {
+            LoadingManager.Instance.LoadScene(characterCreatorSceneName);
+        }
+    }
+
+    private void ShowCharacterSelection()
+    {
+        HideAllSubPanels();
+        menuLeftPanel?.SetEnabled(false);
+        menuRightPanel.style.backgroundColor = new StyleColor(
+            new Color(0.05f, 0.07f, 0.08f, 0.85f)
+        );
+        characterSelectionView?.RemoveFromClassList("screen-hidden");
+        lastMenuOpenTime = Time.unscaledTime;
+
+        PopulateCharacterList();
+
+        // Wait 50ms before focusing
+        characterSelectionView
+            .schedule.Execute(() =>
+            {
+                if (availableSaves.Count > 0)
+                {
+                    var firstCard = characterListContainer?.Q<VisualElement>(
+                        className: "character-item-card"
+                    );
+                    firstCard?.Focus();
+                }
+                else
+                {
+                    btnNewCharacter?.Focus();
+                }
+            })
+            .StartingIn(50);
+    }
+
+    private void PopulateCharacterList()
+    {
+        if (characterListContainer == null || characterItemTemplate == null)
+            return;
+
+        characterListContainer.Clear();
+        availableSaves = SaveSystem.GetAllSaves();
+
+        if (availableSaves.Count == 0)
+        {
+            characterListContainer.Add(
+                new Label("No saved characters found.")
+                {
+                    style =
+                    {
+                        color = Color.gray,
+                        marginTop = 20,
+                        unityTextAlign = TextAnchor.MiddleCenter,
+                    },
+                }
+            );
+            return;
+        }
+
+        foreach (var save in availableSaves)
+        {
+            var itemElement = characterItemTemplate.Instantiate();
+            itemElement.Q<Label>("Lbl_CharacterName").text = save.characterData.Name;
+
+            // Format class level string
+            string className = "Adventurer";
+            if (!string.IsNullOrEmpty(save.characterData.ClassID))
+            {
+                className = save.characterData.ClassID;
+            }
+            itemElement.Q<Label>("Lbl_CharacterClass").text =
+                $"Level {save.characterData.Level} {className}";
+            itemElement.Q<Label>("Lbl_LastSaved").text =
+                $"Saved: {save.GetLastSavedTime().ToShortDateString()}";
+
+            var card = itemElement.Q<VisualElement>(className: "character-item-card");
+
+            // Play Button
+            var playAction = new Action(() =>
+            {
+                if (Time.unscaledTime - lastMenuOpenTime < 0.3f)
+                    return;
+
+                GlobalGameState.Instance.SetCurrentCharacter(save);
+                LoadingManager.Instance.LoadScene(
+                    string.IsNullOrEmpty(save.lastSceneName) ? gameSceneName : save.lastSceneName
+                );
+            });
+
+            card.RegisterCallback<ClickEvent>(ev => playAction());
+
+            // Allow controller to trigger it
+            var submitEvent = new NavigationSubmitEvent();
+            card.RegisterCallback<NavigationSubmitEvent>(ev => playAction());
+
+            characterListContainer.Add(itemElement);
+        }
     }
 
     private void OnQuitGame()
@@ -341,6 +478,7 @@ public class MainMenuController : MonoBehaviour
 
         licenseView?.AddToClassList("screen-hidden");
         creditsView?.AddToClassList("screen-hidden");
+        characterSelectionView?.AddToClassList("screen-hidden");
 
         if (menuRightPanel != null)
         {

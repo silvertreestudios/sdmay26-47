@@ -382,6 +382,9 @@ namespace TacticsGame.Grid
 
                 foreach (GridNode surface in reachableSurfaces)
                 {
+                    if (surface.IsSolidWall())
+                        continue;
+
                     if (offset.x != 0 && offset.z != 0)
                     {
                         if (
@@ -416,7 +419,7 @@ namespace TacticsGame.Grid
 
             foreach (GridNode surface in verticalSurfaces)
             {
-                if (surface.Coordinates.y == currentNode.ElevationY)
+                if (surface.Coordinates.y == currentNode.ElevationY || surface.IsSolidWall())
                     continue;
 
                 PathNode neighbourNode = GetOrCreatePathNode(surface.Coordinates, pathNodeMap);

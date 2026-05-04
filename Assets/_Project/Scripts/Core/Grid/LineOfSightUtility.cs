@@ -99,6 +99,14 @@ namespace TacticsGame.Grid
                 return false;
             }
 
+            GridNode targetNode = grid.GetNode(target);
+            if (targetNode != null && targetNode.IsSolidWall())
+            {
+                if (DebugLineOfEffect)
+                    Debug.Log($"[LoE] {origin} -> {target}: BLOCK (target is solid wall)");
+                return false;
+            }
+
             List<Vector3Int> line = Get3DBresenhamLine(origin, target);
             int yMin = Mathf.Min(origin.y, target.y);
             int yMax = Mathf.Max(origin.y, target.y);
@@ -390,6 +398,10 @@ namespace TacticsGame.Grid
             Vector3Int target
         )
         {
+            GridNode targetNode = grid.GetNode(target);
+            if (targetNode != null && targetNode.IsSolidWall())
+                return VisibilityResult.Blocked;
+
             List<Vector3Int> line = Get3DBresenhamLine(origin, target);
             int yMin = Mathf.Min(origin.y, target.y);
             int yMax = Mathf.Max(origin.y, target.y);

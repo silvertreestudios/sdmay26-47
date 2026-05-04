@@ -12,6 +12,8 @@ namespace TacticsGame.Actions
     {
         private const bool STEALTH_DEBUG = true;
 
+        public override string GetActionName() => "Hide";
+
         public override List<Vector3Int> GetActionRangeGridPositions()
         {
             return new List<Vector3Int> { unit.CurrentLayeredPosition };

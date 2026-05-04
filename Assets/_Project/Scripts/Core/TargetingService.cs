@@ -39,7 +39,10 @@ namespace TacticsGame.Core
             ServiceLocator.Unregister<TargetingService>();
         }
 
-        public void InitializeTargeting(GridPosition startPosition)
+        public void InitializeTargeting(
+            GridPosition startPosition,
+            BaseAction actionOverride = null
+        )
         {
             currentCursorGridPosition = startPosition;
 
@@ -48,9 +51,8 @@ namespace TacticsGame.Core
             CurrentTargetLayeredPosition = grid.ResolveClosestLayeredPosition(startPosition, 0);
             if (gridCursorVisual != null)
             {
-                BaseAction selectedAction = ServiceLocator
-                    .Get<UnitActionSystem>()
-                    .GetSelectedAction();
+                BaseAction selectedAction =
+                    actionOverride ?? ServiceLocator.Get<UnitActionSystem>().GetSelectedAction();
 
                 bool showCursor = selectedAction == null || !selectedAction.IsUnitTargeted;
                 gridCursorVisual.gameObject.SetActive(showCursor);

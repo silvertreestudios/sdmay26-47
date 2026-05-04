@@ -11,9 +11,21 @@ namespace TacticsGame.Story
 {
     public class StoryManager : MonoBehaviour
     {
+        public event System.Action OnSequenceComplete;
+
         [Tooltip("The JSON script file containing the sequence to play.")]
         public TextAsset jsonScript;
 
+        [Header("Story Configuration")]
+        [SerializeField]
+        private StoryData storyData;
+
+        [Header("Database References")]
+        [SerializeField]
+        [Tooltip("Assign the RulesetDatabase to allow fetching player visual parts.")]
+        private TacticsGame.Data.TacticsRuleset.TacticsRulesetDatabase rulesetDatabase;
+
+        [Header("UI Overrides")]
         [Tooltip("Reference to the UI controller for the dialogue box.")]
         public DialogueUIController dialogueUI;
 
@@ -29,7 +41,11 @@ namespace TacticsGame.Story
         [Tooltip("Panel Settings for the loading screen.")]
         public PanelSettings panelSettings;
 
-        private StoryData storyData;
+        [Header("Animation Library")]
+        [SerializeField]
+        [Tooltip("Assign animation clips here to use them in stories by name.")]
+        private List<AnimationClip> clipLibrary = new List<AnimationClip>();
+
         private Dictionary<string, StoryActor> actorMap = new Dictionary<string, StoryActor>();
 
         private int currentSequenceIndex = 0;
@@ -52,6 +68,10 @@ namespace TacticsGame.Story
             if (storyCamera != null)
             {
                 storyCamera.Priority = 100; // Force take over
+                var perlin =
+                    storyCamera.GetComponentInChildren<CinemachineBasicMultiChannelPerlin>();
+                if (perlin != null)
+                    perlin.AmplitudeGain = 0f;
             }
 
             if (
@@ -92,6 +112,15 @@ namespace TacticsGame.Story
             {
                 dialogueUI.OnDialogueCompleted -= HandleDialogueCompleted;
             }
+
+            // Clean up camera shake on exit
+            if (storyCamera != null)
+            {
+                var perlin =
+                    storyCamera.GetComponentInChildren<CinemachineBasicMultiChannelPerlin>();
+                if (perlin != null)
+                    perlin.AmplitudeGain = 0f;
+            }
         }
 
         /// <summary>
@@ -113,6 +142,32 @@ namespace TacticsGame.Story
 
                     actor.actorId = actorData.id;
                     actorMap[actorData.id] = actor;
+
+                    // Inject player visuals
+                    if (actorData.id == "Player")
+                    {
+                        var activeData = TacticsGame.Core.GlobalGameState.Instance.ActiveSaveData;
+                        if (
+                            activeData != null
+                            && activeData.characterData != null
+                            && rulesetDatabase != null
+                        )
+                        {
+                            var visualManager =
+                                obj.GetComponentInChildren<TacticsGame.Characters.Visuals.VisualPartManager>();
+                            if (visualManager != null)
+                            {
+                                foreach (var kvp in activeData.characterData.VisualPartIDs)
+                                {
+                                    var partSO = rulesetDatabase.GetVisualPartById(kvp.Value);
+                                    if (partSO != null)
+                                    {
+                                        visualManager.EquipPart(partSO);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -161,6 +216,7 @@ namespace TacticsGame.Story
             }
 
             Debug.Log("[StoryManager] Story Sequence Complete.");
+            OnSequenceComplete?.Invoke();
             inputService?.SwitchToActionMap("Player"); // Return to standard map
         }
 
@@ -169,7 +225,32 @@ namespace TacticsGame.Story
             if (action is DialogueAction dialogue)
             {
                 isDialogueWaiting = true;
-                dialogueUI?.ShowDialogue(dialogue.actor, dialogue.text);
+                string speakerName = dialogue.actor;
+
+                // Auto-focus camera on the current speaker if they exist in the scene
+                if (storyCamera != null && !string.IsNullOrEmpty(dialogue.actor))
+                {
+                    if (actorMap.TryGetValue(dialogue.actor, out StoryActor speakerActor))
+                    {
+                        storyCamera.Follow = speakerActor.transform;
+                        storyCamera.LookAt = speakerActor.transform;
+                    }
+                }
+
+                if (speakerName == "Player")
+                {
+                    var activeData = TacticsGame.Core.GlobalGameState.Instance.ActiveSaveData;
+                    if (
+                        activeData != null
+                        && activeData.characterData != null
+                        && !string.IsNullOrEmpty(activeData.characterData.Name)
+                    )
+                    {
+                        speakerName = activeData.characterData.Name;
+                    }
+                }
+
+                dialogueUI?.ShowDialogue(speakerName, dialogue.text);
 
                 while (isDialogueWaiting)
                 {
@@ -193,6 +274,25 @@ namespace TacticsGame.Story
                     // Approximate wait for standard triggers
                     if (action.waitUntilFinished)
                         yield return new WaitForSeconds(1.0f);
+                }
+            }
+            else if (action is PlayClipAction playClip)
+            {
+                if (actorMap.TryGetValue(playClip.actor, out StoryActor actor))
+                {
+                    AnimationClip clip = clipLibrary.Find(c =>
+                        c.name.Equals(playClip.clipName, System.StringComparison.OrdinalIgnoreCase)
+                    );
+                    if (clip != null)
+                    {
+                        yield return StartCoroutine(actor.PlayClipCoroutine(clip));
+                    }
+                    else
+                    {
+                        Debug.LogWarning(
+                            $"[StoryManager] Could not find clip: {playClip.clipName}"
+                        );
+                    }
                 }
             }
             else if (action is CameraMoveAction camMove)
@@ -283,6 +383,35 @@ namespace TacticsGame.Story
                             LerpCamera(camSet.position, camSet.rotation, camSet.duration)
                         );
                     }
+                }
+            }
+            else if (action is MusicAction music)
+            {
+                if (
+                    TacticsGame.Core.ServiceLocator.TryGet<TacticsGame.Core.MusicManager>(
+                        out var musicManager
+                    )
+                )
+                {
+                    musicManager.PlayMusic(music.musicName);
+                }
+                else
+                {
+                    Debug.LogWarning("[StoryManager] MusicAction failed: MusicManager not found.");
+                }
+            }
+            else if (action is TeleportAction tp)
+            {
+                if (actorMap.TryGetValue(tp.actor, out StoryActor actor))
+                {
+                    actor.transform.position = tp.position;
+                }
+            }
+            else if (action is RotateAction rot)
+            {
+                if (actorMap.TryGetValue(rot.actor, out StoryActor actor))
+                {
+                    actor.transform.eulerAngles = rot.rotation;
                 }
             }
             else if (action is SceneLoadAction sceneLoad)

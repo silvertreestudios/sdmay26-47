@@ -41,6 +41,21 @@ namespace TacticsGame.Story
         public string triggerName;
     }
 
+    public class PlayClipAction : StoryAction
+    {
+        public string clipName;
+    }
+
+    public class TeleportAction : StoryAction
+    {
+        public Vector3 position;
+    }
+
+    public class RotateAction : StoryAction
+    {
+        public Vector3 rotation; // Euler angles
+    }
+
     public class CameraMoveAction : StoryAction
     {
         public string target; // Target actor ID
@@ -64,6 +79,11 @@ namespace TacticsGame.Story
     public class SceneLoadAction : StoryAction
     {
         public string sceneName;
+    }
+
+    public class MusicAction : StoryAction
+    {
+        public string musicName;
     }
 
     public class StoryActionConverter : JsonConverter
@@ -92,6 +112,10 @@ namespace TacticsGame.Story
                 "CameraShake" => new CameraShakeAction(),
                 "CameraSet" => new CameraSetAction(),
                 "SceneLoad" => new SceneLoadAction(),
+                "Music" => new MusicAction(),
+                "PlayClip" => new PlayClipAction(),
+                "Teleport" => new TeleportAction(),
+                "Rotate" => new RotateAction(),
                 _ => throw new System.Exception($"Unknown StoryAction type: {type}"),
             };
 
@@ -162,6 +186,24 @@ namespace TacticsGame.Story
                 else if (action is SceneLoadAction sla)
                 {
                     sla.sceneName = (string)paramToken["sceneName"];
+                }
+                else if (action is MusicAction mus)
+                {
+                    mus.musicName = (string)paramToken["musicName"];
+                }
+                else if (action is PlayClipAction pca)
+                {
+                    pca.clipName = (string)paramToken["clipName"];
+                }
+                else if (action is TeleportAction ta)
+                {
+                    JToken pos = paramToken["position"];
+                    ta.position = new Vector3((float)pos["x"], (float)pos["y"], (float)pos["z"]);
+                }
+                else if (action is RotateAction ra)
+                {
+                    JToken rot = paramToken["rotation"];
+                    ra.rotation = new Vector3((float)rot["x"], (float)rot["y"], (float)rot["z"]);
                 }
             }
 

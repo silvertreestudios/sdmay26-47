@@ -258,5 +258,12 @@ namespace TacticsGame.InputSystem
             else
                 playerInputActions.Player.Enable();
         }
+
+        public bool IsConfirmJustPressed()
+        {
+            if (playerInputActions.UI.enabled)
+                return playerInputActions.UI.Submit.WasPressedThisFrame();
+            return playerInputActions.Player.Confirm.WasPressedThisFrame();
+        }
     }
 }

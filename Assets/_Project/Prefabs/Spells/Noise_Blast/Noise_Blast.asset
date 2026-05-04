@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb2dc5e3d078754f982311d2d9b5cb5, type: 3}
+  m_Name: Noise_Blast
+  m_EditorClassIdentifier: 
+  Id: 1222a0bd-15dc-41ba-93f6-3e903abb5a09
+  Slug: noise-blast
+  ElementName: Noise Blast
+  Icon: {fileID: 0}
+  Description: 
+  SourceBook: 
+  Traits: []
+  TraitsLower: []
+  CompendiumSource: 
+  GrantedItemIds: []
+  AppliedEffectIds: []
+  Level: 2
+  Traditions: []
+  Cost: 3
+  School: 
+  Components: []
+  Targeting: 2
+  Target: 6
+  Range: 30
+  RequiresLineOfEffect: 1
+  Area:
+    Shape: 1
+    Radius: 2
+  SpellAttackRoll: 0
+  DeliveryType: 0
+  ProjectileSpeed: 15
+  CastVFXPrefab: {fileID: 5362403952024452582, guid: 20e53181bc9aa9142ac6eca991030f3f, type: 3}
+  ProjectileVFXPrefab: {fileID: 0}
+  HitVFXPrefab: {fileID: 4473972579615987989, guid: 558d2e211197e4e45889248beb2c4e59, type: 3}
+  SaveType: 1
+  ElementType: 12
+  IsBasicSave: 0
+  Duration: 
+  IsSustained: 0
+  BaseDamage:
+    DiceCount: 2
+    DiceSize: 10
+    Bonus: 0
+  HeightenRules: 
+  HeightenDamageScaling:
+    DiceCount: 0
+    DiceSize: 0
+    Bonus: 0
+  Effects:
+  - {fileID: 11400000, guid: 940764d71b2e88a43afd18b3387b9cbe, type: 2}
+  - {fileID: 11400000, guid: 81111f3091b106645a3282055c4c2872, type: 2}
+  - {fileID: 11400000, guid: 40deb22e1db4dcc4586e16cfc1f58257, type: 2}
+  AITags: []
