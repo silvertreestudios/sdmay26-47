@@ -30,19 +30,15 @@ namespace TacticsGame.Actions
 
             if (door != null)
             {
-                // TODO: Show a sub-menu here (Pick Lock, Force, Open).
-                // For now, try a standard Open, and fallback to Force if Locked/Stuck.
-
+                // Skill checks based on door state
                 if (door.CurrentState == DoorState.Locked)
                 {
-                    // Use Thievery Modifier
                     int thieveryMod = unit.GetSkillModifier(SkillType.Thievery);
                     int thieveryRoll = UnityEngine.Random.Range(1, 21) + thieveryMod;
                     door.TryPickLock(unit, thieveryRoll);
                 }
                 else if (door.CurrentState == DoorState.Stuck)
                 {
-                    // Use Athletics Modifier
                     int athleticsMod = unit.GetSkillModifier(SkillType.Athletics);
                     int athleticsRoll = UnityEngine.Random.Range(1, 21) + athleticsMod;
                     door.TryForceOpen(unit, athleticsRoll);
@@ -52,33 +48,49 @@ namespace TacticsGame.Actions
                     door.Interact(unit);
                 }
             }
+            else
+            {
+                Debug.LogWarning($"[InteractDoorAction] No door found at {targetPosition}!");
+            }
 
-            // End action
             ActionComplete();
         }
 
-        public override List<Vector3Int> GetValidActionGridPositions()
+        /// <summary>
+        /// Defines where the cursor is allowed to move (the red outline).
+        /// Returns all tiles within the interaction radius.
+        /// </summary>
+        public override List<Vector3Int> GetActionRangeGridPositions()
         {
-            List<Vector3Int> validPositions = new List<Vector3Int>();
-            GridSystem grid = ServiceLocator.Get<GridSystem>();
-
+            List<Vector3Int> rangePositions = new List<Vector3Int>();
             Vector3Int unitPos = unit.CurrentLayeredPosition;
 
-            // Check adjacent 8 cells
             for (int x = -interactRange; x <= interactRange; x++)
             {
                 for (int z = -interactRange; z <= interactRange; z++)
                 {
-                    if (x == 0 && z == 0)
-                        continue;
-
                     Vector3Int checkPos = unitPos + new Vector3Int(x, 0, z);
+                    rangePositions.Add(checkPos);
+                }
+            }
 
-                    // If a door exists at this grid coordinate, it's a valid target
-                    if (FindDoorAtPosition(checkPos) != null)
-                    {
-                        validPositions.Add(checkPos);
-                    }
+            return rangePositions;
+        }
+
+        /// <summary>
+        /// Defines which tiles are actually valid targets (the highlighted cursor).
+        /// Only returns tiles that contain a Door.
+        /// </summary>
+        public override List<Vector3Int> GetValidActionGridPositions()
+        {
+            List<Vector3Int> validPositions = new List<Vector3Int>();
+            List<Vector3Int> rangePositions = GetActionRangeGridPositions();
+
+            foreach (Vector3Int pos in rangePositions)
+            {
+                if (FindDoorAtPosition(pos) != null)
+                {
+                    validPositions.Add(pos);
                 }
             }
 
