@@ -27,6 +27,14 @@ namespace TacticsGame.Core
         [SerializeField]
         private string nextSceneName = "NextScene";
 
+        [Header("Ruleset Overrides")]
+        [Tooltip(
+            "Units in this list will be ignored when calculating Victory/Defeat. If all other units die, the game resolves regardless of these units' health."
+        )]
+        [SerializeField]
+        private System.Collections.Generic.List<Unit> ignoredUnits =
+            new System.Collections.Generic.List<Unit>();
+
         [Header("Delay")]
         [Tooltip("Minimum time to wait after the last unit falls before transitioning.")]
         [SerializeField]
@@ -102,13 +110,15 @@ namespace TacticsGame.Core
                 yield break;
             }
 
-            // Filter by alive units (HP > 0)
+            // Filter by alive units (HP > 0) and ignore units in the list
             bool anyPlayerAlive = allUnits.Any(u =>
                 u.GetFaction() == Faction.Player
+                && !ignoredUnits.Contains(u)
                 && u.GetComponent<UnitHealth>().GetCurrentHealth() > 0
             );
             bool anyEnemyAlive = allUnits.Any(u =>
                 u.GetFaction() == Faction.Enemy
+                && !ignoredUnits.Contains(u)
                 && u.GetComponent<UnitHealth>().GetCurrentHealth() > 0
             );
 
