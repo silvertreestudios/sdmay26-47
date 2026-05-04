@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b4dbbef26f0994cab6b8ec41cdcf92, type: 3}
+  m_Name: Hero2
+  m_EditorClassIdentifier: 
+  unitName: Unit
+  portraitIcon: {fileID: 21300000, guid: 5c40dd2bf444ee84da378df1a27166ae, type: 3}
+  unitSize: 2
+  perception: 10
+  stealth: 10
+  hasAllAroundVision: 0
+  hasDenyAdvantage: 0
+  strength: 14
+  dexterity: 18
+  constitution: 15
+  intelligence: 15
+  wisdom: 15
+  charisma: 20
+  baseSpeedInFeet: 30
+  ancestryResourcePath: JSON/ancestries/human
+  classResourcePath: JSON/classes/fighter
+  level: 1
+  rwiProfile:
+    Immunities: 
+    Weaknesses: []
+    Resistances: []
+  traits: []

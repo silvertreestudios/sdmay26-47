@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
+using PathfinderTactics.UI;
 using UnityEngine;
 
 namespace PathfinderTactics.Reactions
@@ -108,11 +109,43 @@ namespace PathfinderTactics.Reactions
                     break;
 
                 case ReactionMode.Prompt:
-                    // TODO: UI Prompt
-                    Debug.Log(
-                        $"[REACTION] Prompting {intent.ReactingUnit.name} to use {intent.Reaction.GetReactionName()}..."
-                    );
-                    ExecuteIntent(intent);
+                    if (intent.ReactingUnit.GetFaction() == Faction.Player)
+                    {
+                        if (ServiceLocator.TryGet<ReactionPromptUI>(out var promptUI))
+                        {
+                            promptUI.Show(
+                                intent.ReactingUnit.name,
+                                intent.Reaction.GetReactionName(),
+                                intent.TriggeringEvent.SourceUnit?.name ?? "something",
+                                (confirmed) =>
+                                {
+                                    if (confirmed)
+                                    {
+                                        ExecuteIntent(intent);
+                                    }
+                                    else
+                                    {
+                                        Debug.Log(
+                                            $"[REACTION] {intent.ReactingUnit.name} declined to use {intent.Reaction.GetReactionName()}."
+                                        );
+                                        ProcessNextIntent();
+                                    }
+                                }
+                            );
+                        }
+                        else
+                        {
+                            Debug.LogWarning(
+                                "[REACTION] Prompt mode requested but ReactionPromptUI is missing! Defaulting to Auto."
+                            );
+                            ExecuteIntent(intent);
+                        }
+                    }
+                    else
+                    {
+                        // AI units always "Auto" if the intent is valid
+                        ExecuteIntent(intent);
+                    }
                     break;
 
                 case ReactionMode.Conditional:

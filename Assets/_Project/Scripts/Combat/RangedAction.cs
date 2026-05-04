@@ -4,6 +4,7 @@ using PathfinderTactics.Characters;
 using PathfinderTactics.Combat;
 using PathfinderTactics.Core;
 using PathfinderTactics.Grid;
+using PathfinderTactics.InputSystem;
 using PathfinderTactics.Items;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ namespace PathfinderTactics.Actions
         private Vector3Int intendedTargetTile;
 
         public override bool IsUnitTargeted => true;
+        public override bool IsRangedAttack => true;
 
         public override string GetActionName()
         {
@@ -152,6 +154,10 @@ namespace PathfinderTactics.Actions
 
         private void HandleShoot()
         {
+            if (unit.GetFaction() == Faction.Player)
+            {
+                ServiceLocator.Get<HapticService>()?.TriggerRumble(0.25f, 0.25f, 0.1f);
+            }
             PerformShootLogic();
         }
 
@@ -257,6 +263,7 @@ namespace PathfinderTactics.Actions
                 mapPenalty = isAgileWeapon ? -4 : -5;
             else if (attacksMade >= 2)
                 mapPenalty = isAgileWeapon ? -8 : -10;
+            //Double counting map for ranged strikes
 
             int attackBonus = PF2E_Core.CalculateAttackRollModifier(
                 unit,
@@ -324,13 +331,17 @@ namespace PathfinderTactics.Actions
 
             Degree result = PF2E_Core.CheckResult(
                 d20,
-                attackBonus + mapPenalty + rangePenalty,
+                //attackBonus + mapPenalty + rangePenalty, (double counting map bonus)
+                attackBonus + rangePenalty,
                 finalAC
             );
             CombatLogUtility.LogResult(result);
 
             if (result == Degree.Success || result == Degree.CriticalSuccess)
             {
+                // Rumble on hit
+                ServiceLocator.Get<HapticService>()?.TriggerRumble(0.75f, 0.75f, 0.2f);
+
                 int weaponDiceRoll = 0;
                 for (int i = 0; i < weapon.damageDice.count; i++)
                 {

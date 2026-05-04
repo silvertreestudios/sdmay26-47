@@ -162,4 +162,46 @@ namespace PathfinderTactics.Reactions
             AffectedUnits = affectedUnits;
         }
     }
+
+    /// <summary>
+    /// Fired when a unit performs a manipulate action (Interacting, Casting with somatic components, etc.)
+    /// </summary>
+    public class ManipulateEvent : GameEvent
+    {
+        public string ActionName { get; }
+
+        public ManipulateEvent(Unit source, string actionName)
+            : base(source)
+        {
+            ActionName = actionName;
+        }
+    }
+
+    /// <summary>
+    /// Fired when a unit makes a ranged attack.
+    /// </summary>
+    public class RangedAttackEvent : GameEvent
+    {
+        public Unit Target { get; }
+
+        public RangedAttackEvent(Unit source, Unit target)
+            : base(source)
+        {
+            Target = target;
+        }
+    }
+
+    /// <summary>
+    /// Fired when a unit uses a move action that doesn't necessarily involve tile-to-tile movement (e.g., Stand Up).
+    /// </summary>
+    public class MoveActionEvent : GameEvent
+    {
+        public string ActionName { get; }
+
+        public MoveActionEvent(Unit source, string actionName)
+            : base(source)
+        {
+            ActionName = actionName;
+        }
+    }
 }

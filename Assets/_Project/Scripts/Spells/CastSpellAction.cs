@@ -4,6 +4,7 @@ using PathfinderTactics.Characters;
 using PathfinderTactics.Core;
 using PathfinderTactics.Data.PF2e;
 using PathfinderTactics.Grid;
+using PathfinderTactics.InputSystem;
 using PathfinderTactics.Reactions;
 using PathfinderTactics.Spells.Services;
 using UnityEngine;
@@ -33,6 +34,8 @@ namespace PathfinderTactics.Spells
 
         private SpellCastContext activeContext;
         private List<Vector3Int> cachedRangePositions;
+        private bool isWaitingForProjectile;
+        private bool isAnimationFinished;
 
         protected override void Awake()
         {
@@ -140,9 +143,8 @@ namespace PathfinderTactics.Spells
                     {
                         Vector3Int testPos3D = node.Coordinates;
 
-                        // Physical Walkability Check (Terrain only)
-                        // Prevents targeting "empty air" or solid wall voxels
-                        if (node.Terrain == null || !node.Terrain.IsWalkable)
+                        // Ensure the node exists
+                        if (node == null)
                             continue;
 
                         // Range Check
@@ -226,6 +228,9 @@ namespace PathfinderTactics.Spells
                 }
             }
 
+            Debug.Log(
+                $"[SPELL TARGETING] Found {validPositions.Count} valid target tiles for {currentSpell.ElementName}. Range used: {GetRangeInTiles()} tiles."
+            );
             return validPositions;
         }
 
@@ -256,6 +261,9 @@ namespace PathfinderTactics.Spells
                 TargetPosition = targetPosition,
                 TargetingType = currentSpell.Targeting,
             };
+
+            isWaitingForProjectile = false;
+            isAnimationFinished = false;
 
             // For single-target spells without AoE effects, pre-populate the target
             if (
@@ -305,8 +313,9 @@ namespace PathfinderTactics.Spells
                         else
                         {
                             // Fallback
-                            SpellEffectResolver.Resolve(context);
-                            FireAfterEventAndFinish(context);
+                            activeContext = context;
+                            isAnimationFinished = true;
+                            ResolveSpellVisualsAndPayload();
                         }
                     }
                 );
@@ -316,9 +325,97 @@ namespace PathfinderTactics.Spells
         {
             if (activeContext != null)
             {
-                SpellEffectResolver.Resolve(activeContext);
-                FireAfterEventAndFinish(activeContext);
+                ResolveSpellVisualsAndPayload();
             }
+        }
+
+        private void ResolveSpellVisualsAndPayload()
+        {
+            var visuals = unit.GetComponentInChildren<UnitVisuals>();
+            Transform handTransform = (visuals != null) ? visuals.GetHandTransform() : transform;
+            Vector3 handPos = handTransform.position;
+            Vector3 targetPos = activeContext.TargetPosition; // Default to cell center
+
+            // If we have a unit target, aim for center
+            Unit targetUnit = ServiceLocator
+                .Get<GridSystem>()
+                .GetUnitAt(activeContext.TargetPosition);
+            if (targetUnit != null)
+            {
+                targetPos = targetUnit.transform.position + Vector3.up;
+            }
+
+            // Cast VFX
+            if (activeContext.SpellData.CastVFXPrefab != null)
+            {
+                Instantiate(activeContext.SpellData.CastVFXPrefab, handPos, Quaternion.identity);
+
+                if (unit.GetFaction() == Faction.Player)
+                {
+                    ServiceLocator.Get<HapticService>()?.TriggerRumble(0.25f, 0.25f, 0.1f);
+                }
+            }
+
+            // Delivery Branch
+            if (activeContext.SpellData.DeliveryType == SpellDelivery.Instant)
+            {
+                PlayHitVFXAndResolve();
+            }
+            else if (activeContext.SpellData.DeliveryType == SpellDelivery.Projectile)
+            {
+                if (activeContext.SpellData.ProjectileVFXPrefab != null)
+                {
+                    isWaitingForProjectile = true;
+                    GameObject projObj = Instantiate(
+                        activeContext.SpellData.ProjectileVFXPrefab,
+                        handPos,
+                        Quaternion.identity
+                    );
+                    SpellProjectile projectile = projObj.GetComponent<SpellProjectile>();
+
+                    if (projectile == null)
+                        projectile = projObj.AddComponent<SpellProjectile>();
+
+                    projectile.Launch(
+                        handPos,
+                        targetPos,
+                        activeContext.SpellData.ProjectileSpeed,
+                        () =>
+                        {
+                            isWaitingForProjectile = false;
+                            PlayHitVFXAndResolve();
+                        }
+                    );
+                }
+                else
+                {
+                    // Fallback if prefab missing
+                    PlayHitVFXAndResolve();
+                }
+            }
+        }
+
+        private void PlayHitVFXAndResolve()
+        {
+            // Hit VFX
+            if (activeContext.SpellData.HitVFXPrefab != null)
+            {
+                Vector3 hitPos = activeContext.TargetPosition;
+                Unit targetUnit = ServiceLocator
+                    .Get<GridSystem>()
+                    .GetUnitAt(activeContext.TargetPosition);
+                if (targetUnit != null)
+                    hitPos = targetUnit.transform.position + Vector3.up;
+
+                Instantiate(activeContext.SpellData.HitVFXPrefab, hitPos, Quaternion.identity);
+            }
+
+            // Rumble on impact
+            ServiceLocator.Get<HapticService>()?.TriggerRumble(0.75f, 0.75f, 0.2f);
+
+            // Logic Resolution
+            SpellEffectResolver.Resolve(activeContext);
+            FireAfterEventAndFinish(activeContext);
         }
 
         private void FireAfterEventAndFinish(SpellCastContext ctx)
@@ -330,29 +427,40 @@ namespace PathfinderTactics.Spells
                     afterEvent,
                     (_) =>
                     {
-                        var visuals = unit.GetComponentInChildren<UnitVisuals>();
-                        if (visuals == null)
-                        {
-                            FinishCasting();
-                        }
+                        CheckForResolutionComplete();
                     }
                 );
         }
 
         private void HandleCastAnimationEnd()
         {
+            isAnimationFinished = true;
             var visuals = unit.GetComponentInChildren<UnitVisuals>();
             if (visuals != null)
             {
                 visuals.OnCastSpell -= HandleCastSpellFire;
                 visuals.OnAnimationEnd -= HandleCastAnimationEnd;
             }
-            FinishCasting();
+
+            CheckForResolutionComplete();
+        }
+
+        private void CheckForResolutionComplete()
+        {
+            // wait for both the animation to end and the projectile (if any) to hit.
+            if (isAnimationFinished && !isWaitingForProjectile)
+            {
+                FinishCasting();
+            }
         }
 
         private void FinishCasting()
         {
-            onActionComplete?.Invoke();
+            // This is called either directly (instant) or via the projectile callback + animation end check.
+            if (isAnimationFinished && !isWaitingForProjectile)
+            {
+                onActionComplete?.Invoke();
+            }
         }
 
         // Helpers
