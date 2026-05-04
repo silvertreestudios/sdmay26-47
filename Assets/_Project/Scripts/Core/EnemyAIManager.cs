@@ -29,9 +29,6 @@ namespace TacticsGame.Core
         [SerializeField]
         private float delayBetweenActions = 0.5f;
 
-        [SerializeField]
-        private int maxAttackDistanceTiles = 6;
-
         [Header("Random Jumping")]
         [SerializeField]
         private bool randomJumpEnabled = true;
@@ -109,12 +106,21 @@ namespace TacticsGame.Core
             if (turnManager.CurrentUnit != enemyUnit)
                 yield break;
 
+            // player's current camera
+            var cam = ServiceLocator.Get<CameraController>();
+            bool wasInEagleEye = cam.IsEagleEyeActive;
+
+            // Enter Birdseye view for the AI turn
+            cam.EnterEagleEyeMode(enemyUnit.transform);
+
             yield return new WaitForSeconds(turnStartDelay);
 
             UnitConditions conditions = enemyUnit.GetComponent<UnitConditions>();
             if (conditions != null && conditions.HasCondition(ConditionType.Unconscious))
             {
                 Debug.Log($"[AI] {enemyUnit.name} is unconscious. Skipping AI turn.");
+                if (!wasInEagleEye)
+                    cam.ExitEagleEyeMode();
                 ServiceLocator.Get<UnitActionSystem>().EndTurn();
                 yield break;
             }
@@ -130,7 +136,11 @@ namespace TacticsGame.Core
 
                 // Respect real-time mode changes during turn
                 if (controlMode != EnemyControlMode.AiEnabled)
+                {
+                    if (!wasInEagleEye)
+                        cam.ExitEagleEyeMode();
                     yield break;
+                }
 
                 if (IsNextToPlayer(enemyUnit) && WantsToUseRangedAttack(enemyUnit))
                 {
@@ -153,19 +163,33 @@ namespace TacticsGame.Core
                 }
 
                 Unit target = GetClosestPlayerUnit(enemyUnit);
-                if (target == null)
+                bool targetReached = false;
+
+                if (target != null)
                 {
-                    ServiceLocator.Get<UnitActionSystem>().EndTurn();
-                    yield break;
+                    // Attempt to move toward target
+                    yield return MoveTowardTarget(
+                        enemyUnit,
+                        target,
+                        (success) => targetReached = success
+                    );
                 }
 
-                yield return MoveTowardTarget(enemyUnit, target);
+                // If no target or could not path toward target, wander randomly
+                if (!targetReached)
+                {
+                    yield return Wander(enemyUnit);
+                }
 
                 if (turnManager.CurrentUnit != enemyUnit)
                     yield break;
 
                 yield return new WaitForSeconds(delayBetweenActions);
             }
+
+            // Final Cleanup
+            if (!wasInEagleEye)
+                cam.ExitEagleEyeMode();
 
             if (turnManager.CurrentUnit == enemyUnit && enemyUnit.GetActionPointsRemaining() > 0)
             {
@@ -235,9 +259,6 @@ namespace TacticsGame.Core
                     unit.CurrentLayeredPosition
                 );
 
-                if (distance > maxAttackDistanceTiles)
-                    continue;
-
                 if (distance < closestDistance)
                 {
                     closestDistance = distance;
@@ -304,10 +325,17 @@ namespace TacticsGame.Core
             yield return new WaitUntil(() => actionCommitComplete);
         }
 
-        private IEnumerator MoveTowardTarget(Unit enemyUnit, Unit target)
+        private IEnumerator MoveTowardTarget(
+            Unit enemyUnit,
+            Unit target,
+            Action<bool> onComplete = null
+        )
         {
             if (target == null)
+            {
+                onComplete?.Invoke(false);
                 yield break;
+            }
 
             GridSystem grid = ServiceLocator.Get<GridSystem>();
             Vector3Int start = enemyUnit.CurrentLayeredPosition;
@@ -315,7 +343,10 @@ namespace TacticsGame.Core
 
             List<Vector3Int> fullPath = Pathfinding.FindPath(start, targetPos, targetPos);
             if (fullPath == null || fullPath.Count < 2)
+            {
+                onComplete?.Invoke(false);
                 yield break;
+            }
 
             int maxMoveCost = enemyUnit.GetMaxMoveCost();
             Vector3Int bestDestination = start;
@@ -342,14 +373,57 @@ namespace TacticsGame.Core
             }
 
             if (bestDestination == start)
+            {
+                onComplete?.Invoke(false);
                 yield break;
+            }
 
             List<Vector3Int> movePath = Pathfinding.FindPath(start, bestDestination);
             if (movePath == null || movePath.Count < 2)
+            {
+                onComplete?.Invoke(false);
                 yield break;
+            }
 
             bool visualMoveComplete = false;
             enemyUnit.MoveAlongPath(movePath, () => visualMoveComplete = true);
+            yield return new WaitUntil(() => visualMoveComplete);
+
+            bool actionCommitComplete = false;
+            ServiceLocator
+                .Get<UnitActionSystem>()
+                .AiCommitMoveAction(() => actionCommitComplete = true);
+            yield return new WaitUntil(() => actionCommitComplete);
+
+            onComplete?.Invoke(true);
+        }
+
+        private IEnumerator Wander(Unit enemyUnit)
+        {
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
+            Vector3Int start = enemyUnit.CurrentLayeredPosition;
+            int maxMoveCost = enemyUnit.GetMaxMoveCost();
+
+            List<Vector3Int> reachable = Pathfinding.GetReachablePositions(start, maxMoveCost);
+            if (reachable.Count <= 1)
+                yield break;
+
+            // Remove occupied (except self)
+            reachable.RemoveAll(p => p != start && grid.IsPositionOccupied(p));
+            if (reachable.Count <= 1)
+                yield break;
+
+            // Pick a random destination
+            Vector3Int destination = reachable[UnityEngine.Random.Range(0, reachable.Count)];
+            if (destination == start)
+                yield break;
+
+            List<Vector3Int> path = Pathfinding.FindPath(start, destination);
+            if (path == null || path.Count < 2)
+                yield break;
+
+            bool visualMoveComplete = false;
+            enemyUnit.MoveAlongPath(path, () => visualMoveComplete = true);
             yield return new WaitUntil(() => visualMoveComplete);
 
             bool actionCommitComplete = false;

@@ -29,6 +29,11 @@ namespace TacticsGame.Characters
         public static readonly int AnimConditionID = Animator.StringToHash("ConditionID");
         public static readonly int AnimInteractType = Animator.StringToHash("InteractType");
 
+        // State Names (Common Fallbacks)
+        public static readonly int AnimLocomotion = Animator.StringToHash("Locomotion");
+        public static readonly int AnimIdle = Animator.StringToHash("Idle");
+        public static readonly int AnimDefaultEmpty = Animator.StringToHash("Default Empty State");
+
         // Triggers
         public static readonly int AnimJump = Animator.StringToHash("Jump");
         public static readonly int AnimAttackMelee = Animator.StringToHash("Attack_Melee");
@@ -182,6 +187,38 @@ namespace TacticsGame.Characters
         public void FallbackInvokeActionComplete()
         {
             OnAnimationEnd?.Invoke();
+        }
+
+        /// <summary>
+        /// Snaps animator out of jump/fall states and into the base locomotion.
+        /// </summary>
+        public void ForceLandingAnimation()
+        {
+            if (animator == null || !animator.isActiveAndEnabled)
+                return;
+
+            // Clear any lingering jump triggers
+            animator.ResetTrigger(AnimJump);
+            animator.SetBool(AnimIsGrounded, true);
+            animator.SetFloat(AnimVerticalSpeed, 0f);
+
+            // Back to base states
+            for (int i = 0; i < animator.layerCount; i++)
+            {
+                if (i == 0)
+                {
+                    if (animator.HasState(i, AnimLocomotion))
+                        animator.CrossFadeInFixedTime(AnimLocomotion, 0.15f, i);
+                    else if (animator.HasState(i, AnimIdle))
+                        animator.CrossFadeInFixedTime(AnimIdle, 0.15f, i);
+                }
+                else
+                {
+                    // Reset override layers to their empty states
+                    if (animator.HasState(i, AnimDefaultEmpty))
+                        animator.CrossFadeInFixedTime(AnimDefaultEmpty, 0.15f, i);
+                }
+            }
         }
 
         public Transform GetHandTransform(bool rightHand = true)

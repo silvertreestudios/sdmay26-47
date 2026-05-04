@@ -91543,6 +91543,8 @@ MonoBehaviour:
   victorySceneName: Story_Victory_1
   defeatSceneName: Story_Defeat_1
   nextSceneName: Level 2
+  ignoredUnits:
+  - {fileID: 6400625627197374470}
   resolutionDelay: 3
 --- !u!1001 &3602447304066960125
 PrefabInstance:
@@ -91768,6 +91770,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 181503154}
   m_SourcePrefab: {fileID: 100100000, guid: 15dbbf97bedadb749ad2fceba357cd16, type: 3}
+--- !u!114 &6400625627197374470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5504384286800827719, guid: 15dbbf97bedadb749ad2fceba357cd16, type: 3}
+  m_PrefabInstance: {fileID: 6400625627197374469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181503132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3b8151ba581f045a23745c756fa5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6904106075236125503
 PrefabInstance:
   m_ObjectHideFlags: 0

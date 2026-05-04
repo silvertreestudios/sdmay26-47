@@ -170,7 +170,9 @@ namespace TacticsGame.Grid
                 case MovementTag.Normal:
                     return Mathf.Abs(deltaY) <= 1;
                 case MovementTag.Climb:
+                    return true;
                 case MovementTag.Jump:
+                    return Mathf.Abs(deltaY) <= 2;
                 case MovementTag.Fly:
                     return true;
                 default:

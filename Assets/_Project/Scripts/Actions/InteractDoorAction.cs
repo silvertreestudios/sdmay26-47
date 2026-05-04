@@ -64,12 +64,34 @@ namespace TacticsGame.Actions
         {
             List<Vector3Int> rangePositions = new List<Vector3Int>();
             Vector3Int unitPos = unit.CurrentLayeredPosition;
+            GridSystem grid = ServiceLocator.Get<GridSystem>();
 
             for (int x = -interactRange; x <= interactRange; x++)
             {
                 for (int z = -interactRange; z <= interactRange; z++)
                 {
+                    if (x == 0 && z == 0)
+                        continue;
+
                     Vector3Int checkPos = unitPos + new Vector3Int(x, 0, z);
+                    GridNode node = grid.GetNode(checkPos);
+
+                    // Physical Obstruction Check
+                    if (node == null || node.IsSolidWall())
+                        continue;
+
+                    // Block non-walkable tiles, but allow them if they contain a door.
+                    bool hasDoor = FindDoorAtPosition(checkPos) != null;
+                    if (!node.IsWalkable() && !hasDoor)
+                    {
+                        continue;
+                    }
+
+                    if (Mathf.Abs(x) + Mathf.Abs(z) > interactRange)
+                    {
+                        continue;
+                    }
+
                     rangePositions.Add(checkPos);
                 }
             }

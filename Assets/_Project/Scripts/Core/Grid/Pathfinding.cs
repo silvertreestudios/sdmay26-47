@@ -377,7 +377,7 @@ namespace TacticsGame.Grid
                 List<GridNode> reachableSurfaces = GridQueryService.GetReachableSurfaces(
                     neighbourColumn,
                     currentNode.ElevationY,
-                    MovementTag.Normal
+                    MovementTag.Jump
                 );
 
                 foreach (GridNode surface in reachableSurfaces)
@@ -414,7 +414,7 @@ namespace TacticsGame.Grid
             List<GridNode> verticalSurfaces = GridQueryService.GetReachableSurfaces(
                 currentColumn,
                 currentNode.ElevationY,
-                MovementTag.Normal
+                MovementTag.Jump
             );
 
             foreach (GridNode surface in verticalSurfaces)
@@ -535,6 +535,13 @@ namespace TacticsGame.Grid
         private static int GetStepCost(GridSystem gridSystem, PathNode fromNode, PathNode toNode)
         {
             int baseCost = CalculateDistance(fromNode.GridPosition, toNode.GridPosition);
+
+            int deltaY = Mathf.Abs(toNode.LayeredPosition.y - fromNode.LayeredPosition.y);
+            if (deltaY > 1)
+            {
+                baseCost += MOVE_STRAIGHT_COST;
+            }
+
             GridNode destinationNode = gridSystem.GetNode(toNode.LayeredPosition);
             if (destinationNode?.Terrain == null)
                 return baseCost;

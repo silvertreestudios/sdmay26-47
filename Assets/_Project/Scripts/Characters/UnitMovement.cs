@@ -144,6 +144,11 @@ namespace TacticsGame.Characters
             {
                 OnLanded?.Invoke();
                 jumpedThisAirTime = false;
+
+                if (unitVisuals != null)
+                {
+                    unitVisuals.ForceLandingAnimation();
+                }
             }
 
             wasGroundedLastFrame = grounded;
@@ -155,10 +160,18 @@ namespace TacticsGame.Characters
                 return;
 
             // Compute velocity manually based on actual transform changes this frame.
-            Vector3 worldVelocity = (transform.position - lastFramePosition) / Time.deltaTime;
+            Vector3 worldVelocity = Vector3.zero;
+            if (Time.deltaTime > 0)
+            {
+                worldVelocity = (transform.position - lastFramePosition) / Time.deltaTime;
+            }
+
             Vector3 planarVelocity = worldVelocity;
             planarVelocity.y = 0f;
             float speed = planarVelocity.magnitude;
+
+            if (float.IsNaN(speed) || float.IsInfinity(speed))
+                speed = 0f;
 
             unitVisuals.SetSpeed(speed);
             unitVisuals.SetGrounded(IsGrounded);
@@ -195,6 +208,13 @@ namespace TacticsGame.Characters
                 targetPosXZ,
                 moveSpeed * Time.deltaTime
             );
+
+            // AI Jump Logic: If the next node is significantly higher, trigger a jump
+            float heightDelta = targetPosition.y - transform.position.y;
+            if (heightDelta > 0.6f && IsGrounded && !jumpedThisAirTime)
+            {
+                HandleJump();
+            }
 
             Vector3 moveDelta = stepXZ - currentPosXZ;
 

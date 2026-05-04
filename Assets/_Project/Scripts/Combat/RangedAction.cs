@@ -37,6 +37,13 @@ namespace TacticsGame.Actions
         [HideInInspector]
         public WeaponSO activeWeapon;
 
+        [Header("Projectile Settings")]
+        [SerializeField]
+        private Projectile projectilePrefab;
+
+        [SerializeField]
+        private float targetYOffset = 1.2f; // Aim for the chest area
+
         public WeaponSO GetWeapon()
         {
             if (activeWeapon != null)
@@ -344,51 +351,84 @@ namespace TacticsGame.Actions
                 rangePenalty
             );
 
-            // Check result using the combined bonus
+            // Calculate final results but defer the application until impact
             Degree result = TacticsRuleset_Core.CheckResult(d20, finalAttackBonus, finalAC);
             CombatLogUtility.LogResult(result);
 
-            if (result == Degree.Success || result == Degree.CriticalSuccess)
+            bool isCritical = (result == Degree.CriticalSuccess);
+            bool isHit = (result == Degree.Success || isCritical);
+
+            // Prepare the hit resolution callback
+            Unit capturedTarget = targetUnit;
+            Action onImpact = () =>
             {
-                // Rumble on hit
-                ServiceLocator.Get<HapticService>()?.TriggerRumble(0.75f, 0.75f, 0.2f);
+                if (capturedTarget == null)
+                    return;
 
-                int weaponDiceRoll = 0;
-                for (int i = 0; i < weapon.damageDice.count; i++)
+                if (isHit)
                 {
-                    weaponDiceRoll += UnityEngine.Random.Range(1, weapon.damageDice.sides + 1);
-                }
+                    // Rumble on hit (only for player)
+                    if (unit.GetFaction() == Faction.Player)
+                        ServiceLocator.Get<HapticService>()?.TriggerRumble(0.75f, 0.75f, 0.2f);
 
-                int damageModifiers = 0; // Standard bows don't add STR, but could add other bonuses
+                    int weaponDiceRoll = 0;
+                    for (int i = 0; i < weapon.damageDice.count; i++)
+                    {
+                        weaponDiceRoll += UnityEngine.Random.Range(1, weapon.damageDice.sides + 1);
+                    }
 
-                CombatLogUtility.LogDamageStage(
-                    targetUnit,
-                    weaponDiceRoll,
-                    damageModifiers,
-                    weapon.damageType,
-                    result == Degree.CriticalSuccess
-                );
-
-                int finalDamage = weaponDiceRoll + damageModifiers;
-                if (result == Degree.CriticalSuccess)
-                    finalDamage *= 2;
-
-                var targetHealth = targetUnit.GetComponent<IDamageable>();
-                if (targetHealth != null)
-                {
-                    targetHealth.ApplyDamage(
-                        unit,
-                        finalDamage,
+                    int damageModifiers = 0;
+                    CombatLogUtility.LogDamageStage(
+                        capturedTarget,
+                        weaponDiceRoll,
+                        damageModifiers,
                         weapon.damageType,
-                        result == Degree.CriticalSuccess
+                        isCritical
                     );
+
+                    int finalDamage = weaponDiceRoll + damageModifiers;
+                    if (isCritical)
+                        finalDamage *= 2;
+
+                    var targetHealth = capturedTarget.GetComponent<IDamageable>();
+                    if (targetHealth != null)
+                    {
+                        targetHealth.ApplyDamage(unit, finalDamage, weapon.damageType, isCritical);
+                    }
                 }
+                else
+                {
+                    var targetVisuals = capturedTarget.GetComponentInChildren<UnitVisuals>();
+                    if (targetVisuals != null)
+                        targetVisuals.TriggerDodge();
+                }
+            };
+
+            // Spawn and Setup Projectile
+            if (projectilePrefab != null)
+            {
+                Vector3 spawnPos = transform.position + Vector3.up * 1.5f; // Fallback
+                var visuals = unit.GetComponentInChildren<UnitVisuals>();
+                if (visuals != null)
+                {
+                    var handTransform = visuals.GetHandTransform();
+                    if (handTransform != null)
+                        spawnPos = handTransform.position;
+                }
+
+                Vector3 impactPos = capturedTarget.transform.position + Vector3.up * targetYOffset;
+
+                var projectileInstance = Instantiate(
+                    projectilePrefab,
+                    spawnPos,
+                    Quaternion.identity
+                );
+                projectileInstance.Setup(spawnPos, impactPos, onImpact);
             }
             else
             {
-                var targetVisuals = targetUnit.GetComponentInChildren<UnitVisuals>();
-                if (targetVisuals != null)
-                    targetVisuals.TriggerDodge();
+                // Fallback to instant hit if no prefab is assigned
+                onImpact.Invoke();
             }
 
             BreakStealth();
