@@ -150,35 +150,61 @@ namespace TacticsGame.Core
                 GridSystem gridSystem = ServiceLocator.Get<GridSystem>();
                 GridCursor cursorScript = gridCursorVisual.GetComponent<GridCursor>();
 
-                bool gridValid = gridSystem.IsValidGridPosition(newPos);
-                Debug.Log(
-                    $"[CursorMove] Input={input} Dir=({moveX},{moveZ}) | CurrentPos={currentCursorGridPosition} -> NewPos={newPos} | GridValid={gridValid} | Action={selectedAction?.GetActionName() ?? "NULL"}"
-                );
-
-                if (gridValid)
+                if (gridSystem.IsValidGridPosition(newPos))
                 {
-                    int refY =
-                        cursorScript != null
-                            ? cursorScript.CurrentLayeredPosition.y
-                            : CurrentTargetLayeredPosition.y;
-                    Vector3Int newPos3D = gridSystem.ResolveClosestLayeredPosition(newPos, refY);
-                    var rangePositions = selectedAction?.GetActionRangeGridPositions();
-                    bool inRange = rangePositions != null && rangePositions.Contains(newPos3D);
+                    // Search for the nearest valid tile in a 3-tile wide sweep in the input direction
+                    GridPosition targetSnapPos = currentCursorGridPosition;
+                    bool foundValidSnap = false;
+                    int searchLimit = 10;
 
-                    Debug.Log(
-                        $"[CursorMove] Resolved3D={newPos3D} | RefY={refY} | RangePositions={rangePositions?.Count ?? 0} | InRange={inRange}"
-                    );
+                    int perpX = moveZ != 0 ? 1 : 0;
+                    int perpZ = moveX != 0 ? 1 : 0;
 
-                    if (selectedAction != null && inRange)
+                    for (int i = 1; i <= searchLimit; i++)
                     {
-                        currentCursorGridPosition = newPos;
-                        UpdateCursorVisual(selectedAction);
+                        // Check in order: Center (0), then Sides (-1, 1)
+                        int[] offsets = { 0, -1, 1 };
+                        foreach (int offset in offsets)
+                        {
+                            GridPosition testPos = new GridPosition(
+                                currentCursorGridPosition.x + (moveX * i) + (perpX * offset),
+                                currentCursorGridPosition.z + (moveZ * i) + (perpZ * offset)
+                            );
+
+                            if (!gridSystem.IsValidGridPosition(testPos))
+                                continue;
+
+                            int refY =
+                                cursorScript != null
+                                    ? cursorScript.CurrentLayeredPosition.y
+                                    : CurrentTargetLayeredPosition.y;
+
+                            Vector3Int testPos3D = gridSystem.ResolveClosestLayeredPosition(
+                                testPos,
+                                refY
+                            );
+                            var rangePositions = selectedAction?.GetActionRangeGridPositions();
+
+                            bool inRange =
+                                (selectedAction == null)
+                                || (rangePositions != null && rangePositions.Contains(testPos3D));
+
+                            if (inRange)
+                            {
+                                targetSnapPos = testPos;
+                                foundValidSnap = true;
+                                break;
+                            }
+                        }
+
+                        if (foundValidSnap)
+                            break;
                     }
-                    else if (selectedAction == null)
+
+                    if (foundValidSnap)
                     {
-                        // No action gating - allow free movement
-                        currentCursorGridPosition = newPos;
-                        UpdateCursorVisual(null);
+                        currentCursorGridPosition = targetSnapPos;
+                        UpdateCursorVisual(selectedAction);
                     }
                 }
             }
