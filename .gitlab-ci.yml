@@ -1,0 +1,117 @@
+workflow:
+  rules:
+    # Restrict the entire pipeline to only run on the CI-Setup branch for testing.
+    - if: '$CI_COMMIT_BRANCH == "CI-Setup"'
+
+stages:
+  - build
+  - test
+
+variables:
+  BUILD_NAME: "PathfinderTactics"
+  BUILD_TARGET: "StandaloneWindows64"
+  UNITY_PATH: 'C:\Program Files\Unity\Hub\Editor\6000.0.72f1\Editor\Unity.exe'
+  # Use -ffd instead of -ffdx to avoid deleting ignored files (like Assets/ThirdParty or local settings)
+  GIT_CLEAN_FLAGS: -ffd -e Library/ -e Logs/ -e TestResults/
+
+build-windows:
+  stage: build
+  tags: ["windows", "self-hosted"]
+  script:
+    - echo "Cleaning up any zombie Unity processes..."
+    - powershell -Command "if (Get-Process Unity -ErrorAction SilentlyContinue) { Stop-Process -Name Unity -Force }"
+    - echo "Building $env:BUILD_NAME for $env:BUILD_TARGET..."
+    - New-Item -ItemType Directory -Force -Path "Builds\Windows", "Logs" | Out-Null
+    - '& "$env:UNITY_PATH" -batchmode -nographics -quit -projectPath "$env:CI_PROJECT_DIR" -buildWindowsPlayer "$env:CI_PROJECT_DIR\Builds\Windows\$env:BUILD_NAME.exe" -logFile "$env:CI_PROJECT_DIR\Logs\build.log"'
+    - if ($LASTEXITCODE -ne 0) { Get-Content "Logs\build.log" -Tail 50; exit $LASTEXITCODE }
+  artifacts:
+    name: "${BUILD_NAME}_${CI_COMMIT_SHORT_SHA}"
+    paths:
+      - Builds/Windows/
+    expire_in: 1 week
+
+test-playmode:
+  stage: test
+  tags: ["windows", "self-hosted"]
+  script:
+    - echo "Running PlayMode tests..."
+    - Remove-Item -Path "TestResults\playmode-nunit.xml","TestResults\playmode-results.xml" -ErrorAction SilentlyContinue
+    - New-Item -ItemType Directory -Force -Path "TestResults", "Logs" | Out-Null
+    - '& "$env:UNITY_PATH" -batchmode -nographics -projectPath "$env:CI_PROJECT_DIR" -runTests -testPlatform PlayMode -testResults "$env:CI_PROJECT_DIR\TestResults\playmode-nunit.xml" -logFile "$env:CI_PROJECT_DIR\Logs\playmode.log"'
+    - $exitCode = $LASTEXITCODE
+    - echo "Unity exited with code $exitCode"
+    - |
+      if (Test-Path "TestResults\playmode-nunit.xml") {
+        [xml]$nunit = Get-Content "TestResults\playmode-nunit.xml" -Raw
+        $tcs = $nunit.SelectNodes("//test-case")
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' + "`n<testsuites>`n"
+        foreach ($tc in $tcs) {
+          $cn = $tc.classname; $n = $tc.name; $d = $tc.duration; $r = $tc.result
+          $xml += "  <testsuite name=`"$cn`" tests=`"1`" failures=`"$(if($r -eq 'Failed'){1}else{0})`" errors=`"0`" time=`"$d`">`n"
+          $xml += "    <testcase classname=`"$cn`" name=`"$n`" time=`"$d`">`n"
+          if ($r -eq 'Failed') {
+            $msg = $tc.SelectSingleNode('failure/message')
+            if ($msg) { $xml += "      <failure message=`"Test failed`">$($msg.InnerText)</failure>`n" }
+          }
+          $xml += "    </testcase>`n  </testsuite>`n"
+        }
+        $xml += '</testsuites>'
+        Set-Content -Path "TestResults\playmode-results.xml" -Value $xml -Encoding UTF8
+        echo "Converted $($tcs.Count) PlayMode test(s) to JUnit format."
+      } else {
+        echo "WARNING - No NUnit results file found."
+        Get-Content "Logs\playmode.log" -Tail 30 -ErrorAction SilentlyContinue
+        Set-Content "TestResults\playmode-results.xml" '<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="PlayMode" tests="0" failures="0" errors="0"/></testsuites>'
+      }
+    - if ($exitCode -ne 0 -and $exitCode -ne 2) { exit $exitCode }
+  artifacts:
+    when: always
+    paths:
+      - TestResults/
+      - Logs/
+    reports:
+      junit: TestResults/playmode-results.xml
+  allow_failure: true
+
+test-editmode:
+  stage: test
+  tags: ["windows", "self-hosted"]
+  script:
+    - echo "Running EditMode tests..."
+    - Remove-Item -Path "TestResults\editmode-nunit.xml","TestResults\editmode-results.xml" -ErrorAction SilentlyContinue
+    - New-Item -ItemType Directory -Force -Path "TestResults", "Logs" | Out-Null
+    - '& "$env:UNITY_PATH" -batchmode -nographics -projectPath "$env:CI_PROJECT_DIR" -runTests -testPlatform EditMode -testResults "$env:CI_PROJECT_DIR\TestResults\editmode-nunit.xml" -logFile "$env:CI_PROJECT_DIR\Logs\editmode.log"'
+    - $exitCode = $LASTEXITCODE
+    - echo "Unity exited with code $exitCode"
+    - |
+      if (Test-Path "TestResults\editmode-nunit.xml") {
+        [xml]$nunit = Get-Content "TestResults\editmode-nunit.xml" -Raw
+        $tcs = $nunit.SelectNodes("//test-case")
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' + "`n<testsuites>`n"
+        foreach ($tc in $tcs) {
+          $cn = $tc.classname; $n = $tc.name; $d = $tc.duration; $r = $tc.result
+          $xml += "  <testsuite name=`"$cn`" tests=`"1`" failures=`"$(if($r -eq 'Failed'){1}else{0})`" errors=`"0`" time=`"$d`">`n"
+          $xml += "    <testcase classname=`"$cn`" name=`"$n`" time=`"$d`">`n"
+          if ($r -eq 'Failed') {
+            $msg = $tc.SelectSingleNode('failure/message')
+            if ($msg) { $xml += "      <failure message=`"Test failed`">$($msg.InnerText)</failure>`n" }
+          }
+          $xml += "    </testcase>`n  </testsuite>`n"
+        }
+        $xml += '</testsuites>'
+        Set-Content -Path "TestResults\editmode-results.xml" -Value $xml -Encoding UTF8
+        echo "Converted $($tcs.Count) EditMode test(s) to JUnit format."
+      } else {
+        echo "WARNING - No NUnit results file found."
+        Get-Content "Logs\editmode.log" -Tail 30 -ErrorAction SilentlyContinue
+        Set-Content "TestResults\editmode-results.xml" '<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="EditMode" tests="0" failures="0" errors="0"/></testsuites>'
+      }
+    - if ($exitCode -ne 0 -and $exitCode -ne 2) { exit $exitCode }
+  artifacts:
+    when: always
+    paths:
+      - TestResults/
+      - Logs/
+    reports:
+      junit: TestResults/editmode-results.xml
+  allow_failure: true
