@@ -19,8 +19,8 @@
         <!-- Left Panel: Navigation and Titles -->
         <ui:VisualElement name="MenuLeftPanel" class="menu-left-panel" focusable="false" picking-mode="Ignore">
             <ui:VisualElement class="menu-title-container" focusable="false" picking-mode="Ignore">
-                <ui:Label text="DUNGEON CRAWL" class="menu-title-main" focusable="false" picking-mode="Ignore" />
-                <ui:Label text="TACTICS" class="menu-title-sub" focusable="false" picking-mode="Ignore" />
+                <ui:Label text="That Time the Garlic Sauce Sage Unleashed His 9999 Stats on a Dungeon Because a Thief Ran Off With a Ten-Dollar Wrap (And I'm Just the Intern)." class="menu-title-main" focusable="false" picking-mode="Ignore" />
+                <ui:Label text="THE GAME" class="menu-title-sub" focusable="false" picking-mode="Ignore" />
             </ui:VisualElement>
  
             <ui:VisualElement class="menu-btn-list" focusable="false" picking-mode="Ignore">
@@ -28,6 +28,7 @@
                 <ui:Button name="BtnLoadGame" text="LOAD GAME" class="menu-btn" />
 
                 <ui:Button name="BtnCredits" text="CREDITS" class="menu-btn" />
+                <ui:Button name="BtnControls" text="CONTROLS" class="menu-btn" />
                 <ui:Button name="BtnLicense" text="ORC LICENSE" class="menu-btn" />
                 <ui:Button name="BtnQuit" text="QUIT GAME" class="menu-btn" />
             </ui:VisualElement>
@@ -46,6 +47,29 @@
                 </ui:ScrollView>
                 <ui:Button name="LicenseCloseBtn" text="Close" class="modal-close-btn" />
             </ui:VisualElement>
+
+            <!-- Controls Modal -->
+            <ui:VisualElement name="ControlsView" class="controls-modal screen-hidden" focusable="false" picking-mode="Ignore">
+                <ui:Label name="ControlsTitle" text="CONTROLS" class="modal-title" focusable="false" picking-mode="Ignore" />
+                <ui:VisualElement class="controls-image-container" focusable="false" picking-mode="Ignore">
+                    <ui:VisualElement name="ControlsImage" class="controls-image" focusable="false" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Button name="ControlsCloseBtn" text="Back" class="modal-close-btn" />
+            </ui:VisualElement>
+
+            <!-- Character Selection Modal -->
+            <ui:VisualElement name="CharacterSelectionView" class="license-modal screen-hidden" focusable="false" picking-mode="Ignore">
+                <ui:Label name="CharacterSelectionTitle" text="SELECT CHARACTER" class="modal-title" focusable="false" picking-mode="Ignore" />
+                
+                <ui:ScrollView name="CharacterSelectionScroll" class="modal-scroll" vertical-scroller-visibility="Auto" horizontal-scroller-visibility="Hidden" focusable="false">
+                    <ui:VisualElement name="CharacterListContainer" class="character-list-container" style="flex-direction: column;" />
+                </ui:ScrollView>
+                
+                <ui:VisualElement class="menu-btn-list" style="flex-direction: row; justify-content: center; margin-top: 20px;" focusable="false" picking-mode="Ignore">
+                    <ui:Button name="BtnNewCharacter" text="NEW CHARACTER" class="menu-btn" />
+                    <ui:Button name="BtnCloseSelection" text="BACK" class="menu-btn" />
+                </ui:VisualElement>
+            </ui:VisualElement>
             
         </ui:VisualElement>
  
@@ -63,6 +87,18 @@
             <ui:VisualElement class="hold-skip-container" focusable="false" picking-mode="Ignore">
                 <tactics:RadialProgress name="HoldSkipProgress" class="hold-skip-circle" focusable="false" picking-mode="Ignore" />
                 <ui:Label text="Hold to skip" class="hold-skip-text" focusable="false" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Delete Confirmation Modal Overlay -->
+        <ui:VisualElement name="DeleteConfirmationView" class="screen-hidden" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center;">
+            <ui:VisualElement style="width: 600px; height: 350px; background-color: rgb(25, 25, 30); border-width: 4px; border-color: rgb(200, 50, 50); padding: 30px; border-radius: 10px; align-items: center; justify-content: center;">
+                <ui:Label name="DeleteConfirmationTitle" text="DELETE CHARACTER?" style="font-size: 32px; -unity-font-style: bold; margin-bottom: 20px; color: rgb(255, 60, 60); -unity-text-align: middle-center;" />
+                <ui:Label name="DeleteConfirmationMessage" text="Are you sure you want to delete this character? This cannot be undone." style="font-size: 20px; margin-bottom: 40px; white-space: normal; -unity-text-align: middle-center; color: white;" />
+                <ui:VisualElement style="flex-direction: row; justify-content: center;">
+                    <ui:Button name="BtnConfirmDelete" text="DELETE" class="menu-btn" style="background-color: rgb(180, 20, 20); margin-right: 20px; width: 220px; color: white; -unity-text-align: middle-center;" />
+                    <ui:Button name="BtnCancelDelete" text="CANCEL" class="menu-btn" style="width: 220px; color: white; -unity-text-align: middle-center;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
 

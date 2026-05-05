@@ -139,6 +139,43 @@ namespace TacticsGame.Core
 
         public bool IsOTSActive => isOTSActive;
         public bool IsEagleEyeActive => isEagleEyeActive;
+        public bool IsInputLocked { get; set; }
+
+        private struct CameraState
+        {
+            public bool IsEagleEye;
+        }
+
+        private CameraState savedPlayerState;
+        private bool hasSavedPlayerState;
+
+        public void SaveCameraState()
+        {
+            savedPlayerState = new CameraState { IsEagleEye = isEagleEyeActive };
+            hasSavedPlayerState = true;
+        }
+
+        public void RestoreCameraState()
+        {
+            if (!hasSavedPlayerState)
+                return;
+
+            if (isOTSActive)
+                ExitOTSMode();
+
+            if (savedPlayerState.IsEagleEye)
+            {
+                if (!isEagleEyeActive)
+                    EnterEagleEyeMode();
+            }
+            else
+            {
+                if (isEagleEyeActive)
+                    ExitEagleEyeMode();
+            }
+
+            hasSavedPlayerState = false;
+        }
 
         public bool IsBlending()
         {
@@ -258,6 +295,9 @@ namespace TacticsGame.Core
             if (eagleEyeVirtualCamera == null)
                 return;
 
+            if (isOTSActive)
+                ExitOTSMode();
+
             isEagleEyeActive = true;
             eagleEyeFollowTarget = target;
             isEagleEyeFollowDetached = false;
@@ -354,6 +394,9 @@ namespace TacticsGame.Core
         {
             if (otsVirtualCamera == null)
                 return;
+
+            if (isEagleEyeActive)
+                ExitEagleEyeMode();
 
             otsAttacker = attacker;
             otsTarget = target;

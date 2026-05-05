@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11dc0cc889d25e348b23398be1de2b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NoDamageMode: 0
   baseMaxHealth: 20
 --- !u!114 &2903108652060430624
 MonoBehaviour:
@@ -215,6 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionData: {fileID: 0}
   activeWeapon: {fileID: 0}
+  projectilePrefab: {fileID: 7714305373603984765, guid: dc5fd9e42caae124d90e10df4a952f1a, type: 3}
+  targetYOffset: 1.2
 --- !u!114 &2192886913216775227
 MonoBehaviour:
   m_ObjectHideFlags: 0

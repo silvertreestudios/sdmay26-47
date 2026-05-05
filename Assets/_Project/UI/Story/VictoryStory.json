@@ -1,0 +1,399 @@
+{
+    "actors": [
+        {
+            "id": "Garlic Sage",
+            "sceneObject": "Adil_Unit"
+        },
+        {
+            "id": "Player",
+            "sceneObject": "Player"
+        },
+        {
+            "id": "Enemy 1",
+            "sceneObject": "Enemy 1"
+        },
+        {
+            "id": "Enemy 2",
+            "sceneObject": "Enemy 2"
+        }
+    ],
+    "sequence": [
+        {
+            "type": "CameraSet",
+            "params": {
+                "position": {
+                    "x": 0,
+                    "y": 8,
+                    "z": -12
+                },
+                "rotation": {
+                    "x": 20,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 1.0,
+                "offset": {
+                    "x": 0,
+                    "y": 3,
+                    "z": -5
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Animate",
+            "actor": "Player",
+            "params": {
+                "triggerName": "Interact"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Move",
+            "actor": "Player",
+            "params": {
+                "destination": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 0
+                },
+                "speed": 2.0
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "*pant* *pant* I can't believe I survived... I defeated them with nothing but a stapler, three paperclips, and sheer panic."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Player",
+            "params": {
+                "triggerName": "Attack"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Move",
+            "actor": "Garlic Sage",
+            "params": {
+                "destination": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                },
+                "speed": 3.0
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Excellent pivot! You really leveraged your core competencies there. I almost dropped my iced coffee watching you!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Garlic Sage",
+            "params": {
+                "triggerName": "Interact"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "You brought iced coffee?! You didn't even buy me water!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Move",
+            "actor": "Player",
+            "params": {
+                "destination": {
+                    "x": -2,
+                    "y": 0,
+                    "z": 0
+                },
+                "speed": 2.0
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "PlayClip",
+            "actor": "Garlic Sage",
+            "params": {
+                "clipName": "Sit_Floor_Idle"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Iced coffee is for management, intern. It's in the hierarchy of needs. Plus, hydration slows down productivity."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Whatever. The thieves are down. Can I please have some medical attention now? My arm is bleeding."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "We don't have budget for bandages, intern. We spent the healthcare budget on ergonomic gaming chairs."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "You're literally sitting on a rock! We don't even have an office!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "We operate remotely. It's a very modern, forward-thinking setup. Just put some company-branded scotch tape on it."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Scotch tape won't stop arterial bleeding!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Try to bleed outside the designated quest area, please. You're creating an OSHA violation on the dungeon floor."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Garlic Sage",
+            "params": {
+                "triggerName": "Interact"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Wait... boss? Why are their bones glowing?"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Hmm? Oh, look at that."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Music",
+            "params": {
+                "musicName": "Clockwork Throne Breaker"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Teleport",
+            "actor": "Enemy 1",
+            "params": {
+                "position": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 4
+                }
+            }
+        },
+        {
+            "type": "Teleport",
+            "actor": "Enemy 2",
+            "params": {
+                "position": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 4
+                }
+            }
+        },
+        {
+            "type": "PlayClip",
+            "actor": "Enemy 1",
+            "params": {
+                "clipName": "Spawn_Ground"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "PlayClip",
+            "actor": "Enemy 2",
+            "params": {
+                "clipName": "Spawn_Ground"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Rotate",
+            "actor": "Player",
+            "params": {
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Rotate",
+            "actor": "Garlic Sage",
+            "params": {
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Why is there ominous boss music playing? Are they... getting back up?!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Fascinating! They've synergized into Skeleton Shawerma Thieves! Talk about an agile workflow! They really adapted to market disruptions!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "This isn't an agile workflow, this is a nightmare! Look at their glowing red eyes!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "That's excellent brand synergy! Truly a paradigm shift in dungeon security!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Help me! Just throw a fireball! Do something! Anything!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I would love to, but my union contract clearly states I only fight on Tuesdays. Today is Wednesday, intern. My hands are tied."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "WE DON'T EVEN HAVE A UNION! YOU ARE THE CEO!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I formed a union of one to protect my rights against needy interns. I am going on strike for the next 45 minutes."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "I am going to file a complaint with the Labor Board if I survive this!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Good luck finding their dungeon! Good news! You've been promoted to Level 2! Consider this your quarterly performance review. Get back in there and increase productivity!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "The next level has even more synergies to explore! And by synergies, I mean even bigger skeletons with pointier swords. Don't worry, your stapler is still under warranty!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "WARRANTY?! It's a piece of plastic! Boss, I'm literally one hit away from being a ghost!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Then be a proactive ghost! Ghost-interns are even cheaper to maintain... No heating required! Now, go forth and maximize shareholder value!"
+            },
+            "waitUntilFinished": true
+        }
+    ]
+}

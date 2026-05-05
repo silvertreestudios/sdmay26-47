@@ -172,7 +172,8 @@ namespace TacticsGame.Grid
                 case MovementTag.Climb:
                     return true;
                 case MovementTag.Jump:
-                    return Mathf.Abs(deltaY) <= 2;
+                    // Allow jumping up 1 block, allow falling down up to 2 blocks.
+                    return deltaY <= 1 && deltaY >= -2;
                 case MovementTag.Fly:
                     return true;
                 default:

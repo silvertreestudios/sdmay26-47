@@ -1,0 +1,408 @@
+{
+    "actors": [
+        {
+            "id": "Garlic Sage",
+            "sceneObject": "Adil_Unit"
+        },
+        {
+            "id": "Player",
+            "sceneObject": "Player"
+        }
+    ],
+    "sequence": [
+        {
+            "type": "CameraSet",
+            "params": {
+                "position": {
+                    "x": 0,
+                    "y": 8,
+                    "z": -12
+                },
+                "rotation": {
+                    "x": 20,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Player",
+            "params": {
+                "triggerName": "Death"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 1.0,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Oh dear. The intern is down. HR is going to have an absolute field day with this."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I specifically said 'synergize with the skeletons,' not 'get stabbed by them.' The lack of proactivity in today's interns is staggering."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Move",
+            "actor": "Garlic Sage",
+            "params": {
+                "destination": {
+                    "x": 2,
+                    "y": 0,
+                    "z": 1
+                },
+                "speed": 1.5
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Did they not read the employee handbook? Page 42 clearly states 'Avoid taking lethal damage during work hours'."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Garlic Sage",
+            "params": {
+                "triggerName": "Interact"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Move",
+            "actor": "Garlic Sage",
+            "params": {
+                "destination": {
+                    "x": -2,
+                    "y": 0,
+                    "z": -1
+                },
+                "speed": 1.5
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Wait... did they clock out before expiring? I am absolutely not paying overtime for post-mortem decomposition."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Let me check the timesheet system. Ugh, still clocked in. The audacity of this generation."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Now I have to fill out the 'Incidental Employee Vaporization' forms in triplicate. And I don't even have a pen."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I'll have to borrow one from accounting. The accounting goblins are so stingy."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I knew I should have hired the candidate with the MBA in Necromancy. Or at least the one who brought their own healing potions."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "This one didn't even bring a packed lunch. Time to update the Indeed posting..."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Requirements: 10 years experience in advanced dungeon survival, proficiency in Excel."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Must be a team player, must have their own armor, must not die immediately upon seeing a skeleton."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Compensation: Exposure. And maybe half a shawarma wrap. Unpaid, of course."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Maybe I'll add a ping-pong table to the breakroom to attract top talent. Ugh, the onboarding costs are going to ruin my quarterly budget."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I hope you realize this death isn't a valid reason for a sabbatical. You're expected back at your desk... or this crypt immediately."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Actually, let's update that job posting again. 'Must be immune to slashing, piercing, and emotional damage from senior management.' That should filter out the weaklings."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "The next intern better be ready to leverage their mortality for the sake of my garlic sauce. This is a fast-paced environment, after all!"
+            },
+            "waitUntilFinished": true
+        }
+    ]
+}

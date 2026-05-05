@@ -410,6 +410,11 @@ MonoBehaviour:
   defaultBackgroundMusic: {fileID: 8300000, guid: 61073fb4b436a8448a14ef1cdd49ca7f, type: 3}
   playOnStart: 1
   defaultVolume: 0.5
+  availableTracks:
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 61073fb4b436a8448a14ef1cdd49ca7f, type: 3}
+  - name: CreditsMusic
+    clip: {fileID: 8300000, guid: 977a589ec0d6f2c4e810e27a2b9046bb, type: 3}
 --- !u!82 &1601025871
 AudioSource:
   m_ObjectHideFlags: 0
@@ -600,18 +605,18 @@ MonoBehaviour:
     Iddings\n\nTimeline Upholder  \r\nOwen Wardyn\r\n\nGit Manager \nKasson Plummer
     \r\n\r\n\n\r\nPROJECT LEADERSHIP\r\n\r\nClient: Josh Clausman\r\nFaculty Advisor:
     Akhilesh Tyagi\r\n\r\n\r\n\nSPECIAL CONTRIBUTIONS\r\n\r\nFace Scan Actor: Adil
-    Afzal\r\n\r\n\n\r\nBETA TESTERS\r\n\r\n[To Be Added]\r\n\r\n\n\r\nGAME DESIGN
-    & RULESET\r\n\r\nBased on Pathfinder Second Edition  \r\n\xA9 Paizo Inc.\r\n\r\nRules
-    reference support:\r\nArchives of Nethys\r\n\r\n\r\n\r\nDATA & STRUCTURE REFERENCES\r\n\r\nJSON
-    encounter and rule structure inspired by exports from:\r\nFoundry Virtual Tabletop\r\n\r\n\r\nTOOLS
-    & ENGINE\r\n\r\nUnity Engine\r\n\nFigma\r\n\r\n\nART ASSETS\r\n\r\nKayKit Asset
-    Packs  \r\nMaiami Studios Free Stylized Smoke Effects Pack\r\nVefects Free Fire
-    VFX\r\n\r\n\n\r\nACKNOWLEDGEMENTS\r\n\r\nPathfinder community  \r\nFriends, family,
-    and supporters  \r\n\r\n\n\r\nLEGAL\r\n\r\nThis project was developed as part
-    of the\r\nSenior Design Capstone at Iowa State University.\r\n\r\nPathfinder
-    is a trademark of Paizo Inc.\r\nThis project is not affiliated with or endorsed
-    by Paizo Inc.\r\n\r\n\n\r\n\xA9 2026 Iowa State University\r\nSenior Design Team
-    sdmay26-47\r\nAll Rights Reserved"
+    Afzal\r\n\r\n\n\r\nBETA TESTERS\r\nAdil A\r\nFawaz M\r\nMustafa K\r\nOsaid S\r\nTorin
+    S\r\n\r\n\n\r\nGAME DESIGN & RULESET\r\n\r\nBased on Pathfinder Second Edition 
+    \r\n\xA9 Paizo Inc.\r\n\r\nRules reference support:\r\nArchives of Nethys\r\n\r\n\r\n\r\nDATA
+    & STRUCTURE REFERENCES\r\n\r\nJSON encounter and rule structure inspired by exports
+    from:\r\nFoundry Virtual Tabletop\r\n\r\n\r\nTOOLS & ENGINE\r\n\r\nUnity Engine\r\n\nFigma\r\n\r\n\nART
+    ASSETS\r\n\r\nKayKit Asset Packs  \r\nMaiami Studios Free Stylized Smoke Effects
+    Pack\r\nVefects Free Fire VFX\r\n\r\n\n\r\nACKNOWLEDGEMENTS\r\n\r\nPathfinder
+    community  \r\nFriends, family, and supporters  \r\n\r\n\n\r\nLEGAL\r\n\r\nThis
+    project was developed as part of the\r\nSenior Design Capstone at Iowa State
+    University.\r\n\r\nPathfinder is a trademark of Paizo Inc.\r\nThis project is
+    not affiliated with or endorsed by Paizo Inc.\r\n\r\n\n\r\n\xA9 2026 Iowa State
+    University\r\nSenior Design Team sdmay26-47\r\nAll Rights Reserved"
   licenseText: "ORC LICENSE FINAL\r\nThis Open RPG Creative license (\u201CORC License\u201D)
     grants the right to use Licensed Material subject to the\r\nterms and conditions
     set forth and referenced as follows:\r\nI. Definitions.\r\na. Adapted Licensed
@@ -861,6 +866,9 @@ MonoBehaviour:
     including from the legal processes of any jurisdiction or authority."
   creditsScrollSpeed: 80
   holdToSkipTime: 1.5
+  controlsSprite: {fileID: 21300000, guid: 553baf2e88b0f8b4e80877ca252ee58e, type: 3}
+  menuMusicName: MenuMusic
+  creditsMusicName: CreditsMusic
 --- !u!114 &2080276422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,10 +882,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 21300000, guid: c6e48df8bf63604408ca9b03b4e81cf7, type: 3}
-  - {fileID: 21300000, guid: bf1690e8712e034459a652aebda757dd, type: 3}
-  - {fileID: 21300000, guid: 0f8f1c1972bb8cb4687075598a1e7b96, type: 3}
-  - {fileID: 21300000, guid: d2209e44e785f8a4f8d15c107b101571, type: 3}
+  - {fileID: 21300000, guid: dbbc11e0f625c034ca5da7583660bacc, type: 3}
+  - {fileID: 21300000, guid: 2e9b42a7e16fa0042bf956b4965041e6, type: 3}
+  - {fileID: 21300000, guid: f26aa026cc0b9f143bd1efd500cb796c, type: 3}
+  - {fileID: 21300000, guid: 87344f1f33bd1484290c0a77ada57fc5, type: 3}
+  - {fileID: 21300000, guid: dd464124ade57a040ab61fe4ae9d058d, type: 3}
+  - {fileID: 21300000, guid: 30955dd190c67ae4283e9f8988a568e4, type: 3}
   startIndex: -1
   panSpeed: 0.2
   zoomSpeed: 0.2

@@ -95,6 +95,28 @@ namespace TacticsGame.Characters
 
         private void Update()
         {
+            if (unit != null && !unit.GetComponent<UnitConditions>().CanMove())
+            {
+                if (isMoving)
+                {
+                    bool isDead = unit.GetComponent<UnitConditions>().IsDead();
+                    bool isUnconscious = unit.GetComponent<UnitConditions>()
+                        .HasCondition(ConditionType.Unconscious);
+                    Debug.Log(
+                        $"[REACTIVE DEBUG] {gameObject.name} STOPPED. Reason: {(isDead ? "DEAD" : (isUnconscious ? "UNCONSCIOUS" : "IMMOBILIZED"))}. Force-stopping path movement."
+                    );
+                    isMoving = false;
+                    onMoveComplete?.Invoke();
+                }
+
+                // Still apply gravity so the corpse stays on the ground
+                ApplyGravity();
+                characterController.Move(Vector3.up * verticalVelocity * Time.deltaTime);
+                UpdateAnimator();
+                lastFramePosition = transform.position;
+                return;
+            }
+
             if (isMoving)
             {
                 TickPathMovement();
@@ -235,6 +257,12 @@ namespace TacticsGame.Characters
 
         public void MoveAlongPath(List<Vector3Int> path, Action onComplete)
         {
+            if (unit != null && !unit.GetComponent<UnitConditions>().CanMove())
+            {
+                onComplete?.Invoke();
+                return;
+            }
+
             GridSystem grid = ServiceLocator.Get<GridSystem>();
             positionList = new List<Vector3>();
             foreach (Vector3Int pos in path)
@@ -267,6 +295,9 @@ namespace TacticsGame.Characters
 
         public void HandleMovement(Vector3 moveDirection)
         {
+            if (unit != null && !unit.GetComponent<UnitConditions>().CanMove())
+                return;
+
             ApplyGravity();
 
             Vector3 finalMoveVector = moveDirection + (Vector3.up * verticalVelocity);

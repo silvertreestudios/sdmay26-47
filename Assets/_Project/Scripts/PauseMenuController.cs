@@ -12,9 +12,14 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField]
     private string mainMenuSceneName = "MainMenu";
 
+    [Header("Controls Settings")]
+    [SerializeField]
+    private Sprite controlsSprite;
+
     private UIDocument uiDocument;
     private VisualElement pauseRoot;
     private VisualElement buttonList;
+    private VisualElement controlsView;
 
     private bool isPaused = false;
 
@@ -37,14 +42,26 @@ public class PauseMenuController : MonoBehaviour
         var btnResume = root.Q<Button>("BtnResume");
         var btnSave = root.Q<Button>("BtnSave");
         var btnRestart = root.Q<Button>("BtnRestart");
+        var btnControls = root.Q<Button>("BtnControls");
         var btnMainMenu = root.Q<Button>("BtnMainMenu");
         var btnQuit = root.Q<Button>("BtnQuit");
 
         btnResume?.RegisterCallback<ClickEvent>(ev => OnResume());
         btnSave?.RegisterCallback<ClickEvent>(ev => OnSaveGame());
         btnRestart?.RegisterCallback<ClickEvent>(ev => OnRestartLevel());
+        btnControls?.RegisterCallback<ClickEvent>(ev => ShowControls());
         btnMainMenu?.RegisterCallback<ClickEvent>(ev => OnMainMenu());
         btnQuit?.RegisterCallback<ClickEvent>(ev => OnQuitDesktop());
+
+        // Controls Setup
+        controlsView = root.Q<VisualElement>("ControlsView");
+        var controlsImage = controlsView?.Q<VisualElement>("ControlsImage");
+        if (controlsImage != null && controlsSprite != null)
+        {
+            controlsImage.style.backgroundImage = new StyleBackground(controlsSprite);
+        }
+        var controlsCloseBtn = controlsView?.Q<Button>("ControlsCloseBtn");
+        controlsCloseBtn?.RegisterCallback<ClickEvent>(ev => HideControls());
 
         // Initially hide the pause menu
         if (pauseRoot != null)
@@ -97,6 +114,12 @@ public class PauseMenuController : MonoBehaviour
 
     private void HandleCancel(object sender, EventArgs e)
     {
+        if (controlsView != null && !controlsView.ClassListContains("screen-hidden"))
+        {
+            HideControls();
+            return;
+        }
+
         // Close menu if it's open
         if (isPaused)
             TogglePause();
@@ -192,6 +215,9 @@ public class PauseMenuController : MonoBehaviour
         {
             uiDocument.sortingOrder = 1000; // Ensure it's on top of everything
             pauseRoot.RemoveFromClassList("screen-hidden");
+            controlsView?.AddToClassList("screen-hidden"); // Ensure controls hidden when opening pause
+            buttonList?.RemoveFromClassList("screen-hidden");
+
             Time.timeScale = 0f;
             inputService?.SwitchToActionMap("UI");
 
@@ -205,6 +231,7 @@ public class PauseMenuController : MonoBehaviour
         {
             uiDocument.sortingOrder = 0;
             pauseRoot.AddToClassList("screen-hidden");
+            controlsView?.AddToClassList("screen-hidden");
             Time.timeScale = 1f;
             inputService?.SwitchToActionMap("Player");
 
@@ -216,6 +243,24 @@ public class PauseMenuController : MonoBehaviour
     {
         if (isPaused)
             TogglePause();
+    }
+
+    private void ShowControls()
+    {
+        buttonList?.AddToClassList("screen-hidden");
+        controlsView?.RemoveFromClassList("screen-hidden");
+
+        var closeBtn = controlsView?.Q<Button>("ControlsCloseBtn");
+        closeBtn?.Focus();
+    }
+
+    private void HideControls()
+    {
+        controlsView?.AddToClassList("screen-hidden");
+        buttonList?.RemoveFromClassList("screen-hidden");
+
+        var btnControls = buttonList?.Q<Button>("BtnControls");
+        btnControls?.Focus();
     }
 
     public void OnSaveGame()

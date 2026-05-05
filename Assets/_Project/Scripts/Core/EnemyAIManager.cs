@@ -46,6 +46,9 @@ namespace TacticsGame.Core
         private void Awake()
         {
             ServiceLocator.Register(this);
+#if !UNITY_EDITOR
+            controlMode = EnemyControlMode.AiEnabled;
+#endif
         }
 
         private void OnDestroy()
@@ -61,6 +64,7 @@ namespace TacticsGame.Core
 
         private void Update()
         {
+#if UNITY_EDITOR
             // Press 'P' to cycle enemy control mode
             if (Input.GetKeyDown(KeyCode.P))
             {
@@ -73,6 +77,7 @@ namespace TacticsGame.Core
 
                 Debug.Log($"<color=orange>[ENEMY AI]</color> Mode: {controlMode}");
             }
+#endif
         }
 
         private void TurnManager_OnTurnChanged(object sender, EventArgs e)
@@ -108,19 +113,28 @@ namespace TacticsGame.Core
 
             // player's current camera
             var cam = ServiceLocator.Get<CameraController>();
-            bool wasInEagleEye = cam.IsEagleEyeActive;
+            cam.SaveCameraState();
 
             // Enter Birdseye view for the AI turn
             cam.EnterEagleEyeMode(enemyUnit.transform);
+            cam.IsInputLocked = true;
 
             yield return new WaitForSeconds(turnStartDelay);
+
+            // Safety check: Did the turn change while we were waiting?
+            if (turnManager.CurrentUnit != enemyUnit)
+            {
+                cam.IsInputLocked = false;
+                cam.RestoreCameraState();
+                yield break;
+            }
 
             UnitConditions conditions = enemyUnit.GetComponent<UnitConditions>();
             if (conditions != null && conditions.HasCondition(ConditionType.Unconscious))
             {
                 Debug.Log($"[AI] {enemyUnit.name} is unconscious. Skipping AI turn.");
-                if (!wasInEagleEye)
-                    cam.ExitEagleEyeMode();
+                cam.IsInputLocked = false;
+                cam.RestoreCameraState();
                 ServiceLocator.Get<UnitActionSystem>().EndTurn();
                 yield break;
             }
@@ -137,8 +151,8 @@ namespace TacticsGame.Core
                 // Respect real-time mode changes during turn
                 if (controlMode != EnemyControlMode.AiEnabled)
                 {
-                    if (!wasInEagleEye)
-                        cam.ExitEagleEyeMode();
+                    cam.IsInputLocked = false;
+                    cam.RestoreCameraState();
                     yield break;
                 }
 
@@ -146,7 +160,11 @@ namespace TacticsGame.Core
                 {
                     yield return MoveAwayFromClosestPlayer(enemyUnit);
                     if (turnManager.CurrentUnit != enemyUnit)
+                    {
+                        cam.IsInputLocked = false;
+                        cam.RestoreCameraState();
                         yield break;
+                    }
                     yield return new WaitForSeconds(delayBetweenActions);
                 }
 
@@ -154,7 +172,11 @@ namespace TacticsGame.Core
                 yield return TryAttackIfPossible(enemyUnit);
 
                 if (turnManager.CurrentUnit != enemyUnit)
+                {
+                    cam.IsInputLocked = false;
+                    cam.RestoreCameraState();
                     yield break;
+                }
 
                 if (enemyUnit.GetActionPointsRemaining() < apBefore)
                 {
@@ -182,16 +204,20 @@ namespace TacticsGame.Core
                 }
 
                 if (turnManager.CurrentUnit != enemyUnit)
+                {
+                    cam.IsInputLocked = false;
+                    cam.RestoreCameraState();
                     yield break;
+                }
 
                 yield return new WaitForSeconds(delayBetweenActions);
             }
 
             // Final Cleanup
-            if (!wasInEagleEye)
-                cam.ExitEagleEyeMode();
+            cam.IsInputLocked = false;
+            cam.RestoreCameraState();
 
-            if (turnManager.CurrentUnit == enemyUnit && enemyUnit.GetActionPointsRemaining() > 0)
+            if (turnManager.CurrentUnit == enemyUnit)
             {
                 ServiceLocator.Get<UnitActionSystem>().EndTurn();
             }

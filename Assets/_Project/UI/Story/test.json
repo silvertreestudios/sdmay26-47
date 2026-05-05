@@ -1,0 +1,619 @@
+{
+    "actors": [
+        {
+            "id": "Garlic Sage",
+            "sceneObject": "Adil_Unit"
+        },
+        {
+            "id": "Player",
+            "sceneObject": "Player"
+        }
+    ],
+    "sequence": [
+        {
+            "type": "CameraSet",
+            "params": {
+                "position": {
+                    "x": 0,
+                    "y": 8,
+                    "z": -12
+                },
+                "rotation": {
+                    "x": 20,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 1.0,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Focus your senses, intern! Can you smell it? The flawless emulsification of the extra garlic sauce, the toasted pita... The thief went this way!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Boss, we are in a literal crypt. All I smell is ancient dust, mildew, and bad life choices. Mostly mine, for accepting this unpaid internship."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Silence! This is a high-priority deliverable! That thief stole my ten-dollar shawarma wrap! The Q3 quarterly forecast predicted this exact loss of assets!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "There is no forecast. You just forgot to pay the delivery guy, he ran off with it, and now you're too lazy to use your 9999 speed stat to catch him."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I didn't forget! My corporate card was declined because I expensed that solid gold gaming chair!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "You have 9999 in your Wealth stat! Just spawn more gold!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "That causes inflation, intern! Have you no grasp of macroeconomics? We must recover the physical asset to balance the ledgers!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "I haven't eaten since yesterday. Can't we just order another one?"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "And pay a second delivery fee? Absolutely not. Besides, this is a team lunch! Once we recover it, I will eat the shawarma, and you can watch to gain valuable industry experience."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "You're unbelievable. Why don't you just use your 9999 speed to zip in and grab it?"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Move",
+            "actor": "Garlic Sage",
+            "params": {
+                "destination": {
+                    "x": 2,
+                    "y": 0,
+                    "z": 1
+                },
+                "speed": 2.5
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Nonsense! If I move at Mach 10, the sheer friction will vaporize the tahini! It is a delicate balance of thermodynamics!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Garlic Sage",
+            "params": {
+                "triggerName": "Interact"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Then use your teleportation magic!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Move",
+            "actor": "Garlic Sage",
+            "params": {
+                "destination": {
+                    "x": -1,
+                    "y": 0,
+                    "z": 2
+                },
+                "speed": 3.0
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Teleportation scrambles the pickles! It completely ruins the structural integrity of the falafel layer! Are you trying to destroy the company culture?!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "So your solution is to make me, an intern with 10 HP and zero armor, walk through a dungeon filled with the undead?"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Player",
+            "params": {
+                "triggerName": "Interact"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Move",
+            "actor": "Garlic Sage",
+            "params": {
+                "destination": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                },
+                "speed": 2.0
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Exactly! Think of the exposure! The networking opportunities with the locally sourced skeletons! This will look great on your resume."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "I don't think you know what networking means. Also... speaking of skeletons. There are two of them guarding the door right now."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "And they have swords. Very sharp, very pointy swords. I have a company-issued stapler."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Player",
+            "params": {
+                "triggerName": "Attack"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "It's a heavy-duty stapler! Very high DPS if you aim for the eyes!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "They don't have eyes! They are literal skeletons! Boss, I am resigning. Right now."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Too late, you signed the non-compete. If you don't fight them, you can't work in the 'dungeon crawling' sector for five years. Perfect! A team-building exercise!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Executive leadership?! Can't you just use your 'Level 9999 Corporate Restructuring Beam' or something?!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Are you mad?! And risk overcooking the chicken inside the wrap with area-of-effect damage?! Draw your stapler, intern! FOR THE GARLIC SAUCE!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Animate",
+            "actor": "Garlic Sage",
+            "params": {
+                "triggerName": "Interact"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Also, I've just reviewed your performance metrics. Your 'enthusiasm for unpaid labor' is currently at an all-time low. This dungeon crawl is a chance for you to show some initiative!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Initiative?! I'm about to show some initiative by running in the opposite direction!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Don't you dare! I have a Level 9999 Tracking Beacon attached to your stapler. You can't escape the company culture, intern! Now, for the sake of the perfectly toasted pita-CHARGE!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "SceneLoad",
+            "params": {
+                "sceneName": "Level 1"
+            }
+        }
+    ]
+}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TacticsGame.Data.TacticsCore;
@@ -82,6 +83,46 @@ namespace TacticsGame.Data.TacticsRuleset
             return new List<TacticsGame.Characters.Visuals.VisualPartSO>();
         }
 
+        public TacticsGame.Characters.Visuals.VisualPartSO GetVisualPartById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return null;
+
+            return AllVisualParts.FirstOrDefault(p =>
+                p != null && (p.PartID == id || p.name == id)
+            );
+        }
+
+        public WeaponSO GetWeaponById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return null;
+            return AllWeapons.FirstOrDefault(w => w != null && (w.itemName == id || w.name == id));
+        }
+
+        public ArmorSO GetArmorById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return null;
+            return AllArmor.FirstOrDefault(a => a != null && (a.itemName == id || a.name == id));
+        }
+
+        public ShieldSO GetShieldById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return null;
+            return AllShields.FirstOrDefault(s => s != null && (s.itemName == id || s.name == id));
+        }
+
+        public SpellSO GetSpellById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return null;
+            return AllSpells.FirstOrDefault(s =>
+                s != null && (s.Id == id || s.Slug == id || s.name == id)
+            );
+        }
+
         public AncestryDataSO GetCoreAncestry(string sourceId) =>
             FindCoreById(AllAncestries, sourceId);
 
@@ -95,21 +136,134 @@ namespace TacticsGame.Data.TacticsRuleset
 
         public FeatureDataSO GetCoreFeature(string sourceId) => FindCoreById(AllFeatures, sourceId);
 
-        public List<HeritageDataSO> GetCoreHeritagesForAncestry(string ancestrySourceId)
+        public List<HeritageDataSO> GetCoreHeritagesForAncestry(AncestryDataSO ancestry)
         {
-            if (string.IsNullOrEmpty(ancestrySourceId))
+            if (ancestry == null)
+            {
+                Debug.Log("[Heritages] GetCoreHeritagesForAncestry called with null ancestry.");
                 return new List<HeritageDataSO>();
+            }
 
-            return AllHeritages
-                .Where(heritage =>
-                    heritage != null
-                    && (
-                        heritage.ParentAncestryAsset?.SourceId == ancestrySourceId
-                        || heritage.ParentAncestry.SourceId == ancestrySourceId
+            Debug.Log(
+                $"[Heritages] Fetching heritages for ancestry: {ancestry.name} (SourceId: {ancestry.SourceId}, Slug: {ancestry.Slug}). Total Heritages in DB: {AllHeritages.Count}"
+            );
+
+            var matched = new List<HeritageDataSO>();
+            foreach (var heritage in AllHeritages)
+            {
+                if (heritage == null)
+                    continue;
+
+                bool isMatch = false;
+                string matchReason = string.Empty;
+
+                if (heritage.ParentAncestryAsset == ancestry)
+                {
+                    isMatch = true;
+                    matchReason = "Direct Object Reference";
+                }
+                else if (heritage.ParentAncestryAsset != null)
+                {
+                    if (
+                        !string.IsNullOrEmpty(ancestry.SourceId)
+                        && string.Equals(
+                            heritage.ParentAncestryAsset.SourceId,
+                            ancestry.SourceId,
+                            StringComparison.OrdinalIgnoreCase
+                        )
                     )
-                )
-                .OrderBy(heritage => heritage.DisplayName)
-                .ToList();
+                    {
+                        isMatch = true;
+                        matchReason = "Asset SourceId Match";
+                    }
+                    else if (
+                        !string.IsNullOrEmpty(ancestry.Slug)
+                        && string.Equals(
+                            heritage.ParentAncestryAsset.Slug,
+                            ancestry.Slug,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                    )
+                    {
+                        isMatch = true;
+                        matchReason = "Asset Slug Match";
+                    }
+                    else if (
+                        string.Equals(
+                            heritage.ParentAncestryAsset.name,
+                            ancestry.name,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                    )
+                    {
+                        isMatch = true;
+                        matchReason = "Asset Name Match";
+                    }
+                }
+
+                if (!isMatch && heritage.ParentAncestry != null)
+                {
+                    if (
+                        !string.IsNullOrEmpty(ancestry.SourceId)
+                        && string.Equals(
+                            heritage.ParentAncestry.SourceId,
+                            ancestry.SourceId,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                    )
+                    {
+                        isMatch = true;
+                        matchReason = "PackRef SourceId Match";
+                    }
+                    else if (
+                        !string.IsNullOrEmpty(ancestry.SourceId)
+                        && !string.IsNullOrEmpty(heritage.ParentAncestry.SourceUuid)
+                        && heritage.ParentAncestry.SourceUuid.EndsWith(
+                            ancestry.SourceId,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                    )
+                    {
+                        isMatch = true;
+                        matchReason = "PackRef SourceUuid EndsWith Match";
+                    }
+                    else if (
+                        !string.IsNullOrEmpty(ancestry.Slug)
+                        && string.Equals(
+                            heritage.ParentAncestry.Slug,
+                            ancestry.Slug,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                    )
+                    {
+                        isMatch = true;
+                        matchReason = "PackRef Slug Match";
+                    }
+                    else if (
+                        !string.IsNullOrEmpty(ancestry.DisplayName)
+                        && string.Equals(
+                            heritage.ParentAncestry.DisplayName,
+                            ancestry.DisplayName,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                    )
+                    {
+                        isMatch = true;
+                        matchReason = "PackRef DisplayName Match";
+                    }
+                }
+
+                if (isMatch)
+                {
+                    Debug.Log($"[Heritages] {heritage.DisplayName} MATCHED via {matchReason}");
+                    matched.Add(heritage);
+                }
+            }
+
+            matched = matched.OrderBy(h => h.DisplayName).ToList();
+
+            Debug.Log($"[Heritages] Found {matched.Count} heritages for {ancestry.name}.");
+            return matched;
         }
 
         private static T FindCoreById<T>(IEnumerable<T> entries, string sourceId)

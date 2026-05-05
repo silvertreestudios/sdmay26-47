@@ -60058,6 +60058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuSceneName: MainMenu
+  controlsSprite: {fileID: 21300000, guid: 553baf2e88b0f8b4e80877ca252ee58e, type: 3}
 --- !u!114 &1464022743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91033,6 +91034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3818892301961855184, guid: fad3aa9ec65e2a2498e24f33d70be6b8, type: 3}
+      propertyPath: yOffset
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 4334436411529725463, guid: fad3aa9ec65e2a2498e24f33d70be6b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -91449,7 +91454,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197422478429784906, guid: f4363603d7e604142ba80447f35a4f3d, type: 3}
       propertyPath: controlMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4436149597350624496, guid: f4363603d7e604142ba80447f35a4f3d, type: 3}
       propertyPath: gridCursorVisual
@@ -91712,6 +91717,18 @@ PrefabInstance:
       propertyPath: currentSpell
       value: 
       objectReference: {fileID: 11400000, guid: d97a7661d53f25f499f5446acb9b9495, type: 2}
+    - target: {fileID: 7984435705539102856, guid: 15dbbf97bedadb749ad2fceba357cd16, type: 3}
+      propertyPath: offHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 46e07b4185a9b9045b35602740ce4124, type: 2}
+    - target: {fileID: 7984435705539102856, guid: 15dbbf97bedadb749ad2fceba357cd16, type: 3}
+      propertyPath: mainHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 570cc87dded700c468ce289d0a0955da, type: 2}
+    - target: {fileID: 7984435705539102856, guid: 15dbbf97bedadb749ad2fceba357cd16, type: 3}
+      propertyPath: equippedArmor
+      value: 
+      objectReference: {fileID: 11400000, guid: 13e25237afd8184498bb916df3d158f3, type: 2}
     - target: {fileID: 8461483093822586891, guid: 15dbbf97bedadb749ad2fceba357cd16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24

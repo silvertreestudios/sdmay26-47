@@ -420,6 +420,15 @@ namespace TacticsGame.Story
                     $"[StoryManager] Sequence complete. Loading scene: {sceneLoad.sceneName}"
                 );
 
+                // If we are loading the Main Menu from the Thank You or Victory scene, trigger auto-credits
+                if (
+                    sceneLoad.sceneName == "MainMenu"
+                    && (jsonScript.name.Contains("ThankYou") || jsonScript.name.Contains("Victory"))
+                )
+                {
+                    TacticsGame.Core.GlobalGameState.Instance.ShowCreditsOnMainMenu = true;
+                }
+
                 // Hide dialogue UI before loading to avoid it overlapping the loading screen
                 if (dialogueUI != null)
                 {

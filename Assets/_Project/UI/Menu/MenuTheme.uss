@@ -570,3 +570,31 @@
     color: var(--color-text-muted);
 }
 
+/* Controls Modal */
+.controls-modal {
+    width: 95%;
+    max-width: 1600px;
+    height: 90%;
+    background-color: rgba(14, 17, 19, 0.98);
+    border-width: 2px;
+    border-color: var(--color-accent);
+    border-radius: var(--radius-lg);
+    padding: var(--pad-xl);
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls-image-container {
+    flex-grow: 1;
+    width: 100%;
+    margin-top: var(--pad-md);
+    margin-bottom: var(--pad-xl);
+    justify-content: center;
+    align-items: center;
+}
+
+.controls-image {
+    width: 100%;
+    height: 100%;
+    -unity-background-scale-mode: scale-to-fit;
+}

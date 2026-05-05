@@ -17,8 +17,18 @@
             <ui:Button name="BtnResume" text="RESUME" class="pause-menu-btn" />
             <ui:Button name="BtnSave" text="SAVE GAME" class="pause-menu-btn" />
             <ui:Button name="BtnRestart" text="RESTART" class="pause-menu-btn" />
+            <ui:Button name="BtnControls" text="CONTROLS" class="pause-menu-btn" />
             <ui:Button name="BtnMainMenu" text="MAIN MENU" class="pause-menu-btn" />
             <ui:Button name="BtnQuit" text="QUIT" class="pause-menu-btn" />
+        </ui:VisualElement>
+
+        <!-- Controls Modal Overlay -->
+        <ui:VisualElement name="ControlsView" class="controls-modal screen-hidden" style="position: absolute; width: 95%; height: 90%;" focusable="false" picking-mode="Ignore">
+            <ui:Label name="ControlsTitle" text="CONTROLS" class="modal-title" focusable="false" picking-mode="Ignore" />
+            <ui:VisualElement class="controls-image-container" focusable="false" picking-mode="Ignore">
+                <ui:VisualElement name="ControlsImage" class="controls-image" focusable="false" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:Button name="ControlsCloseBtn" text="Back" class="modal-close-btn" />
         </ui:VisualElement>
 
     </ui:VisualElement>

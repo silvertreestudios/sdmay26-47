@@ -1,0 +1,540 @@
+{
+    "actors": [
+        {
+            "id": "Garlic Sage",
+            "sceneObject": "Adil_Unit"
+        },
+        {
+            "id": "Player",
+            "sceneObject": "Player"
+        }
+    ],
+    "sequence": [
+        {
+            "type": "CameraSet",
+            "params": {
+                "position": {
+                    "x": 0,
+                    "y": 8,
+                    "z": -12
+                },
+                "rotation": {
+                    "x": 20,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 1.0,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "It's done. The skeletons are dust. I think I broke three ribs, but... I have the wrap. It's... it's still warm."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Aha! The high-value asset is secured! Let me inspect the structural integrity of the pita..."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "Move",
+            "actor": "Garlic Sage",
+            "params": {
+                "destination": {
+                    "x": 0.5,
+                    "y": 0,
+                    "z": 0.5
+                },
+                "speed": 2.0
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Animate",
+            "actor": "Garlic Sage",
+            "params": {
+                "triggerName": "Interact"
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Incredible! The garlic sauce ratio is completely undisturbed! The pickles are perfectly aligned! You've done adequately, intern."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Yeah, you're welcome. I literally fought off the undead for a sandwich."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "It's not just a sandwich, intern! It's a locally sourced, artisanal wrap! The ROI on this lunch is astronomical!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I might even sign your college credit form. Assuming you can afford the administrative processing fee of forty gold pieces."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Wait, what?! You promised me a full-time position with dental benefits if I survived!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Did I say dental? I meant 'mental' benefits. Like the character-building trauma you just experienced! It builds resilience!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "No, you specifically wrote 'Dental Plan' on the napkin you gave me during the interview!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Ah. Well. Things have changed. Market fluctuations, you see. The economy is very volatile right now."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "What market fluctuations?! We are in a dungeon!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "The fact is, we're actually in a closed beta test right now. We haven't secured Series A funding for full-time hires yet."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "A... a beta test? What are you talking about? Are you breaking the fourth wall to avoid paying me?!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "I would never do such a thing to avoid payroll taxes. But since you mentioned it..."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Yes! Thank you, dear player, for testing 'That Time the Garlic Sauce Sage Unleashed His 9999 Stats on a Dungeon Because a Thief Ran Off With a Ten-Dollar Wrap (And I'm Just the Intern)'!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Who are you talking to?! There is literally no one there!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Your unpaid suffering provided exceptional engagement metrics for our dev team! The gameplay loop is truly synergetic!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "I am bleeding out. I can't feel my legs. And you didn't even give me a bite of the shawarma."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "We're going to take this feedback and put it right into our JIRA backlog. It's a low-priority ticket, though."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "I hate this internship."
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.8,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "Anyway, that wraps up the demo! Your near-death experiences provided fantastic analytics for our shareholders!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Player",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Player",
+            "params": {
+                "text": "Wait, don't leave! I'm still stuck in the geometry! Boss! BOOOOOSS!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "CameraMove",
+            "params": {
+                "target": "Garlic Sage",
+                "duration": 0.5,
+                "offset": {
+                    "x": 0,
+                    "y": 4,
+                    "z": -6
+                }
+            },
+            "waitUntilFinished": false
+        },
+        {
+            "type": "Dialogue",
+            "actor": "Garlic Sage",
+            "params": {
+                "text": "And don't forget to fill out the post-game survey! Your feedback on 'unnecessary physical trauma' and 'lack of compensation' is vital for our early access roadmap! See you in the DLC!"
+            },
+            "waitUntilFinished": true
+        },
+        {
+            "type": "SceneLoad",
+            "params": {
+                "sceneName": "MainMenu"
+            }
+        }
+    ]
+}

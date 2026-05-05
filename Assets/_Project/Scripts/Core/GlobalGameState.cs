@@ -31,6 +31,11 @@ namespace TacticsGame.Core
         public string LastBattleScene { get; private set; }
         public string NextStoryScene { get; private set; }
 
+        /// <summary>
+        /// Flag to trigger automatic display of credits when the main menu loads.
+        /// </summary>
+        public bool ShowCreditsOnMainMenu { get; set; }
+
         private void Awake()
         {
             if (instance != null && instance != this)

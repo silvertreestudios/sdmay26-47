@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b4dbbef26f0994cab6b8ec41cdcf92, type: 3}
   m_Name: Observer_B_Stealth_Test
   m_EditorClassIdentifier: 
-  unitName: Adil
+  unitName: Garlic Sage
   portraitIcon: {fileID: 21300000, guid: 4b98555ff0936094a828dc7267365eb2, type: 3}
   unitSize: 2
   perception: 99
@@ -25,6 +25,7 @@ MonoBehaviour:
   intelligence: 99
   wisdom: 99
   charisma: 99
+  keyAbility: 0
   baseSpeedInFeet: 99
   ancestryResourcePath: JSON/ancestries/human
   classResourcePath: JSON/classes/fighter

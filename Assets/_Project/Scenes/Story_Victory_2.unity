@@ -6920,7 +6920,7 @@ Transform:
   m_GameObject: {fileID: 205439390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14632358, y: -2, z: 2.943798}
+  m_LocalPosition: {x: 10.146323, y: -2, z: -7.056202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30193,7 +30193,7 @@ Transform:
   m_GameObject: {fileID: 841658679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.507774, y: -43.37237, z: 24.696917}
+  m_LocalPosition: {x: -11.507774, y: -43.37237, z: 14.696917}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36308,7 +36308,7 @@ Transform:
   m_GameObject: {fileID: 1011514938}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15923332, y: -28, z: 17.082472}
+  m_LocalPosition: {x: 9.840767, y: -28, z: 7.082472}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62155,7 +62155,7 @@ Transform:
   m_GameObject: {fileID: 1810269283}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14632358, y: -5.985146, z: 2.943798}
+  m_LocalPosition: {x: 10.146323, y: -5.985146, z: -7.056202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -66193,7 +66193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152604769235380235, guid: 83cb91de4235cc94ea87627b2b68279b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9152604769235380235, guid: 83cb91de4235cc94ea87627b2b68279b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -66201,7 +66201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152604769235380235, guid: 83cb91de4235cc94ea87627b2b68279b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 9152604769235380235, guid: 83cb91de4235cc94ea87627b2b68279b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69004,7 +69004,7 @@ Transform:
   m_GameObject: {fileID: 1987095958}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6149473, y: -13.08828, z: 30.854128}
+  m_LocalPosition: {x: 11.614947, y: -13.08828, z: 20.854128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -69510,6 +69510,7 @@ MonoBehaviour:
   storyCamera: {fileID: 395510692}
   loadingTemplate: {fileID: 9197481963319205126, guid: 0f07de8797de8704f81ac8f37d82e0d0, type: 3}
   panelSettings: {fileID: 11400000, guid: a12a156a0c6e8884fa7afcfb41c5813f, type: 2}
+  clipLibrary: []
 --- !u!114 &2003257417
 MonoBehaviour:
   m_ObjectHideFlags: 0

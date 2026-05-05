@@ -13,6 +13,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using TacticsSkillType = TacticsGame.Data.TacticsCore.SkillType;
 
+// TODO: Fix heratiges not showing up in built app
 namespace TacticsGame.UI.CharacterCreator
 {
     [RequireComponent(typeof(UIDocument))]
@@ -1309,7 +1310,8 @@ namespace TacticsGame.UI.CharacterCreator
                 ancestry => DisplayName(ancestry),
                 ancestry => ancestry?.Description,
                 ancestry => ancestry != null && ancestry.SourceId == payload.AncestryID,
-                SelectAncestry
+                SelectAncestry,
+                RefreshAncestryDetails
             );
 
             onPageNext = () => grid.GoToNextPage();
@@ -1344,7 +1346,12 @@ namespace TacticsGame.UI.CharacterCreator
 
         private void SelectAncestry(AncestryDataSO selected)
         {
-            payload.AncestryID = selected.SourceId;
+            Debug.Log(
+                $"[UI] SelectAncestry called with: {(selected != null ? selected.name : "null")}"
+            );
+            payload.AncestryID = !string.IsNullOrEmpty(selected.SourceId)
+                ? selected.SourceId
+                : (!string.IsNullOrEmpty(selected.Slug) ? selected.Slug : selected.name);
             payload.HeritageID = string.Empty;
             payload.AncestryBoosts = DefaultAttributeSelections(selected.AttributeBoosts);
             payload.AncestryFlaws = DefaultAttributeSelections(selected.AttributeFlaws);
@@ -1358,6 +1365,9 @@ namespace TacticsGame.UI.CharacterCreator
 
         private void RefreshAncestryDetails(AncestryDataSO ancestry)
         {
+            Debug.Log(
+                $"[UI] RefreshAncestryDetails called with: {(ancestry != null ? ancestry.name : "null")}"
+            );
             SetLabel(
                 "Lbl_AncestryName",
                 ancestry != null ? DisplayName(ancestry) : "Select an Ancestry"
@@ -1397,22 +1407,33 @@ namespace TacticsGame.UI.CharacterCreator
 
         private void BindHeritageList(AncestryDataSO ancestry)
         {
+            Debug.Log(
+                $"[UI] BindHeritageList called for: {(ancestry != null ? ancestry.name : "null")}"
+            );
             var gridHost = contentArea.Q<VisualElement>("Grid_Heritages");
             if (gridHost == null)
+            {
+                Debug.LogWarning("[UI] BindHeritageList: gridHost 'Grid_Heritages' is null!");
                 return;
+            }
 
             gridHost.Clear();
             List<HeritageDataSO> heritages =
                 ancestry != null
-                    ? database.GetCoreHeritagesForAncestry(ancestry.SourceId)
+                    ? database.GetCoreHeritagesForAncestry(ancestry)
                     : new List<HeritageDataSO>();
+
+            Debug.Log($"[UI] BindHeritageList adding {heritages.Count} cards to gridHost.");
 
             foreach (var h in heritages)
             {
                 var heritage = h;
                 VisualElement card = new VisualElement();
                 card.AddToClassList("choice-card");
-                if (payload.HeritageID == heritage.SourceId)
+                string heritageId = !string.IsNullOrEmpty(heritage.SourceId)
+                    ? heritage.SourceId
+                    : (!string.IsNullOrEmpty(heritage.Slug) ? heritage.Slug : heritage.name);
+                if (payload.HeritageID == heritageId)
                     card.AddToClassList("choice-card--selected");
 
                 Label title = new Label(DisplayName(heritage));
@@ -1425,7 +1446,18 @@ namespace TacticsGame.UI.CharacterCreator
 
                 card.RegisterCallback<ClickEvent>(_ =>
                 {
-                    payload.HeritageID = heritage.SourceId;
+                    // If we're selecting a heritage for an ancestry that isn't committed yet, commit it now.
+                    string targetAncestryId = !string.IsNullOrEmpty(ancestry.SourceId)
+                        ? ancestry.SourceId
+                        : (!string.IsNullOrEmpty(ancestry.Slug) ? ancestry.Slug : ancestry.name);
+                    if (payload.AncestryID != targetAncestryId)
+                    {
+                        SelectAncestry(ancestry);
+                    }
+
+                    payload.HeritageID = !string.IsNullOrEmpty(heritage.SourceId)
+                        ? heritage.SourceId
+                        : (!string.IsNullOrEmpty(heritage.Slug) ? heritage.Slug : heritage.name);
                     NotifyPayloadUpdated();
                     BindHeritageList(ancestry);
                     RebuildControllerFocus();
@@ -1454,14 +1486,21 @@ namespace TacticsGame.UI.CharacterCreator
                 background => background != null && background.SourceId == payload.BackgroundID,
                 background =>
                 {
-                    payload.BackgroundID = background.SourceId;
+                    payload.BackgroundID = !string.IsNullOrEmpty(background.SourceId)
+                        ? background.SourceId
+                        : (
+                            !string.IsNullOrEmpty(background.Slug)
+                                ? background.Slug
+                                : background.name
+                        );
                     payload.BackgroundBoosts = DefaultAttributeSelections(
                         background.AttributeBoosts
                     );
                     RefreshBackgroundDetails(background);
                     NotifyPayloadUpdated();
                     RebuildControllerFocus();
-                }
+                },
+                RefreshBackgroundDetails
             );
 
             onPageNext = () => grid.GoToNextPage();
@@ -1545,7 +1584,8 @@ namespace TacticsGame.UI.CharacterCreator
                         : string.Empty,
                 characterClass =>
                     characterClass != null && characterClass.SourceId == payload.ClassID,
-                SelectClass
+                SelectClass,
+                RefreshClassDetails
             );
 
             onPageNext = () => grid.GoToNextPage();
@@ -1580,7 +1620,9 @@ namespace TacticsGame.UI.CharacterCreator
             if (selected == null)
                 return;
 
-            payload.ClassID = selected.SourceId;
+            payload.ClassID = !string.IsNullOrEmpty(selected.SourceId)
+                ? selected.SourceId
+                : (!string.IsNullOrEmpty(selected.Slug) ? selected.Slug : selected.name);
             payload.ClassKeyAttribute =
                 selected.KeyAttributes.Count == 1
                     ? selected.KeyAttributes[0].ToString()
@@ -1773,7 +1815,8 @@ namespace TacticsGame.UI.CharacterCreator
                 ItemName,
                 FormatEquipmentSubText,
                 equipment => ItemId(equipment) == GetActiveEquipmentId(),
-                SelectEquipment
+                SelectEquipment,
+                null // Equipment doesn't need a detailed focus preview in this step
             );
 
             onPageNext = () => grid.GoToNextPage();
@@ -2019,7 +2062,8 @@ namespace TacticsGame.UI.CharacterCreator
             Func<T, string> titleSelector,
             Func<T, string> subtitleSelector,
             Func<T, bool> selectedPredicate,
-            Action<T> onSelected
+            Action<T> onSelected,
+            Action<T> onFocused = null
         )
         {
             var grid = new PagedCardGrid<T>(
@@ -2062,6 +2106,7 @@ namespace TacticsGame.UI.CharacterCreator
             );
 
             grid.OnSelectionChanged += (_, selectedItem) => onSelected?.Invoke(selectedItem);
+            grid.OnFocusChanged += (_, focusedItem) => onFocused?.Invoke(focusedItem);
             grid.SetSingleColumn(true);
             grid.SetItems(items ?? new List<T>());
             return grid;
@@ -2536,8 +2581,8 @@ namespace TacticsGame.UI.CharacterCreator
                 messages.Add("Missing character name.");
             if (string.IsNullOrEmpty(payload.AncestryID))
                 messages.Add("Missing ancestry.");
-            if (string.IsNullOrEmpty(payload.HeritageID))
-                messages.Add("Missing heritage.");
+            // if (string.IsNullOrEmpty(payload.HeritageID))
+            //     messages.Add("Missing heritage.");
             if (string.IsNullOrEmpty(payload.BackgroundID))
                 messages.Add("Missing background.");
             if (string.IsNullOrEmpty(payload.ClassID))
@@ -2988,17 +3033,17 @@ namespace TacticsGame.UI.CharacterCreator
             if (string.IsNullOrWhiteSpace(payload.Name))
                 payload.Name = "Unknown Adventurer";
 
-            string savesDir = Path.Combine(Application.persistentDataPath, "Saves", "Roster");
-            Directory.CreateDirectory(savesDir);
-            string safeName = string.Join(
-                "_",
-                payload.Name.Split(
-                    Path.GetInvalidFileNameChars(),
-                    StringSplitOptions.RemoveEmptyEntries
-                )
-            );
-            string filePath = Path.Combine(savesDir, $"{safeName}.json");
-            File.WriteAllText(filePath, JsonUtility.ToJson(payload, true));
+            // Create new GameSaveData wrapping the payload
+            GameSaveData newSave = new GameSaveData(payload, "StoryScene");
+
+            // Save to disk
+            TacticsGame.Core.SaveSystem.Save(newSave);
+
+            // Set as active character for the upcoming scene
+            TacticsGame.Core.GlobalGameState.Instance.SetCurrentCharacter(newSave);
+
+            // Transition to the game
+            TacticsGame.UI.LoadingManager.Instance.LoadScene(newSave.lastSceneName);
         }
 
         public TacticsRulesetDatabase GetDatabase() => database;

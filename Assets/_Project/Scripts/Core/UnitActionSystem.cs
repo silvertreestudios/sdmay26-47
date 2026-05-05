@@ -43,6 +43,7 @@ namespace TacticsGame.Core
         public bool IsWaypointMode => isWaypointMode;
         public List<Vector3Int> MovementWaypoints => movementWaypoints;
         public int SpentWaypointCost => spentWaypointCost;
+        private GamePhase preTargetingPhase;
 
         private void Awake()
         {
@@ -249,8 +250,8 @@ namespace TacticsGame.Core
             }
 
             GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
-            if (currentPhase == GamePhase.EagleEye)
-                preEagleEyePhase = GamePhase.EagleEye;
+            preTargetingPhase = currentPhase;
+            ServiceLocator.Get<CameraController>().SaveCameraState();
 
             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.ActionTargeting);
 
@@ -425,7 +426,9 @@ namespace TacticsGame.Core
                 if (selectedUnit != null)
                     ServiceLocator.Get<CameraController>().SetFollowTarget(selectedUnit.transform);
 
-                if (preEagleEyePhase == GamePhase.EagleEye)
+                ServiceLocator.Get<CameraController>().RestoreCameraState();
+
+                if (preTargetingPhase == GamePhase.EagleEye)
                 {
                     ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
                 }
@@ -723,8 +726,12 @@ namespace TacticsGame.Core
                                     $"<color=red>[ACTION]</color> {selectedUnit.name}'s {selectedAction.GetActionName()} was DISRUPTED!"
                                 );
                                 OnActionCompleted?.Invoke(this, EventArgs.Empty);
-                                if (preEagleEyePhase == GamePhase.EagleEye)
+                                ServiceLocator.Get<CameraController>().RestoreCameraState();
+
+                                if (preTargetingPhase == GamePhase.EagleEye)
+                                {
                                     ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
+                                }
                                 CheckTurnEnd();
                             }
                             else
@@ -758,8 +765,12 @@ namespace TacticsGame.Core
                 () =>
                 {
                     OnActionCompleted?.Invoke(this, EventArgs.Empty);
-                    if (preEagleEyePhase == GamePhase.EagleEye)
+                    ServiceLocator.Get<CameraController>().RestoreCameraState();
+
+                    if (preTargetingPhase == GamePhase.EagleEye)
+                    {
                         ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.EagleEye);
+                    }
                     CheckTurnEnd();
                 }
             );
@@ -961,21 +972,31 @@ namespace TacticsGame.Core
                     {
                         if (
                             resolvedEvent.IsCancelled
-                            || selectedUnit.GetComponent<UnitConditions>().IsDead()
+                            || !selectedUnit.GetComponent<UnitConditions>().CanMove()
                         )
                         {
+                            bool isDead = selectedUnit.GetComponent<UnitConditions>().IsDead();
+                            bool isUnconscious = selectedUnit
+                                .GetComponent<UnitConditions>()
+                                .HasCondition(ConditionType.Unconscious);
+                            Debug.Log(
+                                $"[REACTIVE DEBUG] Move Interrupted! Reason: {(isDead ? "DEAD" : (isUnconscious ? "UNCONSCIOUS" : "CANCELLED"))}. From: {from}, To: {to}. Snapping back to: {from}"
+                            );
+
                             // Interrupted while moving from 'from' to 'to'
-                            // In PF2e, you are considered to be in the square you were entering.
+                            // If dead, stay in 'from'. If cancelled/interrupted but alive, stay in 'from' as well (PF2e disruption rules)
                             selectedUnit.SpendActionPoints(1);
 
                             GridSystem grid = ServiceLocator.Get<GridSystem>();
-                            grid.MoveUnit(selectedUnit, selectedUnit.CurrentLayeredPosition, to);
-                            selectedUnit.FinalizeMove(to);
-                            selectedUnit.SnapToGrid(grid.GetWorldPosition(to));
+                            // We stay in 'from' because the move was disrupted before entering 'to'
+                            grid.MoveUnit(selectedUnit, selectedUnit.CurrentLayeredPosition, from);
+                            selectedUnit.FinalizeMove(from);
+                            selectedUnit.SnapToGrid(grid.GetWorldPosition(from));
 
                             OnActionCompleted?.Invoke(this, EventArgs.Empty);
-                            ResetWaypointState(to);
+                            ResetWaypointState(from);
                             ServiceLocator.Get<PhaseManager>().SetPhase(GamePhase.FreeMovement);
+                            onComplete?.Invoke();
                             CheckTurnEnd();
                         }
                         else
@@ -1269,7 +1290,8 @@ namespace TacticsGame.Core
 
         private void OnJumpPerformed(object sender, EventArgs e)
         {
-            if (ServiceLocator.Get<PhaseManager>().CurrentPhase == GamePhase.FreeMovement)
+            GamePhase currentPhase = ServiceLocator.Get<PhaseManager>().CurrentPhase;
+            if (currentPhase == GamePhase.FreeMovement || currentPhase == GamePhase.EagleEye)
                 selectedUnit.HandleJump();
         }
 
