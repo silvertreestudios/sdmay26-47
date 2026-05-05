@@ -73,7 +73,7 @@ This project aims to implement a Pathfinder 2e inspired, turn-based tactical RPG
    - `Assets/_Project/Scenes/Story_Victory_1.unity`: The victory story after level 1.
    - `Assets/_Project/Scenes/Level 2.unity`: Level 2 tactical combat.
    - `Assets/_Project/Scenes/Story_Victory_2.unity`: The victory story after level 2.
-   - `Assets/_Project/Scenes/Story_Defeat_1.unity`: The defeat story.
+   - `Assets/_Project/Scenes/Story_Defeat_1.unity`: The defeat story if you lose a level.
 
 ---
 
@@ -89,8 +89,3 @@ This project is released under the **ORC License** (Open RPG Creative License). 
 
 ---
 
-## Contributing
-
-Contributions are welcome! Whether it's bug fixes, new spell implementations, or level designs, feel free to fork the repo and submit a PR.
-
----
