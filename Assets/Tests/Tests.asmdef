@@ -3,7 +3,7 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "PathfinderTactics.Runtime"
+        "TacticsGame.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

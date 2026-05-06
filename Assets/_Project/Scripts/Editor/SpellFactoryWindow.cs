@@ -200,7 +200,7 @@ namespace TacticsGame.Editor
             ),
         };
 
-        [MenuItem("Tools/Pathfinder/Spell Factory")]
+        [MenuItem("Tools/TacticsGame/Spell Factory")]
         public static void ShowWindow()
         {
             GetWindow<SpellFactoryWindow>("Spell Factory");

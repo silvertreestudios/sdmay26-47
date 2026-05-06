@@ -2,9 +2,9 @@ using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-using PathfinderTactics.Characters;
-using PathfinderTactics.Core;
-using PathfinderTactics.Reactions;
+using TacticsGame.Characters;
+using TacticsGame.Core;
+using TacticsGame.Reactions;
 
 public class NewTestScript
 {
